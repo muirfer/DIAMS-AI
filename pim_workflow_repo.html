@@ -1,0 +1,720 @@
+﻿<script>
+	const animationDelay = 2000;
+	const berDetails = '{"status": "error","message": "Failed to save data in the database","error_code": 500,"error_details": "Database connection timed out"}';
+
+	function displayJson() {
+		for (var key in berDetails) {
+			if (berDetails.hasOwnProperty(key)) {
+				var value = berDetails[key];
+				var valueType = typeof value;
+
+				var container = document.createElement('div');
+				container.innerHTML = '<strong>' + key + ':</strong> ';
+
+				if (valueType === 'object') {
+					var childContainer = document.createElement('div');
+					container.appendChild(childContainer);
+					displayJson(value, childContainer);
+				} else if (valueType === 'array') {
+					var list = document.createElement('ul');
+					container.appendChild(list);
+					for (var i = 0; i < value.length; i++) {
+						var listItem = document.createElement('li');
+						list.appendChild(listItem);
+						displayJson(value[i], listItem);
+					}
+				} else {
+					container.innerHTML += value;
+				}
+
+				document.getElementById('output').appendChild(container);
+			}
+		}
+	}
+
+	function editCondition() {
+		$('#condition-filter-description').prop("disabled", false);
+		$('#btn-edit-condition').hide();
+		$('#btn-save-condition').show();
+		$('#btn-delete-condition').show();
+		$('#btn-cancel-editing').show();
+		$('#condition-privacy-settings-container').show();
+
+		//Conditional.setSaveConditionModal();
+	}
+
+	function displayMode() {
+		$('#condition-filter-description').prop("disabled", true);
+		$('#btn-edit-condition').show();
+		$('#btn-save-condition').hide();
+		$('#btn-delete-condition').hide();
+		$('#btn-cancel-editing').hide();
+		$('#condition-privacy-settings-container').hide();
+	}
+
+	function enableRoleSelection() {
+		if ($('#cond-radio-private').is(':checked'))
+			$('.cond-role-selection').prop("disabled", true);
+		else if ($('#cond-radio-public').is(':checked'))
+			$('.cond-role-selection').prop("disabled", false);
+	}
+
+
+	function showFilters(type) {
+		filterToHide = type === "fCust" ? "fPred" : "fCust";
+		$("." + filterToHide).css("display", "none");
+		$("." + type).css("display", "block");
+		$("#btnFilter").html(type === "fCust" ? "Custom Filter" : "Predefined Filter")
+	}
+
+
+
+	function handlePaste(e) {
+		var clipboardData, pastedData;
+
+		// Stop data actually being pasted into div
+		e.stopPropagation();
+		e.preventDefault();
+
+		// Get pasted data via clipboard API
+		clipboardData = e.clipboardData || window.clipboardData;
+		pastedData = clipboardData.getData('Text');
+
+		// Do whatever with pasteddata
+		alert(pastedData);
+	}
+
+	jQuery(document).ready(function ($) {
+		$("#mainSection").css("background", "white");
+		displayMode();
+		enableRoleSelection();
+
+		//document.getElementById('editableDiv').addEventListener('paste', handlePaste);
+	});
+
+
+</script>
+
+
+
+
+<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">Workflow Reporting</h2>
+
+		<div class="right-wrapper text-right">
+
+		</div>
+	</header>
+	<div>
+		<!-- start: filter header -->
+		<div class="search-control-wrapper clearfix" style="border-color: #ddd;">
+			<div class="row">
+				<div class="form-group col-lg-6">
+					<div class="input-group input-group-select-append">
+						<!-- <button type="button" class="btn btn-success" style="width: 160px; font-size: 14px;">Custom Filters</button> -->
+						<div class="btn-group flex-wrap">
+							<button id="btnFilter" type="button" class="btn btn-success dropdown-toggle"
+								data-toggle="dropdown"> Custom Filters <span class="caret"></span> </button>
+							<div class="dropdown-menu" role="menu">
+								<a class="dropdown-item text-1" href="#" onclick="showFilters('fCust')">Custom
+									Filters</a>
+								<a class="dropdown-item text-1" href="#" onclick="showFilters('fPred')">Predefined
+									Filters</a>
+							</div>
+						</div>
+						<!-- Option / Custom filter -->
+						<input class="fCust" type="hidden" name="Filter.CustomCondition" id="custom_filter" value="">
+						<div class="fCust form-control filterOption7 filterOption_invoice filter-tag-container"
+							style="border: 1px solid rgb(206, 212, 218);"></div>
+						<span class="fCust input-group-append filterOption7 filterOption_invoice">
+							<a href="#modal_sel" class="btn-success modal-with-zoom-anim ws-normal"
+								style="width: 40px;text-align:center;"><i class="fas fa-filter"
+									style="margin-top: 12px;"></i></a>
+							<!-- <button class="btn btn-success" type="button" onclick="openFilters()"><i class="fas fa-filter"></i></button> -->
+						</span>
+
+						<!-- Option / Predefined filters -->
+						<select class="fPred form-control filterOption8 filterOption_invoice"
+							name="Filter.PreConditionId" id="custom-pre-select" style="display: none;"
+							onchange="getItems();">
+							<option value="">Select filter...</option>
+							<option value="608e3e8c-d7fc-498d-a623-014a7ebf91b1" title="customFilter.Text">Test filter 3
+							</option>
+						</select>
+						<span class="fPred input-group-append filterOption8 filterOption_invoice"
+							style="display: none;">
+							<button class="btn btn-success" type="button" onclick="configPred()"><i
+									class="fas fa-cog"></i></button>
+						</span>
+
+					</div>
+
+				</div>
+				<div id="searchDiv" class="col-lg-2 offset-lg-4">
+				</div>
+			</div>
+		</div>
+		<hr class="col-lg-12" />
+		<div class="row my-4 mailbox">
+			<div class="col mailbox-actions" style="padding-left: 20px !important;border-top: none !important;">
+				<ul class="list-unstyled m-0">
+					<li class="ib mr-2">
+						<a class="item-action fas fa-sync mt-1" href="#" rel="tooltip" title=""
+							onclick="getItems(); return false;" data-original-title="Refresh data"></a>
+					</li>
+					<li class="ib mr-2">
+						<a class="item-action fas fa-eraser mt-1" href="#" rel="tooltip" title=""
+							onclick="clearFilters(); return false;" data-original-title="Clear filters"></a>
+					</li>
+					<li class="ib mr-2">
+						<a class="item-action far fa-file-excel mt-1" href="#" rel="tooltip" title=""
+							id="ia-download-vendor-xls" data-toggle="dropdown" onclick="exportExcel(); return false;"
+							data-original-title="Export selected rows as an excel file)"></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a class="dropdown-item" id="export_1213518627" href="#"
+									onclick="exportItemsToExcel(1213518627, 'inv-items', '/E/AllInvoice/ListingToExcelExport');"
+									rel="tooltip" title="" data-original-title="Export Fin. Documents">Export Fin.
+									Documents</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="ib mr-2" id="downloadPdfButton" style="display: none;">
+						<a class="item-action fas fa-file-pdf mt-1" href="#" rel="tooltip" title=""
+							id="ia-download-vendor-pdf" onclick="downloadPdfFiles(); return false;"
+							data-original-title="Download selected pdf files (in .zip file)"></a>
+					</li>
+
+					<li class="ib mr-2 pt-1" id="filterGroupCurrencyChange" style="display: none;">
+						<div class="btn-group btn-group-sm" role="group">
+							<button type="button" class="btn btn-primary btn_currency_filter active" id="btnDocCurrency"
+								onclick="onCurrencyFilterClick('DocCurrency');">
+								Doc. Currency
+							</button>
+							<button type="button" class="btn btn_currency_filter btn-primary" id="btnLocalCurrency"
+								onclick="onCurrencyFilterClick('LocalCurrency');">
+								Local Currency
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-4 mr-3 align-self-end">
+				<div class="row control-group">
+					<div class="col text-right pr-0 mr-0">
+						Records per page
+					</div>
+					<div id="divPag" class="col-sm-4 col-lg-3" style="padding-right:0%">
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- start: table -->
+		<div class="row">
+			<div class="col-lg-12" style="height: 557px;">
+				<div class="dropzone dz-square bootstrap-tagsinput p-2 mt-2 text-center"
+					style="min-height: 30px; border-radius: 3px 3px 0px 0px;" id="div-groupby-container">
+					<p class="m-0">Drag a column header and drop it here to group by that column.</p>
+				</div>
+				<div class="scrollable fixed_header" style="height: 502px;overflow-y: auto;">
+					<table class="table table-no-more table-hover mb-0 dataTable scrollable-content"
+						id="datatable-default" style="margin: 0 !important;">
+						<thead>
+							<tr>
+								<th draggable="true" class="text-left" style="width:3%">Category</th>
+								<th draggable="true" class="text-center" style="width:5%">GTIN</th>
+								<th draggable="true" class="text-left" style="width:25%">Article description</th>
+								<th draggable="true" class="text-left" style="width:25%">Supplier</th>
+								<th draggable="true" class="text-center" style="width:3%">Status</th>
+								<th draggable="true" class="text-center" style="width:10%">Intro week</th>
+								<th draggable="true" class="text-center" style="width:5%">Assignee</th>
+								<th draggable="true" class="text-center" style="width:5%">Date of Init.</th>
+								<th draggable="true" class="text-center" style="width:5%">Initiated by</th>
+								<th draggable="true" class="text-center" style="width:5%">SAP number</th>
+								<th draggable="true" class="text-center" style="width:5%">Hope number</th>
+								<th draggable="true" class="text-center" style="width:10%">Distribution type</th>
+								<th draggable="true" class="text-center" style="width:10%">Item clasification</th>
+								<th draggable="true" class="text-center" style="width:5%"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Fresh ready to eat vegetable, potatoes">C202</td>
+								<td class="text-center gt1">12341234312</td>
+								<td>Tablecover Star Cream Dunicel 138</td>
+								<td>SOCIETE FERMIERE ROCHEFORT ARDENNES</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Category Expert Review">CER</td>
+								<td class="text-center">W32 - 16/01/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right" title="Jack Black">
+									JBLA</td>
+								<td class="text-center">25/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right" title="John Smith">
+									ASF3</td>
+								<td class="text-center">012345678</td>
+								<td class="text-center">123456789</td>
+								<td class="text-center">In store operation</td>
+								<td class="text-center">Logistic Item</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Viande fraiche emballee">E020</td>
+								<td class="text-center gt2">12341234312</td>
+								<td>Granola Goji and Blackcurrant 400g</td>
+								<td>Vendor Granola Goji</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Category Expert Correction">CEC</td>
+								<td class="text-center">W35 - 21/07/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right" title="Jack Black">
+									AFDS</td>
+								<td class="text-center">26/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right" title="John Smith">
+									FGGB</td>
+								<td class="text-center">013945678</td>
+								<td class="text-center">123450000</td>
+								<td class="text-center">DSD Local</td>
+								<td class="text-center">Event</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Fresh meat in loose">E021</td>
+								<td class="text-center gt1">3097255516550</td>
+								<td>Materne Apricotjam 720g</td>
+								<td>MATERNE-CONFILUX</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Business Error">
+									<a href="#modal_ber"
+										class="text-center tStatus cor modal-with-zoom-anim ws-normal">BER</a>
+								</td>
+								<td class="text-center">W28 - 15/03/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">26/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Laurent Budeus">LLMA</td>
+								<td class="text-center">013445678</td>
+								<td class="text-center">123457540</td>
+								<td class="text-center">DSD</td>
+								<td class="text-center">Transition</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Viennese bread and buns">F102</td>
+								<td class="text-center gt2">3097255516550</td>
+								<td>Danone Aro Panache 125X4 Afh</td>
+								<td>ORANGINA SCHWEPPES BELGIUM</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input">VI</td>
+								<td class="text-center">W41 - 19/08/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">28/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Olga Quinteros">OMDD</td>
+								<td class="text-center">043225678</td>
+								<td class="text-center">123444340</td>
+								<td class="text-center">DC</td>
+								<td class="text-center">Seasonal</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Non alcoholic Wines & Sparkling">G721</td>
+								<td class="text-center gt2">3012312511544</td>
+								<td>JUP CAN 66x15 0,33L DDP WC</td>
+								<td>INBEV BELGIUM</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Category Manager Correction">CMC</td>
+								<td class="text-center">W50 - 15/12/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">28/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Olga Quinteros">OMDD</td>
+								<td class="text-center">032225621</td>
+								<td class="text-center">123377355</td>
+								<td class="text-center">DC</td>
+								<td class="text-center">Seasonal</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="DSD Grocery + HBC + Drinks">Y399</td>
+								<td class="text-center gt1">3097255517785</td>
+								<td>75 Sotto Il Sole Nero Av 15 R</td>
+								<td>CONTINENTAL FOODS BELGIUM</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Category Manager Review">CMR</td>
+								<td class="text-center">W15 - 14/03/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">29/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Laurent Budeus">LLMA</td>
+								<td class="text-center">013489322</td>
+								<td class="text-center">123449740</td>
+								<td class="text-center">DSD</td>
+								<td class="text-center">Transition</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Boucherie Tierce -2 Préemballée">E034</td>
+								<td class="text-center gt1">3099744317721</td>
+								<td>Light&Free Kefir Pom-blueb 6X2</td>
+								<td>NESTLE BELGILUX</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Master Data Specialist Review">MDR</td>
+								<td class="text-center">W21 - 25/09/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">30/05/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Frank Sassuolo">FSAS</td>
+								<td class="text-center">117477322</td>
+								<td class="text-center">012549150</td>
+								<td class="text-center">DSD Local</td>
+								<td class="text-center">In & Out</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Non alcoholic Wines & Sparkling">G721</td>
+								<td class="text-center gt2">30123123341544</td>
+								<td>Clementine & Mandarine Juice 1L</td>
+								<td>ORANGINA SCHWEPPES BELGIUM</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Category Manager Correction">CMC</td>
+								<td class="text-center">W19 - 15/04/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">01/06/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Walter Amir">WAME</td>
+								<td class="text-center">033345621</td>
+								<td class="text-center">123968455</td>
+								<td class="text-center">DC</td>
+								<td class="text-center">Promo</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Fresh ready to eat vegetable, potatoes">C202</td>
+								<td class="text-center gt1">3083681001679</td>
+								<td>Tablecover Star Cream Dunicel 138</td>
+								<td>SOCIETE FERMIERE ROCHEFORT ARDENNES</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Category Expert Review">CER</td>
+								<td class="text-center">W32 - 16/01/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Francis Kalo">FMMQ</td>
+								<td class="text-center">01/06/2022</td>
+								<td class="text-center" data-toggle="tooltip" data-placement="right" title="John Smith">
+									ASF3</td>
+								<td class="text-center">012345678</td>
+								<td class="text-center">123456789</td>
+								<td class="text-center">In store operation</td>
+								<td class="text-center">Logistic Item</td>
+								<td class="text-center" data-toggle="tooltip">
+									<a href="#modal_lead_times" class="text-center modal-with-zoom-anim ws-normal">
+										<i class="fa fa-clock m-1" rel="tooltip" title=""
+											data-original-title="Lead Times" style="color: darkgreen;"></i>
+									</a>
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+				</div>
+				<div class="row" style="margin-top: 20px;">
+					<div class="col-lg-6">
+						<button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default gt1">GTIN CU</button>
+						<button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default gt2">Input GTIN</button>
+					</div>
+					<div id="fPag" class="col-lg-3" style="text-align: right;margin-left: 25%;"></div>
+				</div>
+
+			</div>
+		</div>
+		<!-- end: table -->
+		<!-- Modal 4 -->
+		<div id="modal_sel" class="zoom-anim-dialog modal-block  mfp-hide modal-xl"
+			style="max-width: 850px;width: 850px;">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Edit Condition</h2>
+				</header>
+				<div class="card-body ">
+					<div class="row">
+						<label class="col-2 control-label text-lg-right pt-2">
+							Description
+						</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="Header.Description"
+								placeholder="Type a small description of the filter" id="condition-filter-description"
+								maxlength="128" disabled="">
+						</div>
+						<div class="col-2 text-right">
+							<button id="btn-edit-condition" class="btn btn-link pr-0" type="button"
+								onclick="editCondition();" style="">
+								<i class="fas fa-edit"></i>
+							</button>
+							<button id="btn-save-condition" class="btn btn-link pr-0" type="button"
+								onclick="Conditional.save($('form').serialize()); displayMode();"
+								style="display: none;">
+								<i class="fas fa-save"></i>
+							</button>
+							<button id="btn-cancel-editing" class="btn btn-link po-color-danger pr-0" type="button"
+								onclick="displayMode();" style="display: none;">
+								<i class="fas fa-times"></i>
+							</button>
+						</div>
+					</div>
+					<div id="condition-privacy-settings-container" style="display: none;">
+						<div class="row pt-3">
+							<label class="col-lg-2 control-label text-lg-right">Privacy</label>
+							<div class="col-lg-7">
+								<div class="radio">
+									<label>
+										<input type="radio" name="Header.Privacy" id="cond-radio-private" value="0"
+											checked="checked" onclick="enableRoleSelection();">
+										Private. Visible only to my self
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="Header.Privacy" id="cond-radio-public" value="1"
+											onclick="enableRoleSelection();">
+										Public. Visible to the following roles as well:
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="row offset-2" id="condition-roles-container">
+							<button class="btn btn-link cond-role-selection" type="button"
+								onclick="rolesListUpdate('/E/Condition/AddRole');" disabled="">
+								<i class="fas fa-plus"></i>&nbsp;Add role
+							</button>
+						</div>
+					</div>
+					<div class="form-group row" style="margin-top: 30px;">
+						<div class="col-xs-9 pl-3">
+							<p class="mb-2">The selected attribute will be valid when this condition is true:</p>
+						</div>
+						<div class="col-xs-3 text-right">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-lg-12" id="condition_rows">
+							<div class="row">
+								<table class="table table-condensed table-striped" style="margin-bottom: 0px;">
+									<tbody id="condition_rows">
+										<tr>
+											<td style="display:none;">
+												<input type="hidden" name="Terms[0].GroupNo" value="0">
+												<input type="hidden" name="Terms[0].AndOr" value="AND">
+											</td>
+											<td style="display:none;">
+												<input type="hidden" name="Terms[0].TableName" value="FinDoc_Search">
+											</td>
+											<td>
+												<div class="row">
+													<div class="col-12">
+														<select name="Terms[0].FieldName" class="form-control"
+															id="ctl_select_field_0" onchange="">
+															<option value="d_op01" selected="selected">Date of Init.
+															</option>
+															<option value="s_op02">Initiated by</option>
+															<option value="s_op03">GTIN CU</option>
+															<option value="s_op04">Article description</option>
+															<option value="s_op05">Supplier</option>
+															<option value="o_op06">Category</option>
+															<option value="o_op07">Intro week</option>
+															<option value="o_op08">Status</option>
+															<option value="s_op09">SAP number</option>
+															<option value="s_op10">Hope number</option>
+															<option value="o_op11">Distribution type</option>
+															<option value="o_op12">Item classification</option>
+														</select>
+													</div>
+												</div>
+												<input type="hidden" id="input_type_0" value="Text">
+											<td>
+												<select name="Terms[0].Operator" class="form-control"
+													id="ctl_operator_select_field_0"
+													onchange="onOperatorChange(this, 0);">
+													<option value="=">is equal to</option>
+													<option value="!=">is not equal to</option>
+													<option value="LIKE">contains</option>
+													<option value="IS NULL">is blank</option>
+													<option value="IS NOT NULL">is not blank</option>
+												</select>
+											</td>
+											<td>
+												<div id="input_content_0">
+													<input name="Terms[0].Value" class="form-control js-dynamic-field-0"
+														id="Terms_0__Value" maxlength="128">
+												</div>
+											</td>
+											<td>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row pt-3 ">
+								<div class="col-12">
+									<button class="btn btn-success btn-sm" type="button"
+										onclick="$('#js-view-checkbox').show();Conditional.ajaxPOSTAddCondition($('form'), $('#condition_rows'), 0, 'AND'); return false;">
+										<i class="fa fa-plus"></i>&nbsp;AND
+									</button>
+									<button class="btn btn-success btn-sm" type="button"
+										onclick="$('#js-view-checkbox').show();Conditional.ajaxPOSTAddCondition($('form'), $('#condition_rows'), 0, 'OR'); return false;">
+										<i class="fa fa-plus"></i>&nbsp;OR
+									</button>
+									<button id="bAddGroup" class="btn btn-default btn-sm @*ml-3*@" type="button"
+										onclick="$('#js-view-checkbox').show();Conditional.ajaxPOSTAddGroupCondition($('form'), $('#condition_rows')); return false;">
+										<i class="fa fa-plus"></i>&nbsp;OR group of conditions
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-link modal-dismiss" onclick="onClose('cf')"
+								style="color: #00c81e;">Cancel</button>
+							<button class="btn btn-success modal-dismiss" onclick="onClose('cf')">Select</button>
+						</div>
+
+
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal 4 -->
+		<!-- Modal 5-->
+		<div id="modal_ber" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+			<section class="card" style="width: 900px;">
+				<header class="card-header">
+					<h2 class="card-title">Business Error Details</h2>
+				</header>
+				<div id="output" class="card-body">
+					<textarea class="form-control" readonly="readonly" rows="10" id="codemirror_js_code" name="code_js"
+						data-plugin-codemirror
+						data-plugin-options='{ "mode": { name: "javascript", json: true }, readOnly: true }'>
+	{
+"status": "error",
+"message": "Failed to save data in the database",
+"error_code": 500,
+"error_details": "Database connection timed out"
+	}	
+					</textarea>
+
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss" onclick="onClose('c3')">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal 5  -->
+		<!-- Modal 6-->
+		<div id="modal_lead_times" class="zoom-anim-dialog modal-block mfp-hide">
+			<section class="card card-featured-bottom card-featured-primary mb-4" style="width: 900px;">
+				<div class="card-body">
+					<div class="widget-summary">
+						<div class="widget-summary-col widget-summary-col-icon">
+							<div class="summary-icon bg-primary">
+								<i class="fas fa-user-clock"></i>
+							</div>
+						</div>
+						<div class="widget-summary-col">
+							<div class="summary">
+								<h4 class="title">Product lead time</h4>
+								<div class="info">
+									<strong class="amount">15,25</strong>
+									<span class="text-primary">5 roles</span>
+								</div>
+							</div>
+							<div class="summary-footer">
+								<a class="text-muted text-uppercase">12341234312 - Tablecover Star Cream Dunicel 138</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss" onclick="onClose('c3')">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal 6  -->
+	</div>
+</section>
+
+<script src="js/examples/examples.modals.js"></script>
+<script src="js/examples/examples.widgets.js"></script>
+<script src="js/views/table_workflow_repo.js"></script>

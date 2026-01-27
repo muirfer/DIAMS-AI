@@ -1,271 +1,792 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="fixed">
+
 <head>
+
+    <!-- Basic -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot Demo</title>
 
-    <!-- DEPENDENCIAS -->
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <!-- FontAwesome 5 (para íconos) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>DIAMS - Prototypes</title>
+    <meta name="keywords" content="DIAMS - Prototypes" />
+    <meta name="description" content="DIAMS - Prototypes">
+    <meta name="author" content="fmuir">
 
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f4f7f6;
-            padding: 20px;
-        }
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        /* Estilo para el overlay de fondo */
-        #aiChatOverlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1045; /* Menos que el panel (1050) */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease-in-out, visibility 0.4s;
-        }
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7COpen+Sans:400,700,800"
+        rel="stylesheet" type="text/css">
 
-        #aiChatOverlay.open {
-            opacity: 1;
-            visibility: visible;
-        }
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/animate/animate.css">
 
-        /* Estilo para el panel lateral del chat */
-        .ai-chat-panel {
-            position: fixed;
-            top: 0;
-            right: -450px; /* Inicia oculto */
-            width: 450px; /* Ancho del panel */
-            height: 100vh; /* Alto completo */
-            background-color: #f8f9fa;
-            z-index: 1050; /* Por encima de todo */
-            transition: right 0.4s ease-in-out;
-            border-left: 1px solid #dee2e6;
-            
-            display: flex;
-            flex-direction: column;
-        }
+    <link rel="stylesheet" href="vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="vendor/datatables/media/css/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="vendor/codemirror/theme/monokai.css" />
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css" />
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-markdown/css/bootstrap-markdown.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />
+    <link rel="stylesheet" href="vendor/boxicons/css/boxicons.min.css" />
+    <link rel="stylesheet" href="vendor/dropzone/basic.css" />
+    <link rel="stylesheet" href="vendor/dropzone/dropzone.css" />
+    <link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
+    <link rel="stylesheet" href="vendor/select2/css/select2.css" />
+    <link rel="stylesheet" href="vendor/select2-bootstrap-theme/select2-bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/summernote/summernote-bs4.css" />
 
-        .ai-chat-panel.open {
-            right: 0; /* Se muestra */
-            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        }
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="vendor/morris/morris.css" />
 
-        /* Header del chat (fijo) */
-        .ai-chat-header {
-            border-bottom: 1px solid #dee2e6;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .ai-chat-header h5 {
-            color: #333;
-        }
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min.css" />
+    <link rel="stylesheet" href="vendor/fuelux/css/spinner.css" />
 
-        /* Cuerpo del chat (scrollable) */
-        .ai-chat-log {
-            flex-grow: 1; /* Ocupa todo el espacio disponible */
-            overflow-y: auto; /* Permite scroll */
-            background-color: #ffffff;
-            padding: 1rem;
-            /* Scrollbar slim */
-            scrollbar-width: thin; /* Firefox */
-            scrollbar-color: #ced4da #f8f9fa; /* Firefox */
-        }
-        .ai-chat-log::-webkit-scrollbar {
-            width: 6px;
-        }
-        .ai-chat-log::-webkit-scrollbar-track {
-            background: #f8f9fa;
-        }
-        .ai-chat-log::-webkit-scrollbar-thumb {
-            background: #ced4da;
-            border-radius: 3px;
-        }
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/theme.css" />
 
-        /* Footer del chat (fijo) */
-        .ai-chat-footer {
-            border-top: 1px solid #dee2e6;
-            background-color: #f8f9fa;
-        }
-        .ai-chat-footer textarea {
-            resize: none;
-            border-radius: 0;
-            border: none;
-        }
-        .ai-chat-footer textarea:focus {
-            box-shadow: none;
-        }
-        .ai-chat-footer .btn {
-            border-radius: 0;
-        }
+    <!-- Landing Page CSS -->
+    <link rel="stylesheet" href="css/landing.css" />
 
-        /* Estilos para las burbujas de chat */
-        .chat-message {
-            margin-bottom: 15px;
-            display: flex;
-        }
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="css/skins/default.css" />
 
-        /* Nuevo contenedor para la burbuja del bot y su navegación */
-        .bot-response-container {
-            display: flex;
-            flex-direction: column;
-            max-width: 85%; /* El ancho se controla aquí */
-            align-items: flex-start;
-        }
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
 
-        .chat-message .message-bubble {
-            padding: 10px 15px;
-            border-radius: 15px;
-            word-wrap: break-word;
-            display: flex;
-            gap: 10px;
-            width: 100%; /* Ocupa el ancho del bot-response-container */
-        }
-        .message-icon {
-            margin-top: 3px;
-            opacity: 0.7;
-        }
-        .message-content {
-            flex-grow: 1;
-        }
-        .message-content p {
-            margin-bottom: 10px;
-            white-space: pre-wrap; /* Respeta saltos de línea */
-        }
+    <!-- AI CSS -->
+    <link rel="stylesheet" href="css/ai.css">
 
-        /* Mensajes del Bot (izquierda) */
-        .chat-message.bot {
-            justify-content: flex-start;
-        }
-        .chat-message.bot .message-bubble {
-            background-color: #e9ecef;
-            color: #333;
-            border-top-left-radius: 0;
-        }
+    <!-- Head Libs -->
+    <script src="vendor/modernizr/modernizr.js"></script>
 
-        /* Mensajes del Usuario (derecha) */
-        .chat-message.user {
-            justify-content: flex-end;
-        }
-        .chat-message.user .message-bubble {
-            background-color: #007bff;
-            color: #ffffff;
-            border-top-right-radius: 0;
-            max-width: 85%;
-        }
-
-        /* Botones de acción bajo el mensaje del bot */
-        .message-actions {
-            padding-top: 8px;
-            border-top: 1px solid #d8dde1;
-            margin-top: 10px;
-        }
-        .message-actions .btn {
-            font-size: 0.8rem;
-        }
-        
-        /* Contenedor de versiones (oculto por JS) */
-        .response-versions .response-text {
-            display: none; /* Ocultar todas por defecto */
-        }
-        
-        /* Navegación de versiones (fuera de la burbuja) */
-        .version-nav {
-            display: flex;
-            justify-content: flex-end; /* Alineado a la derecha */
-            align-items: center;
-            gap: 10px;
-            margin-top: 5px; /* Espacio entre burbuja y nav */
-            width: 100%; /* Ocupa el ancho del bot-response-container */
-        }
-        .version-nav .btn-nav {
-            font-size: 0.8rem;
-            padding: 0.1rem 0.4rem;
-        }
-        .version-nav .version-counter {
-            font-size: 0.75rem;
-            color: #6c757d;
-        }
-
-        /* Animación de "escribiendo..." */
-        .typing-indicator {
-            display: flex;
-            align-items: center;
-            padding: 5px 0;
-        }
-        .typing-indicator span {
-            height: 8px;
-            width: 8px;
-            background-color: #6c757d;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 2px;
-            animation: bounce 1.4s infinite both;
-        }
-        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
-        }
-
-    </style>
 </head>
-<body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1 class="mt-5">AI Chatbot Demo</h1>
-                <p class="lead">Click the floating button in the bottom-right corner to open the AI Assistant.</p>
-                <div class="alert alert-info">
-                    This demo page simulates the main application content, which will be dimmed when the chat is open.
-                </div>
-            </div>
+<body class="alternative-font-4 loading-overlay-showing" data-plugin-page-transition data-loading-overlay
+    data-plugin-options="{'hideDelay': 100}">
+    <div class="loading-overlay">
+        <div class="bounce-loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
         </div>
     </div>
 
+    <section class="body">
+
+        <!-- start: header -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="../3.0.0" class="logo">
+                    <img src="img/logo-ad.png" width="75" height="35" alt="DIAMS" />
+                </a>
+                <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+                    data-fire-event="sidebar-left-opened">
+                    <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+
+            <!-- start: search & user box -->
+            <div class="header-right">
+
+                <!-- <form action="pages-search-results.html" class="search nav-form">
+						<div class="input-group">
+							<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+							<span class="input-group-append">
+								<button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+							</span>
+						</div>
+					</form>
+			
+					<span class="separator"></span> -->
+
+                <ul class="notifications">
+                    <li>
+                        <a id="aiChatToggle" href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                            <i class="fas fa-robot"></i>
+                            <span class="badge">AI</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                            <i class="fas fa-book"></i>
+                            <!-- <span class="badge">3</span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                            <img src="img/united-kingdom-flag-round-icon-16.png" alt="Selected English"
+                                style="padding-top: 5px;">
+                            <!-- <i class="fas fa-tasks"></i>
+								<span class="badge">3</span> -->
+                        </a>
+
+                        <div class="dropdown-menu notification-menu large">
+                            <div class="notification-title">
+                                <span class="float-right badge badge-default">3</span>
+                                Tasks
+                            </div>
+
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <p class="clearfix mb-1">
+                                            <span class="message float-left">Generating Sales Report</span>
+                                            <span class="message float-right text-dark">60%</span>
+                                        </p>
+                                        <div class="progress progress-xs light">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p class="clearfix mb-1">
+                                            <span class="message float-left">Importing Contacts</span>
+                                            <span class="message float-right text-dark">98%</span>
+                                        </p>
+                                        <div class="progress progress-xs light">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="98"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p class="clearfix mb-1">
+                                            <span class="message float-left">Uploading something big</span>
+                                            <span class="message float-right text-dark">33%</span>
+                                        </p>
+                                        <div class="progress progress-xs light mb-1">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="33"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li>
+							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+								<i class="fas fa-envelope"></i>
+								<span class="badge">4</span>
+							</a>
+			
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="float-right badge badge-default">230</span>
+									Messages
+								</div>
+			
+								<div class="content">
+									<ul>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joseph Doe Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joseph Doe</span>
+												<span class="message">Lorem ipsum dolor sit.</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joseph Junior</span>
+												<span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joe Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joe Junior</span>
+												<span class="message">Lorem ipsum dolor sit.</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<figure class="image">
+													<img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+												</figure>
+												<span class="title">Joseph Junior</span>
+												<span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
+											</a>
+										</li>
+									</ul>
+			
+									<hr />
+			
+									<div class="text-right">
+										<a href="#" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+								<i class="fas fa-bell"></i>
+								<span class="badge">3</span>
+							</a>
+			
+							<div class="dropdown-menu notification-menu">
+								<div class="notification-title">
+									<span class="float-right badge badge-default">3</span>
+									Alerts
+								</div>
+			
+								<div class="content">
+									<ul>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="fas fa-thumbs-down bg-danger text-light"></i>
+												</div>
+												<span class="title">Server is Down!</span>
+												<span class="message">Just now</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="fas fa-lock bg-warning text-light"></i>
+												</div>
+												<span class="title">User Locked</span>
+												<span class="message">15 minutes ago</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" class="clearfix">
+												<div class="image">
+													<i class="fas fa-signal bg-success text-light"></i>
+												</div>
+												<span class="title">Connection Restaured</span>
+												<span class="message">10/10/2017</span>
+											</a>
+										</li>
+									</ul>
+			
+									<hr />
+			
+									<div class="text-right">
+										<a href="#" class="view-more">View All</a>
+									</div>
+								</div>
+							</div>
+						</li> -->
+                </ul>
+
+                <span class="separator"></span>
+
+                <div id="userbox" class="userbox">
+                    <a href="#" data-toggle="dropdown">
+                        <figure class="profile-picture">
+                            <img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle"
+                                data-lock-picture="img/!logged-user.jpg" />
+                        </figure>
+                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                            <span class="name">John Doe Junior</span>
+                            <span class="role">Administrator</span>
+                        </div>
+
+                        <i class="fa custom-caret"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled mb-2">
+                            <li class="divider"></li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i
+                                        class="fas fa-user"></i> My Profile</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i
+                                        class="fas fa-lock"></i> Lock Screen</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="pages-signin.html"><i
+                                        class="fas fa-power-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end: search & user box -->
+        </header>
+        <!-- end: header -->
+
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <aside id="sidebar-left" class="sidebar-left">
+
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        Navigation
+                    </div>
+                    <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed"
+                        data-target="html" data-fire-event="sidebar-left-toggle">
+                        <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+                    </div>
+                </div>
+
+                <div class="nano">
+                    <div class="nano-content">
+                        <nav id="menu" class="nav-main" role="navigation">
+
+                            <ul class="nav nav-main">
+                                <li class="nav-parent">
+                                    <a class="nav-link" href="#">
+                                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                        <span>Product creation</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a class="nav-link" href="javascript:navigateTo('pim_articlelist.html')">
+                                                00 - Article List
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_articlecreate_mass_final.html')">
+                                                01 - Article Creation - Mass Final
+                                            </a>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a class="nav-link" href="#">
+                                                Panels
+                                            </a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_basic_data_desc_fields.html')">
+                                                        Basic Data - Descriptions
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_basic_data_cdt_fields.html')">
+                                                        Basic Data - CDT
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_taxes_fields.html')">
+                                                        Taxes
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_taxes_ed_fields.html')">
+                                                        Taxes - ED
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_b2c_fields.html')">
+                                                        B2C
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_b2c_customer_fields.html')">
+                                                        B2C - Customer
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_links_fields.html')">
+                                                        Links
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_prices_fields.html')">
+															Article View - Prices 2
+														</a>
+													</li>	 -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_prices_fields_2.html')">
+                                                        Prices
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_prices_fields_3.html')">
+															Article View - Prices 3
+														</a>
+													</li>	 -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_purchasing_fields.html')">
+                                                        Purchasing
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_logistics_fields.html')">
+                                                        Logistics
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_measurements_fields_4.html')">
+                                                        Measurements
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_codes_fields_all.html')">
+                                                        Codes
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_codes_fields.html')">
+															Article View - Codes
+														</a>
+													</li>       -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_codes_mark_leg_fields.html')">
+                                                        Codes - M&L
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_assortment_fields.html')">
+															Article View - Assortment 2
+														</a>
+													</li>  -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_assortment_fields_2.html')">
+                                                        Assortment
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_empties_fields.html')">
+															Article View - Empties 2
+														</a>
+													</li>  -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_empties_fields_2.html')">
+                                                        Empties
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_empties_fields_3.html')">
+															Article View - Empties 3
+														</a>
+													</li> 
+													<li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_empties_fields_4.html')">
+															Article View - Empties 4
+														</a>
+													</li> 
+													<li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_empties_fields_5.html')">
+															Article View - Empties 5
+														</a>
+													</li>  -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_fost_plus_fields.html')">
+                                                        Fost Plus
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_fost_plus_fields_mixed_origins.html')">
+                                                        Fost Plus - Mixed Origins
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_support_packaging_fields.html')">
+                                                        Support Packaging
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_wine_fields.html')">
+                                                        Wine Chars
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_store_fields.html')">
+															Article View - Store 2
+														</a>
+													</li>  -->
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_articleview_store_fields_2.html')">
+                                                        Store
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+														<a class="nav-link" href="javascript:navigateTo('pim_articleview_wine_fields_2.html')">
+															Article View - Wine Chars 2
+														</a>
+													</li>  -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a class="nav-link" href="#">
+                                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                        <span>Product full view</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_prodfullview_search.html')">
+                                                Search
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_prodfullview_details.html')">
+                                                Details
+                                            </a>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a class="nav-link" href="#">
+                                                Update
+                                            </a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Raise updates for Product creation date, Net weight (EA), Dangerous symbols and Item set"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_update_s1.html')">
+                                                        S1 - Supplier
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Approve Product creation date. Rejects Net weight (EA), Dangerous symbols and Item set. Raise update request for Number of components (offer) and implantation guidelines (french). Introduce new update to Product number used by supplier"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_update_s2.html')">
+                                                        S2 - CE
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Undo dangerous symbols (accepts reject from CE). Rejects rejection on net weight (EA) and rejects update request on Implantation guidelines (french). Update item set value and Number of components (offer)"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_update_s3.html')">
+                                                        S3 - Supplier
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Approve updates on Item set and Number of components (offer). Rejects again the reject on net weight (EA). Withdraw update request on Implanation guidelines"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_update_s4.html')">
+                                                        S4 - CE
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Accepts/Rejects updates raised by Supplier (Product creation date and Item set). Approves/Rejects udpate raised by CE (Product number used by Supplier). Withdraw or Rejects udpate request raised by MDS, rejected by supplier, accepted by CE (implantation guidelines - French)"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_update_s5.html')">
+                                                        S5 - MDS
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Update item set value and Number of components (offer)"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_update_reactivation_BER.html')">
+                                                        Update / Reactivation - BER
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a class="nav-link" href="#">
+                                                Activation / Reactivation
+                                            </a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Update item set value and Number of components (offer)"
+                                                        href="javascript:navigateTo('pim_prodfullview_details_reactivation_s1.html')">
+                                                        Reactivation S1 - Supplier
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-parent">
+                                            <a class="nav-link" href="#">
+                                                GTIN update
+                                            </a>
+                                            <ul class="nav nav-children">
+                                                <li>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Suppliers are not allowed to add/update/delete GTINs"
+                                                        href="javascript:navigateTo('pim_prodfullview_gtin_update_su_d1.html')">
+                                                        Supplier - (D1)
+                                                    </a>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="Suppliers can add/update/delete GTINs and determine main GTIN (for its own)"
+                                                        href="javascript:navigateTo('pim_prodfullview_gtin_update_su_n1.html')">
+                                                        Supplier - (N1)
+                                                    </a>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="CE can add/update/delete GTINs and determine main gtin of the product and each supplier. They  are not allowed to raise UR."
+                                                        href="javascript:navigateTo('pim_prodfullview_gtin_update_ce_d1.html')">
+                                                        CE - (D1)
+                                                    </a>
+                                                    <a class="nav-link" data-toggle="tooltip" data-placement="bottom"
+                                                        title="CE can only determine main gtin of the product, but can only raise UR to suppliers to add/update/delete GTINs."
+                                                        href="javascript:navigateTo('pim_prodfullview_gtin_update_ce_n1.html')">
+                                                        CE - (N1)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a class="nav-link" href="#">
+                                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                                        <span>Reporting / Others</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a class="nav-link" href="javascript:navigateTo('pim_workflow_repo.html')">
+                                                Workflow Reporting
+                                            </a>
+                                        </li>
+                                        <!-- <li>
+				                                <a class="nav-link" href="javascript:navigateTo('pim_workflow_repo_lead_times.html')">
+				                                    Workflow Reporting lead times
+				                                </a>
+				                            </li>  -->
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_workflow_repo_lead_times_2.html')">
+                                                Workflow Reporting lead times
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_reporting_dashboard.html')">
+                                                Reporting Dashboard
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_vendor_followup.html')">
+                                                Vendor Follow-up
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link"
+                                                href="javascript:navigateTo('pim_gtin_reservation.html')">
+                                                GTIN reservation
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link" href="javascript:navigateTo('pim_support_form_2.html')">
+                                                Support form
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="nav-parent">
+									<a class="nav-link" href="#">
+										<i class="fas fa-shopping-cart" aria-hidden="true"></i>
+										<span>Unused</span>
+									</a>
+									<ul class="nav nav-children">
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_accordions.html')">
+												Article View - Accordions
+											</a>
+										</li>
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_card_tabs.html')">
+												Article View - Card & Tabs
+											</a>
+										</li>
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_card_sections.html')">
+												Article View - Card & Sections
+											</a>
+										</li>
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_card_sections_collindex.html')">
+												Article View - Card & Sections - Coll. Index
+											</a>
+										</li>
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_card_sections_topmenu.html')">
+												Article View - Card & Sections - Top Menu
+											</a>
+										</li>
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_basic_data_layout.html')">
+												Article View - Basic Data Layout
+											</a>
+										</li>
+										<li>
+											<a class="nav-link"
+												href="javascript:navigateTo('pim_articleview_basic_data_layout_remove_fields.html')">
+												Article View - Basic Data rem. Fields
+											</a>
+										</li>
+									</ul>
+								</li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </aside>
+            <!-- end: sidebar -->
+
+            <section id="mainSection" role="main" class="content-body">
+                <div></div>
+            </section>
+        </div>
+    </section>
 
     <!-- ==================================================
-    BOTÓN FLOTANTE DEL CHATBOT
-    =================================================== -->
-    <button id="aiChatToggle" class="btn btn-primary btn-lg rounded-circle" 
-            style="position: fixed; bottom: 30px; right: 30px; z-index: 1040; width: 60px; height: 60px; padding: 0;">
-        <i class="fas fa-robot"></i>
-    </button>
-
-
-    <!-- ==================================================
-    OVERLAY DE FONDO
-    =================================================== -->
+		AI OVERLAY 
+		=================================================== -->
     <div id="aiChatOverlay"></div>
 
-
     <!-- ==================================================
-    PANEL LATERAL DEL CHATBOT
-    =================================================== -->
+		CHATBOT Lateral panel
+		=================================================== -->
     <div id="aiChatPanel" class="ai-chat-panel">
-        
+
         <!-- HEADER DEL PANEL -->
         <div class="ai-chat-header p-3 d-flex justify-content-between align-items-center">
-            <h5 class="m-0">AI Assistant</h5>
+            <h5 class="m-0">DIAMS AI Assistant</h5>
             <!-- Contenedor para botones de control -->
             <div>
                 <button id="aiChatReset" class="btn btn-light btn-sm" data-toggle="tooltip" title="Reset Conversation">
                     <i class="fas fa-trash-alt"></i>
                 </button>
-                <button id="aiChatClose" class="btn btn-light btn-sm rounded-circle" 
-                        style="width: 30px; height: 30px; padding: 0; line-height: 0;">
+                <button id="aiChatClose" class="btn btn-light btn-sm rounded-circle"
+                    style="width: 30px; height: 30px; padding: 0; line-height: 0;">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -289,7 +810,8 @@
         <!-- FOOTER / INPUT DE MENSAJE -->
         <div class="ai-chat-footer p-3">
             <div class="input-group">
-                <textarea id="aiChatInput" class="form-control" rows="1" placeholder="Ask a question..." style="height: 40px;"></textarea>
+                <textarea id="aiChatInput" class="form-control" rows="1" placeholder="Ask a question..."
+                    style="height: 40px;"></textarea>
                 <div class="input-group-append">
                     <button id="aiChatSend" class="btn btn-primary" style="min-width: 50px;">
                         <i class="fas fa-paper-plane"></i>
@@ -300,473 +822,93 @@
 
     </div>
 
-    <!-- ==================================================
-    SCRIPTS
-    =================================================== -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- Popper.js (v1.16.1 - Requerido por Bootstrap 4) -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <!-- Bootstrap 4 JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Vendor -->
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="vendor/popper/umd/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="vendor/common/common.js"></script>
+    <script src="vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="vendor/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="vendor/select2/js/select2.js"></script>
+    <script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/codemirror/lib/codemirror.js"></script>
+    <script src="vendor/codemirror/addon/selection/active-line.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="vendor/codemirror/mode/javascript/javascript.js"></script>
+    <script src="vendor/codemirror/mode/xml/xml.js"></script>
+    <script src="vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="vendor/codemirror/mode/css/css.js"></script>
+    <script src="vendor/pnotify/pnotify.custom.js"></script>
+    <script src="vendor/autosize/autosize.js"></script>
+    <script src="vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script src="vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+    <script src="vendor/bootstrap-markdown/js/markdown.js"></script>
+    <script src="vendor/bootstrap-markdown/js/to-markdown.js"></script>
+    <script src="vendor/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+    <script src="vendor/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+    <script src="vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <script src="vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="vendor/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+    <script src="vendor/dropzone/dropzone.js"></script>
+    <script src="vendor/ios7-switch/ios7-switch.js"></script>
+    <script src="vendor/jquery-maskedinput/jquery.maskedinput.js"></script>
+    <script src="vendor/owl.carousel/owl.carousel.js"></script>
+    <script src="vendor/summernote/summernote-bs4.js"></script>
 
-    <script>
-        $(document).ready(function() {
-
-            // --- INICIALIZACIÓN ---
-            var chatLog = $('#aiChatLog');
-            var chatInput = $('#aiChatInput');
-            var chatSend = $('#aiChatSend');
-            var chatOverlay = $('#aiChatOverlay');
-            var chatPanel = $('#aiChatPanel');
-
-            // Habilitar tooltips
-            $('[data-toggle="tooltip"]').tooltip();
-
-            // --- MANEJO DE ABRIR/CERRAR EL PANEL ---
-
-            // Función para cerrar el chat
-            function closeChat() {
-                chatPanel.removeClass('open');
-                chatOverlay.removeClass('open');
-            }
-
-            // 1. Abrir el panel con el botón flotante
-            $('#aiChatToggle').on('click', function() {
-                chatPanel.toggleClass('open');
-                chatOverlay.toggleClass('open');
-                // Asegurarse de que el scroll esté al fondo al abrir
-                if (chatPanel.hasClass('open')) {
-                    scrollToBottom();
-                    chatInput.focus(); // <-- Foco al abrir
-                }
-            });
-
-            // 2. Cerrar el panel con el botón 'X'
-            $('#aiChatClose').on('click', closeChat);
-
-            // 3. Cerrar el panel al hacer clic en el overlay
-            chatOverlay.on('click', closeChat);
-
-            // 4. Botón de Reset
-            $('#aiChatReset').on('click', function() {
-                // Vaciar el log
-                chatLog.empty();
-                // Añadir el saludo inicial de nuevo
-                var welcomeHtml = `
-                    <div class="chat-message bot">
-                        <div class="bot-response-container">
-                            <div class="message-bubble">
-                                <span class="message-icon"><i class="fas fa-robot"></i></span>
-                                <div class="message-content">
-                                    <p>Hello! I'm your AI assistant. How can I help you today?</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-                chatLog.append(welcomeHtml);
-                // Ocultar el tooltip
-                $(this).tooltip('hide');
-            });
+    <!-- Specific Page Vendor -->
+    <script src="vendor/fuelux/js/spinner.js"></script>
+    <script src="vendor/jquery-appear/jquery.appear.js"></script>
+    <script src="vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+    <script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.js"></script>
+    <script src="vendor/flot/jquery.flot.js"></script>
+    <script src="vendor/flot.tooltip/jquery.flot.tooltip.js"></script>
+    <script src="vendor/flot/jquery.flot.pie.js"></script>
+    <script src="vendor/flot/jquery.flot.categories.js"></script>
+    <script src="vendor/flot/jquery.flot.resize.js"></script>
+    <script src="vendor/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="vendor/raphael/raphael.js"></script>
+    <script src="vendor/morris/morris.js"></script>
+    <script src="vendor/gauge/gauge.js"></script>
+    <script src="vendor/snap.svg/snap.svg.js"></script>
+    <script src="vendor/liquid-meter/liquid.meter.js"></script>
+    <script src="vendor/jquery-appear/jquery.appear.js"></script>
+    <script src="vendor/chartist/chartist.js"></script>
+    <script src="vendor/jqvmap/jquery.vmap.js"></script>
+    <script src="vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <script src="vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+    <script src="vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+    <script src="vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+    <script src="vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+    <script src="vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+    <script src="vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
 
 
-            // --- MANEJO DEL CHAT ---
 
-            // 5. Enviar mensaje al presionar el botón
-            chatSend.on('click', function() {
-                sendMessage();
-            });
+    <!--(remove-empty-lines-end)-->
 
-            // 6. Enviar mensaje al presionar "Enter" en el textarea
-            chatInput.on('keypress', function(e) {
-                if (e.which == 13 && !e.shiftKey) { // Enter sin Shift
-                    e.preventDefault(); // Evita el salto de línea
-                    sendMessage();
-                }
-            });
+    <!-- Theme Base, Components and Settings -->
+    <script src="js/theme.js"></script>
 
-            // Función para enviar el mensaje
-            function sendMessage() {
-                var messageText = chatInput.val().trim();
-                if (messageText === "") {
-                    return; 
-                }
-                
-                // Generar un ID único para este intercambio
-                var messageId = 'msg-' + Date.now();
+    <!-- Theme Custom -->
+    <script src="js/custom.js"></script>
 
-                // --- LÓGICA DE OCULTAR BOTONES ANTERIORES ---
-                // Antes de añadir el nuevo mensaje del usuario, buscamos el *último*
-                // mensaje del bot y le quitamos los botones de acción interactivos.
-                var $lastBotMessage = chatLog.find('.chat-message.bot:last');
-                if ($lastBotMessage.length > 0) {
-                    $lastBotMessage.find('.btn-regenerate').remove();
-                    $lastBotMessage.find('.btn-like').remove();
-                    $lastBotMessage.find('.btn-dislike').remove();
-                }
-                // --- FIN LÓGICA ---
+    <!-- Theme Initialization Files -->
+    <script src="js/theme.init.js"></script>
 
+    <!--AI Bot script -->
+    <script src="js/ai.js"></script>
 
-                // 1. Añadir el mensaje del usuario al log
-                var userHtml = `
-                    <div class="chat-message user" data-message-id="${messageId}">
-                        <div class="message-bubble">
-                            <span class="message-icon"><i class="fas fa-user"></i></span>
-                            <div class="message-content">
-                                <p>${escapeHTML(messageText)}</p>
-                            </div>
-                        </div>
-                    </div>`;
-                chatLog.append(userHtml);
+    <script src="vendor/jquery.lazyload/jquery.lazyload.js"></script>
+    <!--(remove-empty-lines-end)-->
 
-                // 2. Limpiar el input
-                chatInput.val('').css('height', 'auto'); // Limpia y resetea altura
-
-                // 3. Deshabilitar inputs mientras se espera respuesta
-                setChatInputs(false);
-
-                // 4. Mostrar indicador de "escribiendo..."
-                showTypingIndicator(messageId);
-                scrollToBottom();
-
-
-                // 5. (SIMULACIÓN) Llamar al bot y esperar respuesta
-                setTimeout(function() {
-                    // Reemplazar el "escribiendo" con la respuesta real
-                    var $typingBubble = $('#typing-' + messageId);
-                    showBotResponse(messageText, messageId, $typingBubble);
-                    
-                    // Reactivar inputs
-                    setChatInputs(true);
-                    
-                    scrollToBottom();
-                }, 2500); // Simula 2.5 segundos de espera
-            }
-
-            /**
-             * Muestra la respuesta del bot, reemplazando el indicador de 'escribiendo'.
-             * @param {string} userMessage - El mensaje original del usuario.
-             * @param {string} messageId - El ID único para este intercambio.
-             * @param {jQuery} $bubbleToReplace - El 'typing' bubble para reemplazar.
-             */
-            function showBotResponse(userMessage, messageId, $bubbleToReplace) {
-                var simulatedReply = getSimulatedResponse(userMessage, 1);
-
-                // HTML para la *primera* respuesta
-                var botResponseHtml = `
-                    <div class="bot-response-container">
-                        <div class="message-bubble">
-                            <span class="message-icon"><i class="fas fa-robot"></i></span>
-                            <div class="message-content">
-                                
-                                <!-- Contenedor para todas las versiones -->
-                                <div class="response-versions">
-                                    <p class="response-text version-1" style="display: block;">${escapeHTML(simulatedReply)}</p>
-                                </div>
-
-                                <!-- Botones de Acción -->
-                                <div class="message-actions d-flex justify-content-between">
-                                    <div>
-                                        <button class="btn btn-light btn-sm btn-regenerate" data-toggle="tooltip" title="Regenerate response">
-                                            <i class="fas fa-sync-alt"></i>
-                                        </button>
-                                        <button class="btn btn-light btn-sm btn-copy" data-toggle="tooltip" title="Copy text">
-                                            <i class="fas fa-clipboard"></i>
-                                        </button>
-                                    </div>
-                                    <div class="like-dislike-group">
-                                        <button class="btn btn-light btn-sm btn-like" data-toggle="tooltip" title="Like">
-                                            <i class="fas fa-thumbs-up"></i>
-                                        </button>
-                                        <button class="btn btn-light btn-sm btn-dislike" data-toggle="tooltip" title="Dislike">
-                                            <i class="fas fa-thumbs-down"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Navegación (fuera de la burbuja) -->
-                        <div class="version-nav" style="display: none;">
-                            <button class="btn btn-sm btn-nav prev-version" disabled>&lt;</button>
-                            <span class="version-counter">1 / 1</span>
-                            <button class="btn btn-sm btn-nav next-version" disabled>&gt;</button>
-                        </div>
-                    </div>`;
-                
-                // Creamos el nuevo elemento bot
-                var $botMessage = $('<div>', {
-                    'class': 'chat-message bot',
-                    'data-message-id': messageId,
-                    'data-original-query': userMessage,
-                    'data-total-versions': 1,
-                    'data-current-version': 1,
-                    'html': botResponseHtml
-                });
-
-                // Reemplazar el "typing"
-                if ($bubbleToReplace && $bubbleToReplace.length) {
-                    $bubbleToReplace.replaceWith($botMessage);
-                } else {
-                    chatLog.append($botMessage);
-                }
-
-                // Habilitar tooltips de Bootstrap en los nuevos botones
-                $botMessage.find('[data-toggle="tooltip"]').tooltip();
-            }
-
-            /**
-             * Muestra el indicador de "escribiendo...".
-             * @param {string} messageId - El ID único para este intercambio.
-             */
-            function showTypingIndicator(messageId) {
-                // Usar ID único para poder reemplazarlo
-                var typingHtml = `
-                    <div id="typing-${messageId}" class="chat-message bot" data-message-id="${messageId}">
-                        <div class="bot-response-container">
-                            <div class="message-bubble">
-                                <span class="message-icon"><i class="fas fa-robot"></i></span>
-                                <div class="message-content">
-                                    <div class="typing-indicator">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-                chatLog.append(typingHtml);
-            }
-            
-
-            // --- MANEJO DE ACCIONES DE MENSAJE (con delegación de eventos) ---
-
-            // 7. Botón de "Like"
-            chatLog.on('click', '.btn-like', function() {
-                var $this = $(this);
-                $this.tooltip('hide'); // Ocultar tooltip al hacer clic
-                $this.toggleClass('btn-primary btn-light');
-                // Asegurarse de que "dislike" no esté activo
-                $this.closest('.like-dislike-group').find('.btn-dislike').removeClass('btn-danger').addClass('btn-light');
-            });
-
-            // 8. Botón de "Dislike"
-            chatLog.on('click', '.btn-dislike', function() {
-                var $this = $(this);
-                $this.tooltip('hide'); // Ocultar tooltip al hacer clic
-                $this.toggleClass('btn-danger btn-light');
-                // Asegurarse de que "like" no esté activo
-                $this.closest('.like-dislike-group').find('.btn-like').removeClass('btn-primary').addClass('btn-light');
-            });
-
-            // 9. Botón de "Copiar"
-            chatLog.on('click', '.btn-copy', function() {
-                var $this = $(this);
-                var $messageContent = $this.closest('.message-content');
-                var currentVersion = $messageContent.closest('.chat-message').data('current-version');
-                
-                // Encontrar el texto de la versión activa
-                var textToCopy = $messageContent.find('.response-text.version-' + currentVersion).text();
-
-                // Crear un textarea temporal para copiar
-                var $temp = $("<textarea>");
-                $("body").append($temp);
-                $temp.val(textToCopy).select();
-                document.execCommand("copy");
-                $temp.remove();
-
-                // Feedback visual
-                $this.tooltip('hide')
-                     .attr('data-original-title', 'Copied!')
-                     .tooltip('show');
-                $this.find('i').removeClass('fa-clipboard').addClass('fa-check');
-
-                // Volver al estado original después de 2s
-                setTimeout(function() {
-                    $this.tooltip('hide')
-                         .attr('data-original-title', 'Copy text');
-                    $this.find('i').removeClass('fa-check').addClass('fa-clipboard');
-                }, 2000);
-            });
-
-            // 10. Botón de "Regenerar"
-            chatLog.on('click', '.btn-regenerate', function() {
-                var $this = $(this);
-                var $botMessage = $this.closest('.chat-message.bot');
-                var messageId = $botMessage.data('message-id');
-                var originalQuery = $botMessage.data('original-query');
-                var totalVersions = $botMessage.data('total-versions');
-                var newVersionNum = totalVersions + 1;
-
-                // --- Resetear Like/Dislike ---
-                var $likeDislikeGroup = $this.closest('.message-actions').find('.like-dislike-group');
-                $likeDislikeGroup.find('.btn-like').removeClass('btn-primary').addClass('btn-light');
-                $likeDislikeGroup.find('.btn-dislike').removeClass('btn-danger').addClass('btn-light');
-                // --- Fin Reseteo ---
-
-                // Deshabilitar inputs
-                setChatInputs(false);
-                
-                // Encontrar el contenedor de versiones
-                var $versionsContainer = $botMessage.find('.response-versions');
-                var $navContainer = $botMessage.find('.version-nav');
-                var $counter = $navContainer.find('.version-counter');
-                var $prevBtn = $navContainer.find('.prev-version');
-                var $nextBtn = $navContainer.find('.next-version');
-
-                // Ocultar la versión actual
-                $botMessage.find('.response-text').hide();
-
-                // Crear el nuevo slot para la respuesta y mostrar el "typing"
-                var newResponseHtml = `<p class="response-text version-${newVersionNum}" style="display: block;"></p>`;
-                $versionsContainer.append(newResponseHtml);
-                var $newResponseP = $versionsContainer.find('.version-' + newVersionNum);
-                
-                // Añadir el "typing" dentro del nuevo <p>
-                var typingIndicatorHtml = `
-                    <div class="typing-indicator" style="padding: 0;">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>`;
-                $newResponseP.html(typingIndicatorHtml);
-
-                // Actualizar atributos y navegación
-                $botMessage.data('total-versions', newVersionNum);
-                $botMessage.data('current-version', newVersionNum);
-                $counter.text(`${newVersionNum} / ${newVersionNum}`);
-                $navContainer.show();
-                $prevBtn.prop('disabled', false); // Ya hay una versión anterior
-                $nextBtn.prop('disabled', true); // Estamos en la última
-
-                scrollToBottom();
-
-                // Simular espera para la nueva respuesta
-                setTimeout(function() {
-                    var newSimulatedReply = getSimulatedResponse(originalQuery, newVersionNum);
-                    
-                    // Reemplazar el "typing" con la respuesta real
-                    $newResponseP.html(escapeHTML(newSimulatedReply));
-
-                    // Reactivar inputs
-                    setChatInputs(true);
-
-                    scrollToBottom();
-                }, 2500);
-            });
-
-            // 11. Navegación de Versiones (Anterior)
-            chatLog.on('click', '.prev-version', function() {
-                var $botMessage = $(this).closest('.chat-message.bot');
-                var currentVersion = $botMessage.data('current-version');
-                if (currentVersion <= 1) return; // No ir más atrás
-
-                var newVersion = currentVersion - 1;
-                updateVersionView($botMessage, newVersion);
-            });
-
-            // 12. Navegación de Versiones (Siguiente)
-            chatLog.on('click', '.next-version', function() {
-                var $botMessage = $(this).closest('.chat-message.bot');
-                var totalVersions = $botMessage.data('total-versions');
-                var currentVersion = $botMessage.data('current-version');
-                if (currentVersion >= totalVersions) return; // No ir más adelante
-
-                var newVersion = currentVersion + 1;
-                updateVersionView($botMessage, newVersion);
-            });
-
-            // --- FUNCIONES DE UTILIDAD ---
-
-            /**
-             * Actualiza la vista del mensaje del bot a una versión específica.
-             */
-            function updateVersionView($botMessage, newVersion) {
-                var totalVersions = $botMessage.data('total-versions');
-                
-                // Ocultar todos los textos de versión
-                $botMessage.find('.response-text').hide();
-                // Mostrar el texto de la nueva versión
-                $botMessage.find('.version-' + newVersion).show();
-                
-                // Actualizar atributos
-                $botMessage.data('current-version', newVersion);
-                
-                // Actualizar contador
-                $botMessage.find('.version-counter').text(`${newVersion} / ${totalVersions}`);
-                
-                // Actualizar estado de botones
-                $botMessage.find('.prev-version').prop('disabled', newVersion === 1);
-                $botMessage.find('.next-version').prop('disabled', newVersion === totalVersions);
-
-                // --- LÓGICA DE OCULTAR BOTONES ---
-                var $actions = $botMessage.find('.message-actions');
-                var $likeDislikeGroup = $actions.find('.like-dislike-group');
-                var $regenerateBtn = $actions.find('.btn-regenerate');
-
-                if (newVersion === totalVersions) {
-                    // Es la última versión: mostrar botones
-                    $regenerateBtn.show();
-                    $likeDislikeGroup.show();
-                } else {
-                    // Es una versión antigua: ocultar botones
-                    $regenerateBtn.hide();
-                    $likeDislikeGroup.hide();
-                }
-            }
-
-
-            /**
-             * Habilita o deshabilita los inputs del chat.
-             * @param {boolean} isEnabled - true para habilitar, false para deshabilitar.
-             */
-            function setChatInputs(isEnabled) {
-                chatInput.prop('disabled', !isEnabled);
-                chatSend.prop('disabled', !isEnabled);
-                // Deshabilitar todos los botones de acción del chat
-                chatLog.find('.btn-like, .btn-dislike, .btn-copy, .btn-regenerate').prop('disabled', !isEnabled);
-                
-                // Si estamos habilitando los inputs, hacer foco en el chat.
-                if (isEnabled) {
-                    chatInput.focus(); // <-- Foco al habilitar
-                }
-            }
-
-            /**
-             * Genera una respuesta simulada.
-             */
-            function getSimulatedResponse(message, version) {
-                // Se quita la referencia al 'message' del usuario
-                var response = `Here are the details you requested.\nThis is version ${version} of the response.\n\nLine 1\nLine 2\nLine 3`;
-                return response;
-            }
-
-            /**
-             * Escapa HTML para prevenir XSS.
-             */
-            function escapeHTML(str) {
-                return str.replace(/&/g, '&amp;')
-                          .replace(/</g, '&lt;')
-                          .replace(/>/g, '&gt;')
-                          .replace(/"/g, '&quot;')
-                          .replace(/'/g, '&#039;');
-            }
-
-            /**
-             * Desplaza el log del chat al fondo.
-             */
-            function scrollToBottom() {
-                chatLog.scrollTop(chatLog[0].scrollHeight);
-            }
-
-            // 7. Auto-ajustar altura del textarea
-            chatInput.on('input', function () {
-                this.style.height = 'auto';
-                this.style.height = (this.scrollHeight) + 'px';
-            });
-
-        });
-    </script>
 
 </body>
+
 </html>

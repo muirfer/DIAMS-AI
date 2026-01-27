@@ -1,0 +1,210 @@
+/* Estilo para el overlay de fondo */
+#aiChatOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1045; /* Menos que el panel (1050) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s;
+}
+
+#aiChatOverlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilo para el panel lateral del chat */
+.ai-chat-panel {
+    position: fixed;
+    top: 0;
+    right: -600px; /* Inicia oculto */
+    width: 600px; /* Ancho del panel */
+    height: 100vh; /* Alto completo */
+    background-color: #f8f9fa;
+    z-index: 1050; /* Por encima de todo */
+    transition: right 0.4s ease-in-out;
+    border-left: 1px solid #dee2e6;
+    
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.ai-chat-panel.open {
+    right: 0; /* Se muestra */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+/* Header del chat (fijo) */
+.ai-chat-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ai-chat-header h5 {
+    color: #333;
+}
+
+/* Cuerpo del chat (scrollable) */
+.ai-chat-log {
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    overflow-y: auto; /* Permite scroll */
+    background-color: #ffffff;
+    padding: 1rem;
+    /* Scrollbar slim */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #ced4da #f8f9fa; /* Firefox */
+    font-size: larger;
+}
+.ai-chat-log::-webkit-scrollbar {
+    width: 6px;
+}
+.ai-chat-log::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+.ai-chat-log::-webkit-scrollbar-thumb {
+    background: #ced4da;
+    border-radius: 3px;
+}
+
+/* Footer del chat (fijo) */
+.ai-chat-footer {
+    border-top: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+.ai-chat-footer textarea {
+    resize: none;
+    border-radius: 0;
+    border: none;
+}
+.ai-chat-footer textarea:focus {
+    box-shadow: none;
+}
+.ai-chat-footer .btn {
+    border-radius: 0;
+}
+
+/* Estilos para las burbujas de chat */
+.chat-message {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+/* Nuevo contenedor para la burbuja del bot y su navegación */
+.bot-response-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%; /* El ancho se controla aquí */
+    align-items: flex-start;
+}
+
+.chat-message .message-bubble {
+    padding: 10px 15px;
+    border-radius: 15px;
+    word-wrap: break-word;
+    display: flex;
+    gap: 10px;
+    width: 100%; /* Ocupa el ancho del bot-response-container */
+}
+.message-icon {
+    margin-top: 3px;
+    opacity: 0.7;
+}
+.message-content {
+    flex-grow: 1;
+}
+.message-content p {
+    margin-bottom: 10px;
+    white-space: pre-wrap; /* Respeta saltos de línea */
+}
+
+/* Mensajes del Bot (izquierda) */
+.chat-message.bot {
+    justify-content: flex-start;
+}
+.chat-message.bot .message-bubble {
+    background-color: #e9ecef;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+/* Mensajes del Usuario (derecha) */
+.chat-message.user {
+    justify-content: flex-end;
+}
+.chat-message.user .message-bubble {
+    background-color: lightseagreen;
+    color: #ffffff !important;
+    border-top-right-radius: 0;
+    max-width: 85%;
+}
+
+.chat-message.bot .message-bubble .message-content p {    
+    color: unset !important;    
+}
+
+.chat-message.user .message-bubble .message-content p {    
+    color: white !important;    
+}
+
+/* Botones de acción bajo el mensaje del bot */
+.message-actions {
+    padding-top: 8px;
+    border-top: 1px solid #d8dde1;
+    margin-top: 10px;
+}
+.message-actions .btn {
+    font-size: 0.8rem;
+}
+
+/* Contenedor de versiones (oculto por JS) */
+.response-versions .response-text {
+    display: none; /* Ocultar todas por defecto */
+}
+
+/* Navegación de versiones (fuera de la burbuja) */
+.version-nav {
+    display: flex;
+    justify-content: flex-end; /* Alineado a la derecha */
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px; /* Espacio entre burbuja y nav */
+    width: 100%; /* Ocupa el ancho del bot-response-container */
+}
+.version-nav .btn-nav {
+    font-size: 1.5rem;
+    padding: 0.1rem 0.4rem;
+}
+.version-nav .version-counter {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* Animación de "escribiendo..." */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    animation: bounce 1.4s infinite both;
+}
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
