@@ -1,0 +1,565 @@
+﻿<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">GTIN Administration</h2>
+
+		<div class="right-wrapper text-right">
+
+		</div>
+	</header>
+	<!-- Dashboard Filter / Toolbar container -->
+	<div class="inner-toolbar clearfix" id="dashboard-filter-container" style="top: 114px;height: 80px;">
+		<ul class="clearfix">
+			<li>
+				<div class="btn-group flex-wrap" style="top:-8px">
+					<button type="button" class="btn btn-success" style="margin:8px">
+						<a href="#modalMainReserve" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"
+							style="font-size: large;color: white;"><i class="fas fa-lock m-0"></i> Reserve</a>
+					</button>
+					<!-- <button type="button" class="btn btn-success" style="margin:8px">
+						<a href="#modal_cat" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd" style="font-size: large;color: white;"><i class="fas fa-file-import m-0"></i> Import</a>							
+					</button>																						 -->
+				</div>
+			</li>
+			<li class="right">
+				<div id="searchDiv"></div>
+			</li>
+			<li class="right">
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text" style="padding: 0px;">
+							<button class="btn btn-default" style="font-size: smaller;background: snow;"
+								type="button">GTIN type</button>
+						</span>
+					</span>
+					<select class="form-control col-lg-12" style="padding-top: 0px;padding-bottom: 0px;"
+						onchange="App.GtinReservation.selectType(this.value)">
+						<option value="all" selected>All</option>
+						<option value="aw">Average weight</option>
+						<option value="ot">Others</option>
+					</select>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div>
+		<div class="row" style="margin-top: 60px;">
+			<div class="col-lg-12">
+				<div class="row my-4 mailbox">
+					<div class="col mailbox-actions" style="padding-left: 20px !important;border-top: none !important;">
+						<ul class="list-unstyled m-0">
+							<li class="ib mr-2">
+								<a class="item-action fas fa-sync mt-1" href="#" rel="tooltip" title=""
+									onclick="getItems(); return false;" data-original-title="Refresh data"></a>
+							</li>
+							<li class="ib mr-2">
+								<a class="item-action fas fa-eraser mt-1" href="#" rel="tooltip" title=""
+									onclick="clearFilters(); return false;" data-original-title="Clear filters"></a>
+							</li>
+							<li class="ib mr-2">
+								<a class="item-action far fa-file-excel mt-1" href="#" rel="tooltip" title=""
+									id="ia-download-vendor-xls" data-toggle="dropdown"
+									onclick="exportExcel(); return false;"
+									data-original-title="Export selected rows as an excel file)"></a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a class="dropdown-item" id="export_1213518627" href="#"
+											onclick="exportItemsToExcel(1213518627, 'inv-items', '/E/AllInvoice/ListingToExcelExport');"
+											rel="tooltip" title="" data-original-title="Export Fin. Documents">Export
+											Fin. Documents</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="ib mr-2" id="downloadPdfButton" style="display: none;">
+								<a class="item-action fas fa-file-pdf mt-1" href="#" rel="tooltip" title=""
+									id="ia-download-vendor-pdf" onclick="downloadPdfFiles(); return false;"
+									data-original-title="Download selected pdf files (in .zip file)"></a>
+							</li>
+
+							<li class="ib mr-2 pt-1">
+								<button id="btnRel" type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default"
+									style="color:darkgreen;display: none;">
+									<a href="#modalReleaseAll"
+										class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"
+										style="color: darkgreen;"><i class="fas fa-unlock m-0"></i>&nbsp;&nbsp;Release
+										selected</a>
+								</button>
+								<button id="btnMark" type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default"
+									style="color:darkred;display: none;">
+									<a href="#modalReserveAll"
+										class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"
+										style="color: darkred;"><i class="fas fa-lock m-0"></i>&nbsp;&nbsp;Mark as
+										used</a>
+								</button>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-4 mr-3 align-self-end">
+						<div class="row control-group">
+							<div class="col text-right pr-0 mr-0">
+								Records per page
+							</div>
+							<div id="divPag" class="col-sm-4 col-lg-3" style="padding-right:0%">
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- start: table -->
+				<div class="row">
+					<div class="col-lg-12" style="height: 557px;">
+						<div class="dropzone dz-square bootstrap-tagsinput p-2 mt-2 text-center"
+							style="min-height: 30px; border-radius: 3px 3px 0px 0px;" id="div-groupby-container">
+							<p class="m-0">Drag a column header and drop it here to group by that column.</p>
+						</div>
+						<div class="scrollable fixed_header" style="height: 502px;overflow-y: auto;">
+							<table class="table table-no-more table-hover mb-0 dataTable scrollable-content"
+								id="datatable-default" style="margin: 0 !important;">
+								<thead>
+									<tr>
+										<th draggable="true" style="width:15%">GTIN type</th>
+										<th draggable="true" class="text-center" style="width:15%">GTIN</th>
+										<!-- <th draggable="true" class="text-center" >Status</th>													 -->
+										<th draggable="true" class="text-center">UoM</th>
+										<th draggable="true" class="text-center">Reserved by</th>
+										<th draggable="true" class="text-center">Reserved date</th>
+										<th draggable="true" style="width: 40%;">Product short description</th>
+										<th draggable="true" class="text-center" style="width:3%">Status</th>
+										<!-- <th class="text-center" ></th>																											 -->
+									</tr>
+								</thead>
+								<tbody>
+									<tr id="row1" class="sts2 aw">
+										<td class="text-tertiary">
+											Average weight
+										</td>
+										<td class="text-center">12341234312</td>
+										<!-- <td class="text-center tStatus cor">In use</td>												 -->
+										<td class="text-center">KG</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center">25/05/2022</td>
+										<td>Some product description</td>
+										<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+											title="Category Expert Review">CER</td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+																					
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row2" class="sts2 ot">
+										<td class="text-secondary">
+											Others
+										</td>
+										<td class="text-center">12341257981</td>
+										<!-- <td class="text-center tStatus cor">In use</td>												 -->
+										<td class="text-center">EA</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center">13/08/2023</td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">													
+											<a href="#modalSingleReleased" class="text-center modal-with-zoom-anim ws-normal">
+												<i class="fas fa-unlock m-1" rel="tooltip" title="" data-original-title="Release" style="color: darkgreen;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row3" class="sts1 aw">
+										<td class="text-tertiary">
+											Average weight
+										</td>
+										<td class="text-center">12341234312</td>
+										<!-- <td class="text-center tStatus rev">Available</td>												 -->
+										<td class="text-center"></td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+											<a href="#modalSingleReserved" class="text-center modal-with-zoom-anim ws-normal" >
+												<i class="fas fa-lock m-1" rel="tooltip" title="" data-original-title="Mark as used" style="color: darkred;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row4" class="sts2 ot">
+										<td class="text-secondary">
+											Others
+										</td>
+										<td class="text-center">12341263558</td>
+										<!-- <td class="text-center tStatus cor">In use</td>												 -->
+										<td class="text-center">CV</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center">13/08/2023</td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+											<a href="#modalSingleReleased" class="text-center modal-with-zoom-anim ws-normal">
+												<i class="fas fa-unlock m-1" rel="tooltip" title="" data-original-title="Release" style="color: darkgreen;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row5" class="sts2 aw">
+										<td class="text-tertiary">
+											Average weight
+										</td>
+										<td class="text-center">12341279358</td>
+										<!-- <td class="text-center tStatus cor">In use</td>												 -->
+										<td class="text-center">KG</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center">13/08/2023</td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+											<a href="#modalSingleReleased" class="text-center modal-with-zoom-anim ws-normal">
+												<i class="fas fa-unlock m-1" rel="tooltip" title="" data-original-title="Release" style="color: darkgreen;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row6" class="sts2 aw">
+										<td class="text-tertiary">
+											Average weight
+										</td>
+										<td class="text-center">12341928425</td>
+										<!-- <td class="text-center tStatus cor">In use</td>												 -->
+										<td class="text-center">KG</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center">25/05/2022</td>
+										<td>Some other product description</td>
+										<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+											title="Category Expert Correction">CEC</td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+																					
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row7" class="sts1 aw">
+										<td class="text-tertiary">
+											Average weight
+										</td>
+										<td class="text-center">12341936741</td>
+										<!-- <td class="text-center tStatus rev">Available</td>												 -->
+										<td class="text-center"></td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+											<a href="#modalSingleReserved" class="text-center modal-with-zoom-anim ws-normal">
+												<i class="fas fa-lock m-1" rel="tooltip" title="" data-original-title="Mark as used" style="color: darkred;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row8" class="sts1 ot">
+										<td class="text-secondary">
+											Others
+										</td>
+										<td class="text-center">12341999621</td>
+										<!-- <td class="text-center tStatus rev">Available</td>												 -->
+										<td class="text-center"></td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+											<a href="#modalSingleReserved" class="text-center modal-with-zoom-anim ws-normal">
+												<i class="fas fa-lock m-1" rel="tooltip" title="" data-original-title="Mark as used" style="color: darkred;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+									<tr id="row9" class="sts2 aw">
+										<td class="text-tertiary">
+											Average weight
+										</td>
+										<td class="text-center">12341955785</td>
+										<!-- <td class="text-center tStatus cor">In use</td>												 -->
+										<td class="text-center">KG</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center">15/09/2024</td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<!-- <td class="text-center" data-toggle="tooltip">
+											<a href="#modalSingleReleased" class="text-center modal-with-zoom-anim ws-normal">
+												<i class="fas fa-unlock m-1" rel="tooltip" title="" data-original-title="Release" style="color: darkgreen;"></i>	
+											</a>											
+										</td>																																																																																 -->
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div id="fPag" class="col-lg-9" style="text-align: right;margin-left: 80%;"></div>
+						</div>
+
+					</div>
+				</div>
+				<!-- end: table -->
+			</div>
+		</div>
+
+		<!-- Modal single GTIN reserved  -->
+		<div id="modalSingleReserved" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">GTIN reserved</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-lock" style="color: darkred;"></i>
+						</div>
+						<div class="modal-text">
+							<h4>1234567891123</h4>
+							<p>GTIN copied to the clipboard and assigned to you</p>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-success modal-dismiss">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+
+		<!-- Modal single GTIN released  -->
+		<div id="modalSingleReleased" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">GTIN released</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-unlock"></i>
+						</div>
+						<div class="modal-text">
+							<h4>1234567891123</h4>
+							<p>GTIN is now available to be used for another product</p>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-success modal-dismiss">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+
+		<!-- Modal Release all -->
+		<div id="modalReleaseAll" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+			<section class="card">
+				<div class="card-body text-center">
+					<div class="modal-wrapper">
+						<div class="modal-icon center">
+							<i class="fas fa-unlock" style="color: darkgreen;"></i>
+						</div>
+						<div class="modal-text">
+							<h4>You are going to release 4 GTINs</h4>
+							<br>
+							<p>Released GTINs will become again available to be used in any other article.<br>Are you
+								sure that you want to release them?</p>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+							<button class="btn btn-primary modal-confirm">Confirm</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+
+		<!-- Modal Reserve all -->
+		<div id="modalReserveAll" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+			<section class="card">
+				<div class="card-body text-center">
+					<div class="modal-wrapper">
+						<div class="modal-icon center">
+							<i class="fas fa-lock" style="color: darkred;"></i>
+						</div>
+						<div class="modal-text">
+							<h4>You are going to reserve 4 GTINs</h4>
+							<br>
+							<p>Reserved GTINs will be only available for you to use.<br>Once you confirm, an Excel file
+								will be delivered with the GTINs reserved.<br>Are you sure that you want to reserve
+								them?</p>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+							<button class="btn btn-primary modal-confirm">Confirm</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+
+		<!-- Modal main reserve -->
+		<div id="modalMainReserve" class="zoom-anim-dialog modal-block modal-block-lg modal-block-primary mfp-hide">
+			<section class="card form-wizard" id="w1">
+				<header class="card-header">
+					<h2 class="card-title">Reserve for multiple products</h2>
+				</header>
+				<div class="card-body card-body-nopadding">
+					<div class="wizard-tabs">
+						<ul class="nav wizard-steps">
+							<li id="opt1" class="nav-item active">
+								<a href="#w1-type" data-toggle="tab" class="nav-link text-center">
+									<span class="badge">1</span>
+									Enter quantity
+								</a>
+							</li>
+							<li id="opt2" class="nav-item">
+								<a href="#w1-element" data-toggle="tab" class="nav-link text-center">
+									<span class="badge">2</span>
+									Select Units of Meassure
+								</a>
+							</li>
+							<li id="opt3" class="nav-item">
+								<a href="#w1-details" data-toggle="tab" class="nav-link text-center">
+									<span class="badge">3</span>
+									Review and confirm
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<form class="form-horizontal p-3" novalidate="novalidate">
+						<div class="tab-content">
+							<div id="w1-type" class="tab-pane active">
+								<div class="row" style="margin-top: 30px;">
+									<div class="col-lg-8 offset-lg-2" style="text-align: center;">
+										<h5 id="titleElementSel">Quantity of products for which you will require GTINs
+										</h5>
+									</div>
+								</div>
+								<div class="form-group row basic">
+									<div class="col-lg-8 offset-lg-2">
+										<div data-plugin-spinner
+											data-plugin-options='{ "value":1, "step": 1, "min": 1, "max": 10 }'>
+											<div class="input-group">
+												<div class="input-group-append">
+													<button type="button" class="btn btn-default spinner-down">
+														<i class="fas fa-minus"></i>
+													</button>
+												</div>
+												<input type="text" class="spinner-input form-control" maxlength="2"
+													style="text-align: center;">
+												<div class="input-group-prepend">
+													<button type="button" class="btn btn-default spinner-up">
+														<i class="fas fa-plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<p style="text-align: right;">
+											Max: <code>10</code> products
+										</p>
+									</div>
+								</div>
+							</div>
+							<div id="w1-element" class="tab-pane">
+								<div class="card-body col-lg-6 offset-lg-3">
+									<button id="pb00_dis_01_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">KG</button>
+									<button id="pb00_dis_02_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">EA</button>
+									<button id="pb00_dis_03_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">IP</button>
+									<button id="pb00_dis_04_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">CV</button>
+									<button id="pb00_dis_07_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">PL</button>
+									<button id="pb00_dis_05_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">Colfridis IP</button>
+									<button id="pb00_dis_06_btn" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+										onclick="App.GtinReservation.selectUoM(this)">Colfridis CV</button>
+									<p style="margin-top: 15px;text-align: right;"><a id="see-more-btn" href="#"
+											class="mb-1 mt-1 mr-1">Select / Deselect all</a></p>
+								</div>
+							</div>
+
+							<div id="w1-details" class="tab-pane">
+								<div class="card-body text-center">
+									<div class="modal-wrapper">
+										<div class="modal-icon center">
+											<i class="fas fa-question-circle"></i>
+										</div>
+										<div class="modal-text">
+											<h4>You are going to reserve 30 GTINs</h4>
+											<p>For <code>10</code> products and <code>3</code> Units of Meassure each
+												(KG, EA, CV)</p>
+											<br>
+											<p>Reserved GTINs will be only available for you to use.<br>Once you
+												confirm, an Excel file will be delivered with the GTINs reserved per
+												product.<br>Are you sure that you want to reserve them?</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="card-footer">
+					<ul class="pager">
+						<li class="previous" style="display:none">
+							<a href="#" onclick="App.GtinReservation.goBack()"><i class="fas fa-angle-left"></i>
+								Back</a>
+						</li>
+						<li class="next float-right">
+							<a href="#" onclick="App.GtinReservation.goNext()">Next</a>
+						</li>
+						<li class="finish float-right modal-dismiss" style="display: none;"
+							onclick="App.GtinReservation.onReserveCompleted()">
+							<a>Confirm</a>
+						</li>
+
+					</ul>
+				</div>
+			</section>
+		</div>
+		<!-- End Modal main reserve -->
+	</div>
+</section>
+
+<script src="js/views/gtin_reservation.js"></script>
+<script>
+	jQuery(document).ready(function ($) {
+		$("#mainSection").css("background", "white");
+
+		if (window.initModals) {
+			window.initModals();
+		}
+		if (window.initSpinner) {
+			window.initSpinner();
+		}
+
+		App.GtinReservation.datatableInit();
+	});
+</script>

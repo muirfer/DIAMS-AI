@@ -1,0 +1,236 @@
+<script>
+    function editCondition() {
+        $('#condition-filter-description').prop("disabled", false);
+        $('#btn-edit-condition').hide();
+        $('#btn-save-condition').show();
+        $('#btn-delete-condition').show();
+        $('#btn-cancel-editing').show();
+        $('#condition-privacy-settings-container').show();
+
+        //Conditional.setSaveConditionModal();
+    }
+
+    function displayMode() {
+        $('#condition-filter-description').prop("disabled", true);
+        $('#btn-edit-condition').show();
+        $('#btn-save-condition').hide();
+        $('#btn-delete-condition').hide();
+        $('#btn-cancel-editing').hide();
+        $('#condition-privacy-settings-container').hide();
+    }
+
+    function enableRoleSelection() {
+        if ($('#cond-radio-private').is(':checked'))
+            $('.cond-role-selection').prop("disabled", true);
+        else if ($('#cond-radio-public').is(':checked'))
+            $('.cond-role-selection').prop("disabled", false);
+    }
+
+
+    function showFilters(type) {
+        filterToHide = type === "fCust" ? "fPred" : "fCust";
+        $("." + filterToHide).css("display", "none");
+        $("." + type).css("display", "block");
+        $("#btnFilter").html(type === "fCust" ? "Custom Filter" : "Predefined Filter")
+    }
+
+    // Initialize state
+    $(document).ready(function () {
+        displayMode();
+        enableRoleSelection();
+
+    });
+</script>
+
+<!-- start: filter header -->
+<div class="input-group input-group-select-append">
+    <!-- <button type="button" class="btn btn-success" style="width: 160px; font-size: 14px;">Custom Filters</button> -->
+    <div class="btn-group flex-wrap">
+        <button id="btnFilter" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+            Custom Filters <span class="caret"></span> </button>
+        <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item text-1" href="#" onclick="showFilters('fCust')">Custom
+                Filters</a>
+            <a class="dropdown-item text-1" href="#" onclick="showFilters('fPred')">Predefined
+                Filters</a>
+        </div>
+    </div>
+    <!-- Option / Custom filter -->
+    <input class="fCust" type="hidden" name="Filter.CustomCondition" id="custom_filter" value="">
+    <div class="fCust form-control filterOption7 filterOption_invoice filter-tag-container"
+        style="border: 1px solid rgb(206, 212, 218);"></div>
+    <span class="fCust input-group-append filterOption7 filterOption_invoice">
+        <a href="#modal_sel" class="btn-success modal-with-zoom-anim ws-normal"
+            style="width: 40px;text-align:center;"><i class="fas fa-filter" style="margin-top: 12px;"></i></a>
+        <!-- <button class="btn btn-success" type="button" onclick="openFilters()"><i class="fas fa-filter"></i></button> -->
+    </span>
+
+    <!-- Option / Predefined filters -->
+    <select class="fPred form-control filterOption8 filterOption_invoice" name="Filter.PreConditionId"
+        id="custom-pre-select" style="display: none;" onchange="getItems();">
+        <option value="">Select filter...</option>
+        <option value="608e3e8c-d7fc-498d-a623-014a7ebf91b1" title="customFilter.Text">Test filter 3
+        </option>
+    </select>
+    <span class="fPred input-group-append filterOption8 filterOption_invoice" style="display: none;">
+        <button class="btn btn-success" type="button" onclick="configPred()"><i class="fas fa-cog"></i></button>
+    </span>
+
+</div>
+
+<!-- Modal 4 -->
+<div id="modal_sel" class="zoom-anim-dialog modal-block  mfp-hide modal-xl" style="max-width: 850px;width: 850px;">
+    <section class="card">
+        <header class="card-header">
+            <h2 class="card-title">Edit Condition</h2>
+        </header>
+        <div class="card-body ">
+            <div class="row">
+                <label class="col-2 control-label text-lg-right pt-2">
+                    Description
+                </label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="Header.Description"
+                        placeholder="Type a small description of the filter" id="condition-filter-description"
+                        maxlength="128" disabled="">
+                </div>
+                <div class="col-2 text-right">
+                    <button id="btn-edit-condition" class="btn btn-link pr-0" type="button" onclick="editCondition();"
+                        style="">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button id="btn-save-condition" class="btn btn-link pr-0" type="button"
+                        onclick="Conditional.save($('form').serialize()); displayMode();" style="display: none;">
+                        <i class="fas fa-save"></i>
+                    </button>
+                    <button id="btn-cancel-editing" class="btn btn-link po-color-danger pr-0" type="button"
+                        onclick="displayMode();" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="condition-privacy-settings-container" style="display: none;">
+                <div class="row pt-3">
+                    <label class="col-lg-2 control-label text-lg-right">Privacy</label>
+                    <div class="col-lg-7">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Header.Privacy" id="cond-radio-private" value="0"
+                                    checked="checked" onclick="enableRoleSelection();">
+                                Private. Visible only to my self
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="Header.Privacy" id="cond-radio-public" value="1"
+                                    onclick="enableRoleSelection();">
+                                Public. Visible to the following roles as well:
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row offset-2" id="condition-roles-container">
+                    <button class="btn btn-link cond-role-selection" type="button"
+                        onclick="rolesListUpdate('/E/Condition/AddRole');" disabled="">
+                        <i class="fas fa-plus"></i>&nbsp;Add role
+                    </button>
+                </div>
+            </div>
+            <div class="form-group row" style="margin-top: 30px;">
+                <div class="col-xs-9 pl-3">
+                    <p class="mb-2">The selected attribute will be valid when this condition is true:</p>
+                </div>
+                <div class="col-xs-3 text-right">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-lg-12" id="condition_rows">
+                    <div class="row">
+                        <table class="table table-condensed table-striped" style="margin-bottom: 0px;">
+                            <tbody id="condition_rows">
+                                <tr>
+                                    <td style="display:none;">
+                                        <input type="hidden" name="Terms[0].GroupNo" value="0">
+                                        <input type="hidden" name="Terms[0].AndOr" value="AND">
+                                    </td>
+                                    <td style="display:none;">
+                                        <input type="hidden" name="Terms[0].TableName" value="FinDoc_Search">
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <select name="Terms[0].FieldName" class="form-control"
+                                                    id="ctl_select_field_0" onchange="">
+                                                    <option value="d_op01" selected="selected">Date of Init.
+                                                    </option>
+                                                    <option value="s_op02">Initiated by</option>
+                                                    <option value="s_op03">GTIN CU</option>
+                                                    <option value="s_op04">Article description</option>
+                                                    <option value="s_op05">Supplier</option>
+                                                    <option value="o_op06">Category</option>
+                                                    <option value="o_op07">Intro week</option>
+                                                    <option value="o_op08">Status</option>
+                                                    <option value="s_op09">SAP number</option>
+                                                    <option value="s_op10">Hope number</option>
+                                                    <option value="o_op11">Distribution type</option>
+                                                    <option value="o_op12">Item classification</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="input_type_0" value="Text">
+                                    <td>
+                                        <select name="Terms[0].Operator" class="form-control"
+                                            id="ctl_operator_select_field_0" onchange="onOperatorChange(this, 0);">
+                                            <option value="=">is equal to</option>
+                                            <option value="!=">is not equal to</option>
+                                            <option value="LIKE">contains</option>
+                                            <option value="IS NULL">is blank</option>
+                                            <option value="IS NOT NULL">is not blank</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div id="input_content_0">
+                                            <input name="Terms[0].Value" class="form-control js-dynamic-field-0"
+                                                id="Terms_0__Value" maxlength="128">
+                                        </div>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row pt-3 ">
+                        <div class="col-12">
+                            <button class="btn btn-success btn-sm" type="button"
+                                onclick="$('#js-view-checkbox').show();Conditional.ajaxPOSTAddCondition($('form'), $('#condition_rows'), 0, 'AND'); return false;">
+                                <i class="fa fa-plus"></i>&nbsp;AND
+                            </button>
+                            <button class="btn btn-success btn-sm" type="button"
+                                onclick="$('#js-view-checkbox').show();Conditional.ajaxPOSTAddCondition($('form'), $('#condition_rows'), 0, 'OR'); return false;">
+                                <i class="fa fa-plus"></i>&nbsp;OR
+                            </button>
+                            <button id="bAddGroup" class="btn btn-default btn-sm @*ml-3*@" type="button"
+                                onclick="$('#js-view-checkbox').show();Conditional.ajaxPOSTAddGroupCondition($('form'), $('#condition_rows')); return false;">
+                                <i class="fa fa-plus"></i>&nbsp;OR group of conditions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="card-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-link modal-dismiss" style="color: #00c81e;">Cancel</button>
+                    <button class="btn btn-success modal-dismiss">Select</button>
+                </div>
+
+
+            </div>
+        </footer>
+    </section>
+</div>
+<!-- End Modal 4 -->

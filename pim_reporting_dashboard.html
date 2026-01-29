@@ -1,0 +1,230 @@
+﻿<section class="body">
+	<div class="inner-toolbar clearfix" id="dashboard-filter-container" style="top: 50px;height: 80px;">
+		<ul class="clearfix">
+			<li>
+				<div class="btn-group flex-wrap">
+
+				</div>
+				<button type="button" class="btn-lg btn-success" style="margin:8px">
+					<a href="#modal_cat" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"
+						style="font-size: large;color: white;"><i class="fas fa-edit m-0"></i> Select categories</a>
+				</button>
+			</li>
+			<li class="right">
+				<div class="input-daterange input-group" style="margin:8px" data-plugin-datepicker>
+					<span class="input-group-prepend">
+						<span class="input-group-text">
+							<i class="fas fa-calendar-alt"></i>
+						</span>
+					</span>
+					<input type="text" class="form-control" name="start" value="02/01/2022">
+					<span class="input-group-text border-left-0 border-right-0 rounded-0">
+						to
+					</span>
+					<input type="text" class="form-control" name="end" value="02/01/2023">
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div>
+
+		<!-- start: table -->
+		<div class="row">
+			<div class="col-lg-6">
+				<section class="card">
+					<header class="card-header">
+						<!-- <div class="card-actions">
+							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+						</div>
+		 -->
+						<h2 class="card-title">Open products</h2>
+						<!-- <p class="card-subtitle">Default Pie Chart</p> -->
+					</header>
+					<div class="card-body">
+
+						<!-- Flot: Vertical Bars -->
+						<div id="flotBarStatuses" class="ct-chart ct-perfect-fourth ct-golden-section"></div>
+
+						<script type="text/javascript">
+
+
+							$.plot("#flotBarStatuses", data, {
+								series: {
+									bars: {
+										show: true,
+										barWidth: 0.7,
+										align: "center",
+										lineWidth: 0,
+										fill: 1
+									}
+								},
+								grid: {
+									hoverable: true,
+									clickable: true,
+									borderColor: 'rgba(0, 0, 0, 0.1)',
+									borderWidth: 1,
+									labelMargin: 15,
+									backgroundColor: 'transparent'
+								},
+								tooltip: true,
+								tooltipOpts: {
+									content: '%x: %y' + ' / 5',
+									shifts: {
+										x: -10,
+										y: 20
+									},
+									defaultTheme: true
+								},
+								xaxis: {
+									ticks: [
+										[0, "GDSN"], [1, "VI"], [2, "VC"], [3, "FPI"], [4, "FPC"], [5, "CER"], [6, "CEC"], [7, "MDR"], [8, "SAP"], [9, "SAPI"], [10, "MAD"], [11, "CPA"], [12, "IWC"], [13, "RIWC"], [14, "PIWC"], [15, "RR"], [16, "PTR"], [17, "RFP"]//,[18,"NEW"]
+									],
+									tickLength: 0
+								},
+								yaxis: {
+									tickFormatter: function (val, axis) {
+										return val + '%';
+									}
+								}
+							});
+						</script>
+
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- end: table -->
+
+	</div>
+	<!-- Modal 2 -->
+	<div id="modal_cat" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide" role="dialog" tabindex="-1">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Select</h2>
+				<div class="right-wrapper text-right" style="margin-top: -20px;">
+					<a href="#" class="mb-1 mt-1 mr-1">Select/Deselect all</a>
+				</div>
+			</header>
+			<div class="card-body ">
+				<div class="accordion" id="modal_zpaf_accordion">
+					<div class="card card-default">
+						<div class="card-header">
+							<h4 class="card-title m-0">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_zpaf_accordion"
+									href="#modal_zpaf_collapse1One">
+									01 - Meat
+								</a>
+							</h4>
+						</div>
+						<div id="modal_zpaf_collapse1One" class="collapse show" data-parent="#modal_zpaf_accordion">
+							<div class="card-body">
+								<div class="checkbox-custom checkbox-default">
+									<input type="checkbox" id="zpaf_reb_01_btn" checked>
+									<label for="zpaf_reb_01_btn">E020 - Viande fraiche emballee</label>
+								</div>
+								<div class="checkbox-custom checkbox-default">
+									<input type="checkbox" id="zpaf_reb_02_btn" checked>
+									<label for="zpaf_reb_02_btn">E021 - Fresh meat in loose</label>
+								</div>
+								<div class="checkbox-custom checkbox-default">
+									<input type="checkbox" id="zpaf_reb_03_btn" checked>
+									<label for="zpaf_reb_03_btn">E043 - Game</label>
+								</div>
+								<div class="checkbox-custom checkbox-default">
+									<input type="checkbox" id="zpaf_reb_04_btn" checked>
+									<label for="zpaf_reb_04_btn">E830 - AD_GENERIQUE_VOLAILLE & GIBIER</label>
+								</div>
+							</div>
+						</div>
+						<div class="card card-default">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse"
+										data-parent="#modal_zpaf_accordion" href="#modal_zpaf_collapse1Two">
+										02 - Fish
+									</a>
+								</h4>
+							</div>
+							<div id="modal_zpaf_collapse1Two" class="collapse" data-parent="#modal_zpaf_accordion">
+								<div class="card-body">
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_cos_01_btn" checked>
+										<label for="zpaf_cos_01_btn">F061 - Fresh fish</label>
+									</div>
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_cos_02_btn" checked>
+										<label for="zpaf_cos_02_btn">F064 - Processed fish</label>
+									</div>
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_cos_03_btn" checked>
+										<label for="zpaf_cos_03_btn">F065 - Shrimps</label>
+									</div>
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_cos_04_btn" checked>
+										<label for="zpaf_cos_04_btn">F066 - Marinated fish and shelfish</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card card-default">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse"
+										data-parent="#modal_zpaf_accordion" href="#modal_zpaf_collapse3Three">
+										03 - Fruit & Vegetables
+									</a>
+								</h4>
+							</div>
+							<div id="modal_zpaf_collapse3Three" class="collapse" data-parent="#modal_zpaf_accordion">
+								<div class="card-body">
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_fb_01_btn" checked>
+										<label for="zpaf_fb_01_btn">C202 - Fresh ready to eat vegetables, potatoes
+											&</label>
+									</div>
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_fb_02_btn" checked>
+										<label for="zpaf_fb_02_btn">C203 - Fruit</label>
+									</div>
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_fb_03_btn" checked>
+										<label for="zpaf_fb_03_btn">C208 -Onions and Potatoes</label>
+									</div>
+									<div class="checkbox-custom checkbox-default">
+										<input type="checkbox" id="zpaf_fb_04_btn" checked>
+										<label for="zpaf_fb_04_btn">C802 - DD Rayon 02 (acc.)</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer" style="margin-top: 20px;">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss" onclick="onClose('zpaf')">Close</button>
+						</div>
+					</div>
+				</footer>
+		</section>
+	</div>
+	<!-- End Modal 2 -->
+</section>
+
+<script src="js/views/reporting_dashboard.js"></script>
+<script>
+	jQuery(document).ready(function ($) {
+		$("#mainSection").css("background", "white");
+
+		if (window.initModals) {
+			window.initModals();
+		}
+
+		if (window.initDatePicker) {
+			window.initDatePicker();
+		}
+
+		App.RepoDashboard.init();
+	});
+</script>

@@ -4,11 +4,11 @@ Written by: 	Okler Themes - (http://www.okler.net)
 Theme Version: 	3.0.0
 */
 
-(function($) {
+(function ($) {
 
 	'use strict';
 
-	var initLightbox = function() {
+	var initLightbox = function () {
 		$('.timeline .thumbnail-gallery').magnificPopup({
 			delegate: 'a',
 			type: 'image',
@@ -17,7 +17,7 @@ Theme Version: 	3.0.0
 			gallery: {
 				enabled: true,
 				navigateByImgClick: true,
-				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+				preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
 			},
 			image: {
 				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
@@ -25,7 +25,7 @@ Theme Version: 	3.0.0
 		});
 	};
 
-	var initGoogleMaps = function() {
+	var initGoogleMaps = function () {
 		var map = new GMaps({
 			div: '#gmap-checkin-example',
 			lat: 40.7533405,
@@ -49,9 +49,13 @@ Theme Version: 	3.0.0
 		});
 	};
 
-	$(function() {
+	window.initTimeline = function () {
 		initLightbox();
 		initGoogleMaps();
+	};
+
+	$(function () {
+		window.initTimeline();
 	});
 
 }).apply(this, [jQuery]);

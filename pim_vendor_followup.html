@@ -1,0 +1,275 @@
+﻿<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">Vendor Follow-up</h2>
+
+		<div class="right-wrapper text-right">
+
+		</div>
+	</header>
+	<div>
+		<div class="search-control-wrapper clearfix" style="border-color: #ddd;">
+			<div class="row">
+				<div class="form-group col-lg-6">
+					<div id="global-filters-container-vendor"></div>
+				</div>
+				<div id="searchDiv" class="col-lg-2 offset-lg-4">
+				</div>
+			</div>
+		</div>
+		<hr class="col-lg-12" />
+		<div class="row my-4 mailbox">
+			<div class="col mailbox-actions" style="padding-left: 20px !important;border-top: none !important;">
+				<ul class="list-unstyled m-0">
+					<li class="ib mr-2">
+						<a class="item-action fas fa-sync mt-1" href="#" rel="tooltip" title=""
+							onclick="getItems(); return false;" data-original-title="Refresh data"></a>
+					</li>
+					<li class="ib mr-2">
+						<a class="item-action fas fa-eraser mt-1" href="#" rel="tooltip" title=""
+							onclick="clearFilters(); return false;" data-original-title="Clear filters"></a>
+					</li>
+					<li class="ib mr-2">
+						<a class="item-action far fa-file-excel mt-1" href="#" rel="tooltip" title=""
+							id="ia-download-vendor-xls" data-toggle="dropdown" onclick="exportExcel(); return false;"
+							data-original-title="Export selected rows as an excel file)"></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a class="dropdown-item" id="export_1213518627" href="#"
+									onclick="exportItemsToExcel(1213518627, 'inv-items', '/E/AllInvoice/ListingToExcelExport');"
+									rel="tooltip" title="" data-original-title="Export Fin. Documents">Export Fin.
+									Documents</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="ib mr-2" id="downloadPdfButton" style="display: none;">
+						<a class="item-action fas fa-file-pdf mt-1" href="#" rel="tooltip" title=""
+							id="ia-download-vendor-pdf" onclick="downloadPdfFiles(); return false;"
+							data-original-title="Download selected pdf files (in .zip file)"></a>
+					</li>
+
+					<li class="ib mr-2 pt-1" id="filterGroupCurrencyChange" style="display: none;">
+						<div class="btn-group btn-group-sm" role="group">
+							<button type="button" class="btn btn-primary btn_currency_filter active" id="btnDocCurrency"
+								onclick="onCurrencyFilterClick('DocCurrency');">
+								Doc. Currency
+							</button>
+							<button type="button" class="btn btn_currency_filter btn-primary" id="btnLocalCurrency"
+								onclick="onCurrencyFilterClick('LocalCurrency');">
+								Local Currency
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="col-4 mr-3 align-self-end">
+				<div class="row control-group">
+					<div class="col text-right pr-0 mr-0">
+						Records per page
+					</div>
+					<div id="divPag" class="col-sm-4 col-lg-3" style="padding-right:0%">
+
+					</div>
+					<div id='editableDiv' contenteditable='true' style="display:none">Paste</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- start: table -->
+		<div class="row">
+			<div class="col-lg-12" style="height: 557px;">
+				<div class="dropzone dz-square bootstrap-tagsinput p-2 mt-2 text-center"
+					style="min-height: 30px; border-radius: 3px 3px 0px 0px;" id="div-groupby-container">
+					<p class="m-0">Drag a column header and drop it here to group by that column.</p>
+				</div>
+				<div class="scrollable fixed_header" style="height: 502px;overflow-y: auto;">
+					<table class="table table-no-more table-hover mb-0 dataTable scrollable-content"
+						id="datatable-default" style="margin: 0 !important;">
+						<thead>
+							<tr>
+								<th draggable="true" class="text-left" style="width:3%">Category</th>
+								<th draggable="true" class="text-center" style="width:5%">GTIN CU</th>
+								<th draggable="true" class="text-center" style="width:5%">Input GTIN</th>
+								<th draggable="true" class="text-left" style="width:25%">Article description</th>
+								<th draggable="true" class="text-left" style="width:25%">Supplier</th>
+								<th draggable="true" class="text-center" style="width:3%">Status</th>
+								<th draggable="true" class="text-center" style="width:10%">Intro week</th>
+								<th draggable="true" class="text-center" style="width:10%">Last Modified on</th>
+								<th draggable="true" class="text-center" style="width:5%"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Fresh ready to eat vegetable, potatoes">C202</td>
+								<td class="text-center">12341234312</td>
+								<td class="text-center">12341234312</td>
+								<td>Tablecover Star Cream Dunicel 138</td>
+								<td>SOCIETE FERMIERE ROCHEFORT ARDENNES</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input">VI</td>
+								<td class="text-center">W32 - 16/01/2022</td>
+								<td class="text-center">25/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Viande fraiche emballee">E020</td>
+								<td class="text-center ">12341234312</td>
+								<td class="text-center ">12341234312</td>
+								<td>Granola Goji and Blackcurrant 400g</td>
+								<td>Vendor Granola Goji</td>
+								<td class="text-center tStatus gdsn" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input in GDSN">GDSN</td>
+								<td class="text-center">W35 - 21/07/2022</td>
+								<td class="text-center">26/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Fresh meat in loose">E021</td>
+								<td class="text-center ">3097255516550</td>
+								<td class="text-center ">3097255516550</td>
+								<td>Materne Apricotjam 720g</td>
+								<td>MATERNE-CONFILUX</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Vendor Correction">VC</td>
+								<td class="text-center">W28 - 15/03/2022</td>
+								<td class="text-center">26/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Viennese bread and buns">F102</td>
+								<td class="text-center ">3097255516550</td>
+								<td class="text-center ">3097255516550</td>
+								<td>Danone Aro Panache 125X4 Afh</td>
+								<td>ORANGINA SCHWEPPES BELGIUM</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input">VI</td>
+								<td class="text-center">W41 - 19/08/2022</td>
+								<td class="text-center">28/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Non alcoholic Wines & Sparkling">G721</td>
+								<td class="text-center ">3012312511544</td>
+								<td class="text-center ">3012312511544</td>
+								<td>JUP CAN 66x15 0,33L DDP WC</td>
+								<td>INBEV BELGIUM</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Vendor Correction">VC</td>
+								<td class="text-center">W50 - 15/12/2022</td>
+								<td class="text-center">28/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="DSD Grocery + HBC + Drinks">Y399</td>
+								<td class="text-center ">3097255517785</td>
+								<td class="text-center ">3097255517785</td>
+								<td>75 Sotto Il Sole Nero Av 15 R</td>
+								<td>CONTINENTAL FOODS BELGIUM</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input">VI</td>
+								<td class="text-center">W15 - 14/03/2022</td>
+								<td class="text-center">29/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Boucherie Tierce -2 Préemballée">E034</td>
+								<td class="text-center ">3099744317721</td>
+								<td class="text-center ">3099744317721</td>
+								<td>Light&Free Kefir Pom-blueb 6X2</td>
+								<td>NESTLE BELGILUX</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input">VI</td>
+								<td class="text-center">W21 - 25/09/2022</td>
+								<td class="text-center">30/05/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Non alcoholic Wines & Sparkling">G721</td>
+								<td class="text-center ">30123123341544</td>
+								<td class="text-center ">30123123341544</td>
+								<td>Clementine & Mandarine Juice 1L</td>
+								<td>ORANGINA SCHWEPPES BELGIUM</td>
+								<td class="text-center tStatus cor" data-toggle="tooltip" data-placement="right"
+									title="Vendor Correction">VC</td>
+								<td class="text-center">W19 - 15/04/2022</td>
+								<td class="text-center">01/06/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center" data-toggle="tooltip" data-placement="right"
+									title="Fresh ready to eat vegetable, potatoes">C202</td>
+								<td class="text-center ">3083681001679</td>
+								<td class="text-center ">3083681001679</td>
+								<td>Tablecover Star Cream Dunicel 138</td>
+								<td>SOCIETE FERMIERE ROCHEFORT ARDENNES</td>
+								<td class="text-center tStatus rev" data-toggle="tooltip" data-placement="right"
+									title="Vendor Input">VI</td>
+								<td class="text-center">W32 - 16/01/2022</td>
+								<td class="text-center">01/06/2022</td>
+								<td class="text-center">
+									<i class="fa fa-trash m-1" rel="tooltip" title="" data-original-title="Cancel"></i>
+									<i class="fas fa-envelope m-1" rel="tooltip" title=""
+										data-original-title="Send notification"></i>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- end: table -->
+	</div>
+</section>
+
+<script src="js/views/vendor_followup.js"></script>
+<script>
+	jQuery(document).ready(function ($) {
+		$("#mainSection").css("background", "white");
+
+		// Load Global Filters
+		$("#global-filters-container-vendor").load("ajax/ajax_glob_filters.html", function () {
+			if (window.initModals) {
+				window.initModals();
+			}
+
+			App.VendorFollowUp.datatableInit();
+		});
+	});
+</script>

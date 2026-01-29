@@ -1,0 +1,527 @@
+﻿<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">DIAMS Support Form</h2>
+		<!-- <a class="btnAction sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic" href="#"><i class="fas fa-save" style="margin-top: -10px;"></i></a>	 -->
+		<a id="btnConfirm"
+			class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+			href="#modal_inc_confirm"><i class="fas fa-check" style="margin-top: -10px;"></i></a>
+		<a class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl" href="#"><i class="fas fa-eraser"
+				style="margin-top: -10px;"></i></a>
+
+	</header>
+	<div class="row">
+		<div class="col-lg-8">
+			<section class="card card-horizontal mb-4">
+				<header class="card-header bg-primary" style="display: none;">
+					<div class="card-header-icon bg-primary">
+						<i class="fa fa-solid fa-headset" style="font-size: larger;"></i>
+					</div>
+				</header>
+				<div class="card-body p-4">
+					<h3 class="mt-0 font-weight-semibold mt-0">DIAMS Support Form</h3>
+					<p style="margin-bottom: 0px;">For expert and efficient support linked with your product publication
+						on GDSN, please contact GS1 directly at <a
+							href="fmcg-foodservice@gs1belu.org">fmcg-foodservice@gs1belu.org</a></p>
+					<p style="margin-bottom: 0px;">For more details about GDSN, visit: <a
+							href="https://www.gs1.org/services/gdsn">https://www.gs1.org/services/gdsn</a></p>
+					<p style="margin-top: 25px;margin-bottom: 0px;">To navigate DIAMS easily, check out our "Guidebooks,
+						FAQs, and Videos <a
+							href="https://delhaizegroup.sharefile.eu/d-sbf8cbb288c9b4a9a8bd7f3ec8c6919b6">here</a></p>
+					<!-- <button id="btnSwitch" type="button" class="mb-1 mt-1 mr-1 btn btn-link" style="padding: 0px;">Switch to Advanced search</button> -->
+				</div>
+			</section>
+		</div>
+		<div class="col-lg-4">
+			<section class="card card-horizontal mb-4">
+				<header class="card-header bg-primary">
+					<div class="card-header-icon bg-primary">
+						<i class="fa fa-user" style="font-size: larger;"></i>
+					</div>
+				</header>
+				<div class="card-body p-4">
+					<h3 class="mt-0 font-weight-semibold mt-0">Tim Van Billemont</h3>
+					<p style="margin-bottom: 0px;">10051032 - PAB BENELUX</p>
+					<p style="margin-bottom: 0px;">tim.v@productsandbrandsgroup.com</p>
+					<div class="input-group" style="margin-top: 10px;">
+						<span class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="fas fa-phone"></i>
+							</span>
+						</span>
+						<input id="phone" class="form-control" autocomplete="off">
+					</div>
+					<!-- <p style="margin-bottom: 0px;">Coca-Cola</p> -->
+					<!-- <button id="btnSwitch" type="button" class="mb-1 mt-1 mr-1 btn btn-link" style="padding: 0px;">Switch to Advanced search</button> -->
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3">
+			<section class="card mb-4">
+				<header class="card-header text-center">
+					<h2 class="card-title">1. Select process</h2>
+					<p class="card-subtitle" style="margin-bottom: 5px;">Start by identifying the process for which you
+						will report the issue.</p>
+				</header>
+				<div class="card-body">
+					<div class="btn-group d-flex" role="group">
+						<a class="btn btn-primary w-100 btnPR" role="button" id="btnPC"
+							onclick="App.SupportForm.toggleProcess(this,1)">Product&nbsp;<br>Creation</a>
+						<a class="btn btn-default w-100 btnPR" role="button" id="btnPU"
+							onclick="App.SupportForm.toggleProcess(this,2)">Product&nbsp;<br>View / Update</a>
+						<a class="btn btn-default w-100 btnPR" role="button" id="btnUA"
+							onclick="App.SupportForm.toggleProcess(this,3)">User&nbsp;<br>Account</a>
+					</div>
+				</div>
+			</section>
+			<section class="card mb-4">
+				<header class="card-header text-center">
+					<h2 class="card-title">2. Select operation</h2>
+					<p class="card-subtitle" style="margin-bottom: 5px;">Report a more specific issue by selecting the
+						operation.<br>If operation cannot be identified, select "Generic / Others".</p>
+				</header>
+				<div class="card-body">
+					<div class="accordion accordion-sm navbar-nav ml-auto" id="accordion3">
+						<div class="card card-default">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a id="operDefault" class="selOp" href="#"
+										onclick="javascript:App.SupportForm.adaptReport(0, this)">
+										Generic / Others
+									</a>
+								</h4>
+							</div>
+						</div>
+						<div class="card card-default accPC">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#collapse3One">
+										Find & Load
+									</a>
+								</h4>
+							</div>
+							<div id="collapse3One" class="collapse" data-parent="#accordion3">
+								<div class="card-body">
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(1, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Product expected but not found in the task lists for creation (own and team)">Entry
+										not found in task list</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(2, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Product found but error occured while opening it.">Error while loading
+										product details</a> <br>
+								</div>
+							</div>
+						</div>
+						<div class="card card-default accPC">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#collapse3Three">
+										Data encoding
+									</a>
+								</h4>
+							</div>
+							<div id="collapse3Three" class="collapse" data-parent="#accordion3">
+								<div class="card-body">
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(3, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Issues identified with data from GDSN.">GDSN
+										data</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(4, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Issues or clarifications needed on fields to complete in the form.">Product
+										Form Input</a> <br>
+								</div>
+							</div>
+						</div>
+						<div class="card card-default accPC">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#collapse3Four">
+										Save & Submit
+									</a>
+								</h4>
+							</div>
+							<div id="collapse3Four" class="collapse" data-parent="#accordion3">
+								<div class="card-body">
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(6, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="There is a validation that prevents the task to continue its flow. It´s not clear how to deal with this validation.">Cannot
+										go through validation</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(7, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="There is an error that prevents the task to continue its flow.">Error
+										while saving or submitting</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(8, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="The product was successfully submitted for creation but it´s blocked on BER / SAP status">Blocked
+										after product creation triggered (BER / SAP)</a><br>
+								</div>
+							</div>
+						</div>
+						<div class="card card-default accPU" style="display: none;">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#collapse4One">
+										Find & Load
+									</a>
+								</h4>
+							</div>
+							<div id="collapse4One" class="collapse" data-parent="#accordion3">
+								<div class="card-body">
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(9, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Product expected but not found in the task lists for update (own and team)">Entry
+										not found in task list</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(10, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Product not found using search options (GTIN, SAP ID, Hope and advanced mode)">Product
+										not found in search screen</a> <br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(11, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Product found but error occured while opening it.">Error while loading
+										product details</a> <br>
+								</div>
+							</div>
+						</div>
+						<div class="card card-default accPU" style="display: none;">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#collapse4Three">
+										Data encoding
+									</a>
+								</h4>
+							</div>
+							<div id="collapse4Three" class="collapse" data-parent="#accordion3">
+								<div class="card-body">
+									<!-- <a href="#" onclick="javascript:selectPCReport(3, this)" data-toggle="tooltip" data-placement="right" title="Issues identified with data from GDSN.">GDSN data</a><br>  -->
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(12, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="Issues or clarifications needed on fields to complete in the form.">Product
+										Form Input</a> <br>
+									<!-- <a href="#" onclick="javascript:selectPCReport(5, this)">Synchornization error</a>     <br>             														 -->
+								</div>
+							</div>
+						</div>
+						<div class="card card-default accPU" style="display: none;">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#collapse4Four">
+										Save & Submit
+									</a>
+								</h4>
+							</div>
+							<div id="collapse4Four" class="collapse" data-parent="#accordion3">
+								<div class="card-body">
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(13, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="There is a validation that prevents the task to continue its flow. It´s not clear how to deal with this validation.">Cannot
+										go through validation</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(14, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="There is an error that prevents the task to continue its flow.">Error
+										while saving or submitting</a><br>
+									<a href="#" onclick="javascript:App.SupportForm.adaptReport(15, this)"
+										data-toggle="tooltip" data-placement="right"
+										title="The product was successfully submitted for update but it´s blocked on BERU status">Blocked
+										after update is completed (BERU)</a><br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="col-lg-9">
+			<section class="card mb-4">
+				<header class="card-header text-center">
+					<!-- <div class="card-actions">
+						<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+						<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+					</div> -->
+
+					<h2 id="repoSubtitle" class="card-title" style="color: darkred;">Generic / Others</h2>
+					<p class="card-subtitle" style="margin-bottom: 5px;">For <span id="repoProcess"
+							style="font-weight: bolder;">Product creation</span>. Enter details to report</p>
+				</header>
+				<div class="card-body" style="padding-top: 0;">
+					<div id="sec_prod_id" class="row" style="background: mintcream;padding: 20px;margin-bottom: 0;">
+						<div class="col-lg-6">
+							<div class="form-group row">
+								<label class="col-lg-2 control-label text-lg-right pt-2">GTIN: <span
+										class="required">*</span></label>
+								<div class="col-lg-6">
+									<input type="text" class="form-control" autocomplete="off"
+										style="text-align: center;">
+								</div>
+							</div>
+							<div class="row igdsn" style="display: none;">
+								<label class="col-lg-2 control-label text-lg-right pt-2">GLN: <span
+										class="required">*</span></label>
+								<div class="col-lg-6">
+									<input type="text" class="form-control" autocomplete="off"
+										style="text-align: center;">
+								</div>
+							</div>
+							<div class="row ipu" style="margin-bottom: 1rem;display: none;">
+								<label class="col-lg-2 control-label text-lg-right pt-2">SAP ID: <span
+										class="required">*</span></label>
+								<div class="col-lg-6">
+									<input type="text" class="form-control" autocomplete="off"
+										style="text-align: center;">
+								</div>
+							</div>
+							<div class="row ipu" style="display: none;">
+								<label class="col-lg-2 control-label text-lg-right pt-2">Scenario: <span
+										class="required">*</span></label>
+								<div class="col-lg-6">
+									<select class="form-control">
+										<option value="Sel0">Select scenario...</option>
+										<option value="Sel4">Product view</option>
+										<option value="Sel6">Product update</option>
+										<option value="Sel6">Product reactivation</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group row">
+								<label class="col-lg-3 control-label text-lg-right pt-2">Category: <span
+										class="required">*</span></label>
+								<div class="col-lg-9">
+									<select data-plugin-selectTwo class="form-control populate">
+										<option value=""></option>
+										<optgroup label="10 - Cheese & Charcuterie">
+											<option value="E946">E946 - SM_GENERIQUE_DELICATESSEN</option>
+											<option value="E063">E063 - Fresh Spreadables</option>
+											<option value="D151">D151 - Cheese</option>
+											<option value="E038">E038 - Charcuterie Prepackages</option>
+											<option value="E831">E831 - AD_GENERIQUE_CHARCUTERIE</option>
+											<option value="E037">E037 - Charcuterie Counter</option>
+											<option value="E152">E152 - Charcuterie</option>
+										</optgroup>
+										<optgroup label="13 - Drink - Spirits">
+											<option value="G707">G707 - Alcohols</option>
+											<option value="H703">H703 - Pils</option>
+											<option value="H700">H700 - Juices</option>
+											<option value="H852">H852 - Food Rayon 12 - Drinks</option>
+											<option value="G704">G704 - Ciders</option>
+											<option value="H733">H733 - Local Beers</option>
+											<option value="G706">G706 - Aperitives</option>
+											<option value="H797">H797 - rayon 12 - new</option>
+											<option value="H702">H702 - Soft-Drinks</option>
+											<option value="H701">H701 - Waters</option>
+											<option value="G720">G720 - Mixers and Non alcoholic Spirits</option>
+											<option value="H838">H838 - AD_GENERIQUE_DRINKS</option>
+											<option value="H723">H723 - Special Beers</option>
+											<option value="H709">H709 - Syrups</option>
+										</optgroup>
+										<optgroup label="15 - Drugstore/Perfumery">
+											<option value="A386">A386 - Fishes</option>
+											<option value="B452">B452 - The surfaces</option>
+											<option value="B534">B534 - Washing</option>
+											<option value="B496">B496 - Parafarmacie</option>
+											<option value="B491">B491 - Haircare</option>
+											<option value="B492">B492 - Bodycare</option>
+											<option value="B495">B495 - Mens Care</option>
+											<option value="B824">B824 - AD_GENERIQUE_DROGUERIE</option>
+											<option value="B611">B611 - natural cosmetics</option>
+											<option value="B460">B460 - Wholesale / Garbage bags of the city</option>
+											<option value="B613">B613 - Baby accessories and toys</option>
+											<option value="B533">B533 - Intimate hygiene</option>
+											<option value="B494">B494 - Facial care</option>
+											<option value="A382">A382 - Dogs</option>
+											<option value="B490">B490 - Make up</option>
+											<option value="B451">B451 - The toilet</option>
+											<option value="A385">A385 - Rodents</option>
+											<option value="A383">A383 - Cats</option>
+											<option value="B822">B822 - AD_GENERIQUE_PARFUMERIE</option>
+											<option value="B851">B851 - Food Rayon 11 - Drugstore</option>
+											<option value="B497">B497 - Babycare</option>
+											<option value="B493">B493 - Dental care</option>
+											<option value="A371">A371 - Babyfood</option>
+											<option value="A384">A384 - Birds</option>
+										</optgroup>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<label class="col-lg-3 control-label text-lg-right pt-2">Report to: <span
+										class="required">*</span></label>
+								<div class="col-lg-9">
+									<select data-plugin-selectTwo class="form-control populate"
+										data-plugin-options='{ "minimumInputLength": 3 }'>
+										<option value="" selected></option>
+										<option value="JS">John Smith</option>
+										<option value="JM">Julia Mendez</option>
+										<option value="WJ">Willian Johnson</option>
+										<option value="SB">Stephanie Bradley</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="background: floralwhite;padding: 20px;margin-bottom: 0;">
+						<div class="col-lg-6">
+							<div class="form-group row">
+								<label class="col-lg-2 control-label text-lg-right pt-2">Title: <span
+										class="required">*</span></label>
+								<div class="col-lg-10">
+									<input type="text" class="form-control" autocomplete="off">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group row">
+								<label class="col-lg-3 control-label text-lg-right pt-2 issueDet"
+									style="display: none;">Issue type:<span class="required">*</span></label>
+								<div class="col-lg-9 issueDet" style="display: none;">
+									<select id="selClass" class="form-control">
+										<option value="Sel0">Select error type...</option>
+										<option value="Sel1" class="igdsn">Task is in status 'GDSN'</option>
+										<option value="Sel2" class="igdsn">GDSN update does not appear in DIAMS</option>
+										<option value="Sel3" class="igdsn">Clarification needed on a field in the GDSN
+										</option>
+										<option value="Sel4" class="isub isub2">Synchronisation error</option>
+										<option value="Sel5" class="isub">ART070 Error occurred while trying to save
+										</option>
+										<option value="Sel6" class="isub isub2">Unauthorized</option>
+										<option value="Sel6" class="isub isub2">Critical error</option>
+										<option value="Sel4" class="iacc">Account deactivated</option>
+										<option value="Sel6" class="iacc">New account</option>
+										<option value="Sel6" class="iacc">Requested role(s) and/or scope not yet
+											approved</option>
+										<option value="Sel6" class="iacc">Tasks are not visible</option>
+										<option value="Sel6">Other</option>
+									</select>
+								</div>
+								<label class="col-lg-3 control-label text-lg-right pt-2 issueDetInput"
+									style="display: none;">Field<span class="required">*</span></label>
+								<div class="col-lg-9 issueDetInput" style="display: none;">
+									<select id="selInput" class="form-control">
+										<option value="Sel0">Select field...</option>
+										<option value="Sel1">(Sub) brand</option>
+										<option value="Sel2">Descriptions</option>
+										<option value="Sel3">Measurement data (Hierarchy)</option>
+										<option value="Sel4">Shelf life and lifespan</option>
+										<option value="Sel5">Support packaging</option>
+										<option value="Sel6">Codes (Bio, Eco, …)</option>
+										<option value="Sel7">Prices</option>
+										<option value="Sel8">Taxes</option>
+										<option value="Sel9">Excise duty</option>
+										<option value="Sel10">Links</option>
+										<option value="Sel11">Component uom</option>
+										<option value="Sel12">Fost+</option>
+										<option value="Sel13">Other</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 15px;">
+						<div class="col-lg-6">
+							<section class="card card-transparent">
+								<header class="card-header text-center">
+									<div class="card-actions">
+										<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+										<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a> -->
+									</div>
+
+									<h3 class="card-title">Incident description</h3>
+									<p class="card-subtitle">Enter details of the current problem. Explain the steps to
+										replicate the issue. </p>
+
+								</header>
+								<div class="card-body">
+									<div class="form-group">
+										<textarea class="form-control" rows="8" data-plugin-maxlength
+											maxlength="1000"></textarea>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="col-lg-6">
+							<section class="card card-transparent">
+								<header class="card-header text-center">
+									<div class="card-actions">
+										<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+										<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a> -->
+									</div>
+
+									<h3 class="card-title">Attachments</h3>
+									<p class="card-subtitle">Drag'n Drop or click to choose file</p>
+
+								</header>
+								<div class="card-body">
+									<div id="dropzone-form-image" class="dropzone-modern dz-square">
+										<span class="dropzone-upload-message text-center">
+											<i class="fas fa-upload"></i>
+											<b class="text-color-primary">Drag/Upload</b> here.
+										</span>
+									</div>
+									<!-- <form action="/upload" class="dropzone dz-square" id="dropzone-example"></form> -->
+								</div>
+							</section>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- Start Modal - Full view - confirm update -->
+	<div id="modal_inc_confirm" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Confirm</h2>
+			</header>
+			<div class="card-body">
+				<div class="modal-wrapper">
+					<div class="modal-icon">
+						<i class="fas fa-question-circle"></i>
+					</div>
+					<div class="modal-text">
+						<h4>Submit a new incident</h4>
+						<p>An incident will be generated and analyzed by Delhaize teams.<br>Do you want to continue?</p>
+					</div>
+				</div>
+			</div>
+			<footer class="card-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Confirm</button>
+						<button class="btn btn-default modal-dismiss">Cancel</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<!-- End Modal - Full view - confirm update -->
+</section>
+
+<!-- Custom Scripts -->
+<script src="js/views/support_form.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		if (window.initModals) {
+			window.initModals();
+		}
+		if (window.initAdvancedForm) {
+			window.initAdvancedForm();
+		}
+		if (window.initEcommerceForm) {
+			window.initEcommerceForm();
+		}
+
+		if (window.initSelect2) {
+			window.initSelect2();
+		}
+	});
+</script>

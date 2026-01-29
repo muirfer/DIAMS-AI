@@ -4,7 +4,7 @@ Written by: 	Okler Themes - (http://www.okler.net)
 Theme Version: 	3.0.0
 */
 
-(function($) {
+(function ($) {
 
 
 	/*
@@ -12,7 +12,7 @@ Theme Version: 	3.0.0
 	*/
 	function multiselect_selected($el) {
 		var ret = true;
-		$('option', $el).each(function(element) {
+		$('option', $el).each(function (element) {
 			if (!!!$(this).prop('selected')) {
 				ret = false;
 			}
@@ -21,13 +21,13 @@ Theme Version: 	3.0.0
 	}
 
 	function multiselect_selectAll($el) {
-		$('option', $el).each(function(element) {
+		$('option', $el).each(function (element) {
 			$el.multiselect('select', $(this).val());
 		});
 	}
 
 	function multiselect_deselectAll($el) {
-		$('option', $el).each(function(element) {
+		$('option', $el).each(function (element) {
 			$el.multiselect('deselect', $(this).val());
 		});
 	}
@@ -43,7 +43,7 @@ Theme Version: 	3.0.0
 		}
 	}
 
-	$("#ms_example7-toggle").click(function(e) {
+	$("#ms_example7-toggle").click(function (e) {
 		e.preventDefault();
 		multiselect_toggle($("#ms_example7"), $(this));
 	});
@@ -51,16 +51,22 @@ Theme Version: 	3.0.0
 	/*
 	Slider Range: Output Values
 	*/
-	$('#listenSlider').change(function() {
-		$('.output b').text( this.value );
-	});
+	window.initAdvancedForms = function () {
+		$('#listenSlider').change(function () {
+			$('.output b').text(this.value);
+		});
 
-	$('#listenSlider2').change(function() {
-		var min = parseInt(this.value.split('/')[0], 10);
-		var max = parseInt(this.value.split('/')[1], 10);
+		$('#listenSlider2').change(function () {
+			var min = parseInt(this.value.split('/')[0], 10);
+			var max = parseInt(this.value.split('/')[1], 10);
 
-		$('.output2 b.min').text( min );
-		$('.output2 b.max').text( max );
+			$('.output2 b.min').text(min);
+			$('.output2 b.max').text(max);
+		});
+	};
+
+	$(function () {
+		window.initAdvancedForms();
 	});
 
 }(jQuery));

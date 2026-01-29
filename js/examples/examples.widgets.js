@@ -4,16 +4,16 @@ Written by: 	Okler Themes - (http://www.okler.net)
 Theme Version: 	3.0.0
 */
 
-(function($) {
+(function ($) {
 
 	'use strict';
 
-	$(function() {
+	window.initWidgets = function () {
 
 		/*
 		Flot
 		*/
-		if( $('#flotWidgetsSales1').get(0) ){
+		if ($('#flotWidgetsSales1').get(0)) {
 			var plot = $.plot('#flotWidgetsSales1', flotWidgetsSales1Data, {
 				series: {
 					lines: {
@@ -59,7 +59,7 @@ Theme Version: 	3.0.0
 		/*
 		Morris
 		*/
-		if( $('#morrisLine').get(0) ){
+		if ($('#morrisLine').get(0)) {
 			Morris.Line({
 				resize: true,
 				element: 'morrisLine',
@@ -77,7 +77,7 @@ Theme Version: 	3.0.0
 		/*
 		Sparkline: Bar
 		*/
-		if( $('#sparklineBar').get(0) ){
+		if ($('#sparklineBar').get(0)) {
 			$("#sparklineBar").sparkline(sparklineBarData, {
 				type: 'bar',
 				width: '80',
@@ -89,6 +89,10 @@ Theme Version: 	3.0.0
 
 		$('.circular-bar-chart').appear();
 
+	};
+
+	$(function () {
+		window.initWidgets();
 	});
 
 }).apply(this, [jQuery]);

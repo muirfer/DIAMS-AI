@@ -403,3 +403,63 @@ table.dataTable tbody td {
 
     ;
 }
+
+/* Lead time reporting */
+.pieLabel div {
+    font-size: large !important;
+}
+
+line {
+    opacity: 0.5 !important;
+}
+
+line:hover {
+    opacity: 1 !important;
+}
+
+rect {
+    opacity: 0.5 !important;
+}
+
+rect:hover {
+    opacity: 1 !important;
+}
+
+/** GDSN **/
+.ct-series-a .ct-bar {
+    stroke: #FF9800 !important;
+}
+
+/** VI **/
+.ct-series-b .ct-bar {
+    stroke: #FF5722 !important;
+}
+
+/** CER **/
+.ct-series-c .ct-bar {
+    stroke: #E91E63 !important;
+}
+
+/** CMR **/
+.ct-series-d .ct-bar {
+    stroke: #673AB7 !important;
+}
+
+/** MDR **/
+.ct-series-e .ct-bar {
+    stroke: #3F51B5 !important;
+}
+
+/** MDR **/
+.ct-series-f .ct-bar {
+    stroke: #2196F3 !important;
+}
+
+.details {
+    padding: 0% !important;
+}
+
+/* Support form */
+.selOp {
+    color: darkred !important;
+}

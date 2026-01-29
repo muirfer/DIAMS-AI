@@ -1,0 +1,198 @@
+﻿<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">Lead time reporting</h2>
+
+		<div class="right-wrapper text-right">
+
+		</div>
+	</header>
+	<section class="card card-featured-top card-featured-primary mb-4">
+		<div class="card-body">
+			<div class="widget-summary widget-summary-xlg">
+				<div class="widget-summary-col widget-summary-col-icon">
+					<div class="summary-icon bg-primary">
+						<i class="fas fa-user-clock"></i>
+					</div>
+				</div>
+				<div class="widget-summary-col">
+					<div class="summary">
+						<h4 class="title">Product lead time</h4>
+						<div class="info" style="margin-top: 8px;">
+							<strong class="amount">15,25</strong>
+							<!-- <button id="btnAdd" class="btn btn-link" type="button" onclick="addRow();">
+								<span class="text-primary"></span> Switch to grid view
+							</button> -->
+							<span class="text-primary">days</span>
+						</div>
+					</div>
+					<div class="summary-footer">
+						<!-- <button id="btnAdd" class="btn btn-link" type="button" onclick="addRow();">
+							<span class="text-primary"></span> Switch to grid view
+						</button> -->
+						<a href="#" class="text-muted text-uppercase">Tablecover Star Cream Dunicel 138</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="row" style="max-height: 300px;">
+		<div class="col-md-12">
+			<section class="card card-transparent mb-4">
+				<header class="card-header">
+					<div class="card-actions">
+						<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+					</div>
+
+					<h2 class="card-title">Timeline</h2>
+					<p class="card-subtitle" style="color: darkgreen;">Started at 10/11/2023 15:30</p>
+				</header>
+				<div class="card-body">
+					<div class="row" style="margin-top: 25px;">
+						<div class="col-lg-4">
+							<table class="table table-responsive-md table-sm mb-0 table-hover">
+								<thead>
+									<tr>
+										<th style="text-align: center;">Status</th>
+										<th style="text-align: center;">Team</th>
+										<th style="text-align: center;">Until</th>
+										<th style="text-align: right;">Lead time</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="text-align: center;">GDSN</td>
+										<td style="text-align: center;">Supplier</td>
+										<td style="text-align: center;">15/11/2023 14:50</td>
+										<td style="text-align: right;color: darkred;">4,97</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">VI</td>
+										<td style="text-align: center;">Supplier</td>
+										<td style="text-align: center;">17/11/2023 13:30</td>
+										<td style="text-align: right;color: darkred;">1,94</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">CER</td>
+										<td style="text-align: center;">Category Expert</td>
+										<td style="text-align: center;">22/11/2023 20:23</td>
+										<td style="text-align: right;color: darkred;">5,10</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">VC</td>
+										<td style="text-align: center;">Supplier</td>
+										<td style="text-align: center;">24/11/2023 13:30</td>
+										<td style="text-align: right;color: darkred;">4,58</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						<div class="col-lg-7 offset-lg-1" style="vertical-align: middle;">
+							<div id="ChartistStackedChart" class="ct-chart ct-perfect-fourth ct-golden-section"></div>
+							<!-- See: js/examples/examples.charts.js for the example code. -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 50px;">
+		<div class="col-md-12">
+			<section class="card card-transparent mb-4">
+				<header class="card-header">
+					<div class="card-actions">
+						<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+					</div>
+
+					<h2 class="card-title">By Team</h2>
+					<p class="card-subtitle" style="color: darkgreen;">2 teams involved</p>
+				</header>
+				<div class="card-body">
+					<div class="row" style="margin-top: 25px;">
+						<div class="col-lg-4">
+							<table id="datatable-details-2" class="table table-responsive-md table-sm mb-0 table-hover">
+								<thead>
+									<tr>
+										<th style="text-align: left;">Team</th>
+										<th style="text-align: right;">Lead time</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style="background-color: ghostwhite;">
+										<td style="text-align: left;">Supplier</td>
+										<td style="text-align: right;font-weight:bold;color: darkred;">11,49</td>
+									</tr>
+									<tr style="background-color: ghostwhite;">
+										<td style="text-align: left;">Category Expert</td>
+										<td style="text-align: right;font-weight:bold;color: darkred;">5,09</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-lg-7 offset-lg-1">
+							<!-- Morris: Area -->
+							<div class="chart chart-md" id="morrisStacked"></div>
+							<script type="text/javascript">
+
+								var morrisStackedData = [{
+									y: 'Supplier',
+									GDSN: 10,
+									VI: 21,
+									C: 10
+								}, {
+									y: 'Category Expert',
+									R: 15,
+									C: 10,
+									PIWC: 5,
+									RIWC: 6
+								}, {
+									y: 'Category Man.',
+									R: 18,
+									CR: 15
+								}, {
+									y: 'Master Data Specialist',
+									R: 25,
+									C: 15,
+									SAP: 10,
+									SAPI: 15,
+									MAD: 12
+								}, {
+									y: 'Repelenisher',
+									R: 10,
+									IWC: 6,
+									SD: 8,
+									SDS: 10,
+									CPA: 15
+								}, {
+									y: 'Plano',
+									R: 5,
+									RFP: 15
+								}
+								];
+
+								// See: js/examples/examples.charts.js for more settings.
+
+							</script>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</section>
+
+<script src="js/views/reporting_lead_time.js"></script>
+<script>
+
+	jQuery(document).ready(function ($) {
+		$("#mainSection").css("background", "white");
+
+		if (window.initCharts) {
+			window.initCharts();
+		}
+	});
+
+	App.ReportingLT.datatableMainInit();
+	App.ReportingLT.datatableDetailsInit();
+
+</script>
