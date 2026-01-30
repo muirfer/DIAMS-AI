@@ -1,0 +1,1667 @@
+﻿<script>
+	var EditableTable;
+	let isSingleSelection = true;
+	let tableCount = 0;
+	const invalidGtinForSingleTest = "12345678901234";
+	let modeGtinInput = true;
+	let reserveGtinsFor = [];
+
+	const tsvStringToArray = (data) => {
+		const re = /(\t|\r?\n|\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\t\r\n]*))/gi
+		const result = [[]]
+		let matches
+		while ((matches = re.exec(data))) {
+			if (matches[1].length && matches[1] !== "\t") result.push([])
+			result[result.length - 1].push(
+				matches[2] !== undefined ? matches[2].replace(/""/g, '"') : matches[3]
+			)
+		}
+		//console.log(result);
+		return result
+	}
+
+	function handlePaste(e) {
+		var clipboardData, pastedData;
+
+		// Stop data actually being pasted into div
+		e.stopPropagation();
+		e.preventDefault();
+
+		// Get pasted data via clipboard API
+		clipboardData = e.clipboardData || window.clipboardData;
+		pastedData = clipboardData.getData('Text');
+
+		// Do whatever with pasteddata				
+		gtinArray = tsvStringToArray(pastedData);
+		if (gtinArray.length > 1) {
+			//paste all
+			pasteGtins()
+		} else {
+			pasteSingleGtin();
+		}
+
+		doOnGtinListUpdate();
+	}
+
+	handlePasteFromButton = () => {
+		//paste all
+		// $('.gtinRow').show();
+		// $("#panelMassValidation").show();	
+		// $("#gtinInput").focus();
+
+		pasteGtins()
+	}
+
+	function doOnGtinListUpdate() {
+		//$("#fPag").css("display",tableCount > 5 ? "block" : "none");				
+	}
+
+	function toogleBrandType(btn, otherBtnId) {
+
+		if ($(btn).hasClass("btn-default")) {
+			//switch back to default
+			$(btn).removeClass("btn-default");
+			$(btn).addClass("btn-primary");
+			$("#" + otherBtnId).removeClass("btn-primary");
+			$("#" + otherBtnId).addClass("btn-default");
+		}
+
+		//update UoM				
+		if (otherBtnId === "btnN1") {
+			//Active one is D1
+			$("#lblBrandType").text("D1 - Delhaize");
+			$("#btnNext_res").show();
+		} else {
+			//Active one is N1
+			$("#lblBrandType").text("N1 - National");
+			$("#btnNext_res").hide();
+		}
+	}
+
+	function toogleGDSNType(btn, otherBtnId) {
+
+		if ($(btn).hasClass("btn-default")) {
+			//switch back to default
+			$(btn).removeClass("btn-default");
+			$(btn).addClass("btn-primary");
+			$("#" + otherBtnId).removeClass("btn-primary");
+			$("#" + otherBtnId).addClass("btn-default");
+		}
+
+		//update UoM				
+		if (otherBtnId === "btnGS1") {
+			//Active one is No-GDSN
+			$("#lblType").text("Manual")
+			$(".nonGdsn").show()
+			$(".panelGDSNReason").show();
+			onNonGDSNReasonChange();
+
+		} else {
+			$("#lblType").text("GDSN")
+			$(".nonGdsn").hide()
+			$(".panelGDSNReason").hide();
+			$(".panelGDSNReasonJust").hide();
+		}
+
+		resetReservationPanel();
+		toogleGtinType($("#btnOT"), "btnAW")
+
+	}
+
+	function toogleGtinType(btn, otherBtnId) {
+
+		if ($(btn).hasClass("btn-default")) {
+			//switch back to default
+			$(btn).removeClass("btn-default");
+			$(btn).addClass("btn-primary");
+			$("#" + otherBtnId).removeClass("btn-primary");
+			$("#" + otherBtnId).addClass("btn-default");
+		}
+
+		//update UoM				
+		if (otherBtnId === "btnAW") {
+			//Active one is Others
+			$("#lblGtinType").text("Others")
+
+			//prepare reserve panel
+			$("#btnKG").hide();
+			$("#btnEA").show();
+			$("#btnEA").addClass("btn-default");
+			$("#btnEA").addClass("btn-primary");
+			$("#btnEA_alt").hide();
+
+		} else {
+			//Active one is Average weight
+			$("#lblGtinType").text("Average weight")
+
+			//prepare reserve panel
+			$("#btnEA").hide();
+			$("#btnKG").show();
+			$("#btnKG").addClass("btn-default");
+			$("#btnKG").addClass("btn-primary");
+			$("#btnEA_alt").show();
+		}
+
+		//force ip toogle to reevaluate it
+		toogleIP();
+
+		//always show alt UoM
+		$(".pUoM").show()
+	}
+
+	function toogleIP() {
+		includesIP = $($("#chkIp")).is(':checked');
+
+		if (includesIP) {
+			$("#lblGtinType").append(" (IP included)");
+			$("#btnIP_alt").show()
+		} else {
+			$("#lblGtinType").text($("#lblGtinType").text().replaceAll(" (IP included)", ""));
+			$("#btnIP_alt").hide()
+		}
+
+	}
+
+	function onNonGDSNReasonChange() {
+		val = $("#selReason").val();
+
+		$("#lblNonGdsnReason").text(val)
+		if (val === "Other") {
+			$(".panelGDSNReasonJust").show();
+			$("#lblNonGdsnReasonJust").show();
+		} else {
+			$(".panelGDSNReasonJust").hide();
+			$("#lblNonGdsnReasonJust").hide();
+		}
+	}
+
+	function onNonGDSNReasonJustificationUpdated(value) {
+		$("#lblNonGdsnReasonJust").text(value);
+	}
+
+	function toGtinInput(toInputMode) {
+
+		if (toInputMode) {
+			$("#panelGtinInput").show()
+			$("#panelGtinRes").hide()
+			$("#lblTitleGtin").text("GTINs for creation")
+			$("#lblGtinInput").text("-")
+			$(".gtinInputPanel2").show()
+			removeAllGtins();
+
+		} else {
+			//reserve gtin
+			$("#panelGtinInput").hide()
+			$(".gtinInputPanel2").hide()
+			$("#panelGtinRes").show()
+			$("#lblTitleGtin").text("Reserve GTINs for")
+
+			isGDSNFlow = $("#btnGS1").hasClass("btn-primary");
+			if (isGDSNFlow) {
+				reserveGtinsFor = []
+				resetReservationPanel();
+			} else if ($("#lblGtinType").text().indexOf("Others") === 0) {
+				// 	//non-gdsn - Others		
+				reserveGtinsFor = ["EA"]
+			} else {
+				//non-gdsn - Average weight						
+				reserveGtinsFor = ["KG"]
+			}
+
+			$("#lblGtinInput").text(reserveGtinsFor.length === 0 ? "-" : reserveGtinsFor[0]);
+			$("#lblGtinInput").show()
+			$(".lblGtin").hide();
+		}
+
+		prepareSuppliersForGTINInput(toInputMode);
+	}
+
+	function resetReservationPanel() {
+		$("#btnEA").removeClass("btn-primary");
+		$("#btnKG").removeClass("btn-primary");
+		$("#btnEA").addClass("btn-default");
+		$("#btnKG").addClass("btn-default");
+
+		$(".pUoM button").each(function () {
+			$(this).removeClass("btn-primary");
+			$(this).addClass("btn-default");
+		});
+
+		$("#btnEA").show();
+		$("#btnKG").show();
+		$(".pUoM").hide()
+	}
+
+	function prepareSuppliersForGTINInput(toInputMode) {
+		$(".supRow").hide()
+
+		if (toInputMode) {
+			//hide search of supplier, provide one by default, hide remove all button, 
+			$("#panelSupplierSearch").hide()
+			$("#panelSupplierDetails").show()
+			$("#btnRemoveAllSup").hide();
+			$(".supMain").show();
+			$("#btnRemoveMainSup").hide();
+
+		} else {
+			$("#panelSupplierSearch").show()
+			$("#panelSupplierDetails").hide()
+			$("#btnRemoveMainSup").show();
+			$("#btnRemoveAllSup").show();
+		}
+	}
+
+	function toogleBaseUoM(btn, otherBtnId) {
+		$(".pUoM").show();
+
+		if ($(btn).hasClass("btn-default")) {
+			//switch back to default
+			$(btn).removeClass("btn-default");
+			$(btn).addClass("btn-primary");
+			$("#" + otherBtnId).removeClass("btn-primary");
+			$("#" + otherBtnId).addClass("btn-default");
+		}
+
+		//update UoM				
+		if (otherBtnId === "btnEA") {
+			//Active one is KG
+			$("#btnEA_alt").show();
+			//$("#btnIP_alt").hide();					
+		} else {
+			$("#btnEA_alt").hide();
+			//$("#btnIP_alt").show();										
+		}
+
+		$(".pUoM button").each(function () {
+			$(this).removeClass("btn-primary");
+			$(this).addClass("btn-default");
+		});
+
+		//gtin res label				
+		reserveGtinsFor = [$(btn).text()]
+		$("#lblGtinInput").text(reserveGtinsFor[0]);
+
+	}
+
+	function selectUoM(btn) {
+		if ($(btn).hasClass("btn-primary")) {
+			//switch back to default
+			$(btn).removeClass("btn-primary");
+			$(btn).addClass("btn-default");
+
+			//remove from lbl selected	
+			reserveGtinsFor.pop($(btn).text())
+		} else {
+			//switch to selected mode
+			$(btn).removeClass("btn-default");
+			$(btn).addClass("btn-primary");
+
+			//add from lbl selected
+			reserveGtinsFor.push($(btn).text())
+		}
+
+		$("#lblGtinInput").text(reserveGtinsFor);
+
+	}
+
+	function removeAllGtins() {
+		$(".gtinRow").hide()
+		$(".lblGtin").hide()
+		$("#lblGtinInput").show()
+		$(".lblGtin2").hide()
+		$("#lblGtinInput2").show()
+		$(".supRegInfoPanel").hide();
+
+		$("#panelMassValidation").hide();
+		$("#gtinInput").focus();
+	}
+
+	function pasteSingleGtin() {
+		row = $('.gtinRow:hidden').first()
+		row.show();
+
+		if (row.hasClass("gtinValid")) {
+			if (row.hasClass("gtinCreation")) {
+				//creation
+				$('.lblGtin:hidden').first().show();
+				$("#lblGtinInput").hide()
+			} else {
+				//reactivation
+				$('.lblGtin2:hidden').first().show();
+				$("#lblGtinInput2").hide()
+			}
+		}
+
+		$("#panelMassValidation").show();
+		$(".supRegInfoPanel").show();
+		doOnGtinListUpdate();
+
+		$("#gtinInput").val("");
+		$("#gtinInput").focus();
+	}
+
+	function pasteGtins() {
+		$(".gtinRow").show()
+		$("#panelMassValidation").show();
+		$(".lblGtin").show()
+		$("#lblGtinInput").hide()
+		$("#lblGtinInput2").hide()
+		$(".supRegInfoPanel").show();
+	}
+
+	function removeAllSuppliers() {
+		$(".supRow").hide()
+		$("#panelSupplierDetails").hide();
+		$("#supInput").focus();
+		$(".supRegInfoPanel").hide();
+		$(".supNoRegInfoPanel").hide();
+	}
+
+	function showGtins(btn, action) {
+		$(btn).addClass("btn-primary").removeClass("btn-default")
+		$(".btnSwitchGtins:not(#" + $(btn).attr("id") + ")").removeClass("btn-primary").addClass("btn-default")
+
+		if (action === 0) {
+			//ALL
+			$(".gtinValid").show()
+			$(".gtinInvalid").show()
+		} else if (action === 1) {
+			//VALID
+			$(".gtinValid").show()
+			$(".gtinInvalid").hide()
+		} else {
+			//VALID
+			$(".gtinValid").hide()
+			$(".gtinInvalid").show()
+		}
+
+		//$("#datatable-gi").DataTable().draw()
+
+	}
+
+	function reuse(index) {
+		$(".fake-" + index).show();
+		$(".orig-" + index).hide();
+		$("#lblGtinInput").hide();
+	}
+
+	function undoReuse(index) {
+		$(".fake-" + index).hide();
+		$(".orig-" + index).show();
+		$("#lblGtinInput2").hide();
+	}
+
+	jQuery(document).ready(function ($) {
+		$("#mainSection").css("background", "white");
+
+		$("#gtinInput").on('keyup', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+
+			if (e.key === 'Enter' || e.keyCode === 13) {
+				pasteSingleGtin()
+			}
+
+			return false;
+		});
+
+		$("#supInput").on('keyup', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+
+			if (e.key === 'Enter' || e.keyCode === 13) {
+				$('.supRow:hidden').first().show();
+				$("#panelSupplierDetails").show();
+
+				if ($(".supRegInfoPanel").is(":visible")) {
+					//means that a non-regular supplier was entered
+					$(".supNoRegInfoPanel").show();
+					$('.lblOtherSup:hidden').first().show();
+				} else {
+					$(".supRegInfoPanel").show()
+				}
+
+				$("#supInput").val("");
+				$("#supInput").focus();
+			}
+
+			return false;
+		});
+
+		document.getElementById('gtinInput').addEventListener('paste', handlePaste);
+		$("#gtinInput").removeAttr("maxLength");
+
+		document.addEventListener('keydown', function (event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				event.stopPropagation();
+			}
+		});
+
+		$(".main-panel").css("height", "calc(90vh - " + $(".main-panel").offset().top + "px)");
+
+	}); 			
+</script>
+
+
+
+
+<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">Article Creation</h2>
+		<a class="btnAction sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+			href="#" style="display: none;"><i class="fas fa-save" style="margin-top: -10px;"></i></a>
+		<a class="btnAction sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+			href="#" style="display: none;"><i class="fas fa-check" style="margin-top: -10px;"></i></a>
+		<div class="right-wrapper text-right">
+			<ol class="breadcrumbs" style="padding-right:30px">
+
+			</ol>
+		</div>
+	</header>
+
+	<div>
+		<div class="row">
+			<div class="col-lg-4 col-xl-3 mb-4 mb-xl-0">
+				<section class="card">
+					<header class="card-header">
+						<div class="card-actions">
+							<a href="#" class="card-action" style="color: darkred;">Reset</a>
+						</div>
+						<h2 class="card-title">Summary</h2>
+					</header>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-6" style="text-align: center;">
+								<div id="lblBrandType" class="h4 font-weight-bold mb-0 mt-3">N1 - National</div>
+								<p class="text-3 text-muted mb-0">Brand type</p>
+							</div>
+							<div class="col-md-6" style="text-align: center;">
+								<div id="lblType" class="h4 font-weight-bold mb-0 mt-3">GDSN</div>
+								<p class="text-3 text-muted mb-0">Type</p>
+							</div>
+						</div>
+
+						<hr class="dotted short" style="margin-bottom: 25px;">
+
+						<ul class="simple-bullet-list mb-3">
+							<li class="red nonGdsn" style="display: none;margin-bottom: 25px;">
+								<span class="title">Reason for manual</span>
+								<span id="lblNonGdsnReason" class="description truncate" style="font-size: larger;">NFR
+									(Non-GDSN)</span>
+								<span id="lblNonGdsnReasonJust" class="description truncate"
+									style="display: none;"></span>
+							</li>
+							<li class="green nonGdsn" style="display: none;margin-bottom: 25px;">
+								<span class="title">GTIN type</span>
+								<span id="lblGtinType" class="description truncate" style="font-size: larger;">Average
+									weight</span>
+							</li>
+							<li class="blue gtinInputPanel" style="display: none;margin-bottom: 25px;">
+								<span id="lblTitleGtin" class="title">GTINs for creation</span>
+								<span id="lblGtinInput" class="description truncate" style="font-size: larger;">-</span>
+								<span class="description truncate fake-1"
+									style="display: none;font-size: larger;">21542345987612 (Re-use)</span>
+								<span class="description truncate fake-2"
+									style="display: none;font-size: larger;">15785845461246 (Re-use)</span>
+								<span class="description truncate lblGtin c3"
+									style="display: none;font-size: larger;">62347812345699</span>
+								<span class="description truncate lblGtin c4"
+									style="display: none;font-size: larger;">81245678923465</span>
+								<span class="description truncate fake-3"
+									style="display: none;font-size: larger;">45329876541234 (Re-use)</span>
+								<!-- <span class="description truncate lblGtin c5" style="display: none;font-size: larger;">98765432145698</span> -->
+								<span class="description truncate lblGtin c6"
+									style="display: none;font-size: larger;">And 1 more</span>
+							</li>
+							<li class="blue gtinInputPanel2" style="display: none;margin-bottom: 25px;">
+								<span id="lblTitleGtin2" class="title">GTINs for reactivation</span>
+								<span id="lblGtinInput2" class="description truncate"
+									style="font-size: larger;">-</span>
+								<span class="description truncate lblGtin2 c1 orig-1"
+									style="display: none;font-size: larger;">21542345987612</span>
+								<span class="description truncate lblGtin2 c2 orig-2"
+									style="display: none;font-size: larger;">15785845461246</span>
+								<!-- <span class="description truncate lblGtin c3" style="display: none;font-size: larger;">62347812345699</span>
+								<span class="description truncate lblGtin c4" style="display: none;font-size: larger;">81245678923465</span> -->
+								<!-- <span class="description truncate lblGtin c5" style="display: none;font-size: larger;">98765432145698</span> -->
+								<span class="description truncate lblGtin2 c6"
+									style="display: none;font-size: larger;">And 1 more</span>
+							</li>
+							<li class="darkcyan supRegInfoPanel" style="display: none;margin-bottom: 25px;">
+								<span class="title">Regular supplier</span>
+								<span class="description truncate" style="font-size: larger;">0050013489 - Coca-Cola
+									Company</span>
+							</li>
+							<li class="orange supNoRegInfoPanel" style="display: none;">
+								<span class="title">Non-regular suppliers</span>
+								<span class="description truncate lblOtherSup"
+									style="font-size: larger;display: none;">0010002878 - Unilever</span>
+								<span class="description truncate lblOtherSup"
+									style="font-size: larger;display: none;">0034282811 - Another company with a longer
+									description</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<div class="col-lg-9">
+				<section class="card form-wizard" id="w4">
+					<header class="card-header">
+						<div class="card-actions">
+
+						</div>
+
+						<h2 class="card-title text-center">Product details</h2>
+					</header>
+					<div class="card-body card-body-nopadding" style="background: white;">
+						<div class="wizard-tabs" style="margin-bottom: 30px;">
+							<ul class="nav wizard-steps">
+								<li class="nav-item active">
+									<a href="#w4-main" data-toggle="tab" class="nav-link text-center">
+										<span class="badge">1</span>
+										Brand & Type
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#w4-gtin" data-toggle="tab" class="nav-link text-center">
+										<span class="badge">2</span>
+										GTIN
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#w4-suppliers" data-toggle="tab" class="nav-link text-center">
+										<span class="badge">3</span>
+										Suppliers
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="#w4-details" data-toggle="tab" class="nav-link text-center">
+										<span class="badge">4</span>
+										Details
+									</a>
+								</li>
+							</ul>
+						</div>
+						<form class="form-horizontal col-lg-10 offset-lg-1 p-3" novalidate="novalidate">
+							<div class="tab-content scrollable main-panel" data-plugin-scrollable>
+								<div id="w4-main" class="tab-pane active scrollable-content">
+									<div class="row">
+										<section class="card card-transparent mb-4 col-lg-12">
+											<header class="card-header text-center">
+												<div class="card-actions">
+												</div>
+
+												<h2 class="card-title">Main information</h2>
+												<p class="card-subtitle">Type selection is not relevant for product
+													reactivation processes.</p>
+												<p class="card-subtitle">Manual selection requires GTIN type definition
+													and a reason.</p>
+											</header>
+											<div class="card-body offset-lg-1" style="margin-top: 25px;">
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Brand type:
+													</label>
+													<div class="col-sm-6" style="text-align: center;">
+														<div class="btn-group d-flex" role="group">
+															<a class="btn btn-primary w-100" role="button" id="btnN1"
+																onclick="toogleBrandType(this,'btnD1')">N1 -
+																National</a>
+															<a class="btn btn-default w-100" role="button" id="btnD1"
+																onclick="toogleBrandType(this,'btnN1')">D1 -
+																Delhaize</a>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Type:</label>
+													<div class="col-sm-6" style="text-align: center;">
+														<div class="btn-group d-flex" role="group">
+															<a class="btn btn-primary w-100" role="button" id="btnGS1"
+																onclick="toogleGDSNType(this,'btnNoGS1')">GDSN</a>
+															<a class="btn btn-default w-100" role="button" id="btnNoGS1"
+																onclick="toogleGDSNType(this,'btnGS1')">Manual</a>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row panelGDSNReason" style="display: none;">
+													<label class="col-sm-3 control-label text-sm-right pt-2">GTIN type:
+													</label>
+													<div class="col-sm-6" style="text-align: center;">
+														<div class="btn-group d-flex" role="group">
+															<a class="btn btn-primary w-100" role="button" id="btnAW"
+																onclick="toogleGtinType(this,'btnOT')">Average
+																Weight</a>
+															<a class="btn btn-default w-100" role="button" id="btnOT"
+																onclick="toogleGtinType(this,'btnAW')">Others</a>
+														</div>
+													</div>
+													<div class="col-sm-2">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" id="chkIp" onchange="toogleIP()">
+															<label for="chkIp">Include IP</label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row panelGDSNReason" style="display: none;">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Reason
+														<code>*</code></label>
+													<div class="col-sm-6" style="text-align: center;">
+														<select id="selReason" class="form-control col-lg-12"
+															onchange="javascript:onNonGDSNReasonChange()">
+															<option id="1" selected>NFR (non GDSN)</option>
+															<option id="2">EXPORT articles (non GDSN)</option>
+															<option id="3">garbage bags (non GDSN)</option>
+															<option id="4">Cigarettes (non GDSN)</option>
+															<option id="5">empties / support packaging (non GDSN)
+															</option>
+															<option id="6">New supplier (not yet in GDSN)</option>
+															<option id="7">LX articles (not mandatory to go via GDSN)
+															</option>
+															<option id="8">Free articles</option>
+															<option id="other">Other</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row panelGDSNReasonJust" style="display: none;">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Justification
+														<code>*</code>:</label>
+													<div class="col-sm-6" style="text-align: center;">
+														<textarea class="form-control" rows="2"
+															onchange="javascript:onNonGDSNReasonJustificationUpdated(this.value)"></textarea>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<div id="w4-gtin" class="tab-pane scrollable-content">
+									<div class="row">
+										<div class="col-lg-12">
+											<section id="panelGtinInput" class="card card-transparent mb-4 col-lg-12">
+												<header class="card-header text-center">
+													<div class="card-actions">
+													</div>
+
+													<h2 class="card-title">Manual GTIN input</h2>
+													<p class="card-subtitle">Press Enter after GTIN manual input is done
+														to trigger validation process. If using copy/paste (one or many
+														GTINs), the validation is triggered automatically<br>Only
+														validated and approved GTINs below are going to be processed in
+														the next steps.</p>
+												</header>
+												<div class="card-body">
+													<div class="row text-center" style="margin-top: 30px;">
+														<div class="col-lg-6 offset-lg-3">
+															<div class="input-group mb-3">
+																<span class="input-group-prepend">
+																	<select class="form-control mb-3 cust-select"
+																		style="background-color: floralwhite;text-align: center;">
+																		<option value="BE" selected>Belgium</option>
+																		<option value="LU">Luxembourg</option>
+																	</select>
+																</span>
+																<input id="gtinInput" type="text" class="form-control"
+																	style="text-align: center;" required maxlength="14"
+																	autocomplete="off">
+																<span class="input-group-append">
+																	<button type="button"
+																		class="mb-1 mt-1 mr-1 btn btn-default"
+																		onclick="handlePasteFromButton()"><i
+																			class="fas fa-paste"></i> </button>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="row" style="margin-top: 30px;">
+														<div class="col-lg-10 offset-lg-1">
+															<div id="panelMassValidation"
+																style="display: block;margin-top: 10px;">
+																<div class="row" style="margin-bottom: 5px;">
+																	<div class="col-lg-2">
+																		<div class="btn-group flex-wrap">
+																			<button type="button" id="btnGtinAll"
+																				class="btn btn-primary btnSwitchGtins"
+																				onclick="javascript:showGtins(this,0)">All</button>
+																			<button type="button" id="btnGtinAct"
+																				class="btn btn-default btnSwitchGtins"
+																				onclick="javascript:showGtins(this,1)"><i
+																					class="fas fa-check"></i></button>
+																			<button type="button" id="btnGtinIna"
+																				class="btn btn-default btnSwitchGtins"
+																				onclick="javascript:showGtins(this,2)"><i
+																					class="fas fa-ban"></i></button>
+																		</div>
+																	</div>
+																	<div id="searchDiv" class="col-lg-6">
+																		<label class="col-form-label"
+																			for="formGroupExampleInput">Supplier:<span
+																				style="color: darkgreen;font-size: larger;margin-left:15px">0050013489
+																				- Coca-Cola Company</span></label>
+																	</div>
+																	<div class="col-lg-1 text-right offset-lg-1">
+																		<button type="button"
+																			class="mb-0 mt-0 mr-0 btn btn-link">Export</button>
+																	</div>
+																	<div class="col-lg-2 text-right">
+																		<button type="button"
+																			class="mb-0 mt-0 mr-0 btn btn-link"
+																			onclick="javascript:removeAllGtins()">Remove
+																			all</button>
+																	</div>
+																</div>
+																<table
+																	class="table table-responsive-md table-hover mb-0"
+																	id="datatable-gi" data-page-length='5'>
+																	<thead>
+																		<tr style="background-color: ghostwhite;">
+																			<th id="thStatus"
+																				style="width: 5%;text-align: center;">
+																			</th>
+																			<th id="thGtin"
+																				style="vertical-align: middle;width: 25%;">
+																				GTINs</th>
+																			<th id="thProcess"
+																				style="vertical-align: middle;width: 18%;">
+																				Process</th>
+																			<th id="thMes"
+																				style="vertical-align: middle;width: 37% !important;">
+																				Message</th>
+																			<th id="thActions"
+																				style="width: 15%;text-align: center;">
+																			</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<!-- Row 1 -->
+																		<tr role="row" class="gtinRow gtinValid"
+																			style="background: cornsilk;">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO"
+																					style="color:green"></i>
+																			</td>
+																			<td class="orig-1">21542345987612</td>
+																			<td class="fake-1" style="display: none;">
+																				<div class="input-group form-group">
+																					<span class="input-group-prepend"
+																						style="color: darkred;margin-left:5px;margin-right: 5px;margin-top: 5px;">99152213220000</span>
+																					<select
+																						class="form-control form-control-sm"
+																						style="text-align: center;">
+																						<option selected>KG</option>
+																						<option>EA</option>
+																						<option>IP</option>
+																						<option>CV</option>
+																						<option>LY</option>
+																						<option>PL</option>
+																					</select>
+																					<span class="input-group-append">
+																						<a class="modal-basic btn btn-default btn-xs"
+																							href="#modalInfoReuse"
+																							style="background: lightgray;text-align: center;font-size: small;">
+																							<i class="fas fa-info"></i>
+																						</a>
+																					</span>
+																				</div>
+																			</td>
+																			<td data-toggle="tooltip"
+																				data-placement="bottom"
+																				title="SAP ID: 1234567">
+																				<span class="badge badge-info orig-1"
+																					style="font-size: larger;">Reactivation</span>
+																				<span class="badge badge-warning fake-1"
+																					style="font-size: larger;display: none;">Creation</span>
+																			</td>
+																			<td class="orig-1"></td>
+																			<td class="fake-1" style="display: none;">
+																				Re-use GTIN: 21542345987612</td>
+																			<td class="actions text-right">
+																				<button type="button"
+																					class="btn btn-default btn-sm orig-1"
+																					style="margin-right: 10px;"
+																					onclick="javascript:reuse(1)"><i
+																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
+																				<button type="button"
+																					class="btn btn-default btn-sm fake-1"
+																					style="margin-right: 10px;display: none;"
+																					onclick="javascript:undoReuse(1)"><i
+																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+
+																		<!-- Row 2 (Orange with warning) -->
+																		<tr role="row" class="gtinRow gtinValid">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO"
+																					style="color:orange"></i>
+																			</td>
+																			<td class="orig-2">15785845461246</td>
+																			<td class="fake-2" style="display: none;">
+																				<div class="input-group form-group">
+																					<span class="input-group-prepend"
+																						style="color: darkred;margin-left:5px;margin-right: 5px;margin-top: 5px;">9934881410022</span>
+																					<select
+																						class="form-control form-control-sm"
+																						style="text-align: center;">
+																						<option selected>KG</option>
+																						<option>EA</option>
+																						<option>IP</option>
+																						<option>CV</option>
+																						<option>LY</option>
+																						<option>PL</option>
+																					</select>
+																					<span class="input-group-append">
+																						<a class="modal-basic btn btn-default btn-xs"
+																							href="#modalInfoReuse"
+																							style="background: lightgray;text-align: center;font-size: small;">
+																							<i class="fas fa-info"></i>
+																						</a>
+																					</span>
+																				</div>
+																			</td>
+																			<td data-toggle="tooltip"
+																				data-placement="bottom"
+																				title="SAP ID: 9314561">
+																				<span class="badge badge-info orig-2"
+																					style="font-size: larger;">Reactivation</span>
+																				<span class="badge badge-warning fake-2"
+																					style="font-size: larger;display: none;">Creation</span>
+																			</td>
+																			<td class="orig-2">Valid to reactivate but
+																				this warning given during validation
+																			</td>
+																			<td class="fake-2" style="display: none;">
+																				Valid to reactivate but this warning
+																				given during validation<br>Re-use GTIN:
+																				15785845461246</td>
+																			<td class="actions text-right">
+																				<button type="button"
+																					class="btn btn-default btn-sm orig-2"
+																					style="margin-right: 10px;"
+																					onclick="javascript:reuse(2)"><i
+																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
+																				<button type="button"
+																					class="btn btn-default btn-sm fake-2"
+																					style="margin-right: 10px;display: none;"
+																					onclick="javascript:undoReuse(2)"><i
+																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+
+																		<!-- Row 3 -->
+																		<tr role="row"
+																			class="gtinRow gtinValid gtinCreation">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO"
+																					style="color:green"></i>
+																			</td>
+																			<td>62347812345699</td>
+																			<td data-toggle="tooltip"
+																				data-placement="bottom">
+																				<span class="badge badge-warning"
+																					style="font-size: larger;">Creation</span>
+																			</td>
+																			<td></td>
+																			<td class="actions text-right">
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+
+																		<!-- Row 4 -->
+																		<tr role="row"
+																			class="gtinRow gtinValid gtinCreation">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO"
+																					style="color:orange"></i>
+																			</td>
+																			<td>81245678923465</td>
+																			<td data-toggle="tooltip"
+																				data-placement="bottom">
+																				<span class="badge badge-warning"
+																					style="font-size: larger;">Creation</span>
+																			</td>
+																			<td>Valid to create but this warning given
+																				during validation</td>
+																			<td class="actions text-right">
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+
+																		<!-- Row 5 -->
+																		<tr role="row"
+																			class="gtinRow gtinInvalid gtinCreation">
+																			<td class="sts center">
+																				<i class="fas fa-ban stsO"
+																					style="color:darkred"></i>
+																			</td>
+																			<td>98765432145698</td>
+																			<td data-toggle="tooltip"
+																				data-placement="bottom">
+																				<!-- <span class="badge badge-warning" style="font-size: larger;">Creation</span> -->
+																			</td>
+																			<td>Assigned to a different supplier:
+																				0010000747 - Euro EI</td>
+																			<td class="actions text-right">
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+
+																		<!-- Row 6 -->
+																		<tr role="row" class="gtinRow gtinInvalid">
+																			<td class="sts center">
+																				<i class="fas fa-ban stsO orig-3"
+																					style="color:darkred"></i>
+																				<i class="fas fa-check stsO fake-3"
+																					style="color:green;display: none;"></i>
+																			</td>
+																			<td class="orig-3">45329876541234</td>
+																			<td class="fake-3" style="display: none;">
+																				<div class="input-group form-group">
+																					<span class="input-group-prepend"
+																						style="color: darkred;margin-left:5px;margin-right: 5px;margin-top: 5px;">99478552465420</span>
+																					<select
+																						class="form-control form-control-sm"
+																						style="text-align: center;">
+																						<option selected>KG</option>
+																						<option>EA</option>
+																						<option>IP</option>
+																						<option>CV</option>
+																						<option>LY</option>
+																						<option>PL</option>
+																					</select>
+																					<span class="input-group-append">
+																						<a class="modal-basic btn btn-default btn-xs"
+																							href="#modalInfoReuse"
+																							style="background: lightgray;text-align: center;font-size: small;">
+																							<i class="fas fa-info"></i>
+																						</a>
+																					</span>
+																				</div>
+																			</td>
+																			<td data-toggle="tooltip"
+																				data-placement="bottom">
+																				<span class="badge badge-warning fake-3"
+																					style="font-size: larger;display: none;">Creation</span>
+																				<!-- <span class="badge badge-info" style="font-size: larger;">Reactivation</span> -->
+																			</td>
+																			<td class="orig-3">In use and SAP status not
+																				valid for reactivation</td>
+																			<td class="fake-3" style="display: none;">
+																				Re-use GTIN: 45329876541234</td>
+																			<td class="actions text-right">
+																				<button type="button"
+																					class="btn btn-default btn-sm orig-3"
+																					style="margin-right: 10px;"
+																					onclick="javascript:reuse(3)"><i
+																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
+																				<button type="button"
+																					class="btn btn-default btn-sm fake-3"
+																					style="margin-right: 10px;display: none;"
+																					onclick="javascript:undoReuse(3)"><i
+																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+																		<!-- 																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>12456789345687</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>34567891234567</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>45678912365487</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:orange"></i>
+																			</td>
+																			<td>56789412345678</td>
+																			<td>Warning given during validation</td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>67894561234567</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>78945612345612</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>																			
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>89674561231234</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:orange"></i>
+																			</td>
+																			<td>91234561234589</td>
+																			<td>Warning given during validation</td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+																		<tr role="row" class="gtinRow">
+																			<td class="sts center">
+																				<i class="fas fa-check stsO" style="color:green"></i>
+																			</td>
+																			<td>23456789123456</td>
+																			<td></td>
+																			<td class="actions center">
+																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr> -->
+																	</tbody>
+																</table>
+																<div class="row" style="margin-top: 20px;">
+																	<div class="col-lg-6 mr-3 align-self-end">
+																		<div class="row control-group">
+																			<div id="divPag" class="col-sm-4 col-lg-3"
+																				style="padding-right:0%;">
+																			</div>
+																		</div>
+																	</div>
+																	<div id="fPag" class="col-lg-3 offset-lg-9"
+																		style="text-align: right;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+											<section id="panelGtinRes" class="card card-transparent mb-4 col-lg-12"
+												style="display: none;">
+												<header class="card-header text-center">
+													<div class="card-actions">
+													</div>
+
+													<h2 class="card-title">GTIN reservation</h2>
+													<p class="card-subtitle">Select base and alternative units of
+														meassure for which you need GTINs</p>
+												</header>
+												<div class="card-body">
+													<div class="row">
+														<div class="col-lg-6 offset-lg-3" style="text-align: center;">
+															<label class="col-form-label"
+																for="formGroupExampleInput">Base Unit of
+																Meassure</label>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-lg-6 offset-lg-3" style="text-align: center;">
+															<div class="btn-group d-flex" role="group">
+																<a class="btn btn-default w-100" role="button"
+																	id="btnKG"
+																	onclick="toogleBaseUoM(this,'btnEA')">KG</a>
+																<a class="btn btn-default w-100" role="button"
+																	id="btnEA"
+																	onclick="toogleBaseUoM(this,'btnKG')">EA</a>
+															</div>
+														</div>
+													</div>
+													<div class="row pUoM" style="margin-top: 25px;display: none;">
+														<div class="col-lg-6 offset-lg-3" style="text-align: center;">
+															<label class="col-form-label"
+																for="formGroupExampleInput">Alternative Units of
+																Meassure</label>
+														</div>
+													</div>
+													<div class="row pUoM" style="padding-top: 0%;display: none;">
+														<button id="btnEA_alt" type="button"
+															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+															onclick="selectUoM(this)">EA</button>
+														<button id="btnIP_alt" type="button"
+															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+															onclick="selectUoM(this)">IP</button>
+														<button id="btnCV_alt" type="button"
+															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+															onclick="selectUoM(this)">CV</button>
+														<button id="btnPL_alt" type="button"
+															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+															onclick="selectUoM(this)">PL</button>
+														<div class="col-lg-6 offset-lg-3"
+															style="text-align: right;margin-top: 5px;padding-right: 0;">
+															<a id="see-more-btn" href="#" class="mb-1 mt-1 mr-1">Select
+																/ Deselect all</a>
+														</div>
+													</div>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+								<div id="w4-suppliers" class="tab-pane scrollable-content">
+									<div class="row">
+										<div class="col-lg-12">
+											<section class="card card-transparent mb-4 col-lg-12">
+												<header class="card-header text-center">
+													<div class="card-actions">
+													</div>
+
+													<h2 class="card-title">Suppliers</h2>
+													<p class="card-subtitle">Confirm or enter regular
+														supplier.<br>Supplier derived from GTIN input cannot be updated.
+													</p>
+												</header>
+												<div class="card-body">
+													<div id="panelSupplierSearch" class="row text-center"
+														style="margin-top: 30px;">
+														<div class="col-lg-6 offset-lg-3">
+															<div class="input-group mb-3">
+																<input id="supInput" type="text" class="form-control"
+																	style="text-align: center;" required maxlength="10"
+																	autocomplete="off">
+																<span class="input-group-append">
+																	<button class="btn btn-success" type="button"><i
+																			class="fa fa-search"></i></button>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="row" style="margin-top: 30px;">
+														<div class="col-lg-10 offset-lg-1">
+															<div id="panelSupplierDetails"
+																style="display: block;margin-top: 10px;">
+																<div class="row">
+																	<div id="searchDiv" class="col-lg-9">
+																	</div>
+																	<div class="col-lg-3 text-right">
+																		<button id="btnRemoveAllSup" type="button"
+																			class="mb-0 mt-0 mr-0 btn btn-link"
+																			onclick="javascript:removeAllSuppliers()">Remove
+																			all</button>
+																	</div>
+																</div>
+																<table
+																	class="table table-responsive-md table-hover mb-0"
+																	id="datatable-editable-3" data-page-length='5'>
+																	<thead>
+																		<tr style="background-color: ghostwhite;">
+																			<th style="width: 5%;text-align: center;">
+																				Type</th>
+																			<th id="thSupId"
+																				style="text-align: center;vertical-align: middle;width: 20%;">
+																				Account number</th>
+																			<th id="thName"
+																				style="vertical-align: middle;width: 50%;">
+																				Name</th>
+																			<th id="thCountry"
+																				style="vertical-align: middle;width: 20% ">
+																				Country</th>
+																			<th style="width: 5%;text-align: center;">
+																			</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<!-- Row 1 -->
+																		<tr role="row" class="supRow supMain"
+																			style="background: cornsilk;">
+																			<td class="text-center">
+																				<span
+																					class="badge badge-success">Regular</span>
+																			</td>
+																			<td class="text-center">0050013489</td>
+																			<td>Coca-Cola Company</td>
+																			<td>Belgium</td>
+																			<td class="actions center">
+																				<a id="btnRemoveMainSup" href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+																		<!-- Row 2 -->
+																		<tr role="row" class="supRow">
+																			<td class="text-center">
+																				<span
+																					class="badge badge-info">Non-Regular</span>
+																			</td>
+																			<td class="text-center">0010002878</td>
+																			<td>Unilever</td>
+																			<td>Belgium</td>
+																			<td class="actions center">
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+																		<!-- Row 2 -->
+																		<tr role="row" class="supRow">
+																			<td class="text-center">
+																				<span
+																					class="badge badge-info">Non-Regular</span>
+																			</td>
+																			<td class="text-center">0034282811</td>
+																			<td>Another company with a longer
+																				description</td>
+																			<td>Luxembourg</td>
+																			<td class="actions center">
+																				<a href="#"
+																					class="on-default remove-row"><i
+																						class="far fa-trash-alt"></i></a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<div class="row" style="margin-top: 20px;">
+																	<div class="col-lg-6 mr-3 align-self-end">
+																		<div class="row control-group">
+																			<div id="divPag" class="col-sm-4 col-lg-3"
+																				style="padding-right:0%;">
+																			</div>
+																		</div>
+																	</div>
+																	<div id="fPag" class="col-lg-3 offset-lg-9"
+																		style="text-align: right;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+								<div id="w4-details" class="tab-pane scrollable-content">
+									<div class="row"
+										style="padding: 15px 30px 30px 30px;background: floralwhite;margin-left: 1px;margin-right: 1px;">
+										<div class="col-lg-4" style="text-align: center;">
+											<!-- start: Introduction week -->
+											<div class="row">
+												<div class="col-lg-12">
+													<label class="col-form-label"
+														for="formGroupExampleInput">Introduction week
+														<code>*</code></label>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12">
+													<select class="form-control col-lg-12" style="text-align: center;">
+														<option selected>W48 - 24/11/2022</option>
+														<option>W49 - 31/11/2022</option>
+													</select>
+												</div>
+											</div>
+											<!-- end: Introduction week -->
+										</div>
+										<div class="col-lg-4" style="text-align: center;">
+											<!-- start: Linked to a promo week -->
+											<div class="row">
+												<div class="col-lg-12">
+													<label class="col-form-label" for="formGroupExampleInput">Linked to
+														a promo week</label>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12">
+													<div class="checkbox-custom"
+														style="margin-top: 8px;margin-left: 45%;">
+														<input type="checkbox" id="checkboxExample2">
+														<label for="checkboxExample2"></label>
+													</div>
+												</div>
+											</div>
+											<!-- end: Linked to a promo week -->
+										</div>
+										<div class="col-lg-4" style="text-align: center;">
+											<!-- start: Campaign week -->
+											<div class="row">
+												<div class="col-lg-12">
+													<label class="col-form-label" for="formGroupExampleInput">Campaign
+														week</label>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-12">
+													<select class="form-control col-lg-12" style="text-align: center;">
+														<option class="optionToChange" selected value=""></option>
+														<option value="W48 - 24/11/2022">W56/2024</option>
+														<option value="W48 - 24/11/2022">W57/2024</option>
+														<option value="W48 - 24/11/2022">W58/2024</option>
+														<option value="W48 - 24/11/2022">W59/2024</option>
+														<option value="W48 - 24/11/2022">W60/2024</option>
+														<option value="W48 - 24/11/2022">W61/2024</option>
+														<option value="W48 - 24/11/2022">W62/2024</option>
+														<option value="W48 - 24/11/2022">W63/2024</option>
+														<option value="W48 - 24/11/2022">W64/2024</option>
+													</select>
+												</div>
+											</div>
+											<!-- end: Campaign week -->
+										</div>
+									</div>
+									<div id="pNoDetailsMsge" class="row"
+										style="margin-top: 15px;margin-left: 1px;margin-right: 1px;display: none">
+										<div class="alert alert-info text-center col-lg-12">
+											<strong>No GTINs entered for product creation. </strong> Product details not
+											required for reactivation processes.
+										</div>
+									</div>
+									<div id="pDetails" class="row" style="margin-top: 15px;">
+										<section class="card mb-4 col-lg-12">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Product details</h2>
+												<p class="card-subtitle">The below details are only relevant for product
+													creation processes. They have no impact on products identified for
+													reactivation.</p>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-3"
+														style="background: aliceblue;padding:15px 30px 30px 30px;text-align: center;margin-top: -17px;margin-bottom: -17px;">
+														<!-- start: Scenario -->
+														<div class="row">
+															<div class="col-lg-12">
+																<label class="col-form-label"
+																	for="formGroupExampleInput">Scenario
+																	<code>*</code></label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<select class="form-control col-lg-12"
+																	style="text-align: center;">
+																	<option selected>New</option>
+																	<option>Reshape</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Scenario -->
+														<!-- start: Sales type -->
+														<div class="row" style="margin-top: 15px;">
+															<div class="col-lg-12">
+																<label class="col-form-label"
+																	for="formGroupExampleInput">Sales type
+																	<code>*</code></label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<select class="form-control col-lg-12"
+																	style="text-align: center;">
+																	<option selected>Resale</option>
+																	<option>Not for resale (supplies)</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Sales type -->
+														<!-- start: Distribution type -->
+														<div class="row" style="margin-top: 15px;">
+															<div class="col-lg-12">
+																<label class="col-form-label"
+																	for="formGroupExampleInput">Distribution type
+																	<code>*</code></label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<select class="form-control col-lg-12"
+																	style="text-align: center;">
+																	<option selected>DC</option>
+																	<option>DSD</option>
+																	<option>DSD Local</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Distribution type -->
+														<!-- start: Logistical type -->
+														<div class="row" style="margin-top: 15px;">
+															<div class="col-lg-12">
+																<label class="col-form-label"
+																	for="formGroupExampleInput">Logistical type
+																	<code>*</code></label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<select class="form-control col-lg-12"
+																	style="text-align: center;">
+																	<option selected>Regular</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Logistical type -->
+														<!-- start: Specifics type -->
+														<div class="row" style="margin-top: 15px;">
+															<div class="col-lg-12">
+																<label class="col-form-label"
+																	for="formGroupExampleInput">Specifics
+																	<code>*</code></label>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-lg-12">
+																<select class="form-control col-lg-12"
+																	style="text-align: center;">
+																	<option selected>Regular</option>
+																	<option>Free Article</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Specifics type -->
+													</div>
+													<div class="col-lg-9">
+														<!-- start: Filiere -->
+														<div class="form-group row" style="margin-top: 70px;">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Filiere
+																<code>*</code>:</label>
+															<div class="col-sm-7">
+																<select id="selFil"
+																	class="form-control mb-3 cust-select">
+																	<option selected></option>
+																	<option>01 - Meat</option>
+																	<option>02 - Fish</option>
+																	<option>03 - Drugstore / Prefumery</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Filiere -->
+														<!-- start: Category -->
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Category
+																<code>*</code>:</label>
+															<div class="col-sm-7">
+																<select id="selCategory"
+																	class="form-control mb-3 cust-select">
+																	<option selected></option>
+																	<option>E031 - Butchery third parties Prepackages
+																	</option>
+																	<option>E099 - DSD</option>
+																	<option>E021 - Fresh meat in loose</option>
+																</select>
+															</div>
+														</div>
+														<!-- end: Category -->
+														<!-- start: Description -->
+														<div id="sDesc" class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Description
+																<code>*</code>:</label>
+															<div class="col-sm-7">
+																<input type="text" class="form-control"
+																	id="formGroupExampleInput" placeholder="" value=""
+																	autocomplete="off">
+															</div>
+														</div>
+														<!-- end: Descritpion -->
+														<div class="row">
+															<hr class="col-lg-10 dotted short"
+																style="margin-bottom: 25px;margin-left: 5%;">
+														</div>
+														<!-- start: Comments -->
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Comments:
+															</label>
+															<div class="col-sm-7">
+																<textarea class="form-control" rows="3"></textarea>
+															</div>
+														</div>
+														<!-- end: Comments -->
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="card-footer">
+						<ul class="pager text-right">
+							<li class="previous disabled">
+								<a style="color: darkred;"><i class="fas fa-angle-left"></i> Back</a>
+							</li>
+							<li id="btnNext_res" class="next" style="display: none;">
+								<button class="btn btn-lg btn-default mb-1 mt-1 mr-1"
+									onclick="javascript:toGtinInput(false)"><i class="fas fa-angle-right"></i> To GTIN
+									reservation</button>
+							</li>
+							<li id="btnNext_input" class="next" style="display: none;">
+								<button class="btn btn-lg btn-success mb-1 mt-1 mr-1"
+									onclick="javascript:toGtinInput(true)"><i class="fas fa-angle-right"></i> To GTIN
+									input</button>
+							</li>
+							<li id="btnRegNext" class="next">
+								<button id="btnNext" class="btn btn-lg btn-success mb-1 mt-1 mr-1"><i
+										class="fas fa-angle-right"></i> Next</button>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<div id="dialog" class="modal-block mfp-hide">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Are you sure?</h2>
+			</header>
+			<div class="card-body">
+				<div class="modal-wrapper">
+					<div class="modal-text">
+						<p>Are you sure that you want to delete this row?</p>
+					</div>
+				</div>
+			</div>
+			<footer class="card-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button id="dialogConfirm" class="btn btn-primary">Confirm</button>
+						<button id="dialogCancel" class="btn btn-default">Cancel</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+</section>
+
+<div id="modalInfoReuse" class="modal-block modal-block-info mfp-hide">
+	<section class="card">
+		<header class="card-header">
+			<h2 class="card-title">Information</h2>
+		</header>
+		<div class="card-body">
+			<div class="modal-wrapper">
+				<div class="modal-icon">
+					<i class="fas fa-info-circle"></i>
+				</div>
+				<div class="modal-text">
+					<h4>Re-use GTIN</h4>
+					<p>GTIN will be re-used to start activities for a new product creation. As given GTIN is in use, a
+						fake one is provided during the process. At the end of the process this values will replace the
+						assigned fake GTIN.</p>
+					<p style="margin-top: 20px;margin-bottom: 0;"><u>Unit of measure selection</u></p>
+					<p>Re-used GTIN will be assigned to the selected unit of measure at the end of the process.</p>
+				</div>
+			</div>
+		</div>
+		<footer class="card-footer">
+			<div class="row">
+				<div class="col-md-12 text-right">
+					<button class="btn btn-info modal-dismiss">OK</button>
+				</div>
+			</div>
+		</footer>
+	</section>
+</div>
+
+<!-- Wizard  Initialization Files -->
+<script src="js/views/creation_create_wizard.js"></script>
+<script src="js/views/creation_create_tasks.js"></script>
+
+<script>
+	jQuery(document).ready(function ($) {
+		if (window.initModals) {
+			window.initModals();
+		}
+		if (window.initWizard) {
+			window.initWizard();
+		}
+		//App.CreationCreateTasks.initialize();
+	});
+</script>

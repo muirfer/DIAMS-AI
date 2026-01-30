@@ -1,0 +1,532 @@
+<section class="body">
+    <header class="page-header">
+        <h2 id="main_title">Product list</h2>
+
+        <div class="right-wrapper text-right">
+            <ol class="breadcrumbs" style="padding-right:30px">
+                <li>
+                    <a href="javascript:expandAll()">
+                        <i class="fas fa-arrows-alt-v"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:collapseAll()">
+                        <i class="fas fa-minus"></i>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </header>
+    <div class="inner-toolbar clearfix" id="dashboard-filter-container" style="top: 114px;height: 80px;">
+        <ul class="clearfix">
+            <li>
+                <div class="btn-group flex-wrap" style="top:-8px">
+                    <button id="btnMyTasks" type="button" class="btn btn-success" style="margin:8px;color:white;"
+                        onclick="App.CreationArticleList.openMyTasks(true)">My Tasks</button>
+                    <button id="btnTasks" type="button" class="btn" style="margin:8px;color:white;"
+                        onclick="App.CreationArticleList.openMyTasks(false)">Team Tasks</button>
+                </div>
+            </li>
+            <li class="right">
+                <div id="searchDiv"></div>
+            </li>
+            <li class="right">
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <span class="input-group-text" style="padding: 0px;">
+                            <button class="btn btn-default" style="font-size: smaller;background: snow;"
+                                type="button">Status</button>
+                        </span>
+                    </span>
+                    <select class="form-control col-lg-12" style="padding-top: 0px;padding-bottom: 0px;"
+                        onchange="App.CreationArticleList.selectStatus(this.value)">
+                        <option value="all" selected>All</option>
+                        <option class="oCreate" value="av">GDSN - GDSN Input</option>
+                        <option class="oCreate" value="us">VI - Supplier Input</option>
+                        <option class="oCreate" value="us">CER - Category Expert Review</option>
+                        <option class="oUpdate" style="display: none;">R - Review</option>
+                        <option class="oUpdate" style="display: none;">CR - Cancellation request</option>
+                    </select>
+                </div>
+            </li>
+            <li class="right">
+                <div class="btn-group flex-wrap" style="top:-8px">
+                    <button id="btnCTasks" type="button" class="btn btn-info"
+                        style="margin:8px;color:white;font-size: larger;"
+                        onclick="App.CreationArticleList.openCreationTasks(true)">Product
+                        creation&nbsp;<span id="countC" class="badge badge-warning"
+                            style="font-size: larger;">3</span></button>
+                    <button id="btnUTasks" type="button" class="btn" style="margin:8px;color:white;font-size: larger;"
+                        onclick="App.CreationArticleList.openCreationTasks(false)">Product update&nbsp;<span id="countU"
+                            class="badge badge-warning" style="font-size: larger;">2</span></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div class="row" style="margin-top: 60px;">
+            <div class="col-lg-12">
+                <div class="row my-4 mailbox">
+                    <div class="col mailbox-actions" style="padding-left: 20px !important;border-top: none !important;">
+                        <ul class="list-unstyled m-0">
+                            <li class="ib mr-2">
+                                <a class="item-action fas fa-sync mt-1" href="#" rel="tooltip" title=""
+                                    onclick="App.CreationArticleList.getItems(); return false;"
+                                    data-original-title="Refresh data"></a>
+                            </li>
+                            <li class="ib mr-2">
+                                <a class="item-action fas fa-eraser mt-1" href="#" rel="tooltip" title=""
+                                    onclick="App.CreationArticleList.clearFilters(); return false;"
+                                    data-original-title="Clear filters"></a>
+                            </li>
+                            <li class="ib mr-2">
+                                <a class="item-action far fa-file-excel mt-1" href="#" rel="tooltip" title=""
+                                    id="ia-download-vendor-xls" data-toggle="dropdown"
+                                    onclick="App.CreationArticleList.exportExcel(); return false;"
+                                    data-original-title="Export selected rows as an excel file)"></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a class="dropdown-item" id="export_1213518627" href="#"
+                                            onclick="exportItemsToExcel(1213518627, 'inv-items', '/E/AllInvoice/ListingToExcelExport');"
+                                            rel="tooltip" title="" data-original-title="Export Fin. Documents">Export
+                                            Fin. Documents</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="ib mr-2" id="downloadPdfButton" style="display: none;">
+                                <a class="item-action fas fa-file-pdf mt-1" href="#" rel="tooltip" title=""
+                                    id="ia-download-vendor-pdf"
+                                    onclick="App.CreationArticleList.downloadPdfFiles(); return false;"
+                                    data-original-title="Download selected pdf files (in .zip file)"></a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-4 mr-3 align-self-end">
+                        <div class="row control-group">
+                            <div class="col text-right pr-0 mr-0">
+                                Records per page
+                            </div>
+                            <div id="divPag" class="col-sm-4 col-lg-3" style="padding-right:0%">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- start: table -->
+                <div class="row">
+                    <!-- Main Data Table: List of Articles -->
+                    <div class="col-lg-12" style="height: 557px;">
+                        <table class="table table-responsive-md table-hover mb-0" id="datatable-cr"
+                            style="margin: 0 !important;">
+                            <thead>
+                                <tr>
+                                    <th id="cr1" draggable="true" class="text-center" style="width:5%">GTIN CU</th>
+                                    <th id="cr2" draggable="true" class="text-center" style="width:5%">Input GTIN</th>
+                                    <th id="cr3" draggable="true" class="text-left" style="width:25%">Product
+                                        description</th>
+                                    <th id="cr4" draggable="true" class="text-left" style="width:25%">Supplier name</th>
+                                    <th id="cr5" draggable="true" class="text-center" style="width:10%">Product Category
+                                    </th>
+                                    <th id="cr6" draggable="true" class="text-center" style="width:10%">Introduction
+                                        week</th>
+                                    <th id="cr7" draggable="true" class="text-center" style="width:10%">Promo/Campaign
+                                    </th>
+                                    <th id="cr8" draggable="true" class="text-center" style="width:10%">Status</th>
+                                    <th id="cr9" draggable="true" class="text-center" style="width:3%">Assignee</th>
+                                    <th id="cr10" draggable="true" class="text-center" style="width:2%">Actions</th>
+                                    <th id="cr11" draggable="true" class="text-center" style="width:2%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="row1" class="sts2 aw" style="background-color: floralwhite;">
+                                    <td class="text-center">12341234312</td>
+                                    <td class="text-center">12341234312</td>
+                                    <td>Cranberry with Spices 210g</td>
+                                    <td>MATERNE-CONFILUX</td>
+                                    <td class="text-center">E844<BR>
+                                        <p class="sinfo">Food Rayon 04 - Butchers</p>
+                                    </td>
+                                    <td class="text-center">W15 - 06/04/2023</td>
+                                    <td class="text-center">&#x2713;</td>
+                                    <td class="text-center tStatus cor">C<BR>
+                                        <p class="sinfo">Correction</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Fernando Muir">FMUI</td>
+                                    <td class="text-center" data-toggle="tooltip">
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-trash m-1" rel="tooltip" title=""
+                                                data-original-title="Cancel" style="color:black"></i>
+                                        </a>
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                                data-original-title="Assign to me" style="color:black"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center tStatus cor">&nbsp;</td>
+                                </tr>
+                                <tr id="row1a" class="sts2 aw teamT" style="background-color: floralwhite;">
+                                    <td class="text-center">12349556524</td>
+                                    <td class="text-center">12349556574</td>
+                                    <td>NES DLC GST Espresso Intenso</td>
+                                    <td>NESTLE BELGILUX</td>
+                                    <td class="text-center">E844<BR>
+                                        <p class="sinfo">Food Rayon 04 - Butchers</p>
+                                    </td>
+                                    <td class="text-center">W13 - 15/03/2023</td>
+                                    <td class="text-center">&#x2713;</td>
+                                    <td class="text-center tStatus cor">C<BR>
+                                        <p class="sinfo">Correction</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Jack Black">JBLA</td>
+                                    <td class="text-center" data-toggle="tooltip">
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-trash m-1" rel="tooltip" title=""
+                                                data-original-title="Cancel" style="color:black"></i>
+                                        </a>
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                                data-original-title="Assign to me" style="color:black"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center tStatus cor">&nbsp;</td>
+                                </tr>
+                                <tr id="row2" class="sts2 aw">
+                                    <td class="text-center">12341257981</td>
+                                    <td class="text-center">12343547981</td>
+                                    <td>CIF Perl white 750ML</td>
+                                    <td>KELLOG´S BENELUX</td>
+                                    <td class="text-center">F061<BR>
+                                        <p class="sinfo">Viennese bread and buns</p>
+                                    </td>
+                                    <td class="text-center">W16 - 09/05/2023</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center tStatus rev">R<BR>
+                                        <p class="sinfo">Review</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Fernando Muir">FMUI</td>
+                                    <td class="text-center" data-toggle="tooltip">
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-trash m-1" rel="tooltip" title=""
+                                                data-original-title="Cancel" style="color:black"></i>
+                                        </a>
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                                data-original-title="Assign to me" style="color:black"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center tStatus cor">&nbsp;</td>
+                                </tr>
+                                <tr id="row3" class="sts2 aw">
+                                    <td class="text-center">19745357920</td>
+                                    <td class="text-center">19745188920</td>
+                                    <td>CDO 2X400G L ORIGINAL MILK 18CA</td>
+                                    <td>MODELEZ BELGIUM</td>
+                                    <td class="text-center">F102<BR>
+                                        <p class="sinfo">Fresh meat in loose</p>
+                                    </td>
+                                    <td class="text-center">W28 - 09/09/2023</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center tStatus rev">VI<BR>
+                                        <p class="sinfo">Input</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Fernando Muir">FMUI</td>
+                                    <td class="text-center" data-toggle="tooltip">
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-trash m-1" rel="tooltip" title=""
+                                                data-original-title="Cancel" style="color:black"></i>
+                                        </a>
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                                data-original-title="Assign to me" style="color:black"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="left"
+                                        title="Non-GDSN">
+                                        <span class="badge badge-info" style="font-size: larger;">Manual</span>
+                                    </td>
+                                </tr>
+                                <tr id="row4" class="sts2 aw teamT">
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td>Provarel Organic 2X500GR</td>
+                                    <td></td>
+                                    <td class="text-center">F102<BR>
+                                        <p class="sinfo">Fresh ready to eat vegetable, potatoes</p>
+                                    </td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center tStatus">NEW</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center" data-toggle="tooltip">
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-trash m-1" rel="tooltip" title=""
+                                                data-original-title="Cancel" style="color:black"></i>
+                                        </a>
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                                data-original-title="Assign to me" style="color:black"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center tStatus cor">&nbsp;</td>
+                                </tr>
+                                <tr id="row5" class="sts2 aw teamT">
+                                    <td class="text-center">31855357115</td>
+                                    <td class="text-center">31855357115</td>
+                                    <td>Granola Goji and Blackcurrant 400g</td>
+                                    <td>Vendor Granola Goji</td>
+                                    <td class="text-center">E844<BR>
+                                        <p class="sinfo">Food Rayon 04 - Butchers</p>
+                                    </td>
+                                    <td class="text-center">W28 - 09/09/2023</td>
+                                    <td class="text-center">&nbsp;</td>
+                                    <td class="text-center tStatus rev">VI<BR>
+                                        <p class="sinfo">Input</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Fernando Muir">FMUI</td>
+                                    <td class="text-center" data-toggle="tooltip">
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-trash m-1" rel="tooltip" title=""
+                                                data-original-title="Cancel" style="color:black"></i>
+                                        </a>
+                                        <a href="#" class="text-center modal-with-zoom-anim ws-normal">
+                                            <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                                data-original-title="Assign to me" style="color:black"></i>
+                                        </a>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="left"
+                                        title="Non-GDSN">
+                                        <span class="badge badge-info" style="font-size: larger;">Manual</span><br>
+                                        <span style="font-size: smaller;color:darkred">Re-use GTIN</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-no-more table-hover mb-0" id="datatable-up"
+                            style="margin: 0 !important;display: none;">
+                            <thead>
+                                <tr>
+                                    <th id="c1" draggable="true" class="text-center" style="width:5%">SAP ID</th>
+                                    <th id="c1a" draggable="true" class="text-center" style="width:5%">Hope</th>
+                                    <th id="c2" draggable="true" class="text-left" style="width:20%">Product description
+                                    </th>
+                                    <th id="c3" draggable="true" class="text-left" style="width:17%">Supplier</th>
+                                    <th id="c6" draggable="true" class="text-center" style="width:15%">Product Category
+                                    </th>
+                                    <th id="c4" draggable="true" class="text-center" style="width:12%">Purch. group</th>
+                                    <th id="c5" draggable="true" class="text-center" style="width:13%">Product type</th>
+                                    <th id="c7" draggable="true" class="text-center" style="width:8%">Status</th>
+                                    <th id="c8" draggable="true" class="text-center" style="width:3%">Assignee</th>
+                                    <th id="c9" draggable="true" class="text-center" style="width:2%">Actions</th>
+                                    <th id="cr10" draggable="true" class="text-center" style="width:2%"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="teamT">
+                                    <td class="text-center ">234312</td>
+                                    <td class="text-center ">987654</td>
+                                    <td>Granola Goji and Blackcurrant 400g</td>
+                                    <td>Vendor Granola Goji</td>
+                                    <td class="text-center">E844<BR>
+                                        <p class="sinfo">Food Rayon 04 - Butchers</p>
+                                    </td>
+                                    <td class="text-center">B08<BR>
+                                        <p class="sinfo">Frais DAIRY DESSER</p>
+                                    </td>
+                                    <td class="text-center">ZLGO<BR>
+                                        <p class="sinfo">Tied Empties GOLD</p>
+                                    </td>
+                                    <td class="text-center tStatus rev">R<BR>
+                                        <p class="sinfo">Review</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Jack Black">JBLA</td>
+                                    <td class="text-center">
+                                        <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="left"
+                                        title="Reactivation">
+                                        <span class="badge badge-info" style="font-size: larger;">Reactivation</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center ">516550</td>
+                                    <td class="text-center ">983152</td>
+                                    <td>Materne Apricotjam 720g</td>
+                                    <td>MATERNE-CONFILUX</td>
+                                    <td class="text-center">F062<BR>
+                                        <p class="sinfo">Shellfish & crustacean</p>
+                                    </td>
+                                    <td class="text-center">B11<BR>
+                                        <p class="sinfo">Frais FISH</p>
+                                    </td>
+                                    <td class="text-center">ZIBF<BR>
+                                        <p class="sinfo">Free Operating supplies</p>
+                                    </td>
+                                    <td class="text-center tStatus rev">R<BR>
+                                        <p class="sinfo">Review</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Fernando Muir">FMUI</td>
+                                    <td class="text-center">
+                                        <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="left"
+                                        title="Reactivation">
+                                        <span class="badge badge-info" style="font-size: larger;">Reactivation</span>
+                                    </td>
+                                </tr>
+                                <tr class="teamT">
+                                    <td class="text-center ">516550</td>
+                                    <td class="text-center ">987628</td>
+                                    <td>Danone Aro Panache 125X4 Afh</td>
+                                    <td>ORANGINA SCHWEPPES BELGIUM</td>
+                                    <td class="text-center">C202<BR>
+                                        <p class="sinfo">Fresh ready to eat vegetable, potatoes</p>
+                                    </td>
+                                    <td class="text-center">B04<BR>
+                                        <p class="sinfo">BISCUIT-SUGAR-PANI</p>
+                                    </td>
+                                    <td class="text-center">ZHAF<BR>
+                                        <p class="sinfo">Free Trading Goods Retail</p>
+                                    </td>
+                                    <td class="text-center tStatus gdsn">CR<BR>
+                                        <p class="sinfo">Cancellation request</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Susan Smith">SSMIT</td>
+                                    <td class="text-center">
+                                        <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                        <i class="fas fa-reply m-1" rel="tooltip" title="Approve or Reject"
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                    </td>
+                                    <td class="text-center"></td>
+                                </tr>
+                                <tr class="teamT">
+                                    <td class="text-center ">511544</td>
+                                    <td class="text-center ">155651</td>
+                                    <td>JUP CAN 66x15 0,33L DDP WC</td>
+                                    <td>INBEV BELGIUM</td>
+                                    <td class="text-center">C842<BR>
+                                        <p class="sinfo">Food Rayon 02 - Fruit and vegetables</p>
+                                    </td>
+                                    <td class="text-center">B13<BR>
+                                        <p class="sinfo">JUICE</p>
+                                    </td>
+                                    <td class="text-center">ZLGU<BR>
+                                        <p class="sinfo">Full Products</p>
+                                    </td>
+                                    <td class="text-center tStatus rev">R<BR>
+                                        <p class="sinfo">Review</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Willem Bou">WBOU</td>
+                                    <td class="text-center">
+                                        <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                    </td>
+                                    <td class="text-center"></td>
+                                </tr>
+                                <tr class="teamT">
+                                    <td class="text-center ">001679</td>
+                                    <td class="text-center ">917844</td>
+                                    <td>Tablecover Star Cream Dunicel 138</td>
+                                    <td>SOCIETE FERMIERE ROCHEFORT ARDENNES</td>
+                                    <td class="text-center">C202<BR>
+                                        <p class="sinfo">Fresh ready to eat vegetable, potatoes</p>
+                                    </td>
+                                    <td class="text-center">B24<BR>
+                                        <p class="sinfo">Juice</p>
+                                    </td>
+                                    <td class="text-center">ZVOL<BR>
+                                        <p class="sinfo">Full Products</p>
+                                    </td>
+                                    <td class="text-center tStatus rev">R<BR>
+                                        <p class="sinfo">Review</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Julia Dims">JDIMS</td>
+                                    <td class="text-center">
+                                        <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                    </td>
+                                    <td class="text-center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center ">9552679</td>
+                                    <td class="text-center ">123885</td>
+                                    <td>Diet coke 1.5L</td>
+                                    <td>Coca cola company</td>
+                                    <td class="text-center">C202<BR>
+                                        <p class="sinfo">Fresh ready to eat vegetable, potatoes</p>
+                                    </td>
+                                    <td class="text-center">B04<BR>
+                                        <p class="sinfo">BISCUIT-SUGAR-PANI</p>
+                                    </td>
+                                    <td class="text-center">ZVOL<BR>
+                                        <p class="sinfo">Full Products</p>
+                                    </td>
+                                    <td class="text-center tStatus cor">BER<BR>
+                                        <p class="sinfo">Business Error</p>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="right"
+                                        title="Fernando Muir">FMUI</td>
+                                    <td class="text-center">
+                                        <i class="fas fa-user-check m-1" rel="tooltip" title=""
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                        <i class="fas fa-reply m-1" rel="tooltip" title="Approve or Reject"
+                                            data-original-title="Assign to me" style="color:black"></i>
+                                    </td>
+                                    <td class="text-center" data-toggle="tooltip" data-placement="left">
+                                        <span class="badge badge-default" style="font-size: larger;"><i
+                                                class="fas fa-exclamation-triangle m-1 text-warning"></i></span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div class="row" style="margin-top: 20px;">
+                            <div id="fPag" class="col-lg-9" style="text-align: right;margin-left: 80%;"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end: table -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="js/views/creation_articlelist.js"></script>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $("#mainSection").css("background", "white");
+
+        if (window.initModals) {
+            window.initModals();
+        }
+        if (window.initWidgets) {
+            window.initWidgets();
+        }
+
+        App.CreationArticleList.datatableCreationInit();
+        App.CreationArticleList.datatableUpdateInit();
+
+        $(".teamT").hide()
+    });
+</script>

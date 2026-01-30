@@ -463,3 +463,31 @@ rect:hover {
 .selOp {
     color: darkred !important;
 }
+
+/* Product creation list */
+.sinfo {
+    margin-bottom: 0px;
+    font-size: smaller;
+}
+
+.selError {
+    border-color: red;
+}
+
+.cust-select {
+    margin-bottom: 0px !important;
+}
+
+.multiselect-native-select {
+    width: 76% !important;
+}
+
+/* Product creation */
+.form-group {
+    border-top: none !important;
+    /* Remove bottom margin */
+}
+
+.cust-select {
+    margin-bottom: 0px !important;
+}
