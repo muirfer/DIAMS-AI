@@ -15,6 +15,10 @@ Theme Version: 	3.0.0
 	 *
 	 */
 	var initializeDropzone = function () {
+		if ($('#dropzone-form-image').hasClass('initialized')) {
+			return;
+		}
+
 		$('#dropzone-form-image').dropzone({
 			url: '/upload.php',
 			addRemoveLinks: true,

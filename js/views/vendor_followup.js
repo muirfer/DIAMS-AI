@@ -7,6 +7,13 @@
     // Module for handling Vendor Follow-up logic
     var VendorFollowUp = {
         /**
+         * Initializes the Vendor Follow-up module.
+         * Sets up event handlers and initializes DataTables.
+         */
+        initialize: function () {
+            this.datatableInit();
+        },
+        /**
          * Initializes the DataTable for the Vendor Follow-up table.
          * Handles table initialization, DOM manipulation, and DataTable configuration.
          */

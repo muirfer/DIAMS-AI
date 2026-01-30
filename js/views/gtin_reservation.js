@@ -10,6 +10,13 @@
     // Module for handling GTIN Reservation Wizard logic
     var GtinReservation = {
         /**
+         * Initializes the GTIN Reservation module.
+         * Sets up event handlers and initializes DataTables.
+         */
+        initialize: function () {
+            this.datatableInit();
+        },
+        /**
          * Initializes the DataTable for the GTIN Reservation Wizard.
          * Handles DataTable initialization, including customizing the table layout,
          * adding search functionality, and setting up pagination.

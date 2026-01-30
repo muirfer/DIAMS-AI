@@ -507,21 +507,11 @@
 </section>
 
 <!-- Custom Scripts -->
+<script src="js/views/view.common.js"></script>
 <script src="js/views/support_form.js"></script>
-<script type="text/javascript">
-	$(document).ready(function () {
-		if (window.initModals) {
-			window.initModals();
-		}
-		if (window.initAdvancedForm) {
-			window.initAdvancedForm();
-		}
-		if (window.initEcommerceForm) {
-			window.initEcommerceForm();
-		}
-
-		if (window.initSelect2) {
-			window.initSelect2();
-		}
+<script>
+	jQuery(document).ready(function ($) {
+		App.ViewCommon.initialize();
+		App.SupportForm.initialize();
 	});
 </script>

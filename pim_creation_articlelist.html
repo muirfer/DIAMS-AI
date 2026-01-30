@@ -511,22 +511,12 @@
 </section>
 
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/creation_articlelist.js"></script>
 
 <script>
     jQuery(document).ready(function ($) {
-        $("#mainSection").css("background", "white");
-
-        if (window.initModals) {
-            window.initModals();
-        }
-        if (window.initWidgets) {
-            window.initWidgets();
-        }
-
-        App.CreationArticleList.datatableCreationInit();
-        App.CreationArticleList.datatableUpdateInit();
-
-        $(".teamT").hide()
+        App.ViewCommon.initialize();
+        App.CreationArticleList.initialize();
     });
 </script>

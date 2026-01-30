@@ -7,6 +7,14 @@
     // Module for handling Reporting Leadtime logic
     var ReportingLT = {
         /**
+         * Initializes the Reporting Leadtime module.
+         * Sets up event handlers and initializes DataTables.
+         */
+        initialize: function () {
+            this.datatableMainInit();
+            this.datatableDetailsInit();
+        },
+        /**
          * Initializes the DataTable for the Reporting Leadtime main table.
          * Handles table initialization, DOM manipulation, and DataTable configuration.
          */

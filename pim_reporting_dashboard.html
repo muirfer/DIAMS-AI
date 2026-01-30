@@ -212,19 +212,11 @@
 	<!-- End Modal 2 -->
 </section>
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/reporting_dashboard.js"></script>
 <script>
 	jQuery(document).ready(function ($) {
-		$("#mainSection").css("background", "white");
-
-		if (window.initModals) {
-			window.initModals();
-		}
-
-		if (window.initDatePicker) {
-			window.initDatePicker();
-		}
-
-		App.RepoDashboard.init();
+		App.ViewCommon.initialize();
+		App.RepoDashboard.initialize();
 	});
 </script>

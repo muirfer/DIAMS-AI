@@ -6,7 +6,13 @@
 
     // Module for handling Support Form logic
     var SupportForm = {
-
+        /**
+         * Initializes the Support Form module.
+         * Sets up event handlers and initializes DataTables.
+         */
+        initialize: function () {
+            //Nothing yet
+        },
         /**
          * Toggles the visible process section (Creation, Update, User Account).
          * Updates button states and resets all operation-specific fields.

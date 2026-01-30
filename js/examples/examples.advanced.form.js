@@ -52,6 +52,8 @@ Theme Version: 	3.0.0
 	Slider Range: Output Values
 	*/
 	window.initAdvancedForms = function () {
+		if ($('#listenSlider').data('init')) return;
+
 		$('#listenSlider').change(function () {
 			$('.output b').text(this.value);
 		});
@@ -63,6 +65,8 @@ Theme Version: 	3.0.0
 			$('.output2 b.min').text(min);
 			$('.output2 b.max').text(max);
 		});
+
+		$('#listenSlider').data('init', true);
 	};
 
 	$(function () {

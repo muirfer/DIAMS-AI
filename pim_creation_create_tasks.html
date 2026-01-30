@@ -1207,20 +1207,15 @@
 	</section>
 </div>
 
-<!-- Wizard  Initialization Files -->
+<script src="js/views/view.common.js"></script>
 <script src="js/views/creation_create_wizard.js"></script>
 <script src="js/views/creation_create_tasks.js"></script>
 
 <script>
 	jQuery(document).ready(function ($) {
-		if (window.initModals) {
-			window.initModals();
-		}
-		if (window.initWizard) {
-			window.initWizard();
-		}
-
+		App.ViewCommon.initialize({
+			exclude: ['initWizard']
+		});
 		App.CreationCreateTasks.initialize();
-
 	});
 </script>

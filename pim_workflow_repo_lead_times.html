@@ -181,18 +181,13 @@
 	</div>
 </section>
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/reporting_lead_time.js"></script>
 <script>
 
 	jQuery(document).ready(function ($) {
-		$("#mainSection").css("background", "white");
-
-		if (window.initCharts) {
-			window.initCharts();
-		}
+		App.ViewCommon.initialize();
+		App.ReportingLT.initialize();
 	});
-
-	App.ReportingLT.datatableMainInit();
-	App.ReportingLT.datatableDetailsInit();
 
 </script>

@@ -653,20 +653,12 @@
 	</div>
 </section>
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/fullview_search.js"></script>
 <script>
 	jQuery(document).ready(function ($) {
 
-		if (window.initToggle) {
-			window.initToggle();
-		}
-		if (window.initMultiSelect) {
-			window.initMultiSelect();
-		}
-		if (window.initAdvancedForm) {
-			window.initAdvancedForm();
-		}
-
+		App.ViewCommon.initialize();
 		App.FullViewSearch.initialize();
 
 	});

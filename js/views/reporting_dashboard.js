@@ -6,7 +6,7 @@
 
     // Module for handling Reporting Dashboard logic
     var RepoDashboard = {
-        init: function () {
+        initialize: function () {
             var data = [
                 { data: [[0, 5]], color: "#FF9B08" }, // GDSN
                 { data: [[1, 28]], color: "#FF5722" }, // VI

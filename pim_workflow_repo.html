@@ -423,6 +423,7 @@
 </section>
 
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/reporting.js"></script>
 <script>
 	jQuery(document).ready(function ($) {
@@ -430,15 +431,8 @@
 
 		// Load Global Filters
 		$("#global-filters-container").load("ajax/ajax_glob_filters.html", function () {
-			if (window.initModals) {
-				window.initModals();
-			}
-
-			if (window.initCodeMirror) {
-				window.initCodeMirror();
-			}
-
-			App.Reporting.datatableInit();
+			App.ViewCommon.initialize();
+			App.Reporting.initialize();
 		});
 	});
 </script>

@@ -258,18 +258,14 @@
 	</div>
 </section>
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/vendor_followup.js"></script>
 <script>
 	jQuery(document).ready(function ($) {
-		$("#mainSection").css("background", "white");
-
 		// Load Global Filters
 		$("#global-filters-container-vendor").load("ajax/ajax_glob_filters.html", function () {
-			if (window.initModals) {
-				window.initModals();
-			}
-
-			App.VendorFollowUp.datatableInit();
+			App.ViewCommon.initialize();
+			App.VendorFollowUp.initialize();
 		});
 	});
 </script>

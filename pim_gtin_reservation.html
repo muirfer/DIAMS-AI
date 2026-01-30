@@ -548,18 +548,14 @@
 	</div>
 </section>
 
+<script src="js/views/view.common.js"></script>
 <script src="js/views/gtin_reservation.js"></script>
 <script>
 	jQuery(document).ready(function ($) {
-		$("#mainSection").css("background", "white");
+		App.ViewCommon.initialize({
+			exclude: ['initWizard']
+		});
 
-		if (window.initModals) {
-			window.initModals();
-		}
-		if (window.initSpinner) {
-			window.initSpinner();
-		}
-
-		App.GtinReservation.datatableInit();
+		App.GtinReservation.initialize();
 	});
 </script>
