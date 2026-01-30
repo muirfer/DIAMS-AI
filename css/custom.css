@@ -487,7 +487,3 @@ rect:hover {
     border-top: none !important;
     /* Remove bottom margin */
 }
-
-.cust-select {
-    margin-bottom: 0px !important;
-}

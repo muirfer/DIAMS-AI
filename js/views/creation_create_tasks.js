@@ -14,11 +14,17 @@
 		modeGtinInput: true,
 		reserveGtinsFor: [],
 
+		/**
+		 * Initialize the view
+		 */
 		initialize: function () {
 			this.initInlineEvents();
 			this.initDatatable();
 		},
 
+		/**
+		 * Initialize the datatable
+		 */
 		initDatatable: function () {
 			var $table = $('#datatable-gi');
 
@@ -70,6 +76,9 @@
 			$('#datatable-gi').DataTable().page.len(6).draw();
 		},
 
+		/**
+		 * Initialize the inline events
+		 */
 		initInlineEvents: function () {
 			var self = this;
 			$("#mainSection").css("background", "white");
@@ -127,16 +136,11 @@
 			$(".main-panel").css("height", "calc(90vh - " + $(".main-panel").offset().top + "px)");
 		},
 
-		expandAll: function () {
-			$(".card-body").css("display", "block");
-		},
-
-		collapseAll: function () {
-			//$(".collapse").collapse();                                
-			$(".card-body").css("display", "none");
-			$("html, body").animate({ scrollTop: 0 }, "slow");
-		},
-
+		/**
+		 * Convert TSV string to array
+		 * @param {string} data 
+		 * @returns {Array}
+		 */
 		tsvStringToArray: function (data) {
 			const re = /(\t|\r?\n|\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\t\r\n]*))/gi;
 			const result = [[]];
@@ -151,6 +155,10 @@
 			return result;
 		},
 
+		/**
+		 * Handle paste event
+		 * @param {Event} e 
+		 */
 		handlePaste: function (e) {
 			var clipboardData, pastedData;
 
@@ -174,6 +182,9 @@
 			this.doOnGtinListUpdate();
 		},
 
+		/**
+		 * Handle paste from button event
+		 */
 		handlePasteFromButton: function () {
 			//paste all
 			// $('.gtinRow').show();
@@ -182,11 +193,16 @@
 
 			this.pasteGtins();
 		},
-
+		/**	 */
 		doOnGtinListUpdate: function () {
 			//$("#fPag").css("display",tableCount > 5 ? "block" : "none");              
 		},
 
+		/**
+		 * Toggle brand type
+		 * @param {HTMLElement} btn 
+		 * @param {string} otherBtnId 
+		 */
 		toogleBrandType: function (btn, otherBtnId) {
 
 			if ($(btn).hasClass("btn-default")) {
@@ -209,6 +225,11 @@
 			}
 		},
 
+		/**
+		 * Toggle GDSN type
+		 * @param {HTMLElement} btn 
+		 * @param {string} otherBtnId 
+		 */
 		toogleGDSNType: function (btn, otherBtnId) {
 
 			if ($(btn).hasClass("btn-default")) {
@@ -239,6 +260,11 @@
 
 		},
 
+		/**
+		 * Toggle GDSN type
+		 * @param {HTMLElement} btn 
+		 * @param {string} otherBtnId 
+		 */
 		toogleGtinType: function (btn, otherBtnId) {
 
 			if ($(btn).hasClass("btn-default")) {
@@ -280,6 +306,9 @@
 			$(".pUoM").show();
 		},
 
+		/**
+		 * Toggle IP
+		 */
 		toogleIP: function () {
 			var includesIP = $($("#chkIp")).is(':checked');
 
@@ -293,6 +322,9 @@
 
 		},
 
+		/**
+		 * Handle non-GDSN reason change
+		 */
 		onNonGDSNReasonChange: function () {
 			var val = $("#selReason").val();
 
@@ -306,10 +338,18 @@
 			}
 		},
 
+		/**
+		 * Handle non-GDSN reason justification update
+		 * @param {string} value 
+		 */
 		onNonGDSNReasonJustificationUpdated: function (value) {
 			$("#lblNonGdsnReasonJust").text(value);
 		},
 
+		/**
+		 * Toggle GDSN type
+		 * @param {boolean} toInputMode 
+		 */
 		toGtinInput: function (toInputMode) {
 
 			if (toInputMode) {
@@ -347,6 +387,9 @@
 			this.prepareSuppliersForGTINInput(toInputMode);
 		},
 
+		/**
+		 * Reset reservation panel
+		 */
 		resetReservationPanel: function () {
 			$("#btnEA").removeClass("btn-primary");
 			$("#btnKG").removeClass("btn-primary");
@@ -363,6 +406,10 @@
 			$(".pUoM").hide();
 		},
 
+		/**
+		 * Prepare suppliers for GTIN input
+		 * @param {boolean} toInputMode 
+		 */
 		prepareSuppliersForGTINInput: function (toInputMode) {
 			$(".supRow").hide();
 
@@ -382,6 +429,11 @@
 			}
 		},
 
+		/**
+		 * Toggle base UoM
+		 * @param {HTMLElement} btn 
+		 * @param {string} otherBtnId 
+		 */
 		toogleBaseUoM: function (btn, otherBtnId) {
 			$(".pUoM").show();
 
@@ -414,6 +466,10 @@
 
 		},
 
+		/**
+		 * Select UoM
+		 * @param {HTMLElement} btn 
+		 */
 		selectUoM: function (btn) {
 			if ($(btn).hasClass("btn-primary")) {
 				//switch back to default
@@ -440,6 +496,9 @@
 
 		},
 
+		/**
+		 * Remove all Gtins
+		 */
 		removeAllGtins: function () {
 			$(".gtinRow").hide();
 			$(".lblGtin").hide();
@@ -452,6 +511,9 @@
 			$("#gtinInput").focus();
 		},
 
+		/**
+		 * Paste single Gtin
+		 */
 		pasteSingleGtin: function () {
 			var row = $('.gtinRow:hidden').first();
 			row.show();
@@ -476,6 +538,9 @@
 			$("#gtinInput").focus();
 		},
 
+		/**
+		 * Paste Gtins
+		 */
 		pasteGtins: function () {
 			$(".gtinRow").show();
 			$("#panelMassValidation").show();
@@ -485,6 +550,9 @@
 			$(".supRegInfoPanel").show();
 		},
 
+		/**
+		 * Remove all suppliers
+		 */
 		removeAllSuppliers: function () {
 			$(".supRow").hide();
 			$("#panelSupplierDetails").hide();
@@ -493,6 +561,11 @@
 			$(".supNoRegInfoPanel").hide();
 		},
 
+		/**
+		 * Show Gtins
+		 * @param {HTMLElement} btn 
+		 * @param {number} action 
+		 */
 		showGtins: function (btn, action) {
 			$(btn).addClass("btn-primary").removeClass("btn-default");
 			$(".btnSwitchGtins:not(#" + $(btn).attr("id") + ")").removeClass("btn-primary").addClass("btn-default");
@@ -515,12 +588,20 @@
 
 		},
 
+		/**
+		 * Reuse Gtin
+		 * @param {number} index 
+		 */
 		reuse: function (index) {
 			$(".fake-" + index).show();
 			$(".orig-" + index).hide();
 			$("#lblGtinInput").hide();
 		},
 
+		/**
+		 * Undo reuse
+		 * @param {number} index 
+		 */
 		undoReuse: function (index) {
 			$(".fake-" + index).hide();
 			$(".orig-" + index).show();

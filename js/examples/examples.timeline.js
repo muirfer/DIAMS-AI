@@ -26,27 +26,29 @@ Theme Version: 	3.0.0
 	};
 
 	var initGoogleMaps = function () {
-		var map = new GMaps({
-			div: '#gmap-checkin-example',
-			lat: 40.7533405,
-			lng: -73.982253,
-			markers: [{
+		if (typeof GMaps !== 'undefined' && $('#gmap-checkin-example').length > 0) {
+			var map = new GMaps({
+				div: '#gmap-checkin-example',
+				lat: 40.7533405,
+				lng: -73.982253,
+				markers: [{
+					lat: 40.7533405,
+					lng: -73.982253,
+					infoWindow: {
+						content: '<p>New York Public Library</p>'
+					}
+				}],
+				scrollwheel: false
+			});
+
+			map.addMarker({
 				lat: 40.7533405,
 				lng: -73.982253,
 				infoWindow: {
 					content: '<p>New York Public Library</p>'
 				}
-			}],
-			scrollwheel: false
-		});
-
-		map.addMarker({
-			lat: 40.7533405,
-			lng: -73.982253,
-			infoWindow: {
-				content: '<p>New York Public Library</p>'
-			}
-		});
+			});
+		}
 	};
 
 	window.initTimeline = function () {
