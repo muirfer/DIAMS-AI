@@ -15,9 +15,8 @@
 		reserveGtinsFor: [],
 
 		initialize: function () {
-			this.initDatatable();
-			this.initWizard();
 			this.initInlineEvents();
+			this.initDatatable();
 		},
 
 		initDatatable: function () {
@@ -69,70 +68,6 @@
 			$("#thActions").css("width", "15%");
 
 			$('#datatable-gi').DataTable().page.len(6).draw();
-		},
-
-		initWizard: function () {
-			var self = this;
-			/*
-			Wizard #4
-			*/
-			$('#w4').bootstrapWizard({
-				tabClass: 'wizard-steps',
-				nextSelector: 'ul.pager li.next',
-				previousSelector: 'ul.pager li.previous',
-				firstSelector: null,
-				lastSelector: null,
-				onNext: function (tab, navigation, index, newindex) {
-					// Validation logic commented out in original file
-				},
-				onTabClick: function (tab, navigation, index, newindex) {
-					// Logic commented out in original file
-				},
-				onTabChange: function (tab, navigation, index, newindex) {
-					// Logic commented out in original file
-				},
-				onTabShow: function (tab, navigation, index) {
-					var $current = index;
-
-					navigation.find('li').removeClass('active');
-					navigation.find('li').eq($current).addClass('active');
-
-					if (index === 0) {
-						$("#btnRegNext").hide();
-						$("#btnNext_input").show();
-						if ($("#lblBrandType").text() === "D1 - Delhaize") {
-							$("#btnNext_res").show();
-						}
-						$(".previous").hide();
-						$(".gtinInputPanel").hide();
-						$(".gtinInputPanel2").hide();
-						$(".supRegInfoPanel").hide();
-						$(".supNoRegInfoPanel").hide();
-					} else {
-						$("#btnRegNext").show();
-						$("#btnNext_input").hide();
-						$("#btnNext_res").hide();
-						$(".previous").show();
-						$(".gtinInputPanel").show();
-
-						if ($("#lblGtinInput").is(":visible") && $("#lblGtinInput").text() === "-") {
-							$("#pDetails").hide();
-							$("#pNoDetailsMsge").show();
-						} else {
-							$("#pDetails").show();
-							$("#pNoDetailsMsge").hide();
-						}
-
-						if (index === 3) {
-							$("#btnRegNext").hide();
-							$(".btnAction").show();
-						} else {
-							$("#btnRegNext").show();
-							$(".btnAction").hide();
-						}
-					}
-				}
-			});
 		},
 
 		initInlineEvents: function () {

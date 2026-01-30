@@ -1,452 +1,4 @@
-﻿<script>
-	var EditableTable;
-	let isSingleSelection = true;
-	let tableCount = 0;
-	const invalidGtinForSingleTest = "12345678901234";
-	let modeGtinInput = true;
-	let reserveGtinsFor = [];
-
-	const tsvStringToArray = (data) => {
-		const re = /(\t|\r?\n|\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\t\r\n]*))/gi
-		const result = [[]]
-		let matches
-		while ((matches = re.exec(data))) {
-			if (matches[1].length && matches[1] !== "\t") result.push([])
-			result[result.length - 1].push(
-				matches[2] !== undefined ? matches[2].replace(/""/g, '"') : matches[3]
-			)
-		}
-		//console.log(result);
-		return result
-	}
-
-	function handlePaste(e) {
-		var clipboardData, pastedData;
-
-		// Stop data actually being pasted into div
-		e.stopPropagation();
-		e.preventDefault();
-
-		// Get pasted data via clipboard API
-		clipboardData = e.clipboardData || window.clipboardData;
-		pastedData = clipboardData.getData('Text');
-
-		// Do whatever with pasteddata				
-		gtinArray = tsvStringToArray(pastedData);
-		if (gtinArray.length > 1) {
-			//paste all
-			pasteGtins()
-		} else {
-			pasteSingleGtin();
-		}
-
-		doOnGtinListUpdate();
-	}
-
-	handlePasteFromButton = () => {
-		//paste all
-		// $('.gtinRow').show();
-		// $("#panelMassValidation").show();	
-		// $("#gtinInput").focus();
-
-		pasteGtins()
-	}
-
-	function doOnGtinListUpdate() {
-		//$("#fPag").css("display",tableCount > 5 ? "block" : "none");				
-	}
-
-	function toogleBrandType(btn, otherBtnId) {
-
-		if ($(btn).hasClass("btn-default")) {
-			//switch back to default
-			$(btn).removeClass("btn-default");
-			$(btn).addClass("btn-primary");
-			$("#" + otherBtnId).removeClass("btn-primary");
-			$("#" + otherBtnId).addClass("btn-default");
-		}
-
-		//update UoM				
-		if (otherBtnId === "btnN1") {
-			//Active one is D1
-			$("#lblBrandType").text("D1 - Delhaize");
-			$("#btnNext_res").show();
-		} else {
-			//Active one is N1
-			$("#lblBrandType").text("N1 - National");
-			$("#btnNext_res").hide();
-		}
-	}
-
-	function toogleGDSNType(btn, otherBtnId) {
-
-		if ($(btn).hasClass("btn-default")) {
-			//switch back to default
-			$(btn).removeClass("btn-default");
-			$(btn).addClass("btn-primary");
-			$("#" + otherBtnId).removeClass("btn-primary");
-			$("#" + otherBtnId).addClass("btn-default");
-		}
-
-		//update UoM				
-		if (otherBtnId === "btnGS1") {
-			//Active one is No-GDSN
-			$("#lblType").text("Manual")
-			$(".nonGdsn").show()
-			$(".panelGDSNReason").show();
-			onNonGDSNReasonChange();
-
-		} else {
-			$("#lblType").text("GDSN")
-			$(".nonGdsn").hide()
-			$(".panelGDSNReason").hide();
-			$(".panelGDSNReasonJust").hide();
-		}
-
-		resetReservationPanel();
-		toogleGtinType($("#btnOT"), "btnAW")
-
-	}
-
-	function toogleGtinType(btn, otherBtnId) {
-
-		if ($(btn).hasClass("btn-default")) {
-			//switch back to default
-			$(btn).removeClass("btn-default");
-			$(btn).addClass("btn-primary");
-			$("#" + otherBtnId).removeClass("btn-primary");
-			$("#" + otherBtnId).addClass("btn-default");
-		}
-
-		//update UoM				
-		if (otherBtnId === "btnAW") {
-			//Active one is Others
-			$("#lblGtinType").text("Others")
-
-			//prepare reserve panel
-			$("#btnKG").hide();
-			$("#btnEA").show();
-			$("#btnEA").addClass("btn-default");
-			$("#btnEA").addClass("btn-primary");
-			$("#btnEA_alt").hide();
-
-		} else {
-			//Active one is Average weight
-			$("#lblGtinType").text("Average weight")
-
-			//prepare reserve panel
-			$("#btnEA").hide();
-			$("#btnKG").show();
-			$("#btnKG").addClass("btn-default");
-			$("#btnKG").addClass("btn-primary");
-			$("#btnEA_alt").show();
-		}
-
-		//force ip toogle to reevaluate it
-		toogleIP();
-
-		//always show alt UoM
-		$(".pUoM").show()
-	}
-
-	function toogleIP() {
-		includesIP = $($("#chkIp")).is(':checked');
-
-		if (includesIP) {
-			$("#lblGtinType").append(" (IP included)");
-			$("#btnIP_alt").show()
-		} else {
-			$("#lblGtinType").text($("#lblGtinType").text().replaceAll(" (IP included)", ""));
-			$("#btnIP_alt").hide()
-		}
-
-	}
-
-	function onNonGDSNReasonChange() {
-		val = $("#selReason").val();
-
-		$("#lblNonGdsnReason").text(val)
-		if (val === "Other") {
-			$(".panelGDSNReasonJust").show();
-			$("#lblNonGdsnReasonJust").show();
-		} else {
-			$(".panelGDSNReasonJust").hide();
-			$("#lblNonGdsnReasonJust").hide();
-		}
-	}
-
-	function onNonGDSNReasonJustificationUpdated(value) {
-		$("#lblNonGdsnReasonJust").text(value);
-	}
-
-	function toGtinInput(toInputMode) {
-
-		if (toInputMode) {
-			$("#panelGtinInput").show()
-			$("#panelGtinRes").hide()
-			$("#lblTitleGtin").text("GTINs for creation")
-			$("#lblGtinInput").text("-")
-			$(".gtinInputPanel2").show()
-			removeAllGtins();
-
-		} else {
-			//reserve gtin
-			$("#panelGtinInput").hide()
-			$(".gtinInputPanel2").hide()
-			$("#panelGtinRes").show()
-			$("#lblTitleGtin").text("Reserve GTINs for")
-
-			isGDSNFlow = $("#btnGS1").hasClass("btn-primary");
-			if (isGDSNFlow) {
-				reserveGtinsFor = []
-				resetReservationPanel();
-			} else if ($("#lblGtinType").text().indexOf("Others") === 0) {
-				// 	//non-gdsn - Others		
-				reserveGtinsFor = ["EA"]
-			} else {
-				//non-gdsn - Average weight						
-				reserveGtinsFor = ["KG"]
-			}
-
-			$("#lblGtinInput").text(reserveGtinsFor.length === 0 ? "-" : reserveGtinsFor[0]);
-			$("#lblGtinInput").show()
-			$(".lblGtin").hide();
-		}
-
-		prepareSuppliersForGTINInput(toInputMode);
-	}
-
-	function resetReservationPanel() {
-		$("#btnEA").removeClass("btn-primary");
-		$("#btnKG").removeClass("btn-primary");
-		$("#btnEA").addClass("btn-default");
-		$("#btnKG").addClass("btn-default");
-
-		$(".pUoM button").each(function () {
-			$(this).removeClass("btn-primary");
-			$(this).addClass("btn-default");
-		});
-
-		$("#btnEA").show();
-		$("#btnKG").show();
-		$(".pUoM").hide()
-	}
-
-	function prepareSuppliersForGTINInput(toInputMode) {
-		$(".supRow").hide()
-
-		if (toInputMode) {
-			//hide search of supplier, provide one by default, hide remove all button, 
-			$("#panelSupplierSearch").hide()
-			$("#panelSupplierDetails").show()
-			$("#btnRemoveAllSup").hide();
-			$(".supMain").show();
-			$("#btnRemoveMainSup").hide();
-
-		} else {
-			$("#panelSupplierSearch").show()
-			$("#panelSupplierDetails").hide()
-			$("#btnRemoveMainSup").show();
-			$("#btnRemoveAllSup").show();
-		}
-	}
-
-	function toogleBaseUoM(btn, otherBtnId) {
-		$(".pUoM").show();
-
-		if ($(btn).hasClass("btn-default")) {
-			//switch back to default
-			$(btn).removeClass("btn-default");
-			$(btn).addClass("btn-primary");
-			$("#" + otherBtnId).removeClass("btn-primary");
-			$("#" + otherBtnId).addClass("btn-default");
-		}
-
-		//update UoM				
-		if (otherBtnId === "btnEA") {
-			//Active one is KG
-			$("#btnEA_alt").show();
-			//$("#btnIP_alt").hide();					
-		} else {
-			$("#btnEA_alt").hide();
-			//$("#btnIP_alt").show();										
-		}
-
-		$(".pUoM button").each(function () {
-			$(this).removeClass("btn-primary");
-			$(this).addClass("btn-default");
-		});
-
-		//gtin res label				
-		reserveGtinsFor = [$(btn).text()]
-		$("#lblGtinInput").text(reserveGtinsFor[0]);
-
-	}
-
-	function selectUoM(btn) {
-		if ($(btn).hasClass("btn-primary")) {
-			//switch back to default
-			$(btn).removeClass("btn-primary");
-			$(btn).addClass("btn-default");
-
-			//remove from lbl selected	
-			reserveGtinsFor.pop($(btn).text())
-		} else {
-			//switch to selected mode
-			$(btn).removeClass("btn-default");
-			$(btn).addClass("btn-primary");
-
-			//add from lbl selected
-			reserveGtinsFor.push($(btn).text())
-		}
-
-		$("#lblGtinInput").text(reserveGtinsFor);
-
-	}
-
-	function removeAllGtins() {
-		$(".gtinRow").hide()
-		$(".lblGtin").hide()
-		$("#lblGtinInput").show()
-		$(".lblGtin2").hide()
-		$("#lblGtinInput2").show()
-		$(".supRegInfoPanel").hide();
-
-		$("#panelMassValidation").hide();
-		$("#gtinInput").focus();
-	}
-
-	function pasteSingleGtin() {
-		row = $('.gtinRow:hidden').first()
-		row.show();
-
-		if (row.hasClass("gtinValid")) {
-			if (row.hasClass("gtinCreation")) {
-				//creation
-				$('.lblGtin:hidden').first().show();
-				$("#lblGtinInput").hide()
-			} else {
-				//reactivation
-				$('.lblGtin2:hidden').first().show();
-				$("#lblGtinInput2").hide()
-			}
-		}
-
-		$("#panelMassValidation").show();
-		$(".supRegInfoPanel").show();
-		doOnGtinListUpdate();
-
-		$("#gtinInput").val("");
-		$("#gtinInput").focus();
-	}
-
-	function pasteGtins() {
-		$(".gtinRow").show()
-		$("#panelMassValidation").show();
-		$(".lblGtin").show()
-		$("#lblGtinInput").hide()
-		$("#lblGtinInput2").hide()
-		$(".supRegInfoPanel").show();
-	}
-
-	function removeAllSuppliers() {
-		$(".supRow").hide()
-		$("#panelSupplierDetails").hide();
-		$("#supInput").focus();
-		$(".supRegInfoPanel").hide();
-		$(".supNoRegInfoPanel").hide();
-	}
-
-	function showGtins(btn, action) {
-		$(btn).addClass("btn-primary").removeClass("btn-default")
-		$(".btnSwitchGtins:not(#" + $(btn).attr("id") + ")").removeClass("btn-primary").addClass("btn-default")
-
-		if (action === 0) {
-			//ALL
-			$(".gtinValid").show()
-			$(".gtinInvalid").show()
-		} else if (action === 1) {
-			//VALID
-			$(".gtinValid").show()
-			$(".gtinInvalid").hide()
-		} else {
-			//VALID
-			$(".gtinValid").hide()
-			$(".gtinInvalid").show()
-		}
-
-		//$("#datatable-gi").DataTable().draw()
-
-	}
-
-	function reuse(index) {
-		$(".fake-" + index).show();
-		$(".orig-" + index).hide();
-		$("#lblGtinInput").hide();
-	}
-
-	function undoReuse(index) {
-		$(".fake-" + index).hide();
-		$(".orig-" + index).show();
-		$("#lblGtinInput2").hide();
-	}
-
-	jQuery(document).ready(function ($) {
-		$("#mainSection").css("background", "white");
-
-		$("#gtinInput").on('keyup', function (e) {
-			e.stopPropagation();
-			e.preventDefault();
-
-			if (e.key === 'Enter' || e.keyCode === 13) {
-				pasteSingleGtin()
-			}
-
-			return false;
-		});
-
-		$("#supInput").on('keyup', function (e) {
-			e.stopPropagation();
-			e.preventDefault();
-
-			if (e.key === 'Enter' || e.keyCode === 13) {
-				$('.supRow:hidden').first().show();
-				$("#panelSupplierDetails").show();
-
-				if ($(".supRegInfoPanel").is(":visible")) {
-					//means that a non-regular supplier was entered
-					$(".supNoRegInfoPanel").show();
-					$('.lblOtherSup:hidden').first().show();
-				} else {
-					$(".supRegInfoPanel").show()
-				}
-
-				$("#supInput").val("");
-				$("#supInput").focus();
-			}
-
-			return false;
-		});
-
-		document.getElementById('gtinInput').addEventListener('paste', handlePaste);
-		$("#gtinInput").removeAttr("maxLength");
-
-		document.addEventListener('keydown', function (event) {
-			if (event.keyCode === 13) {
-				event.preventDefault();
-				event.stopPropagation();
-			}
-		});
-
-		$(".main-panel").css("height", "calc(90vh - " + $(".main-panel").offset().top + "px)");
-
-	}); 			
-</script>
-
-
-
-
-<section class="body">
+﻿<section class="body">
 	<header class="page-header">
 		<h2 id="main_title">Article Creation</h2>
 		<a class="btnAction sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
@@ -605,10 +157,12 @@
 													<div class="col-sm-6" style="text-align: center;">
 														<div class="btn-group d-flex" role="group">
 															<a class="btn btn-primary w-100" role="button" id="btnN1"
-																onclick="toogleBrandType(this,'btnD1')">N1 -
+																onclick="App.CreationCreateTasks.toogleBrandType(this,'btnD1')">N1
+																-
 																National</a>
 															<a class="btn btn-default w-100" role="button" id="btnD1"
-																onclick="toogleBrandType(this,'btnN1')">D1 -
+																onclick="App.CreationCreateTasks.toogleBrandType(this,'btnN1')">D1
+																-
 																Delhaize</a>
 														</div>
 													</div>
@@ -619,9 +173,9 @@
 													<div class="col-sm-6" style="text-align: center;">
 														<div class="btn-group d-flex" role="group">
 															<a class="btn btn-primary w-100" role="button" id="btnGS1"
-																onclick="toogleGDSNType(this,'btnNoGS1')">GDSN</a>
+																onclick="App.CreationCreateTasks.toogleGDSNType(this,'btnNoGS1')">GDSN</a>
 															<a class="btn btn-default w-100" role="button" id="btnNoGS1"
-																onclick="toogleGDSNType(this,'btnGS1')">Manual</a>
+																onclick="App.CreationCreateTasks.toogleGDSNType(this,'btnGS1')">Manual</a>
 														</div>
 													</div>
 												</div>
@@ -631,15 +185,16 @@
 													<div class="col-sm-6" style="text-align: center;">
 														<div class="btn-group d-flex" role="group">
 															<a class="btn btn-primary w-100" role="button" id="btnAW"
-																onclick="toogleGtinType(this,'btnOT')">Average
+																onclick="App.CreationCreateTasks.toogleGtinType(this,'btnOT')">Average
 																Weight</a>
 															<a class="btn btn-default w-100" role="button" id="btnOT"
-																onclick="toogleGtinType(this,'btnAW')">Others</a>
+																onclick="App.CreationCreateTasks.toogleGtinType(this,'btnAW')">Others</a>
 														</div>
 													</div>
 													<div class="col-sm-2">
 														<div class="checkbox-custom" style="margin-top: 8px;">
-															<input type="checkbox" id="chkIp" onchange="toogleIP()">
+															<input type="checkbox" id="chkIp"
+																onchange="App.CreationCreateTasks.toogleIP()">
 															<label for="chkIp">Include IP</label>
 														</div>
 													</div>
@@ -649,7 +204,7 @@
 														<code>*</code></label>
 													<div class="col-sm-6" style="text-align: center;">
 														<select id="selReason" class="form-control col-lg-12"
-															onchange="javascript:onNonGDSNReasonChange()">
+															onchange="App.CreationCreateTasks.onNonGDSNReasonChange()">
 															<option id="1" selected>NFR (non GDSN)</option>
 															<option id="2">EXPORT articles (non GDSN)</option>
 															<option id="3">garbage bags (non GDSN)</option>
@@ -670,7 +225,7 @@
 														<code>*</code>:</label>
 													<div class="col-sm-6" style="text-align: center;">
 														<textarea class="form-control" rows="2"
-															onchange="javascript:onNonGDSNReasonJustificationUpdated(this.value)"></textarea>
+															onchange="App.CreationCreateTasks.onNonGDSNReasonJustificationUpdated(this.value)"></textarea>
 													</div>
 												</div>
 											</div>
@@ -709,14 +264,14 @@
 																<span class="input-group-append">
 																	<button type="button"
 																		class="mb-1 mt-1 mr-1 btn btn-default"
-																		onclick="handlePasteFromButton()"><i
+																		onclick="App.CreationCreateTasks.handlePasteFromButton()"><i
 																			class="fas fa-paste"></i> </button>
 																</span>
 															</div>
 														</div>
 													</div>
 													<div class="row" style="margin-top: 30px;">
-														<div class="col-lg-10 offset-lg-1">
+														<div class="col-lg-12">
 															<div id="panelMassValidation"
 																style="display: block;margin-top: 10px;">
 																<div class="row" style="margin-bottom: 5px;">
@@ -724,14 +279,14 @@
 																		<div class="btn-group flex-wrap">
 																			<button type="button" id="btnGtinAll"
 																				class="btn btn-primary btnSwitchGtins"
-																				onclick="javascript:showGtins(this,0)">All</button>
+																				onclick="App.CreationCreateTasks.showGtins(this,0)">All</button>
 																			<button type="button" id="btnGtinAct"
 																				class="btn btn-default btnSwitchGtins"
-																				onclick="javascript:showGtins(this,1)"><i
+																				onclick="App.CreationCreateTasks.showGtins(this,1)"><i
 																					class="fas fa-check"></i></button>
 																			<button type="button" id="btnGtinIna"
 																				class="btn btn-default btnSwitchGtins"
-																				onclick="javascript:showGtins(this,2)"><i
+																				onclick="App.CreationCreateTasks.showGtins(this,2)"><i
 																					class="fas fa-ban"></i></button>
 																		</div>
 																	</div>
@@ -748,7 +303,7 @@
 																	<div class="col-lg-2 text-right">
 																		<button type="button"
 																			class="mb-0 mt-0 mr-0 btn btn-link"
-																			onclick="javascript:removeAllGtins()">Remove
+																			onclick="App.CreationCreateTasks.removeAllGtins()">Remove
 																			all</button>
 																	</div>
 																</div>
@@ -821,12 +376,12 @@
 																				<button type="button"
 																					class="btn btn-default btn-sm orig-1"
 																					style="margin-right: 10px;"
-																					onclick="javascript:reuse(1)"><i
+																					onclick="App.CreationCreateTasks.reuse(1)"><i
 																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
 																				<button type="button"
 																					class="btn btn-default btn-sm fake-1"
 																					style="margin-right: 10px;display: none;"
-																					onclick="javascript:undoReuse(1)"><i
+																					onclick="App.CreationCreateTasks.undoReuse(1)"><i
 																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
 																				<a href="#"
 																					class="on-default remove-row"><i
@@ -883,12 +438,12 @@
 																				<button type="button"
 																					class="btn btn-default btn-sm orig-2"
 																					style="margin-right: 10px;"
-																					onclick="javascript:reuse(2)"><i
+																					onclick="App.CreationCreateTasks.reuse(2)"><i
 																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
 																				<button type="button"
 																					class="btn btn-default btn-sm fake-2"
 																					style="margin-right: 10px;display: none;"
-																					onclick="javascript:undoReuse(2)"><i
+																					onclick="App.CreationCreateTasks.undoReuse(2)"><i
 																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
 																				<a href="#"
 																					class="on-default remove-row"><i
@@ -1006,12 +561,12 @@
 																				<button type="button"
 																					class="btn btn-default btn-sm orig-3"
 																					style="margin-right: 10px;"
-																					onclick="javascript:reuse(3)"><i
+																					onclick="App.CreationCreateTasks.reuse(3)"><i
 																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
 																				<button type="button"
 																					class="btn btn-default btn-sm fake-3"
 																					style="margin-right: 10px;display: none;"
-																					onclick="javascript:undoReuse(3)"><i
+																					onclick="App.CreationCreateTasks.undoReuse(3)"><i
 																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
 																				<a href="#"
 																					class="on-default remove-row"><i
@@ -1150,10 +705,10 @@
 															<div class="btn-group d-flex" role="group">
 																<a class="btn btn-default w-100" role="button"
 																	id="btnKG"
-																	onclick="toogleBaseUoM(this,'btnEA')">KG</a>
+																	onclick="App.CreationCreateTasks.toogleBaseUoM(this,'btnEA')">KG</a>
 																<a class="btn btn-default w-100" role="button"
 																	id="btnEA"
-																	onclick="toogleBaseUoM(this,'btnKG')">EA</a>
+																	onclick="App.CreationCreateTasks.toogleBaseUoM(this,'btnKG')">EA</a>
 															</div>
 														</div>
 													</div>
@@ -1167,16 +722,16 @@
 													<div class="row pUoM" style="padding-top: 0%;display: none;">
 														<button id="btnEA_alt" type="button"
 															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
-															onclick="selectUoM(this)">EA</button>
+															onclick="App.CreationCreateTasks.selectUoM(this)">EA</button>
 														<button id="btnIP_alt" type="button"
 															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
-															onclick="selectUoM(this)">IP</button>
+															onclick="App.CreationCreateTasks.selectUoM(this)">IP</button>
 														<button id="btnCV_alt" type="button"
 															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
-															onclick="selectUoM(this)">CV</button>
+															onclick="App.CreationCreateTasks.selectUoM(this)">CV</button>
 														<button id="btnPL_alt" type="button"
 															class="col-lg-6 offset-lg-3 mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
-															onclick="selectUoM(this)">PL</button>
+															onclick="App.CreationCreateTasks.selectUoM(this)">PL</button>
 														<div class="col-lg-6 offset-lg-3"
 															style="text-align: right;margin-top: 5px;padding-right: 0;">
 															<a id="see-more-btn" href="#" class="mb-1 mt-1 mr-1">Select
@@ -1226,7 +781,7 @@
 																	<div class="col-lg-3 text-right">
 																		<button id="btnRemoveAllSup" type="button"
 																			class="mb-0 mt-0 mr-0 btn btn-link"
-																			onclick="javascript:removeAllSuppliers()">Remove
+																			onclick="App.CreationCreateTasks.removeAllSuppliers()">Remove
 																			all</button>
 																	</div>
 																</div>
@@ -1578,12 +1133,14 @@
 							</li>
 							<li id="btnNext_res" class="next" style="display: none;">
 								<button class="btn btn-lg btn-default mb-1 mt-1 mr-1"
-									onclick="javascript:toGtinInput(false)"><i class="fas fa-angle-right"></i> To GTIN
+									onclick="App.CreationCreateTasks.toGtinInput(false)"><i
+										class="fas fa-angle-right"></i> To GTIN
 									reservation</button>
 							</li>
 							<li id="btnNext_input" class="next" style="display: none;">
 								<button class="btn btn-lg btn-success mb-1 mt-1 mr-1"
-									onclick="javascript:toGtinInput(true)"><i class="fas fa-angle-right"></i> To GTIN
+									onclick="App.CreationCreateTasks.toGtinInput(true)"><i
+										class="fas fa-angle-right"></i> To GTIN
 									input</button>
 							</li>
 							<li id="btnRegNext" class="next">
@@ -1662,6 +1219,8 @@
 		if (window.initWizard) {
 			window.initWizard();
 		}
-		//App.CreationCreateTasks.initialize();
+
+		App.CreationCreateTasks.initialize();
+
 	});
 </script>
