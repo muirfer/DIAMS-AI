@@ -1,0 +1,86 @@
+.toggleable {
+    display: none;
+}
+
+.nLink {
+    color: white;
+}
+
+.nLink:hover {
+    color: white;
+}
+
+ul.simple-bullet-list li.darkcyan:before {
+    border-color: darkcyan;
+}
+
+.dTable tbody tr td {
+    border: none !important;
+    vertical-align: middle;
+    padding: 0.5rem;
+}
+
+.form-group {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.dotted {
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
+    margin-left: 5% !important;
+}
+
+.nutri-score .btn {
+    width: 50px;
+    background-color: #ccc;
+    color: #fff;
+    opacity: 0.2;
+}
+
+.nutri-score .btn.selected-score {
+    opacity: 1;
+    font-size: x-large;
+}
+
+.nutri-score .btn-score-a {
+    background-color: #4CAF50;
+}
+
+.nutri-score .btn-score-b {
+    background-color: #A3D900;
+}
+
+.nutri-score .btn-score-c {
+    background-color: #FFC800;
+}
+
+.nutri-score .btn-score-d {
+    background-color: #FF6F00;
+}
+
+.nutri-score .btn-score-e {
+    background-color: #FF3C3C;
+}
+
+.nutri-score .btn-score-na {
+    background-color: grey;
+}
+
+.nutri-table-input {
+    border: 1px solid #ced4da;
+    text-align: right;
+}
+
+.nutri-table-lbl {
+    vertical-align: middle !important;
+}
+
+#datatable-pdate span {
+    display: none;
+}
+
+.hdate {
+    background: aliceblue;
+    border-radius: 15px;
+}

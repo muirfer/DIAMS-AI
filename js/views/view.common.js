@@ -154,7 +154,8 @@
                 'initSlider',
                 'initSummerNote',
                 'initColorPicker',
-                'initCodeMirror'
+                'initCodeMirror',
+                'initCarousel'
             ];
 
             $.each(plugins, function (i, funcName) {
