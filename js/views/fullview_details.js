@@ -76,6 +76,9 @@
                         breadcrumbItem.parentElement.style.display = "none";
                     }
                 }
+
+                //for full view update - Go Back if tab focus changes:
+                App.FVSummaryLog.goBack();
             });
         },
         /**
@@ -100,6 +103,33 @@
          */
         getCurrentPanel: function () {
             return currentPanel;
+        },
+        /**
+         * Reset date history filter
+         */
+        resetDateHistoryFilter: function () {
+            $(".hDate").val("")
+            $(".offDate").show()
+        },
+        /**
+         * On date history entered
+         */
+        onDateHistoryEntered: function () {
+            if ($(".offDate").is(":visible")) {
+                $(".offDate").hide()
+            } else {
+                $(".offDate").show()
+            }
+        },
+        /**
+         * Filter for
+         */
+        filterFor: function (value) {
+            var searchElement = $("#datatable-purh_filter input");
+
+            //set value
+            $(searchElement).focus().val(value)
+            $(searchElement).trigger("input")
         }
     };
 

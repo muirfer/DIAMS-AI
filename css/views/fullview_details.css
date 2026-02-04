@@ -84,3 +84,12 @@ ul.simple-bullet-list li.darkcyan:before {
     background: aliceblue;
     border-radius: 15px;
 }
+
+/* Full view - update - styles */
+.changed {
+    border: 3px solid darkorange;
+}
+
+.changeSelected {
+    background-color: lightblue;
+}
