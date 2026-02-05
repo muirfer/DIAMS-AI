@@ -31,7 +31,10 @@
          */
         initialize: function () {
             //store span element
-            App.spanElement = $('#titleDet span')
+            App.spanElement = $('#titleDet span');
+
+            //initialize datatable
+            this.datatablePURHistoryInit();
 
             //initialize events
             this.storeAllFieldsOriginalValues();
@@ -43,8 +46,32 @@
 
             //init update initial status for current scenario
             App.FVUpdateStepSpecific.initialize();
+        },
+        /**
+         * Initialize PUR History datatable
+         */
+        datatablePURHistoryInit: function () {
+            $('#datatable-purh').dataTable({
+                dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>p',
+                aaSorting: [
+                    [2, 'desc']
+                ]
+            });
 
+            $("#datatable-purh_length").parent().remove();
+            var element = $('#datatable-purh_filter').detach();
+            $('#searchPurHistoryDiv').append(element);
+            $('#searchPurHistoryDiv label').css("width", "100%")
 
+            $("#purh_t1").css("width", "22%")
+            //$("#purh_t2").css("width","15%")
+            $("#purh_t3").css("width", "10%")
+            $("#purh_t4").css("width", "5%")
+            $("#purh_t5").css("width", "5%")
+            $("#purh_t6").css("width", "7%")
+            $("#purh_t7").css("width", "7%")
+            $("#purh_t8").css("width", "22%")
+            $("#purh_t9").css("width", "22%")
         },
         /**
          *  On laod, store all fields original values
@@ -74,7 +101,7 @@
                 //get field object
                 App.fieldObject = App.updateFields.find(item => item.id === ("r" + fieldId));
 
-                if (App.fieldObject && $(this).hasClass("changed")) {
+                if (App.fieldObject && App.focusableClasses.some(className => $(this).hasClass(className))) {
                     App.FVUpdate.showChangeDetailsForCurrentField();
                 } else {
                     App.FVSummaryLog.goBack();
@@ -86,7 +113,7 @@
         * Apply updates accordingly if the status changes for the field 
         */
         initializeAllFieldsChangeEvent: function () {
-            $('input[type="text"]:not(.dateInput),input[type="date"],textarea:not(#cComment,#fComment)').on('input', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
+            $('input[type="text"]:not(.dateInput),input[type="date"],textarea:not(#cComment,#fComment)').on('input', function () { App.FVUpdateStepSpecific.doOnFieldValueUpdated($(this)); });
             $('.dateInput').on('changeDate', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
             $('select').on('change', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
 
@@ -194,8 +221,11 @@
             App.FVUpdateStepSpecific.showOrHideActionButtons();
 
             //show relevant timeline
-            App.FVUpdateStepSpecific.showTimelineForCurrentField();
+            App.FVUpdate.showTimelineForCurrentField();
         },
+        /** 
+         * Handle field value updates
+         */
         doOnFieldValueUpdated: function (element) {
             let currentValue = $(element).val()
             let fieldId = $(element).attr('id')
@@ -230,7 +260,7 @@
             App.fieldObject.comment = "";
 
             //remove change highlight and move back
-            $(fieldId).removeClass(App.discardRemoveClass);
+            $(fieldId).removeClass(App.focusableClasses.join(" "));
             App.FVSummaryLog.goBack();
 
             //assess confirm button vis
@@ -288,7 +318,8 @@
                     $(this).val($(this).data('originalValue'));
                 }
 
-                $(this).removeClass(App.discardRemoveClass);
+                //$(this).removeClass(App.discardRemoveClass);
+                $(this).removeClass(App.focusableClasses.join(" "));
             });
 
             $('[id^="rf"]').hide();
@@ -316,6 +347,282 @@
 
             //hide confirm button
             App.FVUpdate.showOrHideConfirmButton();
+        },
+        /** 
+         * Attach the button to all input elements starting with "f" and position it
+         */
+        attachGoButtons: function () {
+            $('input[id^="f"]:disabled,select[id^="f"]:disabled,textarea[id^="f"]:disabled:not(#cComment,#fComment),.dTable').hover(
+                function () {
+                    App.FVUpdate.openNavigationFeatureToField($(this))
+                },
+                function () {
+                    var button = $(this).parent().find(".btn-go")
+                    if (!button.is(':hover')) {
+                        button.slideUp(200)
+                    }
+                }
+            );
+        },
+        /** 
+         * Open navigation feature to field
+         */
+        openNavigationFeatureToField: function (input) {
+            var button = input.parent().find(".btn-go");
+
+            //get field object
+            let btnConfigValues = App.btnGoConfig.find(item => item.id === (input.attr('id')));
+
+            if (button.length === 0) {
+                button = App.buttonTemplate.clone().css({
+                    position: 'absolute',
+                    top: (btnConfigValues) ? btnConfigValues.top : '-4px',
+                    right: (btnConfigValues) ? btnConfigValues.right : 0,
+                    left: (btnConfigValues) ? btnConfigValues.left : 'e',
+                    height: (btnConfigValues) ? btnConfigValues.height : '100%',
+                    width: (btnConfigValues) ? btnConfigValues.width : '30%',
+                    opacity: 0.6,
+                    display: 'none',
+                    'z-index': 999999
+                }).appendTo(input.parent());
+
+                button.click(function () {
+                    button.css("opacity", "0.6")
+
+                    //get field object
+                    App.fieldObject = App.updateFields.find(item => item.id === ("r" + input.attr('id')));
+                    App.FVUpdate.showChangeDetailsForCurrentField();
+                });
+
+                button.hover(
+                    function () {
+                        button.css("opacity", "1")
+                    },
+                    function () {
+                        button.css("opacity", "0.6")
+                        if (!input.is(':hover')) {
+                            button.slideUp(200)
+                        }
+                    }
+                )
+            }
+
+            button.slideDown(200).show()
+        },
+        /**
+         * Undo change evaluation
+         */
+        undoChangeEvaluation: function () {
+            if (App.fieldObject.requestable && App.discardWhenRequestableIsUndone) {
+                App.FVUpdate.discard();
+                return;
+            }
+
+            App.fieldObject.reviewDone = false;
+            $("#cComment").removeClass("rejected");
+            $("#txtRequired").hide();
+            App.FVUpdateStepSpecific.showOrHideActionButtons()
+
+            //remove last comment done
+            $('.tm-items li.' + App.fieldObject.timeline + ':last').hide();
+
+            //get field object
+            let fieldId = "#" + App.fieldObject.id.replace("r", "");
+
+            //update field border color
+            if ($(fieldId).is('input[type="checkbox"]')) {
+                $(fieldId).parent().removeClass();
+                $(fieldId).parent().addClass('checkbox-custom checkbox-warning');
+            } else {
+                $(fieldId).removeClass('approvedL1 rejected c_requested');
+
+                if (App.fieldObject.review) {
+                    $(fieldId).addClass('changed');
+                }
+            }
+
+            //update in table
+            let tableIcon = $("#" + App.fieldObject.id).find('i:first');
+
+            if (App.fieldObject.review) {
+                tableIcon.removeClass();
+                tableIcon.addClass('fas fa-plus');
+                tableIcon.css("color", 'darkgray');
+                tableIcon.attr('data-original-title', 'New');
+            } else {
+                $("#" + App.fieldObject.id).hide()
+            }
+
+            //assess confirm button vis
+            App.FVUpdate.showOrHideConfirmButton();
+        },
+        /**
+         * Reject change
+         */
+        rejectChange: function () {
+            //comment is mandatory on rejection
+            if (!App.FVUpdate.isValidRequiredComment()) {
+                return;
+            }
+
+            //review done and rejected correctly            
+            App.FVUpdateStepSpecific.doOnReject();
+            App.FVUpdate.addCommentOnApproveOrReject(App.Actions.REJECT);
+            App.FVUpdateStepSpecific.showOrHideActionButtons();
+
+            //get field object
+            let fieldId = "#" + App.fieldObject.id.replace("r", "");
+
+            //update field border color
+            if ($(fieldId).is('input[type="checkbox"]')) {
+                $(fieldId).parent().removeClass();
+                $(fieldId).parent().addClass('checkbox-custom checkbox-danger');
+            } else {
+                $(fieldId).removeClass('changed approvedL1');
+                $(fieldId).addClass('rejected');
+            }
+
+            //update in table
+            let tableIcon = $("#" + App.fieldObject.id).find('i:first');
+            tableIcon.removeClass();
+            tableIcon.addClass('fas fa-ban');
+            tableIcon.css("color", 'darkred');
+            tableIcon.attr('data-original-title', 'Rejected');
+        },
+        /**
+         * Approve change
+         */
+        approveChange: function (appLevel) {
+            App.fieldObject.reviewDone = true;
+            App.FVUpdate.addCommentOnApproveOrReject(App.Actions.APPROVE);
+            App.FVUpdateStepSpecific.showOrHideActionButtons();
+
+            //get field object
+            let level = App.approvalLevels.find(item => item.id === appLevel);
+            let fieldId = "#" + App.fieldObject.id.replace("r", "");
+
+            //update field border color
+            if ($(fieldId).is('input[type="checkbox"]')) {
+                $(fieldId).parent().removeClass();
+                $(fieldId).parent().addClass('checkbox-custom checkbox-' + level.checkStyle);
+            } else {
+                $(fieldId).removeClass('changed approvedL1');
+                $(fieldId).addClass(level.inputStyle);
+            }
+
+            //update in table
+            let tableIcon = $("#" + App.fieldObject.id).find('i:first');
+            tableIcon.removeClass();
+            tableIcon.addClass(level.icon);
+            tableIcon.css("color", level.color);
+            tableIcon.attr('data-original-title', level.tooltip);
+        },
+        /**
+         * Request field update
+         */
+        requestFieldUpdate: function () {
+            //comment is mandatory on rejection
+            if (!App.FVUpdate.isValidRequiredComment()) {
+                return;
+            }
+
+            App.fieldObject.reviewDone = true;
+
+            //show row on change log    
+            $("#" + App.fieldObject.id).show();
+            App.FVUpdate.addCommentOnApproveOrReject(App.Actions.REQUEST);
+
+            //show only relevant fields
+            App.FVUpdateStepSpecific.showOrHideActionButtons();
+
+            //ADD organge color to field
+            let fieldId = "#" + App.fieldObject.id.replace("r", "");
+            $(fieldId).addClass('c_requested');
+
+            //show relevant timeline
+            App.FVUpdate.showTimelineForCurrentField();
+
+            //assess confirm button vis
+            App.FVUpdate.showOrHideConfirmButton();
+        },
+        /**
+         * Handle error on comment missing
+         * @returns 
+         */
+        isValidRequiredComment: function () {
+            if (!App.fieldObject.comment) {
+                $("#txtRequired").show();
+                $("#cComment").addClass("rejected");
+                return false;
+            } else {
+                $("#txtRequired").hide();
+                $("#cComment").removeClass("rejected");
+                return true;
+            }
+        },
+        /**
+         * Add new comment and hide input for new ones
+         * @param {} action 
+         */
+        addCommentOnApproveOrReject: function (action) {
+            var cObject;
+            var color;
+            var actionText;
+
+            switch (action) {
+                case App.Actions.APPROVE:
+                    color = "darkgreen";
+                    actionText = "Approved";
+                    break;
+                case App.Actions.REJECT:
+                    color = "darkred";
+                    actionText = "Rejected";
+                    break;
+                case App.Actions.REQUEST:
+                    color = "darkorange";
+                    actionText = "Change requested";
+                    break;
+                default:
+                    color = "gray";
+                    actionText = "Unknown";
+            }
+
+            $('.' + App.fieldObject.timeline).each(function () {
+                if (!$(this).is(':visible')) {
+                    cObject = $(this);
+
+                    //update span with action
+                    var spanElement = cObject.find('span:first')
+                    spanElement.css("color", color)
+                    spanElement.text(actionText)
+
+                    cObject.show();
+                }
+            });
+
+            if (!cObject) {
+                cObject = $('.' + App.fieldObject.timeline).first().clone();
+                cObject.find('p:first').text(App.commentText);
+                cObject.find('p:first').prepend('<span style="color:' + color + ';font-size:larger">' + actionText + '</span>');
+                // Append the cloned `<ol>` to the last `<li>`
+                $('#secTimeline .tm-items').append(cObject);
+            }
+
+            //udpate comment
+            cObject.find('p:last').text(App.fieldObject.comment);
+        },
+        /**
+         * Show timeline for current field
+         */
+        showTimelineForCurrentField: function () {
+            //show relevant timeline
+            if (App.FVUpdateStepSpecific.displayTimeline()) {
+                $("#secTimeline").show();
+                $('[class^="time_if"]').hide();
+                $("." + App.fieldObject.timeline).show();
+            } else {
+                $("#secTimeline").hide();
+            }
         }
 
     };

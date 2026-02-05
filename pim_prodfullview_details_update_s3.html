@@ -15,10 +15,6 @@
 			</div>
 			<h2 id="view-bag-title">Article full view</h2>
 
-			<a id="btnEditDiscardAll"
-				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action"
-				href="#" onclick="javascript:App.FVUpdateStepSpecific.switchMode()"><i id="iconEditDiscardAll"
-					class="fas fa-edit" style="margin-top: -10px;"></i></a>
 			<a id="btnConfirm"
 				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
 				href="#modal_update_confirm" style="display: none;"><i class="fas fa-check"
@@ -103,11 +99,10 @@
 											</li>
 										</ul>
 
-										<ul id="blockStatement" class="simple-card-list mb-3"
-											style="margin-top: 25px;display: none;">
+										<ul id="blockStatement" class="simple-card-list mb-3" style="margin-top: 25px;">
 											<li class="warning" style="text-align: center;opacity: 0.8;">
-												<h3>Blocked for edition</h3>
-												<p class="text-light">Update request on process </p>
+												<h3>Review required</h3>
+												<p class="text-light">Update request under process</p>
 											</li>
 										</ul>
 									</div>
@@ -117,27 +112,31 @@
 					</div>
 					<!-- End - Accordion Main info -->
 					<!-- Start - Accordion Change request -->
-					<div id="pChange" class="card card-default" style="display: none;">
+					<div id="pChange" class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
 								<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
 									data-parent="#accordion3" href="#accChangeRequest">
 									Product update request <span
-										style="color: darkred;font-size: larger;">&nbsp;&nbsp;(New)</span>
+										style="color: darkred;font-size: larger;">&nbsp;&nbsp;(13245)</span>
 								</a>
 							</h4>
+							<div class="card-actions">
+								<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
+									style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a>
+							</div>
 						</div>
 						<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
-							<div id="pChangeMain" class="card-body" style="display: none;background: ghostwhite;">
+							<div id="pChangeMain" class="card-body" style="background: ghostwhite;">
 								<!-- Start - Description -->
 								<div class="row">
 									<div class="col-lg-12">
-										<p style="margin-bottom: 0;">Update product values and enter comments if
-											required.</p>
+										<p style="margin-bottom: 0;">Review changes requested for current product.</p>
 										<ul>
-											<li>Submit to initiate the change request</li>
-											<li><a href="#" id="discardAll" style="color: darkred;font-size: larger;"
-													onclick="javascript:App.FVUpdate.discardAll()">Discard all</a>: to
+											<li>Approve or reject requests to update</li>
+											<li>Add additional changes on current request.</li>
+											<li><a href="#" id="discardAll"
+													style="color: darkred;font-size: larger;">Discard all</a>: to
 												restore all original values.</li>
 										</ul>
 									</div>
@@ -153,8 +152,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr id="rf1" style="display: none;"
-													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+												<tr id="rf1" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
 													<td style="text-align: center;width: 10%;">
 														<span class="badge badge-info" style="font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
@@ -162,14 +160,13 @@
 													</td>
 													<td style="width: 75%;">Product creation date</td>
 													<td style="text-align: right;width: 15%;">
-														<i class="fas fa-plus"
-															style="color: darkgray;font-size: larger;"
+														<i class="fas fa-check"
+															style="color: darkgreen;font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
-															title="New"></i>
+															title="Approved by Category Expert"></i>
 													</td>
 												</tr>
-												<tr id="rf2" style="display: none;"
-													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+												<tr id="rf2" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
 													<td style="text-align: center;width: 10%;">
 														<span class="badge badge-info" style="font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
@@ -177,14 +174,12 @@
 													</td>
 													<td style="width: 75%;">Net weight (EA)</td>
 													<td style="text-align: right;width: 15%;">
-														<i class="fas fa-plus"
-															style="color: darkgray;font-size: larger;"
+														<i class="fas fa-ban" style="color: darkred;font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
-															title="New"></i>
+															title="Rejected"></i>
 													</td>
 												</tr>
-												<tr id="rf3" style="display: none;"
-													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+												<tr id="rf3" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
 													<td style="text-align: center;width: 10%;">
 														<span class="badge badge-info" style="font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
@@ -192,14 +187,12 @@
 													</td>
 													<td style="width: 75%;">Item set</td>
 													<td style="text-align: right;width: 15%;">
-														<i class="fas fa-plus"
-															style="color: darkgray;font-size: larger;"
+														<i class="fas fa-ban" style="color: darkred;font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
-															title="New"></i>
+															title="Rejected"></i>
 													</td>
 												</tr>
-												<tr id="rf4" style="display: none;"
-													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+												<tr id="rf4" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
 													<td style="text-align: center;width: 10%;">
 														<span class="badge badge-info" style="font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
@@ -207,27 +200,66 @@
 													</td>
 													<td style="width: 75%;">Dangerous symbos (GHS)</td>
 													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-ban" style="color: darkred;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Rejected"></i>
+													</td>
+												</tr>
+												<tr id="rf5" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-warning" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Update Request">UR</span>
+													</td>
+													<td style="width: 75%;">Number of components (Offer)</td>
+													<td style="text-align: right;width: 15%;">
 														<i class="fas fa-plus"
 															style="color: darkgray;font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
 															title="New"></i>
 													</td>
 												</tr>
-
+												<tr id="rf6" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-warning" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Update Request">UR</span>
+													</td>
+													<td style="width: 75%;">Implantation guidelines (French)</td>
+													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-plus"
+															style="color: darkgray;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="New"></i>
+													</td>
+												</tr>
+												<tr id="rf10" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-info" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Updated">U</span>
+													</td>
+													<td style="width: 75%;">Product number used by supplier (0010002878)
+													</td>
+													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-plus"
+															style="color: darkgray;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="New"></i>
+													</td>
+												</tr>
 											</tbody>
 										</table>
 									</div>
 								</div>
 								<!-- End - Change log -->
-								<!-- Start - CR Details and last comment - Not for initiator -->
-
-								<!-- End - CR Details and last comment -->
 							</div>
 							<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
 								<div class="row">
 									<div class="col-lg-2" style="text-align: left;">
-										<span class="badge badge-info" style="font-size: x-large;" data-toggle="tooltip"
-											data-placement="right" title="Updated">U</span>
+										<span id="actionBadge" class="badge badge-info"
+											style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
+											data-placement="right" title="Updated">Updated</span>
 									</div>
 									<div class="col-lg-10">
 										<p style="text-align: right;">
@@ -241,12 +273,12 @@
 									</div>
 								</div>
 								<!-- Start - Old value -->
-								<div class="row">
+								<div class="row old">
 									<div class="col-lg-12">
 										<label class="col-form-label" for="formGroupExampleInput">Old value:</label>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row old">
 									<div class="col-sm-12">
 										<div id="if1" class="input-group">
 											<span class="input-group-prepend">
@@ -261,10 +293,12 @@
 										<input id="if2" readonly type="text" class="form-control form-control"
 											value="4321,855" style="text-align: right;">
 										<select id="if3" class="form-control mb-3" disabled>
-											<option value=""></option>
-											<option>001 - Zuivel</option>
-											<option>002 - Tabak zelfbediening en Vensafe</option>
-											<option selected>314 - 0201 - Perfumery & Drugstore Ninove</option>
+											<option value="" disabled></option>
+											<option value="001">001 - Zuivel</option>
+											<option value="002">002 - Tabak zelfbediening en Vensafe</option>
+											<option value="314" selected>314 - 0201 - Perfumery & Drugstore Ninove
+											</option>
+											<option value="315">315 - 9541 - Other type of item set</option>
 										</select>
 										<select id="if4" multiple data-plugin-selectTwo
 											class="form-control populate cust-select" disabled>
@@ -272,23 +306,135 @@
 											<option value="04" selected>04</option>
 											<option value="06" selected>06</option>
 										</select>
+										<input id="if10" type="text" name="pp_ubv" class="form-control"
+											autocomplete="off" value="9876543210001263">
 									</div>
 								</div>
-								<div class="row">
+								<div class="row old">
 									<div class="col-lg-12" style="text-align: right;">
-										<a href="#" onclick="javascript:App.FVUpdate.discard()"
+										<a id="btnDiscard" href="#" onclick="javascript:App.FVUpdate.discard()"
 											style="color: red;">Restore</a>
 									</div>
 								</div>
 								<!-- End - Old value -->
-								<hr class="dotted short">
+								<hr class="dotted short old">
 								<!-- Start - Comments -->
-								<div class="row">
-									<div class="col-lg-12">
-										<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+								<div id="secTimeline">
+									<div class="timeline timeline-simple mt-3 mb-3">
+										<div class="tm-body" style="padding: 0;">
+											<ol class="tm-items tm-main">
+												<li class="time_if1">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Changed </span>by John Smith
+															(Supplier) on 24/06/2024 15:35</p>
+														<p>
+															Date moved to the future as required by business
+														</p>
+													</div>
+												</li>
+												<li class="time_if1">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span
+																style="color:darkgreen">Approved </span>by Amanda Green
+															(CE) on 03/07/2024 12:15</p>
+														<p>
+
+														</p>
+													</div>
+												</li>
+												<li class="time_if2">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Changed </span>by John Smith
+															(Supplier) on 24/06/2024 15:35</p>
+														<p>
+														</p>
+													</div>
+												</li>
+												<li class="time_if2">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span style="color:darkred">Rejected
+															</span>by Amanda Green (CE) on 03/07/2024 12:15</p>
+														<p>
+															Above the limits. Please recheck.
+														</p>
+													</div>
+												</li>
+												<li class="time_if3">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Changed </span>John Smith
+															(Supplier) on 24/06/2024 15:35</p>
+														<p>
+															New item set due to change on product creation date.
+														</p>
+													</div>
+												</li>
+												<li class="time_if3">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span style="color:darkred">Rejected
+															</span>by Amanda Green (CE) on 03/07/2024 12:15</p>
+														<p>
+															Agree that it needs to change. But this new one is not the
+															correct one.
+														</p>
+													</div>
+												</li>
+												<li class="time_if4">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Changed </span>by John Smith
+															(Supplier) on 24/06/2024 15:35</p>
+														<p>
+														</p>
+													</div>
+												</li>
+												<li class="time_if4">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span style="color:darkred">Rejected
+															</span>by Amanda Green (CE) on 03/07/2024 12:15</p>
+														<p>
+															Missing some symbols
+														</p>
+													</div>
+												</li>
+												<li class="time_if5">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Raised </span>by Amanda Green
+															(CE) on 03/07/2024 18:25</p>
+														<p>
+															Lower down the number of components
+														</p>
+													</div>
+												</li>
+												<li class="time_if6">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Raised </span>by Amanda Green
+															(CE) on 03/07/2024 18:25</p>
+														<p>
+															Terrible french! please translate correctly
+														</p>
+													</div>
+												</li>
+												<li class="time_if10">
+													<div class="tm-box">
+														<p class="text-muted mb-0"><span>Changed </span> by Amanda Green
+															(CE) on 03/07/2024 18:25</p>
+														<p>
+														</p>
+													</div>
+												</li>
+											</ol>
+										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row rComment">
+									<div class="col-lg-6">
+										<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+									</div>
+									<div class="col-lg-6" style="text-align: right;">
+										<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
+											Required</p>
+									</div>
+								</div>
+								<div class="row rComment">
 									<div class="col-lg-12">
 										<section class="simple-compose-box mb-3">
 											<form method="get" action="/">
@@ -302,15 +448,29 @@
 								</div>
 								<!-- End - Comments -->
 								<!-- Start - Actions -->
-
+								<div class="row">
+									<div class="col-lg-12" style="text-align: right;">
+										<button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
+											style="border-color: darkred;"
+											onclick="javascript:App.FVUpdate.undoChangeEvaluation()">Undo</button>
+										<button id="btnReject" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+											onclick="javascript:App.FVUpdate.rejectChange()">Reject</button>
+										<button id="btnApprove" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+											onclick="javascript:App.FVUpdate.approveChange(1)">Approve</button>
+										<button id="btnRequest" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+											onclick="javascript:App.FVUpdate.requestFieldUpdate()">Request
+											update</button>
+									</div>
+								</div>
 								<!-- End - Actions -->
 							</div>
 						</div>
 					</div>
 					<!-- End - Accordion Change request -->
 				</div>
-
-
 			</div>
 			<div class="col-lg-9">
 				<!-- Start - Breadcrumbs navigation -->
@@ -520,8 +680,8 @@
 															</span>
 															<input id="f1" type="text" data-plugin-datepicker
 																data-plugin-options='{ "format": "dd/mm/yyyy" }'
-																class="form-control dateInput" autocomplete="off"
-																value="30/12/2023" />
+																class="form-control dateInput approvedL1" readonly
+																autocomplete="off" value="15/03/2024" />
 														</div>
 													</div>
 												</div>
@@ -1885,8 +2045,8 @@
 																							type="button">Net</button>
 																					</span>
 																					<input id="f2" type="text"
-																						class="form-control form-control"
-																						value="4321,855"
+																						class="form-control form-control rejected"
+																						value="324,105"
 																						style="text-align: right;font-size: smaller;">
 																				</div>
 																			</div>
@@ -2998,8 +3158,7 @@
 																			<p>12345678 - SOCIETE FERMIERE ROCHEFORT
 																				ARDENNES</p>
 																			<p style="color: darkgreen;">PO UoM:
-																				<u>CV</u>
-																			</p><br>
+																				<u>CV</u></p><br>
 																		</div>
 																	</td>
 																	<td
@@ -3056,8 +3215,7 @@
 																			style="margin-top: 5px;">
 																			<p>34567890 - UNILEVER BELGUIM</p>
 																			<p style="color: darkgreen;">PO UoM:
-																				<u>IP</u>
-																			</p><br>
+																				<u>IP</u></p><br>
 																		</div>
 																	</td>
 																	<td
@@ -3114,8 +3272,7 @@
 																			style="margin-top: 5px;">
 																			<p>6789012 - Coca-Cola Company</p>
 																			<p style="color: darkgreen;">PO UoM:
-																				<u>EA</u>
-																			</p><br>
+																				<u>EA</u></p><br>
 																		</div>
 																	</td>
 																	<td
@@ -3858,7 +4015,7 @@
 														symbols (GHS): </label>
 													<div class="col-sm-7">
 														<table id="f4"
-															class="table table-no-more table-hover mb-0 dTable">
+															class="table table-no-more table-hover mb-0 dTable changed">
 															<tbody>
 																<tr style="background: floralwhite;">
 																	<td data-title="" class="text-center">
@@ -3876,8 +4033,8 @@
 																<tr>
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
-																			<input type="checkbox"
-																				id="checkboxExample2">
+																			<input type="checkbox" id="checkboxExample2"
+																				disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3888,8 +4045,8 @@
 																<tr>
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
-																			<input type="checkbox"
-																				id="checkboxExample2">
+																			<input type="checkbox" id="checkboxExample2"
+																				disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3902,7 +4059,7 @@
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
 																			<input type="checkbox" checked=""
-																				id="checkboxExample2">
+																				id="checkboxExample2" disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3913,8 +4070,8 @@
 																<tr>
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
-																			<input type="checkbox"
-																				id="checkboxExample2">
+																			<input type="checkbox" id="checkboxExample2"
+																				disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3927,7 +4084,7 @@
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
 																			<input type="checkbox" checked=""
-																				id="checkboxExample2">
+																				id="checkboxExample2" disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3939,8 +4096,8 @@
 																<tr>
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
-																			<input type="checkbox"
-																				id="checkboxExample2">
+																			<input type="checkbox" id="checkboxExample2"
+																				disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3952,8 +4109,8 @@
 																<tr>
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
-																			<input type="checkbox"
-																				id="checkboxExample2">
+																			<input type="checkbox" id="checkboxExample2"
+																				disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -3965,8 +4122,8 @@
 																<tr>
 																	<td data-title="" class="text-center">
 																		<div class="checkbox-custom">
-																			<input type="checkbox"
-																				id="checkboxExample2">
+																			<input type="checkbox" id="checkboxExample2"
+																				disabled>
 																			<label for="checkboxExample2"></label>
 																		</div>
 																	</td>
@@ -4373,8 +4530,8 @@
 																class="col-sm-5 control-label text-sm-right pt-2">Implantation
 																guidelines: </label>
 															<div class="col-sm-7">
-																<textarea class="form-control" rows="7"
-																	data-plugin-maxlength
+																<textarea id="f6" class="form-control c_requested"
+																	rows="7" data-plugin-maxlength
 																	maxlength="250">Les directives d'implantation pour notre produit de vente au détail suggèrent un positionnement près des zones à fort trafic, à hauteur des yeux et le regroupement des articles complémentaires. Évaluez régulièrement le comportement des clients...</textarea>
 															</div>
 														</div>
@@ -5633,12 +5790,15 @@
 													<label class="col-sm-3 control-label text-sm-right pt-2">Item set:
 													</label>
 													<div class="col-sm-5">
-														<select id="f3" class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option>001 - Zuivel</option>
-															<option>002 - Tabak zelfbediening en Vensafe</option>
-															<option selected="">314 - 0201 - Perfumery & Drugstore
+														<select id="f3" class="form-control mb-3 cust-select rejected">
+															<option value="" disabled></option>
+															<option value="001">001 - Zuivel</option>
+															<option value="002" selected>002 - Tabak zelfbediening en
+																Vensafe</option>
+															<option value="314">314 - 0201 - Perfumery & Drugstore
 																Ninove</option>
+															<option value="315">315 - 9541 - Other type of item set
+															</option>
 														</select>
 													</div>
 												</div>
@@ -5831,8 +5991,8 @@
 													</label>
 													<div class="col-sm-5">
 														<div class="checkbox-custom" style="margin-top: 8px;">
-															<input type="checkbox" checked="" id="checkboxExample2">
-															<label for="checkboxExample2"></label>
+															<input type="checkbox" checked="" id="f11">
+															<label for="f11"></label>
 														</div>
 													</div>
 												</div>
@@ -6761,8 +6921,9 @@
 																class="col-sm-5 control-label text-sm-right pt-2">Product
 																number used by supplier: </label>
 															<div class="col-sm-7">
-																<input type="text" name="pp_ubv" class="form-control"
-																	autocomplete="off" value="9876543210001263">
+																<input id="f10" type="text" name="pp_ubv"
+																	class="form-control changed" autocomplete="off"
+																	value="9876543210001263">
 															</div>
 														</div>
 														<div class="form-group row">
@@ -7568,9 +7729,9 @@
 																	<td
 																		style="text-align: center;vertical-align: middle;">
 																		<div class="row">
-																			<input type="text" value="210"
+																			<input id="f5" type="text" value="210"
 																				style="text-align: center;"
-																				class="form-control col-lg-8 offset-lg-2"
+																				class="form-control col-lg-8 offset-lg-2 c_requested"
 																				placeholder="">
 																		</div>
 																	</td>
@@ -8032,7 +8193,7 @@
 																					<th class="text-center"><input
 																							id="be_cs_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8108,7 +8269,7 @@
 																					<th class="text-center"><input
 																							id="be_cl_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8480,7 +8641,7 @@
 																					<th class="text-center"><input
 																							id="be_cb_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8628,7 +8789,7 @@
 																					<th class="text-center"><input
 																							id="be_cf_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8721,7 +8882,7 @@
 																					<th class="text-center"><input
 																							id="be_ce_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8787,7 +8948,7 @@
 																					<th class="text-center"><input
 																							id="be_cx_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8862,7 +9023,7 @@
 																					<th class="text-center"><input
 																							id="be_cy_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8969,7 +9130,7 @@
 																					<th class="text-center"><input
 																							id="lu_c2_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -9072,7 +9233,7 @@
 																					<th class="text-center"><input
 																							id="lu_c3_chkAll"
 																							type="checkbox"
-																							onchange="App.FVAssortment.selectAll(this)">
+																							onchange="selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -9425,8 +9586,7 @@
 												<h2 class="card-title">Price structure</h2>
 												<p class="card-subtitle">For <code>Belgium</code> and on
 													<code>12/07/2024</code>. Amounts are in <code>Euros (EUR)</code> and
-													per <code>EA/Kg</code>
-												</p>
+													per <code>EA/Kg</code></p>
 											</header>
 											<div class="card-body">
 												<div class="row">
@@ -10228,8 +10388,7 @@
 													(without VAT) and related to <code>EA</code>. Click to&nbsp;&nbsp;<a
 														href="#modal_phistory"
 														class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal">see
-														history</a>
-												</p>
+														history</a></p>
 											</header>
 											<div class="card-body">
 												<div class="row" style="margin-bottom: 20px;">
@@ -10243,7 +10402,7 @@
 
 													</div>
 													<!-- <div class="col-lg-2 text-right">
-														<select class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeApp.FVAssortment.selectAllOption": true, "App.FVAssortment.selectAll": true }' id="visTarif" onchange="javascript:showTarif()">
+														<select class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true, "selectAll": true }' id="visTarif" onchange="javascript:showTarif()">
 															<option value="03">03 - Supermarket</option>
 															<option value="04">04 - SM Schmiede</option>
 															<option value="05">05 - T05 Proxy Highly</option>
@@ -10778,8 +10937,7 @@
 				<footer class="card-footer">
 					<div class="row">
 						<div class="col-md-12 text-right">
-							<button class="btn btn-default modal-dismiss"
-								onclick="App.FVPrices.onClosePriceDate()">Confirm</button>
+							<button class="btn btn-default modal-dismiss" onclick="onClosePriceDate()">Confirm</button>
 						</div>
 					</div>
 				</footer>
@@ -10860,14 +11018,11 @@
 										<th style="text-align: center;vertical-align: middle;width: 13%;" rel="tooltip"
 											title="PV VAT in / Sales price VKP0">PV <br><code>VKP0</code></th>
 										<th style="text-align: center;vertical-align: middle;width: 13%;">Markup
-											<br><code>%</code>
-										</th>
+											<br><code>%</code></th>
 										<th style="text-align: center;vertical-align: middle;width: 13%;">TAM
-											<br><code>%</code>
-										</th>
+											<br><code>%</code></th>
 										<th style="text-align: center;vertical-align: middle;width: 13%;">TMOP
-											<br><code>%</code>
-										</th>
+											<br><code>%</code></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -11049,12 +11204,8 @@
 							<i class="fas fa-question-circle"></i>
 						</div>
 						<div class="modal-text">
-							<h4>Submit a new update request</h4>
-							<p>Your input will be evaluated and confirmed by Delhaize teams.<br>Delhaize teams may
-								include more updates and request others.</p>
-							<p><span style="font-size: larger;color: red;">Important: </span> note that the current
-								product will remain blocked for edition until the update request is processed (completed
-								or rejected)</p>
+							<h4>Submit to supplier</h4>
+							<p>Your review resulted in changes to be evaluated by the supplier. Confirm to continue</p>
 							<div class="row">
 								<div class="col-lg-12">
 									<label class="col-form-label" for="formGroupExampleInput">Additional
@@ -11073,8 +11224,7 @@
 				<footer class="card-footer">
 					<div class="row">
 						<div class="col-md-12 text-right">
-							<button id="btnConfirmNewCR" class="btn btn-success modal-confirm"
-								onclick="javascript:App.FVUpdate.submitUpdateRequest()">Confirm</button>
+							<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Confirm</button>
 							<button class="btn btn-default modal-dismiss">Cancel</button>
 						</div>
 					</div>
@@ -11082,423 +11232,113 @@
 			</section>
 		</div>
 		<!-- End Modal - Full view - confirm update -->
-		<!-- Start Modal - Full view - history -->
-		<div id="modal_update_history" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide"
-			style="max-width: 1300px !important;">
+		<!-- Start Modal - Full view - Reject all -->
+		<div id="modal_update_reject_all" class="zoom-anim-dialog modal-block modal-block-danger mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Product update history</h2>
-					<p class="card-subtitle">Check update history for changes done through DIAMS. Updates applied
-						directly in SAP are not reflected here.<br>Click on field, request number or involved users to
-						automatically filter on each value.</p>
-					<button type="button" class="close modal-dismiss" data-dismiss="modal" aria-label="Close"
-						style="margin-top: -35px;">
-						<span aria-hidden="true">&times;</span>
-					</button>
+					<h2 class="card-title">Confirm</h2>
 				</header>
 				<div class="card-body">
-					<div class="row">
-						<div id="searchPurHistoryDiv" class="col-lg-4">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-question-circle"></i>
 						</div>
-						<div class="col-lg-4">
-							<div class="input-daterange input-group" data-plugin-datepicker
-								data-plugin-options='{ "endDate": "10/11/2024","format": "dd/mm/yyyy", "todayBtn": true, "todayHighlight": true, "weekStart":1,"orientation":"bottom"  }'>
-								<span class="input-group-prepend">
-									<span class="input-group-text">
-										<i class="fas fa-calendar-alt"></i>
-									</span>
-								</span>
-								<input type="text" class="form-control hDate cFilter" name="start" value=""
-									autocomplete="off" onchange="javascript:App.FVDetails.onDateHistoryEntered()">
-								<span class="input-group-text border-left-0 border-right-0 rounded-0">
-									to
-								</span>
-								<input type="text" class="form-control hDate cFilter" name="end" value="10/11/2024"
-									autocomplete="off">
-								<span class="input-group-append">
-									<a href="#" onclick="javascript:App.FVDetails.resetDateHistoryFilter()"
-										class="btn-tertiary" style="width: 40px;text-align:center;opacity: 0.7;"><i
-											class="fas fa-undo" style="margin-top: 12px;"></i></a>
-								</span>
+						<div class="modal-text">
+							<h4>Reject all changes</h4>
+							<p>This action will discard the entire update request, restore all original values and
+								unblock the product. Requestor will be notified about the rejection. Confirm to continue
+							</p>
+							<div class="row">
+								<div class="col-lg-12">
+									<label class="col-form-label" for="formGroupExampleInput">Enter
+										justification:</label>
+								</div>
 							</div>
-						</div>
-						<div class="col-lg-4 text-right">
-							<button class="btn btn-link"><i class="fas fa-file-excel"></i>&nbsp;Export to Excel</button>
-						</div>
-
-					</div>
-					<div class="row" style="margin-top: 20px;">
-						<div class="col-lg-12">
-							<table class="table table-responsive-md table-sm mb-0 table-hover" id="datatable-purh">
-								<thead>
-									<tr>
-										<th id="purh_t1" style="vertical-align: middle;text-align: center;width:28%">
-											Field</th>
-										<th id="purh_t3" style="vertical-align: middle;text-align: center;width:10%">
-											Date/Time</th>
-										<th id="purh_t4" style="vertical-align: middle;text-align: center;width:5%">
-											Request number</th>
-										<th id="purh_t5" style="vertical-align: middle;text-align: center;width:5%">By
-										</th>
-										<th id="purh_t6" style="vertical-align: middle;text-align: center;width:7%">CE
-											Approver</th>
-										<th id="purh_t7" style="vertical-align: middle;text-align: center;width:7%">MD
-											Approver</th>
-										<th id="purh_t8" style="vertical-align: middle;text-align: right;width:19%">Old
-											value</th>
-										<th id="purh_t9" style="vertical-align: middle;text-align: right;width:19%">New
-											value</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="offDate">
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Net contents of Base UoM</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1234</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom"
-											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Albert Mitslak">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">AMIT</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">16,71</td>
-										<td style="text-align: right;color:darkgreen">24,29</td>
-									</tr>
-									<tr class="offDate">
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Country of origin of the
-												product</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1234</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom"
-											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Albert Mitslak">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">AMIT</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">BE, DE, FR</td>
-										<td style="text-align: right;color:darkgreen">BE, FR</td>
-									</tr>
-									<tr class="offDate">
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">IP - Product shelf description
-												(English)</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1234</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom"
-											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Albert Mitslak">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">AMIT</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">Rice Krispies Bag Pack 4x400g</td>
-										<td style="text-align: right;color:darkgreen">Rice Krispies Bag Pack 3x500g</td>
-									</tr>
-									<tr class="offDate">
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Item set</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1234</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom"
-											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Albert Mitslak">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">AMIT</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">314 - 0201 - Perfumery & Drugstore
-											Ninove</td>
-										<td style="text-align: right;color:darkgreen">002 - Tabak zelfbediening en
-											Vensafe</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Product number used by supplier
-												(00050013489)</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1544</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="John Lucas (CE)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">9876543210001263</td>
-										<td style="text-align: right;color:darkgreen">123543292251244</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Net - Weight (EA)</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1544</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="John Lucas (CE)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">4321,855</td>
-										<td style="text-align: right;color:darkgreen">175,320</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Red market (own brand)</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1544</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="John Lucas (CE)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">Yes</td>
-										<td style="text-align: right;color:darkgreen">No</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Net contents of Base UoM</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1544</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="John Lucas (CE)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a>
-										</td>
-										<td style="text-align: right;color:darkred">24,29</td>
-										<td style="text-align: right;color:darkgreen">38,01</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Implantation guidelines
-												(French)</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">03/11/2024 19:05</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1588</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom"
-											title="Julia Carlson (00630229175 - Unilever Belgium)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">JCAR</a><br><code>SUP</code>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Adam Zuid">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">AZUI</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Clara Rambito">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">CRAM</a>
-										</td>
-										<td style="text-align: right;color:darkred" data-toggle="tooltip"
-											data-placement="bottom"
-											title="Les directives d'implantation pour notre produit de vente au détail suggèrent un positionnement près des zones à fort trafic, à hauteur des yeux et le regroupement des articles complémentaires. Évaluez régulièrement le comportement des clients">
-											Les directives d'implantation pour notre produit de vente au détail
-											suggèrent un positionnement près des zones à fort trafic...</td>
-										<td style="text-align: right;color:darkgreen" data-toggle="tooltip"
-											data-placement="bottom"
-											title="New Les directives d'implantation pour notre produit de vente au détail, à hauteur des yeux et le regroupement des articles complémentaires. Évaluez régulièrement le comportement des clients">
-											New Les directives d'implantation pour notre produit de vente au détail, à
-											hauteur des yeux et le regroupement des articles...</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Store orderable days</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">03/11/2024 19:05</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1588</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Adam Zuid (CE)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">AZUI</a><br><code>CE</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Clara Rambito">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">CRAM</a>
-										</td>
-										<td style="text-align: right;color:darkred">Monday, Tuesday, Friday</td>
-										<td style="text-align: right;color:darkgreen">Monday, Friday, Sunday</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Product type</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">03/11/2024 19:05</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1588</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Clara Rambito (MDS)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">CRAM</a><br><code>MDS</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: right;color:darkred">ZHAW - Trading Goods Retail</td>
-										<td style="text-align: right;color:darkgreen">ZIBF - Free Operating supplies
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Product type</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">04/11/2024 14:34</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1601</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Matt Jefferson (Replenisher)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">MJEF</a><br><code>REP</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: right;color:darkred">ZIBF - Free Operating supplies</td>
-										<td style="text-align: right;color:darkgreen">ZHAF - Free Trading Goods Retail
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: inherit;">Product type</a>
-										</td>
-										<td style="text-align: center;color:darkcyan">08/11/2024 09:23</td>
-										<td style="text-align: center;color:gray">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">1605</a>
-										</td>
-										<td style="text-align: center;color:gray" data-toggle="tooltip"
-											data-placement="bottom" title="Brenda Bulmar (MDS)">
-											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
-												class="btn-link" style="color: gray;">BBUL</a><br><code>MDS</code>
-										</td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: center;color:gray"></td>
-										<td style="text-align: right;color:darkred">ZHAF - Free Trading Goods Retail
-										</td>
-										<td style="text-align: right;color:darkgreen">ZVEF - Free Packaging MD</td>
-									</tr>
-								</tbody>
-							</table>
+							<div class="row">
+								<div class="col-md-12">
+									<textarea id="fComment" name="message-text" data-plugin-maxlength maxlength="200"
+										rows="4" style="width: 100%;"></textarea>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnRejectAll" class="btn btn-danger modal-confirm">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - Reject all -->
+		<!-- Start Modal - Full view - details -->
+		<div id="modal_update_details" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Product update history</h2>
+				</header>
+				<div class="card-body">
+					<div>
+						<div class="timeline timeline-simple mt-3 mb-3">
+							<div class="tm-body" style="padding: 0;">
+								<ol class="tm-items">
+									<li>
+										<div class="tm-box">
+											<p class="text-muted mb-0"><span>Raised by </span>By John Smith (Supplier)
+												on 24/06/2024 15:35</p>
+											<p>
+												New change request raised to take care of new conditions. Please check
+												on your side the impacted values.
+											</p>
+										</div>
+									</li>
+									<li>
+										<div class="tm-box">
+											<p class="text-muted mb-0"><span>Reviewed by </span>By Amanda Green (CE) on
+												03/07/2024 12:15</p>
+											<p>
+												More updates included but some more changes are requested to the
+												supplier. Please check.
+											</p>
+										</div>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - details -->
+		<!-- Start Modal - Full view - history -->
+		<div id="modal_update_history" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Product update history</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<p>Under construction</p>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
 			</section>
 		</div>
 		<!-- End Modal - Full view - history -->
@@ -11513,7 +11353,7 @@
 	<script src="js/views/fullview_details.js"></script>
 	<script src="js/views/fullview_details_notifications.js"></script>
 	<script src="js/views/fullview_details_summary_log.js"></script>
-	<script src="js/views/fullview.update_s1.js"></script>
+	<script src="js/views/fullview.update_s3.js"></script>
 	<script src="js/views/fullview.update.js"></script>
 	<script>
 		jQuery(document).ready(function ($) {

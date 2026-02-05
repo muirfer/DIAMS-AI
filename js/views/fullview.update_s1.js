@@ -6,7 +6,7 @@
 
     App.editMode = false;
     App.initialUpdatesCount = 0;
-    App.discardRemoveClass = "changed";
+    App.discardWhenRequestableIsUndone = true;
     App.updateFields = [
         { id: "rf1", iType: "if1", label: "Product creation date", tab: "overview", comment: "" },
         { id: "rf2", iType: "if2", label: "Net weight (EA)", tab: "pUoM", comment: "" },
@@ -25,7 +25,9 @@
             $('input[type="text"]').prop('readonly', true);
             $('input[type="checkbox"], select').prop('disabled', true);
             $('input[type="search"]').prop("readonly", false);
+            $('input[type="search"]').prop("disabled", false);
             $(".cFilter").prop("readonly", false);
+            $(".cFilter").prop("disabled", false);
         },
         switchMode: function () {
             if (App.editMode) {
@@ -62,7 +64,6 @@
                 App.editMode = false;
 
             } else {
-                console.log("swt")
                 //switch to edit mode
                 //enable only fields for current role
                 App.updateFields.forEach(field => {
@@ -80,11 +81,17 @@
                 App.editMode = true;
             }
         },
-        /**
-         * Show timeline for current field
+        /** 
+         * Handle field value updates
          */
-        showTimelineForCurrentField: function () {
-            //do nothing
+        doOnFieldValueUpdated: function (input) {
+            App.FVUpdate.doOnFieldValueUpdated(input);
+        },
+        /**
+         * Return true if timeline should be displayed
+         */
+        displayTimeline: function () {
+            return false;
         },
         showOrHideActionButtons: function () {
             //do nothing

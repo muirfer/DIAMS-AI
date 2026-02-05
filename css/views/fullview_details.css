@@ -93,3 +93,23 @@ ul.simple-bullet-list li.darkcyan:before {
 .changeSelected {
     background-color: lightblue;
 }
+
+.approvedL1 {
+    border: 3px solid darkgreen;
+}
+
+.approvedL2 {
+    border: 3px solid darkblue;
+}
+
+.rejected {
+    border: 3px solid darkred !important;
+}
+
+.c_requested {
+    border: 3px solid darkcyan;
+}
+
+.clickable-disabled {
+    background: lightgray;
+}
