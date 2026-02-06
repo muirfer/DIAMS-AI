@@ -50,6 +50,17 @@ Theme Version: 	3.0.0
         });
     });
 
+    $('#btnBerError').click(function () {
+        var notice4 = new PNotify({
+            title: 'Check the errors below and unblock the current situation by retrying, skipping or applying any other changes if required',
+            text: '<ul><li><a href="#" class="nLink">Country of origin is not valid with the given combination</a></li><li><a href="#" class="nLink">Purchase price is not acceptable under these conditions</a></li><li><a href="#" class="nLink">EA unit of measure is not valid for current display product</a></li><li><a href="#" class="nLink">Traceability method cannot be combined with product specifications</a></li><li><a href="#" class="nLink">Communication unit is not in the range expected</a></li><li><a href="#" class="nLink">Link with type Mini Pallet doesn´t have a correct unit assign to it</a></li><li><a href="#" class="nLink">Reordering multiple quantity should be above 10</a></li><li><a href="#" class="nLink">Introduction discount validity period provided exceeds the accepted range</a></li></ul>',
+            type: 'error',
+            addclass: 'stack-bottomright',
+            stack: stack_bottomright,
+            width: "1200px"
+        });
+    });
+
     $('#position-3-notice').click(function () {
         var notice = new PNotify({
             title: 'Notification',

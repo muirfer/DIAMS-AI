@@ -18,7 +18,8 @@
         { id: "#pPurchasing", sections: ["Purchasing data", "Reappro"] },
         { id: "#pLinks", sections: ["Links"] },
         { id: "#pAssortment", sections: ["JDA driven", "No-JDA driven for Belgium", "No-JDA driven for Luxembourg", "Others"] },
-        { id: "#pPrices", sections: ["Search criteria", "Price structure", "Sales prices", "Price grouping", "Others"] }
+        { id: "#pPrices", sections: ["Search criteria", "Price structure", "Sales prices", "Price grouping", "Others"] },
+        { id: "#pPricesNew", sections: ["Information", "Price structure", "Sales prices"] }
     ];
 
     /**

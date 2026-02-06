@@ -78,7 +78,7 @@
          */
         storeAllFieldsOriginalValues: function () {
             /** On laod, store all fields original values for input and select values */
-            $('input, select, textarea:not(#cComment,#fComment)').each(function () {
+            $('input:not(#pPricesNew *), select, textarea:not(#cComment,#fComment)').each(function () {
                 var input = $(this);
                 input.data('originalValue', input.val());
                 input.attr("readonly", "readonly")
@@ -86,7 +86,7 @@
             });
 
             /** On laod, store all checkbox fields original values */
-            $('input[type="checkbox"]').each(function () {
+            $('input[type="checkbox"]:not(#pPricesNew *)').each(function () {
                 $(this).data('originalValue', $(this).is(':checked'));
                 $(this).attr("disabled", "disabled")
             });
@@ -95,7 +95,7 @@
          * On field focus, determine fieldObject to treat and focus on change details if applies
          */
         initializeAllFieldsFocusEvent: function () {
-            $('input, select, textarea:not(#cComment,#fComment)').on('focus', function () {
+            $('input:not(#pPricesNew *), select, textarea:not(#cComment,#fComment)').on('focus', function () {
                 let fieldId = $(this).attr('id');
 
                 //get field object
@@ -113,12 +113,12 @@
         * Apply updates accordingly if the status changes for the field 
         */
         initializeAllFieldsChangeEvent: function () {
-            $('input[type="text"]:not(.dateInput),input[type="date"],textarea:not(#cComment,#fComment)').on('input', function () { App.FVUpdateStepSpecific.doOnFieldValueUpdated($(this)); });
-            $('.dateInput').on('changeDate', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
-            $('select').on('change', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
+            $('input[type="text"]:not(.dateInput,#pPricesNew *),input[type="date"]:not(#pPricesNew *),textarea:not(#cComment,#fComment)').on('input', function () { App.FVUpdateStepSpecific.doOnFieldValueUpdated($(this)); });
+            $('.dateInput:not(#pPricesNew *)').on('changeDate', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
+            $('select:not(#pPricesNew *)').on('change', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
 
             /** Same as above but for checkboxes - special case*/
-            $('input[type="checkbox"]').on('change', function () {
+            $('input[type="checkbox"]:not(#pPricesNew *)').on('change', function () {
                 let currentValue = $(this).is(':checked');
                 let fieldId = $(this).attr('id')
                 let isComplexStructure = $(this).is('input[type="checkbox"]') && $(this).closest('#f4').length > 0;

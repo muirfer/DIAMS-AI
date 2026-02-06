@@ -29,6 +29,9 @@
             $(".cFilter").prop("readonly", false);
             $(".cFilter").prop("disabled", false);
         },
+        /**
+         * Switch between edit and view mode
+         */
         switchMode: function () {
             if (App.editMode) {
                 if (App.FVSummaryLog.getChangesCount() > App.initialUpdatesCount) {

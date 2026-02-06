@@ -3158,7 +3158,8 @@
 																			<p>12345678 - SOCIETE FERMIERE ROCHEFORT
 																				ARDENNES</p>
 																			<p style="color: darkgreen;">PO UoM:
-																				<u>CV</u></p><br>
+																				<u>CV</u>
+																			</p><br>
 																		</div>
 																	</td>
 																	<td
@@ -3215,7 +3216,8 @@
 																			style="margin-top: 5px;">
 																			<p>34567890 - UNILEVER BELGUIM</p>
 																			<p style="color: darkgreen;">PO UoM:
-																				<u>IP</u></p><br>
+																				<u>IP</u>
+																			</p><br>
 																		</div>
 																	</td>
 																	<td
@@ -3272,7 +3274,8 @@
 																			style="margin-top: 5px;">
 																			<p>6789012 - Coca-Cola Company</p>
 																			<p style="color: darkgreen;">PO UoM:
-																				<u>EA</u></p><br>
+																				<u>EA</u>
+																			</p><br>
 																		</div>
 																	</td>
 																	<td
@@ -8193,7 +8196,7 @@
 																					<th class="text-center"><input
 																							id="be_cs_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8269,7 +8272,7 @@
 																					<th class="text-center"><input
 																							id="be_cl_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8641,7 +8644,7 @@
 																					<th class="text-center"><input
 																							id="be_cb_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8789,7 +8792,7 @@
 																					<th class="text-center"><input
 																							id="be_cf_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8882,7 +8885,7 @@
 																					<th class="text-center"><input
 																							id="be_ce_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -8948,7 +8951,7 @@
 																					<th class="text-center"><input
 																							id="be_cx_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -9023,7 +9026,7 @@
 																					<th class="text-center"><input
 																							id="be_cy_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -9130,7 +9133,7 @@
 																					<th class="text-center"><input
 																							id="lu_c2_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -9233,7 +9236,7 @@
 																					<th class="text-center"><input
 																							id="lu_c3_chkAll"
 																							type="checkbox"
-																							onchange="selectAll(this)">
+																							onchange="App.FVAssortment.selectAll(this)">
 																					</th>
 																					<th
 																						style="font-weight: 600;text-align: center;">
@@ -9586,7 +9589,8 @@
 												<h2 class="card-title">Price structure</h2>
 												<p class="card-subtitle">For <code>Belgium</code> and on
 													<code>12/07/2024</code>. Amounts are in <code>Euros (EUR)</code> and
-													per <code>EA/Kg</code></p>
+													per <code>EA/Kg</code>
+												</p>
 											</header>
 											<div class="card-body">
 												<div class="row">
@@ -10388,7 +10392,8 @@
 													(without VAT) and related to <code>EA</code>. Click to&nbsp;&nbsp;<a
 														href="#modal_phistory"
 														class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal">see
-														history</a></p>
+														history</a>
+												</p>
 											</header>
 											<div class="card-body">
 												<div class="row" style="margin-bottom: 20px;">
@@ -10402,7 +10407,7 @@
 
 													</div>
 													<!-- <div class="col-lg-2 text-right">
-														<select class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true, "selectAll": true }' id="visTarif" onchange="javascript:showTarif()">
+														<select class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeApp.FVAssortment.selectAllOption": true, "App.FVAssortment.selectAll": true }' id="visTarif" onchange="javascript:showTarif()">
 															<option value="03">03 - Supermarket</option>
 															<option value="04">04 - SM Schmiede</option>
 															<option value="05">05 - T05 Proxy Highly</option>
@@ -11018,11 +11023,14 @@
 										<th style="text-align: center;vertical-align: middle;width: 13%;" rel="tooltip"
 											title="PV VAT in / Sales price VKP0">PV <br><code>VKP0</code></th>
 										<th style="text-align: center;vertical-align: middle;width: 13%;">Markup
-											<br><code>%</code></th>
+											<br><code>%</code>
+										</th>
 										<th style="text-align: center;vertical-align: middle;width: 13%;">TAM
-											<br><code>%</code></th>
+											<br><code>%</code>
+										</th>
 										<th style="text-align: center;vertical-align: middle;width: 13%;">TMOP
-											<br><code>%</code></th>
+											<br><code>%</code>
+										</th>
 									</tr>
 								</thead>
 								<tbody>
