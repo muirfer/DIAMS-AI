@@ -49,7 +49,7 @@
          */
         storeAllFieldsOriginalValues: function () {
             /** On laod, store all fields original values for input and select values */
-            $('input, select, textarea:not(#cComment,#fComment)').each(function () {
+            $('input:not(.ctrl), select:not(.ctrl), textarea:not(.ctrl,#cComment,#fComment)').each(function () {
                 var input = $(this);
                 input.data('originalValue', input.val());
                 input.attr("readonly", "readonly")
@@ -57,7 +57,7 @@
             });
 
             /** On laod, store all checkbox fields original values */
-            $('input[type="checkbox"]').each(function () {
+            $('input[type="checkbox"]:not(.ctrl)').each(function () {
                 $(this).data('originalValue', $(this).is(':checked'));
                 $(this).attr("disabled", "disabled")
             });

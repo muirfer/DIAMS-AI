@@ -85,10 +85,10 @@
          * Go back one step or two in case no more changes are left
          */
         goBack: function () {
-            if (App.FVSummaryLog.getChangesCount() > 0) {
-                App.FVSummaryLog.backToChangeRequestMainView();
+            if (App.CRSummaryLog.getChangesCount() > 0) {
+                App.CRSummaryLog.backToChangeRequestMainView();
             } else {
-                App.FVSummaryLog.switchToProductMainInfoView();
+                App.CRSummaryLog.switchToProductMainInfoView();
             }
         }
     };
