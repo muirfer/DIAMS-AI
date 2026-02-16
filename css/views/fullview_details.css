@@ -113,3 +113,99 @@ ul.simple-bullet-list li.darkcyan:before {
 .clickable-disabled {
     background: lightgray;
 }
+
+.desc-uom {
+    font-size: smaller;
+    background: snow;
+    width: 50px;
+}
+
+/* AI Assistant Styles */
+.ai-notification-badge {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background: #efad4c;
+    border-radius: 4px;
+    padding: 2px 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    animation: bounceIn 0.3s;
+}
+
+.ai-notification-badge:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.ai-popover {
+    position: absolute;
+    top: 40px;
+    /* Below the input */
+    right: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff3cd;
+    /* Warning light bg */
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 101;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ai-popover .popover-content {
+    font-style: italic;
+    color: #856404;
+    margin-bottom: 10px;
+}
+
+.ai-popover .popover-actions {
+    text-align: right;
+}
+
+.ai-popover .btn-accept {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    padding: 2px 8px;
+    margin-left: 5px;
+}
+
+.ai-popover .btn-reject {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 2px 8px;
+    margin-left: 5px;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.input-ai-wrapper {
+    position: relative;
+}
