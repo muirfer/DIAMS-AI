@@ -1,0 +1,280 @@
+﻿						<div id="pLinks" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+							<div class="scrollable-content">
+								<!-- Start - Subpanel - Links -->
+								<div id="section1" class="row">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+												<h2 class="card-title">Links</h2>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<!-- Links toolbar -->
+														<div class="form-group row"
+															style="padding:20px;background:mintcream;">
+															<div class="col-lg-5 ">
+																<div class="input-group-append">
+																	<button tabindex="-1" class="btn btn-link"
+																		type="button"><span
+																			class="fa fa-plus"></span>&nbsp;&nbsp;Add
+																		more</button>
+																	<button tabindex="-1" data-toggle="dropdown"
+																		class="btn btn-link dropdown-toggle"
+																		type="button">
+																		<span class="caret"></span>
+																	</button>
+																	<div class="dropdown-menu dropdown-menu-right">
+																		<a class="dropdown-item" href="#">Display</a>
+																		<a class="dropdown-item" href="#">Mini
+																			pallet</a>
+																		<a class="dropdown-item" href="#">Offer</a>
+																		<a class="dropdown-item" href="#">Transition</a>
+																		<a class="dropdown-item" href="#">Hierarchy</a>
+																	</div>
+																</div>
+																<!-- <button id="btnAdd" class="btn btn-link" type="button"
+																	onclick="addRow();">
+																	<span class="fa fa-plus fa-sm px-1"></span> Add more
+																</button> -->
+															</div>
+															<div class="col-lg-7 text-right">
+																<button class="btn btn-link" type="button"
+																	onclick="addRow();">
+																	<span class="fas fa-file-excel"></span> Download
+																	to Excel
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<table class="table table-responsive-md table-hover mb-3">
+															<thead>
+																<tr>
+																	<th style="text-align: center;width: 10%;">Type</th>
+																	<th style="text-align: center;width: 17%;">Component
+																		GTIN</th>
+																	<th style="width: 32%;">Component SAP ID &
+																		Description</th>
+																	<th style="text-align: center;width: 17%;">Component
+																		UoM</th>
+																	<th style="text-align: center;width: 17%;">Number of
+																		components</th>
+																	<th style="text-align: center;width: 7%;"></th>
+																</tr>
+															</thead>
+															<tbody id="tableBody">
+																<tr id="row1">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		<p style="margin-bottom: 0;">Mini pallet</p>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="123456789012"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">12345678
+																		</div>
+																		<div id="mainTitle" class="title-line">Some 25c
+																			links description</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-8 offset-lg-2">
+																				<input type="text" value="EA"
+																					style="text-align: center;"
+																					class="form-control col-lg-8 offset-lg-2"
+																					placeholder="">
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="315"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+																<tr id="row2">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		<p style="margin-bottom: 0;">Offer</p>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="1234567885212"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">98765432
+																		</div>
+																		<div id="mainTitle" class="title-line">Other Off
+																			links description</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-8 offset-lg-2">
+																				<input type="text" value="CV"
+																					style="text-align: center;"
+																					class="form-control col-lg-8 offset-lg-2"
+																					placeholder="">
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input id="f5" type="text" value="210"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+																<tr id="row3">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		<p style="margin-bottom: 0;">Transition</p>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="123459925012"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">65432987
+																		</div>
+																		<div id="mainTitle" class="title-line">
+																			Transition links description</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-8 offset-lg-2">
+																				<input type="text" value="EA"
+																					style="text-align: center;"
+																					class="form-control col-lg-8 offset-lg-2"
+																					placeholder="">
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="915"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+																<tr id="row4">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		<p style="margin-bottom: 0;">Hierarchy</p>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="123456789012"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">43265987
+																		</div>
+																		<div id="mainTitle" class="title-line">Hierarchy
+																			links description</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-8 offset-lg-2">
+																				<input type="text" value="CV"
+																					style="text-align: center;"
+																					class="form-control col-lg-8 offset-lg-2"
+																					placeholder="">
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="128"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Links -->
+							</div>
+						</div>
+						<!-- End - Panel - Links -->

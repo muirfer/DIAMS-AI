@@ -1,0 +1,339 @@
+﻿						<div id="pPurchasing" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+							<div class="scrollable-content">
+								<!-- Start - Subpanel - Purchasing data -->
+								<div id="section1" class="row">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Purchasing data</h2>
+												<p class="card-subtitle">Of regular supplier</p>
+												<!-- <p class="card-subtitle" style="color: darkgreen;">PO UoM: <u>CV</u></p> -->
+												<br>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="form-group row"
+															style="background: mintcream;padding-top: 20px;padding-bottom: 20px;">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Supplier:
+															</label>
+															<div class="col-sm-5">
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<button class="btn btn-default"
+																			style="font-size: smaller;background: snow;"
+																			type="button">0010002878</button>
+																	</span>
+																	<input type="text" name="sup_gln"
+																		class="form-control" autocomplete="off"
+																		value="UNILEVER BELGUIM">
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Regular:
+															</label>
+															<div class="col-sm-5">
+																<div class="checkbox-custom" style="margin-top: 8px;">
+																	<input type="checkbox" checked="">
+																	<label></label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Supplier
+																subrange: </label>
+															<div class="col-sm-5">
+																<select class="form-control mb-3 cust-select">
+																	<option value="1000" selected>1000 - DUVEL MOORTGAT
+																	</option>
+																</select>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Supplier
+																GLN: </label>
+															<div class="col-sm-5">
+																<input type="text" name="sup_gln" class="form-control"
+																	autocomplete="off" value="5411681000008">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Purchasing
+																group: </label>
+															<div class="col-sm-5">
+																<select class="form-control mb-3 cust-select">
+																	<option value="B01">B01 - FROZEN FOOD</option>
+																	<option value="B02">B02 - COFFEE-FLOUR&amp;DESRT
+																	</option>
+																	<option value="B03">B03 - SPORT DRINKS</option>
+																	<option value="B04">B04 - BISCUIT-SUGAR-PANI
+																	</option>
+																	<option value="B05">B05 - Frais POULTRY-DELI
+																	</option>
+																	<option value="B06">B06 - TEXTILE &amp; HOME CAR
+																	</option>
+																	<option value="B07">B07 - DRUGSTORE</option>
+																	<option value="B08" selected>B08 - Frais DAIRY
+																		DESSER</option>
+																	<option value="B09">B09 - DAIRY MILK - SOYA</option>
+																	<option value="B10">B10 - Frais BAKERY</option>
+																	<option value="B11">B11 - Frais FISH</option>
+																	<option value="B12">B12 - Frais EMPTIES</option>
+																	<option value="B13">B13 - Frais DAIRY CHEESE
+																	</option>
+																</select>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Product
+																number used by supplier: </label>
+															<div class="col-sm-5">
+																<input id="f10" type="text" name="pp_ubv"
+																	class="form-control" autocomplete="off"
+																	value="9876543210001263">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Communication
+																unit: </label>
+															<div class="col-sm-5">
+																<select class="form-control mb-3 cust-select">
+																	<option value="EA">EA</option>
+																	<option value="CS" selected>CV</option>
+																	<option value="LY">LY</option>
+																	<option value="PL">PL</option>
+																</select>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Available
+																(deliverable): </label>
+															<div class="col-sm-5">
+																<div class="input-daterange input-group"
+																	data-plugin-datepicker
+																	data-plugin-options='{ "format": "dd/mm/yyyy" }'>
+																	<span class="input-group-prepend">
+																		<span class="input-group-text">
+																			<i class="fas fa-calendar-alt"></i>
+																		</span>
+																	</span>
+																	<input type="text" class="form-control dateInput"
+																		name="start" value="15/02/2024"
+																		style="font-size: smaller;">
+																	<span
+																		class="input-group-text border-left-0 border-right-0 rounded-0">
+																		to
+																	</span>
+																	<input type="text" class="form-control dateInput"
+																		name="end" value="07/05/2024"
+																		style="font-size: smaller;">
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Traceability
+																method: </label>
+															<div class="col-sm-5">
+																<select class="form-control mb-3 cust-select">
+																	<option value=""></option>
+																	<option value="001">001 - Lotcode</option>
+																	<option value="002" selected>002 - BBD/UBD</option>
+																	<option value="003">003 - Others</option>
+																</select>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Incoterms:
+															</label>
+															<div class="col-sm-5">
+																<select class="form-control mb-3 cust-select">
+																	<option value="CFR">CFR - Costs and freight</option>
+																	<option value="CIF">CIF - Costs, insurance &amp;
+																		freight</option>
+																	<option value="CIP">CIP - Carriage and insurance
+																		paid to</option>
+																	<option value="CPT">CPT - Carriage paid to</option>
+																	<option value="DAF">DAF - Delivered at frontier
+																	</option>
+																	<option value="DAP">DAP - Delivered at Place
+																	</option>
+																	<option value="DDP">DDP - Delivered Duty Paid
+																	</option>
+																	<option value="DDU">DDU - Delivered Duty Unpaid
+																	</option>
+																	<option value="DEQ" selected>DEQ - Delivered ex quay
+																		(duty paid)</option>
+																	<option value="DES">DES - Delivered ex ship</option>
+																	<option value="EXW">EXW - Ex Works</option>
+																	<option value="FAS">FAS - Free Alongside Ship
+																	</option>
+																	<option value="FCA">FCA - Free Carrier</option>
+																	<option value="FH">FH - Free house</option>
+																	<option value="FOB">FOB - Free on board</option>
+																	<option value="UN">UN - Not Free</option>
+																	<option value="ZSL">ZSL - DS - Single delivery
+																	</option>
+																</select>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Condition
+																group with supplier: </label>
+															<div class="col-sm-5">
+																<select class="form-control mb-3 cust-select">
+																	<option value="1001">1001 - DUVEL</option>
+																	<option value="1002">1002 - MAREDSOUS</option>
+																	<option value="1003">1003 - VEDETT</option>
+																	<option value="1004">1004 - LIEFMANS</option>
+																	<option value="1005">1005 - ACHOUFFE</option>
+																	<option value="1006">1006 - DUVEL 1.5L</option>
+																	<option value="1007" selected>1007 - DE KONINCK
+																	</option>
+																</select>
+															</div>
+														</div>
+														<div class="row">
+															<hr class="col-lg-9 dotted short"
+																style="margin-bottom: 25px;margin-left: 5%;">
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Multi
+																supplier:
+															</label>
+															<div class="col-sm-5">
+																<div class="checkbox-custom" style="margin-top: 8px;">
+																	<input type="checkbox" checked="">
+																	<label></label>
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Multi
+																supplier volume: </label>
+															<div class="col-sm-5">
+																<div class="input-group">
+																	<input type="text" name="moq" class="form-control"
+																		autocomplete="off" style="text-align: right;"
+																		value="32">
+																	<span class="input-group-append">
+																		<button class="btn btn-default"
+																			style="font-size: smaller;background: snow;width: 75px;"
+																			type="button">%</button>
+																	</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Purchasing data -->
+								<!-- Start - Subpanel - Product pricing information -->
+								<div id="section2" class="row">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Product pricing information</h2>
+												<br>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="form-group row" style="padding-top: 20px;">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Purchase
+																price</label>
+															<div class="col-sm-5">
+																<div class="input-group">
+																	<input type="text" name="purch_pr"
+																		class="form-control" autocomplete="off"
+																		style="text-align: right;" value="156312,25">
+																	<span class="input-group-append"
+																		style="width: 75px;">
+																		<select class="form-control mb-3 cust-select"
+																			style="background-color: floralwhite;text-align: center;">
+																			<option value="EUR" selected>EUR</option>
+																			<option value="USD">USD</option>
+																		</select>
+																	</span>
+																</div>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Base
+																price unit</label>
+															<div class="col-sm-5">
+																<div class="input-group">
+																	<input type="text" name="base_pu"
+																		class="form-control" autocomplete="off"
+																		style="text-align: right;" value="100">
+																	<span class="input-group-append"
+																		style="width: 75px;">
+																		<select class="form-control mb-3 cust-select"
+																			style="background-color: floralwhite;text-align: center;">
+																			<option value="KG" selected>KG</option>
+																			<option value="EA">EA</option>
+																		</select>
+																	</span>
+																</div>
+															</div>
+														</div>
+
+														<div class="form-group row">
+															<label
+																class="col-sm-3 control-label text-sm-right pt-2">Valid
+																until:</label>
+															<div class="col-sm-5">
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<span class="input-group-text">
+																			<i class="fas fa-calendar-alt"></i>
+																		</span>
+																	</span>
+																	<input type="text" data-plugin-datepicker
+																		data-plugin-options='{ "format": "dd/mm/yyyy" }'
+																		class="form-control dateInput"
+																		autocomplete="off" value="07/05/2024"
+																		style="text-align: center;">
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Product pricing information  -->
+							</div>
+						</div>
+						<!-- End - Panel - Purchasing  -->

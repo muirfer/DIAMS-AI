@@ -1,0 +1,1716 @@
+﻿						<div id="pUoM" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+							<div class="scrollable-content">
+								<!-- Start - Subpanel - Measurement Data -->
+								<div id="section1" class="row">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Measurement Data</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-2">
+														<div class="form-group row"
+															style="margin-top: 125px !important;">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">GTIN:
+															</label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Re-used
+																GTIN:</label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Nbr
+																lower level: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Alt.
+																UoM: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Hope:
+															</label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Weight:
+															</label>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-12 control-label text-sm-right pt-2"
+																style="margin-top: 75px !important;">Dimension: </label>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-12 control-label text-sm-right pt-2"
+																style="margin-top: 115px !important;">Volume: </label>
+														</div>
+													</div>
+													<div class="col-lg-10">
+														<div class="owl-carousel owl-theme" data-plugin-carousel
+															data-plugin-options='{ "dots": false, "nav": true, "items": 3 }'>
+															<div class="item" style="background: ghostwhite;">
+																<div class="row">
+																	<div class="col-lg-12"
+																		style="text-align: center;padding-top: 10px;">
+																		<span class="badge badge-success"
+																			style="font-size: large;margin-bottom: 25px;">KG</span>
+																	</div>
+																</div>
+																<div class="row" style="margin-bottom: 15px;">
+																	<div class="col-lg-8 offset-lg-3">
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" checked
+																					id="chkSales1">
+																				<label for="chkSales1">Sales</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" id="chkPO1">
+																				<label for="chkPO1">PO</label>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" checked
+																					id="chkDel1">
+																				<label for="chkDel1">Deliv</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" id="chkSCF1">
+																				<label for="chkSCF1">SCF</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" name="mgtin"
+																				class="form-control" autocomplete="off"
+																				value="1234567890123"
+																				style="text-align: center;">
+																			<span class="input-group-append">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-top:5px;margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:5px;">CU</label>
+																				</div>
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:10px;">TU</label>
+																				</div>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" class="form-control"
+																				id="formGroupExampleInput" value=""
+																				style="text-align: center;" readonly>
+																			<span class="input-group-append">
+																				<a class="modal-basic btn btn-default"
+																					href="#modalInfoReuse"
+																					style="background: lightgray;text-align: center;font-size: small;">
+																					<i class="fas fa-info"></i>
+																				</a>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="1,000" style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option></option>
+																			<option>KG</option>
+																			<option selected>EA</option>
+																			<option>IP</option>
+																			<option>CS</option>
+																			<option>LY</option>
+																			<option>PL</option>
+																			<option>SRP</option>
+																			<option>L</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="123456789"
+																			style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option selected>KG - Kilogram
+																					</option>
+																					<option>G - Gram</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Net</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="1234,678"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Gross</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="7654,321"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option selected>CM - Centimeter
+																					</option>
+																					<option>M - Meter</option>
+																					<option>DM - Decimeter</option>
+																					<option>MM - Milimeter</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Length</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="321,178"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Width</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="854,641"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Height</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="547,142"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row"
+																	style="padding-bottom: 10px;">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group">
+																			<input type="text" name="vol"
+																				class="form-control" autocomplete="off"
+																				style="text-align: right;font-size: smaller;"
+																				value="156312,251">
+																			<span class="input-group-append">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="background-color: floralwhite;text-align: center;">
+																					<option value=""></option>
+																					<option value="CDM" selected>CDM
+																					</option>
+																				</select>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12"
+																		style="text-align: center;padding-top: 10px;">
+																		<span class="badge badge-info"
+																			style="font-size: large;margin-bottom: 25px;">EA</span>
+																	</div>
+																</div>
+																<div class="row" style="margin-bottom: 15px;">
+																	<div class="col-lg-8 offset-lg-3">
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" checked
+																					id="chkSales2">
+																				<label for="chkSales2">Sales</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" checked
+																					id="chkPO2">
+																				<label for="chkPO2">PO</label>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" id="chkDeliv2">
+																				<label for="chkDeliv2">Deliv</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" checked
+																					id="chkSCF2">
+																				<label for="chkSCF2">SCF</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" name="mgtin"
+																				class="form-control" autocomplete="off"
+																				value="9934567890000"
+																				style="text-align: center;color:darkred;">
+																			<span class="input-group-append">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-top:5px;margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:5px;">CU</label>
+																				</div>
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:10px;">TU</label>
+																				</div>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" class="form-control"
+																				id="formGroupExampleInput"
+																				value="12345678901234"
+																				style="text-align: center;" readonly>
+																			<span class="input-group-append">
+																				<a class="modal-basic btn btn-default"
+																					href="#modalInfoReuse"
+																					style="background: lightgray;text-align: center;font-size: small;">
+																					<i class="fas fa-info"></i>
+																				</a>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="5,500" style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option></option>
+																			<option>KG</option>
+																			<option>EA</option>
+																			<option selected>IP</option>
+																			<option>CS</option>
+																			<option>LY</option>
+																			<option>PL</option>
+																			<option>SRP</option>
+																			<option>L</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="123459876"
+																			style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option>KG - Kilogram</option>
+																					<option selected>G - Gram</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Net</button>
+																					</span>
+																					<input id="f2" type="text"
+																						class="form-control form-control"
+																						value="324,105"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Gross</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="7500,151"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option>CM - Centimeter</option>
+																					<option>M - Meter</option>
+																					<option selected>DM - Decimeter
+																					</option>
+																					<option>MM - Milimeter</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Length</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="185,320"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Width</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="54,255"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Height</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="925,300"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row"
+																	style="padding-bottom: 10px;">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group">
+																			<input type="text" name="vol"
+																				class="form-control" autocomplete="off"
+																				style="text-align: right;font-size: smaller;"
+																				value="854321,101">
+																			<span class="input-group-append">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="background-color: floralwhite;text-align: center;">
+																					<option value=""></option>
+																					<option value="CDM" selected>CDM
+																					</option>
+																				</select>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12"
+																		style="text-align: center;padding-top: 10px;">
+																		<span class="badge badge-info"
+																			style="font-size: large;margin-bottom: 25px;">IP</span>
+																	</div>
+																</div>
+																<div class="row" style="margin-bottom: 15px;">
+																	<div class="col-lg-8 offset-lg-3">
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" id="chkSales3">
+																				<label for="chkSales3">Sales</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" checked
+																					id="chkPO3">
+																				<label for="chkPO3">PO</label>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" checked
+																					id="chkDeliv3">
+																				<label for="chkDeliv3">Deliv</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" id="chkSCF3">
+																				<label for="chkSCF3">SCF</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" name="mgtin"
+																				class="form-control" autocomplete="off"
+																				value="9876567890123"
+																				style="text-align: center;">
+																			<span class="input-group-append">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-top:5px;margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:5px;">CU</label>
+																				</div>
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:10px;">TU</label>
+																				</div>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" class="form-control"
+																				id="formGroupExampleInput" value=""
+																				style="text-align: center;" readonly>
+																			<span class="input-group-append">
+																				<a class="modal-basic btn btn-default"
+																					href="#modalInfoReuse"
+																					style="background: lightgray;text-align: center;font-size: small;">
+																					<i class="fas fa-info"></i>
+																				</a>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="25,320" style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option></option>
+																			<option>KG</option>
+																			<option>EA</option>
+																			<option>IP</option>
+																			<option selected>CS</option>
+																			<option>LY</option>
+																			<option>PL</option>
+																			<option>SRP</option>
+																			<option>L</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="567856789"
+																			style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option selected>KG - Kilogram
+																					</option>
+																					<option>G - Gram</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Net</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="5678,345"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Gross</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="7890,100"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option>CM - Centimeter</option>
+																					<option>M - Meter</option>
+																					<option>DM - Decimeter</option>
+																					<option selected>MM - Milimeter
+																					</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Length</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="598,200"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Width</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="300,515"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Height</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="470,225"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row"
+																	style="padding-bottom: 10px;">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group">
+																			<input type="text" name="vol"
+																				class="form-control" autocomplete="off"
+																				style="text-align: right;font-size: smaller;"
+																				value="512744,985">
+																			<span class="input-group-append">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="background-color: floralwhite;text-align: center;">
+																					<option value=""></option>
+																					<option value="CDM" selected>CDM
+																					</option>
+																				</select>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12"
+																		style="text-align: center;padding-top: 10px;">
+																		<span class="badge badge-info"
+																			style="font-size: large;margin-bottom: 25px;">CV</span>
+																	</div>
+																</div>
+																<div class="row" style="margin-bottom: 15px;">
+																	<div class="col-lg-8 offset-lg-3">
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" id="chkSales4">
+																				<label for="chkSales4">Sales</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" checked
+																					id="chkPO4">
+																				<label for="chkPO4">PO</label>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" id="chkDeliv4">
+																				<label for="chkDeliv4">Deliv</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" id="chkSCF4">
+																				<label for="chkSCF4">SCF</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" name="mgtin"
+																				class="form-control" autocomplete="off"
+																				value="987325125123"
+																				style="text-align: center;">
+																			<span class="input-group-append">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-top:5px;margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:5px;">CU</label>
+																				</div>
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:10px;">TU</label>
+																				</div>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" class="form-control"
+																				id="formGroupExampleInput" value=""
+																				style="text-align: center;" readonly>
+																			<span class="input-group-append">
+																				<a class="modal-basic btn btn-default"
+																					href="#modalInfoReuse"
+																					style="background: lightgray;text-align: center;font-size: small;">
+																					<i class="fas fa-info"></i>
+																				</a>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="150,325" style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option></option>
+																			<option>KG</option>
+																			<option>EA</option>
+																			<option>IP</option>
+																			<option>CS</option>
+																			<option selected>LY</option>
+																			<option>PL</option>
+																			<option>SRP</option>
+																			<option>L</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="128923789"
+																			style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option>KG - Kilogram</option>
+																					<option selected>G - Gram</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Net</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="6879,112"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Gross</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="9012,450"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option>CM - Centimeter</option>
+																					<option selected>M - Meter</option>
+																					<option>DM - Decimeter</option>
+																					<option>MM - Milimeter</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Length</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="14,225"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Width</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="158,965"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Height</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="321,101"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row"
+																	style="padding-bottom: 10px;">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group">
+																			<input type="text" name="vol"
+																				class="form-control" autocomplete="off"
+																				style="text-align: right;font-size: smaller;"
+																				value="556124,195">
+																			<span class="input-group-append">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="background-color: floralwhite;text-align: center;">
+																					<option value=""></option>
+																					<option value="CDM" selected>CDM
+																					</option>
+																				</select>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12"
+																		style="text-align: center;padding-top: 10px;">
+																		<span class="badge badge-info"
+																			style="font-size: large;margin-bottom: 25px;">PL</span>
+																	</div>
+																</div>
+																<div class="row" style="margin-bottom: 15px;">
+																	<div class="col-lg-8 offset-lg-3">
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" checked
+																					id="chkSales5">
+																				<label for="chkSales5">Sales</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" id="chkPO5">
+																				<label for="chkPO5">PO</label>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-sm-6 checkbox-custom checkbox-default"
+																				style="margin-bottom: 0;">
+																				<input type="checkbox" checked
+																					id="chkDeliv5">
+																				<label for="chkDeliv5">Deliv</label>
+																			</div>
+																			<div
+																				class="col-sm-6 checkbox-custom checkbox-default">
+																				<input type="checkbox" id="chkSCF5">
+																				<label for="chkSCF5">SCF</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" name="mgtin"
+																				class="form-control" autocomplete="off"
+																				value="9876567894591"
+																				style="text-align: center;">
+																			<span class="input-group-append">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-top:5px;margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:5px;">CU</label>
+																				</div>
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-left:5px;">
+																					<input type="checkbox" id="chkSCF1">
+																					<label for="chkSCF1"
+																						style="margin-top:10px;">TU</label>
+																				</div>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group form-group mb-3">
+																			<input type="text" class="form-control"
+																				id="formGroupExampleInput" value=""
+																				style="text-align: center;" readonly>
+																			<span class="input-group-append">
+																				<a class="modal-basic btn btn-default"
+																					href="#modalInfoReuse"
+																					style="background: lightgray;text-align: center;font-size: small;">
+																					<i class="fas fa-info"></i>
+																				</a>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="1,000" style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option></option>
+																			<option>KG</option>
+																			<option selected>EA</option>
+																			<option>IP</option>
+																			<option>CS</option>
+																			<option>LY</option>
+																			<option>PL</option>
+																			<option>SRP</option>
+																			<option>L</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<input type="text" name="nll"
+																			class="form-control" autocomplete="off"
+																			value="123456789"
+																			style="text-align: center;">
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option selected>KG - Kilogram
+																					</option>
+																					<option>G - Gram</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Net</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="1234,678"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Gross</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="7654,321"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<section class="col-sm-12 form-group-vertical">
+																			<div class="row">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="text-align: center;">
+																					<option></option>
+																					<option selected>CM - Centimeter
+																					</option>
+																					<option>M - Meter</option>
+																					<option>DM - Decimeter</option>
+																					<option>MM - Milimeter</option>
+																				</select>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Length</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="321,178"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Width</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="854,641"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																			<div class="row">
+																				<div class="input-group">
+																					<span class="input-group-prepend">
+																						<button
+																							class="btn btn-default baseUoM"
+																							style="font-size: smaller;background: snow;width: 55px;"
+																							type="button">Height</button>
+																					</span>
+																					<input type="text"
+																						class="form-control form-control"
+																						value="547,142"
+																						style="text-align: right;font-size: smaller;">
+																				</div>
+																			</div>
+																		</section>
+																	</div>
+																</div>
+																<div class="form-group row"
+																	style="padding-bottom: 10px;">
+																	<div class="col-sm-10 offset-lg-1">
+																		<div class="input-group">
+																			<input type="text" name="vol"
+																				class="form-control" autocomplete="off"
+																				style="text-align: right;font-size: smaller;"
+																				value="156312,251">
+																			<span class="input-group-append">
+																				<select
+																					class="form-control mb-3 cust-select"
+																					style="background-color: floralwhite;text-align: center;">
+																					<option value=""></option>
+																					<option value="CDM" selected>CDM
+																					</option>
+																				</select>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Measurement Data -->
+								<!-- Start - Subpanel - Support Packaging -->
+								<div id="section2" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Support Packaging</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<!-- SP toolbar -->
+														<div class="form-group row"
+															style="padding:20px;background:mintcream;">
+															<div class="col-lg-7">
+																<!-- start: New Packaging Item GTIN -->
+																<div class="form-group row">
+																	<label class="control-label"
+																		style="margin-left: 10px;margin-top: 10px;">GTIN</label>
+																	<div class="col-lg-6">
+																		<div class="input-group mb-3">
+																			<input type="text" id="gt"
+																				class="form-control ctrl">
+																			<span class="input-group-append">
+																				<button class="btn btn-success"
+																					type="button"
+																					onclick="addRow();">Add</button>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-lg-5 text-right">
+																<!-- <div class="input-group mb-3">
+																	<input type="text" id="gt" class="form-control">
+																	<span class="input-group-append">
+																		<button class="btn btn-success" type="button"
+																			onclick="addRow();">Add</button>
+																	</span>
+																</div> -->
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<table class="table table-responsive-md table-hover mb-3">
+															<thead>
+																<tr>
+																	<th
+																		style="text-align: center;width: 10%;vertical-align: middle;">
+																		Type</th>
+																	<th style="width: 32%;vertical-align: middle;">
+																		Details</th>
+																	<th style="text-align: center;width: 23%;">
+																		Tare<br /><code>in grams</code></th>
+																	<th style="text-align: center;width: 15%;">Number of
+																		crates <br /><code>for one order unit</code>
+																	</th>
+																	<th style="text-align: center;width: 7%;"></th>
+																</tr>
+															</thead>
+															<tbody id="tableBody">
+																<tr id="row1">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		ZMP1
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			Minipallets / Display</p><br>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">
+																			8710618000256
+																		</div>
+																		<div id="mainTitle" class="title-line">GTIN
+																			description for value above</div>
+																		<div class="text-lines"
+																			style="margin-top: 5px;">
+																			<p>12345678 - SOCIETE FERMIERE ROCHEFORT
+																				ARDENNES</p>
+																			<p style="color: darkgreen;">SAP ID:
+																				<u>7498875</u>
+																			</p><br>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-11 offset-lg-1">
+																				<div class="input-group">
+																					<input type="text" name="vol"
+																						class="form-control"
+																						autocomplete="off"
+																						style="text-align: center;"
+																						value="90200,05">
+																					<span class="input-group-append">
+																						<button class="btn btn-default"
+																							style="font-size: smaller;background: snow;"
+																							type="button">EA</button>
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="158"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+																<tr id="row2">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: ghostwhite;vertical-align: middle;font-weight: bold;">
+																		ZCR1
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			Crate</p><br>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">
+																			5410228221937
+																		</div>
+																		<div id="mainTitle" class="title-line">Some
+																			other support packaging description</div>
+																		<div class="text-lines"
+																			style="margin-top: 5px;">
+																			<p>34567890 - UNILEVER BELGUIM</p>
+																			<p style="color: darkgreen;">SAP ID:
+																				<u>7654321</u>
+																			</p><br>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-11 offset-lg-1">
+																				<div class="input-group">
+																					<input type="text" name="vol"
+																						class="form-control"
+																						autocomplete="off"
+																						style="text-align: center;"
+																						value="54325,81">
+																					<span class="input-group-append">
+																						<button class="btn btn-default"
+																							style="font-size: smaller;background: snow;"
+																							type="button">IP</button>
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="315"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+																<tr id="row2">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+																		ZPT1
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			Pallets</p><br>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">
+																			5410228222033
+																		</div>
+																		<div id="mainTitle" class="title-line">Another
+																			SP description for GTIN</div>
+																		<div class="text-lines"
+																			style="margin-top: 5px;">
+																			<p>6789012 - Coca-Cola Company</p>
+																			<p style="color: darkgreen;">SAP ID:
+																				<u>4567890</u>
+																			</p><br>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<div class="col-lg-11 offset-lg-1">
+																				<div class="input-group">
+																					<input type="text" name="vol"
+																						class="form-control"
+																						autocomplete="off"
+																						style="text-align: center;"
+																						value="19850,18">
+																					<span class="input-group-append">
+																						<button class="btn btn-default"
+																							style="font-size: smaller;background: snow;"
+																							type="button">PL</button>
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;">
+																		<div class="row">
+																			<input type="text" value="91"
+																				style="text-align: center;"
+																				class="form-control col-lg-8 offset-lg-2"
+																				placeholder="">
+																		</div>
+																	</td>
+																	<td style="text-align: center;"
+																		class="actions-hover actions-fade">
+																		<!-- <a href="#modal_edit"
+																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+																				class="fas fa-pencil-alt"></i></a> -->
+																		<a href="" class="delete-row"><i
+																				class="far fa-trash-alt"></i></a>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Support Packaging -->
+								<!-- Start - Subpanel - Empties -->
+								<div id="section3" class="row" style="margin-top: 80px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Consumer returnable empties</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body vTable">
+												<div class="row" style="margin-top: 25px;">
+													<div class="col-lg-3 offset-lg-2" style="text-align: center;">
+														<span class="badge badge-info"
+															style="font-size: large;margin-bottom: 25px;">Empty
+															bottle</span>
+													</div>
+													<div class="col-lg-3" style="text-align: center;">
+														<span class="badge badge-info"
+															style="font-size: large;margin-bottom: 25px;">Empty
+															crate</span>
+													</div>
+													<div class="col-lg-3" style="text-align: center;">
+														<span class="badge badge-info" style="font-size: large;">Full
+															empty crate</span>
+													</div>
+												</div>
+												<div class="form-group row">
+													<div class="col-sm-3 offset-lg-5">
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;"
+																	type="button">GTIN</button>
+															</span>
+															<input type="text" name="ec_gtin1" class="form-control"
+																autocomplete="off" style="text-align: center;"
+																value="109876543210">
+														</div>
+													</div>
+													<div class="col-lg-3" style="text-align: center;">
+														<label style="color: green;font-size: smaller;margin-top: 5px;"
+															class="col-form-label" for="formGroupExampleInput">Number of
+															full empty crate for CV: 1</label>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-2 control-label text-sm-right pt-2">Description:
+													</label>
+													<div class="col-sm-3">
+														<select class="form-control mb-3 cust-select">
+															<option value=""></option>
+															<option selected="">Bottle Beer 33C 0.10E</option>
+															<option>Bottle Beer 50C 0.10E</option>
+															<option>Bottle Beer 100C 0.10E</option>
+															<option>Bottle Beer 500C 0.10E</option>
+														</select>
+													</div>
+													<div class="col-sm-3">
+														<input type="text" name="emcr1" class="form-control"
+															autocomplete="off" value="Bottle Beer 50C 0.10E">
+													</div>
+													<div class="col-sm-3">
+														<select class="form-control mb-3 cust-select">
+															<option value=""></option>
+															<option>Bottle Beer 33C 0.10E</option>
+															<option>Bottle Beer 50C 0.10E</option>
+															<option>Bottle Beer 100C 0.10E</option>
+															<option selected>Bottle Beer 500C 0.10E</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 control-label text-sm-right pt-2">Value in â‚¬:
+													</label>
+													<div class="col-sm-3">
+														<input type="text" name="eb_val1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="1,20">
+													</div>
+													<div class="col-sm-3">
+														<input type="text" name="ec_val2" class="form-control"
+															autocomplete="off" style="text-align: center;" value="0,25">
+													</div>
+													<div class="col-sm-3">
+														<input type="text" name="fec_val3" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="12,50">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-2 control-label text-sm-right pt-2">SAP ID:
+													</label>
+													<div class="col-sm-3">
+														<input type="text" name="eb_sap1" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="12345678">
+													</div>
+													<div class="col-sm-3">
+														<input type="text" name="ec_sap2" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="98745631">
+													</div>
+													<div class="col-sm-3">
+														<input type="text" name="fec_sap3" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="54645625">
+													</div>
+												</div>
+											</div>
+											<div class="row" style="margin-top: 80px;">
+												<div class="col-lg-9 offset-lg-2">
+													<table class="table table-responsive-md table-hover mb-3">
+														<thead>
+															<tr>
+																<th style="text-align: center;width: 10%;"></th>
+																<th style="text-align: center;width: 45%;">Number of
+																	empty bottles</th>
+																<th style="text-align: center;width: 45%;">Number of
+																	empty crates</th>
+															</tr>
+														</thead>
+														<tbody id="tableBody">
+															<tr>
+																<td id="cat"
+																	style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																	EA</td>
+																<td style="text-align: center;vertical-align: middle;">
+																	<div class="col-lg-8 offset-lg-2 input-group">
+																		<input type="text" class="form-control"
+																			autocomplete="off"
+																			style="text-align: center;" value="325">
+																		<span class="input-group-append">
+																			<button class="btn btn-default"
+																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+																				type="button">15,25 â‚¬</button>
+																		</span>
+																	</div>
+																</td>
+																<td style="text-align: center;vertical-align: middle;">
+																	<div class="col-lg-8 offset-lg-2 input-group">
+																		<input type="text" class="form-control"
+																			autocomplete="off"
+																			style="text-align: center;" value="12">
+																		<span class="input-group-append">
+																			<button class="btn btn-default"
+																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+																				type="button">0,25 â‚¬</button>
+																		</span>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td id="cat"
+																	style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																	IP</td>
+																<td style="text-align: center;vertical-align: middle;">
+																	<div class="col-lg-8 offset-lg-2 input-group">
+																		<input type="text" class="form-control"
+																			autocomplete="off"
+																			style="text-align: center;" value="120">
+																		<span class="input-group-append">
+																			<button class="btn btn-default"
+																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+																				type="button">7,92 â‚¬</button>
+																		</span>
+																	</div>
+																</td>
+																<td style="text-align: center;vertical-align: middle;">
+																	<div class="col-lg-8 offset-lg-2 input-group">
+																		<input type="text" class="form-control"
+																			autocomplete="off"
+																			style="text-align: center;" value="2315">
+																		<span class="input-group-append">
+																			<button class="btn btn-default"
+																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+																				type="button">1120,10 â‚¬</button>
+																		</span>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td id="cat"
+																	style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																	CV</td>
+																<td style="text-align: center;vertical-align: middle;">
+																	<div class="col-lg-8 offset-lg-2 input-group">
+																		<input type="text" class="form-control"
+																			autocomplete="off"
+																			style="text-align: center;" value="58">
+																		<span class="input-group-append">
+																			<button class="btn btn-default"
+																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+																				type="button">8,50 â‚¬</button>
+																		</span>
+																	</div>
+																</td>
+																<td style="text-align: center;vertical-align: middle;">
+																	<div class="col-lg-8 offset-lg-2 input-group">
+																		<input type="text" class="form-control"
+																			autocomplete="off"
+																			style="text-align: center;" value="60">
+																		<span class="input-group-append">
+																			<button class="btn btn-default"
+																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+																				type="button">140,88 â‚¬</button>
+																		</span>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Empties -->
+							</div>
+						</div>
+						<!-- End - Panel - Units of Measure -->

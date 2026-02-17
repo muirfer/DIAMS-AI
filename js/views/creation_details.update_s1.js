@@ -7,8 +7,9 @@
     App.editMode = true;
     App.initialUpdatesCount = 0;
     App.discardWhenRequestableIsUndone = true;
+    App.backOnTabFocusChange = false;
     App.updateFields = [
-        { id: "rf1", iType: "if1", label: "Product creation date", tab: "overview", comment: "" },
+        { id: "rf1", iType: "if1", label: "Country of origin of the product", tab: "overview", comment: "" },
         { id: "rf2", iType: "if2", label: "Net weight (EA)", tab: "pUoM", comment: "" },
         { id: "rf3", iType: "if3", label: "Item set", tab: "pLogistics", comment: "" },
         { id: "rf4", iType: "if4", label: "Dangerous Symbols (GHS)", tab: "pCodes", comment: "" }

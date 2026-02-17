@@ -1,0 +1,1258 @@
+﻿						<div id="pLogistics" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+							<div class="scrollable-content">
+								<!-- Start - Subpanel - Logistics -->
+								<div id="section1" class="row">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Logistics</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body">
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Item set:
+													</label>
+													<div class="col-sm-5">
+														<select id="f3" class="form-control mb-3 cust-select">
+															<option value="" disabled></option>
+															<option value="001">001 - Zuivel</option>
+															<option value="002" selected>002 - Tabak zelfbediening en
+																Vensafe</option>
+															<option value="314">314 - 0201 - Perfumery & Drugstore
+																Ninove</option>
+															<option value="315">315 - 9541 - Other type of item set
+															</option>
+														</select>
+													</div>
+												</div>
+												<!-- <div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Expedition GLN: </label>
+													<div class="col-sm-5">
+														<input type="text" name="expgln" class="form-control" autocomplete="off" value="Text 14 chars.">
+													</div>
+												</div>	 -->
+												<div class="row">
+													<hr class="col-lg-8 dotted short"
+														style="margin-bottom: 25px;margin-left: 5%;">
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Temperatures:
+													</label>
+													<div class="col-sm-5">
+														<div class="input-group" style="margin-bottom: 15px;">
+															<span class="input-group-prepend">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;width: 75px;"
+																	type="button">Min</button>
+															</span>
+															<div data-plugin-spinner
+																data-plugin-options='{ "min": -30, "max": 30 }'
+																style="width: 383px;">
+																<div class="input-group form-control-small">
+																	<input type="text" name="tmin"
+																		class="spinner-input form-control"
+																		autocomplete="off" style="text-align: right;"
+																		value="-15">
+																	<div
+																		class="spinner-buttons input-group-btn btn-group-vertical">
+																		<button type="button"
+																			class="btn spinner-up btn-xs btn-default">
+																			<i class="fas fa-angle-up"></i>
+																		</button>
+																		<button type="button"
+																			class="btn spinner-down btn-xs btn-default">
+																			<i class="fas fa-angle-down"></i>
+																		</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="input-group" style="margin-bottom: 15px;">
+															<span class="input-group-prepend">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;width: 75px;"
+																	type="button">Ideal</button>
+															</span>
+															<div data-plugin-spinner
+																data-plugin-options='{ "min": -30, "max": 30 }'
+																style="width: 383px;">
+																<div class="input-group form-control-small">
+																	<input type="text" name="tideal"
+																		class="spinner-input form-control"
+																		autocomplete="off" style="text-align: right;"
+																		value="5">
+																	<div
+																		class="spinner-buttons input-group-btn btn-group-vertical">
+																		<button type="button"
+																			class="btn spinner-up btn-xs btn-default">
+																			<i class="fas fa-angle-up"></i>
+																		</button>
+																		<button type="button"
+																			class="btn spinner-down btn-xs btn-default">
+																			<i class="fas fa-angle-down"></i>
+																		</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;width: 75px;"
+																	type="button">Max</button>
+															</span>
+															<div data-plugin-spinner
+																data-plugin-options='{ "min": -30, "max": 30 }'
+																style="width: 383px;">
+																<div class="input-group form-control-small">
+																	<input type="text" name="tmax"
+																		class="spinner-input form-control"
+																		autocomplete="off" style="text-align: right;"
+																		value="25">
+																	<div
+																		class="spinner-buttons input-group-btn btn-group-vertical">
+																		<button type="button"
+																			class="btn spinner-up btn-xs btn-default">
+																			<i class="fas fa-angle-up"></i>
+																		</button>
+																		<button type="button"
+																			class="btn spinner-down btn-xs btn-default">
+																			<i class="fas fa-angle-down"></i>
+																		</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<hr class="col-lg-8 dotted short"
+														style="margin-bottom: 25px;margin-left: 5%;">
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Total shelf
+														life: </label>
+													<div class="col-sm-5">
+														<div data-plugin-spinner>
+															<div class="input-group form-control-small">
+																<input type="text" name="tsl"
+																	class="spinner-input form-control"
+																	autocomplete="off" style="text-align: right;"
+																	value="325">
+																<div
+																	class="spinner-buttons input-group-btn btn-group-vertical">
+																	<button type="button"
+																		class="btn spinner-up btn-xs btn-default">
+																		<i class="fas fa-angle-up"></i>
+																	</button>
+																	<button type="button"
+																		class="btn spinner-down btn-xs btn-default">
+																		<i class="fas fa-angle-down"></i>
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Remaining
+														shelf life (DC): </label>
+													<div class="col-sm-5">
+														<div data-plugin-spinner>
+															<div class="input-group form-control-small">
+																<input type="text" name="rsl"
+																	class="spinner-input form-control"
+																	autocomplete="off" style="text-align: right;"
+																	value="118">
+																<div
+																	class="spinner-buttons input-group-btn btn-group-vertical">
+																	<button type="button"
+																		class="btn spinner-up btn-xs btn-default">
+																		<i class="fas fa-angle-up"></i>
+																	</button>
+																	<button type="button"
+																		class="btn spinner-down btn-xs btn-default">
+																		<i class="fas fa-angle-down"></i>
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Lifespan in
+														store: </label>
+													<div class="col-sm-5">
+														<div data-plugin-spinner>
+															<div class="input-group form-control-small">
+																<input type="text" name="lis"
+																	class="spinner-input form-control"
+																	autocomplete="off" style="text-align: right;"
+																	value="92">
+																<div
+																	class="spinner-buttons input-group-btn btn-group-vertical">
+																	<button type="button"
+																		class="btn spinner-up btn-xs btn-default">
+																		<i class="fas fa-angle-up"></i>
+																	</button>
+																	<button type="button"
+																		class="btn spinner-down btn-xs btn-default">
+																		<i class="fas fa-angle-down"></i>
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<hr class="col-lg-8 dotted short"
+														style="margin-bottom: 25px;margin-left: 5%;">
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">No date:
+													</label>
+													<div class="col-sm-5">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" checked="" id="f11">
+															<label for="f11"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Presence of
+														BBD: </label>
+													<div class="col-sm-5">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Presence of
+														packaging date: </label>
+													<div class="col-sm-5">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<hr class="col-lg-8 dotted short"
+														style="margin-bottom: 25px;margin-left: 5%;">
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Weight
+														code: </label>
+													<div class="col-sm-5">
+														<select class="form-control mb-3 cust-select">
+															<option value=""></option>
+															<option>0 - Fixed sales price</option>
+															<option>1 - Price per kilo (theor. weight)</option>
+															<option>2 - Price per kilo (exact weight)</option>
+															<option selected="">3 - Price per kilo (exact IN / theor.
+																OUT)</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Code
+														livraison: </label>
+													<div class="col-sm-5">
+														<select class="form-control mb-3 cust-select">
+															<option value=""></option>
+															<option>0 - Delivery from the warehouse</option>
+															<option>1 - DSD ordered by the store</option>
+															<option selected="">2 - DSD managed by the supplier</option>
+															<option>3 - Waters and beers - pieces</option>
+															<option>4 - DSD with automated billing</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Stacking
+														factor: </label>
+													<div class="col-sm-5">
+														<div data-plugin-spinner
+															data-plugin-options='{ "min": 0, "max": 99 }'>
+															<div class="input-group form-control-small">
+																<input type="text" name="stfct"
+																	class="spinner-input form-control"
+																	autocomplete="off" style="text-align: right;"
+																	value="61">
+																<div
+																	class="spinner-buttons input-group-btn btn-group-vertical">
+																	<button type="button"
+																		class="btn spinner-up btn-xs btn-default">
+																		<i class="fas fa-angle-up"></i>
+																	</button>
+																	<button type="button"
+																		class="btn spinner-down btn-xs btn-default">
+																		<i class="fas fa-angle-down"></i>
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Expedition
+														GLN</label>
+													<div class="col-sm-5">
+														<input type="text" name="trp" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="Text 14 chars.">
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Logistics -->
+								<!-- Start - Subpanel - Distribution center -->
+								<div id="section2" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Distribution center</h2>
+												<p class="card-subtitle">Scroll using the navigation buttons to other
+													distribution centers.</p>
+												<p class="card-subtitle"><code>Important: </code>The following DCs from
+													Similar Item are not available for the Purchasing group
+													selected:<code>BW10, BW15</code></p>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<!-- DC Selection toolbar -->
+														<div class="form-group row"
+															style="padding:20px;background:mintcream;">
+															<label class="col-lg-7 control-label pt-2"><i
+																	class="fa fa-exclamation mr-2"></i>Purchasing group
+																and
+																Similar item needs to be entered before you complete
+																this section</label>
+															<div class="col-lg-5 text-right">
+																<select class="form-control ctrl" multiple="multiple"
+																	data-plugin-multiselect
+																	data-plugin-options='{ "maxHeight": 200, "buttonClass": "btn btn-link pl-0 pr-0" }'
+																	id="ms_example3">
+																	<option value="cheese">BW01 - ZELLIK FRESH</option>
+																	<option value="tomatoes">BW04 - ZELLIK GROCERY
+																	</option>
+																	<option value="mozarella">BW08 - ZELLIK FRESH 1
+																	</option>
+																	<option value="mushrooms">BW09 - ZELLIK FRESH 2
+																	</option>
+																	<option value="pepperoni">BW10 - BRUSSELS WINERY
+																	</option>
+																	<option value="onions">BW14 - GHENT HANDLING &
+																		DISTRIBUTION</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row" style="margin-top:25px">
+													<div class="col-lg-3">
+														<div class="form-group row"
+															style="margin-top: 90px !important;">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Distribution
+																profile: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Logistics
+																handling group: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Multi
+																store order: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Storage
+																class: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Scannable:
+															</label>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-12 control-label text-sm-right pt-2"
+																style="margin-top: 5px !important;">Pick unit placement:
+															</label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Stock
+																planner: </label>
+														</div>
+														<div class="form-group row">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Delivery
+																unit: </label>
+														</div>
+														<div class="form-group row" style="margin-top:8px !important;">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">Workbench:
+															</label>
+														</div>
+														<div class="form-group row" style="margin-top:-6px !important;">
+															<label
+																class="col-sm-12 control-label text-sm-right pt-2">VMI:
+															</label>
+														</div>
+													</div>
+													<div class="col-lg-9">
+														<div class="owl-carousel owl-theme" data-plugin-carousel
+															data-plugin-options='{ "dots": false, "nav": true, "items": 2 }'>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12" style="text-align: center;">
+																		<span class="badge badge-info"
+																			style="font-size: large;">BW04</span>
+																	</div>
+																	<div class="col-lg-12" style="text-align: center;">
+																		<label style="color: green;margin-bottom: 25px;"
+																			class="col-form-label"
+																			for="formGroupExampleInput">ZELLIK
+																			GROCERY</label>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>ZN2 - Non Stock over 2 days</option>
+																			<option selected="">ZNB - Non-stock over 2
+																				days Bakery</option>
+																			<option>ZNR - Non Stock with Rounding up
+																			</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>B002 - HBC Witron - 5400110000115
+																			</option>
+																			<option>B003 - Ambient zone B4 -
+																				5400110000344</option>
+																			<option selected="">B004 - Ninove manual
+																				zone - 5400110000313</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option value=""></option>
+																			<option>1</option>
+																			<option>2</option>
+																			<option selected="">3</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected="">01 - DPS</option>
+																			<option>02 - MWH</option>
+																			<option>03 - ATS</option>
+																			<option>04 - Side</option>
+																			<option>05 - Rear</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected="">0 - N/A</option>
+																			<option>1 - Scannable</option>
+																			<option>2 - Not Scannable</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="input-group col-sm-10 offset-lg-1">
+																		<span class="input-group-prepend">
+																			<span class="input-group-text">
+																				<i class="fas fa-info"
+																					data-toggle="popover"></i>
+																			</span>
+																		</span>
+																		<select class="form-control col-lg-12">
+																			<option selected>0 - No limitations</option>
+																			<option>1 - Only width/height</option>
+																			<option>2 - Only depth/height</option>
+																			<option>3 - Only depth/width</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected="">ADD - Additive-Support
+																			</option>
+																			<option>BAS - Base Wine</option>
+																			<option>BTL - Bottled Wine</option>
+																			<option>CNS - Consum.-Packaging</option>
+																			<option>PFT - Pre-Filtered Wine</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected>KG - Kilogram</option>
+																			<option>EA - Each</option>
+																			<option>CV</option>
+																			<option>IP</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top:8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top:8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12" style="text-align: center;">
+																		<span class="badge badge-info"
+																			style="font-size: large;">BW14</span>
+																	</div>
+																	<div class="col-lg-12" style="text-align: center;">
+																		<label style="color: green;margin-bottom: 25px;"
+																			class="col-form-label"
+																			for="formGroupExampleInput">GHENT
+																			HANDLING &
+																			DISTRIBUTION</label>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>ZN2 - Non Stock over 2 days</option>
+																			<option>ZNB - Non-stock over 2 days Bakery
+																			</option>
+																			<option selected="">ZNR - Non Stock with
+																				Rounding up</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>B002 - HBC Witron - 5400110000115
+																			</option>
+																			<option selected="">B003 - Ambient zone B4 -
+																				5400110000344</option>
+																			<option>B004 - Ninove manual zone -
+																				5400110000313</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option value=""></option>
+																			<option>1</option>
+																			<option selected="">2</option>
+																			<option>3</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>01 - DPS</option>
+																			<option selected>02 - MWH</option>
+																			<option>03 - ATS</option>
+																			<option>04 - Side</option>
+																			<option>05 - Rear</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>0 - N/A</option>
+																			<option selected>1 - Scannable</option>
+																			<option>2 - Not Scannable</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="input-group col-sm-10 offset-lg-1">
+																		<span class="input-group-prepend">
+																			<span class="input-group-text">
+																				<i class="fas fa-info"
+																					data-toggle="popover"></i>
+																			</span>
+																		</span>
+																		<select class="form-control col-lg-12">
+																			<option>0 - No limitations</option>
+																			<option selected>1 - Only width/height
+																			</option>
+																			<option>2 - Only depth/height</option>
+																			<option>3 - Only depth/width</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>ADD - Additive-Support</option>
+																			<option selected>BAS - Base Wine</option>
+																			<option>BTL - Bottled Wine</option>
+																			<option>CNS - Consum.-Packaging</option>
+																			<option>PFT - Pre-Filtered Wine</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected>KG - Kilogram</option>
+																			<option>EA - Each</option>
+																			<option>CV</option>
+																			<option>IP</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top: 8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top: 8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12" style="text-align: center;">
+																		<span class="badge badge-info"
+																			style="font-size: large;">BW31</span>
+																	</div>
+																	<div class="col-lg-12" style="text-align: center;">
+																		<label style="color: green;margin-bottom: 25px;"
+																			class="col-form-label"
+																			for="formGroupExampleInput">ZELLIK
+																			INTERVEST</label>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected="">ZN2 - Non Stock over 2
+																				days</option>
+																			<option>ZNB - Non-stock over 2 days Bakery
+																			</option>
+																			<option>ZNR - Non Stock with Rounding up
+																			</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected="">B002 - HBC Witron -
+																				5400110000115</option>
+																			<option>B003 - Ambient zone B4 -
+																				5400110000344</option>
+																			<option>B004 - Ninove manual zone -
+																				5400110000313</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option value=""></option>
+																			<option selected="">1</option>
+																			<option>2</option>
+																			<option>3</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>01 - DPS</option>
+																			<option>02 - MWH</option>
+																			<option selected>03 - ATS</option>
+																			<option>04 - Side</option>
+																			<option>05 - Rear</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>0 - N/A</option>
+																			<option>1 - Scannable</option>
+																			<option selected>2 - Not Scannable</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="input-group col-sm-10 offset-lg-1">
+																		<span class="input-group-prepend">
+																			<span class="input-group-text">
+																				<i class="fas fa-info"
+																					data-toggle="popover"></i>
+																			</span>
+																		</span>
+																		<select class="form-control col-lg-12">
+																			<option>0 - No limitations</option>
+																			<option>1 - Only width/height</option>
+																			<option selected>2 - Only depth/height
+																			</option>
+																			<option>3 - Only depth/width</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>ADD - Additive-Support</option>
+																			<option>BAS - Base Wine</option>
+																			<option>BTL - Bottled Wine</option>
+																			<option>CNS - Consum.-Packaging</option>
+																			<option selected>PFT - Pre-Filtered Wine
+																			</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected>KG - Kilogram</option>
+																			<option>EA - Each</option>
+																			<option>CV</option>
+																			<option>IP</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top: 8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top: 8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12" style="text-align: center;">
+																		<span class="badge badge-info"
+																			style="font-size: large;">BW33</span>
+																	</div>
+																	<div class="col-lg-12" style="text-align: center;">
+																		<label style="color: green;margin-bottom: 25px;"
+																			class="col-form-label"
+																			for="formGroupExampleInput">ZELLIK DC
+																			D</label>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>ZN2 - Non Stock over 2 days</option>
+																			<option selected="">ZNB - Non-stock over 2
+																				days Bakery</option>
+																			<option>ZNR - Non Stock with Rounding up
+																			</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value="" selected=""></option>
+																			<option>B002 - HBC Witron - 5400110000115
+																			</option>
+																			<option>B003 - Ambient zone B4 -
+																				5400110000344</option>
+																			<option>B004 - Ninove manual zone -
+																				5400110000313</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select"
+																			style="text-align: center;">
+																			<option value="" selected=""></option>
+																			<option>1</option>
+																			<option>2</option>
+																			<option>3</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>01 - DPS</option>
+																			<option>02 - MWH</option>
+																			<option>03 - ATS</option>
+																			<option selected>04 - Side</option>
+																			<option>05 - Rear</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected>0 - N/A</option>
+																			<option>1 - Scannable</option>
+																			<option>2 - Not Scannable</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="input-group col-sm-10 offset-lg-1">
+																		<span class="input-group-prepend">
+																			<span class="input-group-text">
+																				<i class="fas fa-info"
+																					data-toggle="popover"></i>
+																			</span>
+																		</span>
+																		<select class="form-control col-lg-12">
+																			<option>0 - No limitations</option>
+																			<option>1 - Only width/height</option>
+																			<option>2 - Only depth/height</option>
+																			<option selected>3 - Only depth/width
+																			</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option>ADD - Additive-Support</option>
+																			<option>BAS - Base Wine</option>
+																			<option>BTL - Bottled Wine</option>
+																			<option selected>CNS - Consum.-Packaging
+																			</option>
+																			<option>PFT - Pre-Filtered Wine</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-10 offset-lg-1">
+																		<select class="form-control mb-3 cust-select">
+																			<option value=""></option>
+																			<option selected>KG - Kilogram</option>
+																			<option>EA - Each</option>
+																			<option>CV</option>
+																			<option>IP</option>
+																		</select>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top: 8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<div class="col-sm-5" style="text-align: center;">
+																		<div class="checkbox-custom"
+																			style="margin-top: 8px;margin-left: 125%;">
+																			<input type="checkbox" checked
+																				id="checkboxExample2">
+																			<label for="checkboxExample2"></label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Distribution center -->
+								<!-- Start - Subpanel - Replenishment - Only for tasks activation-reactivation  -->
+								<div id="section3" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Replenishment</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body">
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Min. order
+														quantity in base unit of measure </label>
+													<div class="col-sm-5">
+														<input type="text" name="ncobuom" class="form-control"
+															autocomplete="off" style="text-align: right;" value="1563">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Max.
+														delivery quantity in base unit of measure </label>
+													<div class="col-sm-5">
+														<input type="text" name="ncobuom" class="form-control"
+															autocomplete="off" style="text-align: right;" value="95845">
+													</div>
+												</div>
+												<div class="row">
+													<hr class="col-lg-9 dotted short"
+														style="margin-bottom: 25px;margin-left: 5%;">
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Transition
+														product: </label>
+													<div class="col-sm-5">
+														<input type="text" name="trp" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="1703258">
+														<div class="row">
+															<div class="col-lg-12">
+																<label style="color: green;" class="col-form-label"
+																	for="formGroupExampleInput">This is a text of 255
+																	characters that is the largest size that this text
+																	can get from the backend. This is a text of 255
+																	characters that is the largest size that this text
+																	can get from the backend. This is a text of 255
+																	characters that is the largest size</label>
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" id="checkboxExample2" disabled>
+															<label for="checkboxExample2">Transition product not
+																needed</label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Sales
+														pattern reference product: </label>
+													<div class="col-sm-5">
+														<input type="text" name="sprp" class="form-control"
+															autocomplete="off" style="text-align: center;"
+															value="1703258">
+														<div class="row">
+															<div class="col-lg-12">
+																<label style="color: green;" class="col-form-label"
+																	for="formGroupExampleInput">This is a text of 255
+																	characters that is the largest size that this text
+																	can get from the backend. This is a text of 255
+																	characters that is the largest size that this text
+																	can get from the backend. This is a text of 255
+																	characters that is the largest size</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Replenishment - Only for tasks activation-reactivation -->
+								<!-- Start - Subpanel - Replenishment Argos -->
+								<div id="section4" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Replenishment (Argos)</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body">
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Minimum
+														order quantity (in PO UoM): </label>
+													<div class="col-sm-5">
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;width: 75px;"
+																	type="button">CV</button>
+															</span>
+															<input type="text" name="moq" class="form-control"
+																autocomplete="off" style="text-align: right;"
+																value="170">
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Reordering
+														multiple quantity: </label>
+													<div class="col-sm-5">
+														<select class="form-control mb-3 cust-select">
+															<option value=""></option>
+															<option>ZA2P - Argos 2 Pallets</option>
+															<option>ZACV - Argos CV</option>
+															<option selected="">ZAHP - Argos Half-pallet</option>
+															<option>ZAIP - Argos Innerpack</option>
+															<option>ZALY - Argos Layer</option>
+															<option>ZAPL - Argos Pallet</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Weekly DC
+														forecast for first weeks in order unit (PO UoM)</label>
+													<div class="col-sm-5">
+														<input type="text" name="ncobuom" class="form-control"
+															autocomplete="off" style="text-align: right;" value="45">
+													</div>
+												</div>
+												<!-- <div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Reordering multiple quantity</label>
+													<div class="col-sm-5">
+														<select class="form-control">
+															<option></option>
+															<option>ZA2P - Argos 2 Pallets</option>
+															<option selected>ZAIP - Argos Innerpack</option>
+															<option>ZAPL - Argos Pallet</option>																					
+															<option>ZAHP - Argos Half-pallet</option>																					
+															<option>ZACV - Argos CV</option>																					
+															<option>ZALY - Argos Layer</option>																					
+														</select>																
+													</div>														
+												</div>		 -->
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Order
+														frequency</label>
+													<div class="col-sm-5">
+														<select class="form-control">
+															<option></option>
+															<option>Every week</option>
+															<option selected>Every two weeks</option>
+															<option>Every three weeks</option>
+															<option>Every four weeks</option>
+														</select>
+													</div>
+												</div>
+												<div class="row">
+													<hr class="col-lg-9 dotted short"
+														style="margin-bottom: 25px;margin-left: 10%;">
+												</div>
+												<div class="row" style="margin-bottom: 25px;">
+													<div class="col-lg-3 offset-lg-3" style="text-align: center;">
+														<span class="badge badge-info"
+															style="font-size: large;">Delivery lead time
+															pattern</span>
+													</div>
+													<div class="col-lg-2" style="text-align: center;">
+														<span class="badge badge-info"
+															style="font-size: large;">Ordering days</span>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Monday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="15">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" checked id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Tuesday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="10">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Wednesday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="5">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" checked id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Thursday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="0">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Friday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="10">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" checked id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Saturday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="0">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label
+														class="col-sm-3 control-label text-sm-right pt-2">Sunday</label>
+													<div class="col-sm-3">
+														<input type="text" name="dlt1" class="form-control"
+															autocomplete="off" style="text-align: center;" value="20">
+													</div>
+													<div class="col-sm-2" style="text-align: center;">
+														<div class="checkbox-custom"
+															style="margin-top: 8px;margin-left: 45%;">
+															<input type="checkbox" checked id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Replenishment For Suppliers-->
+							</div>
+						</div>
+						<!-- End - Panel - Logistics  -->

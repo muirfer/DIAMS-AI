@@ -79,8 +79,10 @@
                     }
                 }
 
-                //for full view update - Go Back if tab focus changes:
-                App.CRSummaryLog.goBack();
+                if (App.CRUpdateStepSpecific.backOnTabFocusChange) {
+                    //for full view update - Go Back if tab focus changes:
+                    App.CRSummaryLog.goBack();
+                }
             });
 
             //initialize AI module

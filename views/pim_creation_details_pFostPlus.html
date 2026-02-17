@@ -1,0 +1,786 @@
+<div id="pFostPlus" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+    <div class="scrollable-content">
+        <!-- Start - Subpanel - Information -->
+        <div id="section1" class="row">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Information</h2>
+                        <p class="card-subtitle"></p>
+                    </header>
+                    <div class="card-body">
+                        <div class="row" style="padding: 30px;background-color: floralwhite;margin-bottom: 20px;">
+                            <div class="col-lg-12">
+                                <div class="checkbox-custom checkbox-default">
+                                    <input class="ctrl" type="checkbox" id="chk_nfp" onclick="App.FVFostPlus.hideAll()">
+                                    <label for="chk_nfp">Fost+ information not yet
+                                        available</label>
+                                </div>
+                                <label class="lblNoInfo"
+                                    style="font-size: smaller;margin-top: 15px;display:none"><code>Important: </code>You
+                                    will not be required to provide information about Fost+ now.
+                                    <br>
+                                    Nonetheless, a new task will be created so you can deliver
+                                    Fost+ content
+                                    as soon as you receive the needed information.</label>
+
+                            </div>
+                        </div>
+                        <div class="fpcont">
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Item
+                                    family
+                                    code: <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <select class="form-control mb-3 cust-select">
+                                        <option selected></option>
+                                        <option>A. Food B. Drinks</option>
+                                        <option>B. Drinks in reusable packaging</option>
+                                        <option>C. Cleaning and Maintenance</option>
+                                        <option>G. DIY H. Clothing, footwear, textiles and
+                                            accessories
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Detail:
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <select class="form-control mb-3 cust-select">
+                                        <option selected></option>
+                                        <option>B.1 Beer</option>
+                                        <option>B.2 Fruit and vegetable juices</option>
+                                        <option>B.3 Milk</option>
+                                        <option>B.4 Fresh drinks and Syrups</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Detailed
+                                    description of the packaging: <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <textarea class="form-control" rows="6" data-plugin-maxlength
+                                        maxlength="250"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Empties
+                                    code:
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <select class="form-control mb-3 cust-select">
+                                        <option selected></option>
+                                        <option>0 - no returnable packaging</option>
+                                        <option>1 - returnable primary packaging</option>
+                                        <option>2 - returnable secondary packaging</option>
+                                        <option>3 - returnable tertiary packaging</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Content
+                                    of a
+                                    SKU (amount): <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="sku_amount" value="0"
+                                        style="text-align: right;">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Unit
+                                    contents:
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <select class="form-control mb-3 cust-select">
+                                        <option></option>
+                                        <option>M - milliliters</option>
+                                        <option selected>G - grams</option>
+                                        <option>P - pieces</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Household
+                                    hazardous waste: <span class="required">*</span></label>
+                                <div class="col-lg-1" style="margin-top:6px">
+                                    <div class="radio-custom radio-primary">
+                                        <input type="radio" id="hhw_dang" name="hhw">
+                                        <label for="hhw_dang">Dangerous</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2" style="margin-top:6px">
+                                    <div class="radio-custom radio-primary">
+                                        <input type="radio" id="hhw_ndang" name="hhw">
+                                        <label for="hhw_ndang">Not dangerous</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Disturbing
+                                    packaging: <span class="required">*</span></label>
+                                <div class="col-lg-1" style="margin-top:6px">
+                                    <div class="radio-custom radio-primary">
+                                        <input type="radio" id="dp_yes" name="dp">
+                                        <label for="dp_yes">Yes</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2" style="margin-top:6px">
+                                    <div class="radio-custom radio-primary">
+                                        <input type="radio" id="dp_no" name="dp">
+                                        <label for="dp_no">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">Packaging
+                                    picture: <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="input-append">
+                                            <div class="uneditable-input">
+                                                <i class="fas fa-file fileupload-exists"></i>
+                                                <span class="fileupload-preview"></span>
+                                            </div>
+                                            <span class="btn btn-default btn-file">
+                                                <span class="fileupload-exists">Change</span>
+                                                <span class="fileupload-new">Select file</span>
+                                                <input type="file" onchange="App.FVFostPlus.showImage(true)" />
+                                            </span>
+                                            <a href="#" onclick="App.FVFostPlus.showImage(false)"
+                                                class="btn btn-default fileupload-exists"
+                                                data-dismiss="fileupload">Remove</a>
+                                        </div>
+                                    </div>
+                                    <img id="img" src="img/packaging.webp"
+                                        style="display: none;width: inherit;height: 300px;margin-top: 10px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Information -->
+        <!-- Start - Subpanel - Number of consumer units -->
+        <div id="section2" class="row fpcont">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Number of consumer units</h2>
+                        <p class="card-subtitle"></p>
+                    </header>
+                    <div class="card-body">
+                        <div class="fpcont" style="background: mintcream;padding-top: 20px;padding-bottom: 20px;">
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">In the
+                                    package: <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" value="0" style="text-align: right;">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">In an
+                                    innerpack: </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" value="0" style="text-align: right;">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label text-sm-right pt-2">On a
+                                    pallet:
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" value="0" style="text-align: right;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Number of consumer units -->
+        <!-- Start - Subpanel - Primary packaging -->
+        <div id="section3" class="row fpcont">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Primary packaging</h2>
+                        <p class="card-subtitle">Complete main, other and multipack information
+                            for Primary Packaging</p>
+                    </header>
+                    <div class="card-body">
+                        <div class="row" style="padding: 30px;background-color: floralwhite;">
+                            <div class="col-lg-12">
+                                <div class="checkbox-custom checkbox-default">
+                                    <input class="ctrl" type="checkbox" id="chk_not_inform"
+                                        onclick="App.FVFostPlus.changePrimaryVisiblity()">
+                                    <label for="chk_not_inform">Do not inform Primary
+                                        packaging</label>
+                                </div>
+                                <label style="font-size: smaller;"><code>Important: </code>Decision
+                                    not to inform primary packaging will be reviews and approved
+                                    by E2E
+                                    team</label>
+                            </div>
+                        </div>
+                        <div id="pp_table">
+                            <table class="table table-responsive-md table-hover mb-3" style="margin-top: 30px;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;">Type</th>
+                                        <!-- <th style="text-align: center;">SAP ID</th> -->
+                                        <th style="width: 30%;">Description</th>
+                                        <th style="width: 30%;">Details</th>
+                                        <th style="text-align: center;width: 15%;">Weigth
+                                            (grams)
+                                        </th>
+                                        <th style="text-align: center;width: 15%;">Quantity SAP
+                                        </th>
+                                        <th style="text-align: center;width: 7%;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="FPtableBody">
+                                    <tr id="row1">
+                                        <td id="cat"
+                                            style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                            Main <p style="font-size: x-small;line-height: 15px;">
+                                                Primary Packaging</p>
+                                        </td>
+                                        <!-- <td style="text-align: center;vertical-align: middle;">10000001020</td> -->
+                                        <td style="vertical-align: middle;">
+                                            <div id="sapId" class="title-header">10000001020
+                                            </div>
+                                            <div id="mainTitle" class="title-line">Glass - 1
+                                                Primary
+                                                Main packaging</div>
+                                            <div class="text-lines">
+                                                <p>Paper / Cardboard</p>
+                                                <p>95% Paper/Cardboard</p>
+                                                <p>Laminated on one side</p>
+                                                <p>Virgin material</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <!-- <div class="title-line">4. Blister, Skin packaging</div> -->
+                                            <div class="text-lines">
+                                                <p style="line-height: 15px;margin-top: 10px;">
+                                                    <code>Packaging element code:</code>
+                                                </p>
+                                                <p id="pec">4. Blister, Skin packaging</p>
+                                                <p style="line-height: 15px;margin-top: 10px;">
+                                                    <code>Tariff (per Kg):</code>
+                                                </p>
+                                                <p>2023: 0,0006234</p>
+                                                <p>2022: 0,0006234</p>
+                                                <p id="reus" style="line-height: 15px;margin-top: 10px;">
+                                                    <code>Reusable element with deposit scheme</code>
+                                                </p>
+                                                <p class="optP hidden" style="margin-top: 10px;">
+                                                    <code>18%</code> Virgin
+                                                </p>
+                                                <p class="optP hidden"><code>40%</code> Post
+                                                    consumer recycled content</p>
+                                                <p class="optP hidden"><code>2%</code> Post
+                                                    industrial recycled content</p>
+                                                <p class="optP hidden"><code>25%</code>
+                                                    Bio-based
+                                                    material from Europe</p>
+                                                <p class="optP hidden"><code>15%</code>
+                                                    Bio-Based
+                                                    material with origin outside of Europe</p>
+                                                <p style="line-height: 15px;margin-top: 10px;" class="optP hidden">
+                                                    <code>Comments:</code>
+                                                </p>
+                                                <p style="line-height: 15px;" class="optP hidden">
+                                                    Comment entered by vendor that states that
+                                                    this
+                                                    element has an issue to be checked</p>
+
+                                                <p style="margin-top: 15px;font-size: smaller;">
+                                                    <a id="see-more-btn" href="#"
+                                                        class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd">see
+                                                        more</a>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td style="text-align: center;vertical-align: middle;">
+                                            <!-- start: Per SKU -->
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <label class="col-form-label" for="formGroupExampleInput"
+                                                        style="padding:0%">Per SKU</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <input type="text" value="45" style="text-align: center;"
+                                                    class="form-control col-lg-8 offset-lg-2" placeholder="">
+                                            </div>
+                                            <!-- end: Per SKU -->
+                                            <!-- start: Per package -->
+                                            <div class="row" style="margin-top: 15px;">
+                                                <div class="col-lg-12">
+                                                    <label class="col-form-label" for="formGroupExampleInput"
+                                                        style="padding:0%">Per package</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <input type="text" value="360" style="text-align: center;"
+                                                    class="form-control col-lg-8 offset-lg-2" placeholder="" readonly>
+                                            </div>
+                                            <!-- end: Per package -->
+                                        </td>
+                                        <td
+                                            style="text-align: center;vertical-align: middle;color: darkgreen;font-size: large;">
+                                            325
+                                        </td>
+                                        <td style="text-align: center;" class="actions-hover actions-fade">
+                                            <a href="#modal_edit"
+                                                class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+                                                    class="fas fa-pencil-alt"></i></a>
+                                            <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-lg-12" style="text-align: right;">
+                                    <a id="l_modal" href="#modal_add_pp"
+                                        class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+                                            class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
+                                        Primary
+                                        Packaging</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Primary packaging -->
+
+    </div>
+</div>
+
+<!-- Modal Fost+ Add Primary Packaging -->
+<div id="modal_add_pp" class="zoom-anim-dialog modal-block modal-block-lg modal-block-primary mfp-hide">
+    <section class="card form-wizard" id="w1">
+        <header class="card-header">
+            <h2 class="card-title">Add Primary Packaging</h2>
+        </header>
+        <div class="card-body card-body-nopadding">
+            <div class="wizard-tabs">
+                <ul class="nav wizard-steps">
+                    <li id="opt1" class="nav-item active">
+                        <a href="#w1-type" data-toggle="tab" class="nav-link text-center">
+                            <span class="badge">1</span>
+                            Select type
+                        </a>
+                    </li>
+                    <li id="opt2" class="nav-item">
+                        <a href="#w1-element" data-toggle="tab" class="nav-link text-center">
+                            <span class="badge">2</span>
+                            Identify element
+                        </a>
+                    </li>
+                    <li id="opt3" class="nav-item">
+                        <a href="#w1-details" data-toggle="tab" class="nav-link text-center">
+                            <span class="badge">3</span>
+                            More details
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form class="form-horizontal p-3" novalidate="novalidate">
+                <div class="tab-content">
+                    <div id="w1-type" class="tab-pane active">
+                        <div class="card-body">
+                            <button id="pb00_dis_01_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVFostPlus.addPackaging(this.innerText)">Main Packaging
+                                Element</button>
+                            <button id="pb00_dis_02_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVFostPlus.addPackaging(this.innerText)">Other Packaging
+                                Element</button>
+                            <button id="pb00_dis_03_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVFostPlus.addPackaging(this.innerText)">Multipack</button>
+                        </div>
+                    </div>
+                    <div id="w1-element" class="tab-pane">
+                        <div class="row">
+                            <div class="col-lg-12" style="text-align: center;">
+                                <h5 id="titleElementSel">Available options for Main Packaging Element</h6>
+                            </div>
+                            <div class="col-lg-12" style="text-align: center;margin-top: 15px;">
+                                <h6 id="titleElementSel" style="margin: 0;">if your material is a mix of
+                                    <code>Virgin</code> and <code>Recycled</code> material, take into account
+                                    that you have to report <u>twice the same material</u></h5>
+                            </div>
+                            <div class="col-lg-12" style="text-align: center;">
+                                <h6 id="titleElementSel" style="margin: 0;">Once selecting the Origin as
+                                    "Virgin" and a second time selecting the Origin as "Recycled"</h6>
+                            </div>
+                            <div class="col-lg-12" style="text-align: center;">
+                                <h6 id="titleElementSel" style="margin: 0;">Each type of material should have
+                                    its corresponding weight</h6>
+                            </div>
+                            <div class="col-lg-12" style="text-align: center;margin-top: 15px;">
+                                <h6 id="titleElementSel" style="margin: 0;">Same concept applies if your
+                                    material has <code>mixed origins</code> (from and from outside Europe)</h5>
+                            </div>
+                        </div>
+                        <div class="form-group row basic" style="display: none;">
+                            <div class="col-lg-12">
+                                <select data-plugin-selectTwo class="form-control populate ctrl"
+                                    data-plugin-options='{ "minimumInputLength": 2 }'>
+                                    <option value=""></option>
+                                    <option value="1000001015" selected>1000001015 - Paper/Carton 100% - 1 P
+                                        Main - recycled</option>
+                                    <option value="1000001031">1000001031 - Paper/Carton >95% - 2 PrimOther -
+                                        virgin</option>
+                                </select>
+                            </div>
+                            <a class="col-lg-12" style="text-align: right;" href="#"
+                                onclick="App.FVFostPlus.toGuidedMode(true)"
+                                class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal">Switch to guided
+                                mode</a>
+                        </div>
+                        <div class="form-group row guided">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Material</label>
+                            <div class="col-lg-9">
+                                <select id="dropdown1" class="form-control ctrl">
+                                    <option value="">Select Option</option>
+                                    <option value="option1">Glass</option>
+                                    <option value="option2">Paper / Cardboard</option>
+                                    <option value="option3">Steel</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row guided">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Detail 1</label>
+                            <div class="col-lg-9">
+                                <select id="dropdown2" class="form-control ctrl" disabled>
+                                    <option value="">Select Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row guided">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Detail 2</label>
+                            <div class="col-lg-9">
+                                <select id="dropdown3" class="form-control ctrl" disabled>
+                                    <option value="">Select Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row guided">
+                            <label class="col-lg-3 control-label text-lg-right pt-2">Origin</label>
+                            <div class="col-lg-9">
+                                <select id="dropdown4" class="form-control ctrl" disabled>
+                                    <option value="">Select Option</option>
+                                </select>
+                            </div>
+                            <a class="col-lg-12" style="text-align: right;margin-top: 15px;" href="#"
+                                onclick="App.FVFostPlus.toGuidedMode(false)"
+                                class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal">Switch to basic
+                                mode</a>
+                        </div>
+                    </div>
+                    <div id="w1-details" class="tab-pane">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="title-header">10000001020</div>
+                                <div class="title-line">Glass - 1 Primary Main packaging</div>
+                                <div class="text-lines">
+                                    <p>Paper / Cardboard</p>
+                                    <p>95% Paper/Cardboard</p>
+                                    <p>Laminated on one side</p>
+                                    <p>Virgin material</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row form-group">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="formGroupExampleInput">Packaging
+                                                element code</label>
+                                            <select class="form-control col-lg-12 ctrl">
+                                                <option selected></option>
+                                                <option>1. Aerosol</option>
+                                                <option>3. Cup, Plate</option>
+                                                <option>4. Blister, Skin packaging</option>
+                                                <option>6. Box, crate, case</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="formGroupExampleInput">Weight
+                                                of packaging element per SKU</label>
+                                            <input type="text" style="text-align: center;" class="form-control ctrl"
+                                                id="formGroupExampleInput" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-lg-6">
+                                        <div class="checkbox-custom checkbox-default form-group"
+                                            style="margin-top: 15px;">
+                                            <input type="checkbox" class="ctrl">
+                                            <label for="checkboxExample1">Reusable element with deposit
+                                                scheme</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <div id="totalMsge" class="row">
+                                                <div class="col-lg-12" style="text-align: right;">
+                                                    <label class="col-form-label" style="color: red;font-size: smaller;"
+                                                        for="formGroupExampleInput">It is required that the %
+                                                        total of these fields to be exactly 100%</label>
+                                                </div>
+                                            </div>
+                                            <section id="numericSection" class="form-group-vertical">
+                                                <div class="row">
+                                                    <div class="input-group col-lg-12">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-default"
+                                                                style="font-size: smaller;background: snow;width: 300px;text-align: right;"
+                                                                type="button">Virgin (%)</button>
+                                                        </span>
+                                                        <input type="text" style="text-align: right;"
+                                                            class="form-control numeric-input ctrl"
+                                                            id="formGroupExampleInput" placeholder="" value="0"
+                                                            autocomplete="off" onfocus="this.select()">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-group col-lg-12">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-default"
+                                                                style="font-size: smaller;background: snow;width: 300px;text-align: right;"
+                                                                type="button">Post consumer recycled content
+                                                                (%)</button>
+                                                        </span>
+                                                        <input type="text" style="text-align: right;"
+                                                            class="form-control numeric-input ctrl"
+                                                            id="formGroupExampleInput" placeholder="" value="0"
+                                                            autocomplete="off" onfocus="this.select()">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-group col-lg-12">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-default"
+                                                                style="font-size: smaller;background: snow;width: 300px;text-align: right;"
+                                                                type="button">Post industrial recycled content
+                                                                (%)</button>
+                                                        </span>
+                                                        <input type="text" style="text-align: right;"
+                                                            class="form-control numeric-input ctrl"
+                                                            id="formGroupExampleInput" placeholder="" value="0"
+                                                            autocomplete="off" onfocus="this.select()">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-group col-lg-12">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-default"
+                                                                style="font-size: smaller;background: snow;width: 300px;text-align: right;"
+                                                                type="button">Bio-based material from Europe
+                                                                (%)</button>
+                                                        </span>
+                                                        <input type="text" style="text-align: right;"
+                                                            class="form-control numeric-input ctrl"
+                                                            id="formGroupExampleInput" placeholder="" value="0"
+                                                            autocomplete="off" onfocus="this.select()">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-group col-lg-12">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-default"
+                                                                style="font-size: smaller;background: snow;width: 300px;text-align: right;"
+                                                                type="button">Bio-Based material with origin
+                                                                outside of Europe (%)</button>
+                                                        </span>
+                                                        <input type="text" style="text-align: right;"
+                                                            class="form-control numeric-input ctrl"
+                                                            id="formGroupExampleInput" placeholder="" value="0"
+                                                            autocomplete="off" onfocus="this.select()">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-group col-lg-12">
+                                                        <span class="input-group-prepend">
+                                                            <button class="btn btn-default"
+                                                                style="font-size: larger;background: aliceblue;width: 300px;text-align: right;"
+                                                                type="button">Total (%)</button>
+                                                        </span>
+                                                        <input id="totalSum" type="text"
+                                                            style="text-align: right;background: aliceblue;font-weight: bold;color:darkorange"
+                                                            readonly class="form-control" id="formGroupExampleInput"
+                                                            placeholder="" value="0">
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="formGroupExampleInput">Comments</label>
+                                            <textarea class="form-control ctrl" rows="2" placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <ul class="pager">
+                <li class="previous" style="display:none">
+                    <a href="#" onclick="App.FVFostPlus.goBack()"><i class="fas fa-angle-left"></i> Back</a>
+                </li>
+                <li class="next float-right" style="display:none">
+                    <a href="#" onclick="App.FVFostPlus.goNext()">Next</a>
+                </li>
+                <li class="finish float-right modal-dismiss" style="display: none;"
+                    onclick="App.FVFostPlus.onAddCompleted()">
+                    <a>Confirm</a>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- End Modal Fost+ Add Primary Packaging -->
+
+<!-- Modal Fost+ Edit Primary Packaging -->
+<div id="modal_edit" class="zoom-anim-dialog modal-block modal-block-lg modal-block-primary mfp-hide">
+    <section class="card form-wizard" id="w1">
+        <header class="card-header">
+            <h2 class="card-title">Edit Packaging</h2>
+        </header>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="title-header">10000001020</div>
+                    <div class="title-line">Glass - 1 Primary Main packaging</div>
+                    <div class="text-lines">
+                        <p>Paper / Cardboard</p>
+                        <p>95% Paper/Cardboard</p>
+                        <p>Laminated on one side</p>
+                        <p>Virgin material</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row form-group">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="formGroupExampleInput">Packaging element
+                                    code</label>
+                                <select class="form-control col-lg-12">
+                                    <option></option>
+                                    <option>1. Aerosol</option>
+                                    <option>3. Cup, Plate</option>
+                                    <option selected>4. Blister, Skin packaging</option>
+                                    <option>6. Box, crate, case</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6">
+                            <div class="checkbox-custom checkbox-default form-group" style="margin-top: 15px;">
+                                <input type="checkbox" checked>
+                                <label for="checkboxExample1">Reusable element with deposit scheme</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="formGroupExampleInput">Weight of packaging
+                                    element per SKU</label>
+                                <input type="text" style="text-align: center;" class="form-control"
+                                    id="formGroupExampleInput" placeholder="" value="580">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="formGroupExampleInput">Recycled content
+                                    (%)</label>
+                                <input type="text" style="text-align: center;" class="form-control"
+                                    id="formGroupExampleInput" placeholder="" value="45">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="formGroupExampleInput">Bio-based
+                                    (%)</label>
+                                <input type="text" style="text-align: center;" class="form-control"
+                                    id="formGroupExampleInput" placeholder="" value="37">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="formGroupExampleInput">Post-Industrial/Consumer
+                                    recycled
+                                    content</label>
+                                <textarea class="form-control" rows="2" placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="formGroupExampleInput">Comments</label>
+                                <textarea class="form-control" rows="2"
+                                    placeholder="">Some comments entered by vendor here</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <ul class="pager">
+                <li class="modal-dismiss" style="float: left;">
+                    <a>Close</a>
+                </li>
+                <li class="float-right modal-dismiss" onclick="">
+                    <a>Save</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- End Modal Fost+ Edit Primary Packaging -->
+
+<script>
+    App.FVFostPlus.initialize();
+</script>

@@ -1,0 +1,1523 @@
+<div id="pPricesNew" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+    <div class="scrollable-content">
+        <!-- Start - Subpanel - Main information -->
+        <div id="section1" class="row">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Information</h2>
+                        <p class="card-subtitle"></p>
+                    </header>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Prepriced:
+                            </label>
+                            <div class="col-sm-5">
+                                <div class="checkbox-custom" style="margin-top: 8px;">
+                                    <input type="checkbox" checked="" id="checkboxExample2">
+                                    <label for="checkboxExample2"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Admin fee:
+                            </label>
+                            <div class="col-sm-5">
+                                <div class="checkbox-custom" style="margin-top: 8px;">
+                                    <input type="checkbox" id="checkboxExample2" checked>
+                                    <label for="checkboxExample2"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Petit lion:
+                            </label>
+                            <div class="col-sm-5">
+                                <div class="checkbox-custom" style="margin-top: 8px;">
+                                    <input type="checkbox" id="checkboxExample2" checked>
+                                    <label for="checkboxExample2"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Price type:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option>0 - Critical</option>
+                                    <option>1 - KVI</option>
+                                    <option>2 - Background</option>
+                                    <option>3 - Foreground</option>
+                                    <option selected>4 - First place</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Pricing
+                                group:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option value="D2">D2 - DLL–DSD zero markup</option>
+                                    <option value="D3" selected>D3 - DLL–zero ZCOF retail
+                                    </option>
+                                    <option value="D4">D4 - DLL-DSD Lorraine MU1</option>
+                                    <option value="D5">D5 - DLL-DSD Lorraine MU2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Estimated
+                                annual Volume in sales unit</label>
+                            <div class="col-sm-5">
+                                <input type="text" name="ncobuom" class="form-control" autocomplete="off"
+                                    style="text-align: right;" value="1325510">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Introduction
+                                discount validity period: </label>
+                            <div class="col-sm-5">
+                                <div class="input-daterange input-group" data-plugin-datepicker
+                                    data-plugin-options='{ "format": "dd/mm/yyyy" }'>
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control dateInput" name="start" value="15/02/2024">
+                                    <span class="input-group-text border-left-0 border-right-0 rounded-0">
+                                        to
+                                    </span>
+                                    <input type="text" class="form-control dateInput" name="end" value="31/12/9999">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Main information -->
+        <!-- Start - Subpanel - Price structure -->
+        <div id="section2" class="row" style="margin-top: 50px;">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Price structure</h2>
+                        <p class="card-subtitle"><code>Important:</code> The calculations below
+                            are a close approximation of the final values. Values are in
+                            <code>Euros (EUR)</code> and per <code>EA</code>
+                        </p>
+                    </header>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                                <div class="toggle toggle-tertiary toggle-lg" data-plugin-toggle>
+                                    <section class="toggle">
+                                        <label>PB00 - Purchase price <span
+                                                style="float:right;font-size:larger;font-weight: bold;">50,0000</span></label>
+                                        <div class="toggle-content">
+                                            <table class="table table-responsive-md table-hover mb-0 cTable">
+                                                <tbody>
+                                                    <tr id="pb00_dis_01" style="display: none;">
+                                                        <td class="tCell-1">Discounts</td>
+                                                        <td class="tCell-2">ZD01 - General
+                                                            Discount</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="pb00_dis_01_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="pb00_dis_01_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_dis_01_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_dis_02" style="display: none;">
+                                                        <td class="tCell-1">Discounts</td>
+                                                        <td class="tCell-2">ZD12 - Introduction
+                                                            &nbsp;&nbsp;<i class="fas fa-info-circle"
+                                                                style="color: darkcyan;" data-toggle="tooltip"
+                                                                title="You will be required to complete the validity period"></i>
+                                                        </td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="pb00_dis_02_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="pb00_dis_02_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_dis_02_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_dis_03" style="display: none;">
+                                                        <td class="tCell-1">Discounts</td>
+                                                        <td class="tCell-2">ZD15 - Synergy</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="pb00_dis_03_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="pb00_dis_03_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_dis_03_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_cos_01" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">ZC18 - Transport
+                                                        </td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn" type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_cos_01_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_cos_01_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_cos_02" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">ZC16 - Industrial
+                                                        </td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_cos_02_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_cos_02_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_cos_03" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">ZC13 - Others</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_cos_03_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_cos_03_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_cos_04" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">Royalties (Fresh)
+                                                        </td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_cos_04_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_cos_04_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_cos_05" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">Not applicable</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_cos_05_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_cos_05_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_01" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT22 - Auvibel</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_01_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_01_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_02" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT24 - Bebat</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_02_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_02_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_03" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">Copyright</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_03_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_03_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_04" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT20 - Ecotax</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_04_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_04_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_05" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT29 - Excise</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_05_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_05_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_06" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">Fairtrade</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_06_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_06_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_07" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT25 - Fost+</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_07_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_07_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_08" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT30 - Compensation
+                                                            tax value</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_08_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_08_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="pb00_tax_09" style="display: none;">
+                                                        <td class="tCell-1">Taxes (vendor)</td>
+                                                        <td class="tCell-2">ZT23 - Recupel</td>
+                                                        <td class="tCell-3">On invoice</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="pb00_tax_09_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="pb00_tax_09_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7"
+                                                            style="padding-top: 0px!important;text-align: right;">
+                                                            <div class="btn-group flex-wrap">
+                                                                <a href="#modal_pb00"
+                                                                    class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+                                                                        class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
+                                                                    Discounts / Costs / Taxes
+                                                                    (Vendor)</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                    <section class="toggle">
+                                        <label>ZPAF - Purchase price on invoice <span id="subtotal_pb00"
+                                                style="float:right;font-size:larger;font-weight: bold;">50,0000</span></label>
+                                        <div class="toggle-content">
+                                            <table class="table table-responsive-md table-hover mb-0 cTable">
+                                                <tbody>
+                                                    <tr id="zpaf_reb_01" style="display: none;">
+                                                        <td class="tCell-1">Rebates</td>
+                                                        <td class="tCell-2">ZR41 - General
+                                                            Rebate</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="zpaf_reb_01_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_reb_01_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_reb_01_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_reb_02" style="display: none;">
+                                                        <td class="tCell-1">Rebates</td>
+                                                        <td class="tCell-2">ZR42 - Commercial
+                                                            Coop</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="zpaf_reb_02_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_reb_02_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_reb_02_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_reb_03" style="display: none;">
+                                                        <td class="tCell-1">Rebates</td>
+                                                        <td class="tCell-2">ZR81 - Synergy</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="zpaf_reb_03_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_reb_03_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_reb_03_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_reb_04" style="display: none;">
+                                                        <td class="tCell-1">Rebates</td>
+                                                        <td class="tCell-2">ZR91 - Logistic
+                                                            Rebate</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5">
+                                                            <div class="input-group mb-3">
+                                                                <input id="zpaf_reb_04_perc" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:center"
+                                                                    onchange="App.FVPricesNew.updatePercentage(this)"
+                                                                    onClick="this.select();">
+                                                                <span class="input-group-append">
+                                                                    <button class="btn" type="button">%</button>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-minus"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_reb_04_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right" readonly>
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_reb_04_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_cos_01" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">ZC18 - Transport
+                                                        </td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_cos_01_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_cos_01_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_cos_02" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">ZC16 - Industrial
+                                                        </td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_cos_02_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_cos_02_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_cos_03" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">ZC13 - Others</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_cos_03_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_cos_03_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_cos_04" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">Royalties (Fresh)
+                                                        </td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_cos_04_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_cos_04_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zpaf_cos_05" style="display: none;">
+                                                        <td class="tCell-1">Costs</td>
+                                                        <td class="tCell-2">Not applicable</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zpaf_cos_05_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zpaf_cos_05_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7"
+                                                            style="padding-top: 0px!important;text-align: right;">
+                                                            <div class="btn-group flex-wrap">
+                                                                <a href="#modal_zpaf"
+                                                                    class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+                                                                        class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
+                                                                    Rebates / Costs</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                    <section class="toggle">
+                                        <label>ZDPI - Inventory price <span id="subtotal_zpaf"
+                                                style="float:right;font-size:larger;font-weight: bold;">50,0000</span></label>
+                                        <div class="toggle-content">
+                                            <table class="table table-responsive-md table-hover mb-0 cTable">
+                                                <tbody>
+                                                    <tr id="zdpi_tax_01" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">ZT22 - Auvibel</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_01_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_01_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_02" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">ZT24 - Bebat</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_02_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_02_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_03" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">Copyright</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_03_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_03_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_04" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">ZT20 - Ecotax</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_04_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_04_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_05" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">ZT29 - Excise</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_05_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_05_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_06" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">Fairtrade</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_06_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_06_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_07" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">ZT25 - Fost+</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_07_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_07_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id="zdpi_tax_08" style="display: none;">
+                                                        <td class="tCell-1">Taxes (Delhaize)
+                                                        </td>
+                                                        <td class="tCell-2">ZT23 - Recupel</td>
+                                                        <td class="tCell-3">On cost price</td>
+                                                        <td class="tCell-4"></td>
+                                                        <td class="tCell-5"></td>
+                                                        <td class="tCell-6">
+                                                            <div class="input-group mb-3">
+                                                                <span class="input-group-prepend">
+                                                                    <button class="btn " type="button"><i
+                                                                            class="fas fa-plus"
+                                                                            style="display: block !important;"></i></button>
+                                                                </span>
+                                                                <input id="zdpi_tax_08_val" type="text"
+                                                                    class="form-control" value="0"
+                                                                    style="text-align:right"
+                                                                    onchange="App.FVPricesNew.updateValue(this)"
+                                                                    onClick="this.select();">
+                                                            </div>
+                                                        </td>
+                                                        <td class="actions-hover actions-fade tCell-7">
+                                                            <a id="zdpi_tax_08_rem"
+                                                                onclick="javascript:App.FVPricesNew.remove(this)"
+                                                                class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7"
+                                                            style="padding-top: 0px!important;text-align: right;">
+                                                            <div class="btn-group flex-wrap">
+                                                                <a href="#modal_zdpi"
+                                                                    class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+                                                                        class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
+                                                                    Taxes (Delahize)</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                    <section class="toggle">
+                                        <label>ZDPR - Cost price <span id="subtotal_zdpr"
+                                                style="float:right;font-size:larger;font-weight: bold;">50,0000</span></label>
+                                        <div class="toggle-content">
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Price structure -->
+        <!-- Start - Subpanel - Sales prices -->
+        <div id="section3" class="row" style="margin-top: 50px;">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Sales prices</h2>
+                        <p class="card-subtitle"></p>
+                    </header>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3 offset-lg-3" style="text-align: center;">
+                                <span class="badge badge-info" style="font-size: large;">ISP</span>
+                            </div>
+                            <div class="col-lg-3" style="text-align: center;">
+                                <span class="badge badge-info" style="font-size: large;">RSP</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 offset-lg-3" style="text-align: center;">
+                                <label style="color: green;margin-bottom: 25px;" class="col-form-label"
+                                    for="formGroupExampleInput">Introduction Sales Price</label>
+                            </div>
+                            <div class="col-lg-3" style="text-align: center;">
+                                <label style="color: green;margin-bottom: 25px;" class="col-form-label"
+                                    for="formGroupExampleInput">Recommended Sales Price</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2"></label>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <button class="btn btn-default"
+                                            style="font-size: smaller;background: snow;width: 75px;"
+                                            type="button">EA</button>
+                                    </span>
+                                    <input type="text" class="form-control" autocomplete="off"
+                                        style="text-align: center;" value="0.00" onClick="this.select();"
+                                        onchange="this.value = Number.parseFloat(this.value).toFixed(4)">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <input id="rsp" type="text" class="form-control" autocomplete="off"
+                                    style="text-align: center;" value="0.00" onchange="App.FVPricesNew.updateMop()"
+                                    onClick="this.select();">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2"></label>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <button class="btn btn-default"
+                                            style="font-size: smaller;background: snow;width: 75px;"
+                                            type="button">CV</button>
+                                    </span>
+                                    <input type="text" class="form-control" autocomplete="off"
+                                        style="text-align: center;" value="0.00" onClick="this.select();"
+                                        onchange="this.value = Number.parseFloat(this.value).toFixed(4)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 10%;">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Margin on
+                                product (MOP): </label>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input id="mop" type="text" class="form-control" autocomplete="off"
+                                        style="text-align: center;" value="0.00" readonly>
+                                    <span class="input-group-append">
+                                        <button class="btn btn-default" style="background: snow;"
+                                            type="button">%</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" autocomplete="off"
+                                        style="text-align: center;" value="0.00" readonly>
+                                    <span class="input-group-append">
+                                        <button class="btn btn-default" style="background: snow;"
+                                            type="button">%</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Sales prices -->
+    </div>
+</div>
+<div id="modal_pb00" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+    <section class="card">
+        <header class="card-header">
+            <h2 class="card-title">Select</h2>
+        </header>
+        <div class="card-body ">
+            <div class="accordion" id="modal_pb00_accordion">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title m-0">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_pb00_accordion"
+                                href="#modal_pb00_collapse1One">
+                                Discounts
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="modal_pb00_collapse1One" class="collapse show" data-parent="#modal_pb00_accordion">
+                        <div class="card-body">
+                            <button id="pb00_dis_01_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZD01 - General Discount</button>
+                            <button id="pb00_dis_02_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZD12 - Introduction</button>
+                            <button id="pb00_dis_03_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZD15 - Synergy ZD15</button>
+                        </div>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_pb00_accordion"
+                                    href="#modal_pb00_collapse1Two">
+                                    Costs
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="modal_pb00_collapse1Two" class="collapse" data-parent="#modal_pb00_accordion">
+                            <div class="card-body">
+                                <button id="pb00_cos_01_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZC18 - Transport</button>
+                                <button id="pb00_cos_02_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZC16 - Industrial</button>
+                                <button id="pb00_cos_03_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZC13 - Others</button>
+                                <button id="pb00_cos_04_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">Royalties (Fresh)</button>
+                                <button id="pb00_cos_05_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">Not applicable</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_pb00_accordion"
+                                    href="#modal_pb00_collapse1Three">
+                                    Taxes (Vendor)
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="modal_pb00_collapse1Three" class="collapse" data-parent="#modal_pb00_accordion">
+                            <div class="card-body">
+                                <button id="pb00_tax_01_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT22 - Auvibel</button>
+                                <button id="pb00_tax_02_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT24 - Bebat</button>
+                                <button id="pb00_tax_03_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">Copyright</button>
+                                <button id="pb00_tax_04_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT20 - Ecotax</button>
+                                <button id="pb00_tax_05_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT29 - Excise</button>
+                                <button id="pb00_tax_06_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">Fairtrade</button>
+                                <button id="pb00_tax_07_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT25 - Fost+</button>
+                                <button id="pb00_tax_08_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT30 - Compensation tax
+                                    value</button>
+                                <button id="pb00_tax_09_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZT23 - Recupel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="card-footer" style="margin-top: 20px;">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button class="btn btn-default modal-dismiss">Close</button>
+                    </div>
+                </div>
+            </footer>
+    </section>
+</div>
+<!-- End Modal 1 -->
+<!-- Modal 2 -->
+<div id="modal_zpaf" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+    <section class="card">
+        <header class="card-header">
+            <h2 class="card-title">Select</h2>
+        </header>
+        <div class="card-body ">
+            <div class="accordion" id="modal_zpaf_accordion">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title m-0">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_zpaf_accordion"
+                                href="#modal_zpaf_collapse1One">
+                                Rebates
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="modal_zpaf_collapse1One" class="collapse show" data-parent="#modal_zpaf_accordion">
+                        <div class="card-body">
+                            <button id="zpaf_reb_01_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZR41 - General Rebate</button>
+                            <button id="zpaf_reb_02_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZR42 - Commercial Coop</button>
+                            <button id="zpaf_reb_03_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZR81 - Synergy</button>
+                            <button id="zpaf_reb_04_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZR91 - Logistic Rebate</button>
+                        </div>
+                    </div>
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_zpaf_accordion"
+                                    href="#modal_zpaf_collapse1Two">
+                                    Costs
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="modal_zpaf_collapse1Two" class="collapse" data-parent="#modal_zpaf_accordion">
+                            <div class="card-body">
+                                <button id="zpaf_cos_01_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZC18 - Transport</button>
+                                <button id="zpaf_cos_02_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZC16 - Industrial</button>
+                                <button id="zpaf_cos_03_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">ZC13 - Others</button>
+                                <button id="zpaf_cos_04_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">Royalties (Fresh)</button>
+                                <button id="zpaf_cos_05_btn" type="button"
+                                    class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                    onclick="App.FVPricesNew.showSubsection(this)">Not applicable</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="card-footer" style="margin-top: 20px;">
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button class="btn btn-default modal-dismiss">Close</button>
+                    </div>
+                </div>
+            </footer>
+    </section>
+</div>
+<!-- End Modal 2 -->
+<!-- Modal 3 -->
+<div id="modal_zdpi" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">
+    <section class="card">
+        <header class="card-header">
+            <h2 class="card-title">Select</h2>
+        </header>
+        <div class="card-body ">
+            <div class="accordion" id="modal_zdpi_accordion">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title m-0">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#modal_zdpi_accordion"
+                                href="#modal_zdpi_collapse1Three">
+                                Taxes (Delhaize)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="modal_zdpi_collapse1Three" class="collapse show" data-parent="#modal_zdpi_accordion">
+                        <div class="card-body">
+                            <button id="zdpi_tax_01_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZT22 - Auvibel</button>
+                            <button id="zdpi_tax_02_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZT24 - Bebat</button>
+                            <button id="zdpi_tax_03_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">Copyright</button>
+                            <button id="zdpi_tax_04_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZT20 - Ecotax</button>
+                            <button id="zdpi_tax_05_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZT29 - Excise</button>
+                            <button id="zdpi_tax_06_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">Fairtrade</button>
+                            <button id="zdpi_tax_07_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZT25 - Fost+</button>
+                            <button id="zdpi_tax_08_btn" type="button"
+                                class="mb-1 mt-1 mr-1 btn btn-default btn-lg btn-block"
+                                onclick="App.FVPricesNew.showSubsection(this)">ZT23 - Recupel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="card-footer" style="margin-top: 20px;">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-default modal-dismiss">Close</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+<!-- End Modal 3 -->
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- End - Subpanel - Price structure --><script>App.FVPricesNew.initialize();</script>
