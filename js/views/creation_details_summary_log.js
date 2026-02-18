@@ -56,7 +56,7 @@
          */
         backToChangeRequestMainView: function () {
             //update title
-            $('#titleDet').text('Review details');
+            $('#titleDet').text('Update requests logs and history');
             $('#titleDet').append(App.spanElement);
 
             //switch panels

@@ -79,7 +79,7 @@
                     }
                 }
 
-                if (App.CRUpdateStepSpecific.backOnTabFocusChange) {
+                if (App.backOnTabFocusChange) {
                     //for full view update - Go Back if tab focus changes:
                     App.CRSummaryLog.goBack();
                 }
