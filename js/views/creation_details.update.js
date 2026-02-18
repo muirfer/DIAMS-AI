@@ -149,37 +149,7 @@
          */
         showChangeDetailsForCurrentField: function () {
             $('#titleDet').text(App.fieldObject.label);
-            $("#cComment").val(App.fieldObject.comment)
-            $('#titleDet span').hide();
-
-            //show relevant input field
-            $('[id^="if"]').hide();
-
-            if (App.fieldObject.requestable) {
-                if (("#actionBadge")) {
-                    $("#actionBadge").text("Update Request");
-                    $("#actionBadge").removeClass("badge-info");
-                    $("#actionBadge").addClass("badge-warning");
-                    $("#actionBadge").attr('data-original-title', "Update Request");
-                    $(".old").hide();
-                }
-            } else {
-                if (("#actionBadge")) {
-                    $("#actionBadge").text("Updated");
-                    $("#actionBadge").removeClass("badge-warning");
-                    $("#actionBadge").addClass("badge-info");
-                    $("#actionBadge").attr('data-original-title', "Updated");
-                    $(".old").show();
-                }
-
-                //show relevant input for old value
-                $("#" + App.fieldObject.iType).show();
-                if (App.fieldObject.id === "rf4") {
-                    $('#if4').next('span').show();
-                } else {
-                    $('#if4').next('span').hide();
-                }
-            }
+            $("#cComment").val(App.fieldObject.comment);
 
             //switch panels
             App.CRSummaryLog.switchToChangeView();
@@ -212,7 +182,7 @@
             }
         },
         /**
-         * Undo change on field
+         * Discard update request
          */
         discard: function () {
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
@@ -229,23 +199,11 @@
             //hide in table
             $("#" + App.fieldObject.id).hide()
             App.fieldObject.comment = "";
+            App.fieldObject.reviewDone = false;
 
             //remove change highlight and move back
             $(fieldId).removeClass(App.focusableClasses.join(" "));
             App.CRSummaryLog.goBack();
-
-            //assess confirm button vis
-            App.CRUpdate.showOrHideConfirmButton();
-        },
-        /**
-         * Show or hide confirm button depending on the change list count
-         */
-        showOrHideConfirmButton: function () {
-            if (App.CRSummaryLog.getChangesCount() > App.initialUpdatesCount) {
-                $("#btnConfirm").show()
-            } else {
-                $("#btnConfirm").hide()
-            }
         },
         /**
          * Add new change on log and switch to change details view
@@ -256,9 +214,6 @@
 
             //to change view if not yet in there
             App.CRUpdate.showChangeDetailsForCurrentField();
-
-            //assess confirm button vis
-            App.CRUpdate.showOrHideConfirmButton();
         },
         /**
          * Focus on change
@@ -295,9 +250,6 @@
 
             $('[id^="rf"]').hide();
             App.CRSummaryLog.switchToProductMainInfoView();
-
-            //assess confirm button vis
-            App.CRUpdate.showOrHideConfirmButton();
         },
         /**
         * Confirm on submit
@@ -315,9 +267,6 @@
 
             //display main info and hide change log
             App.CRSummaryLog.switchToProductMainInfoView();
-
-            //hide confirm button
-            App.CRUpdate.showOrHideConfirmButton();
         },
         /** 
          * Attach the button to all input elements starting with "f" and position it
@@ -384,11 +333,13 @@
          * Undo change evaluation
          */
         undoChangeEvaluation: function () {
+            //discard request
             if (App.fieldObject.requestable && App.discardWhenRequestableIsUndone) {
                 App.CRUpdate.discard();
                 return;
             }
 
+            //discard last evaluation
             App.fieldObject.reviewDone = false;
             $("#cComment").removeClass("rejected");
             $("#txtRequired").hide();
@@ -423,9 +374,6 @@
             } else {
                 $("#" + App.fieldObject.id).hide()
             }
-
-            //assess confirm button vis
-            App.CRUpdate.showOrHideConfirmButton();
         },
         /**
          * Reject change
@@ -508,13 +456,10 @@
 
             //ADD organge color to field
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
-            $(fieldId).addClass('c_requested');
+            $(fieldId).addClass('changed');
 
             //show relevant timeline
             App.CRUpdate.showTimelineForCurrentField();
-
-            //assess confirm button vis
-            App.CRUpdate.showOrHideConfirmButton();
         },
         /**
          * Handle error on comment missing
@@ -551,7 +496,7 @@
                     break;
                 case App.Actions.REQUEST:
                     color = "darkorange";
-                    actionText = "Change requested";
+                    actionText = "Change requested ";
                     break;
                 default:
                     color = "gray";

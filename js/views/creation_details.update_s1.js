@@ -9,10 +9,10 @@
     App.discardWhenRequestableIsUndone = true;
     App.backOnTabFocusChange = false;
     App.updateFields = [
-        { id: "rf1", iType: "if1", label: "Country of origin of the product", tab: "overview", comment: "" },
-        { id: "rf2", iType: "if2", label: "Net weight (EA)", tab: "pUoM", comment: "" },
-        { id: "rf3", iType: "if3", label: "Item set", tab: "pLogistics", comment: "" },
-        { id: "rf4", iType: "if4", label: "Dangerous Symbols (GHS)", tab: "pCodes", comment: "" }
+        { id: "rf1", iType: "if1", label: "Country of origin of the product", tab: "overview" },
+        { id: "rf2", iType: "if2", label: "Net weight (EA)", tab: "pUoM" },
+        { id: "rf3", iType: "if3", label: "Item set", tab: "pLogistics" },
+        { id: "rf4", iType: "if4", label: "Dangerous Symbols (GHS)", tab: "pCodes" }
     ]
 
     // Module for handling Update logic in Full view details panel for S1
