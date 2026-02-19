@@ -8,6 +8,7 @@
     App.initialUpdatesCount = 0;
     App.discardWhenRequestableIsUndone = true;
     App.backOnTabFocusChange = true;
+    App.commentText = " by Amanda Green (CE) on 03/07/2024 18:25"
     App.updateFields = [
         { id: "rf2", label: "Net weight (EA)", tab: "pUoM", requestable: true, comment: "", timeline: "time_if2", review: false, reviewDone: false },
         { id: "rf3", label: "Item set", tab: "pLogistics", requestable: true, comment: "", timeline: "time_if3", review: false, reviewDone: false },

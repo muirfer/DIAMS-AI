@@ -1,0 +1,636 @@
+<head>
+	<link rel="stylesheet" href="css/views/fullview_details.css" />
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20" style="position: relative;">
+
+	<section class="body">
+		<header class="page-header">
+			<div class="right-wrapper pull-left" id="nav-breadcrump">
+				<h2>
+					<a id="nav-breadcrump-link" href="#" class="po-header-back-title">
+						<i class="fa fa-chevron-left right-text"></i>&nbsp;<span id="nav-breadcrump-text">Back</span>
+					</a>
+				</h2>
+			</div>
+			<h2 id="view-bag-title">Edit product</h2>
+
+			<a class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#"><i class="fas fa-save" style="margin-top: -10px;" data-toggle="tooltip" data-placement="bottom"
+					title="Save draft"></i></a>
+			<a id="btnConfirm"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#modal_update_confirm"><i class="fas fa-check" style="margin-top: -10px;"></i></a>
+			<a id="btnHistory"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#modal_update_history"><i class="fa fa-history" style="margin-top: -10px;"></i></a>
+
+
+		</header>
+		<!-- start: page -->
+
+		<div class="row">
+			<div class="col-lg-4 col-xl-3 mb-4 mb-xl-0">
+				<section class="card">
+					<!-- Start - Top fixed panel with Main info -->
+					<section class="card card-featured-left card-featured-primary">
+						<div class="card-body" style="padding-left: 5px;">
+							<div class="widget-summary">
+								<div class="widget-summary-col widget-summary-col-icon">
+									<div class="summary-icon bg-default" style="margin-right: 0 !important;">
+										<img src="img/pr_create.png" alt="Create" style="width: 60%; ">
+									</div>
+								</div>
+								<div class="widget-summary-col">
+									<div class="summary" style="min-height: 35px !important;">
+										<h4 class="title" style="margin-top: 30px;"></h4>
+										<div class="info">
+											<strong class="amount">LEFF BLOND RET 0,33L 9+3 TRA</strong>
+											<!-- <span class="text-primary">(14 unread)</span> -->
+										</div>
+									</div>
+									<div class="summary-footer">
+										<a class="text-muted text-uppercase">E020 - Viande fraiche emballee</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- Start - GTINs panel -->
+					<section class="card" style="margin-top: 0">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-6" style="text-align: center;">
+									<div class="h4 font-weight-bold mb-0 mt-3">5410683150438</div>
+									<p class="text-3 text-muted mb-0">GTIN CU</p>
+								</div>
+								<div class="col-md-6" style="text-align: center;">
+									<div class="h4 font-weight-bold mb-0 mt-3">5410681887000</div>
+									<p class="text-3 text-muted mb-0">Input GTIN</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- End - GTINs panel -->
+					<!-- Start - Accordion Main info -->
+					<div class="accordion accordion-sm" id="accordion3">
+						<div class="card card-default">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+										href="#accMainInfo">
+										More information
+									</a>
+								</h4>
+							</div>
+							<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+								<div class="card-body">
+									<section class="card">
+										<div class="card-body">
+											<ul class="simple-bullet-list mb-3">
+												<li class="red">
+													<span class="title">N1 - National</span>
+													<span class="description truncate">Brand type</span>
+												</li>
+												<li class="blue">
+													<span class="title">SOCIETE FERMIERE ROCHEFORT ARDENNES</span>
+													<span class="description truncate">Regular supplier</span>
+												</li>
+												<li class="green">
+													<span class="title">BE - Belgium</span>
+													<span class="description truncate">Country responsible for product
+														creation</span>
+												</li>
+											</ul>
+											<hr class="dotted short">
+											<ul class="simple-bullet-list mb-3">
+												<li class="darkcyan">
+													<span class="title">Resale</span>
+													<span class="description truncate">Sales type</span>
+												</li>
+												<li class="darkcyan">
+													<span class="title">Regular</span>
+													<span class="description truncate">Logistical type</span>
+												</li>
+												<li class="darkcyan">
+													<span class="title">In store production</span>
+													<span class="description truncate">Distribution type</span>
+												</li>
+												<li class="darkcyan">
+													<span class="title">Regular</span>
+													<span class="description truncate">Specifics</span>
+												</li>
+											</ul>
+											<!-- <div class="clearfix">
+												<a id="toggleButton" class="text-uppercase text-muted float-right"
+													href="#">See more</a>
+											</div> -->
+
+											<hr class="dotted short">
+
+											<ul class="simple-card-list mb-3" style="margin-top: 25px;">
+												<li class="info" style="text-align: center;opacity: 0.8;">
+													<h3>09/02/2026</h3>
+													<p class="text-light">Last update of external data (GDSN /
+														Bottlebooks)</p>
+												</li>
+											</ul>
+
+											<ul id="blockStatement" class="simple-card-list mb-3"
+												style="margin-top: 25px;">
+												<li class="warning" style="text-align: center;opacity: 0.8;">
+													<h3>C</h3>
+													<p class="text-light">Correction</p>
+												</li>
+											</ul>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+						<!-- End - Accordion Main info -->
+						<!-- Start - Accordion Change request -->
+						<div id="pChange" class="card card-default">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
+										data-parent="#accordion3" href="#accChangeRequest">
+										Update requests logs and history
+									</a>
+								</h4>
+								<div class="card-actions">
+									<!-- <a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
+										style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a> -->
+								</div>
+							</div>
+							<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
+								<div id="pChangeMain" class="card-body" style="background: ghostwhite;">
+									<!-- Start - Description -->
+									<div class="row">
+										<div class="col-lg-12">
+											<p style="margin-bottom: 0;">Review details and proceed to:
+											</p>
+											<ul>
+												<li>React on udpate requests raised by Category Experts, Caegory
+													Managers or Master Data
+													Specalists</li>
+												<!-- <li><a href="#" id="discardAll" style="color: darkred;font-size: larger;">Discard all</a>: to restore all original values.</li>																							 -->
+											</ul>
+										</div>
+									</div>
+									<!-- End - Description -->
+									<!-- Start - Change log -->
+									<div class="scrollable" data-plugin-scrollable
+										style="height: 400px;margin-top: 25px;">
+										<div class="scrollable-content">
+											<table id="tLog"
+												class="table table-hover table-responsive-md table-sm mb-0">
+												<thead>
+													<tr>
+														<th colspan="3" style="text-align: center;">Update requests log
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr id="rf2"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Net weight (EA)</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-plus"
+																style="color: darkgray;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="New"></i>
+														</td>
+													</tr>
+													<tr id="rf3"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Item set</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-plus"
+																style="color: darkgray;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="New"></i>
+														</td>
+													</tr>
+													<tr id="rf4"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Dangerous symbos (GHS)</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-plus"
+																style="color: darkgray;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="New"></i>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<!-- End - Change log -->
+								</div>
+								<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
+									<div class="row">
+										<div class="col-lg-2" style="text-align: left;">
+											<span id="actionBadge" class="badge badge-info"
+												style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
+												data-placement="right" title="Raise a correction request">Update
+												request</span>
+										</div>
+										<div class="col-lg-10">
+											<p style="text-align: right;">
+												<a href="#"
+													onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()"
+													class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
+														style="color: darkgray;font-size: x-large;margin-top: 12px;"
+														data-toggle="tooltip" data-placement="left"
+														title="Back to change request summary"></i></a>
+											</p>
+										</div>
+									</div>
+									<!-- Start - Comments -->
+									<div id="secTimeline">
+										<div class="timeline timeline-simple mt-3 mb-3">
+											<div class="tm-body" style="padding: 0;">
+												<ol class="tm-items tm-main">
+													<li class="time_if2" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
+																Green
+																(CE) on 03/07/2024 18:25</p>
+															<p>
+																Too much net weight. Please lower the number closer to
+																the gross weight.
+															</p>
+														</div>
+													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
+																Green
+																(CE) on 03/07/2024 18:28</p>
+															<p>
+																New item set due to change on product creation date.
+															</p>
+														</div>
+													</li>
+													<li class="time_if4" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
+																Green
+																(CE) on 03/07/2024 18:30</p>
+															<p>
+																Missing some symbols
+															</p>
+														</div>
+													</li>
+												</ol>
+											</div>
+										</div>
+									</div>
+									<div class="row rComment">
+										<div class="col-lg-6">
+											<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+										</div>
+										<div class="col-lg-6" style="text-align: right;">
+											<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
+												Required</p>
+										</div>
+									</div>
+									<div class="row rComment">
+										<div class="col-lg-12">
+											<section class="simple-compose-box mb-3">
+												<form method="get" action="/">
+													<textarea id="cComment" name="message-text"
+														data-plugin-textarea-autosize
+														placeholder="Additional information..." data-plugin-maxlength
+														maxlength="100" rows="2"></textarea>
+												</form>
+											</section>
+										</div>
+									</div>
+									<!-- End - Comments -->
+									<!-- Start - Actions -->
+									<div class="row">
+										<div class="col-lg-12" style="text-align: right;">
+											<button id="btnUndo" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
+												style="border-color: darkred;"
+												onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
+											<button id="btnReject" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+												onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
+											<!-- <button id="btnApprove" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+												onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button>
+											<button id="btnRequest" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+												onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
+												update</button> -->
+										</div>
+									</div>
+									<!-- End - Actions -->
+								</div>
+							</div>
+						</div>
+						<!-- End - Accordion Change request -->
+					</div>
+				</section>
+			</div>
+			<div class="col-lg-9">
+				<!-- Start - Reactivation fields -->
+				<div class="form-group row"
+					style="padding: 15px;background: floralwhite;margin-left: 1px;margin-right:1px;">
+					<label class="col-sm-2 control-label text-sm-right pt-2">Introduction week: </label>
+					<div class="col-sm-2">
+						<select id="bt" class="form-control mb-3 cust-select text-center">
+							<option class="optionToChange" value=""></option>
+							<option value="W48 - 24/11/2022" selected>W56/2024</option>
+							<option value="W48 - 24/11/2022">W57/2024</option>
+							<option value="W48 - 24/11/2022">W58/2024</option>
+							<option value="W48 - 24/11/2022">W59/2024</option>
+							<option value="W48 - 24/11/2022">W60/2024</option>
+							<option value="W48 - 24/11/2022">W61/2024</option>
+							<option value="W48 - 24/11/2022">W62/2024</option>
+							<option value="W48 - 24/11/2022">W63/2024</option>
+							<option value="W48 - 24/11/2022">W64/2024</option>
+						</select>
+					</div>
+					<div class="col-lg-2 offset-lg-1">
+						<div class="checkbox-custom" style="margin-top: 8px;">
+							<input type="checkbox" id="checkboxExample2">
+							<label for="checkboxExample2">Linked to a promo week</label>
+						</div>
+					</div>
+					<label class="col-sm-2 control-label text-sm-right pt-2">Campaign week: </label>
+					<div class="col-sm-2">
+						<select id="bt" class="form-control mb-3 cust-select text-center">
+							<option class="optionToChange" value=""></option>
+							<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
+							<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
+							<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
+							<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
+							<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
+							<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
+							<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
+							<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
+						</select>
+					</div>
+				</div>
+				<!-- End -  Reactivation fields -->
+				<!-- Start - Breadcrumbs navigation -->
+				<div class="row">
+					<div class="col-lg-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink" href="#">Basic
+										Data</a></li>
+								<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink"
+										href="#">Descriptions</a></li>
+								<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink" href="#">Customer
+										decision tree (CDT)</a></li>
+								<li class="breadcrumb-item" style="display: none;"><a id="n4"
+										class="scrollToSectionLink" href="#"></a></li>
+								<li class="breadcrumb-item" style="display: none;"><a id="n5"
+										class="scrollToSectionLink" href="#"></a></li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!-- End - Breadcrumbs navigation -->
+				<div class="tabs tabs-vertical tabs-right tabs-tertiary">
+					<div class="tab-content">
+						<!-- Start - Panel - Basic Data -->
+						<div id="overview"></div>
+						<div id="pUoM"></div>
+						<div id="pTaxes"></div>
+						<div id="pCodes"></div>
+						<div id="pStore"></div>
+						<div id="pB2C"></div>
+						<div id="pLogistics"></div>
+						<div id="pPurchasing"></div>
+						<div id="pLinks"></div>
+						<div id="pAssortment"></div>
+						<div id="pPricesNew"></div>
+						<div id="pWine"></div>
+						<div id="pFostPlus"></div>
+					</div>
+					<ul class="nav nav-tabs col-lg-2">
+						<li class="nav-item active">
+							<a class="nav-link" href="#overview" data-toggle="tab"><i
+									class="fas fa-info"></i>&nbsp;Basic Data</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pUoM" data-toggle="tab"><i class="fas fa-cube"></i>&nbsp;Units of
+								Measure</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pPurchasing" data-toggle="tab"><i
+									class="fas fa-shopping-cart"></i>&nbsp;Purchasing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pLogistics" data-toggle="tab"><i
+									class="fas fa-truck"></i>&nbsp;Logistics</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pCodes" data-toggle="tab"><i
+									class="fas fa-laptop-code"></i>&nbsp;Codes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pAssortment" data-toggle="tab"><i
+									class="fas fa-box"></i>&nbsp;Assortments</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pPricesNew" data-toggle="tab"><i
+									class="fas fa-money-bill-alt"></i>&nbsp;Prices</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pTaxes" data-toggle="tab"><i
+									class="fas fa-file-invoice-dollar"></i>&nbsp;Taxes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pLinks" data-toggle="tab"><i
+									class="fas fa-link"></i>&nbsp;Links</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pB2C" data-toggle="tab"><i
+									class="fas fa-briefcase"></i>&nbsp;B2C</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pStore" data-toggle="tab"><i
+									class="fas fa-store"></i>&nbsp;Store</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pWine" data-toggle="tab">
+								<i class="fas fa-wine-glass"></i>&nbsp;Wine Characteristics
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pFostPlus" data-toggle="tab"><i
+									class="fas fa-cube"></i>&nbsp;Fost Plus</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Modal Gtins -->
+		<div id="modalInfoReuse" class="modal-block modal-block-info mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Information</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-info-circle"></i>
+						</div>
+						<div class="modal-text">
+							<h4>Re-used GTIN</h4>
+							<p>Refers to the initial GTIN input. As the value provided belongs to a GTIN already in use,
+								a fake GTIN was temporary assigned to the current unit of measure.</p>
+							<p style="margin-top: 20px;margin-bottom: 0;">At the end of the process the re-used GTIN
+								value will replace the assigned fake GTIN.</p>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-info modal-dismiss">OK</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal Gtins -->
+		<!-- Start Modal - Full view - confirm update -->
+		<div id="modal_update_confirm" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Confirm</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-question-circle"></i>
+						</div>
+						<div class="modal-text">
+							<h4>Submit to Delhaize</h4>
+							<p>You reviewed and updated the product information as part of the reactivation process.
+								Confirm to continue</p>
+							<div class="row">
+								<div class="col-lg-12">
+									<label class="col-form-label" for="formGroupExampleInput">Additional
+										information:</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<textarea id="fComment" name="message-text" data-plugin-maxlength maxlength="200"
+										rows="4" style="width: 100%;"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnConfirmNewCR" class="btn btn-success modal-dismiss"
+								onclick="App.CRUpdateStepSpecific.showBERStatusError()">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - confirm update -->
+		<!-- Start Modal - Full view - history -->
+		<div id="modal_update_history" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Product update history</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<p>Under construction</p>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - history -->
+
+		<script src="js/views/view.common.js"></script>
+		<script src="js/views/fullview_details_panel_assortment.js"></script>
+		<script src="js/views/fullview_details_panel_b2c.js"></script>
+		<script src="js/views/fullview_details_panel_prices.js"></script>
+		<script src="js/views/fullview_details_panel_prices_new.js"></script>
+		<script src="js/views/fullview_details_panel_purchasing.js"></script>
+		<script src="js/views/fullview_details_panel_fostplus.js"></script>
+		<script src="js/views/creation_details.js"></script>
+		<script src="js/views/fullview_details_notifications.js"></script>
+		<script src="js/views/creation_details_summary_log.js"></script>
+		<script src="js/views/view.loader.js"></script>
+		<script src="js/views/creation_details.update_s4.js"></script>
+		<script src="js/views/creation_details.update.js"></script>
+		<script>
+			jQuery(document).ready(function ($) {
+				var views = [
+					{ selector: '#overview', url: 'views/pim_creation_details_overview.html' },
+					{ selector: '#pUoM', url: 'views/pim_creation_details_pUoM.html' },
+					{ selector: '#pPurchasing', url: 'views/pim_creation_details_pPurchasing.html' },
+					{ selector: '#pLogistics', url: 'views/pim_creation_details_pLogistics.html' },
+					{ selector: '#pCodes', url: 'views/pim_creation_details_pCodes.html' },
+					{ selector: '#pAssortment', url: 'views/pim_creation_details_pAssortment.html' },
+					{ selector: '#pPricesNew', url: 'views/pim_creation_details_pPricesNew.html' },
+					{ selector: '#pTaxes', url: 'views/pim_creation_details_pTaxes.html' },
+					{ selector: '#pLinks', url: 'views/pim_creation_details_pLinks.html' },
+					{ selector: '#pB2C', url: 'views/pim_creation_details_pB2C.html' },
+					{ selector: '#pStore', url: 'views/pim_creation_details_pStore.html' },
+					{ selector: '#pWine', url: 'views/pim_creation_details_pWine.html' },
+					{ selector: '#pFostPlus', url: 'views/pim_creation_details_pFostPlus.html' }
+				];
+
+				App.ViewLoader.loadViews(views, function () {
+					App.ViewCommon.initialize({
+						exclude: ['initWizard']
+					});
+
+					// App.FVAssortment, App.FVPricesNew, App.FVFostPlus are initialized in their respective views
+					// App.FVPrices.initialize(); // Kept if needed, otherwise rely on FVPricesNew
+
+					App.CRSummaryLog.initialize();
+					App.CRDetails.initialize();
+					App.CRUpdate.initialize();
+				});
+			});
+		</script>
+</body>

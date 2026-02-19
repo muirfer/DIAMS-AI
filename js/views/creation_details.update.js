@@ -9,7 +9,8 @@
     App.origDS = ["01", "04", "06"];
     App.focusableClasses = ["changed", "approved", "rejected", "requestable", "c_requested"];
     App.approvalLevels = [
-        { id: 1, inputStyle: "approved", checkStyle: "success", color: "darkgreen", icon: "fas fa-check", tooltip: "Approved" }
+        { id: 1, inputStyle: "approvedL1", checkStyle: "success", color: "darkgreen", icon: "fas fa-check", tooltip: "Updated" },
+        { id: 2, inputStyle: "approvedL2", checkStyle: "primary", color: "darkblue", icon: "fas fa-check-double", tooltip: "Accepted" }
     ];
     App.btnGoConfig = [
         { id: "f5", top: "127px", right: "320px", width: "inherit", height: "inherit" },
@@ -32,16 +33,18 @@
             //store span element
             App.spanElement = $('#titleDet span');
 
-            //initialize events
+            //store all fields original values
             this.storeAllFieldsOriginalValues();
-            this.initializeAllFieldsFocusEvent();
-            this.initializeAllFieldsChangeEvent();
 
             //common functionality
             this.initializeCommonFeatures();
 
             //init update initial status for current scenario
             App.CRUpdateStepSpecific.initialize();
+
+            //initialize focus and change events
+            this.initializeAllFieldsFocusEvent();
+            this.initializeAllFieldsChangeEvent();
         },
 
         /**
@@ -172,13 +175,19 @@
             let fieldId = $(element).attr('id')
 
             if (currentValue === $(element).data('originalValue')) {
-                $(element).removeClass('changed');
-                App.CRUpdate.discard();
-                App.CRSummaryLog.goBack();
+                //back to the value requested to be updated
+                this.undoChangeEvaluation();
 
-            } else if (!$(element).hasClass('changed')) {
-                $(element).addClass('changed');
-                App.CRUpdate.addNewChange();
+            } else if ($(element).hasClass('changed')) {
+                //new value but different from the one requested to be updated
+                this.approveChange(1);
+                
+            } else if ($(element).hasClass('rejected')) {
+                //new value but different from the one requested to be updated
+                // overrides a previously rejected evaluation
+                this.undoChangeEvaluation();
+                this.approveChange(1);
+                
             }
         },
         /**
@@ -346,7 +355,7 @@
             App.CRUpdateStepSpecific.showOrHideActionButtons()
 
             //remove last comment done
-            $('.tm-items li.' + App.fieldObject.timeline + ':last').hide();
+            $('.tm-items li.' + App.fieldObject.timeline + ':last').remove();
 
             //get field object
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
@@ -384,6 +393,8 @@
                 return;
             }
 
+            App.fieldObject.reviewDone = true;
+
             //review done and rejected correctly            
             App.CRUpdateStepSpecific.doOnReject();
             App.CRUpdate.addCommentOnApproveOrReject(App.Actions.REJECT);
@@ -412,10 +423,6 @@
          * Approve change
          */
         approveChange: function (appLevel) {
-            App.fieldObject.reviewDone = true;
-            App.CRUpdate.addCommentOnApproveOrReject(App.Actions.APPROVE);
-            App.CRUpdateStepSpecific.showOrHideActionButtons();
-
             //get field object
             let level = App.approvalLevels.find(item => item.id === appLevel);
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
@@ -428,6 +435,10 @@
                 $(fieldId).removeClass('changed approvedL1');
                 $(fieldId).addClass(level.inputStyle);
             }
+
+            App.fieldObject.reviewDone = true;
+            App.CRUpdate.addCommentOnApproveOrReject(App.Actions.APPROVE);
+            App.CRUpdateStepSpecific.showOrHideActionButtons();
 
             //update in table
             let tableIcon = $("#" + App.fieldObject.id).find('i:first');
@@ -488,11 +499,11 @@
             switch (action) {
                 case App.Actions.APPROVE:
                     color = "darkgreen";
-                    actionText = "Approved";
+                    actionText = "Approved ";
                     break;
                 case App.Actions.REJECT:
                     color = "darkred";
-                    actionText = "Rejected";
+                    actionText = "Rejected ";
                     break;
                 case App.Actions.REQUEST:
                     color = "darkorange";
@@ -519,6 +530,7 @@
             if (!cObject) {
                 cObject = $('.' + App.fieldObject.timeline).first().clone();
                 cObject.find('p:first').text(App.commentText);
+                cObject.find('p:first span').remove()
                 cObject.find('p:first').prepend('<span style="color:' + color + ';font-size:larger">' + actionText + '</span>');
                 // Append the cloned `<ol>` to the last `<li>`
                 $('#secTimeline .tm-items').append(cObject);
