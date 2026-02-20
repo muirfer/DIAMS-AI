@@ -18,6 +18,7 @@
     ];
     App.Actions = {
         APPROVE: "approve",
+        ACCEPT: "accept",
         REJECT: "reject",
         REQUEST: "request"
     };
@@ -181,13 +182,13 @@
             } else if ($(element).hasClass('changed')) {
                 //new value but different from the one requested to be updated
                 this.approveChange(1);
-                
+
             } else if ($(element).hasClass('rejected')) {
                 //new value but different from the one requested to be updated
                 // overrides a previously rejected evaluation
                 this.undoChangeEvaluation();
                 this.approveChange(1);
-                
+
             }
         },
         /**
@@ -365,10 +366,10 @@
                 $(fieldId).parent().removeClass();
                 $(fieldId).parent().addClass('checkbox-custom checkbox-warning');
             } else {
-                $(fieldId).removeClass('approvedL1 rejected c_requested');
+                $(fieldId).removeClass('approvedL1 approvedL2 rejected c_requested');
 
                 if (App.fieldObject.review) {
-                    $(fieldId).addClass('changed');
+                    $(fieldId).addClass(App.fieldObject.initStatus ? App.fieldObject.initStatus : "changed");
                 }
             }
 
@@ -376,10 +377,25 @@
             let tableIcon = $("#" + App.fieldObject.id).find('i:first');
 
             if (App.fieldObject.review) {
+                let icon = 'fas fa-plus';
+                let color = 'darkgray';
+                let title = 'New';
+                let level = App.approvalLevels.find(item => item.inputStyle === App.fieldObject.initStatus);
+
+                if (level) {
+                    icon = level.icon;
+                    color = level.color;
+                    title = level.title;
+                } else if (App.fieldObject.initStatus === "rejected") {
+                    icon = 'fas fa-ban';
+                    color = 'darkred';
+                    title = 'Rejected';
+                }
+
                 tableIcon.removeClass();
-                tableIcon.addClass('fas fa-plus');
-                tableIcon.css("color", 'darkgray');
-                tableIcon.attr('data-original-title', 'New');
+                tableIcon.addClass(icon);
+                tableIcon.css("color", color);
+                tableIcon.attr('data-original-title', title);
             } else {
                 $("#" + App.fieldObject.id).hide()
             }
@@ -432,12 +448,12 @@
                 $(fieldId).parent().removeClass();
                 $(fieldId).parent().addClass('checkbox-custom checkbox-' + level.checkStyle);
             } else {
-                $(fieldId).removeClass('changed approvedL1');
+                $(fieldId).removeClass('changed approvedL1 rejected');
                 $(fieldId).addClass(level.inputStyle);
             }
 
             App.fieldObject.reviewDone = true;
-            App.CRUpdate.addCommentOnApproveOrReject(App.Actions.APPROVE);
+            App.CRUpdate.addCommentOnApproveOrReject(appLevel === 1 ? App.Actions.APPROVE : App.Actions.ACCEPT);
             App.CRUpdateStepSpecific.showOrHideActionButtons();
 
             //update in table
@@ -499,7 +515,11 @@
             switch (action) {
                 case App.Actions.APPROVE:
                     color = "darkgreen";
-                    actionText = "Approved ";
+                    actionText = "Updated ";
+                    break;
+                case App.Actions.ACCEPT:
+                    color = "darkblue";
+                    actionText = "Accepted ";
                     break;
                 case App.Actions.REJECT:
                     color = "darkred";

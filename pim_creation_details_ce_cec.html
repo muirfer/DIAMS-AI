@@ -138,9 +138,9 @@
 
 											<ul id="blockStatement" class="simple-card-list mb-3"
 												style="margin-top: 25px;">
-												<li class="info" style="text-align: center;opacity: 0.8;">
-													<h3>R</h3>
-													<p class="text-light">Category Expert Review</p>
+												<li class="warning" style="text-align: center;opacity: 0.8;">
+													<h3>C</h3>
+													<p class="text-light">Correction</p>
 												</li>
 											</ul>
 										</div>
@@ -150,7 +150,7 @@
 						</div>
 						<!-- End - Accordion Main info -->
 						<!-- Start - Accordion Change request -->
-						<div id="pChange" class="card card-default" style="display:none;">
+						<div id="pChange" class="card card-default">
 							<div class="card-header">
 								<h4 class="card-title m-0">
 									<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
@@ -175,7 +175,6 @@
 												<li>Accept or reject actions done by suppliers</li>
 												<li>React on udpate requests raised by Category Managers or Master Data
 													Specalists</li>
-												<!-- <li><a href="#" id="discardAll" style="color: darkred;font-size: larger;">Discard all</a>: to restore all original values.</li>																							 -->
 											</ul>
 										</div>
 									</div>
@@ -193,7 +192,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr id="rf2" style="display: none;"
+													<tr id="rf2"
 														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
 														<td style="text-align: center;width: 10%;">
 															<span class="badge badge-warning" style="font-size: larger;"
@@ -202,13 +201,13 @@
 														</td>
 														<td style="width: 75%;">Net weight (EA)</td>
 														<td style="text-align: right;width: 15%;">
-															<i class="fas fa-plus"
-																style="color: darkgray;font-size: larger;"
+															<i class="fas fa-check"
+																style="color: darkgreen;font-size: larger;"
 																data-toggle="tooltip" data-placement="bottom"
-																title="New"></i>
+																title="Updated"></i>
 														</td>
 													</tr>
-													<tr id="rf3" style="display: none;"
+													<tr id="rf3"
 														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
 														<td style="text-align: center;width: 10%;">
 															<span class="badge badge-warning" style="font-size: larger;"
@@ -217,13 +216,13 @@
 														</td>
 														<td style="width: 75%;">Item set</td>
 														<td style="text-align: right;width: 15%;">
-															<i class="fas fa-plus"
-																style="color: darkgray;font-size: larger;"
+															<i class="fas fa-check"
+																style="color: darkgreen;font-size: larger;"
 																data-toggle="tooltip" data-placement="bottom"
-																title="New"></i>
+																title="Updated"></i>
 														</td>
 													</tr>
-													<tr id="rf4" style="display: none;"
+													<tr id="rf4"
 														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
 														<td style="text-align: center;width: 10%;">
 															<span class="badge badge-warning" style="font-size: larger;"
@@ -232,10 +231,10 @@
 														</td>
 														<td style="width: 75%;">Dangerous symbos (GHS)</td>
 														<td style="text-align: right;width: 15%;">
-															<i class="fas fa-plus"
-																style="color: darkgray;font-size: larger;"
+															<i class="fas fa-ban"
+																style="color: darkred;font-size: larger;"
 																data-toggle="tooltip" data-placement="bottom"
-																title="New"></i>
+																title="Rejected"></i>
 														</td>
 													</tr>
 												</tbody>
@@ -264,23 +263,38 @@
 										</div>
 									</div>
 									<!-- Start - Comments -->
-									<div id="secTimeline" style="display: none;">
+									<div id="secTimeline">
 										<div class="timeline timeline-simple mt-3 mb-3">
 											<div class="tm-body" style="padding: 0;">
 												<ol class="tm-items tm-main">
 													<li class="time_if2" style="display: none;">
 														<div class="tm-box">
-															<p class="text-muted mb-0"><span>Raised </span>by Amanda
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
 																Green
 																(CE) on 03/07/2024 18:25</p>
 															<p>
-																Updated based on new introduction week selected
+																Too much net weight. Please lower the number closer to
+																the gross weight.
+															</p>
+														</div>
+													</li>
+													<li class="time_if2" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkgreen">Updated </span> by John
+																Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
 															</p>
 														</div>
 													</li>
 													<li class="time_if3" style="display: none;">
 														<div class="tm-box">
-															<p class="text-muted mb-0"><span>Raised </span>by Amanda
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
 																Green
 																(CE) on 03/07/2024 18:28</p>
 															<p>
@@ -288,13 +302,36 @@
 															</p>
 														</div>
 													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkgreen">Updated </span> by John
+																Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
+															</p>
+														</div>
+													</li>
 													<li class="time_if4" style="display: none;">
 														<div class="tm-box">
-															<p class="text-muted mb-0"><span>Raised </span>by Amanda
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
 																Green
 																(CE) on 03/07/2024 18:30</p>
 															<p>
 																Missing some symbols
+															</p>
+														</div>
+													</li>
+													<li class="time_if4" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkred">Rejected </span> by John Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
+																All symbols are present. There is a confusion with the
+																symbols. Please check on the user manual.
 															</p>
 														</div>
 													</li>
@@ -331,16 +368,16 @@
 												class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
 												style="border-color: darkred;"
 												onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
-											<!-- <button id="btnReject" type="button"
+											<button id="btnReject" type="button"
 												class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
 												onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
 											<button id="btnApprove" type="button"
 												class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
-												onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button> -->
-											<button id="btnRequest" type="button"
+												onclick="javascript:App.CRUpdate.approveChange(2)">Approve</button>
+											<!-- <button id="btnRequest" type="button"
 												class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
 												onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
-												update</button>
+												update</button> -->
 										</div>
 									</div>
 									<!-- End - Actions -->
@@ -593,7 +630,7 @@
 		<script src="js/views/fullview_details_notifications.js"></script>
 		<script src="js/views/creation_details_summary_log.js"></script>
 		<script src="js/views/view.loader.js"></script>
-		<script src="js/views/creation_details.update_s3.js"></script>
+		<script src="js/views/creation_details.update_s5.js"></script>
 		<script src="js/views/creation_details.update.js"></script>
 		<script>
 			jQuery(document).ready(function ($) {

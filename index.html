@@ -395,15 +395,36 @@
                                                         href="javascript:navigateTo('pim_creation_details_ce_cer.html')"
                                                         data-toggle="tooltip" data-placement="bottom"
                                                         title="User can edit Product number used by supplier and raise correction requests for Net weight (EA), Dangerous symbols and Item set.">
-                                                        02 - CE - CER
+                                                        02 - CE - Raise corrections
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a class="nav-link"
                                                         href="javascript:navigateTo('pim_creation_details_supplier_vc.html')"
                                                         data-toggle="tooltip" data-placement="bottom"
-                                                        title="User reacts to update requests on 02 on Net weight (accept and update), Dangerous symbols (reject) and Item set (reject first, then accept and update). ">
-                                                        03 - Supplier - VC
+                                                        title="User reacts to update requests on 02 on Net weight (accept and update), Dangerous symbols (reject) and Item set (reject first, then accept and update). 
+                                                        Try other scenario: 1 - Reject and then update field value to a value different than the original (Update action overrides the rejection). 
+                                                        2 - Update field value (Update action is identified) and then revert back to original value (Update action is withdrawn, no correction identified)">
+                                                        03 - Supplier - Process corrections
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_creation_details_ce_cec.html')"
+                                                        data-toggle="tooltip" data-placement="bottom"
+                                                        title="User approves corrections done on 03 for fields Net weight and Item set. But rejects the challenge on Dangerous symbols.">
+                                                        04 - CE - Review corrections only
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link"
+                                                        href="javascript:navigateTo('pim_creation_details_cm_cmr.html')"
+                                                        data-toggle="tooltip" data-placement="bottom"
+                                                        title="Applies also to MDS. From 04, task goes back to Supplier (to fix) then to CE (that now approves all) and reaches the CM. 
+                                                                Net weight (EA): check on activity log and accepts the conclusion (does nothing)
+                                                                Item set: check on activity log and rejects the conclusion.
+                                                                Raise a new correction request on Product number used by Supplier (to CE).">
+                                                        05 - CM - Check and raise
                                                     </a>
                                                 </li>
                                             </ul>
