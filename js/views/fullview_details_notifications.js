@@ -50,6 +50,31 @@ Theme Version: 	3.0.0
         });
     });
 
+    $('#position-3c').click(function () {
+        var notice = new PNotify({
+            title: 'Warning',
+            text: 'Nutri-score information not available',
+            addclass: 'stack-bottomright',
+            stack: stack_bottomright
+        });
+
+        var notice3 = new PNotify({
+            title: 'Information',
+            text: 'Product category updated given a new similar item',
+            type: 'info',
+            addclass: 'stack-bottomright',
+            stack: stack_bottomright
+        });
+
+        var notice4 = new PNotify({
+            title: 'Required fields',
+            text: '<ul><li><a href="#" class="nLink" onclick="javascript:App.FVDetails.focusOnRequired(2,\'inputPtdIPGerman\')">IP - Product ticket description (German)</a></li><li><a href="#" class="nLink" onclick="javascript:focusOnRequired(1,\'inputPtdEADutch\')">EA - Product shelf description (Dutch)</a></li><li><a href="#" class="nLink">Purchase price</a></li><li><a href="#" class="nLink">Purchase price</a></li><li><a href="#" class="nLink">Traceability method</a></li><li><a href="#" class="nLink">Communication unit</a></li><li><a href="#" class="nLink">Link with type Mini Pallet</a></li><li><a href="#" class="nLink">Reordering multiple quantity</a></li><li><a href="#" class="nLink">Introduction discount validity period</a></li></ul>',
+            type: 'error',
+            addclass: 'stack-bottomright',
+            stack: stack_bottomright
+        });
+    });
+
     $('#btnBerError').click(function () {
         var notice4 = new PNotify({
             title: 'Check the errors below and unblock the current situation by retrying, skipping or applying any other changes if required',

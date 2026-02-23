@@ -18,12 +18,12 @@
 			<a class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
 				href="#"><i class="fas fa-save" style="margin-top: -10px;" data-toggle="tooltip" data-placement="bottom"
 					title="Save draft"></i></a>
-			<!-- <a id="btnConfirm"
+			<a id="btnConfirm"
 				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
 				href="#modal_update_confirm"><i class="fas fa-check" style="margin-top: -10px;"></i></a>
 			<a id="btnHistory"
 				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
-				href="#modal_update_history"><i class="fa fa-history" style="margin-top: -10px;"></i></a> -->
+				href="#modal_update_history"><i class="fa fa-history" style="margin-top: -10px;"></i></a>
 
 
 		</header>
@@ -129,18 +129,17 @@
 											<hr class="dotted short">
 
 											<ul class="simple-card-list mb-3" style="margin-top: 25px;">
-												<li class="info" style="text-align: center;opacity: 0.8;">
-													<h3>09/02/2026</h3>
-													<p class="text-light">Last update of external data (GDSN /
-														Bottlebooks)</p>
+												<li class="warning" style="text-align: center;opacity: 0.8;">
+													<h3>Manual</h3>
+													<p class="text-light">No GDSN synchronization required</p>
 												</li>
 											</ul>
 
-											<ul id="blockStatement" class="simple-card-list mb-3"
+											<ul id="berStatement" class="simple-card-list mb-3"
 												style="margin-top: 25px;">
 												<li class="danger" style="text-align: center;opacity: 0.8;">
-													<h3>GDSN errors</h3>
-													<p class="text-light">Fix in GS1 before you continue</p>
+													<h3>BER</h3>
+													<p class="text-light">Business Error</p>
 												</li>
 											</ul>
 										</div>
@@ -154,8 +153,8 @@
 							<div class="card-header">
 								<h4 class="card-title m-0">
 									<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
-										data-parent="#accordion3" href="#accChangeRequest" style="color:darkred;">
-										GDSN errors
+										data-parent="#accordion3" href="#accChangeRequest">
+										Update requests logs and history
 									</a>
 								</h4>
 								<div class="card-actions">
@@ -165,83 +164,398 @@
 							</div>
 							<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
 								<div id="pChangeMain" class="card-body" style="background: ghostwhite;">
+									<!-- Start - Description -->
+									<div class="row">
+										<div class="col-lg-12">
+											<p style="margin-bottom: 0;">Review details and proceed to:
+											</p>
+											<ul>
+												<li>Raise update requests to suppliers and Category Experts</li>
+												<li>Accept or reject actions done by suppliers and
+													Category Experts</li>
+												<!-- <li>React on udpate requests raised by Category Managers or Master Data
+													Specalists</li> -->
+											</ul>
+										</div>
+									</div>
+									<!-- End - Description -->
 									<!-- Start - Change log -->
-									<div class="scrollable" data-plugin-scrollable style="height: 600px;">
-										<div class="scrollable-content" style="padding-right:0px">
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Basic data"><i class="fas fa-info"></i></button>
-												Missing Country of origin of the product
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Units of measure"><i class="fas fa-cube"></i></button>
-												CV: Net weight cannot be greater than Gross weight.
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Logistics"><i class="fas fa-truck"></i></button>
-												Missing Item set
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Store"><i class="fas fa-store"></i></button>
-												Missing Store orderable days
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Basic data"><i class="fas fa-info"></i></button>
-												Missing Product short description in English
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Logistics"><i class="fas fa-truck"></i></button>
-												Presence of BBD cannot be selected in combination with No Date
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Logistics"><i class="fas fa-truck"></i></button>
-												Presence of Packaging date cannot be selected in combination with No
-												Date
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Logistics"><i class="fas fa-truck"></i></button>
-												Missing Temperature (Min)
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Logistics"><i class="fas fa-truck"></i></button>
-												Missing Temperature (Max)
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Basic data"><i class="fas fa-info"></i></button>
-												More blocking errors from GS1 to show scrolling.
-											</div>
-											<div class="alert alert-danger">
-												<button type="button" class="close" data-dismiss="alert"
-													aria-hidden="true" data-toggle="tooltip" data-placement="right"
-													title="Basic data"><i class="fas fa-info"></i></button>
-												More blocking errors from GS1 to show scrolling.
-											</div>
+									<div class="scrollable" data-plugin-scrollable
+										style="height: 400px;margin-top: 25px;">
+										<div class="scrollable-content">
+											<table id="tLog"
+												class="table table-hover table-responsive-md table-sm mb-0">
+												<thead>
+													<tr>
+														<th colspan="3" style="text-align: center;">Update requests log
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr id="rf2"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Net weight (EA)</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-check-double"
+																style="color: darkblue;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Accepted"></i>
+														</td>
+													</tr>
+													<tr id="rf3"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Item set</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-check-double"
+																style="color: darkblue;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Accepted"></i>
+														</td>
+													</tr>
+													<tr id="rf4"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Dangerous symbos (GHS)</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-check-double"
+																style="color: darkblue;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Accepted"></i>
+														</td>
+													</tr>
+													<tr id="rf10" style="display: none;"
+														onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+														<td style="text-align: center;width: 10%;">
+															<span class="badge badge-warning" style="font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="Update Request">UR</span>
+														</td>
+														<td style="width: 75%;">Product number used by Supplier</td>
+														<td style="text-align: right;width: 15%;">
+															<i class="fas fa-plus"
+																style="color: darkgray;font-size: larger;"
+																data-toggle="tooltip" data-placement="bottom"
+																title="New"></i>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 										</div>
 									</div>
 									<!-- End - Change log -->
 								</div>
+								<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
+									<div class="row">
+										<div class="col-lg-2" style="text-align: left;">
+											<span id="actionBadge" class="badge badge-info"
+												style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
+												data-placement="right" title="Raise a correction request">Update
+												request</span>
+										</div>
+										<div class="col-lg-10">
+											<p style="text-align: right;">
+												<a href="#"
+													onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()"
+													class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
+														style="color: darkgray;font-size: x-large;margin-top: 12px;"
+														data-toggle="tooltip" data-placement="left"
+														title="Back to change request summary"></i></a>
+											</p>
+										</div>
+									</div>
+									<!-- Start - Comments -->
+									<div id="secTimeline">
+										<div class="timeline timeline-simple mt-3 mb-3">
+											<div class="tm-body" style="padding: 0;">
+												<ol class="tm-items tm-main">
+													<li class="time_if2" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
+																Green
+																(CE) on 03/07/2024 18:25</p>
+															<p>
+																Too much net weight. Please lower the number closer to
+																the gross weight.
+															</p>
+														</div>
+													</li>
+													<li class="time_if2" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkgreen">Updated </span> by John
+																Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
+															</p>
+														</div>
+													</li>
+													<li class="time_if2" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkblue">Accepted </span>by
+																Amanda
+																Green
+																(CE) on 10/07/2024 09:31</p>
+															<p>
+															</p>
+														</div>
+													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
+																Green
+																(CE) on 03/07/2024 18:28</p>
+															<p>
+																New item set due to change on product creation date.
+															</p>
+														</div>
+													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkgreen">Updated </span>John Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
+															</p>
+														</div>
+													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkred">Rejected </span>by
+																Amanda
+																Green
+																(CE) on 08/07/2024 15:58</p>
+															<p>
+																Updated value is still not correct. Check for others.
+															</p>
+														</div>
+													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkred">Rejected </span>John Smith
+																(Supplier) on 09/07/2024 13:15</p>
+															<p>
+																I have updated all the fields. Please review them
+																correctly.
+															</p>
+														</div>
+													</li>
+													<li class="time_if3" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkblue">Accepted </span>by
+																Amanda
+																Green
+																(CE) on 10/07/2024 09:31</p>
+															<p>
+																Ok, concluded.
+															</p>
+														</div>
+													</li>
+													<li class="time_if4" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested </span>by
+																Amanda
+																Green
+																(CE) on 03/07/2024 18:30</p>
+															<p>
+																Missing some symbols
+															</p>
+														</div>
+													</li>
+													<li class="time_if4" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkred">Rejected </span>John Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
+																All symbols are present. There is a confusion with the
+																symbols. Please check on the user manual.
+															</p>
+														</div>
+													</li>
+													<li class="time_if4" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkgreen">Updated </span>John Smith
+																(Supplier) on 08/07/2024 13:50</p>
+															<p>
+															</p>
+														</div>
+													</li>
+													<li class="time_if4" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkblue">Accepted </span>by
+																Amanda
+																Green
+																(CE) on 10/07/2024 09:31</p>
+															<p>
+																Now seems ok. To double check later.
+															</p>
+														</div>
+													</li>
+													<li class="time_if10" style="display: none;">
+														<div class="tm-box">
+															<p class="text-muted mb-0"><span
+																	style="color:darkorange">Change requested
+																</span> by Gabriela Luna (CM) on 11/07/2024 10:51</p>
+															<p>
+															</p>
+														</div>
+													</li>
+												</ol>
+											</div>
+										</div>
+									</div>
+									<div class="row rComment">
+										<div class="col-lg-6">
+											<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+										</div>
+										<div class="col-lg-6" style="text-align: right;">
+											<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
+												Required</p>
+										</div>
+									</div>
+									<div class="row rComment">
+										<div class="col-lg-12">
+											<section class="simple-compose-box mb-3">
+												<form method="get" action="/">
+													<textarea id="cComment" name="message-text"
+														data-plugin-textarea-autosize
+														placeholder="Additional information..." data-plugin-maxlength
+														maxlength="100" rows="2"></textarea>
+												</form>
+											</section>
+										</div>
+									</div>
+									<!-- End - Comments -->
+									<!-- Start - Actions -->
+									<div class="row">
+										<div class="col-lg-12" style="text-align: right;">
+											<button id="btnUndo" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
+												style="border-color: darkred;"
+												onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
+											<button id="btnReject" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+												onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
+											<!-- <button id="btnApprove" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+												onclick="javascript:App.CRUpdate.approveChange(2)">Approve</button> -->
+											<button id="btnRequest" type="button"
+												class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+												onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
+												update</button>
+										</div>
+									</div>
+									<!-- End - Actions -->
+								</div>
 							</div>
 						</div>
 						<!-- End - Accordion Change request -->
+						<!-- Start - Accordion BER request -->
+						<div id="pBer" class="card card-default">
+							<div class="card-header">
+								<h4 class="card-title m-0">
+									<a id="titleDetBer" class="accordion-toggle" data-toggle="collapse"
+										data-parent="#accordion3" href="#accBer" style="color:darkred;">
+										Business errors
+									</a>
+								</h4>
+								<div class="card-actions">
+									<!-- <a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
+										style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a> -->
+								</div>
+							</div>
+							<div id="accBer" class="collapse" data-parent="#accordion3">
+								<div id="pBerMain" class="card-body" style="background: ghostwhite;">
+									<!-- Start - Description -->
+									<div class="row">
+										<div class="col-lg-12">
+											<p style="margin-bottom: 0;">Check the errors below and unblock the current
+												situation by executing one of the following actions:
+											</p>
+											<ul>
+												<li>Retry</li>
+												<li>Skip</li>
+												<li>Apply any other changes if required</li>
+											</ul>
+										</div>
+									</div>
+									<!-- End - Description -->
+									<!-- Start - Business errors -->
+									<div class="scrollable" data-plugin-scrollable style="height: 600px;">
+										<div class="scrollable-content" style="padding-right:0px">
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Country of origin is not valid with the given combination
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Purchase price is not acceptable under these conditions
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												EA unit of measure is not valid for current display product
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Traceability method cannot be combined with product specifications
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Communication unit is not in the range expected
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Link with type Mini Pallet doesn´t have a correct unit assign to it
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Reordering multiple quantity should be above 10
+											</div>
+											<div class="alert alert-danger">
+												<button type="button" class="close" data-dismiss="alert"
+													aria-hidden="true">×</button>
+												Introduction discount validity period provided exceeds the accepted
+												range
+											</div>
+										</div>
+									</div>
+									<!-- End - Business errors -->
+								</div>
+							</div>
+						</div>
+						<!-- End - Accordion BER -->
 					</div>
 				</section>
 			</div>
@@ -487,7 +801,7 @@
 		<script src="js/views/fullview_details_notifications.js"></script>
 		<script src="js/views/creation_details_summary_log.js"></script>
 		<script src="js/views/view.loader.js"></script>
-		<script src="js/views/creation_details.update_s1.js"></script>
+		<script src="js/views/creation_details.update_s6.js"></script>
 		<script src="js/views/creation_details.update.js"></script>
 		<script>
 			jQuery(document).ready(function ($) {

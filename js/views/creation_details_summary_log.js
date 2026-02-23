@@ -6,6 +6,8 @@
 
     // Module for handling Full view summary log logic
     var CRSummaryLog = {
+        typeManual: false,
+
         /**
          * Initializes the Full view summary log module.
          * Sets up event handlers and initializes DataTables.
@@ -79,7 +81,38 @@
             if (!$("#accChangeRequest").hasClass("show")) {
                 $("#accChangeRequest").addClass("show"); // Force expansion of change
                 $("#accMainInfo").removeClass("show"); // Collapse section main info
+                $("#accBer").removeClass("show"); // Collapse section BER
             }
+        },
+        /**
+         * Switch to BER view only if not yet visible
+         */
+        switchToBERView: function () {
+            //show BER accordion if not yet visible
+            //$("#pBer").show();
+
+            //switch to BER view if not yet visible
+            if (!$("#accBer").hasClass("show")) {
+                $("#accBer").addClass("show"); // Force expansion of BER
+                $("#accMainInfo").removeClass("show"); // Collapse section main info
+                $("#accChangeRequest").removeClass("show"); // Collapse section change
+            }
+        },
+        /**
+         * Switch to manual or gdsn type
+         */
+        switchToTypeManual: function () {
+            $("#typeStatement li").toggleClass("warning info");
+
+            if (this.typeManual) {
+                $("#typeStatement li h3").text("09/02/2026");
+                $("#typeStatement li p").text("Last update of external data (GDSN / manual)");
+            } else {
+                $("#typeStatement li h3").text("Manual");
+                $("#typeStatement li p").text("No GDSN synchronization required");
+            }
+
+            this.typeManual = !this.typeManual;
         },
         /**
          * Go back one step or two in case no more changes are left

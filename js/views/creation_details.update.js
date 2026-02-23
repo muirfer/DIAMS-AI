@@ -147,6 +147,18 @@
                     App.CRSummaryLog.switchToChangeView();
                 });
             }
+
+            if ($('#typeStatement')) {
+                $("#typeStatement").click(function () {
+                    App.CRSummaryLog.switchToTypeManual();
+                });
+            }
+
+            if ($('#berStatement')) {
+                $("#berStatement").click(function () {
+                    App.CRSummaryLog.switchToBERView();
+                });
+            }
         },
         /**
          * Show change details for current field being focused
