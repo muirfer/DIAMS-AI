@@ -199,6 +199,7 @@
                 //new value but different from the one requested to be updated
                 // overrides a previously rejected evaluation
                 this.undoChangeEvaluation();
+                App.fieldObject.comment = "";
                 this.approveChange(1);
 
             }
