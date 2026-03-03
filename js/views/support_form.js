@@ -11,7 +11,28 @@
          * Sets up event handlers and initializes DataTables.
          */
         initialize: function () {
-            //Nothing yet
+            // Bind click event to the submit button that opens the modal
+            $('#btnConfirm').on('click', function (e) {
+                // Reset the modal state to loading
+                $('#ai_loading').show();
+                $('#ai_results').hide();
+                $('#btnConfirmNewCR').prop('disabled', true);
+                $('#btnCancelIncident').prop('disabled', true);
+
+                // Simulate AI search for 4 seconds
+                setTimeout(function () {
+                    $('#ai_loading').hide();
+                    $('#ai_results').show();
+
+                    // Initialize or update the nanoscroller when results become visible
+                    if ($.fn.nanoScroller) {
+                        $('.nano').nanoScroller();
+                    }
+
+                    $('#btnConfirmNewCR').prop('disabled', false);
+                    $('#btnCancelIncident').prop('disabled', false);
+                }, 3000);
+            });
         },
         /**
          * Toggles the visible process section (Creation, Update, User Account).

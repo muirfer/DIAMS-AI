@@ -477,27 +477,114 @@
 		</div>
 	</div>
 	<!-- Start Modal - Full view - confirm update -->
-	<div id="modal_inc_confirm" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+	<div id="modal_inc_confirm" class="zoom-anim-dialog modal-block modal-block-success mfp-hide"
+		style="max-width: 800px;">
 		<section class="card">
 			<header class="card-header">
-				<h2 class="card-title">Confirm</h2>
+				<h2 class="card-title">Submit a new incident</h2>
 			</header>
 			<div class="card-body">
 				<div class="modal-wrapper">
-					<div class="modal-icon">
+					<!-- <div class="modal-icon">
 						<i class="fas fa-question-circle"></i>
-					</div>
+					</div> -->
 					<div class="modal-text">
-						<h4>Submit a new incident</h4>
-						<p>An incident will be generated and analyzed by Delhaize teams.<br>Do you want to continue?</p>
+						<!-- <h4>Review and submit</h4> -->
+						<p>Please first review our AI Suggestions. If this answers your query, you can cancel or close
+							this
+							window.
+							<br>Otherwise, click "Create incident" to send the incident to our support team.
+							<br>An incident will be generated and analyzed by Delhaize teams.
+						</p>
+
+						<hr style="margin: 20px 0;">
+
+						<h4 style="color: #0088cc;"><i class="fas fa-robot"></i> AI Assistant</h4>
+
+						<!-- Loading Section -->
+						<div id="ai_loading" style="margin-top: 15px; padding: 20px 0;">
+							<div class="typing-indicator">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+
+						<!-- Results Section -->
+						<div id="ai_results" style="display: none;">
+							<div class="alert alert-info"
+								style="background-color: #f4f6f9; border-left: 4px solid #0088cc; padding: 15px; padding-right: 5px; color: #333; margin-bottom: 15px;">
+
+								<div class="nano" style="height: 300px;">
+									<div class="nano-content" style="padding-right: 15px;">
+										<h5 style="margin-top:0;"><strong>💡 Potential Solution: </strong></h5>
+										<p style="margin-bottom: 10px;">Synchronization and Data Consistency: Often,
+											data synchronization issues can be resolved by reviewing the latest GDSN
+											specifications or checking your encoding settings. Please make sure that all
+											mandatory fields are completed before saving.</p>
+
+										<p style="margin-bottom: 5px;">Here are some common scenarios that could trigger
+											this issue:</p>
+										<ul style="margin-bottom: 10px;">
+											<li><strong>Missing Master Data:</strong> The global trade item number
+												(GTIN) might not correspond to an active or valid record in the GDSN
+												pool.</li>
+											<li><strong>Validation Rules:</strong> Check if any required attributes for
+												your target market are left blank or have incorrect formatting. This
+												usually happens with newly introduced regulatory fields.</li>
+											<li><strong>System Delays:</strong> Sometimes synchronization requests take
+												longer during peak hours. Verify if the update is pending in the message
+												queue.</li>
+											<li><strong>Authorization:</strong> Ensure you have the correct publication
+												privileges for the given data pool. Missing endpoint setup is a frequent
+												cause of rejection.</li>
+											<li><strong>Network Timeouts:</strong> Temporary loss of connectivity with
+												the main GDSN backbone could result in unfinished transmissions. Try
+												re-sending after 15 minutes.</li>
+											<li><strong>Supplier GLN Mismatch:</strong> Verification fails if the
+												provider GLN doesn't correspond to the registered entity responsible for
+												the brand.</li>
+											<li><strong>Data Types:</strong> Text inputs instead of numerical values in
+												measurement properties (e.g., net weight, dimensions) usually block the
+												automated validation process.</li>
+											<li><strong>Duplicated GTINs:</strong> The same product code has been
+												registered in the catalog under a different hierarchy level. Review the
+												parent-child product relationships.</li>
+										</ul>
+										<p style="margin-bottom: 10px;">Before continuing, please verify these points
+											step-by-step. A large proportion of incidents are solved immediately by
+											validating the rules against our latest requirements in the provided
+											documentation.</p>
+										<p style="margin-bottom: 10px;">If after performing these checks the problem
+											persists, the issue might require manual intervention from our Tier 2 data
+											quality team. Supplying screenshots of the exact error window in the form
+											below will significantly expedite the resolution process.</p>
+									</div>
+								</div>
+							</div>
+
+							<div
+								style="background-color: #fff; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+								<p style="margin-bottom: 5px;"><strong>Relevant Documentation:</strong></p>
+								<ul style="margin-bottom: 0px; padding-left: 20px;">
+									<li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> DIAMS
+											Guidebook - Product Creation</a></li>
+									<li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> FAQs: GDSN
+											Synchronization</a></li>
+									<li><a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Video:
+											Troubleshooting Error Validation</a></li>
+								</ul>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
 			<footer class="card-footer">
 				<div class="row">
 					<div class="col-md-12 text-right">
-						<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Confirm</button>
-						<button class="btn btn-default modal-dismiss">Cancel</button>
+						<button class="btn btn-default modal-dismiss" id="btnCancelIncident">Cancel</button>
+						<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Create incident</button>
 					</div>
 				</div>
 			</footer>
