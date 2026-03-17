@@ -123,7 +123,7 @@ ul.simple-bullet-list li.darkcyan:before {
 /* AI Assistant Styles */
 .ai-notification-badge {
     position: absolute;
-    right: 35px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;

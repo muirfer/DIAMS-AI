@@ -85,6 +85,151 @@
                 }
             });
 
+            // Expand view
+            $("#btn-expand-view").click(function (e) {
+                e.preventDefault();
+                // Adapt left column to smaller size (col-lg-2)
+                $("#fullview-left-col").removeClass("col-lg-4 col-xl-3").addClass("col-lg-2");
+                // Adapt right column to larger size (col-lg-10)
+                $("#fullview-right-col").removeClass("col-lg-9 col-xl-9").addClass("col-lg-10");
+
+                // Toggle buttons visibility
+                $("#btn-expand-view").hide();
+                $("#btn-collapse-view").show();
+
+                // Clear any previous section.body styles from previous implementations
+                $("section.body").css({ "position": "", "top": "", "left": "", "width": "", "height": "", "z-index": "", "background-color": "", "padding": "", "overflow-y": "", "margin": "" });
+
+                // Toolbar positioning
+                $(".page-header").css({
+                    "position": "fixed",
+                    "top": "0",
+                    "left": "0",
+                    "width": "100vw",
+                    "z-index": "10000"
+                });
+
+                // Main content position
+                var $mainContent = $(".page-header").next(".row");
+                $mainContent.css({
+                    "position": "fixed",
+                    "top": $(".page-header").outerHeight() + "px",
+                    "left": "0",
+                    "width": "100vw",
+                    "height": "calc(100vh - " + $(".page-header").outerHeight() + "px)",
+                    "z-index": "9999",
+                    "background-color": $(".body").css("background-color") !== "rgba(0, 0, 0, 0)" ? $(".body").css("background-color") : "#f1f4f6",
+                    "padding": "25px",
+                    "overflow-x": "hidden",
+                    "overflow-y": "auto",
+                    "margin-top": "0"
+                });
+
+                // Adjust Descriptions section panels
+                $(".sFixed").removeClass("col-lg-4 col-lg-5 col-lg-6 col-lg-7 col-lg-8").addClass("col-lg-4");
+                $(".sCarousel").removeClass("col-lg-4 col-lg-5 col-lg-6 col-lg-7 col-lg-8").addClass("col-lg-8");
+
+                // Update Description carousel items count to 3 and refresh
+                var $carousel = $("#carDescriptions");
+                if ($carousel.length && $carousel.data("owl.carousel")) {
+                    $carousel.data("owl.carousel").options.items = 3;
+                    // For safety, adjust responsive settings if present
+                    if ($carousel.data("owl.carousel").options.responsive) {
+                        $.each($carousel.data("owl.carousel").options.responsive, function (breakpoint, config) {
+                            config.items = Math.max(config.items, 3);
+                        });
+                    }
+                    $carousel.trigger("refresh.owl.carousel");
+                }
+
+                // Update Measurement Data carousel items count to 5 and refresh
+                var $carUoM = $("#carUoM");
+                if ($carUoM.length && $carUoM.data("owl.carousel")) {
+                    $carUoM.data("owl.carousel").options.items = 5;
+                    // For safety, adjust responsive settings if present
+                    if ($carUoM.data("owl.carousel").options.responsive) {
+                        $.each($carUoM.data("owl.carousel").options.responsive, function (breakpoint, config) {
+                            config.items = Math.max(config.items, 5);
+                        });
+                    }
+                    $carUoM.trigger("refresh.owl.carousel");
+                }
+
+                // Recalculate dynamic height
+                setTimeout(function () {
+                    $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
+                }, 100);
+            });
+
+            // Collapse view (revert)
+            $("#btn-collapse-view").click(function (e) {
+                e.preventDefault();
+                // Revert left column to original size
+                $("#fullview-left-col").removeClass("col-lg-2").addClass("col-lg-4 col-xl-3");
+                // Revert right column to original size
+                $("#fullview-right-col").removeClass("col-lg-10").addClass("col-lg-9");
+
+                // Toggle buttons visibility
+                $("#btn-collapse-view").hide();
+                $("#btn-expand-view").show();
+
+                // Revert toolbar positioning
+                $(".page-header").css({
+                    "position": "",
+                    "top": "",
+                    "left": "",
+                    "width": "",
+                    "z-index": ""
+                });
+
+                // Revert main content positioning
+                var $mainContent = $(".page-header").next(".row");
+                $mainContent.css({
+                    "position": "",
+                    "top": "",
+                    "left": "",
+                    "width": "",
+                    "height": "",
+                    "z-index": "",
+                    "background-color": "",
+                    "padding": "",
+                    "overflow-x": "",
+                    "overflow-y": "",
+                    "margin-top": ""
+                });
+
+                // Revert Descriptions section panels
+                $(".sFixed").removeClass("col-lg-4 col-lg-5 col-lg-6 col-lg-7 col-lg-8").addClass("col-lg-5");
+                $(".sCarousel").removeClass("col-lg-4 col-lg-5 col-lg-6 col-lg-7 col-lg-8").addClass("col-lg-7");
+
+                // Revert Description carousel items count back to 2 and refresh
+                var $carousel = $("#carDescriptions");
+                if ($carousel.length && $carousel.data("owl.carousel")) {
+                    $carousel.data("owl.carousel").options.items = 2; // Default for creation was 2
+                    // Revert responsive fallback if modified
+                    if ($carousel.data("owl.carousel").options.responsive) {
+                        $carousel.data("owl.carousel").options.responsive = $.extend(true, {}, $carousel.data("plugin-options").responsive || {});
+                    }
+                    $carousel.trigger("refresh.owl.carousel");
+                }
+
+                // Revert Measurement Data carousel items count back to 3 and refresh
+                var $carUoM = $("#carUoM");
+                if ($carUoM.length && $carUoM.data("owl.carousel")) {
+                    $carUoM.data("owl.carousel").options.items = 3;
+                    // Revert responsive fallback if modified
+                    if ($carUoM.data("owl.carousel").options.responsive) {
+                        $carUoM.data("owl.carousel").options.responsive = $.extend(true, {}, $carUoM.data("plugin-options").responsive || {});
+                    }
+                    $carUoM.trigger("refresh.owl.carousel");
+                }
+
+                // Recalculate dynamic height
+                setTimeout(function () {
+                    $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
+                }, 100);
+            });
+
             //initialize AI module
             App.CRAI.initialize();
         },
