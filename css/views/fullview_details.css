@@ -209,3 +209,15 @@ ul.simple-bullet-list li.darkcyan:before {
 .input-ai-wrapper {
     position: relative;
 }
+
+.btn-expand-collapse {
+    float: right;
+    font-size: x-large !important;
+    margin-right: 15px !important;
+}
+
+.prepend-unit-btn {
+    font-size: smaller;
+    background: snow;
+    width: 40px;
+}

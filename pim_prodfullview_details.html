@@ -17,12 +17,21 @@
 			<button class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action"
 				id="position-3" rel="tooltip" data-original-title="" title="Save"><i class="fas fa-save"
 					style="margin-top: -8px;"></i></button>
+			<button
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
+				id="btn-collapse-view" rel="tooltip" data-original-title="" title="Collapse" style="display: none;"><i
+					class="fas fa-compress" style="margin-top: -8px;"></i></button>
+			<button
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
+				id="btn-expand-view" rel="tooltip" data-original-title="" title="Expand"><i class="fas fa-expand"
+					style="margin-top: -8px;"></i></button>
+
 
 		</header>
 		<!-- start: page -->
 
 		<div class="row">
-			<div class="col-lg-4 col-xl-3 mb-4 mb-xl-0">
+			<div id="fullview-left-col" class="col-lg-4 col-xl-3 mb-4 mb-xl-0">
 
 				<section class="card">
 					<div class="card-body">
@@ -93,7 +102,7 @@
 				</section>
 
 			</div>
-			<div class="col-lg-9">
+			<div id="fullview-right-col" class="col-lg-9">
 				<!-- Start - Breadcrumbs navigation -->
 				<div class="row">
 					<div class="col-lg-12">
@@ -134,7 +143,7 @@
 											</header>
 											<div class="card-body">
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Brand type:
+													<label class="col-sm-2 control-label text-sm-right pt-2">Brand type:
 													</label>
 													<div class="col-sm-5">
 														<select class="form-control mb-3 cust-select">
@@ -145,7 +154,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2"
+													<label class="col-sm-2 control-label text-sm-right pt-2"
 														data-toggle="tooltip" data-placement="left"
 														title="The name of the brand under which the product is sold and promoted.">Brand:
 													</label>
@@ -155,7 +164,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2"
+													<label class="col-sm-2 control-label text-sm-right pt-2"
 														data-toggle="tooltip" data-placement="left"
 														title=" A sub brand applies if a brand contains a series of underlying brands which are marketed separately. (eg Bio for Delhaize brand)">Sub-Brand:
 													</label>
@@ -169,7 +178,7 @@
 														style="margin-bottom: 25px;margin-left: 5%;">
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
+													<label class="col-sm-2 control-label text-sm-right pt-2">Product
 														type: </label>
 													<div class="col-sm-5">
 														<select class="form-control mb-3 cust-select"
@@ -197,7 +206,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
+													<label class="col-sm-2 control-label text-sm-right pt-2">Product
 														nature: </label>
 													<div class="col-sm-5">
 														<input type="text" name="brand" class="form-control"
@@ -209,7 +218,7 @@
 														style="margin-bottom: 25px;margin-left: 5%;">
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Net
+													<label class="col-sm-2 control-label text-sm-right pt-2">Net
 														contents of Base UoM: </label>
 													<div class="col-sm-5">
 														<input type="text" name="ncobuom" class="form-control"
@@ -261,7 +270,7 @@
 														style="margin-bottom: 25px;margin-left: 5%;">
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2"
+													<label class="col-sm-2 control-label text-sm-right pt-2"
 														data-toggle="tooltip" data-placement="left"
 														title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish.">Country
 														of origin of the product: </label>
@@ -297,7 +306,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
+													<label class="col-sm-2 control-label text-sm-right pt-2">Product
 														creation date: </label>
 													<div class="col-sm-5">
 														<div class="input-group">
@@ -313,7 +322,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">For sale:
+													<label class="col-sm-2 control-label text-sm-right pt-2">For sale:
 													</label>
 													<div class="col-sm-5">
 														<div class="input-daterange input-group" data-plugin-datepicker>
@@ -338,7 +347,7 @@
 														style="margin-bottom: 25px;margin-left: 5%;">
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
+													<label class="col-sm-2 control-label text-sm-right pt-2">Product
 														status: </label>
 													<div class="col-sm-5">
 														<select class="form-control mb-3 cust-select">
@@ -393,7 +402,7 @@
 											</header>
 											<div class="card-body" style="margin-top: 25px;">
 												<div class="row">
-													<div class="col-lg-7">
+													<div class="sFixed col-lg-5">
 														<div class="row">
 															<div class="col-lg-7 offset-lg-5"
 																style="text-align: center;">
@@ -421,8 +430,8 @@
 																	<div class="row">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default baseUoM"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default baseUoM prepend-unit-btn"
 																					type="button">EA&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -434,8 +443,8 @@
 																	<div class="row secIP">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default prepend-unit-btn"
 																					type="button">IP&nbsp;&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -447,8 +456,8 @@
 																	<div class="row secCV">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default prepend-unit-btn"
 																					type="button">CV&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -469,8 +478,8 @@
 																	<div class="row">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default baseUoM"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default baseUoM prepend-unit-btn"
 																					type="button">EA&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -482,8 +491,8 @@
 																	<div class="row secIP">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default prepend-unit-btn"
 																					type="button">IP&nbsp;&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -495,8 +504,8 @@
 																	<div class="row secCV">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default prepend-unit-btn"
 																					type="button">CV&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -517,8 +526,8 @@
 																	<div class="row">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default baseUoM"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default baseUoM prepend-unit-btn"
 																					type="button">EA&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -530,8 +539,8 @@
 																	<div class="row secIP">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default prepend-unit-btn"
 																					type="button">IP&nbsp;&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -543,8 +552,8 @@
 																	<div class="row secCV">
 																		<div class="input-group">
 																			<span class="input-group-prepend">
-																				<button class="btn btn-default"
-																					style="font-size: smaller;background: snow;"
+																				<button
+																					class="btn btn-default prepend-unit-btn"
 																					type="button">CV&nbsp;</button>
 																			</span>
 																			<input type="text"
@@ -557,10 +566,10 @@
 															</div>
 														</div>
 													</div>
-													<div class="col-lg-5">
+													<div class="sCarousel col-lg-7">
 														<div id="carDescriptions" class="owl-carousel owl-theme"
 															data-plugin-carousel
-															data-plugin-options='{ "dots": false, "nav": true, "items": 1 }'>
+															data-plugin-options='{ "dots": false, "nav": true, "items": 2 }'>
 															<div class="item">
 																<div class="row">
 																	<div class="col-lg-12" style="text-align: center;">
@@ -583,8 +592,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -597,8 +605,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -611,8 +619,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -632,8 +640,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -646,8 +653,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -660,8 +667,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -681,8 +688,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -695,8 +701,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -709,8 +715,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -746,8 +752,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input id="inputPtdEADutch"
@@ -761,8 +766,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -775,8 +780,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -796,8 +801,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -810,8 +814,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -824,8 +828,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -845,8 +849,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -859,8 +862,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -873,8 +876,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -910,8 +913,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -924,8 +926,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -938,8 +940,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -959,8 +961,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -973,8 +974,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -987,8 +988,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1008,8 +1009,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1022,8 +1022,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input id="inputPtdIPGerman"
@@ -1037,8 +1037,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1075,8 +1075,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1089,8 +1088,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1103,8 +1102,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1124,8 +1123,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1138,8 +1136,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1152,8 +1150,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1173,8 +1171,7 @@
 																				<div class="input-group">
 																					<span class="input-group-prepend">
 																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;"
+																							class="btn btn-default baseUoM prepend-unit-btn"
 																							type="button">EA&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1187,8 +1184,8 @@
 																			<div class="row secIP">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">IP&nbsp;&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1201,8 +1198,8 @@
 																			<div class="row secCV">
 																				<div class="input-group">
 																					<span class="input-group-prepend">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
+																						<button
+																							class="btn btn-default prepend-unit-btn"
 																							type="button">CV&nbsp;</button>
 																					</span>
 																					<input type="text"
@@ -1239,7 +1236,7 @@
 											</header>
 											<div class="card-body">
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Category:
+													<label class="col-sm-2 control-label text-sm-right pt-2">Category:
 													</label>
 													<div class="col-sm-6">
 														<select class="form-control mb-3 cust-select">
@@ -1249,7 +1246,7 @@
 												</div>
 												<div class="form-group row">
 													<label
-														class="col-sm-3 control-label text-sm-right pt-2">Subcategory:
+														class="col-sm-2 control-label text-sm-right pt-2">Subcategory:
 													</label>
 													<div class="col-sm-6">
 														<select class="form-control mb-3 cust-select">
@@ -1266,7 +1263,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Segment:
+													<label class="col-sm-2 control-label text-sm-right pt-2">Segment:
 													</label>
 													<div class="col-sm-6">
 														<select class="form-control mb-3 cust-select">
@@ -1276,7 +1273,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Sub
+													<label class="col-sm-2 control-label text-sm-right pt-2">Sub
 														segment: </label>
 													<div class="col-sm-6">
 														<select class="form-control mb-3 cust-select">
@@ -1287,7 +1284,7 @@
 													</div>
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Micro
+													<label class="col-sm-2 control-label text-sm-right pt-2">Micro
 														segment: </label>
 													<div class="col-sm-6">
 														<select class="form-control mb-3 cust-select">
@@ -1301,7 +1298,7 @@
 														style="margin-bottom: 25px;margin-left: 5%;">
 												</div>
 												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Merchandise
+													<label class="col-sm-2 control-label text-sm-right pt-2">Merchandise
 														category: </label>
 													<div class="col-sm-6">
 														<select class="form-control mb-3 cust-select">
@@ -1374,7 +1371,8 @@
 														</div>
 													</div>
 													<div class="col-lg-10">
-														<div class="owl-carousel owl-theme" data-plugin-carousel
+														<div id="carUoM" class="owl-carousel owl-theme"
+															data-plugin-carousel
 															data-plugin-options='{ "dots": false, "nav": true, "items": 3 }'>
 															<div class="item" style="background: ghostwhite;">
 																<div class="row">
@@ -1449,7 +1447,7 @@
 																				<a class="btn-tertiary openCustomPanel"
 																					data-original-title=""
 																					title="Open GTIN details per Supplier"
-																					style="width: 40px;text-align:center;opacity: 0.7;"
+																					style="width: 35px;text-align:center;opacity: 0.7;"
 																					href="#"
 																					onclick="javascript:openOverlayPanel(0)"><i
 																						class="fas fa-users"
@@ -1687,7 +1685,7 @@
 																				<a class="btn-tertiary openCustomPanel"
 																					data-original-title=""
 																					title="Open GTIN details per Supplier"
-																					style="width: 40px;text-align:center;opacity: 0.7;"
+																					style="width: 35px;text-align:center;opacity: 0.7;"
 																					href="#"
 																					onclick="javascript:openOverlayPanel(0)"><i
 																						class="fas fa-users"
@@ -1924,7 +1922,7 @@
 																				<a class="btn-tertiary openCustomPanel"
 																					data-original-title=""
 																					title="Open GTIN details per Supplier"
-																					style="width: 40px;text-align:center;opacity: 0.7;"
+																					style="width: 35px;text-align:center;opacity: 0.7;"
 																					href="#"
 																					onclick="javascript:openOverlayPanel(0)"><i
 																						class="fas fa-users"
@@ -2162,7 +2160,7 @@
 																				<a class="btn-tertiary openCustomPanel"
 																					data-original-title=""
 																					title="Open GTIN details per Supplier"
-																					style="width: 40px;text-align:center;opacity: 0.7;"
+																					style="width: 35px;text-align:center;opacity: 0.7;"
 																					href="#"
 																					onclick="javascript:openOverlayPanel(0)"><i
 																						class="fas fa-users"
@@ -2398,7 +2396,7 @@
 																				<a class="btn-tertiary openCustomPanel"
 																					data-original-title=""
 																					title="Open GTIN details per Supplier"
-																					style="width: 40px;text-align:center;opacity: 0.7;"
+																					style="width: 35px;text-align:center;opacity: 0.7;"
 																					href="#"
 																					onclick="javascript:openOverlayPanel(0)"><i
 																						class="fas fa-users"
@@ -11253,7 +11251,7 @@
 						</div>
 						<!-- End - Panel - Prices  -->
 					</div>
-					<ul class="nav nav-tabs col-lg-2">
+					<ul class="nav nav-tabs col-lg-1">
 						<li class="nav-item active">
 							<a class="nav-link" href="#overview" data-toggle="tab"><i
 									class="fas fa-info"></i>&nbsp;Basic Data</a>
