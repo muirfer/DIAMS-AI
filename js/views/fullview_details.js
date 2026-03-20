@@ -226,6 +226,13 @@
                     $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
                 }, 100);
             });
+
+            // Add a 'focus' event listener to each input
+            $('input[type="text"]').each(function () {
+                $(this).on('focus', function () {
+                    this.select();
+                });
+            });
         },
         /**
          * Scroll to section

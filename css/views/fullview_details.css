@@ -221,3 +221,9 @@ ul.simple-bullet-list li.darkcyan:before {
     background: snow;
     width: 40px;
 }
+
+.tab-index {
+    width: 80px !important;
+    max-width: 80px;
+    text-align: center;
+}
