@@ -496,3 +496,10 @@ rect:hover {
 .lblNoInfo {
     
 }
+
+/* Carousel Navigation Overrides */
+.owl-carousel .owl-nav {
+    top: 3% !important;
+    font-size: xxx-large !important;
+}
+

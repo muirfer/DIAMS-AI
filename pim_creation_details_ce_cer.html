@@ -2,7 +2,7 @@
 	<link rel="stylesheet" href="css/views/fullview_details.css" />
 </head>
 
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="20" style="position: relative;">
+<body class="is-creation-view" data-spy="scroll" data-target="#myScrollspy" data-offset="20" style="position: relative;">
 
 	<section class="body">
 		<header class="page-header">
@@ -38,7 +38,7 @@
 		<!-- start: page -->
 
 		<div class="row">
-			<div id="fullview-left-col" class="col-lg-4 col-xl-3 mb-4 mb-xl-0">
+			<div id="fullview-left-col" class="col-lg-2 mb-4 mb-xl-0">
 				<section class="card">
 					<!-- Start - Top fixed panel with Main info -->
 					<section class="card card-featured-left card-featured-primary">
@@ -53,12 +53,12 @@
 									<div class="summary" style="min-height: 35px !important;">
 										<h4 class="title" style="margin-top: 30px;"></h4>
 										<div class="info">
-											<strong class="amount">LEFF BLOND RET 0,33L 9+3 TRA</strong>
+											<strong class="amount" style="font-size: small;">LEFF BLOND RET 0,33L 9+3 TRA</strong>
 											<!-- <span class="text-primary">(14 unread)</span> -->
 										</div>
 									</div>
 									<div class="summary-footer">
-										<a class="text-muted text-uppercase">E020 - Viande fraiche emballee</a>
+										<a class="text-muted text-uppercase" style="font-size: small;">E020 - Viande fraiche emballee</a>
 									</div>
 								</div>
 							</div>
@@ -69,12 +69,12 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col-md-6" style="text-align: center;">
-									<div class="h4 font-weight-bold mb-0 mt-3">5410683150438</div>
-									<p class="text-3 text-muted mb-0">GTIN CU</p>
+									<div class="h4 font-weight-bold mb-0 mt-3" style="font-size: small;">5410683150438</div>
+									<p class="text-3 text-muted mb-0" style="font-size: small;">GTIN CU</p>
 								</div>
 								<div class="col-md-6" style="text-align: center;">
-									<div class="h4 font-weight-bold mb-0 mt-3">5410681887000</div>
-									<p class="text-3 text-muted mb-0">Input GTIN</p>
+									<div class="h4 font-weight-bold mb-0 mt-3" style="font-size: small;">5410681887000</div>
+									<p class="text-3 text-muted mb-0" style="font-size: small;">Input GTIN</p>
 								</div>
 							</div>
 						</div>
@@ -359,7 +359,7 @@
 					</div>
 				</section>
 			</div>
-			<div id="fullview-right-col" class="col-lg-9">
+			<div id="fullview-right-col" class="col-lg-10">
 				<!-- Start - Reactivation fields -->
 				<div class="form-group row"
 					style="padding: 15px;background: floralwhite;margin-left: 1px;margin-right:1px;">
@@ -437,59 +437,45 @@
 						<div id="pWine"></div>
 						<div id="pFostPlus"></div>
 					</div>
-					<ul class="nav nav-tabs col-lg-1">
-						<li class="nav-item active">
-							<a class="nav-link" href="#overview" data-toggle="tab"><i
-									class="fas fa-info"></i>&nbsp;Basic Data</a>
+										<ul class="nav nav-tabs tab-index">
+						<li class="nav-item active" data-toggle="tooltip" data-placement="left" data-original-title="Basic Data">
+							<a class="nav-link" href="#overview" data-toggle="tab"><i class="fas fa-info"></i><br>B.Data</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pUoM" data-toggle="tab"><i class="fas fa-cube"></i>&nbsp;Units of
-								Measure</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Units of Measure">
+							<a class="nav-link" href="#pUoM" data-toggle="tab"><i class="fas fa-cube"></i><br>UoM</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pPurchasing" data-toggle="tab"><i
-									class="fas fa-shopping-cart"></i>&nbsp;Purchasing</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Purchasing">
+							<a class="nav-link" href="#pPurchasing" data-toggle="tab"><i class="fas fa-shopping-cart"></i><br>Purch.</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pLogistics" data-toggle="tab"><i
-									class="fas fa-truck"></i>&nbsp;Logistics</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Logistics">
+							<a class="nav-link" href="#pLogistics" data-toggle="tab"><i class="fas fa-truck"></i><br>Log.</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pCodes" data-toggle="tab"><i
-									class="fas fa-laptop-code"></i>&nbsp;Codes</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Codes">
+							<a class="nav-link" href="#pCodes" data-toggle="tab"><i class="fas fa-laptop-code"></i><br>Codes</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pAssortment" data-toggle="tab"><i
-									class="fas fa-box"></i>&nbsp;Assortments</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Assortments">
+							<a class="nav-link" href="#pAssortment" data-toggle="tab"><i class="fas fa-box"></i><br>Assort.</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pPricesNew" data-toggle="tab"><i
-									class="fas fa-money-bill-alt"></i>&nbsp;Prices</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Prices">
+							<a class="nav-link" href="#pPricesNew" data-toggle="tab"><i class="fas fa-money-bill-alt"></i><br>Prices</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pTaxes" data-toggle="tab"><i
-									class="fas fa-file-invoice-dollar"></i>&nbsp;Taxes</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Taxes">
+							<a class="nav-link" href="#pTaxes" data-toggle="tab"><i class="fas fa-file-invoice-dollar"></i><br>Taxes</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pLinks" data-toggle="tab"><i
-									class="fas fa-link"></i>&nbsp;Links</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Links">
+							<a class="nav-link" href="#pLinks" data-toggle="tab"><i class="fas fa-link"></i><br>Links</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pB2C" data-toggle="tab"><i
-									class="fas fa-briefcase"></i>&nbsp;B2C</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="B2C">
+							<a class="nav-link" href="#pB2C" data-toggle="tab"><i class="fas fa-briefcase"></i><br>B2C</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pStore" data-toggle="tab"><i
-									class="fas fa-store"></i>&nbsp;Store</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Store">
+							<a class="nav-link" href="#pStore" data-toggle="tab"><i class="fas fa-store"></i><br>Store</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pWine" data-toggle="tab">
-								<i class="fas fa-wine-glass"></i>&nbsp;Wine Characteristics
-							</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Wine Characteristics">
+							<a class="nav-link" href="#pWine" data-toggle="tab"><i class="fas fa-wine-glass"></i><br>Wine Char.</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#pFostPlus" data-toggle="tab"><i
-									class="fas fa-cube"></i>&nbsp;Fost Plus</a>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Fost Plus">
+							<a class="nav-link" href="#pFostPlus" data-toggle="tab"><i class="fas fa-cube"></i><br>F.Plus</a>
 						</li>
 					</ul>
 				</div>

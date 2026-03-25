@@ -85,11 +85,6 @@
             // Expand view
             $("#btn-expand-view").click(function (e) {
                 e.preventDefault();
-                // Adapt left column to smaller size (col-lg-2)
-                $("#fullview-left-col").removeClass("col-lg-4 col-xl-3").addClass("col-lg-2");
-                // Adapt right column to larger size (col-lg-10)
-                $("#fullview-right-col").removeClass("col-lg-9").addClass("col-lg-10");
-
                 // Toggle buttons visibility
                 $("#btn-expand-view").hide();
                 $("#btn-collapse-view").show();
@@ -161,11 +156,6 @@
             // Collapse view (revert)
             $("#btn-collapse-view").click(function (e) {
                 e.preventDefault();
-                // Revert left column to original size
-                $("#fullview-left-col").removeClass("col-lg-2").addClass("col-lg-4 col-xl-3");
-                // Revert right column to original size
-                $("#fullview-right-col").removeClass("col-lg-10").addClass("col-lg-9");
-
                 // Toggle buttons visibility
                 $("#btn-collapse-view").hide();
                 $("#btn-expand-view").show();

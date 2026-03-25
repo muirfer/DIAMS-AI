@@ -227,3 +227,31 @@ ul.simple-bullet-list li.darkcyan:before {
     max-width: 80px;
     text-align: center;
 }
+
+/* Carousel Navigation Overrides */
+.owl-carousel .owl-nav {
+    top: 3% !important;
+    font-size: xxx-large !important;
+}
+
+/* Responsive font-sizing for Fullview Left Column */
+.is-creation-view #fullview-left-col .amount,
+.is-creation-view #fullview-left-col .summary-footer a,
+.is-creation-view #fullview-left-col .h4.font-weight-bold,
+.is-creation-view #fullview-left-col .text-3 {
+    font-size: small !important;
+}
+
+/* Responsive font sizes and element scaling for change requests and timeline */
+#pChangeMain p, #pChangeMain ul li {
+    font-size: smaller !important;
+}
+
+table#tLog {
+    width: 115% !important;
+    max-width: 115% !important;
+}
+
+#secTimeline .tm-box p, #secTimeline .tm-box span {
+    font-size: small !important;
+}
