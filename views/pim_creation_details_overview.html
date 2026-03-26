@@ -228,17 +228,23 @@
 				<section class="card card-transparent mb-4">
 					<header class="card-header">
 						<div class="card-actions">
-							<button id="btn-ai-generate" class="btn btn-sm btn-tertiary"
-								style="margin-top:12px;margin-right: 50px;">
+							<button id="btn-ai-generate" class="btn btn-sm btn-tertiary" style="margin-top:12px;">
 								<i class="fas fa-magic mr-1"></i> Generate
 								Descriptions
 							</button>
+							<a class="modal-basic btn btn-default" href="#modalInfoGenAI"
+								style="margin-top:5px;margin-right: 50px;border:none">
+								<i class="fas fa-info"></i>
+							</a>
 						</div>
 
 						<h2 class="card-title">Descriptions</h2>
 						<p class="card-subtitle">English descriptions always displayed on the
 							left. Scroll on the right using the navigation buttons to switch
 							between other languages.</p>
+						<p class="card-subtitle"><code>Important: </code>Most of the descriptions are requested per
+							sellable unit. Then it is recommended to first mark the sellable units in the Units of
+							Measure section before completing the descriptions.</p>
 					</header>
 					<div class="card-body">
 						<div class="row" style="margin-top: 25px;">
@@ -1048,3 +1054,47 @@
 	</div>
 </div>
 <!-- End - Panel - Basic Data -->
+<!-- Modal AI GEN info -->
+<div id="modalInfoGenAI" class="modal-block modal-block-info mfp-hide">
+	<section class="card">
+		<header class="card-header">
+			<h2 class="card-title">Information</h2>
+		</header>
+		<div class="card-body">
+			<div class="modal-wrapper">
+				<div class="modal-icon">
+					<i class="fas fa-info-circle"></i>
+				</div>
+				<div class="modal-text">
+					<h4>AI assistant for descriptions</h4>
+					<p>The AI assistant can help you to generate descriptions for your product. For more accurate
+						results, it is recommended that the following values are completed in each relevant section
+						before triggering the request:</p>
+					<ul>
+						<li>Basic Data - Brand</li>
+						<li>Basic Data - Net contents of Base UoM (and Unit)</li>
+						<li>Basic Data - Product type</li>
+						<li>Purchasing Data - Purchasing group (to determine if the product is fresh or not)</li>
+						<li>Codes - Exclusive Lux</li>
+						<li>Codes - Bio</li>
+						<li>Codes - No gluten</li>
+						<li>Codes - Fair trade</li>
+						<li>B2C - Customer information (all languages)</li>
+					</ul>
+					<p>The AI assistant will use the information provided in the fields above along with current task
+						values already provided <span style="color: darkred;">(descriptions, Base UoM, Product category,
+							sellable units of measure,
+							etc.)</span> to generate the descriptions for your product.</p>
+				</div>
+			</div>
+		</div>
+		<footer class="card-footer">
+			<div class="row">
+				<div class="col-md-12 text-right">
+					<button class="btn btn-info modal-dismiss">OK</button>
+				</div>
+			</div>
+		</footer>
+	</section>
+</div>
+<!-- End AI GEN info -->
