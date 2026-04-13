@@ -218,7 +218,7 @@
             });
 
             // Add a 'focus' event listener to each input
-            $('input[type="text"]').each(function () {
+            $('input[type="text"],textarea').each(function () {
                 $(this).on('focus', function () {
                     this.select();
                 });

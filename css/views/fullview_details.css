@@ -243,7 +243,8 @@ ul.simple-bullet-list li.darkcyan:before {
 }
 
 /* Responsive font sizes and element scaling for change requests and timeline */
-#pChangeMain p, #pChangeMain ul li {
+#pChangeMain p,
+#pChangeMain ul li {
     font-size: smaller !important;
 }
 
@@ -252,6 +253,11 @@ table#tLog {
     max-width: 115% !important;
 }
 
-#secTimeline .tm-box p, #secTimeline .tm-box span {
+#secTimeline .tm-box p,
+#secTimeline .tm-box span {
     font-size: small !important;
+}
+
+.texta-fixed {
+    resize: none;
 }
