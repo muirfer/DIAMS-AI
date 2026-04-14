@@ -286,6 +286,7 @@
             $(document).on('click', '.ai-notification-badge', function (e) {
                 e.stopPropagation();
                 var $wrapper = $(this).closest('.input-ai-wrapper');
+                if (!$wrapper.length) $wrapper = $(this).parent();
                 CRAI.togglePopover($wrapper);
             });
 
@@ -294,9 +295,10 @@
                 e.preventDefault();
                 var $popover = $(this).closest('.ai-popover');
                 var $wrapper = $popover.closest('.input-ai-wrapper');
+                if (!$wrapper.length) $wrapper = $popover.parent();
                 var suggestion = $popover.find('.suggestion-text').text();
 
-                var $input = $wrapper.find('input.ai-subscribable');
+                var $input = $wrapper.find('.ai-subscribable');
                 $input.val(suggestion).trigger('change').trigger('input');
 
                 // Cleanup
@@ -307,6 +309,7 @@
                 e.preventDefault();
                 var $popover = $(this).closest('.ai-popover');
                 var $wrapper = $popover.closest('.input-ai-wrapper');
+                if (!$wrapper.length) $wrapper = $popover.parent();
 
                 // Cleanup
                 $wrapper.find('.ai-notification-badge, .ai-popover').remove();
@@ -314,7 +317,10 @@
 
             // Close popover when clicking outside
             $(document).on('click', function (e) {
-                if (!$(e.target).closest('.input-ai-wrapper').length) {
+                if (!$(e.target).closest('.input-ai-wrapper').length && 
+                    !$(e.target).closest('.ai-popover').length && 
+                    !$(e.target).hasClass('ai-notification-badge') &&
+                    !$(e.target).hasClass('ai-subscribable')) {
                     $('.ai-popover').hide();
                 }
             });
@@ -327,6 +333,9 @@
                 var $input = $(this);
                 // Ensure we look for wrapper in parent if not direct parent (for input groups)
                 var $wrapper = $input.closest('.input-ai-wrapper');
+                if (!$wrapper.length) {
+                    $wrapper = $input.parent();
+                }
 
                 // Clear existing
                 $wrapper.find('.ai-notification-badge, .ai-popover').remove();
@@ -355,7 +364,9 @@
                 if (!$popover.length) {
                     // Get suggestion (mock logic based on index or random)
                     // In real app, we would map input ID/name to suggestion type
-                    var index = $('.input-ai-wrapper').index($wrapper);
+                    var $input = $wrapper.find('.ai-subscribable');
+                    var index = $('.ai-subscribable').index($input);
+                    if (index < 0) index = 0; // fallback
                     var suggestion = CRAI.suggestions[index % CRAI.suggestions.length];
 
                     var popoverHtml = `
