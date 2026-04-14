@@ -243,10 +243,6 @@ ul.simple-bullet-list li.darkcyan:before {
 }
 
 /* Responsive font sizes and element scaling for change requests and timeline */
-#pChangeMain p,
-#pChangeMain ul li {
-    font-size: smaller !important;
-}
 
 table#tLog {
     width: 115% !important;
@@ -260,4 +256,5 @@ table#tLog {
 
 .texta-fixed {
     resize: none;
+    font-size: smaller !important;
 }
