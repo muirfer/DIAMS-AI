@@ -258,3 +258,13 @@ table#tLog {
     resize: none;
     font-size: smaller !important;
 }
+
+.openCustomPanel {
+    width: 1.5rem;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.openCustomPanel i {
+    margin-top: 12px;
+}
