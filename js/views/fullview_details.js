@@ -147,6 +147,32 @@
                     $carUoM.trigger("refresh.owl.carousel");
                 }
 
+                // Update Reappro carousel items count to 4 and refresh
+                var $carReappro = $("#carReappro");
+                if ($carReappro.length && $carReappro.data("owl.carousel")) {
+                    $carReappro.data("owl.carousel").options.items = 4;
+                    // For safety, adjust responsive settings if present
+                    if ($carReappro.data("owl.carousel").options.responsive) {
+                        $.each($carReappro.data("owl.carousel").options.responsive, function (breakpoint, config) {
+                            config.items = Math.max(config.items, 4);
+                        });
+                    }
+                    $carReappro.trigger("refresh.owl.carousel");
+                }
+
+                // Update Distribution Center carousel items count to 3 and refresh
+                var $carDistCenter = $("#carDistCenter");
+                if ($carDistCenter.length && $carDistCenter.data("owl.carousel")) {
+                    $carDistCenter.data("owl.carousel").options.items = 3;
+                    // For safety, adjust responsive settings if present
+                    if ($carDistCenter.data("owl.carousel").options.responsive) {
+                        $.each($carDistCenter.data("owl.carousel").options.responsive, function (breakpoint, config) {
+                            config.items = Math.max(config.items, 3);
+                        });
+                    }
+                    $carDistCenter.trigger("refresh.owl.carousel");
+                }
+
                 // Recalculate dynamic height
                 setTimeout(function () {
                     $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
@@ -209,6 +235,28 @@
                         $carUoM.data("owl.carousel").options.responsive = $.extend(true, {}, $carUoM.data("plugin-options").responsive || {});
                     }
                     $carUoM.trigger("refresh.owl.carousel");
+                }
+
+                // Revert Reappro carousel items count back to 3 and refresh
+                var $carReappro = $("#carReappro");
+                if ($carReappro.length && $carReappro.data("owl.carousel")) {
+                    $carReappro.data("owl.carousel").options.items = 3;
+                    // Revert responsive fallback if modified
+                    if ($carReappro.data("owl.carousel").options.responsive) {
+                        $carReappro.data("owl.carousel").options.responsive = $.extend(true, {}, $carReappro.data("plugin-options").responsive || {});
+                    }
+                    $carReappro.trigger("refresh.owl.carousel");
+                }
+
+                // Revert Distribution Center carousel items count back to 2 and refresh
+                var $carDistCenter = $("#carDistCenter");
+                if ($carDistCenter.length && $carDistCenter.data("owl.carousel")) {
+                    $carDistCenter.data("owl.carousel").options.items = 2;
+                    // Revert responsive fallback if modified
+                    if ($carDistCenter.data("owl.carousel").options.responsive) {
+                        $carDistCenter.data("owl.carousel").options.responsive = $.extend(true, {}, $carDistCenter.data("plugin-options").responsive || {});
+                    }
+                    $carDistCenter.trigger("refresh.owl.carousel");
                 }
 
                 // Recalculate dynamic height

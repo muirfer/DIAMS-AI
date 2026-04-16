@@ -15,7 +15,7 @@
 					<div class="card-body">
 						<div class="form-group row"
 							style="background: mintcream;padding-top: 20px;padding-bottom: 20px;">
-							<label class="col-sm-2 control-label text-sm-right pt-2" data-toggle="tooltip"
+							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
 								title="Indicate the SAP id of a product as close as possible to the product being created.">Similar
 								item:
@@ -37,7 +37,7 @@
 							</div>
 						</div> -->
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2" data-toggle="tooltip"
+							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
 								title="The name of the brand under which the product is sold and promoted.">Brand:
 							</label>
@@ -47,7 +47,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2" data-toggle="tooltip"
+							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
 								title=" A sub brand applies if a brand contains a series of underlying brands which are marketed separately. (eg Bio for Delhaize brand)">Sub-Brand:
 							</label>
@@ -60,7 +60,7 @@
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+							<label class="col-sm-3 control-label text-sm-right pt-2">Product
 								type: </label>
 							<div class="col-sm-5">
 								<select class="form-control mb-3 cust-select">
@@ -83,7 +83,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+							<label class="col-sm-3 control-label text-sm-right pt-2">Product
 								nature: </label>
 							<div class="col-sm-5">
 								<input type="text" name="brand" class="form-control" autocomplete="off"
@@ -94,7 +94,7 @@
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Net
+							<label class="col-sm-3 control-label text-sm-right pt-2">Net
 								contents of Base UoM: </label>
 							<div class="col-sm-5">
 								<input type="text" name="ncobuom" class="form-control" autocomplete="off"
@@ -115,7 +115,7 @@
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2" data-toggle="tooltip"
+							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
 								title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish.">Country
 								of origin of the product: </label>
@@ -150,7 +150,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">For sale:
+							<label class="col-sm-3 control-label text-sm-right pt-2">For sale:
 							</label>
 							<div class="col-sm-5">
 								<div class="input-daterange input-group" data-plugin-datepicker
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Original
+							<label class="col-sm-3 control-label text-sm-right pt-2">Original
 								introduction week: </label>
 							<div class="col-sm-5">
 								<select class="form-control mb-3 cust-select">
@@ -190,7 +190,7 @@
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Delisted
+							<label class="col-sm-3 control-label text-sm-right pt-2">Delisted
 								product: </label>
 							<div class="col-sm-5">
 								<input type="text" name="dprod" class="form-control" autocomplete="off" value="7855431">
@@ -206,7 +206,7 @@
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Item notes
+							<label class="col-sm-3 control-label text-sm-right pt-2">Item notes
 								/ Special instructions: </label>
 							<div class="col-sm-5">
 								<textarea class="form-control" rows="7" data-plugin-maxlength
@@ -228,22 +228,27 @@
 				<section class="card card-transparent mb-4">
 					<header class="card-header">
 						<div class="card-actions">
-							<button id="btn-ai-generate" class="btn btn-sm btn-tertiary" style="margin-top:12px;">
-								<i class="fas fa-magic mr-1"></i> Generate
-								Descriptions
-							</button>
-							<a class="modal-basic btn btn-default" href="#modalInfoGenAI"
-								style="margin-top:5px;margin-right: 50px;border:none">
-								<i class="fas fa-info"></i>
-							</a>
 						</div>
-
 						<h2 class="card-title">Descriptions</h2>
 						<p class="card-subtitle"><code>Important: </code>Most of the descriptions are requested per
 							sellable unit. Then it is recommended to first mark the sellable units in the Units of
 							Measure section before completing the descriptions.</p>
 					</header>
-					<div class="card-body" style="margin-top: 25px;">
+					<div class="card-body">
+						<div class="row" style="padding:20px;background:mintcream;margin-bottom: 15px;">
+							<div class="col-lg-4">
+								<a class="modal-basic btn btn-transparent" href="#modalInfoGenAI">
+									<label class="control-label"><i class="fas fa-info mr-2"></i>DIAMS AI.
+										Click here for more details.</label>
+								</a>
+							</div>
+							<div class="col-lg-8 text-right" style="margin-top:8px;">
+								<button id="btn-ai-generate" class="btn btn-sm btn-tertiary">
+									<i class="fas fa-magic mr-1"></i> Generate
+									Descriptions
+								</button>
+							</div>
+						</div>
 						<div class="row" style="margin-bottom: 25px;">
 							<div class="col-lg-2 offset-lg-2 text-center">
 								<span class="badge badge-info" style="font-size: large;">English</span>
@@ -881,7 +886,7 @@
 					</header>
 					<div class="card-body">
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Category:
+							<label class="col-sm-3 control-label text-sm-right pt-2">Category:
 							</label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -890,7 +895,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Subcategory:
+							<label class="col-sm-3 control-label text-sm-right pt-2">Subcategory:
 							</label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -907,7 +912,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Segment:
+							<label class="col-sm-3 control-label text-sm-right pt-2">Segment:
 							</label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -917,7 +922,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Sub
+							<label class="col-sm-3 control-label text-sm-right pt-2">Sub
 								segment: </label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -928,7 +933,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Micro
+							<label class="col-sm-3 control-label text-sm-right pt-2">Micro
 								segment: </label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -941,7 +946,7 @@
 							<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Merchandise
+							<label class="col-sm-3 control-label text-sm-right pt-2">Merchandise
 								category: </label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
