@@ -163,6 +163,12 @@
                     $carDistCenter.trigger("refresh.owl.carousel");
                 }
 
+                // Update Belgium assortment section to 3 cols per container
+                var $beContainers = $("#table-sm-manual, #table-sm-local, #table-sm-spcat, #table-sm-aff").closest(".col-lg-4, .col-lg-3");
+                if ($beContainers.length) {
+                    $beContainers.removeClass("col-lg-4 col-lg-3").addClass("col-lg-3");
+                }
+
                 // Recalculate dynamic height
                 setTimeout(function () {
                     $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
@@ -236,6 +242,12 @@
                         $carDistCenter.data("owl.carousel").options.responsive = $.extend(true, {}, $carDistCenter.data("plugin-options").responsive || {});
                     }
                     $carDistCenter.trigger("refresh.owl.carousel");
+                }
+
+                // Revert Belgium assortment section to 4 cols per container
+                var $beContainers = $("#table-sm-manual, #table-sm-local, #table-sm-spcat, #table-sm-aff").closest(".col-lg-4, .col-lg-3");
+                if ($beContainers.length) {
+                    $beContainers.removeClass("col-lg-4 col-lg-3").addClass("col-lg-4");
                 }
 
                 // Recalculate dynamic height

@@ -268,3 +268,7 @@ table#tLog {
 .openCustomPanel i {
     margin-top: 12px;
 }
+
+.datatable-assort-div {
+    padding-left: 40px;
+}
