@@ -174,7 +174,7 @@
                 }
 
                 // Update Belgium assortment section to 3 cols per container
-                var $beContainers = $("#table-sm-manual, #table-sm-local, #table-sm-spcat, #table-sm-aff").closest(".col-lg-4, .col-lg-3");
+                var $beContainers = $(".datatable-assort").closest(".col-lg-4, .col-lg-3");
                 if ($beContainers.length) {
                     $beContainers.removeClass("col-lg-4 col-lg-3").addClass("col-lg-3");
                 }
@@ -266,7 +266,7 @@
                 }
 
                 // Revert Belgium assortment section to 4 cols per container
-                var $beContainers = $("#table-sm-manual, #table-sm-local, #table-sm-spcat, #table-sm-aff").closest(".col-lg-4, .col-lg-3");
+                var $beContainers = $(".datatable-assort").closest(".col-lg-4, .col-lg-3");
                 if ($beContainers.length) {
                     $beContainers.removeClass("col-lg-4 col-lg-3").addClass("col-lg-4");
                 }

@@ -24,7 +24,10 @@
                 .removeClass('col-lg-10 offset-lg-1')
                 .addClass('col-lg-12 px-0');
 
-            // Force all rows to show by default (override inline HTML display none)
+            // Determine if we are in prodfullview to toggle default table filtering logic
+            var isFullView = window.location.href.indexOf('prodfullview') !== -1;
+
+            // Force all rows to show by default initially to properly establish datatables internal dimensions
             $('.datatable-assort tbody tr').show();
 
             $('.datatable-assort').dataTable({
@@ -34,6 +37,9 @@
                 initComplete: function (settings, json) {
                     var $table = $(settings.nTable);
                     
+                    // Add 25px bottom margin to grid wrappers to prevent rows from touching when wrapping vertically
+                    $table.closest('.col-lg-4, .col-lg-3').css('margin-bottom', '25px');
+
                     // Force the table to take 100% width
                     $table.css('width', '100%');
 
@@ -70,6 +76,11 @@
                                 $scrollableDiv.nanoScroller();
                             }
                         }, 250);
+                    }
+
+                    // Satisfy the condition: tables show only selected items by default in prodfullview mode
+                    if (isFullView) {
+                        App.FVAssortment.switchAssortmentView($table.attr('id'), false);
                     }
                 }
             });
