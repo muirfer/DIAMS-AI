@@ -169,6 +169,9 @@
                     $beContainers.removeClass("col-lg-4 col-lg-3").addClass("col-lg-3");
                 }
 
+                // Refresh pPrices carousels to recalculate items width correctly after their wrapper grows
+                $("#pPrices .owl-carousel").trigger("refresh.owl.carousel");
+
                 // Recalculate dynamic height
                 setTimeout(function () {
                     $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
@@ -249,6 +252,9 @@
                 if ($beContainers.length) {
                     $beContainers.removeClass("col-lg-4 col-lg-3").addClass("col-lg-4");
                 }
+
+                // Refresh pPrices carousels to recalculate items width correctly after their wrapper shrinks
+                $("#pPrices .owl-carousel").trigger("refresh.owl.carousel");
 
                 // Recalculate dynamic height
                 setTimeout(function () {
