@@ -230,8 +230,39 @@ ul.simple-bullet-list li.darkcyan:before {
 
 /* Carousel Navigation Overrides */
 .owl-carousel .owl-nav {
-    top: 3% !important;
+    top: -2.1rem !important;
     font-size: xxx-large !important;
+    color: brown;
+    width: 5rem;
+    right: 0;
+}
+
+/* Base transition to handle smooth scaling */
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    transition: transform 0.15s ease-in-out !important;
+}
+
+/* Hover/Focus effect (enlarge arrow, prevent background color) ONLY for active buttons */
+.owl-carousel .owl-nav button.owl-prev:not(.disabled):hover,
+.owl-carousel .owl-nav button.owl-next:not(.disabled):hover,
+.owl-carousel .owl-nav button.owl-prev:not(.disabled):focus,
+.owl-carousel .owl-nav button.owl-next:not(.disabled):focus {
+    background: transparent !important;
+    color: brown !important;
+    transform: scale(1.5);
+    outline: none;
+}
+
+/* Ensure disabled buttons strictly maintain their appearance with zero interactive effects */
+.owl-carousel .owl-nav button.owl-prev.disabled,
+.owl-carousel .owl-nav button.owl-next.disabled {
+    background: transparent !important;
+    color: brown !important;
+    opacity: 0.5 !important;
+    transform: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
 }
 
 /* Responsive font-sizing for Fullview Left Column */
@@ -240,6 +271,19 @@ ul.simple-bullet-list li.darkcyan:before {
 .is-creation-view #fullview-left-col .h4.font-weight-bold,
 .is-creation-view #fullview-left-col .text-3 {
     font-size: small !important;
+}
+
+/* Section badges */
+.sBadge {
+    font-size: large;
+    margin-bottom: 25px;
+    width: 95%;
+}
+
+.sBadge-nm {
+    font-size: large;
+    margin-bottom: 0px;
+    width: 95%;
 }
 
 /* Responsive font sizes and element scaling for change requests and timeline */
