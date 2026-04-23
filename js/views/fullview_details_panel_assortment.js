@@ -12,8 +12,11 @@
          */
         initialize: function () {
             this.datatableInit();
-            $(".assDesc").css("width", "60%")
+            $(".assDesc").css("width", "60%");
+            this.bindBelgiumAssortmentEvents();
+            this.bindLuxembourgAssortmentEvents();
         },
+
         /**
          * Initializes the DataTable for the Assortment table.
          * Handles table initialization, DOM manipulation, and DataTable configuration.
@@ -130,6 +133,130 @@
                 elemToUpdate = $("#" + baseId + "_" + i);
                 elemToUpdate.prop("checked", element.checked);
             }
+        },
+
+        /**
+         * Bind events for the Belgium assortment toolbar
+         */
+        bindBelgiumAssortmentEvents: function() {
+            var self = this;
+            
+            // Dropdown change
+            $('#belgiumAssortmentFilter').on('change', function() {
+                self.filterBelgiumAssortment();
+            });
+
+            // Button "All" click
+            $('#btnAll').on('click', function(e) {
+                e.preventDefault();
+                if ($(this).hasClass('btn-default')) {
+                    $(this).removeClass('btn-default').addClass('btn-primary active');
+                    $('#btnSelected').removeClass('btn-primary active').addClass('btn-default');
+                    self.filterBelgiumAssortment();
+                }
+            });
+
+            // Button "Selected" click
+            $('#btnSelected').on('click', function(e) {
+                e.preventDefault();
+                if ($(this).hasClass('btn-default')) {
+                    $(this).removeClass('btn-default').addClass('btn-primary active');
+                    $('#btnAll').removeClass('btn-primary active').addClass('btn-default');
+                    self.filterBelgiumAssortment();
+                }
+            });
+
+            // Handle switch changes to re-apply filter if in "Selected" view
+            $('#section3 #tableBody').on('change', 'input[type="checkbox"]', function() {
+                if ($('#btnSelected').hasClass('btn-primary')) {
+                    self.filterBelgiumAssortment();
+                }
+            });
+        },
+
+        /**
+         * Filter the Belgium assortment table based on toolbar state
+         */
+        filterBelgiumAssortment: function() {
+            var showAll = $('#btnAll').hasClass('btn-primary');
+            var dropdownFilter = $('#belgiumAssortmentFilter').val();
+
+            $('#section3 #tableBody tr').each(function() {
+                var $row = $(this);
+                // The dropdown filters based on the class of the tr (e.g., "sm-manual", "sm-local")
+                var matchDropdown = (!dropdownFilter || dropdownFilter === 'all') || $row.hasClass(dropdownFilter);
+                
+                // Button "All" shows everything (matching dropdown), "Selected" checks the row's checkbox
+                var isChecked = $row.find('input[type="checkbox"]').is(':checked');
+                var matchButton = showAll || isChecked;
+
+                if (matchButton && matchDropdown) {
+                    $row.show();
+                } else {
+                    $row.hide();
+                }
+            });
+        },
+
+        /**
+         * Bind events for the Luxembourg assortment toolbar
+         */
+        bindLuxembourgAssortmentEvents: function() {
+            var self = this;
+            
+            // Dropdown change
+            $('#luxembourgAssortmentFilter').on('change', function() {
+                self.filterLuxembourgAssortment();
+            });
+
+            // Button "All" click
+            $('#btnAllLu').on('click', function(e) {
+                e.preventDefault();
+                if ($(this).hasClass('btn-default')) {
+                    $(this).removeClass('btn-default').addClass('btn-primary active');
+                    $('#btnSelectedLu').removeClass('btn-primary active').addClass('btn-default');
+                    self.filterLuxembourgAssortment();
+                }
+            });
+
+            // Button "Selected" click
+            $('#btnSelectedLu').on('click', function(e) {
+                e.preventDefault();
+                if ($(this).hasClass('btn-default')) {
+                    $(this).removeClass('btn-default').addClass('btn-primary active');
+                    $('#btnAllLu').removeClass('btn-primary active').addClass('btn-default');
+                    self.filterLuxembourgAssortment();
+                }
+            });
+
+            // Handle switch changes to re-apply filter if in "Selected" view
+            $('#section4 #tableBodyLu').on('change', 'input[type="checkbox"]', function() {
+                if ($('#btnSelectedLu').hasClass('btn-primary')) {
+                    self.filterLuxembourgAssortment();
+                }
+            });
+        },
+
+        /**
+         * Filter the Luxembourg assortment table based on toolbar state
+         */
+        filterLuxembourgAssortment: function() {
+            var showAll = $('#btnAllLu').hasClass('btn-primary');
+            var dropdownFilter = $('#luxembourgAssortmentFilter').val();
+
+            $('#section4 #tableBodyLu tr').each(function() {
+                var $row = $(this);
+                var matchDropdown = (!dropdownFilter || dropdownFilter === 'all') || $row.hasClass(dropdownFilter);
+                
+                var isChecked = $row.find('input[type="checkbox"]').is(':checked');
+                var matchButton = showAll || isChecked;
+
+                if (matchButton && matchDropdown) {
+                    $row.show();
+                } else {
+                    $row.hide();
+                }
+            });
         }
     };
 

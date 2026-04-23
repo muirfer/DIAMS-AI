@@ -53,7 +53,7 @@
          */
         storeAllFieldsOriginalValues: function () {
             /** On laod, store all fields original values for input and select values */
-            $('input:not(.ctrl), select:not(.ctrl), textarea:not(.ctrl,#cComment,#fComment)').each(function () {
+            $('input:not(.ctrl), select:not(.ctrl,.assFilter), textarea:not(.ctrl,#cComment,#fComment)').each(function () {
                 var input = $(this);
                 input.data('originalValue', input.val());
                 input.attr("readonly", "readonly")
