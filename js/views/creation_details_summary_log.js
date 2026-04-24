@@ -6,7 +6,7 @@
 
     // Module for handling Full view summary log logic
     var CRSummaryLog = {
-        typeManual: false,
+        typeManual: true,
 
         /**
          * Initializes the Full view summary log module.
@@ -105,11 +105,13 @@
             $("#typeStatement li").toggleClass("warning info");
 
             if (this.typeManual) {
+                $(".i-link").show();
                 $("#typeStatement li h3").text("09/02/2026");
-                $("#typeStatement li p").text("Last update of external data (GDSN / manual)");
+                $("#typeStatement li p").text("Last update of external data (GDSN)");
             } else {
+                $(".i-link").hide();
                 $("#typeStatement li h3").text("Manual");
-                $("#typeStatement li p").text("No GDSN synchronization required");
+                $("#typeStatement li p").text("Task type");
             }
 
             this.typeManual = !this.typeManual;

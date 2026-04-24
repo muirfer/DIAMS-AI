@@ -316,3 +316,10 @@ table#tLog {
 .datatable-assort-div {
     padding-left: 40px;
 }
+
+.i-link-f {
+    display: none;
+    margin-right: 3px;
+    color: darkorange;
+    font-size: large;
+}
