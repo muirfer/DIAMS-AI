@@ -7961,6 +7961,887 @@
 												</p>
 											</header>
 											<div class="card-body">
+
+                        <!-- Assortments toolbar -->
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <div class="form-group row" style="padding:20px;background:mintcream;">
+                                    <label class="col-sm-1 control-label text-sm-right pt-2">Display: </label>
+                                    <div class="col-sm-3" style="text-align: center;">
+                                        <div class="btn-group d-flex" role="group">
+                                            <a class="btn btn-default w-100" role="button" id="btnAll">All</a>
+                                            <a class="btn btn-primary w-100 active" role="button" id="btnSelected">Selected</a>
+                                        </div>
+                                    </div>
+                                    <label class="col-sm-1 control-label text-sm-right pt-2">for: </label>
+                                    <div class="col-sm-4">
+                                        <select id="belgiumAssortmentFilter"
+                                            class="form-control mb-3 cust-select assFilter">
+                                            <option value="all" selected>All</option>
+                                            <option value="sm-manual">SM manual</option>
+                                            <option value="sm-local">SM local</option>
+                                            <option value="sm-spcat">SM specific categories</option>
+                                            <option value="sm-affiliates">Affiliates</option>
+                                            <option value="sm-ecom">E-commerce</option>
+                                            <option value="sm-exp">Export</option>
+                                            <option value="sm-stm">Store Management</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-3 text-right">
+                                        <button class="btn btn-link" type="button" onclick="addRow();">
+                                            <span class="fas fa-file-excel"></span> Download
+                                            to Excel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assortments table -->
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <table class="table table-responsive-md table-sm mb-0 table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: center;width: 25%;">Type</th>
+                                            <th style="text-align: center;width: 20%;">Layout module</th>
+                                            <th style="width: 45%;">Description</th>
+                                            <th style="text-align: center;width: 10%;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBodyBe">
+                                        <tr class="sm-manual" >
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_00001</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM North</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_00002</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM South</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" >
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_00003</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM Belgium All</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_001</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4001 FLAGEY</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_002</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4002 LONGDOZ</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_003</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4003 CHAZAL</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_004</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4004 ST ANTOINE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_005</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4005 ST.PIETERS
+																						BRUG</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_006</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4006 FORT JACO</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_007</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4007 MARCINELLE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_008</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4008 ROODEBEEK</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_009</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4009 MUTSAARD</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_010</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4010 DEBROUX</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_011</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4011 HASSELT</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_012</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4012 PRINCE DE
+																						LIEGE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_013</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4013 SERAING</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_014</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4014 HEVERLEE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_015</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4015 MOZART</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_016</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4016 MARENGO</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_017</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4017 DEURNE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_018</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4018 FRUITHOF</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_019</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4019 LEON THEODOR</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_020</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4990 DUMMY SITE
+																						PLANO</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" >
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_021</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4021 VERHAEREN</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_022</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4022 REET</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_023</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort 4023 KORTRIJK NOORD</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_024</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4024 BOONDAEL</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_025</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4025 ST ROCHUS</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_026</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4026 AMAY</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_027</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4027 HORNU</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_028</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4028 GENT STER</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_029</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4029 JAMBES</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_030</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4030 WEZEMBEEK</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_031</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4031 CROIX DE
+																						GUERRE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_032</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4032 WATERLOO</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_033</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4033 CH QUINT</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_034</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4034 GENVAL</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-local" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+                                                SM local</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_035</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort SM 4035 IEPER</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ESSIE</td>
+                                            <td style="vertical-align: middle;">
+                                                Essie assortment</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_EWINE</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment Wine Online</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ISPAV</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment ISP Lamb & Veal</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ISPB3</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment Butchery 3.0</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ISPBS</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment ISP Beef &
+																						Specialities</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ISPFI</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment ISP Fish</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ISPHA</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment ISP Minced</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ISPPO</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment ISP Pork</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_LODP</td>
+                                            <td style="vertical-align: middle;">
+                                                LODP</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_ESSIE</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment MAP Lamb</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_MAPAV</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment MAP Lamb & Veal</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-spcat" >
+                                            <td style="text-align: center; width: 1px;background-color: lightblue;vertical-align: middle;font-weight: bold;">
+                                                SM specific categories</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BAOT_MAPBA</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assortment MAP Base Butchery</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" >
+                                            <td style="text-align: center; width: 1px;background-color: mistyrose;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_222</td>
+                                            <td style="vertical-align: middle;">
+                                                Essie assortment</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: mistyrose;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_223</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort Shop 223</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" >
+                                            <td style="text-align: center; width: 1px;background-color: mistyrose;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_224</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort Q8 224</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: mistyrose;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_227</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort Proxy 227</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" >
+                                            <td style="text-align: center; width: 1px;background-color: mistyrose;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_243</td>
+                                            <td style="vertical-align: middle;">
+                                                BE Assort AD 243</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-ecom" >
+                                            <td style="text-align: center; width: 1px;background-color: lavender;vertical-align: middle;font-weight: bold;">
+                                                E-commerce</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_168</td>
+                                            <td style="vertical-align: middle;">
+                                                E-com assortment 1</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-ecom" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lavender;vertical-align: middle;font-weight: bold;">
+                                                E-commerce</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_169</td>
+                                            <td style="vertical-align: middle;">
+                                                E-com assortment 2</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-exp" >
+                                            <td style="text-align: center; width: 1px;background-color: honeydew;vertical-align: middle;font-weight: bold;">
+                                                Export</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_010</td>
+                                            <td style="vertical-align: middle;">
+                                                Export assortment 1</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-exp" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: honeydew;vertical-align: middle;font-weight: bold;">
+                                                Export</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_017</td>
+                                            <td style="vertical-align: middle;">
+                                                Export assortment 2</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-exp" >
+                                            <td style="text-align: center; width: 1px;background-color: honeydew;vertical-align: middle;font-weight: bold;">
+                                                Export</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BASA_018</td>
+                                            <td style="vertical-align: middle;">
+                                                Export assortment 3</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-stm" >
+                                            <td style="text-align: center; width: 1px;background-color: peachpuff;vertical-align: middle;font-weight: bold;">
+                                                Store Management</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BSAM_001</td>
+                                            <td style="vertical-align: middle;">
+                                                Store Mgmt assortment 1</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-stm" >
+                                            <td style="text-align: center; width: 1px;background-color: peachpuff;vertical-align: middle;font-weight: bold;">
+                                                Store Management</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BSAM_002</td>
+                                            <td style="vertical-align: middle;">
+                                                Store Mgmt assortment 2</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-stm" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: peachpuff;vertical-align: middle;font-weight: bold;">
+                                                Store Management</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                BSAM_003</td>
+                                            <td style="vertical-align: middle;">
+                                                Store Mgmt assortment 3</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                                                <!-- OLD CONTENT COMMENTED OUT 
+
 												<div class="row">
 													<div class="col-lg-12">
 														<div class="row" style="margin-top: 20px;">
@@ -8856,7 +9737,9 @@
 												</div>
 
 											</div>
-										</section>
+										
+                                                -->
+                                        </section>
 									</div>
 								</div>
 								<!-- End - Subpanel - Non-JDA driven for Belgium-->
@@ -8877,6 +9760,162 @@
 												</p>
 											</header>
 											<div class="card-body">
+
+                        <!-- Assortments toolbar -->
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <div class="form-group row" style="padding:20px;background:mintcream;">
+                                    <label class="col-sm-1 control-label text-sm-right pt-2">Display: </label>
+                                    <div class="col-sm-3" style="text-align: center;">
+                                        <div class="btn-group d-flex" role="group">
+                                            <a class="btn btn-default w-100" role="button" id="btnAllLu">All</a>
+                                            <a class="btn btn-primary w-100 active" role="button" id="btnSelectedLu">Selected</a>
+                                        </div>
+                                    </div>
+                                    <label class="col-sm-1 control-label text-sm-right pt-2">for: </label>
+                                    <div class="col-sm-4">
+                                        <select id="luxembourgAssortmentFilter"
+                                            class="form-control mb-3 cust-select assFilter">
+                                            <option value="all" selected>All</option>
+                                            <option value="sm-manual">SM manual</option>
+                                            <option value="sm-affiliates">Affiliates</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-3 text-right">
+                                        <button class="btn btn-link" type="button" onclick="addRow();">
+                                            <span class="fas fa-file-excel"></span> Download
+                                            to Excel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Assortments table -->
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <table class="table table-responsive-md table-sm mb-0 table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: center;width: 25%;">Type</th>
+                                            <th style="text-align: center;width: 20%;">Layout module</th>
+                                            <th style="width: 45%;">Description</th>
+                                            <th style="text-align: center;width: 10%;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBodyLu">
+                                        <tr class="sm-manual" >
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_201</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort SM Center 201</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_213</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort City 213</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" >
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_231</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort SM Border BE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_232</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort SM Border FR</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" >
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_233</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort SM Border Schmiede</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-manual" >
+                                            <td style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                SM manual</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_234</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort SM Border GE</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" >
+                                            <td style="text-align: center; width: 1px;background-color: honeydew;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_228</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort Proxy & Shop 228</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sm-affiliates" style="display: none;">
+                                            <td style="text-align: center; width: 1px;background-color: honeydew;vertical-align: middle;font-weight: bold;">
+                                                Affiliates</td>
+                                            <td style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                LASA_245</td>
+                                            <td style="vertical-align: middle;">
+                                                LU Assort AD 245</td>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <div class="switch switch-sm switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                                                <!-- OLD CONTENT COMMENTED OUT 
+
 												<div class="row">
 													<div class="col-lg-12">
 														<div class="row" style="margin-top: 20px;">
@@ -9050,7 +10089,9 @@
 												</div>
 
 											</div>
-										</section>
+										
+                                                -->
+                                        </section>
 									</div>
 								</div>
 								<!-- End - Subpanel - Non-JDA driven for Luxembourg-->

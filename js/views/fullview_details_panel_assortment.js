@@ -167,7 +167,7 @@
             });
 
             // Handle switch changes to re-apply filter if in "Selected" view
-            $('#section3 #tableBody').on('change', 'input[type="checkbox"]', function() {
+            $('#tableBodyBe').on('change', 'input[type="checkbox"]', function() {
                 if ($('#btnSelected').hasClass('btn-primary')) {
                     self.filterBelgiumAssortment();
                 }
@@ -181,7 +181,7 @@
             var showAll = $('#btnAll').hasClass('btn-primary');
             var dropdownFilter = $('#belgiumAssortmentFilter').val();
 
-            $('#section3 #tableBody tr').each(function() {
+            $('#tableBodyBe tr').each(function() {
                 var $row = $(this);
                 // The dropdown filters based on the class of the tr (e.g., "sm-manual", "sm-local")
                 var matchDropdown = (!dropdownFilter || dropdownFilter === 'all') || $row.hasClass(dropdownFilter);
@@ -230,7 +230,7 @@
             });
 
             // Handle switch changes to re-apply filter if in "Selected" view
-            $('#section4 #tableBodyLu').on('change', 'input[type="checkbox"]', function() {
+            $('#tableBodyLu').on('change', 'input[type="checkbox"]', function() {
                 if ($('#btnSelectedLu').hasClass('btn-primary')) {
                     self.filterLuxembourgAssortment();
                 }
@@ -244,7 +244,7 @@
             var showAll = $('#btnAllLu').hasClass('btn-primary');
             var dropdownFilter = $('#luxembourgAssortmentFilter').val();
 
-            $('#section4 #tableBodyLu tr').each(function() {
+            $('#tableBodyLu tr').each(function() {
                 var $row = $(this);
                 var matchDropdown = (!dropdownFilter || dropdownFilter === 'all') || $row.hasClass(dropdownFilter);
                 
