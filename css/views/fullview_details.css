@@ -289,8 +289,8 @@ ul.simple-bullet-list li.darkcyan:before {
 /* Responsive font sizes and element scaling for change requests and timeline */
 
 table#tLog {
-    width: 115% !important;
-    max-width: 115% !important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 #secTimeline .tm-box p,
