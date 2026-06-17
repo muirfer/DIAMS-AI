@@ -316,16 +316,25 @@
 																				style="width: 5%;text-align: center;">
 																			</th>
 																			<th id="thGtin"
-																				style="vertical-align: middle;width: 25%;">
+																				style="vertical-align: middle;width: 10%;">
 																				GTINs</th>
 																			<th id="thProcess"
-																				style="vertical-align: middle;width: 18%;">
+																				style="vertical-align: middle;width: 15%;">
 																				Process</th>
 																			<th id="thMes"
-																				style="vertical-align: middle;width: 37% !important;">
+																				style="vertical-align: middle;width: 40% !important;">
 																				Message</th>
+																			<th id="thReuse"
+																				style="width: 25%;text-align: center;">
+																				<a class="modal-basic btn btn-default btn-xs"
+																					href="#modalInfoReuse"
+																					style="background: lightgray;text-align: center;font-size: small;">
+																					<i class="fas fa-info"></i>
+																				</a>
+																				Re-use
+																			</th>
 																			<th id="thActions"
-																				style="width: 15%;text-align: center;">
+																				style="width: 5%;text-align: center;">
 																			</th>
 																		</tr>
 																	</thead>
@@ -338,29 +347,9 @@
 																					style="color:green"></i>
 																			</td>
 																			<td class="orig-1">21542345987612</td>
-																			<td class="fake-1" style="display: none;">
-																				<div class="input-group form-group">
-																					<span class="input-group-prepend"
-																						style="color: darkred;margin-left:5px;margin-right: 5px;margin-top: 5px;">99152213220000</span>
-																					<select
-																						class="form-control form-control-sm"
-																						style="text-align: center;">
-																						<option selected>KG</option>
-																						<option>EA</option>
-																						<option>IP</option>
-																						<option>CV</option>
-																						<option>LY</option>
-																						<option>PL</option>
-																					</select>
-																					<span class="input-group-append">
-																						<a class="modal-basic btn btn-default btn-xs"
-																							href="#modalInfoReuse"
-																							style="background: lightgray;text-align: center;font-size: small;">
-																							<i class="fas fa-info"></i>
-																						</a>
-																					</span>
-																				</div>
-																			</td>
+																			<td class="fake-1"
+																				style="display: none;color: darkred;">
+																				99152213220000</td>
 																			<td data-toggle="tooltip"
 																				data-placement="bottom"
 																				title="SAP ID: 1234567">
@@ -371,21 +360,48 @@
 																			</td>
 																			<td class="orig-1"></td>
 																			<td class="fake-1" style="display: none;">
-																				Re-use GTIN: 21542345987612</td>
-																			<td class="actions text-right">
-																				<button type="button"
+																				Re-use GTIN: 21542345987612
+																			</td>
+																			<td class="orig-1 text-center">
+																				<!-- <button type="button"
 																					class="btn btn-default btn-sm orig-1"
-																					style="margin-right: 10px;"
 																					onclick="App.CreationCreateTasks.reuse(1)"><i
-																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
-																				<button type="button"
-																					class="btn btn-default btn-sm fake-1"
-																					style="margin-right: 10px;display: none;"
+																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button> -->
+																			</td>
+																			<td class="fake-1 text-center"
+																				style="display: none;">
+																				<div class="btn-group flex-wrap">
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">KG</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">EA</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">IP</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">CV</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">LY</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">PL</button>
+																				</div>
+																				<a href="#" style="margin-left: 5px;"
+																					data-toggle="tooltip"
+																					data-placement="bottom"
+																					title="Revert decision to re-use GTIN. "
 																					onclick="App.CreationCreateTasks.undoReuse(1)"><i
-																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
+																						class="fas fa-undo"></i></a>
+																			</td>
+																			<td class="actions text-right">
 																				<a href="#"
 																					class="on-default remove-row"><i
 																						class="far fa-trash-alt"></i></a>
+
 																			</td>
 																		</tr>
 
@@ -396,29 +412,9 @@
 																					style="color:orange"></i>
 																			</td>
 																			<td class="orig-2">15785845461246</td>
-																			<td class="fake-2" style="display: none;">
-																				<div class="input-group form-group">
-																					<span class="input-group-prepend"
-																						style="color: darkred;margin-left:5px;margin-right: 5px;margin-top: 5px;">9934881410022</span>
-																					<select
-																						class="form-control form-control-sm"
-																						style="text-align: center;">
-																						<option selected>KG</option>
-																						<option>EA</option>
-																						<option>IP</option>
-																						<option>CV</option>
-																						<option>LY</option>
-																						<option>PL</option>
-																					</select>
-																					<span class="input-group-append">
-																						<a class="modal-basic btn btn-default btn-xs"
-																							href="#modalInfoReuse"
-																							style="background: lightgray;text-align: center;font-size: small;">
-																							<i class="fas fa-info"></i>
-																						</a>
-																					</span>
-																				</div>
-																			</td>
+																			<td class="fake-2"
+																				style="display: none;color: darkred;">
+																				9934881410022</td>
 																			<td data-toggle="tooltip"
 																				data-placement="bottom"
 																				title="SAP ID: 9314561">
@@ -434,17 +430,42 @@
 																				Valid to reactivate but this warning
 																				given during validation<br>Re-use GTIN:
 																				15785845461246</td>
-																			<td class="actions text-right">
-																				<button type="button"
-																					class="btn btn-default btn-sm orig-2"
-																					style="margin-right: 10px;"
-																					onclick="App.CreationCreateTasks.reuse(2)"><i
-																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
-																				<button type="button"
-																					class="btn btn-default btn-sm fake-2"
-																					style="margin-right: 10px;display: none;"
+																			<td class="orig-2 text-center">
+																				<!-- <button type="button"
+																					class="btn btn-default btn-sm orig-1"
+																					onclick="App.CreationCreateTasks.reuse(1)"><i
+																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button> -->
+																			</td>
+																			<td class="fake-2 text-center"
+																				style="display: none;">
+																				<div class="btn-group flex-wrap">
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">KG</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">EA</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">IP</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">CV</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">LY</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">PL</button>
+																				</div>
+																				<a href="#" style="margin-left: 5px;"
+																					data-toggle="tooltip"
+																					data-placement="bottom"
+																					title="Revert decision to re-use GTIN. "
 																					onclick="App.CreationCreateTasks.undoReuse(2)"><i
-																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
+																						class="fas fa-undo"></i></a>
+																			</td>
+																			<td class="actions text-right">
 																				<a href="#"
 																					class="on-default remove-row"><i
 																						class="far fa-trash-alt"></i></a>
@@ -464,6 +485,7 @@
 																				<span class="badge badge-warning"
 																					style="font-size: larger;">Creation</span>
 																			</td>
+																			<td></td>
 																			<td></td>
 																			<td class="actions text-right">
 																				<a href="#"
@@ -487,6 +509,7 @@
 																			</td>
 																			<td>Valid to create but this warning given
 																				during validation</td>
+																			<td></td>
 																			<td class="actions text-right">
 																				<a href="#"
 																					class="on-default remove-row"><i
@@ -508,6 +531,7 @@
 																			</td>
 																			<td>Assigned to a different supplier:
 																				0010000747 - Euro EI</td>
+																			<td></td>
 																			<td class="actions text-right">
 																				<a href="#"
 																					class="on-default remove-row"><i
@@ -524,146 +548,63 @@
 																					style="color:green;display: none;"></i>
 																			</td>
 																			<td class="orig-3">45329876541234</td>
-																			<td class="fake-3" style="display: none;">
-																				<div class="input-group form-group">
-																					<span class="input-group-prepend"
-																						style="color: darkred;margin-left:5px;margin-right: 5px;margin-top: 5px;">99478552465420</span>
-																					<select
-																						class="form-control form-control-sm"
-																						style="text-align: center;">
-																						<option selected>KG</option>
-																						<option>EA</option>
-																						<option>IP</option>
-																						<option>CV</option>
-																						<option>LY</option>
-																						<option>PL</option>
-																					</select>
-																					<span class="input-group-append">
-																						<a class="modal-basic btn btn-default btn-xs"
-																							href="#modalInfoReuse"
-																							style="background: lightgray;text-align: center;font-size: small;">
-																							<i class="fas fa-info"></i>
-																						</a>
-																					</span>
-																				</div>
-																			</td>
+																			<td class="fake-3"
+																				style="display: none;color: darkred;">
+																				99478552465420</td>
 																			<td data-toggle="tooltip"
 																				data-placement="bottom">
 																				<span class="badge badge-warning fake-3"
 																					style="font-size: larger;display: none;">Creation</span>
 																				<!-- <span class="badge badge-info" style="font-size: larger;">Reactivation</span> -->
 																			</td>
-																			<td class="orig-3">In use and SAP status not
-																				valid for reactivation</td>
+																			<td class="orig-3">GTIN is already in used
+																				and related product is not valid for
+																				reactivation (status different than 10,
+																				20, 21 or 50)</td>
 																			<td class="fake-3" style="display: none;">
 																				Re-use GTIN: 45329876541234</td>
-																			<td class="actions text-right">
+																			<td class="orig-3 text-center">
 																				<button type="button"
 																					class="btn btn-default btn-sm orig-3"
-																					style="margin-right: 10px;"
 																					onclick="App.CreationCreateTasks.reuse(3)"><i
 																						class="fa fa-recycle"></i>&nbsp;&nbsp;Re-use</button>
-																				<button type="button"
-																					class="btn btn-default btn-sm fake-3"
-																					style="margin-right: 10px;display: none;"
+																			</td>
+																			<td class="fake-3 text-center"
+																				style="display: none;">
+																				<div class="btn-group flex-wrap">
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">KG</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">EA</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">IP</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">CV</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">LY</button>
+																					<button type="button"
+																						class="btn btn-default btn-xs"
+																						onclick="App.CreationCreateTasks.toggleUoMForReuse(this)">PL</button>
+																				</div>
+																				<a href="#" style="margin-left: 5px;"
+																					data-toggle="tooltip"
+																					data-placement="bottom"
+																					title="Revert decision to re-use GTIN. "
 																					onclick="App.CreationCreateTasks.undoReuse(3)"><i
-																						class="fa fa-undo"></i>&nbsp;&nbsp;Undo</button>
+																						class="fas fa-undo"></i></a>
+																			</td>
+
+																			<td class="actions text-right">
 																				<a href="#"
 																					class="on-default remove-row"><i
 																						class="far fa-trash-alt"></i></a>
 																			</td>
 																		</tr>
-																		<!-- 																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>12456789345687</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>34567891234567</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>45678912365487</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:orange"></i>
-																			</td>
-																			<td>56789412345678</td>
-																			<td>Warning given during validation</td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>67894561234567</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>78945612345612</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>																			
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>89674561231234</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:orange"></i>
-																			</td>
-																			<td>91234561234589</td>
-																			<td>Warning given during validation</td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr>
-																		<tr role="row" class="gtinRow">
-																			<td class="sts center">
-																				<i class="fas fa-check stsO" style="color:green"></i>
-																			</td>
-																			<td>23456789123456</td>
-																			<td></td>
-																			<td class="actions center">
-																				<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-																			</td>
-																		</tr> -->
 																	</tbody>
 																</table>
 																<div class="row" style="margin-top: 20px;">
@@ -1180,7 +1121,7 @@
 <div id="modalInfoReuse" class="modal-block modal-block-info mfp-hide">
 	<section class="card">
 		<header class="card-header">
-			<h2 class="card-title">Information</h2>
+			<h2 class="card-title">Re-use GTIN / Copy Product</h2>
 		</header>
 		<div class="card-body">
 			<div class="modal-wrapper">
@@ -1188,12 +1129,23 @@
 					<i class="fas fa-info-circle"></i>
 				</div>
 				<div class="modal-text">
-					<h4>Re-use GTIN</h4>
-					<p>GTIN will be re-used to start activities for a new product creation. As given GTIN is in use, a
-						fake one is provided during the process. At the end of the process this values will replace the
-						assigned fake GTIN.</p>
+					<h4>Information</h4>
+					<p>This action triggers a creation process for a new product based on the product linked to the GTIN
+						entered.
+						As the given GTIN is in use, a fake one displayed on the "GTINs" column is provided during the
+						process and assigned to the Base unit of measure. You can refer to the re-used GTIN in the
+						"Message" column.<br>
+						Note that the completion and approval process of the product remains the same as for any other
+						tasks initialized for product creation. However, in this scenario some values will be
+						initialized with the values entered in the original product.</p>
 					<p style="margin-top: 20px;margin-bottom: 0;"><u>Unit of measure selection</u></p>
-					<p>Re-used GTIN will be assigned to the selected unit of measure at the end of the process.</p>
+					<p>You may select the units of measure you want to copy from the original product.
+						For each unit of measure selected, DIAMS will initialize its values with the ones from the
+						original product while a fake GTIN will be assigned to it during the process.<br>
+						<span style="color: darkred">Restriction</span>: DIAMS will not allow the user to select all the
+						units of measure for the
+						copy process. At least one unit of measure must be left unselected.
+					</p>
 				</div>
 			</div>
 		</div>

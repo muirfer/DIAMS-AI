@@ -606,6 +606,17 @@
 			$(".fake-" + index).hide();
 			$(".orig-" + index).show();
 			$("#lblGtinInput2").hide();
+		},
+
+		/**
+		 * toggle UoM for reuse
+		 */
+		toggleUoMForReuse: function (btn) {
+			$(btn).toggleClass("btn-primary btn-default");
+
+			//disable btnDefault if only one is left
+			let btnDefault = $(btn).parent().find(".btn-default");
+			btnDefault.prop("disabled", btnDefault.length === 1 ? true : false);
 		}
 
 	};
