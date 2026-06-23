@@ -323,3 +323,10 @@ table#tLog {
     color: darkorange;
     font-size: large;
 }
+
+.i-link-c {
+    display: none;
+    margin-right: 3px;
+    color: cadetblue;
+    font-size: large;
+}

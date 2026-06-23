@@ -6,7 +6,7 @@
 
     // Module for handling Full view summary log logic
     var CRSummaryLog = {
-        typeManual: true,
+        typeManual: 0,
 
         /**
          * Initializes the Full view summary log module.
@@ -99,22 +99,32 @@
             }
         },
         /**
-         * Switch to manual or gdsn type
+         * Switch to manual, copy product (manual) or gdsn type
          */
         switchToTypeManual: function () {
-            $("#typeStatement li").toggleClass("warning info");
 
-            if (this.typeManual) {
+            if (this.typeManual === 0) {
+                //switch to manual with re-use (copy from existing product)
+                $(".c-link").show();
+                $("#typeStatement li p").text("Copy of product with ID 7985127");
+                this.typeManual = 1;
+            } else if (this.typeManual === 1) {
+                //switch to GDSN task      
+                $("#typeStatement li").toggleClass("warning info");
                 $(".i-link").show();
+                $(".c-link").hide();
                 $("#typeStatement li h3").text("09/02/2026");
                 $("#typeStatement li p").text("Last update of external data (GDSN)");
+                this.typeManual = 2;
             } else {
+                $("#typeStatement li").toggleClass("warning info");
                 $(".i-link").hide();
+                $(".c-link").hide();
                 $("#typeStatement li h3").text("Manual");
                 $("#typeStatement li p").text("Task type");
+                this.typeManual = 0;
             }
 
-            this.typeManual = !this.typeManual;
         },
         /**
          * Go back one step or two in case no more changes are left

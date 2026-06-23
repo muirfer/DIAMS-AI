@@ -216,7 +216,7 @@
 			//update UoM                
 			if (otherBtnId === "btnN1") {
 				//Active one is D1
-				$("#lblBrandType").text("D1 - Delhaize");
+				$("#lblBrandType").text("D1 - Private");
 				$("#btnNext_res").show();
 			} else {
 				//Active one is N1
