@@ -76,6 +76,13 @@ ul.simple-bullet-list li.darkcyan:before {
     vertical-align: middle !important;
 }
 
+.nutri-unit {
+    background-color: floralwhite;
+    text-align: center;
+    width: 75px;
+    min-height: 32px !important;
+}
+
 #datatable-pdate span {
     display: none;
 }

@@ -414,109 +414,1048 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row" style="margin-top: 25px !important;">
+						<div class="form-group row" style="margin-top: 25px !important">
 							<label class="col-sm-3 control-label text-sm-right pt-2">Nutrition:
 							</label>
 							<div class="col-sm-7">
 								<table class="table table-responsive-md table-sm mb-0">
 									<thead>
 										<tr>
+											<th style="width:3%"></th>
 											<th>Per</th>
 											<th style="text-align: right;">For 100gr/100ml</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Energie Kj</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="490">
+												<select class="form-control-sm nutri-unit">
+													<option value="Kj" selected>Kj</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Energie KCal</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="117">
+												<select class="form-control-sm nutri-unit">
+													<option value="KCal" selected>KCal</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Fibre (g)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq">Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt" selected>Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="1.4">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Fruit and Vegetables (%)
 											</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq">Equals</option>
+													<option value="lt" selected>Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="75.25">
+												<select class="form-control-sm nutri-unit">
+													<option value="per" selected>%</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Sugar (g)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="0.5">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Fat (g)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="6.5">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Saturated fatty acids
 												(g)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="112.25">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Saturated fatty acids
 												(%)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq">Equals</option>
+													<option value="lt" selected>Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input" value="35">
+												<select class="form-control-sm nutri-unit">
+													<option value="per" selected>%</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Salt (g)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="0.03">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Sodium (mg)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq">Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt" selected>Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="4852.25">
+												<select class="form-control-sm nutri-unit">
+													<option value="mg" selected>mg</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Protein (g)</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="1154.3">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Animal protein origin</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="54.6">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
 											</td>
 										</tr>
 										<tr>
+											<td></td>
 											<td class="nutri-table-lbl">Plant protein origin</td>
 											<td style="text-align: right;">
+												<select class="form-control-sm">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
 												<input type="text" class="form-control-sm nutri-table-input"
 													value="61.9">
+												<select class="form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c1')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc1" style="opacity: 0.6;">Calcium</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c1" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c1"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c1" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c4')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc4" style="opacity: 0.6;">from which polyols
+											</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c4" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c4"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c4" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c5')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc5" style="opacity: 0.6;">from which starch</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c5" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c5"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c5" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c6')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc6" style="opacity: 0.6;">Chloride</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c6" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c6"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c6" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c7')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc7" style="opacity: 0.6;">Chromium</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c7" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c7"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c7" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c8')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc8" style="opacity: 0.6;">Copper</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c8" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c8"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c8" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c13')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc13" style="opacity: 0.6;">from which mono
+												un-saturated f</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c13" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c13"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c13" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c14')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc14" style="opacity: 0.6;">from which poly
+												un-saturated f</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c14" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c14"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c14" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c15')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc15" style="opacity: 0.6;">from which trans fats
+											</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c15" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c15"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c15" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c16')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc16" style="opacity: 0.6;">Fluoride</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c16" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c16"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c16" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c17')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc17" style="opacity: 0.6;">Folic acid</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c17" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c17"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c17" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c18')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc18" style="opacity: 0.6;">Iodine</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c18" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c18"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c18" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c19')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc19" style="opacity: 0.6;">Iron</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c19" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c19"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c19" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c20')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc20" style="opacity: 0.6;">Magnesium</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c20" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c20"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c20" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c21')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc21" style="opacity: 0.6;">Manganese</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c21" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c21"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c21" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c22')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc22" style="opacity: 0.6;">Molybdenum</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c22" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c22"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c22" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c23')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc23" style="opacity: 0.6;">Niacin</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c23" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c23"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c23" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c24')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc24" style="opacity: 0.6;">Pantothenic acid</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c24" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c24"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c24" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c25')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc25" style="opacity: 0.6;">Phosphorus</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c25" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c25"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c25" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c26')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc26" style="opacity: 0.6;">Potassium</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c26" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c26"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c26" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c27')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc27" style="opacity: 0.6;">Riboflavin</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c27" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c27"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c27" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c29')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc29" style="opacity: 0.6;">Selenium</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c29" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c29"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c29" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c30')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc30" style="opacity: 0.6;">Sodium</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c30" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c30"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c30" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c31')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc31" style="opacity: 0.6;">Thiamin</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c31" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c31"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c31" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c32')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc32" style="opacity: 0.6;">Vitamin B12</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c32" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c32"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c32" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c33')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc33" style="opacity: 0.6;">Vitamin B6</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c33" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c33"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c33" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c34')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc34" style="opacity: 0.6;">Vitamin C</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c34" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c34"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c34" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c35')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc35" style="opacity: 0.6;">Vitamin E</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c35" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c35"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c35" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c36')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc36" style="opacity: 0.6;">Vitamin K</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c36" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c36"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c36" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c37')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc37" style="opacity: 0.6;">Zinc</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c37" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c37"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c37" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c38')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc38" style="opacity: 0.6;">Mineral salts</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c38" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c38"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c38" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c39')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc39" style="opacity: 0.6;">Vitamin B8 (Biotin)
+											</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c39" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c39"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c39" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c40')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc40" style="opacity: 0.6;">Vitamin A</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c40" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c40"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c40" style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="checkbox-custom" style="margin-top: 5px;">
+													<input type="checkbox"
+														onchange="showOrHideNutrientInput(this, 'c41')">
+													<label></label>
+												</div>
+											</td>
+											<td class="nutri-table-lbl lc41" style="opacity: 0.6;">Vitamin D</td>
+											<td style="text-align: right;">
+												<select class="form-control-sm c41" style="display: none;">
+													<option value="eq" selected>Equals</option>
+													<option value="lt">Less than</option>
+													<option value="gt">Greater than</option>
+												</select>
+												<input type="text" class="form-control-sm nutri-table-input c41"
+													value="0" style="display: none;">
+												<select class="form-control-sm nutri-unit c41" style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
 											</td>
 										</tr>
 									</tbody>
