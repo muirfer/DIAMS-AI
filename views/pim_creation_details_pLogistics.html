@@ -278,6 +278,136 @@
 									style="text-align: center;" value="Text 14 chars.">
 							</div>
 						</div>
+						<div class="row">
+							<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Gratis quantity:
+							</label>
+							<div class="col-sm-5">
+								<div class="checkbox-custom" style="margin-top: 8px;">
+									<input type="checkbox" checked="">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Gift: </label>
+							<div class="col-sm-5">
+								<div class="checkbox-custom" style="margin-top: 8px;">
+									<input type="checkbox" id="checkboxExample2">
+									<label for="checkboxExample2"></label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Multipack: </label>
+							<div class="col-sm-5">
+								<div class="checkbox-custom" style="margin-top: 8px;">
+									<input type="checkbox" id="checkboxExample2">
+									<label for="checkboxExample2"></label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Packaging size type: </label>
+							<div class="col-sm-5">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option>Large</option>
+									<option selected>Small</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Packaging type: </label>
+							<div class="col-sm-5">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option>BOTTLE</option>
+									<option>CAN</option>
+									<option selected="">CASE</option>
+									<option>JAR</option>
+									<option>KILO</option>
+									<option>METER</option>
+									<option>PACKET</option>
+									<option>PET</option>
+									<option>PIECES</option>
+									<option>KEG</option>
+									<option>TETRAPACK</option>
+									<option>BOTTLE NRGB</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Format: </label>
+							<div class="col-sm-5">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option>Maxi</option>
+									<option>Mega Maxi</option>
+									<option selected="">Tempo Express</option>
+									<option>Shop & Go</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Supply type: </label>
+							<div class="col-sm-5">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option>NON</option>
+									<option>AMB</option>
+									<option selected="">CENT</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Sample box delivery date:</label>
+							<div class="col-sm-5">
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-calendar-alt"></i>
+										</span>
+									</span>
+									<input type="text" data-plugin-datepicker
+										data-plugin-options='{ "format": "dd/mm/yyyy" }' class="form-control dateInput"
+										autocomplete="off" value="07/05/2024">
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Sample box: <span
+									class="required">*</span></label>
+							<div class="col-sm-5">
+								<div class="fileupload fileupload-new" data-provides="fileupload">
+									<div class="input-append">
+										<div class="uneditable-input">
+											<i class="fas fa-file fileupload-exists"></i>
+											<span class="fileupload-preview"></span>
+										</div>
+										<span class="btn btn-default btn-file">
+											<span class="fileupload-exists">Change</span>
+											<span class="fileupload-new">Select file</span>
+											<input type="file" onchange="App.FVFostPlus.showImage(true)" />
+										</span>
+										<a href="#" onclick="App.FVFostPlus.showImage(false)"
+											class="btn btn-default fileupload-exists"
+											data-dismiss="fileupload">Remove</a>
+									</div>
+								</div>
+								<img id="img" src="img/packaging.webp"
+									style="display: block;width: inherit;height: 300px;margin-top: 10px;" />
+							</div>
+						</div>
+
 					</div>
 				</section>
 			</div>
@@ -1161,4 +1291,3 @@
 		<!-- End - Subpanel - Replenishment For Suppliers-->
 	</div>
 </div>
-<!-- End - Panel - Logistics  -->
