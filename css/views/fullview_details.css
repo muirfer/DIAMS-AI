@@ -326,14 +326,14 @@ table#tLog {
 
 .i-link-f {
     display: none;
-    margin-right: 3px;
     color: darkorange;
-    font-size: large;
+    font-size: smaller;
+    opacity: 0.6;
 }
 
 .i-link-c {
     display: none;
-    margin-right: 3px;
     color: cadetblue;
-    font-size: large;
+    font-size: smaller;
+    opacity: 0.6;
 }

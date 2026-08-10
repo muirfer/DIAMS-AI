@@ -39,78 +39,104 @@
 						<div class="form-group row">
 							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
-								title="The name of the brand under which the product is sold and promoted."><i
-									class="fas fa-link i-link i-link-f" data-toggle="tooltip" data-placement="left"
-									title="Source: GDSN"></i>Brand:
+								title="The name of the brand under which the product is sold and promoted.">Brand:
 							</label>
 							<div class="col-sm-5">
-								<input type="text" name="brand" class="form-control" autocomplete="off"
-									value="Delhaize">
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
+												class="fas fa-link" data-toggle="tooltip" data-placement="left"
+												title="Source: GDSN"></i></button>
+									</span>
+									<input type="text" name="brand" class="form-control" autocomplete="off"
+										value="Delhaize">
+								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
-								title=" A sub brand applies if a brand contains a series of underlying brands which are marketed separately. (eg Bio for Delhaize brand)"><i
-									class="fas fa-link i-link i-link-f" data-toggle="tooltip" data-placement="left"
-									title="Source: GDSN"></i>Sub-Brand:
+								title=" A sub brand applies if a brand contains a series of underlying brands which are marketed separately. (eg Bio for Delhaize brand)">Sub-Brand:
 							</label>
 							<div class="col-sm-5">
-								<input type="text" name="sbrand" class="form-control" autocomplete="off"
-									value="Plant-Based">
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
+												class="fas fa-link" data-toggle="tooltip" data-placement="left"
+												title="Source: GDSN"></i></button>
+									</span>
+									<input type="text" name="sbrand" class="form-control" autocomplete="off"
+										value="Plant-Based">
+								</div>
 							</div>
 						</div>
 						<div class="row">
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2"><i
-									class="fas fa-copy c-link i-link-c" data-toggle="tooltip" data-placement="left"
-									title="Copy from original product"></i>Product type:
+							<label class="col-sm-3 control-label text-sm-right pt-2">Product type:
 							</label>
 							<div class="col-sm-5">
-								<select class="form-control mb-3 cust-select">
-									<option value=""></option>
-									<option value="ZIBG">ZIBG - Operating supplies</option>
-									<option value="ZDIF">ZDIF - Free Display</option>
-									<option value="ZFRI">ZFRI - Perishables Retail</option>
-									<option value="ZIEN" selected>ZIEN</option>
-									<option value="ZVEF">ZVEF - Free Packaging MD</option>
-									<option value="ZDIS">ZDIS - Display</option>
-									<option value="ZHAW">ZHAW - Trading Goods Retail</option>
-									<option value="ZVER">ZVER - Packaging MD</option>
-									<option value="ZLGU">ZLGU - Tied Empties</option>
-									<option value="ZIBF">ZIBF - Free Operating supplies</option>
-									<option value="ZLGO">ZLGO - Tied Empties GOLD</option>
-									<option value="ZVOL">ZVOL - Full products</option>
-									<option value="ZHAF">ZHAF - Free Trading Goods Retail
-									</option>
-								</select>
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default c-link i-link-c" type="button" tabindex="-1"><i
+												class="fas fa-copy" data-toggle="tooltip" data-placement="left"
+												title="Copy from original product"></i></button>
+									</span>
+									<select class="form-control mb-3 cust-select">
+										<option value=""></option>
+										<option value="ZIBG">ZIBG - Operating supplies</option>
+										<option value="ZDIF">ZDIF - Free Display</option>
+										<option value="ZFRI">ZFRI - Perishables Retail</option>
+										<option value="ZIEN" selected>ZIEN</option>
+										<option value="ZVEF">ZVEF - Free Packaging MD</option>
+										<option value="ZDIS">ZDIS - Display</option>
+										<option value="ZHAW">ZHAW - Trading Goods Retail</option>
+										<option value="ZVER">ZVER - Packaging MD</option>
+										<option value="ZLGU">ZLGU - Tied Empties</option>
+										<option value="ZIBF">ZIBF - Free Operating supplies</option>
+										<option value="ZLGO">ZLGO - Tied Empties GOLD</option>
+										<option value="ZVOL">ZVOL - Full products</option>
+										<option value="ZHAF">ZHAF - Free Trading Goods Retail
+										</option>
+									</select>
+								</div>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
-								title="Code indicating if a product is considered as Fresh (F) or Dry (S). Automatically generated based on the Purchasing Group. Frozen products are considered as Dry"><i
-									class="fas fa-copy c-link i-link-c" data-toggle="tooltip" data-placement="left"
-									title="Copy from original product"></i>Product nature:
+								title="Code indicating if a product is considered as Fresh (F) or Dry (S). Automatically generated based on the Purchasing Group. Frozen products are considered as Dry">Product
+								nature:
 							</label>
 							<div class="col-sm-5">
-								<input type="text" name="brand" class="form-control" autocomplete="off"
-									value="S - D&D/Frozen">
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default c-link i-link-c" type="button" tabindex="-1"><i
+												class="fas fa-copy" data-toggle="tooltip" data-placement="left"
+												title="Copy from original product"></i></button>
+									</span>
+									<input type="text" name="brand" class="form-control" autocomplete="off"
+										value="S - D&D/Frozen">
+								</div>
 							</div>
 						</div>
 						<div class="row">
 							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2"><i
-									class="fas fa-link i-link i-link-f" data-toggle="tooltip" data-placement="left"
-									title="Source: GDSN"></i>Net
+							<label class="col-sm-3 control-label text-sm-right pt-2">Net
 								contents of Base UoM: </label>
 							<div class="col-sm-5">
-								<input type="text" name="ncobuom" class="form-control" autocomplete="off"
-									style="text-align: right;" value="1563,25">
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
+												class="fas fa-link" data-toggle="tooltip" data-placement="left"
+												title="Source: GDSN"></i></button>
+									</span>
+									<input type="text" name="ncobuom" class="form-control" autocomplete="off"
+										style="text-align: right;" value="1563,25">
+								</div>
 							</div>
 							<div class="col-sm-3">
 								<select class="form-control mb-3 cust-select">
@@ -129,38 +155,43 @@
 						<div class="form-group row">
 							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
 								data-placement="left"
-								title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish."><i
-									class="fas fa-copy c-link i-link-c" data-toggle="tooltip" data-placement="left"
-									title="Copy from original product"></i>Country
+								title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish.">Country
 								of origin of the product: </label>
 							<div class="col-sm-5">
-								<select id="f1" class="form-control mb-3 cust-select">
-									<option value="AF">AF - Afghanistan</option>
-									<option value="AL">AL - Albania</option>
-									<option value="AD">AD - Andorra</option>
-									<option value="AO">AO - Angola</option>
-									<option value="BE">BE - Belgium</option>
-									<option value="BR">BR - Brazil</option>
-									<option value="BA">BA - Bahamas</option>
-									<option value="BD">BD - Bangladesh</option>
-									<option value="CA">CA - Canada</option>
-									<option value="CN">CN - China</option>
-									<option value="CO">CO - Colombia</option>
-									<option value="CU">CU - Cuba</option>
-									<option value="DE" selected>DE - Germany</option>
-									<option value="DK">DK - Denmark</option>
-									<option value="DO">DO - Dominican Republic</option>
-									<option value="DJ">DJ - Djibouti</option>
-									<option value="ES">ES - Spain</option>
-									<option value="EG">EG - Egypt</option>
-									<option value="EC">EC - Ecuador</option>
-									<option value="EE">EE - Estonia</option>
-									<option value="FR">FR - France</option>
-									<option value="FI">FI - Finland</option>
-									<option value="FJ">FJ - Fiji</option>
-									<option value="FM">FM - Micronesia (Federated States of)
-									</option>
-								</select>
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default c-link i-link-c" type="button" tabindex="-1"><i
+												class="fas fa-copy" data-toggle="tooltip" data-placement="left"
+												title="Copy from original product"></i></button>
+									</span>
+									<select id="f1" class="form-control mb-3 cust-select">
+										<option value="AF">AF - Afghanistan</option>
+										<option value="AL">AL - Albania</option>
+										<option value="AD">AD - Andorra</option>
+										<option value="AO">AO - Angola</option>
+										<option value="BE">BE - Belgium</option>
+										<option value="BR">BR - Brazil</option>
+										<option value="BA">BA - Bahamas</option>
+										<option value="BD">BD - Bangladesh</option>
+										<option value="CA">CA - Canada</option>
+										<option value="CN">CN - China</option>
+										<option value="CO">CO - Colombia</option>
+										<option value="CU">CU - Cuba</option>
+										<option value="DE" selected>DE - Germany</option>
+										<option value="DK">DK - Denmark</option>
+										<option value="DO">DO - Dominican Republic</option>
+										<option value="DJ">DJ - Djibouti</option>
+										<option value="ES">ES - Spain</option>
+										<option value="EG">EG - Egypt</option>
+										<option value="EC">EC - Ecuador</option>
+										<option value="EE">EE - Estonia</option>
+										<option value="FR">FR - France</option>
+										<option value="FI">FI - Finland</option>
+										<option value="FJ">FJ - Fiji</option>
+										<option value="FM">FM - Micronesia (Federated States of)
+										</option>
+									</select>
+								</div>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -344,15 +375,20 @@
 							</div>
 						</div>
 						<div class="row form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2"><i
-									class="fas fa-link i-link i-link-f" data-toggle="tooltip" data-placement="left"
-									title="Source: GDSN"></i>Product
+							<label class="col-sm-2 control-label text-sm-right pt-2">Product
 								short description:
 							</label>
 							<div class="col-lg-2">
-								<textarea name="pshdesc" class="form-control texta-fixed ai-subscribable" rows="2"
-									data-plugin-maxlength maxlength="25" spellcheck="false"
-									autocorrect="off">Rice Krispies Bag Pack 4x</textarea>
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
+												class="fas fa-link" data-toggle="tooltip" data-placement="left"
+												title="Source: GDSN"></i></button>
+									</span>
+									<textarea name="pshdesc" class="form-control texta-fixed ai-subscribable" rows="2"
+										data-plugin-maxlength maxlength="25" spellcheck="false"
+										autocorrect="off">Rice Krispies Bag Pack 4x</textarea>
+								</div>
 							</div>
 							<div class="col-lg-2">
 								<textarea name="pshdesc" class="form-control texta-fixed ai-subscribable" rows="2"
@@ -376,9 +412,7 @@
 							</div>
 						</div>
 						<div class="row form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2"><i
-									class="fas fa-link i-link i-link-f" data-toggle="tooltip" data-placement="left"
-									title="Source: GDSN"></i>Product
+							<label class="col-sm-2 control-label text-sm-right pt-2">Product
 								shelf description:
 							</label>
 							<div class="col-lg-2">
@@ -388,6 +422,9 @@
 											<span class="input-group-prepend">
 												<button class="btn btn-default baseUoM prepend-unit-btn" type="button"
 													tabindex="-1">EA&nbsp;</button>
+												<button class="btn btn-default i-link i-link-f" type="button"
+													tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+														data-placement="left" title="Source: GDSN"></i></button>
 											</span>
 											<textarea class="form-control texta-fixed ai-subscribable" rows="2"
 												data-plugin-maxlength maxlength="30" spellcheck="false"
@@ -410,6 +447,9 @@
 											<span class="input-group-prepend">
 												<button class="btn btn-default prepend-unit-btn" type="button"
 													tabindex="-1">CV&nbsp;</button>
+												<button class="btn btn-default i-link i-link-f" type="button"
+													tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+														data-placement="left" title="Source: GDSN"></i></button>
 											</span>
 											<textarea class="form-control texta-fixed ai-subscribable" rows="2"
 												data-plugin-maxlength maxlength="30" spellcheck="false"
@@ -568,9 +608,7 @@
 							</div>
 						</div>
 						<div class="row form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2"><i
-									class="fas fa-link i-link i-link-f" data-toggle="tooltip" data-placement="left"
-									title="Source: GDSN"></i>Product
+							<label class="col-sm-2 control-label text-sm-right pt-2">Product
 								ticket description:
 							</label>
 							<div class="col-lg-2">
@@ -580,6 +618,9 @@
 											<span class="input-group-prepend">
 												<button class="btn btn-default baseUoM prepend-unit-btn" type="button"
 													tabindex="-1">EA&nbsp;</button>
+												<button class="btn btn-default i-link i-link-f" type="button"
+													tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+														data-placement="left" title="Source: GDSN"></i></button>
 											</span>
 											<textarea class="form-control texta-fixed ai-subscribable" rows="2"
 												data-plugin-maxlength maxlength="18" spellcheck="false"
@@ -589,8 +630,11 @@
 									<div class="row secIP">
 										<div class="input-group">
 											<span class="input-group-prepend">
-												<button class="btn btn-default prepend-unit-btn" type="button"
-													tabindex="-1">IP&nbsp;&nbsp;</button>
+												<button class="btn btn-default baseUoM prepend-unit-btn" type="button"
+													tabindex="-1">IP&nbsp;</button>
+												<button class="btn btn-default i-link i-link-f" type="button"
+													tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+														data-placement="left" title="Source: GDSN"></i></button>
 											</span>
 											<textarea class="form-control texta-fixed ai-subscribable" rows="2"
 												data-plugin-maxlength maxlength="18" spellcheck="false"
