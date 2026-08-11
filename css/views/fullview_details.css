@@ -337,3 +337,16 @@ table#tLog {
     font-size: smaller;
     opacity: 0.6;
 }
+
+/* Dynamic margins for checkbox-custom inside input-group with toggleable i-link */
+.input-group:has(.i-link) .checkbox-custom {
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+}
+
+.input-group:has(.i-link[style*="display: inline-block"]) .checkbox-custom,
+.input-group:has(.i-link[style*="display: block"]) .checkbox-custom,
+.input-group:has(.i-link[style*="display: inline"]) .checkbox-custom {
+    margin-left: 8px !important;
+    margin-top: 0 !important;
+}

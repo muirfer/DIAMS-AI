@@ -15,6 +15,11 @@
 							<div class="col-lg-11 offset-lg-1">
 								<!-- Links toolbar -->
 								<div class="form-group row" style="padding:20px;background:mintcream;">
+									<div class="col-lg-1 text-center" style="padding-top: 10px;">
+										<i class="fas fa-link  i-link i-link-f" data-toggle="tooltip"
+											data-placement="left" title="Source: GDSN"
+											style="margin-top:10px;font-size: larger;"></i>
+									</div>
 									<div class="col-lg-5 ">
 										<div class="input-group-append">
 											<button tabindex="-1" class="btn btn-link" type="button"><span
@@ -38,7 +43,7 @@
 																	<span class="fa fa-plus fa-sm px-1"></span> Add more
 																</button> -->
 									</div>
-									<div class="col-lg-7 text-right">
+									<div class="col-lg-6 text-right">
 										<button class="btn btn-link" type="button" onclick="addRow();">
 											<span class="fas fa-file-excel"></span> Download
 											to Excel
@@ -52,20 +57,14 @@
 								<table class="table table-responsive-md table-hover mb-3">
 									<thead>
 										<tr>
-											<th style="text-align: center;width: 10%;"><i
-													class="fas fa-link i-link i-link-f" data-toggle="tooltip"
-													data-placement="left" title="Source: GDSN"></i>Type</th>
-											<th style="text-align: center;width: 17%;"><i
-													class="fas fa-link i-link i-link-f" data-toggle="tooltip"
-													data-placement="left" title="Source: GDSN"></i>Component
+											<th style="text-align: center;width: 10%;">Type</th>
+											<th style="text-align: center;width: 17%;">Component
 												GTIN</th>
 											<th style="width: 32%;">Component SAP ID &
 												Description</th>
 											<th style="text-align: center;width: 17%;">Component
 												UoM</th>
-											<th style="text-align: center;width: 17%;"><i
-													class="fas fa-link i-link i-link-f" data-toggle="tooltip"
-													data-placement="left" title="Source: GDSN"></i>Number of
+											<th style="text-align: center;width: 17%;">Number of
 												components</th>
 											<th style="text-align: center;width: 7%;"></th>
 										</tr>
@@ -106,6 +105,10 @@
 												<!-- <a href="#modal_edit"
 																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
 																				class="fas fa-pencil-alt"></i></a> -->
+												<button class="btn btn-default c-link i-link-c" type="button"
+													tabindex="-1"><i class="fas fa-copy" data-toggle="tooltip"
+														data-placement="left"
+														title="Copy from original product"></i></button>
 												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
 											</td>
 										</tr>
