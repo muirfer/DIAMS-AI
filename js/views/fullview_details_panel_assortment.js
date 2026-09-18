@@ -39,7 +39,7 @@
                 info: false,
                 initComplete: function (settings, json) {
                     var $table = $(settings.nTable);
-                    
+
                     // Add 25px bottom margin to grid wrappers to prevent rows from touching when wrapping vertically
                     $table.closest('.col-lg-4, .col-lg-3').css('margin-bottom', '25px');
 
@@ -48,7 +48,7 @@
 
                     // Shrink the description column's font size
                     $table.find('tbody td:nth-child(3)').css('font-size', 'smaller');
-                    
+
                     // Natively enforce fixed sticky headers without splitting the DOM
                     $table.find('thead th').css({
                         'position': 'sticky',
@@ -62,17 +62,17 @@
                     if (!$table.parent().hasClass('scrollable-content')) {
                         $table.wrap('<div class="scrollable" data-plugin-scrollable data-plugin-options=\'{"alwaysVisible": true}\' style="height: 400px;"><div class="scrollable-content"></div></div>');
                         var $scrollableDiv = $table.closest('.scrollable');
-                        
+
                         // Initialize via theme scrollable plugin safely and synchronously
                         if (typeof $.fn.themePluginScrollable === 'function') {
                             $scrollableDiv.themePluginScrollable({ alwaysVisible: true });
                         } else if (typeof window.initScrollable === 'function') {
                             window.initScrollable();
                         }
-                        
+
                         // Programmatically simulate a window resize exactly as the user did manually.
                         // This forces NanoScroller framework to detect overflow natively and paint the scrollbar immediately.
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $(window).trigger('resize');
                             // Ensure the inner scrollable resets metrics manually as a fallback
                             if (typeof $.fn.nanoScroller === 'function') {
@@ -138,16 +138,16 @@
         /**
          * Bind events for the Belgium assortment toolbar
          */
-        bindBelgiumAssortmentEvents: function() {
+        bindBelgiumAssortmentEvents: function () {
             var self = this;
-            
+
             // Dropdown change
-            $('#belgiumAssortmentFilter').on('change', function() {
+            $('#belgiumAssortmentFilter').on('change', function () {
                 self.filterBelgiumAssortment();
             });
 
             // Button "All" click
-            $('#btnAll').on('click', function(e) {
+            $('#btnAll').on('click', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass('btn-default')) {
                     $(this).removeClass('btn-default').addClass('btn-primary active');
@@ -157,7 +157,7 @@
             });
 
             // Button "Selected" click
-            $('#btnSelected').on('click', function(e) {
+            $('#btnSelected').on('click', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass('btn-default')) {
                     $(this).removeClass('btn-default').addClass('btn-primary active');
@@ -167,7 +167,7 @@
             });
 
             // Handle switch changes to re-apply filter if in "Selected" view
-            $('#tableBodyBe').on('change', 'input[type="checkbox"]', function() {
+            $('#tableBodyBe').on('change', 'input[type="checkbox"]', function () {
                 if ($('#btnSelected').hasClass('btn-primary')) {
                     self.filterBelgiumAssortment();
                 }
@@ -177,15 +177,15 @@
         /**
          * Filter the Belgium assortment table based on toolbar state
          */
-        filterBelgiumAssortment: function() {
+        filterBelgiumAssortment: function () {
             var showAll = $('#btnAll').hasClass('btn-primary');
             var dropdownFilter = $('#belgiumAssortmentFilter').val();
 
-            $('#tableBodyBe tr').each(function() {
+            $('#tableBodyBe tr').each(function () {
                 var $row = $(this);
                 // The dropdown filters based on the class of the tr (e.g., "sm-manual", "sm-local")
                 var matchDropdown = (!dropdownFilter || dropdownFilter === 'all') || $row.hasClass(dropdownFilter);
-                
+
                 // Button "All" shows everything (matching dropdown), "Selected" checks the row's checkbox
                 var isChecked = $row.find('input[type="checkbox"]').is(':checked');
                 var matchButton = showAll || isChecked;
@@ -201,16 +201,16 @@
         /**
          * Bind events for the Luxembourg assortment toolbar
          */
-        bindLuxembourgAssortmentEvents: function() {
+        bindLuxembourgAssortmentEvents: function () {
             var self = this;
-            
+
             // Dropdown change
-            $('#luxembourgAssortmentFilter').on('change', function() {
+            $('#luxembourgAssortmentFilter').on('change', function () {
                 self.filterLuxembourgAssortment();
             });
 
             // Button "All" click
-            $('#btnAllLu').on('click', function(e) {
+            $('#btnAllLu').on('click', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass('btn-default')) {
                     $(this).removeClass('btn-default').addClass('btn-primary active');
@@ -220,7 +220,7 @@
             });
 
             // Button "Selected" click
-            $('#btnSelectedLu').on('click', function(e) {
+            $('#btnSelectedLu').on('click', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass('btn-default')) {
                     $(this).removeClass('btn-default').addClass('btn-primary active');
@@ -230,7 +230,7 @@
             });
 
             // Handle switch changes to re-apply filter if in "Selected" view
-            $('#tableBodyLu').on('change', 'input[type="checkbox"]', function() {
+            $('#tableBodyLu').on('change', 'input[type="checkbox"]', function () {
                 if ($('#btnSelectedLu').hasClass('btn-primary')) {
                     self.filterLuxembourgAssortment();
                 }
@@ -240,14 +240,14 @@
         /**
          * Filter the Luxembourg assortment table based on toolbar state
          */
-        filterLuxembourgAssortment: function() {
+        filterLuxembourgAssortment: function () {
             var showAll = $('#btnAllLu').hasClass('btn-primary');
             var dropdownFilter = $('#luxembourgAssortmentFilter').val();
 
-            $('#tableBodyLu tr').each(function() {
+            $('#tableBodyLu tr').each(function () {
                 var $row = $(this);
                 var matchDropdown = (!dropdownFilter || dropdownFilter === 'all') || $row.hasClass(dropdownFilter);
-                
+
                 var isChecked = $row.find('input[type="checkbox"]').is(':checked');
                 var matchButton = showAll || isChecked;
 
@@ -257,7 +257,50 @@
                     $row.hide();
                 }
             });
-        }
+        },
+
+        /**
+         * Show or hide planogram information input depending if it is requested or not
+         */
+        onDSPlanogramInfoNotRequested: function () {
+            if ($("#chkPlanogramNotReq").is(":checked")) {
+                //hide all
+                $("#mBanners").hide();
+                $("#tableDSPlanogram").hide();
+            } else {
+                $("#mBanners").show();
+                $("#tableDSPlanogram").show();
+            }
+
+        },
+
+        /**
+         * Show banner input element on table below
+         * Remove banner option from table
+         */
+        onBannerSelected: function (elemId) {
+            //show table input
+            $("#row" + elemId).show();
+
+            //hide element in selector
+            $("#" + elemId).hide();
+
+        },
+
+        /**
+         * Hide banner input element on table below
+         * Add banner option for selection
+         */
+        onBannerRemoved: function (elemId) {
+            //hide table input
+            $("#row" + elemId).hide();
+
+            //show element in selector
+            $("#" + elemId).show();
+
+            event.preventDefault();
+
+        },
     };
 
     App.FVAssortment = FVAssortment;

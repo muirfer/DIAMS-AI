@@ -17,7 +17,7 @@
         { id: "#pLogistics", sections: ["Logistics", "Distribution center", "Replenishment", "Replenishment (Argos)"] },
         { id: "#pPurchasing", sections: ["Purchasing data", "Product pricing information"] },
         { id: "#pLinks", sections: ["Links"] },
-        { id: "#pAssortment", sections: ["Basic information", "SRP", "Belgium", "Luxembourg"] },
+        { id: "#pAssortment", sections: ["Basic information", "SRP", "Belgium", "Luxembourg", "Planogram"] },
         { id: "#pPricesNew", sections: ["Information", "Price structure", "Sales prices"] },
         { id: "#pWine", sections: ["Information"] },
         { id: "#pFostPlus", sections: ["Information", "Number of consumer units", "Primary packaging"] }
@@ -359,8 +359,8 @@
 
             // Close popover when clicking outside
             $(document).on('click', function (e) {
-                if (!$(e.target).closest('.input-ai-wrapper').length && 
-                    !$(e.target).closest('.ai-popover').length && 
+                if (!$(e.target).closest('.input-ai-wrapper').length &&
+                    !$(e.target).closest('.ai-popover').length &&
                     !$(e.target).hasClass('ai-notification-badge') &&
                     !$(e.target).hasClass('ai-subscribable')) {
                     $('.ai-popover').hide();
