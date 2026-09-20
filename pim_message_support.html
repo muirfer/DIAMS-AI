@@ -1,0 +1,381 @@
+﻿<section class="body">
+	<header class="page-header">
+		<h2 id="main_title">Message Support</h2>
+
+		<div class="right-wrapper text-right">
+
+		</div>
+	</header>
+	<!-- Dashboard Filter / Toolbar container -->
+	<div class="inner-toolbar clearfix" id="dashboard-filter-container" style="top: 114px;height: 80px;">
+		<ul class="clearfix">
+			<li>
+				<div class="btn-group flex-wrap" style="top:-8px">
+					<button type="button" class="btn btn-success" style="margin:8px">
+						<a href="#modalCreateEditMessage" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"
+							style="font-size: large;color: white;"><i class="fas fa-plus m-0"></i> Create</a>
+					</button>
+				</div>
+			</li>
+			<li class="right">
+				<div id="searchDiv"></div>
+			</li>
+			<!-- <li class="right">
+				<div class="input-group">
+					<span class="input-group-prepend">
+						<span class="input-group-text" style="padding: 0px;">
+							<button class="btn btn-default" style="font-size: smaller;background: snow;"
+								type="button">Status</button>
+						</span>
+					</span>
+					<select class="form-control col-lg-12" style="padding-top: 0px;padding-bottom: 0px;"
+						onchange="App.SupportMessage.selectType(this.value)">
+						<option value="stsActive" selected>Active</option>
+						
+						<option value="stsExpired">Expired</option>
+						<option value="stsAll">All</option>
+					</select>
+				</div>
+			</li> -->
+		</ul>
+	</div>
+	<div>
+		<div class="row" style="margin-top: 60px;">
+			<!-- start table  -->
+			<div class="col-lg-12">
+				<div class="row my-4 mailbox">
+					<div class="col mailbox-actions" style="padding-left: 20px !important;border-top: none !important;">
+						<ul class="list-unstyled m-0">
+							<li class="ib mr-2">
+								<a class="item-action fas fa-sync mt-1" href="#" rel="tooltip" title=""
+									onclick="getItems(); return false;" data-original-title="Refresh data"></a>
+							</li>
+							<li class="ib mr-2">
+								<a class="item-action fas fa-eraser mt-1" href="#" rel="tooltip" title=""
+									onclick="clearFilters(); return false;" data-original-title="Clear filters"></a>
+							</li>
+							<!-- <li class="ib mr-2">
+								<div id="searchDiv"></div>
+							</li> -->
+							<li class="ib mr-2" style="float: right;width: 50%;">
+								<div class="row control-group">
+									<div class="col text-right pr-0 mr-0" style="margin-top: 8px;">
+										Records per page
+									</div>
+									<div id="divPag" class="col-sm-4 col-lg-3" style="padding-right:0%">
+
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- start: table -->
+				<div class="row">
+					<div class="col-lg-12" style="height: 557px;">
+						<div class="dropzone dz-square bootstrap-tagsinput p-2 mt-2 text-center"
+							style="min-height: 30px; border-radius: 3px 3px 0px 0px;" id="div-groupby-container">
+							<p class="m-0">Drag a column header and drop it here to group by that column.</p>
+						</div>
+						<div class="scrollable fixed_header" style="height: 502px;overflow-y: auto;">
+							<table class="table table-no-more table-hover mb-0 dataTable scrollable-content"
+								id="datatable-default" style="margin: 0 !important;">
+								<thead>
+									<tr>
+										<th draggable="true" style="width:5%">Type</th>
+										<th draggable="true" style="width:15%">Subject</th>
+										<th draggable="true" style="width:43%">Description</th>
+										<th class="text-center" draggable="true" style="width:7%">Created by</th>
+										<th class="text-center" draggable="true" style="width: 5%;">Start</th>
+										<th class="text-center" draggable="true" style="width: 5%;">End</th>
+										<th class="text-center" draggable="true" style="width:5%">Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr id="rowM1" class="sts2 aw" style="background-color: floralwhite;">
+										<td style="color:darkred">
+											Error
+										</td>
+										<td>Critical error!</td>
+										<td>
+											We are experiencing critical issues with our GDSN server.
+											All data synchronization processes have been halted.
+											Our team is working urgently to resolve this issue.
+											Please refrain from submitting new data until further notice.
+										</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center">10/09/2026 18:00</td>
+										<td class="text-center" style="color:red;font-size: larger;">No End</td>
+										<td class="text-center tStatus gt1">Active</td>
+									</tr>
+									<tr id="row0" class="sts2 aw">
+										<td style="color:darkblue">
+											Info
+										</td>
+										<td>GDSN notes</td>
+										<td>GDSN is the global source of truth for product information. Please use GDSN
+											to update your product information.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center">15/09/2026 09:00</td>
+										<td class="text-center">20/09/2026 17:00</td>
+										<td class="text-center tStatus rev">Planned</td>
+									</tr>
+									<tr id="row1" class="sts2 aw">
+										<td style="color:darkorange">
+											Warning
+										</td>
+										<td>Downtime server maintenance</td>
+										<td>The GDSN server will be down for maintenance from 10/09/2026 10:00 to
+											11/09/2026 23:00.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center">10/09/2026 10:00</td>
+										<td class="text-center">11/09/2026 23:00</td>
+										<td class="text-center tStatus gt1">Active</td>
+									</tr>
+									<tr id="row2" class="sts2 aw">
+										<td style="color:darkred">
+											Error
+										</td>
+										<td>Performance issues</td>
+										<td>We are experiencing some performance issues with the server. Please try
+											again later. If no news do not hesitate to contact the support team. We are
+											trying hard to fix it asap. You may continue your work at your own risk.
+											Don´t submit any request duri...</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center">09/09/2026 09:00</td>
+										<td class="text-center">13/09/2026 15:30</td>
+										<td class="text-center tStatus gt1">Active</td>
+									</tr>
+									<tr id="row3" class="sts2 aw">
+										<td style="color:darkblue">
+											Info
+										</td>
+										<td>New features</td>
+										<td>Take a look at the new features that have been added to the platform.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center">08/09/2026 09:00</td>
+										<td class="text-center">15/09/2026 15:30</td>
+										<td class="text-center tStatus gdsn">Suspended</td>
+									</tr>
+									<tr id="row4" class="sts2 aw">
+										<td style="color:darkblue">
+											Info
+										</td>
+										<td>Holidays season reminder</td>
+										<td>This is an automated message to remind you about the upcoming holidays
+											season. Please make sure to submit all your requests before the holidays
+											season.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center" style="color:darkgrey">08/09/2026 09:00</td>
+										<td class="text-center" style="color:darkgrey">11/09/2026 15:30</td>
+										<td class="text-center tStatus gt2">Expired</td>
+									</tr>
+									<tr id="row5" class="sts2 aw">
+										<td style="color:darkblue">
+											Info
+										</td>
+										<td>Use the new tools</td>
+										<td>You can now use the new tools in the platform.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center" style="color:darkgrey">05/09/2026 14:00</td>
+										<td class="text-center" style="color:darkgrey">07/09/2026 11:30</td>
+										<td class="text-center tStatus gt2">Expired</td>
+									</tr>
+									<tr id="row6" class="sts2 aw">
+										<td style="color:darkred">
+											Error
+										</td>
+										<td>Maintenance mode for MDS</td>
+										<td>MDS Server support will be down for maintenance from 04/09/2026 23:00 to
+											05/09/2026 09:30.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center" style="color:darkgrey">04/09/2026 23:00</td>
+										<td class="text-center" style="color:darkgrey">05/09/2026 09:30</td>
+										<td class="text-center tStatus gt2">Expired</td>
+									</tr>
+									<tr id="row7" class="sts2 aw">
+										<td style="color:darkorange">
+											Warning
+										</td>
+										<td>Do not submit (DLL only)</td>
+										<td>We are experiencing some performance issues with the server. Please try
+											again later. If no news do not hesitate to contact the support team. We are
+											trying hard to fix it asap. You may continue your work at your own risk.
+											Don´t submit any request during this time.</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Francis Kalo">FMMQ</td>
+										<td class="text-center" style="color:darkgrey">04/09/2026 15:00</td>
+										<td class="text-center" style="color:darkgrey">05/09/2026 12:30</td>
+										<td class="text-center tStatus gt2">Expired</td>
+									</tr>
+									<tr id="row8" class="sts2 aw">
+										<td style="color:darkblue">
+											Info
+										</td>
+										<td>DLL - New validation rules</td>
+										<td>Do you want to be informed in the future about upcoming new features or
+											changes in the DLL? Please let us know by checking the box in your profile.
+										</td>
+										<td class="text-center" data-toggle="tooltip" data-placement="right"
+											title="Jack Black">JBLA</td>
+										<td class="text-center" style="color:darkgrey">01/09/2026 09:30</td>
+										<td class="text-center" style="color:darkgrey">04/09/2026 10:30</td>
+										<td class="text-center tStatus gt2">Expired</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="row" style="margin-top: 20px;">
+							<div id="fPag" class="col-lg-9" style="text-align: right;margin-left: 80%;"></div>
+						</div>
+
+					</div>
+				</div>
+				<!-- end: table -->
+			</div>
+			<!-- end table  -->
+		</div>
+
+	</div>
+	<!-- Modal Create / Edit message  -->
+	<div id="modalCreateEditMessage" class="zoom-anim-dialog modal-block modal-block-lg modal-block-success mfp-hide">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Create/Edit Message</h2>
+				<div class="right-wrapper text-right" style="margin-top: -20px;">
+					<a href="#" class="mb-1 mt-1 mr-1 modal-dismiss">Close</a>
+				</div>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="form-group">
+							<label class="col-form-label" for="formGroupExampleInput">Type</label>
+							<div class="btn-group d-flex" role="group">
+								<a class="btn btn-primary w-100 btnPR" role="button" id="btnPC"
+									onclick="App.SupportForm.toggleProcess(this,1)">Info</a>
+								<a class="btn btn-default w-100 btnPR" role="button" id="btnPU"
+									onclick="App.SupportForm.toggleProcess(this,2)">Warning</a>
+								<a class="btn btn-default w-100 btnPR" role="button" id="btnUA"
+									onclick="App.SupportForm.toggleProcess(this,3)">Error</a>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label" for="formGroupExampleInput">Title</label>
+							<input type="text" name="title" class="form-control" autocomplete="off" value="">
+						</div>
+						<div class="form-group">
+							<label class="col-form-label" for="formGroupExampleInput">Description</label>
+							<textarea type="text" rows="5" name="description" class="form-control" autocomplete="off"
+								value=""></textarea>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label" for="formGroupExampleInput">From</label>
+							<div class="input-group">
+								<input type="text" data-plugin-datepicker="" class="form-control text-center">
+								<span class="input-group-append">
+									<input type="text" data-plugin-timepicker="" class="form-control text-center
+										data-plugin-options=" { &quot;showMeridian&quot;: false }">
+								</span>
+							</div>
+							<div class="checkbox-custom" style="margin-top: 8px;">
+								<input type="checkbox" checked="" id="checkboxExample2">
+								<label for="checkboxExample2">Start now</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label" for="formGroupExampleInput">To</label>
+							<div class="input-group">
+								<input type="text" data-plugin-datepicker="" class="form-control text-center">
+								<span class="input-group-append">
+									<input type="text" data-plugin-timepicker="" class="form-control text-center
+										data-plugin-options=" { &quot;showMeridian&quot;: false }">
+								</span>
+							</div>
+							<div class="checkbox-custom" style="margin-top: 8px;">
+								<input type="checkbox" checked="" id="checkboxExample2">
+								<label for="checkboxExample2">No end</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="form-group">
+							<label class="col-form-label" for="formGroupExampleInput">Display message to</label>
+							<div class="accordion accordion-sm" id="accordion3">
+								<div class="card card-default">
+									<div class="card-header">
+										<h4 class="card-title m-0">
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+												href="#accMainInfo">
+												DLL
+											</a>
+										</h4>
+									</div>
+									<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+										<div class="card-body">
+											<section class="card">
+												<div class="card-body">
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+								<!-- End - Accordion DLL -->
+								<!-- Start - Accordion DS -->
+								<div id="pChange" class="card card-default">
+									<div class="card-header">
+										<h4 class="card-title m-0">
+											<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
+												data-parent="#accordion3" href="#accChangeRequest">
+												DS
+											</a>
+										</h4>
+										<div class="card-actions">
+											<!-- <a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
+												style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a> -->
+										</div>
+									</div>
+									<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
+
+									</div>
+								</div>
+								<!-- End - Accordion Change request -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="card-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<button class="btn btn-danger modal-dismiss">Delete</button>
+						<button class="btn btn-warning modal-dismiss">Suspend</button>
+					</div>
+					<div class="col-md-6 text-right">
+						<button class="btn btn-success modal-dismiss">Save</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+</section>
+
+<script src="js/views/view.common.js"></script>
+<script src="js/views/support_message.js"></script>
+<script>
+	jQuery(document).ready(function ($) {
+		App.ViewCommon.initialize({
+			exclude: ['initWizard']
+		});
+
+		App.SupportMessage.initialize();
+	});
+</script>

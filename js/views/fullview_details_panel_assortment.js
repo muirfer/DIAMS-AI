@@ -281,6 +281,7 @@
         onBannerSelected: function (elemId) {
             //show table input
             $("#row" + elemId).show();
+            $("#row" + elemId).find("textarea").first().focus();
 
             //hide element in selector
             $("#" + elemId).hide();
