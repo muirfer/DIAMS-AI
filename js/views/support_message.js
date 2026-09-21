@@ -5,7 +5,11 @@
     window.App = window.App || {};
 
     // Array to track selected rows/statuses
-    var gSelected = [];
+    App.MessageTypes = [
+        { id: 1, type: "btn-primary" },
+        { id: 2, type: "btn-warning" },
+        { id: 3, type: "btn-danger" }
+    ];
 
     // Module for handling Message Support logic
     var SupportMessage = {
@@ -69,153 +73,41 @@
         },
 
         /**
-         * Filters the list of GTINs based on the selected status.
-         * @param {string} sts - Status filter: 'all', 'aw' (Available), or 'ot' (In Use).
-         */
-        selectType: function (sts) {
-            if (sts === "all") {
-                $(".aw").show();
-                $(".ot").show();
-            } else if (sts === "aw") {
-                $(".aw").show();
-                $(".ot").hide();
-            } else if (sts === "ot") {
-                $(".aw").hide();
-                $(".ot").show();
-            }
-        },
-
-        /**
-         * Navigates to the next step in the Wizard.
-         * Handles tab switching and button visibility (Prev/Next/Finish).
-         */
-        goNext: function () {
-            if ($('#opt1').hasClass('active')) {
-                // Step 1 -> Step 2
-                $('#opt2').addClass('active');
-                $('#opt1').removeClass('active');
-                $('#w1-element').addClass('active');
-                $('#w1-type').removeClass('active');
-                $(".previous").show();
-            } else if ($('#opt2').hasClass('active')) {
-                // Step 2 -> Step 3
-                $('#opt3').addClass('active');
-                $('#opt2').removeClass('active');
-                $('#w1-details').addClass('active');
-                $('#w1-element').removeClass('active');
-                $(".next").hide();
-                $(".finish").show();
-            }
-        },
-
-        /**
-         * Navigates back to the previous step in the Wizard.
-         */
-        goBack: function () {
-            var backToStart = $('#opt2').hasClass('active');
-            $(".finish").hide();
-
-            if (backToStart) {
-                // Step 2 -> Step 1
-                $('#opt1').addClass('active');
-                $('#opt2').removeClass('active');
-                $('#w1-type').addClass('active');
-                $('#w1-element').removeClass('active');
-                $(".previous").hide();
-            } else {
-                // Step 3 -> Step 2
-                $('#opt2').addClass('active');
-                $('#opt3').removeClass('active');
-                $('#w1-element').addClass('active');
-                $('#w1-details').removeClass('active');
-                $(".next").show();
-            }
-        },
-
-        /**
-         * Handles the completion of the reservation process.
-         * Resets the wizard to the start.
-         */
-        onReserveCompleted: function () {
-            this.goBack();
-            this.goBack();
-        },
-
-        /**
-         * Toggles selection of a Unit of Measure (UoM) button.
+         * Toggles selection of a message type button.
          * Changes button visual style (Primary <-> Default).
          * @param {HTMLElement} btn - The button clicked.
          */
-        selectUoM: function (btn) {
-            if ($(btn).hasClass("btn-primary")) {
-                // Deselect
-                $(btn).removeClass("btn-primary");
-                $(btn).addClass("btn-default");
-                return;
-            }
+        selectMessageType: function (btn, btnId) {
+            let level = App.MessageTypes.find(item => item.id === btnId);
 
-            // Select
-            $(btn).removeClass("btn-default");
-            $(btn).addClass("btn-primary");
+            //update buttons
+            $(".btnPR").removeClass("btn-primary btn-warning btn-danger");
+            $(".btnPR").addClass("btn-default");
+            $(".btnPR").css("color", "black");
+            $(btn).addClass(level.type);
+            $(btn).css("color", "white");
         },
 
         /**
-         * Updates row background color based on selection status.
-         * Manages the `gSelected` array to track availability status.
-         * Updates visibility of 'Release' and 'Mark as Used' buttons.
-         * @param {string} row - Row ID
-         * @param {boolean} checked - Selection state
-         * @param {number} status - Status code (1=Available, 2=In Use)
+         * Show or hide section per OpCo to select 
+         * roles to display if not for everyone.
          */
-        changeRowColor: function (row, checked, status) {
-            var color = (checked) ? "aliceblue" : "white";
-            $("#row" + row).css("backgroundColor", color);
-
-            if (checked) {
-                gSelected.push(status);
+        displayToAll: function () {
+            if ($("#chkAll").is(':checked')) {
+                $("#accordion3").hide();
             } else {
-                let indexToRemove = gSelected.indexOf(status);
-                gSelected.splice(indexToRemove, 1);
-            }
-
-            if (gSelected.length === 0) {
-                $("#btnMark").hide();
-                $("#btnRel").hide();
-            } else {
-                // Check if all selected items are 'Available' (1)
-                let allAvailable = gSelected.every(function (item) {
-                    return item === 1;
-                });
-
-                // Check if all selected items are 'In Use' (2)
-                let allInUse = gSelected.every(function (item) {
-                    return item === 2;
-                });
-
-                if (allAvailable) {
-                    $("#btnMark").show();
-                    $("#btnRel").hide();
-                } else if (allInUse) {
-                    $("#btnMark").hide();
-                    $("#btnRel").show();
-                } else {
-                    // Mixed selection, hide actions
-                    $("#btnMark").hide();
-                    $("#btnRel").hide();
-                }
+                $("#accordion3").show();
             }
         },
 
         /**
-         * Toggles between 'Average weight' and 'Others' brand types.
-         * Ensures mutually exclusive selection.
+         * SElect / unselect all for opco
          */
-        toggleBrandType: function (btn, otherBtnId) {
-            if ($(btn).hasClass("btn-default")) {
-                $(btn).removeClass("btn-default");
-                $(btn).addClass("btn-primary");
-                $("#" + otherBtnId).removeClass("btn-primary");
-                $("#" + otherBtnId).addClass("btn-default");
+        selectAllForOpCo: function (chkId, chkClass) {
+            if ($("#" + chkId).is(':checked')) {
+                $("." + chkClass).prop("checked", true);
+            } else {
+                $("." + chkClass).prop("checked", false);
             }
         },
 
@@ -226,12 +118,7 @@
 
         clearFilters: function () {
             console.log("clearFilters called - Resetting filters...");
-        },
-
-        exportExcel: function () {
-            console.log("exportExcel called - Downloading report...");
         }
-
     };
 
     App.SupportMessage = SupportMessage;
