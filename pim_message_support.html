@@ -72,12 +72,12 @@
 				</div>
 				<!-- start: table -->
 				<div class="row">
-					<div class="col-lg-12" style="height: 557px;">
+					<div class="col-lg-12" style="height: 850px;">
 						<div class="dropzone dz-square bootstrap-tagsinput p-2 mt-2 text-center"
 							style="min-height: 30px; border-radius: 3px 3px 0px 0px;" id="div-groupby-container">
 							<p class="m-0">Drag a column header and drop it here to group by that column.</p>
 						</div>
-						<div class="scrollable fixed_header" style="height: 502px;overflow-y: auto;">
+						<div class="scrollable fixed_header" style="height: 800px;overflow-y: auto;">
 							<table class="table table-no-more table-hover mb-0 dataTable scrollable-content"
 								id="datatable-default" style="margin: 0 !important;">
 								<thead>
@@ -280,40 +280,43 @@
 						<div class="form-group">
 							<label class="col-form-label" for="formGroupExampleInput">From</label>
 							<div class="input-group">
-								<input type="text" data-plugin-datepicker="" class="form-control text-center">
+								<input type="text" data-plugin-datepicker="" class="form-control text-center fdate">
 								<span class="input-group-append">
-									<input type="text" data-plugin-timepicker class="form-control text-center"
+									<input type="text" data-plugin-timepicker class="form-control text-center fdate"
 										data-plugin-options='{ "showMeridian": false }'>
 
 								</span>
 							</div>
 							<div class="checkbox-custom" style="margin-top: 8px;">
-								<input type="checkbox" checked="" id="checkboxExample2">
-								<label for="checkboxExample2">Start now</label>
+								<input type="checkbox" id="checkboxDF"
+									onchange="App.SupportMessage.onNoDateNeeded('fdate')">
+								<label for="checkboxDF">Start now</label>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-form-label" for="formGroupExampleInput">To</label>
 							<div class="input-group">
-								<input type="text" data-plugin-datepicker="" class="form-control text-center">
+								<input type="text" data-plugin-datepicker="" class="form-control text-center edate">
 								<span class="input-group-append">
-									<input type="text" data-plugin-timepicker class="form-control text-center"
+									<input type="text" data-plugin-timepicker class="form-control text-center edate"
 										data-plugin-options='{ "showMeridian": false }'>
 								</span>
 							</div>
 							<div class="checkbox-custom" style="margin-top: 8px;">
-								<input type="checkbox" checked="" id="checkboxExample2">
-								<label for="checkboxExample2">No end</label>
+								<input type="checkbox" id="checkboxDT"
+									onchange="App.SupportMessage.onNoDateNeeded('edate')">
+								<label for="checkboxDT" style="color:red">No end</label>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-5">
 						<div class="form-group">
 							<label class="col-form-label" for="formGroupExampleInput">Display message to</label>
-							<div class="checkbox-custom" style="margin-top: 8px;">
+							<div class="checkbox-custom"
+								style="margin-top: 8px;padding-top: 5px;padding-bottom: 5px;background: floralwhite;">
 								<input type="checkbox" checked="" id="chkAll"
-									onchange="App.SupportMessage.displayToAll(this.value)">
-								<label for="checkboxExample2">Everyone</label>
+									onchange="App.SupportMessage.displayToAll()">
+								<label for="chkAll">Everyone</label>
 							</div>
 							<div class="accordion accordion-sm" id="accordion3" style="display: none;margin-top: 25px;">
 								<div class="card card-default">
@@ -328,7 +331,7 @@
 											<div class="checkbox-custom" style="margin-top: -10px;">
 												<input type="checkbox" id="chkAllDLL"
 													onchange="App.SupportMessage.selectAllForOpCo(this.id, 'chkDLL')">
-												<label for="checkboxExample2">All</label>
+												<label for="chkAllDLL">All</label>
 											</div>
 										</div>
 									</div>
@@ -337,50 +340,50 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="checkbox-custom">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Supplier</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLS">
+														<label for="chkDLLS">Supplier</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Category Expert</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLEX">
+														<label for="chkDLLEX">Category Expert</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Category Manager</label>
+														<input type="checkbox" class="chkDLL" id="chkDLCM">
+														<label for="chkDLCM">Category Manager</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Master Data Specialist</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLMDS">
+														<label for="chkDLLMDS">Master Data Specialist</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Replenishers</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLREP">
+														<label for="chkDLLREP">Replenishers</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Plano team</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLPLAN">
+														<label for="chkDLLPLAN">Plano team</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">Lab team</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLLAB">
+														<label for="chkDLLLAB">Lab team</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDLL">
-														<label for="checkboxExample2">E2E team</label>
+														<input type="checkbox" class="chkDLL" id="chkDLLE2E">
+														<label for="chkDLLE2E">E2E team</label>
 													</div>
 												</div>
 											</div>
@@ -401,7 +404,7 @@
 											<div class="checkbox-custom" style="margin-top: -10px;">
 												<input type="checkbox" id="chkAllDS"
 													onchange="App.SupportMessage.selectAllForOpCo(this.id, 'chkDS')">
-												<label for="checkboxExample2">All</label>
+												<label for="chkAllDS">All</label>
 											</div>
 										</div>
 									</div>
@@ -410,44 +413,44 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="checkbox-custom">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Supplier</label>
+														<input type="checkbox" class="chkDS" id="chkDSS">
+														<label for="chkDSS">Supplier</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Category Assistant</label>
+														<input type="checkbox" class="chkDS" id="chkDSCA">
+														<label for="chkDSCA">Category Assistant</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Category Manager</label>
+														<input type="checkbox" class="chkDS" id="chkDSCM">
+														<label for="chkDSCM">Category Manager</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Master Data Specialist</label>
+														<input type="checkbox" class="chkDS" id="chkDSMDS">
+														<label for="chkDSMDS">Master Data Specialist</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Replenishers</label>
+														<input type="checkbox" class="chkDS" id="chkDSREP">
+														<label for="chkDSREP">Replenishers</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Plano team</label>
+														<input type="checkbox" class="chkDS" id="chkDSPLAN">
+														<label for="chkDSPLAN">Plano team</label>
 													</div>
 												</div>
 												<div class="row">
 													<div class="checkbox-custom" style="margin-top: 8px;">
-														<input type="checkbox" class="chkDS">
-														<label for="checkboxExample2">Quality team</label>
+														<input type="checkbox" class="chkDS" id="chkDSQ">
+														<label for="chkDSQ">Quality team</label>
 													</div>
 												</div>
 											</div>

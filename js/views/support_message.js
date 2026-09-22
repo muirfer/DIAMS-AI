@@ -111,6 +111,18 @@
             }
         },
 
+        onNoDateNeeded: function (classToUpdate) {
+            let fieldToCheck = classToUpdate === "edate" ? "#checkboxDT" : "#checkboxDF"
+            if ($(fieldToCheck).is(':checked')) {
+                $("." + classToUpdate).attr("disabled", true);
+                $("." + classToUpdate).attr("readonly", true);
+                $("." + classToUpdate).val("");
+            } else {
+                $("." + classToUpdate).removeAttr("disabled");
+                $("." + classToUpdate).removeAttr("readonly");
+            }
+        },
+
         // Helper methods for data operations (Placeholders)
         getItems: function () {
             console.log("getItems called - Refreshing data...");
