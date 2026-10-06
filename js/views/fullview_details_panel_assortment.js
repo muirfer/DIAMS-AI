@@ -302,6 +302,44 @@
             event.preventDefault();
 
         },
+        /**
+         * Hide NP Layout Module input element on table below         * 
+         */
+        onNPLayoutModuleRemoved: function (elemId) {
+            //hide table input
+            $("#row_" + elemId).hide();
+
+            event.preventDefault();
+
+        },
+        /**
+         * Paste Layout modules from Excel         * 
+         */
+        pasteLMFromExcel: function () {
+            //Find all tr in table body and show them
+            $("#tableBodyDSNP").find("tr").show();
+
+        },
+        /**
+         * Show selected Layout modules in the table         * 
+         */
+        addSelectedLM: function () {
+            //Get id of selected item in the drop down
+            var selectedId = $("#layoutModulesSelector").val();
+            if (!selectedId) {
+                //$("#layoutModulesSelector").select2("search", "");
+                return;
+            }
+
+            //Find row with this id in the table body
+            var $row = $("#tableBodyDSNP").find("#row_" + selectedId);
+
+            //Show row
+            $row.show();
+
+            //reset to blank the value of the selector
+            $("#layoutModulesSelector").val(null).trigger('change');
+        },
     };
 
     App.FVAssortment = FVAssortment;

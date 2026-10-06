@@ -201,6 +201,70 @@
                                 </section>
                             </div>
                         </div>
+                        <div class="row">
+                            <hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Seasonality flag: </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option value="SUM">Summer</option>
+                                    <option value="WIN">Winter</option>
+                                    <option value="CHR" selected>Christmas</option>
+                                    <option value="EAS">Easter</option>
+                                    <option value="SCH">School</option>
+                                    <option value="IO">In-Out</option>
+                                    <option value="FAS">Fasting</option>
+                                    <option value="VAL">Valentine´s day</option>
+                                    <option value="EOY">End of Year</option>
+                                    <option value="REG">Regular Assortment</option>
+                                    <option value="HAL">Hallowing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Article Discontinuation
+                                Date:</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                    </span>
+                                    <input type="text" data-plugin-datepicker
+                                        data-plugin-options='{ "format": "dd/mm/yyyy" }' class="form-control dateInput"
+                                        autocomplete="off" value="07/05/2024" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Precise Instructions for New
+                                Article Positioning:</label>
+                            <div class="col-sm-5">
+                                <textarea class="form-control" rows="5" data-plugin-maxlength maxlength="500"
+                                    autocomplete="off" autocorrect="off"
+                                    spellcheck="false">Text that can reach up to 500 characters.</textarea>
+                                <p style="text-align: right;margin-bottom: 0px;">
+                                    <code>Max:</code> 500
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Expected Sales (6 Months):</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
+                                                class="fas fa-link" data-toggle="tooltip" data-placement="left"
+                                                title="Source: GDSN"></i></button>
+                                    </span>
+                                    <input type="text" class="form-control" autocomplete="off"
+                                        style="text-align: right;" value="255623">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -264,6 +328,45 @@
                                     <input type="text" name="ncobuom" class="form-control" autocomplete="off"
                                         style="text-align: right;" value="25">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Facing
+                                height number:</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <span class="input-group-prepend">
+                                        <button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
+                                                class="fas fa-link" data-toggle="tooltip" data-placement="left"
+                                                title="Source: GDSN"></i></button>
+                                    </span>
+                                    <input type="text" name="ncobuom" class="form-control" autocomplete="off"
+                                        style="text-align: right;" value="58">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">SRP picture: <span
+                                    class="required">*</span></label>
+                            <div class="col-sm-5">
+                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <div class="input-append">
+                                        <div class="uneditable-input">
+                                            <i class="fas fa-file fileupload-exists"></i>
+                                            <span class="fileupload-preview"></span>
+                                        </div>
+                                        <span class="btn btn-default btn-file">
+                                            <span class="fileupload-exists">Change</span>
+                                            <span class="fileupload-new">Select file</span>
+                                            <input type="file" onchange="App.FVFostPlus.showImage(true)" />
+                                        </span>
+                                        <a href="#" onclick="App.FVFostPlus.showImage(false)"
+                                            class="btn btn-default fileupload-exists"
+                                            data-dismiss="fileupload">Remove</a>
+                                    </div>
+                                </div>
+                                <img id="img" src="img/packaging.webp"
+                                    style="display: block;width: inherit;height: 300px;margin-top: 10px;" />
                             </div>
                         </div>
                     </div>
@@ -2166,6 +2269,155 @@
             </div>
         </div>
         <!-- End - Subpanel - Planogram JDA - DS -->
+        <!-- Start - Subpanel - No Planogram - DS -->
+        <div id="section6" class="row" style="margin-top: 50px;">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+
+                        <h2 class="card-title">Non-Planogram</h2>
+                        <p class="card-subtitle"></p>
+                    </header>
+                    <div class="card-body">
+                        <!-- Assortments toolbar -->
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <div class="form-group row" style="padding:20px;background:mintcream;">
+                                    <!-- <i class="col-sm-1 fas fa-copy c-link i-link-c" data-toggle="tooltip"
+                                        data-placement="left" title="Copy from original product"
+                                        style="margin-top:10px;font-size: larger;"></i> -->
+                                    <label class="col-sm-1 control-label text-sm-right pt-2">Search: </label>
+                                    <div class="col-sm-6">
+                                        <select id="layoutModulesSelector" data-plugin-selectTwo
+                                            class="form-control populate ctrl"
+                                            data-plugin-options='{ "minimumInputLength": 3}'
+                                            onchange="App.FVAssortment.addSelectedLM()">
+                                            <option value="" selected></option>
+                                            <option value="RS00000544">RS00000544 - TEMPO PRIRODNA KOZMETIKA 2</option>
+                                            <option value="RS00000531">RS00000531 - TEMPO LICE 4</option>
+                                            <option value="RS00000561">RS00000561 - TEMPO NP TEKSTIL 3</option>
+                                            <option value="RS00000587">RS00000587 - MAXI NP CIGARETE 1</option>
+                                            <option value="RS00000588">RS00000588 - MAXI NP CIGARETE 2</option>
+                                            <option value="RS00000589">RS00000589 - MAXI NP KANCELARIJSKI STAMPA I
+                                                KNJIGE 1</option>
+                                            <option value="RS00000590">RS00000590 - MAXI NP KANCELARIJSKI STAMPA I
+                                                KNJIGE 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4 text-right">
+                                        <button class="btn btn-default" type="button"
+                                            onclick="App.FVAssortment.pasteLMFromExcel()"><i
+                                                class="fas fa-paste"></i>&nbsp;Copy / Paste</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Assortments table -->
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <table class="table table-responsive-md table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: center;width: 20%;">Layout module</th>
+                                            <th style="width: 70%;">Description</th>
+                                            <th style="text-align: center;width: 10%;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBodyDSNP">
+                                        <tr id="row_RS00000544" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000544</td>
+                                            <td style="vertical-align: middle;">
+                                                TEMPO PRIRODNA KOZMETIKA 2</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000544')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_RS00000531" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000531</td>
+                                            <td style="vertical-align: middle;">
+                                                TEMPO LICE 4</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000531')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_RS00000561" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000561</td>
+                                            <td style="vertical-align: middle;">
+                                                TEMPO NP TEKSTIL 3</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000561')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_RS00000587" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000587</td>
+                                            <td style="vertical-align: middle;">
+                                                MAXI NP CIGARETE 1</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000587')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_RS00000588" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000588</td>
+                                            <td style="vertical-align: middle;">
+                                                MAXI NP CIGARETE 2</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000588')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_RS00000589" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000589</td>
+                                            <td style="vertical-align: middle;">
+                                                MAXI NP KANCELARIJSKI STAMPA I KNJIGE 1</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000589')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="row_RS00000590" style="display: none;">
+                                            <td
+                                                style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+                                                RS00000590</td>
+                                            <td style="vertical-align: middle;">
+                                                MAXI NP KANCELARIJSKI STAMPA I KNJIGE 2</td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000590')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </div>
 </div>
-<script>App.FVAssortment.initialize();</script>
+</div>

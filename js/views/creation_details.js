@@ -17,7 +17,7 @@
         { id: "#pLogistics", sections: ["Logistics", "Distribution center", "Replenishment", "Replenishment (Argos)"] },
         { id: "#pPurchasing", sections: ["Purchasing data", "Product pricing information"] },
         { id: "#pLinks", sections: ["Links"] },
-        { id: "#pAssortment", sections: ["Basic information", "SRP", "Belgium", "Luxembourg", "Planogram"] },
+        { id: "#pAssortment", sections: ["Basic information", "SRP", "Belgium", "Luxembourg", "Planogram", "Non-Planogram"] },
         { id: "#pPricesNew", sections: ["Information", "Price structure", "Sales prices"] },
         { id: "#pWine", sections: ["Information"] },
         { id: "#pFostPlus", sections: ["Information", "Number of consumer units", "Primary packaging"] }
@@ -72,7 +72,7 @@
                 });
 
                 // Hide remaining breadcrumb items
-                for (let i = sections.length + 1; i <= 5; i++) {
+                for (let i = sections.length + 1; i <= 10; i++) {
                     const breadcrumbItem = document.querySelector(`#n${i}`);
                     if (breadcrumbItem) {
                         breadcrumbItem.parentElement.style.display = "none";
