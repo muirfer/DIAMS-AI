@@ -350,3 +350,64 @@ table#tLog {
     margin-left: 8px !important;
     margin-top: 0 !important;
 }
+
+/* Estilo para el overlay de fondo - Info */
+#sideOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1045;
+    /* Menos que el panel (1050) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s;
+}
+
+#sideOverlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilo para el panel lateral de información */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    /* Inicia oculto */
+    width: 600px;
+    /* Ancho del panel */
+    height: 100vh;
+    /* Alto completo */
+    background-color: #f8f9fa;
+    z-index: 1050;
+    /* Por encima de todo */
+    transition: right 0.4s ease-in-out;
+    border-left: 1px solid #dee2e6;
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.side-panel.open {
+    right: 0;
+    /* Se muestra */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header del chat (fijo) */
+.side-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-header h5 {
+    color: #333;
+}

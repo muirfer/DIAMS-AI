@@ -27,6 +27,8 @@
      * Current panel
      */
     let currentPanel = bPerSection[0].id;
+    let sideOverlay = $('#sideOverlay');
+    let sidePanel = $('#sidePanel');
 
     // Module for handling Creation details logic
     var CRDetails = {
@@ -35,7 +37,11 @@
          * Sets up event handlers and initializes DataTables.
          */
         initialize: function () {
-            $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
+            //remove padding from main content to fit better the form and take more advantage of the screen width
+            $(".content-body").addClass("p-0");
+
+            //calculate scrollable content area
+            $(".main-panel").css("height", "calc(95vh - " + $(".tab-content").offset().top + "px)");
 
             $(".scrollToSectionLink").click(function (e) {
                 e.preventDefault();
@@ -84,6 +90,22 @@
                     App.CRSummaryLog.goBack();
                 }
             });
+
+            //info and summary panel overlay initialization
+            // 1.Open panel with button
+            $('#sideToggle').on('click', function () {
+                sidePanel.toggleClass('open');
+                sideOverlay.toggleClass('open');
+            });
+
+            // 2. Close side panel with button 'X'
+            //$('#sideClose').on('click', CRAI.closeMainInformationAndActivityOverlay);
+
+            // 3. Close side panel on overlayed clicked
+            sideOverlay.on('click', CRAI.closeMainInformationAndActivityOverlay);
+
+            // 3. Shrink form to test
+            $(".toggle-layout").on('click', App.CRDetails.shrinkForm);
 
             // Expand view
             $("#btn-expand-view").click(function (e) {
@@ -174,7 +196,8 @@
 
                 // Recalculate dynamic height
                 setTimeout(function () {
-                    $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
+                    $(".main-panel").css("height", "calc(95vh - " + $(".tab-content").offset().top + "px)");
+                    $(".main-panel").scrollTop();
                 }, 100);
             });
 
@@ -256,14 +279,23 @@
                 // Refresh pPrices carousels to recalculate items width correctly after their wrapper shrinks
                 $("#pPrices .owl-carousel").trigger("refresh.owl.carousel");
 
-                // Recalculate dynamic height
+                // force scroll to top and remove browser scrollbar
                 setTimeout(function () {
-                    $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
-                }, 100);
+                    //$(".main-panel").css("height", "calc(95vh - " + $(".tab-content").offset().top + "px)");
+                    $("html, body").scrollTop(0);
+
+                }, 6000);
             });
 
             //initialize AI module
             App.CRAI.initialize();
+        },
+        shrinkForm: function () {
+            console.log("shrink")
+            $(".form-control").addClass("form-control-sm")
+            $(".input-group").addClass("input-group-sm")
+            $(".row").removeClass("form-group")
+
         },
         /**
          * Scroll to section
@@ -426,6 +458,11 @@
                 }
                 $wrapper.find('.ai-popover').show();
             }
+        },
+
+        closeMainInformationAndActivityOverlay: function () {
+            sidePanel.removeClass('open');
+            sideOverlay.removeClass('open');
         }
     };
 
