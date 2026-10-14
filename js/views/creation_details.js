@@ -294,8 +294,16 @@
             console.log("shrink")
             $(".form-control").addClass("form-control-sm")
             $(".input-group").addClass("input-group-sm")
+            $(".input-group-text").css("font-size", "x-small")
             $(".row").removeClass("form-group")
+            $(".row .col-sm-5").removeClass("col-sm-5").addClass("col-sm-4")
+            $(".tab-content .control-label").removeClass("col-sm-3").addClass("col-sm-2").css("font-size", "smaller")
+            $(".dotted").addClass("dotted-sm")
+            $("[id*='section']").find(".card-header").first().addClass("pb-0")
 
+            //show new descriptions
+            $(".old-desc").hide();
+            $(".new-desc").show();
         },
         /**
          * Scroll to section
@@ -359,8 +367,8 @@
             // Bind Badge Click (Delegated)
             $(document).on('click', '.ai-notification-badge', function (e) {
                 e.stopPropagation();
-                var $wrapper = $(this).closest('.input-ai-wrapper');
-                if (!$wrapper.length) $wrapper = $(this).parent();
+                var $wrapper = $(this).parent().parent().find('.input-ai-wrapper');
+                if (!$wrapper.length) $wrapper = $(this).parent().find('.input-ai-wrapper');
                 CRAI.togglePopover($wrapper);
             });
 
@@ -376,7 +384,7 @@
                 $input.val(suggestion).trigger('change').trigger('input');
 
                 // Cleanup
-                $wrapper.find('.ai-notification-badge, .ai-popover').remove();
+                $wrapper.parent().find('.ai-notification-badge, .ai-popover').remove();
             });
 
             $(document).on('click', '.btn-reject', function (e) {
@@ -386,7 +394,7 @@
                 if (!$wrapper.length) $wrapper = $popover.parent();
 
                 // Cleanup
-                $wrapper.find('.ai-notification-badge, .ai-popover').remove();
+                $wrapper.parent().find('.ai-notification-badge, .ai-popover').remove();
             });
 
             // Close popover when clicking outside
@@ -401,14 +409,14 @@
         },
 
         generateSuggestions: function () {
-            var inputs = $('.ai-subscribable');
+            var inputs = $('#datatable-desc .ai-subscribable');
 
             inputs.each(function (index) {
                 var $input = $(this);
                 // Ensure we look for wrapper in parent if not direct parent (for input groups)
-                var $wrapper = $input.closest('.input-ai-wrapper');
+                var $wrapper = $input.parent().parent().find('.ai-col');
                 if (!$wrapper.length) {
-                    $wrapper = $input.parent();
+                    $wrapper = $input.parent().parent().parent().find('.ai-col');
                 }
 
                 // Clear existing

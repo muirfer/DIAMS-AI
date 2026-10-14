@@ -342,21 +342,21 @@
 							Measure section before completing the descriptions.</p>
 					</header>
 					<div class="card-body">
-						<div class="row" style="padding:20px;background:mintcream;margin-bottom: 15px;">
+						<div class="row" style="background:mintcream;margin-bottom: 5px;">
 							<div class="col-lg-4">
 								<a class="modal-basic btn btn-transparent" href="#modalInfoGenAI">
-									<label class="control-label"><i class="fas fa-info mr-2"></i>DIAMS AI.
+									<label><i class="fas fa-info mr-2"></i>DIAMS AI.
 										Click here for more details.</label>
 								</a>
 							</div>
-							<div class="col-lg-8 text-right" style="margin-top:8px;">
+							<div class="col-lg-4 text-right" style="margin-top:8px;">
 								<button id="btn-ai-generate" class="btn btn-sm btn-tertiary">
 									<i class="fas fa-magic mr-1"></i> Generate
 									Descriptions
 								</button>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row old-desc">
 							<div class="col-lg-2 offset-lg-2 text-center">
 								<span class="badge badge-info sBadge">English</span>
 							</div>
@@ -374,7 +374,7 @@
 									Bilingual NL-FR</span>
 							</div>
 						</div>
-						<div class="row form-group">
+						<div class="row old-desc form-group">
 							<label class="col-sm-2 control-label text-sm-right pt-2">Product
 								short description:
 							</label>
@@ -411,7 +411,7 @@
 									autocorrect="off">Paquet de sachets de Rice Krispies 4x</textarea>
 							</div>
 						</div>
-						<div class="row form-group">
+						<div class="row old-desc form-group">
 							<label class="col-sm-2 control-label text-sm-right pt-2">Product
 								shelf description:
 							</label>
@@ -607,7 +607,7 @@
 								</section>
 							</div>
 						</div>
-						<div class="row form-group">
+						<div class="row old-desc form-group">
 							<label class="col-sm-2 control-label text-sm-right pt-2">Product
 								ticket description:
 							</label>
@@ -803,7 +803,7 @@
 								</section>
 							</div>
 						</div>
-						<div class="row form-group">
+						<div class="row old-desc form-group">
 							<label class="col-sm-2 control-label text-sm-right pt-2">E-commerce
 								description:
 							</label>
@@ -993,6 +993,821 @@
 								</section>
 							</div>
 						</div>
+						<div class="row new-desc" style="display: none;">
+							<div class="col-lg-8">
+								<table id="datatable-desc" class="table table-responsive-md table-sm mb-0 table-hover">
+									<thead>
+										<tr>
+											<th style="text-align: right;width: 20%;">Description
+											</th>
+											<th style="text-align: left;width: 20%;">Language
+											</th>
+											<th style="text-align: center;width: 8%;">UoM
+											</th>
+											<th style="width: 45%;"></th>
+											<th style="width: 7%;"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="t-desc-type t-desc-type-short">
+												Short</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+											</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<div class="input-group">
+													<span class="input-group-prepend">
+														<button class="btn btn-default i-link i-link-f" type="button"
+															tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+																data-placement="left" title="Source: GDSN"></i></button>
+													</span>
+													<input type="text" name="pshdesc"
+														class="form-control ai-subscribable" autocomplete="off"
+														spellcheck="false" autocorrect="off" data-plugin-maxlength
+														maxlength="25" value="Rice Krispies Bag Pack 4x">
+												</div>
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-short">
+												Short</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+											</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" name="pshdesc" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="25"
+													value="Paquet de sachets de Rice Krispies 4x">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-short">
+												Short</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+											</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" name="pshdesc" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="25"
+													value="Rijstkrispies Zakpakket 4x">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-short">
+												Short</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+											</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" name="pshdesc" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="25"
+													value="Rice Krispies Beutelpackung 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-short">
+												Short</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+											</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" name="pshdesc" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="25"
+													value="Paquet de sachets de Rice Krispies 4x">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies Bag Pack 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies Bag Pack 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies Bag Pack 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies en sachet 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies en sachet 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies en sachet 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Zakje Rijstkrispies 4x400">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Zakje Rijstkrispies 4x400">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Zakje Rijstkrispies 4x400">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies Beutelp. 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies Beutelp. 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies Beutelp. 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies en sachet 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies en sachet 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-shelf">
+												Shelf</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="30"
+													value="Rice Krispies en sachet 4x400g">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies Beutelpackung">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies Beutelpackung">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies Beutelpackung">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ticket">
+												Ticket</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												English</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												French</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												Dutch</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies Beutelpackung">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies Beutelpackung">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												German</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies Beutelpackung">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr>
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												EA</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secIP">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												IP</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+										<tr class="secCV">
+											<td class="t-desc-type t-desc-type-ecom">
+												E-commerce</td>
+											<td class="t-desc-lang">
+												Z2 - Bilingual NL-FR</td>
+											<td class="t-desc-uom">
+												CV</td>
+											<td class="input-ai-wrapper" style="vertical-align: middle;">
+												<input type="text" class="form-control ai-subscribable"
+													autocomplete="off" spellcheck="false" autocorrect="off"
+													data-plugin-maxlength maxlength="18"
+													value="Rice Krispies en sachet">
+											</td>
+											<td class="ai-col text-center">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -1133,4 +1948,5 @@
 		</footer>
 	</section>
 </div>
-<!-- End AI GEN info -->
+
+<script>App.FVBasicData.initialize();</script>

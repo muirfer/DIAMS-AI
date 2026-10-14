@@ -31,6 +31,12 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-left: 5% !important;
 }
 
+.dotted-sm {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    margin-left: 5% !important;
+}
+
 .nutri-score .btn {
     width: 50px;
     background-color: #ccc;
@@ -127,9 +133,48 @@ ul.simple-bullet-list li.darkcyan:before {
     width: 50px;
 }
 
+/* New Basic data descriptions table */
+.t-desc-type {
+    text-align: right;
+    width: 1px;
+    background-color: lightyellow;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.t-desc-type-short {
+    background-color: lightyellow;
+}
+
+.t-desc-type-shelf {
+    background-color: linen;
+}
+
+.t-desc-type-ticket {
+    background-color: aliceblue;
+}
+
+.t-desc-type-ecom {
+    background-color: ghostwhite;
+}
+
+.t-desc-lang {
+    width: 1px;
+    vertical-align: middle;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.t-desc-uom {
+    text-align: center;
+    width: 1px;
+    vertical-align: middle;
+    font-weight: bold;
+    color: darkgrey;
+}
+
 /* AI Assistant Styles */
 .ai-notification-badge {
-    position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
