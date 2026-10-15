@@ -39,7 +39,7 @@
                 columnDefs: [
                     {
                         orderable: false,
-                        targets: -1
+                        targets: [3, 4]
                     }
                 ]
             });

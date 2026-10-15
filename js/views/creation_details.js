@@ -291,7 +291,6 @@
             App.CRAI.initialize();
         },
         shrinkForm: function () {
-            console.log("shrink")
             $(".form-control").addClass("form-control-sm")
             $(".input-group").addClass("input-group-sm")
             $(".input-group-text").css("font-size", "x-small")
@@ -304,6 +303,10 @@
             //show new descriptions
             $(".old-desc").hide();
             $(".new-desc").show();
+
+            //show new uoms
+            $(".old-uom").hide();
+            $(".new-uom").show();
         },
         /**
          * Scroll to section

@@ -342,7 +342,7 @@
 							Measure section before completing the descriptions.</p>
 					</header>
 					<div class="card-body">
-						<div class="row" style="background:mintcream;margin-bottom: 5px;">
+						<div class="row old-desc" style="background:mintcream;margin-bottom: 5px;">
 							<div class="col-lg-4">
 								<a class="modal-basic btn btn-transparent" href="#modalInfoGenAI">
 									<label><i class="fas fa-info mr-2"></i>DIAMS AI.
@@ -1004,8 +1004,20 @@
 											</th>
 											<th style="text-align: center;width: 8%;">UoM
 											</th>
-											<th style="width: 45%;"></th>
-											<th style="width: 7%;"></th>
+											<th style="width: 45%;">
+												<button id="btn-ai-generate-table" class="btn btn-xs btn-tertiary"
+													style="float:right;">
+													<i class="fas fa-magic mr-1"></i> Generate
+													Descriptions
+												</button>
+											</th>
+											<th style="width: 7%;">
+												<a class="btn btn-xs modal-basic btn btn-transparent"
+													href="#modalInfoGenAI" data-toggle="tooltip" data-placement="bottom"
+													title="DIAMS AI. Click here for more details and useful information to take advantage of the smart features.">
+													<i class="fas fa-info mr-2"></i>
+												</a>
+											</th>
 										</tr>
 									</thead>
 									<tbody>
