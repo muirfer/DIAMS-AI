@@ -1224,256 +1224,226 @@
 						<div class="row new-uom" style="display: none;">
 							<div class="col-lg-8">
 								<section class="card card-featured card-featured-success mb-4">
-									<header class="card-header pt-1 pb-1">
-										<div class="card-actions" style="margin-top:-0.9em">
-											<span class="badge badge-success">Base UoM</span>
+									<header class="card-header">
+										<div class="card-actions">
+											<span class="badge badge-success" data-toggle="tooltip"
+												data-placement="bottom"
+												title="Flag indicating which Unit of Measure (UoM) is used as the base UoM that will be used as the stock keeping unit. It must always be the smallest UoM of that product. Is expressed in EA (Each) or KG (Kilogram).">Base
+												UoM</span>
 											<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a> -->
 										</div>
 
 										<h2 class="card-title">EA</h2>
 										<!-- <p class="card-subtitle">Base UoM</p> -->
 									</header>
-									<div class="card-body pl-2 pb-1 pt-0">
-										<div class="row">
-											<div class="col-lg-3 pl-1" style="background: floralwhite;">
-												<div class="row pb-2 pt-2">
-													<div class="col-sm-2 offset-lg-3 checkbox-custom checkbox-default"
-														style="margin-bottom: 0;">
-														<input type="checkbox" checked id="chkCU">
-														<label for="chkCU">CU</label>
-													</div>
-													<div class="col-sm-2 offset-lg-3 checkbox-custom checkbox-default">
-														<input type="checkbox" id="chkTU">
-														<label for="chkTU">TU</label>
-													</div>
-												</div>
-											</div>
-											<div class="col-lg-9 pl-1" style="background: ghostwhite;">
-												<div class="row pb-2 pt-2">
-													<div
-														class="col-sm-2 offset-lg-1 checkbox-custom checkbox-default mb-0">
-														<input type="checkbox" checked id="chkSales">
-														<label for="chkSales">Sales</label>
-													</div>
-													<div
-														class="col-sm-2 offset-lg-1 checkbox-custom checkbox-default mb-0">
-														<input type="checkbox" id="chkDeliv">
-														<label for="chkDeliv">Deliv</label>
-													</div>
-													<div
-														class="col-sm-2 offset-lg-1 checkbox-custom checkbox-default mb-0">
-														<input type="checkbox" id="chkPO">
-														<label for="chkPO">PO</label>
-													</div>
-													<div
-														class="col-sm-2 offset-lg-1 checkbox-custom checkbox-default mb-0">
-														<input type="checkbox" id="chkSCF">
-														<label for="chkSCF">SCF</label>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<!-- Start: ID and GTIN values -->
-											<div class="col-lg-3 pl-1 p-0" style="background: linen;">
+									<div class="card-body pl-2 pb-1 pt-0 pr-3">
+										<!-- Start: ID and GTIN values -->
+										<div class="row" style="background: linen;">
+											<div class="col-lg-3 pl-1 p-0">
 												<div class="form-group p-2 text-center">
 													<label class="m-0" style="font-size: smaller;">GTIN</label>
 													<input type="text" name="class" class="form-control text-center"
 														autocomplete="off" value="1234567890231">
 												</div>
-												<div class="form-group p-2 text-center">
-													<label class="m-0" style="font-size: smaller;">Re-used GTIN</label>
-													<input type="text" name="class" class="form-control text-center"
-														autocomplete="off" value="1234567890231">
-												</div>
 											</div>
-											<!-- End: ID and GTIN values -->
-											<!-- Start: Other main values -->
-											<div class="col-lg-3">
+											<div class="col-lg-3 pl-1 p-0">
 												<div class="form-group p-2 text-center">
 													<label class="m-0" style="font-size: smaller;">Nbr of lower
 														levels</label>
 													<input type="text" name="class" class="form-control text-center"
-														autocomplete="off" value="2,000">
+														autocomplete="off" value="1232,000">
 												</div>
-												<div class="form-group p-2 text-center">
-													<label class="m-0" style="font-size: smaller;">Alt. UoM</label>
-													<input type="text" name="class" class="form-control text-center"
-														autocomplete="off" value="EA">
-												</div>
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
 												<div class="form-group p-2 text-center">
 													<label class="m-0" style="font-size: smaller;">Hope code</label>
 													<input type="text" name="class" class="form-control text-center"
 														autocomplete="off" value="1234854">
 												</div>
 											</div>
-											<!-- End: Other main values -->
-											<!-- Start: Weight and dimensions -->
-											<div class="col-lg-6">
-												<div class="row">
-													<table class="table table-responsive-md table-sm mb-0">
-														<thead>
-															<tr>
-																<th
-																	style="width: 40%;font-weight:100;font-size:smaller">
-																	Weight
-																</th>
-																<th style="width: 60%;">
-																	<div class="input-group">
-																		<span class="input-group-prepend">
-																			<button class="btn btn-default baseUoM"
-																				style="font-size: smaller;background: snow;width: 55px;"
-																				type="button">Unit</button>
-																			<button
-																				class="btn btn-default i-link i-link-f"
-																				type="button" tabindex="-1"><i
-																					class="fas fa-link"
-																					data-toggle="tooltip"
-																					data-placement="left"
-																					title="Source: GDSN"></i></button>
-																		</span>
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option selected>KG - Kilogram
-																			</option>
-																			<option>G - Gram</option>
-																		</select>
-																	</div>
-																</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="text-right" style="font-size:smaller">
-																	Gross
-																</td>
-																<td>
-																	<input type="text" name="wgross"
-																		class="form-control text-right"
-																		autocomplete="off" spellcheck="false"
-																		autocorrect="off" value="58,965">
-																</td>
-															</tr>
-															<tr>
-																<td class="text-right" style="font-size:smaller">
-																	Net
-																</td>
-																<td>
-																	<input type="text" name="wnet"
-																		class="form-control text-right"
-																		autocomplete="off" spellcheck="false"
-																		autocorrect="off" value="34,255">
-																</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-												<div class="row mt-3">
-													<table class="table table-responsive-md table-sm mb-0">
-														<thead>
-															<tr>
-																<th
-																	style="width: 40%;font-weight:100;font-size:smaller">
-																	Dimension
-																</th>
-																<th style="width: 60%;">
-																	<div class="input-group">
-																		<span class="input-group-prepend">
-																			<button class="btn btn-default baseUoM"
-																				style="font-size: smaller;background: snow;width: 55px;"
-																				type="button">Unit</button>
-																			<button
-																				class="btn btn-default i-link i-link-f"
-																				type="button" tabindex="-1"><i
-																					class="fas fa-link"
-																					data-toggle="tooltip"
-																					data-placement="left"
-																					title="Source: GDSN"></i></button>
-																		</span>
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option>CM - Centimeter</option>
-																			<option>M - Meter</option>
-																			<option selected>DM - Decimeter
-																			</option>
-																			<option>MM - Milimeter</option>
-																		</select>
-																	</div>
-																</th>
-															</tr>
-														</thead>
-														<tbody>
-															<tr>
-																<td class="text-right" style="font-size:smaller">
-																	Length
-																</td>
-																<td>
-																	<input type="text" name="dleng"
-																		class="form-control text-right"
-																		autocomplete="off" spellcheck="false"
-																		autocorrect="off" value="128,965">
-																</td>
-															</tr>
-															<tr>
-																<td class="text-right" style="font-size:smaller">
-																	Width
-																</td>
-																<td>
-																	<input type="text" name="dwidt"
-																		class="form-control text-right"
-																		autocomplete="off" spellcheck="false"
-																		autocorrect="off" value="10,115">
-																</td>
-															</tr>
-															<tr>
-																<td class="text-right" style="font-size:smaller">
-																	Height
-																</td>
-																<td>
-																	<input type="text" name="dheig"
-																		class="form-control text-right"
-																		autocomplete="off" spellcheck="false"
-																		autocorrect="off" value="99,999">
-																</td>
-															</tr>
-														</tbody>
-													</table>
-												</div>
-												<div class="row mt-3">
-													<table class="table table-responsive-md table-sm mb-0">
-														<thead>
-															<tr>
-																<th
-																	style="width: 40%;font-weight:100;font-size:smaller">
-																	Volume
-																</th>
-																<th style="width: 60%;">
-																	<div class="input-group">
-																		<span class="input-group-prepend">
-																			<select
-																				class="form-control mb-3 cust-select"
-																				style="background-color: floralwhite;text-align: center;">
-																				<option value=""></option>
-																				<option value="CDM" selected>CDM
-																				</option>
-																			</select>
-																		</span>
-																		<input type="text" name="vol"
-																			class="form-control" autocomplete="off"
-																			style="text-align: right;font-size: smaller;"
-																			value="156312,251">
-																	</div>
-																</th>
-															</tr>
-														</thead>
-														<tbody>
-														</tbody>
-													</table>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">Re-used GTIN</label>
+													<input type="text" name="class" class="form-control text-center"
+														autocomplete="off" value="1234567890231">
 												</div>
 											</div>
-											<!-- End: Weight and dimensions -->
+										</div>
+										<!-- End: ID and GTIN values -->
+										<!-- Start: Flags -->
+										<div class="row">
+											<div class="col-lg-12 pl-1" style="background: ghostwhite;">
+												<div class="row pb-1 pt-2">
+													<div class="col-sm-1 offset-lg-1 checkbox-custom checkbox-default">
+														<input type="checkbox" checked id="chkCU">
+														<label for="chkCU">CU</label>
+													</div>
+													<div class="col-sm-1 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkTU">
+														<label for="chkTU">TU</label>
+													</div>
+													<div class="col-sm-2 offset-lg-1 checkbox-custom checkbox-default">
+														<input type="checkbox" checked id="chkSales">
+														<label for="chkSales">Sales</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkPO">
+														<label for="chkPO">PO</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkDeliv">
+														<label for="chkDeliv">Deliv</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkSCF">
+														<label for="chkSCF">SCF</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- End: Flags -->
+										<div class="row">
+											<!-- Start: Dimensions -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-ruler-combined"></i>
+																	Dimensions</button>
+															</th>
+															<th style="width: 60%;">
+																<select class="form-control mb-3 cust-select"
+																	style="text-align: center;">
+																	<option></option>
+																	<option>CM - Centimeter</option>
+																	<option>M - Meter</option>
+																	<option selected>DM - Decimeter
+																	</option>
+																	<option>MM - Milimeter</option>
+																</select>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Length
+															</td>
+															<td>
+																<input type="text" name="dleng"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="128,965">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Width
+															</td>
+															<td>
+																<input type="text" name="dwidt"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="150,115">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Height
+															</td>
+															<td>
+																<input type="text" name="dheig"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="899,999">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Dimensions -->
+											<!-- Start: Weight and volume -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-weight-hanging"></i>
+																	Weight</button>
+															</th>
+															<th style="width: 60%;">
+																<select class="form-control mb-3 cust-select"
+																	style="text-align: center;">
+																	<option></option>
+																	<option selected>KG - Kilogram
+																	</option>
+																	<option>G - Gram</option>
+																</select>
+
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Gross
+															</td>
+															<td>
+																<input type="text" name="wgross"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="3258,965">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Net
+															</td>
+															<td>
+																<input type="text" name="wnet"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="2384,255">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i class="fa fa-cube"></i>
+																	Volume</button>
+															</th>
+															<th style="width: 60%;">
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<select class="form-control mb-3 cust-select"
+																			style="background-color: floralwhite;text-align: center;">
+																			<option value=""></option>
+																			<option value="CDM" selected>CDM
+																			</option>
+																		</select>
+																	</span>
+																	<input type="text" name="vol" class="form-control"
+																		autocomplete="off"
+																		style="text-align: right;font-size: smaller;"
+																		value="156312,251">
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Weight and volume -->
 										</div>
 									</div>
 								</section>
@@ -1482,16 +1452,226 @@
 						<div class="row new-uom" style="display: none;">
 							<div class="col-lg-8">
 								<section class="card card-featured mb-4">
-									<header class="card-header pt-1 pb-1">
+									<header class="card-header">
 										<div class="card-actions">
+											<span class="badge badge-info" data-toggle="tooltip" data-placement="bottom"
+												title="Unit of measure that can be entered alternatively to the base unit of measure and represents the different levels of the product hierarchy (case, layer, pallet, ...)">Alt.
+												UoM: EA</span>
 											<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a> -->
 										</div>
 
 										<h2 class="card-title">CV</h2>
 										<!-- <p class="card-subtitle">Base UoM</p> -->
 									</header>
-									<div class="card-body">
-										<code>.card-featured.card-featured-success</code>
+									<div class="card-body pl-2 pb-1 pt-0 pr-3">
+										<!-- Start: ID and GTIN values -->
+										<div class="row" style="background: linen;">
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">GTIN</label>
+													<input type="text" name="class" class="form-control text-center"
+														autocomplete="off" value="1234567890231">
+												</div>
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">Nbr of lower
+														levels</label>
+													<input type="text" name="class" class="form-control text-center"
+														autocomplete="off" value="1232,000">
+												</div>
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">Hope code</label>
+													<input type="text" name="class" class="form-control text-center"
+														autocomplete="off" value="1234854">
+												</div>
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">Re-used GTIN</label>
+													<input type="text" name="class" class="form-control text-center"
+														autocomplete="off" value="1234567890231">
+												</div>
+											</div>
+										</div>
+										<!-- End: ID and GTIN values -->
+										<!-- Start: Flags -->
+										<div class="row">
+											<div class="col-lg-12 pl-1" style="background: ghostwhite;">
+												<div class="row pb-1 pt-2">
+													<div class="col-sm-1 offset-lg-1 checkbox-custom checkbox-default">
+														<input type="checkbox" checked id="chkCU">
+														<label for="chkCU">CU</label>
+													</div>
+													<div class="col-sm-1 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkTU">
+														<label for="chkTU">TU</label>
+													</div>
+													<div class="col-sm-2 offset-lg-1 checkbox-custom checkbox-default">
+														<input type="checkbox" checked id="chkSales">
+														<label for="chkSales">Sales</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkPO">
+														<label for="chkPO">PO</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkDeliv">
+														<label for="chkDeliv">Deliv</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkSCF">
+														<label for="chkSCF">SCF</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- End: Flags -->
+										<div class="row">
+											<!-- Start: Dimensions -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-ruler-combined"></i>
+																	Dimensions</button>
+															</th>
+															<th style="width: 60%;">
+																<select class="form-control mb-3 cust-select"
+																	style="text-align: center;">
+																	<option></option>
+																	<option>CM - Centimeter</option>
+																	<option>M - Meter</option>
+																	<option selected>DM - Decimeter
+																	</option>
+																	<option>MM - Milimeter</option>
+																</select>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Length
+															</td>
+															<td>
+																<input type="text" name="dleng"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="128,965">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Width
+															</td>
+															<td>
+																<input type="text" name="dwidt"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="150,115">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Height
+															</td>
+															<td>
+																<input type="text" name="dheig"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="899,999">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Dimensions -->
+											<!-- Start: Weight and volume -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-weight-hanging"></i>
+																	Weight</button>
+															</th>
+															<th style="width: 60%;">
+																<select class="form-control mb-3 cust-select"
+																	style="text-align: center;">
+																	<option></option>
+																	<option selected>KG - Kilogram
+																	</option>
+																	<option>G - Gram</option>
+																</select>
+
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Gross
+															</td>
+															<td>
+																<input type="text" name="wgross"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="3258,965">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right" style="font-size:smaller">
+																Net
+															</td>
+															<td>
+																<input type="text" name="wnet"
+																	class="form-control text-right" autocomplete="off"
+																	spellcheck="false" autocorrect="off"
+																	value="2384,255">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i class="fa fa-cube"></i>
+																	Volume</button>
+															</th>
+															<th style="width: 60%;">
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<select class="form-control mb-3 cust-select"
+																			style="background-color: floralwhite;text-align: center;">
+																			<option value=""></option>
+																			<option value="CDM" selected>CDM
+																			</option>
+																		</select>
+																	</span>
+																	<input type="text" name="vol" class="form-control"
+																		autocomplete="off"
+																		style="text-align: right;font-size: smaller;"
+																		value="156312,251">
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Weight and volume -->
+										</div>
 									</div>
 								</section>
 							</div>

@@ -489,17 +489,69 @@ rect:hover {
 }
 
 /* Fost Plus */
-.fpcont {
-    
-}
+.fpcont {}
 
-.lblNoInfo {
-    
-}
+.lblNoInfo {}
 
 /* Carousel Navigation Overrides */
 .owl-carousel .owl-nav {
     top: 3% !important;
     font-size: xxx-large !important;
 }
-
+
+/* --- BOOTSTRAP 4 FLOATING LABELS (Porto Compatible) --- */
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+/* Ajustamos el padding del input para dejar espacio arriba a la etiqueta */
+.form-label-group>input.form-control {
+    height: 42px;
+    /* Un poco más alto para acomodar etiqueta y texto */
+    padding: 1.1rem 0.75rem 0.2rem 0.75rem;
+    font-size: 13px;
+}
+
+/* Escondemos el placeholder real para que no se superponga con nuestra etiqueta flotante */
+.form-label-group>input.form-control::placeholder {
+    color: transparent;
+}
+
+/* Posición base de la etiqueta (cuando el input está vacío) */
+.form-label-group>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Override Bootstrap's default margin */
+    line-height: 1.5;
+    color: #777;
+    border: 1px solid transparent;
+    padding: 0.65rem 0.75rem;
+    /* Debe coincidir aprox. con el padding del input */
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
+    /* Permite hacer clic "a través" de la etiqueta */
+}
+
+/* --- LA MAGIA (El estado Flotante) --- */
+/* Cuando el input tiene foco, O cuando NO está mostrando el placeholder (tiene texto) */
+.form-label-group>input.form-control:focus~label,
+.form-label-group>input.form-control:not(:placeholder-shown)~label {
+    padding-top: 0.2rem;
+    padding-bottom: 0;
+    font-size: 10px;
+    /* Letra pequeña arriba */
+    font-weight: 600;
+    color: #0088cc;
+    /* Porto Blue */
+}
+
+/* Mantener la etiqueta en gris si tiene texto pero no tiene foco */
+.form-label-group>input.form-control:not(:focus):not(:placeholder-shown)~label {
+    color: #999;
+}
