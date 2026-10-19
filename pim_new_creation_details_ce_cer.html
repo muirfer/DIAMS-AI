@@ -36,159 +36,71 @@
 				id="btn-expand-view" rel="tooltip" data-original-title="" title="Expand"><i class="fas fa-expand"
 					style="margin-top: -8px;"></i></button>
 		</header>
-		<!-- start: header and intro week values -->
-		<div class="row hRow">
-			<!-- start: Product description, filliere and category -->
-			<div class="col-lg-4 pr-0">
-				<section class="card card-featured-left card-featured-primary">
-					<div class="card-body pb-1">
-						<div class="widget-summary widget-summary-sm">
-							<div class="widget-summary-col widget-summary-col-icon">
-								<div class="summary-icon bg-primary">
-									<!-- <img src="img/pr_create.png" alt="Create" style="width: 60%; "> -->
-									<i class="fa fa-solid fa-plus toggle-layout"></i>
-								</div>
-							</div>
-							<div class="widget-summary-col">
-								<div class="summary">
-									<h4 class="title">LEFF BLOND RET 0,33L 9+3 TRA</h4>
-									<div class="info">
-										<strong class="text-muted">E020 - Viande
-											fraiche emballee</strong>
-										<br>
-										<a id="sideToggle" class="btn btn-link m-0 p-0"
-											style="font-size: smaller;color: darkblue;">More details</a>
-										<strong class="text-muted">&nbsp;|&nbsp;</strong>
-										<a class="btn btn-link m-0 p-0"
-											style="font-size: smaller;color: darkorange;">Open review details</a>
-									</div>
-								</div>
-								<!-- <div class="summary-footer">
-									<a class="text-uppercase">(view all)</a>
-								</div> -->
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-			<!-- end: Product description, filliere and category -->
-			<!-- start: intro week values -->
-			<div class="col-lg-8 p-2" style="background: floralwhite;">
-				<div class="row">
-					<div class="col-lg-4 text-center">
-						<label class="control-label">Introduction week</label>
-					</div>
-					<div class="col-lg-4 text-center">
-						<label class="control-label">Linked to a promo week</label>
-					</div>
-					<div class="col-lg-4 text-center">
-						<label class="control-label">Campaign week</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 text-center">
-						<select id="bt" class="col-lg-11 form-control mb-3 cust-select text-center">
-							<option class="optionToChange" value=""></option>
-							<option value="W48 - 24/11/2022" selected>W56/2024</option>
-							<option value="W48 - 24/11/2022">W57/2024</option>
-							<option value="W48 - 24/11/2022">W58/2024</option>
-							<option value="W48 - 24/11/2022">W59/2024</option>
-							<option value="W48 - 24/11/2022">W60/2024</option>
-							<option value="W48 - 24/11/2022">W61/2024</option>
-							<option value="W48 - 24/11/2022">W62/2024</option>
-							<option value="W48 - 24/11/2022">W63/2024</option>
-							<option value="W48 - 24/11/2022">W64/2024</option>
-						</select>
-					</div>
-					<div class="col-lg-4 text-center">
-						<div class="checkbox-custom mt-1" style="margin-left: 48% !important;">
-							<input type="checkbox" id="checkboxExample2">
-							<label for="checkboxExample2">&nbsp;</label>
-						</div>
-					</div>
-					<div class="col-lg-4 text-center">
-						<select id="bt" class="col-lg-11 form-control mb-3 cust-select text-center">
-							<option class="optionToChange" value=""></option>
-							<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
-							<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
-							<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
-							<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
-							<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
-							<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
-							<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
-							<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
-						</select>
-					</div>
 
-
-				</div>
-			</div>
-			<!-- end: intro week values -->
-		</div>
 		<!-- end: header and intro week values -->
 		<!-- start: form -->
 		<div class="row">
-			<div id="fullview-right-col" class="col-lg-12">
+			<div id="fullview-left-col" class="col-lg-9">
 				<div class="tabs tabs-tertiary">
 					<ul class="nav nav-tabs nav-justified">
 						<li class="nav-item active" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Basic Data">
 							<a class="nav-link p-2" href="#overview" data-toggle="tab"><i
-									class="fas fa-info"></i>&nbsp;B.Data</a>
+									class="fas fa-info"></i><br>B.Data</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Units of Measure">
 							<a class="nav-link p-2" href="#pUoM" data-toggle="tab"><i
-									class="fas fa-cube"></i>&nbsp;UoM</a>
+									class="fas fa-cube"></i><br>UoM</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Purchasing">
 							<a class="nav-link p-2" href="#pPurchasing" data-toggle="tab"><i
-									class="fas fa-shopping-cart"></i>&nbsp;Purch.</a>
+									class="fas fa-shopping-cart"></i><br>Purch.</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Logistics">
 							<a class="nav-link p-2" href="#pLogistics" data-toggle="tab"><i
-									class="fas fa-truck"></i>&nbsp;Log.</a>
+									class="fas fa-truck"></i><br>Log.</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Codes">
 							<a class="nav-link p-2" href="#pCodes" data-toggle="tab"><i
-									class="fas fa-laptop-code"></i>&nbsp;Codes</a>
+									class="fas fa-laptop-code"></i><br>Codes</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Assortments">
 							<a class="nav-link p-2" href="#pAssortment" data-toggle="tab"><i
-									class="fas fa-box"></i>&nbsp;Assort.</a>
+									class="fas fa-box"></i><br>Assort.</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Prices">
 							<a class="nav-link p-2" href="#pPricesNew" data-toggle="tab"><i
-									class="fas fa-money-bill-alt"></i>&nbsp;Prices</a>
+									class="fas fa-money-bill-alt"></i><br>Prices</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Taxes">
 							<a class="nav-link p-2" href="#pTaxes" data-toggle="tab"><i
-									class="fas fa-file-invoice-dollar"></i>&nbsp;Taxes</a>
+									class="fas fa-file-invoice-dollar"></i><br>Taxes</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Links">
 							<a class="nav-link p-2" href="#pLinks" data-toggle="tab"><i
-									class="fas fa-link"></i>&nbsp;Links</a>
+									class="fas fa-link"></i><br>Links</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="B2C">
 							<a class="nav-link p-2" href="#pB2C" data-toggle="tab"><i
-									class="fas fa-briefcase"></i>&nbsp;B2C</a>
+									class="fas fa-briefcase"></i><br>B2C</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Store">
 							<a class="nav-link p-2" href="#pStore" data-toggle="tab"><i
-									class="fas fa-store"></i>&nbsp;Store</a>
+									class="fas fa-store"></i><br>Store</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Wine Characteristics">
 							<a class="nav-link p-2" href="#pWine" data-toggle="tab"><i
-									class="fas fa-wine-glass"></i>&nbsp;Wine</a>
+									class="fas fa-wine-glass"></i><br>Wine</a>
 						</li>
 						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Fost Plus">
 							<a class="nav-link p-2" href="#pFostPlus" data-toggle="tab"><i
-									class="fas fa-cube"></i>&nbsp;F.Plus</a>
+									class="fas fa-cube"></i><br>F.Plus</a>
 						</li>
 					</ul>
 					<div class="tab-content pt-0">
@@ -241,6 +153,245 @@
 					</div>
 
 				</div>
+			</div>
+			<div id="fullview-right-col" class="col-lg-3 pl-0">
+				<!-- start: Product description, filliere and category -->
+				<section class="card card-featured-bottom card-featured-primary">
+					<div class="card-body pl-0 pb-0 pt-3">
+						<div class="widget-summary widget-summary-sm">
+							<div class="widget-summary-col widget-summary-col-icon">
+								<div class="summary-icon bg-primary ml-1 mr-1">
+									<!-- <img src="img/pr_create.png" alt="Create" style="width: 60%; "> -->
+									<i class="fa fa-solid fa-plus toggle-layout"></i>
+								</div>
+							</div>
+							<div class="widget-summary-col">
+								<div class="summary">
+									<h4 class="title">LEFF BLOND RET 0,33L 9+3 TRA</h4>
+									<div class="info">
+										<strong class="text-muted">E020 - Viande
+											fraiche emballee</strong>
+										<br>
+										<a id="sideToggle" class="btn btn-link m-0 p-0"
+											style="font-size: smaller;color: darkblue;">More details</a>
+										<!-- <strong class="text-muted">&nbsp;|&nbsp;</strong>
+										<a class="btn btn-link m-0 p-0"
+											style="font-size: smaller;color: darkorange;">Open review details</a> -->
+									</div>
+								</div>
+								<!-- <div class="summary-footer">
+									<a class="text-uppercase">(view all)</a>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end: Product description, filliere and category -->
+				<!-- start: intro week values -->
+				<div class="row pt-2 pb-2 ml-0 mr-0" style="background:floralwhite">
+					<label class="col-lg-6 control-label control-label-sm text-right m-0 mt-1"
+						style="font-size: smaller;">Introduction week</label>
+					<select id="iw" class="col-lg-5 form-control mb-3 cust-select text-center"
+						style="font-size: smaller;">
+						<option class="optionToChange" value=""></option>
+						<option value="W48 - 24/11/2022" selected>W56/2024</option>
+						<option value="W48 - 24/11/2022">W57/2024</option>
+						<option value="W48 - 24/11/2022">W58/2024</option>
+						<option value="W48 - 24/11/2022">W59/2024</option>
+						<option value="W48 - 24/11/2022">W60/2024</option>
+						<option value="W48 - 24/11/2022">W61/2024</option>
+						<option value="W48 - 24/11/2022">W62/2024</option>
+						<option value="W48 - 24/11/2022">W63/2024</option>
+						<option value="W48 - 24/11/2022">W64/2024</option>
+					</select>
+					<label class="col-lg-6 control-label control-label-sm text-right m-0 mt-1"
+						style="font-size: smaller;">Linked to a promo week</label>
+					<div class="col-lg-2 checkbox-custom mt-1 mb-1">
+						<input type="checkbox" id="checkboxExample2">
+						<label for="checkboxExample2">&nbsp;</label>
+					</div>
+					<label class="col-lg-6 control-label control-label-sm text-right m-0 mt-1"
+						style="font-size: smaller;">Campaign week</label>
+					<select id="cw" class="col-lg-5 form-control mb-3 cust-select text-center"
+						style="font-size: smaller;">
+						<option class="optionToChange" value=""></option>
+						<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
+						<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
+						<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
+						<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
+						<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
+						<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
+						<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
+						<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
+					</select>
+				</div>
+				<!-- end: intro week values -->
+				<!-- Start - Accordion Change request -->
+				<div id="pChange" class="card card-default" style="display:none;">
+					<div class="card-header p-2">
+						<h4 class="card-title m-0">
+							<a id="titleDet" style="font-size: small;">
+								Update requests logs and history
+							</a>
+						</h4>
+						<div class="card-actions">
+							<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
+								style="font-size: larger;"><i class="fas fa-info"></i></a>
+						</div>
+					</div>
+					<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
+						<div id="pChangeMain" class="card-body p-0" style="background: ghostwhite;">
+							<table id="tLog" class="col-lg-12 table table-hover table-responsive-md table-sm mb-0"
+								style="font-size: smaller;">
+								<!-- <thead>
+									<tr>
+										<th colspan="3" style="text-align: center;">Update requests log
+										</th>
+									</tr>
+								</thead> -->
+								<tbody>
+									<tr id="rf2" style="display: none;"
+										onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+										<td style="text-align: center;width: 10%;">
+											<span class="badge badge-warning" style="font-size: small;"
+												data-toggle="tooltip" data-placement="bottom"
+												title="Update Request">UR</span>
+										</td>
+										<td style="width: 75%;font-size: smaller;">Net weight (EA)</td>
+										<td style="text-align: center;width: 15%;">
+											<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
+												data-toggle="tooltip" data-placement="bottom" title="New"></i>
+										</td>
+									</tr>
+									<tr id="rf3" style="display: none;"
+										onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+										<td style="text-align: center;width: 10%;">
+											<span class="badge badge-warning" style="font-size: small;"
+												data-toggle="tooltip" data-placement="bottom"
+												title="Update Request">UR</span>
+										</td>
+										<td style="width: 75%;font-size: smaller;">Item set</td>
+										<td style="text-align: center;width: 15%;">
+											<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
+												data-toggle="tooltip" data-placement="bottom" title="New"></i>
+										</td>
+									</tr>
+									<tr id="rf4" style="display: none;"
+										onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+										<td style="text-align: center;width: 10%;">
+											<span class="badge badge-warning" style="font-size: small;"
+												data-toggle="tooltip" data-placement="bottom"
+												title="Update Request">UR</span>
+										</td>
+										<td style="width: 75%;font-size: smaller;">Dangerous symbos (GHS)</td>
+										<td style="text-align: center;width: 15%;">
+											<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
+												data-toggle="tooltip" data-placement="bottom" title="New"></i>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
+							<div class="row">
+								<div class="col-lg-2" style="text-align: left;">
+									<span id="actionBadge" class="badge badge-info"
+										style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
+										data-placement="right" title="Raise a correction request">Update
+										request</span>
+								</div>
+								<div class="col-lg-10">
+									<p style="text-align: right;">
+										<a href="#" onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()"
+											class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
+												style="color: darkgray;font-size: x-large;margin-top: 12px;"
+												data-toggle="tooltip" data-placement="left"
+												title="Back to change request summary"></i></a>
+									</p>
+								</div>
+							</div>
+							<!-- Start - Comments -->
+							<div id="secTimeline" style="display: none;">
+								<div class="timeline timeline-simple mt-3 mb-3">
+									<div class="tm-body" style="padding: 0;">
+										<ol class="tm-items tm-main">
+											<li class="time_if2" style="display: none;">
+												<div class="tm-box">
+													<p class="text-muted mb-0"><span>Raised </span>by Amanda
+														Green
+														(CE) on 03/07/2024 18:25</p>
+													<p>
+														Updated based on new introduction week selected
+													</p>
+												</div>
+											</li>
+											<li class="time_if3" style="display: none;">
+												<div class="tm-box">
+													<p class="text-muted mb-0"><span>Raised </span>by Amanda
+														Green
+														(CE) on 03/07/2024 18:28</p>
+													<p>
+														New item set due to change on product creation date.
+													</p>
+												</div>
+											</li>
+											<li class="time_if4" style="display: none;">
+												<div class="tm-box">
+													<p class="text-muted mb-0"><span>Raised </span>by Amanda
+														Green
+														(CE) on 03/07/2024 18:30</p>
+													<p>
+														Missing some symbols
+													</p>
+												</div>
+											</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							<div class="row rComment">
+								<div class="col-lg-6">
+									<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+								</div>
+								<div class="col-lg-6" style="text-align: right;">
+									<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
+										Required</p>
+								</div>
+							</div>
+							<div class="row rComment">
+								<div class="col-lg-12">
+									<section class="simple-compose-box mb-3">
+										<form method="get" action="/">
+											<textarea id="cComment" name="message-text" data-plugin-textarea-autosize
+												placeholder="Additional information..." data-plugin-maxlength
+												maxlength="100" rows="2"></textarea>
+										</form>
+									</section>
+								</div>
+							</div>
+							<!-- End - Comments -->
+							<!-- Start - Actions -->
+							<div class="row">
+								<div class="col-lg-12" style="text-align: right;">
+									<button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
+										style="border-color: darkred;"
+										onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
+									<!-- <button id="btnReject" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+										onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
+									<button id="btnApprove" type="button"
+										class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+										onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button> -->
+									<button id="btnRequest" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+										onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
+										update</button>
+								</div>
+							</div>
+							<!-- End - Actions -->
+						</div>
+					</div>
+				</div>
+				<!-- End - Accordion Change request -->
 			</div>
 		</div>
 		<!-- end: form -->
@@ -310,6 +461,39 @@
 			</section>
 		</div>
 		<!-- End Modal - Full view - history -->
+		<!-- Start Modal - Full view - details -->
+		<div id="modal_update_details" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Information for corrections and reviews</h2>
+				</header>
+				<div class="card-body">
+					<!-- Start - Description -->
+					<div class="row">
+						<div class="col-lg-12">
+							<p style="margin-bottom: 0;">Review details and proceed to:
+							</p>
+							<ul>
+								<li>Raise update requests to suppliers</li>
+								<li>Accept or reject actions done by suppliers</li>
+								<li>React on udpate requests raised by Category Managers or Master Data
+									Specalists</li>
+								<!-- <li><a href="#" id="discardAll" style="color: darkred;font-size: larger;">Discard all</a>: to restore all original values.</li>																							 -->
+							</ul>
+						</div>
+					</div>
+					<!-- End - Description -->
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - details -->
 
 		<!-- ==================================================
 		Product information overlay 
@@ -358,8 +542,7 @@
 					<div class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
-								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
-									href="#accMainInfo">
+								<a>
 									More information
 								</a>
 							</h4>
@@ -438,202 +621,6 @@
 						</div>
 					</div>
 					<!-- End - Accordion Main info -->
-					<!-- Start - Accordion Change request -->
-					<div id="pChange" class="card card-default" style="display:none;">
-						<div class="card-header">
-							<h4 class="card-title m-0">
-								<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
-									data-parent="#accordion3" href="#accChangeRequest">
-									Update requests logs and history
-								</a>
-							</h4>
-							<div class="card-actions">
-								<!-- <a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
-									style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a> -->
-							</div>
-						</div>
-						<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
-							<div id="pChangeMain" class="card-body" style="background: ghostwhite;">
-								<!-- Start - Description -->
-								<div class="row">
-									<div class="col-lg-12">
-										<p style="margin-bottom: 0;">Review details and proceed to:
-										</p>
-										<ul>
-											<li>Raise update requests to suppliers</li>
-											<li>Accept or reject actions done by suppliers</li>
-											<li>React on udpate requests raised by Category Managers or Master Data
-												Specalists</li>
-											<!-- <li><a href="#" id="discardAll" style="color: darkred;font-size: larger;">Discard all</a>: to restore all original values.</li>																							 -->
-										</ul>
-									</div>
-								</div>
-								<!-- End - Description -->
-								<!-- Start - Change log -->
-								<div class="scrollable" data-plugin-scrollable style="height: 400px;margin-top: 25px;">
-									<div class="scrollable-content">
-										<table id="tLog" class="table table-hover table-responsive-md table-sm mb-0">
-											<thead>
-												<tr>
-													<th colspan="3" style="text-align: center;">Update requests log
-													</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr id="rf2" style="display: none;"
-													onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-													<td style="text-align: center;width: 10%;">
-														<span class="badge badge-warning" style="font-size: larger;"
-															data-toggle="tooltip" data-placement="bottom"
-															title="Update Request">UR</span>
-													</td>
-													<td style="width: 75%;">Net weight (EA)</td>
-													<td style="text-align: center;width: 15%;">
-														<i class="fas fa-plus"
-															style="color: darkgray;font-size: larger;"
-															data-toggle="tooltip" data-placement="bottom"
-															title="New"></i>
-													</td>
-												</tr>
-												<tr id="rf3" style="display: none;"
-													onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-													<td style="text-align: center;width: 10%;">
-														<span class="badge badge-warning" style="font-size: larger;"
-															data-toggle="tooltip" data-placement="bottom"
-															title="Update Request">UR</span>
-													</td>
-													<td style="width: 75%;">Item set</td>
-													<td style="text-align: center;width: 15%;">
-														<i class="fas fa-plus"
-															style="color: darkgray;font-size: larger;"
-															data-toggle="tooltip" data-placement="bottom"
-															title="New"></i>
-													</td>
-												</tr>
-												<tr id="rf4" style="display: none;"
-													onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-													<td style="text-align: center;width: 10%;">
-														<span class="badge badge-warning" style="font-size: larger;"
-															data-toggle="tooltip" data-placement="bottom"
-															title="Update Request">UR</span>
-													</td>
-													<td style="width: 75%;">Dangerous symbos (GHS)</td>
-													<td style="text-align: center;width: 15%;">
-														<i class="fas fa-plus"
-															style="color: darkgray;font-size: larger;"
-															data-toggle="tooltip" data-placement="bottom"
-															title="New"></i>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<!-- End - Change log -->
-							</div>
-							<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
-								<div class="row">
-									<div class="col-lg-2" style="text-align: left;">
-										<span id="actionBadge" class="badge badge-info"
-											style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
-											data-placement="right" title="Raise a correction request">Update
-											request</span>
-									</div>
-									<div class="col-lg-10">
-										<p style="text-align: right;">
-											<a href="#"
-												onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()"
-												class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
-													style="color: darkgray;font-size: x-large;margin-top: 12px;"
-													data-toggle="tooltip" data-placement="left"
-													title="Back to change request summary"></i></a>
-										</p>
-									</div>
-								</div>
-								<!-- Start - Comments -->
-								<div id="secTimeline" style="display: none;">
-									<div class="timeline timeline-simple mt-3 mb-3">
-										<div class="tm-body" style="padding: 0;">
-											<ol class="tm-items tm-main">
-												<li class="time_if2" style="display: none;">
-													<div class="tm-box">
-														<p class="text-muted mb-0"><span>Raised </span>by Amanda
-															Green
-															(CE) on 03/07/2024 18:25</p>
-														<p>
-															Updated based on new introduction week selected
-														</p>
-													</div>
-												</li>
-												<li class="time_if3" style="display: none;">
-													<div class="tm-box">
-														<p class="text-muted mb-0"><span>Raised </span>by Amanda
-															Green
-															(CE) on 03/07/2024 18:28</p>
-														<p>
-															New item set due to change on product creation date.
-														</p>
-													</div>
-												</li>
-												<li class="time_if4" style="display: none;">
-													<div class="tm-box">
-														<p class="text-muted mb-0"><span>Raised </span>by Amanda
-															Green
-															(CE) on 03/07/2024 18:30</p>
-														<p>
-															Missing some symbols
-														</p>
-													</div>
-												</li>
-											</ol>
-										</div>
-									</div>
-								</div>
-								<div class="row rComment">
-									<div class="col-lg-6">
-										<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
-									</div>
-									<div class="col-lg-6" style="text-align: right;">
-										<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
-											Required</p>
-									</div>
-								</div>
-								<div class="row rComment">
-									<div class="col-lg-12">
-										<section class="simple-compose-box mb-3">
-											<form method="get" action="/">
-												<textarea id="cComment" name="message-text"
-													data-plugin-textarea-autosize
-													placeholder="Additional information..." data-plugin-maxlength
-													maxlength="100" rows="2"></textarea>
-											</form>
-										</section>
-									</div>
-								</div>
-								<!-- End - Comments -->
-								<!-- Start - Actions -->
-								<div class="row">
-									<div class="col-lg-12" style="text-align: right;">
-										<button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
-											style="border-color: darkred;"
-											onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
-										<!-- <button id="btnReject" type="button"
-											class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
-											onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
-										<button id="btnApprove" type="button"
-											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
-											onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button> -->
-										<button id="btnRequest" type="button"
-											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
-											onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
-											update</button>
-									</div>
-								</div>
-								<!-- End - Actions -->
-							</div>
-						</div>
-					</div>
-					<!-- End - Accordion Change request -->
 				</div>
 			</section>
 
