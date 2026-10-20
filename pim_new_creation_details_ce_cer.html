@@ -40,7 +40,274 @@
 		<!-- end: header and intro week values -->
 		<!-- start: form -->
 		<div class="row">
-			<div id="fullview-left-col" class="col-lg-9">
+			<div id="fullview-left-col" class="col-lg-3 pr-0">
+				<!-- start: Product description, filliere and category -->
+				<section class="card card-featured-left card-featured-primary">
+					<div class="card-body pl-0 pb-0 pt-1">
+						<div class="widget-summary widget-summary-sm">
+							<div class="widget-summary-col widget-summary-col-icon bg-primary pt-1">
+								<div class="summary-icon ml-1 mr-1">
+									<!-- <img src="img/pr_create.png" alt="Create" style="width: 60%; "> -->
+									<i class="fa fa-solid fa-plus toggle-layout"></i>
+								</div>
+							</div>
+							<div class="widget-summary-col p-2 pb-2">
+								<div class="summary">
+									<a id="sideToggle" data-toggle="tooltip" data-placement="bottom"
+										title="Click here for more details.">
+										<h4 class="title" style="cursor: pointer;">LEFF BLOND RET 0,33L 9+3 TRA</h4>
+									</a>
+									<div class="info">
+										<strong class="text-muted">E020 - Viande
+											fraiche emballee</strong>
+										<br>
+										<!-- <a id="sideToggle" class="btn btn-link m-0 p-0"
+											style="font-size: smaller;color: darkblue;">More details</a> -->
+										<!-- <strong class="text-muted">&nbsp;|&nbsp;</strong>
+										<a class="btn btn-link m-0 p-0"
+											style="font-size: smaller;color: darkorange;">Open review details</a> -->
+									</div>
+								</div>
+								<!-- <div class="summary-footer">
+									<a class="text-uppercase">(view all)</a>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end: Product description, filliere and category -->
+				<!-- start: intro week values -->
+				<div class="row pt-2 pb-2 ml-0 mr-0" style="background:floralwhite">
+					<label class="col-lg-6 control-label control-label-sm text-left m-0"
+						style="font-size: smaller;">Introduction week</label>
+					<select id="iw" class="col-lg-5 form-control mb-3 cust-select text-center"
+						style="font-size: smaller;">
+						<option class="optionToChange" value=""></option>
+						<option value="W48 - 24/11/2022" selected>W56/2024</option>
+						<option value="W48 - 24/11/2022">W57/2024</option>
+						<option value="W48 - 24/11/2022">W58/2024</option>
+						<option value="W48 - 24/11/2022">W59/2024</option>
+						<option value="W48 - 24/11/2022">W60/2024</option>
+						<option value="W48 - 24/11/2022">W61/2024</option>
+						<option value="W48 - 24/11/2022">W62/2024</option>
+						<option value="W48 - 24/11/2022">W63/2024</option>
+						<option value="W48 - 24/11/2022">W64/2024</option>
+					</select>
+					<label class="col-lg-10 control-label control-label-sm text-left m-0 mt-1"
+						style="font-size: smaller;">Linked to a promo week</label>
+					<div class="col-lg-2 checkbox-custom mt-1 mb-1">
+						<input type="checkbox" id="checkboxExample2">
+						<label for="checkboxExample2">&nbsp;</label>
+					</div>
+					<label class="col-lg-6 control-label control-label-sm text-left m-0"
+						style="font-size: smaller;">Campaign week</label>
+					<select id="cw" class="col-lg-5 form-control mb-3 cust-select text-center"
+						style="font-size: smaller;">
+						<option class="optionToChange" value=""></option>
+						<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
+						<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
+						<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
+						<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
+						<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
+						<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
+						<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
+						<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
+					</select>
+				</div>
+				<!-- end: intro week values -->
+				<!-- Start - Accordion Change request -->
+				<div id="pChange" class="card card-default" style="display:none;">
+					<div class="card-header p-2 pt-3">
+						<h4 class="card-title m-0">
+							<a id="titleDet" style="font-size: small;">
+								Update requests logs and history
+							</a>
+						</h4>
+						<!-- <div class="card-actions">
+							<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
+								style="font-size: larger;"><i class="fas fa-info"></i></a>
+						</div> -->
+					</div>
+					<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
+						<div id="pChangeMain" class="card-body pt-0 pb-0 pr-1 pl-1" style="background: ghostwhite;">
+							<div class="col-lg-12 scrollable" style="height: 22rem;overflow-y: auto;">
+								<table id="tLog"
+									class=" table table-hover table-responsive-md table-sm mb-0 scrollable-content"
+									style="font-size: smaller;">
+									<!-- <thead>
+										<tr>
+											<th colspan="3" style="text-align: center;">Update requests log
+											</th>
+										</tr>
+									</thead> -->
+									<tbody class="pr-0">
+										<tr id="rf2" style="display: none;"
+											onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+											<td style="text-align: center;width: 10%;">
+												<span class="badge badge-warning" style="font-size: small;"
+													data-toggle="tooltip" data-placement="bottom"
+													title="Update Request">UR</span>
+											</td>
+											<td style="width: 75%;font-size: smaller;">Net weight (EA)</td>
+											<td style="text-align: center;width: 15%;">
+												<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
+													data-toggle="tooltip" data-placement="bottom" title="New"></i>
+											</td>
+										</tr>
+										<tr id="rf3" style="display: none;"
+											onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+											<td style="text-align: center;width: 10%;">
+												<span class="badge badge-warning" style="font-size: small;"
+													data-toggle="tooltip" data-placement="bottom"
+													title="Update Request">UR</span>
+											</td>
+											<td style="width: 75%;font-size: smaller;">Item set</td>
+											<td style="text-align: center;width: 15%;">
+												<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
+													data-toggle="tooltip" data-placement="bottom" title="New"></i>
+											</td>
+										</tr>
+										<tr id="rf4" style="display: none;"
+											onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+											<td style="text-align: center;width: 10%;">
+												<span class="badge badge-warning" style="font-size: small;"
+													data-toggle="tooltip" data-placement="bottom"
+													title="Update Request">UR</span>
+											</td>
+											<td style="width: 75%;font-size: smaller;">Dangerous symbos (GHS)</td>
+											<td style="text-align: center;width: 15%;">
+												<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
+													data-toggle="tooltip" data-placement="bottom" title="New"></i>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- Start - Footer and actions -->
+							<div class="card-footer p-1" style="background: ghostwhite;">
+								<div class="row  m-0">
+									<div class="col-lg-1 text-center mt-0">
+										<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal">
+											<i class="fas fa-info mt-2" style="font-size:larger;"></i></a>
+									</div>
+									<div class="col-lg-11 text-right pr-0">
+										<!-- <button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default"
+											style="border-color: darkred;"
+											onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button> -->
+										<!-- <button id="btnReject" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+											onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
+										<button id="btnApprove" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+											onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button> -->
+										<!-- <button id="btnRequest" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-xs btn-success"
+											onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
+											update</button> -->
+									</div>
+								</div>
+							</div>
+							<!-- End - Footer and actions -->
+						</div>
+						<div id="pChangeDet" class="card-body pt-0 pb-0 pr-1 pl-1"
+							style="display: none;background: ghostwhite;">
+							<!-- Start - Comments -->
+							<div id="secTimeline" style="display: none;">
+								<div class="timeline timeline-simple mt-3 mb-3">
+									<div class="tm-body" style="padding: 0;">
+										<ol class="tm-items tm-main">
+											<li class="time_if2" style="display: none;">
+												<div class="tm-box">
+													<p class="text-muted mb-0"><span>Raised </span>by Amanda
+														Green
+														(CE) on 03/07/2024 18:25</p>
+													<p>
+														Updated based on new introduction week selected
+													</p>
+												</div>
+											</li>
+											<li class="time_if3" style="display: none;">
+												<div class="tm-box">
+													<p class="text-muted mb-0"><span>Raised </span>by Amanda
+														Green
+														(CE) on 03/07/2024 18:28</p>
+													<p>
+														New item set due to change on product creation date.
+													</p>
+												</div>
+											</li>
+											<li class="time_if4" style="display: none;">
+												<div class="tm-box">
+													<p class="text-muted mb-0"><span>Raised </span>by Amanda
+														Green
+														(CE) on 03/07/2024 18:30</p>
+													<p>
+														Missing some symbols
+													</p>
+												</div>
+											</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							<div class="row rComment">
+								<div class="col-lg-6">
+									<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+								</div>
+								<div class="col-lg-6" style="text-align: right;">
+									<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
+										Required</p>
+								</div>
+							</div>
+							<div class="row rComment">
+								<div class="col-lg-12">
+									<section class="simple-compose-box mb-3">
+										<form method="get" action="/">
+											<textarea id="cComment" name="message-text" data-plugin-textarea-autosize
+												placeholder="Additional information..." data-plugin-maxlength
+												maxlength="100" rows="2"></textarea>
+										</form>
+									</section>
+								</div>
+							</div>
+							<!-- End - Comments -->
+							<!-- Start - Footer and actions -->
+							<div class="card-footer p-1" style="background: ghostwhite;">
+								<div class="row  m-0">
+									<div class="col-lg-1 text-center mt-0">
+										<a href="#" onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()">
+											<i class="fas fa-arrow-left mt-2" style="color: darkgray;font-size:larger;"
+												data-toggle="tooltip" data-placement="right"
+												title="Back to change request summary"></i></a>
+									</div>
+									<div class="col-lg-4 mt-1">
+										<span id="actionBadge" class="badge badge-info" data-toggle="tooltip"
+											data-placement="right" title="Raise a correction request">UR</span>
+									</div>
+									<div class="col-lg-7 text-right pr-0">
+										<button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default"
+											style="border-color: darkred;"
+											onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
+										<!-- <button id="btnReject" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+											onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
+										<button id="btnApprove" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+											onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button> -->
+										<button id="btnRequest" type="button"
+											class="mb-1 mt-1 mr-1 btn btn-xs btn-success"
+											onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
+											update</button>
+									</div>
+								</div>
+							</div>
+							<!-- End - Footer and actions -->
+						</div>
+					</div>
+				</div>
+				<!-- End - Accordion Change request -->
+			</div>
+			<div id="fullview-right-col" class="col-lg-9 pl-0">
 				<div class="tabs tabs-tertiary">
 					<ul class="nav nav-tabs nav-justified">
 						<li class="nav-item active" data-toggle="tooltip" data-placement="bottom"
@@ -154,245 +421,7 @@
 
 				</div>
 			</div>
-			<div id="fullview-right-col" class="col-lg-3 pl-0">
-				<!-- start: Product description, filliere and category -->
-				<section class="card card-featured-bottom card-featured-primary">
-					<div class="card-body pl-0 pb-0 pt-3">
-						<div class="widget-summary widget-summary-sm">
-							<div class="widget-summary-col widget-summary-col-icon">
-								<div class="summary-icon bg-primary ml-1 mr-1">
-									<!-- <img src="img/pr_create.png" alt="Create" style="width: 60%; "> -->
-									<i class="fa fa-solid fa-plus toggle-layout"></i>
-								</div>
-							</div>
-							<div class="widget-summary-col">
-								<div class="summary">
-									<h4 class="title">LEFF BLOND RET 0,33L 9+3 TRA</h4>
-									<div class="info">
-										<strong class="text-muted">E020 - Viande
-											fraiche emballee</strong>
-										<br>
-										<a id="sideToggle" class="btn btn-link m-0 p-0"
-											style="font-size: smaller;color: darkblue;">More details</a>
-										<!-- <strong class="text-muted">&nbsp;|&nbsp;</strong>
-										<a class="btn btn-link m-0 p-0"
-											style="font-size: smaller;color: darkorange;">Open review details</a> -->
-									</div>
-								</div>
-								<!-- <div class="summary-footer">
-									<a class="text-uppercase">(view all)</a>
-								</div> -->
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- end: Product description, filliere and category -->
-				<!-- start: intro week values -->
-				<div class="row pt-2 pb-2 ml-0 mr-0" style="background:floralwhite">
-					<label class="col-lg-6 control-label control-label-sm text-right m-0 mt-1"
-						style="font-size: smaller;">Introduction week</label>
-					<select id="iw" class="col-lg-5 form-control mb-3 cust-select text-center"
-						style="font-size: smaller;">
-						<option class="optionToChange" value=""></option>
-						<option value="W48 - 24/11/2022" selected>W56/2024</option>
-						<option value="W48 - 24/11/2022">W57/2024</option>
-						<option value="W48 - 24/11/2022">W58/2024</option>
-						<option value="W48 - 24/11/2022">W59/2024</option>
-						<option value="W48 - 24/11/2022">W60/2024</option>
-						<option value="W48 - 24/11/2022">W61/2024</option>
-						<option value="W48 - 24/11/2022">W62/2024</option>
-						<option value="W48 - 24/11/2022">W63/2024</option>
-						<option value="W48 - 24/11/2022">W64/2024</option>
-					</select>
-					<label class="col-lg-6 control-label control-label-sm text-right m-0 mt-1"
-						style="font-size: smaller;">Linked to a promo week</label>
-					<div class="col-lg-2 checkbox-custom mt-1 mb-1">
-						<input type="checkbox" id="checkboxExample2">
-						<label for="checkboxExample2">&nbsp;</label>
-					</div>
-					<label class="col-lg-6 control-label control-label-sm text-right m-0 mt-1"
-						style="font-size: smaller;">Campaign week</label>
-					<select id="cw" class="col-lg-5 form-control mb-3 cust-select text-center"
-						style="font-size: smaller;">
-						<option class="optionToChange" value=""></option>
-						<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
-						<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
-						<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
-						<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
-						<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
-						<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
-						<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
-						<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
-					</select>
-				</div>
-				<!-- end: intro week values -->
-				<!-- Start - Accordion Change request -->
-				<div id="pChange" class="card card-default" style="display:none;">
-					<div class="card-header p-2">
-						<h4 class="card-title m-0">
-							<a id="titleDet" style="font-size: small;">
-								Update requests logs and history
-							</a>
-						</h4>
-						<div class="card-actions">
-							<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
-								style="font-size: larger;"><i class="fas fa-info"></i></a>
-						</div>
-					</div>
-					<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
-						<div id="pChangeMain" class="card-body p-0" style="background: ghostwhite;">
-							<table id="tLog" class="col-lg-12 table table-hover table-responsive-md table-sm mb-0"
-								style="font-size: smaller;">
-								<!-- <thead>
-									<tr>
-										<th colspan="3" style="text-align: center;">Update requests log
-										</th>
-									</tr>
-								</thead> -->
-								<tbody>
-									<tr id="rf2" style="display: none;"
-										onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-										<td style="text-align: center;width: 10%;">
-											<span class="badge badge-warning" style="font-size: small;"
-												data-toggle="tooltip" data-placement="bottom"
-												title="Update Request">UR</span>
-										</td>
-										<td style="width: 75%;font-size: smaller;">Net weight (EA)</td>
-										<td style="text-align: center;width: 15%;">
-											<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
-												data-toggle="tooltip" data-placement="bottom" title="New"></i>
-										</td>
-									</tr>
-									<tr id="rf3" style="display: none;"
-										onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-										<td style="text-align: center;width: 10%;">
-											<span class="badge badge-warning" style="font-size: small;"
-												data-toggle="tooltip" data-placement="bottom"
-												title="Update Request">UR</span>
-										</td>
-										<td style="width: 75%;font-size: smaller;">Item set</td>
-										<td style="text-align: center;width: 15%;">
-											<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
-												data-toggle="tooltip" data-placement="bottom" title="New"></i>
-										</td>
-									</tr>
-									<tr id="rf4" style="display: none;"
-										onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-										<td style="text-align: center;width: 10%;">
-											<span class="badge badge-warning" style="font-size: small;"
-												data-toggle="tooltip" data-placement="bottom"
-												title="Update Request">UR</span>
-										</td>
-										<td style="width: 75%;font-size: smaller;">Dangerous symbos (GHS)</td>
-										<td style="text-align: center;width: 15%;">
-											<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
-												data-toggle="tooltip" data-placement="bottom" title="New"></i>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
-							<div class="row">
-								<div class="col-lg-2" style="text-align: left;">
-									<span id="actionBadge" class="badge badge-info"
-										style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
-										data-placement="right" title="Raise a correction request">Update
-										request</span>
-								</div>
-								<div class="col-lg-10">
-									<p style="text-align: right;">
-										<a href="#" onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()"
-											class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
-												style="color: darkgray;font-size: x-large;margin-top: 12px;"
-												data-toggle="tooltip" data-placement="left"
-												title="Back to change request summary"></i></a>
-									</p>
-								</div>
-							</div>
-							<!-- Start - Comments -->
-							<div id="secTimeline" style="display: none;">
-								<div class="timeline timeline-simple mt-3 mb-3">
-									<div class="tm-body" style="padding: 0;">
-										<ol class="tm-items tm-main">
-											<li class="time_if2" style="display: none;">
-												<div class="tm-box">
-													<p class="text-muted mb-0"><span>Raised </span>by Amanda
-														Green
-														(CE) on 03/07/2024 18:25</p>
-													<p>
-														Updated based on new introduction week selected
-													</p>
-												</div>
-											</li>
-											<li class="time_if3" style="display: none;">
-												<div class="tm-box">
-													<p class="text-muted mb-0"><span>Raised </span>by Amanda
-														Green
-														(CE) on 03/07/2024 18:28</p>
-													<p>
-														New item set due to change on product creation date.
-													</p>
-												</div>
-											</li>
-											<li class="time_if4" style="display: none;">
-												<div class="tm-box">
-													<p class="text-muted mb-0"><span>Raised </span>by Amanda
-														Green
-														(CE) on 03/07/2024 18:30</p>
-													<p>
-														Missing some symbols
-													</p>
-												</div>
-											</li>
-										</ol>
-									</div>
-								</div>
-							</div>
-							<div class="row rComment">
-								<div class="col-lg-6">
-									<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
-								</div>
-								<div class="col-lg-6" style="text-align: right;">
-									<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
-										Required</p>
-								</div>
-							</div>
-							<div class="row rComment">
-								<div class="col-lg-12">
-									<section class="simple-compose-box mb-3">
-										<form method="get" action="/">
-											<textarea id="cComment" name="message-text" data-plugin-textarea-autosize
-												placeholder="Additional information..." data-plugin-maxlength
-												maxlength="100" rows="2"></textarea>
-										</form>
-									</section>
-								</div>
-							</div>
-							<!-- End - Comments -->
-							<!-- Start - Actions -->
-							<div class="row">
-								<div class="col-lg-12" style="text-align: right;">
-									<button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
-										style="border-color: darkred;"
-										onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
-									<!-- <button id="btnReject" type="button"
-										class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
-										onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
-									<button id="btnApprove" type="button"
-										class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
-										onclick="javascript:App.CRUpdate.approveChange(1)">Approve</button> -->
-									<button id="btnRequest" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
-										onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
-										update</button>
-								</div>
-							</div>
-							<!-- End - Actions -->
-						</div>
-					</div>
-				</div>
-				<!-- End - Accordion Change request -->
-			</div>
+
 		</div>
 		<!-- end: form -->
 		<!-- Start Modal - Full view - confirm update -->
@@ -538,7 +567,7 @@
 				</section>
 				<!-- End - GTINs panel -->
 				<!-- Start - Accordion Main info -->
-				<div class="accordion accordion-sm" id="accordion3">
+				<div class="accordion accordion-sm" id="accordion4">
 					<div class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
@@ -547,7 +576,7 @@
 								</a>
 							</h4>
 						</div>
-						<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+						<div id="accMainInfo-new" class="collapse show" data-parent="#accordion4">
 							<div class="card-body">
 								<section class="card">
 									<div class="card-body">
