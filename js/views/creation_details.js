@@ -27,8 +27,6 @@
      * Current panel
      */
     let currentPanel = bPerSection[0].id;
-    let sideOverlay = $('#sideOverlay');
-    let sidePanel = $('#sidePanel');
 
     // Module for handling Creation details logic
     var CRDetails = {
@@ -90,19 +88,6 @@
                     App.CRSummaryLog.goBack();
                 }
             });
-
-            //info and summary panel overlay initialization
-            // 1.Open panel with button
-            $('#sideToggle').on('click', function () {
-                sidePanel.toggleClass('open');
-                sideOverlay.toggleClass('open');
-            });
-
-            // 2. Close side panel with button 'X'
-            //$('#sideClose').on('click', CRAI.closeMainInformationAndActivityOverlay);
-
-            // 3. Close side panel on overlayed clicked
-            sideOverlay.on('click', CRAI.closeMainInformationAndActivityOverlay);
 
             // 3. Shrink form to test
             $(".toggle-layout").on('click', App.CRDetails.shrinkForm);
@@ -295,17 +280,18 @@
             $(".input-group").addClass("input-group-sm")
             $(".input-group-text").css("font-size", "x-small")
             $(".row").removeClass("form-group")
-            $(".row .col-sm-5").removeClass("col-sm-5").addClass("col-sm-4")
-            $(".tab-content .control-label").removeClass("col-sm-3").addClass("col-sm-2").css("font-size", "smaller")
+            //$(".row .col-sm-5").removeClass("col-sm-5").addClass("col-sm-4")
+            //$(".tab-content .control-label").removeClass("col-sm-3").addClass("col-sm-2").css("font-size", "smaller")
+            $(".tab-content .control-label").css("font-size", "smaller")
             $(".dotted").addClass("dotted-sm")
             $("[id*='section']").find(".card-header").first().addClass("pb-0")
 
             //show new descriptions
-            $(".old-desc").hide();
+            $(".old-desc").remove();
             $(".new-desc").show();
 
             //show new uoms
-            $(".old-uom").hide();
+            $(".old-uom").remove();
             $(".new-uom").show();
         },
         /**
@@ -469,11 +455,6 @@
                 }
                 $wrapper.find('.ai-popover').show();
             }
-        },
-
-        closeMainInformationAndActivityOverlay: function () {
-            sidePanel.removeClass('open');
-            sideOverlay.removeClass('open');
         }
     };
 

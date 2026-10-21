@@ -37,6 +37,21 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-left: 5% !important;
 }
 
+.dotted-xs {
+    margin-bottom: 0px !important;
+    margin-top: 5px !important;
+    margin-left: 5% !important;
+}
+
+.bullet-sm {
+    font-size: x-small !important;
+}
+
+.p-status {
+    line-height: normal;
+    font-size: 0.7rem !important;
+}
+
 .nutri-score .btn {
     width: 50px;
     background-color: #ccc;
@@ -162,6 +177,7 @@ ul.simple-bullet-list li.darkcyan:before {
     width: 1px;
     vertical-align: middle;
     color: darkgreen;
+    font-size: smaller;
 }
 
 .t-desc-uom {
@@ -346,7 +362,8 @@ table#tLog {
 
 #secTimeline .tm-box p,
 #secTimeline .tm-box span {
-    font-size: small !important;
+    font-size: x-small !important;
+    line-height: normal;
 }
 
 .texta-fixed {

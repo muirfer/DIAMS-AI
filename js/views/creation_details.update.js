@@ -164,8 +164,9 @@
          * Show change details for current field being focused
          */
         showChangeDetailsForCurrentField: function () {
-            $('#titleDet').text(App.fieldObject.label);
+            $('#titleDet').text(App.fieldObject.label).append(App.spanElement);
             $("#cComment").val(App.fieldObject.comment);
+            $("#actionBadge").show();
 
             //switch panels
             App.CRSummaryLog.switchToChangeView();

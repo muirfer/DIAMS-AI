@@ -59,7 +59,7 @@
         backToChangeRequestMainView: function () {
             //update title
             $('#titleDet').text('Update requests logs and history');
-            $('#titleDet').append(App.spanElement);
+            //$('#titleDet').append(App.spanElement);
 
             //switch panels
             $('#pChangeMain').show('flip', function () {
@@ -130,6 +130,7 @@
          * Go back one step or two in case no more changes are left
          */
         goBack: function () {
+            $("#actionBadge").hide();
             if (App.CRSummaryLog.getChangesCount() > 0) {
                 App.CRSummaryLog.backToChangeRequestMainView();
             } else {
