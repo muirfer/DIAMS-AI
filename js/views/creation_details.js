@@ -39,7 +39,7 @@
             $(".content-body").addClass("p-0");
 
             //calculate scrollable content area
-            $(".main-panel").css("height", "calc(95vh - " + $(".tab-content").offset().top + "px)");
+            $(".main-panel").css("height", "calc(90vh - " + $(".tab-content").offset().top + "px)");
 
             $(".scrollToSectionLink").click(function (e) {
                 e.preventDefault();
