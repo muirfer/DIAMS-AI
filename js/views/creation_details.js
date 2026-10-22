@@ -38,21 +38,37 @@
             //remove padding from main content to fit better the form and take more advantage of the screen width
             $(".content-body").addClass("p-0");
 
-            //calculate scrollable content area
-            $(".main-panel").css("height", "calc(90vh - " + $(".tab-content").offset().top + "px)");
+            //calculate scrollable content area to fit cleanly to viewport bottom
+            CRDetails.adjustMainPanelHeight();
+            setTimeout(function () {
+                CRDetails.adjustMainPanelHeight();
+            }, 150);
+
+            // Update height dynamically on window resize
+            $(window).off("resize.crDetails").on("resize.crDetails", function () {
+                CRDetails.adjustMainPanelHeight();
+            });
+
+            // Update height dynamically when switching tabs
+            $('a[data-toggle="tab"]').off("shown.bs.tab.crDetails").on("shown.bs.tab.crDetails", function () {
+                CRDetails.adjustMainPanelHeight();
+            });
 
             $(".scrollToSectionLink").click(function (e) {
                 e.preventDefault();
                 var sectionId = "section" + $(this).attr('id')[1]; // Change this to the id of the section you want to scroll to
-                //var sectionOffset = $(currentPanel + " #" + sectionId).offset().top;
-                //var sectionOffset = $(currentPanel + " #" + sectionId).position().top;
-                // Calculate the scroll position to the target panel
-                var scrollPosition = $(currentPanel + " #" + sectionId).position().top + $(".scrollable-content").scrollTop();
+                var $targetSection = $(currentPanel + " #" + sectionId);
+                var $scrollable = $(currentPanel).find(".scrollable-content");
+                if (!$scrollable.length) {
+                    $scrollable = $(".scrollable-content");
+                }
 
-                $(".scrollable-content").animate({
-                    scrollTop: scrollPosition
-                    //scrollTop: sectionOffset - $(".scrollable-content").offset().top
-                }, 1000); // Adjust the duration of the animation as needed
+                if ($targetSection.length && $scrollable.length) {
+                    var scrollPosition = $targetSection.position().top + $scrollable.scrollTop();
+                    $scrollable.animate({
+                        scrollTop: scrollPosition
+                    }, 600);
+                }
             });
 
             $(".nav-link").click(function (e) {
@@ -87,6 +103,10 @@
                     //for full view update - Go Back if tab focus changes:
                     App.CRSummaryLog.goBack();
                 }
+
+                setTimeout(function () {
+                    CRDetails.adjustMainPanelHeight();
+                }, 50);
             });
 
             // 3. Shrink form to test
@@ -181,8 +201,7 @@
 
                 // Recalculate dynamic height
                 setTimeout(function () {
-                    $(".main-panel").css("height", "calc(95vh - " + $(".tab-content").offset().top + "px)");
-                    $(".main-panel").scrollTop();
+                    CRDetails.adjustMainPanelHeight();
                 }, 100);
             });
 
@@ -264,12 +283,11 @@
                 // Refresh pPrices carousels to recalculate items width correctly after their wrapper shrinks
                 $("#pPrices .owl-carousel").trigger("refresh.owl.carousel");
 
-                // force scroll to top and remove browser scrollbar
+                // force scroll to top and recalculate dynamic height
                 setTimeout(function () {
-                    //$(".main-panel").css("height", "calc(95vh - " + $(".tab-content").offset().top + "px)");
+                    CRDetails.adjustMainPanelHeight();
                     $("html, body").scrollTop(0);
-
-                }, 6000);
+                }, 100);
             });
 
             //initialize AI module
@@ -316,6 +334,40 @@
          */
         getCurrentPanel: function () {
             return currentPanel;
+        },
+        /**
+         * Dynamically calculates and sets .main-panel height to guarantee
+         * it fits cleanly within the viewport with zero bottom clipping.
+         */
+        adjustMainPanelHeight: function () {
+            var $tabContent = $(".tab-content");
+            if (!$tabContent.length) return;
+
+            var $panel = $(".main-panel.active");
+            if (!$panel.length || !$panel.is(":visible")) {
+                $panel = $(".main-panel:visible");
+            }
+            if (!$panel.length) {
+                $panel = $(".main-panel").first();
+            }
+
+            var panelTop = 0;
+            if ($panel.length && $panel.offset() && $panel.offset().top > 50) {
+                panelTop = $panel.offset().top;
+            } else {
+                var tabContentTop = $tabContent.offset() && $tabContent.offset().top ? $tabContent.offset().top : 210;
+                var breadcrumbsH = $tabContent.find("> .row").first().outerHeight(true) || 30;
+                panelTop = tabContentTop + breadcrumbsH;
+            }
+
+            // Available space from top of panel to viewport bottom
+            // 25px bottom buffer ensures the entire panel and scrollbar end cleanly above the window bottom
+            var availableHeight = $(window).height() - panelTop - 25;
+            if (availableHeight < 250) {
+                availableHeight = 250;
+            }
+
+            $(".main-panel").css("height", availableHeight + "px");
         }
 
     };

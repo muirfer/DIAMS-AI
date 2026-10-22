@@ -47,6 +47,15 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: x-small !important;
 }
 
+.header-top-value div {
+    color: darkgreen;
+    font-size: smaller;
+}
+
+.header-top-value p {
+    line-height: normal;
+}
+
 .p-status {
     line-height: normal;
     font-size: 0.7rem !important;
@@ -497,5 +506,89 @@ table#tLog {
 }
 
 .beautify-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+}
+
+/* ==================================================
+   Fit to Viewport: Remove Bottom White Void & Window Scrollbar
+   ================================================== */
+html.fixed,
+html.fixed body {
+    height: 100vh !important;
+    overflow-y: hidden !important;
+}
+
+html.fixed .inner-wrapper {
+    min-height: 100% !important;
+    height: 100vh !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+#mainSection {
+    height: calc(100vh - 110px) !important;
+    min-height: auto !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    background: #fff;
+}
+
+#mainSection>.body,
+#mainSection .body,
+#mainSection .creation-details-body {
+    min-height: auto !important;
+    height: 100% !important;
+}
+
+#fullview-left-col {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+/* Tabs styling inside creation details view */
+.is-creation-view .tabs {
+    margin-bottom: 0 !important;
+}
+
+.is-creation-view .tab-content {
+    padding-bottom: 0 !important;
+}
+
+/* Tab Panels Scrollable Area: allow scrolling comfortably past the end ("e incluso un poco más") */
+.main-panel .scrollable-content {
+    padding-right: 15px !important;
+    padding-bottom: 120px !important; /* Generous bottom clearance */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd #f1f1f1;
+}
+
+/* Spacer after content inside tab panels to guarantee scrolling room across all layout engines */
+.main-panel .scrollable-content::after {
+    content: "";
+    display: block;
+    height: 80px;
+    width: 100%;
+    clear: both;
+}
+
+/* Beautified Custom Scrollbar for tab panels */
+.main-panel .scrollable-content::-webkit-scrollbar {
+    visibility: visible !important;
+    width: 6px;
+}
+
+.main-panel .scrollable-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.main-panel .scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+}
+
+.main-panel .scrollable-content::-webkit-scrollbar-thumb:hover {
     background-color: #6c757d;
 }
