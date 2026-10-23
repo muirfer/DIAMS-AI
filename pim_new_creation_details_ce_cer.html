@@ -87,7 +87,7 @@
 					<div class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
-								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+								<a class="accordion-toggle acc-title" data-toggle="collapse" data-parent="#accordion3"
 									href="#accMainInfo">
 									More information
 								</a>
@@ -137,20 +137,20 @@
 								</section>
 								<!-- Start - Status panel -->
 								<div class="row pl-2 pr-2 mt-2">
-									<div class="col-md-6 text-center">
-										<ul class="simple-card-list ">
+									<div class="col-md-12 text-center">
+										<ul class="simple-card-list mb-1">
 											<li class="info p-1 mt-1 mb-0 text-center" style="opacity: 0.6;">
-												<h3 class="p-status">09/02/2026</h3>
-												<p class="text-light p-status">Last update of external data (GDSN /
-													Bottlebooks)</p>
+												<h3 class="p-status">09/02/2026<span class="ml-2">Last update of
+														external data (GDSN /
+														Bottlebooks)</span></h3>
 											</li>
 										</ul>
 									</div>
-									<div class="col-md-6 text-center">
-										<ul id="blockStatement" class="simple-card-list">
+									<div class="col-md-12 text-center">
+										<ul id="blockStatement" class="simple-card-list mb-1">
 											<li class="info p-1 mt-1 mb-0 text-center" style="opacity: 0.6;">
-												<h3 class="p-status">R</h3>
-												<p class="text-light p-status">Category Expert Review</p>
+												<h3 class="p-status">R<span class="ml-2">Category Expert Review</span>
+												</h3>
 											</li>
 										</ul>
 									</div>
@@ -164,7 +164,7 @@
 					<div id="pChange" class="card card-default" style="display:none;">
 						<div class="card-header">
 							<h4 class="card-title m-0">
-								<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
+								<a id="titleDet" class="accordion-toggle acc-title" data-toggle="collapse"
 									data-parent="#accordion3" href="#accChangeRequest">
 									<span id="actionBadge" class="badge badge-info" data-toggle="tooltip"
 										data-placement="left" title="Raise a correction request"
@@ -172,17 +172,15 @@
 									Update requests logs and history
 								</a>
 							</h4>
-							<div class="card-actions">
-
-								<!-- <a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
-									style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a> -->
+							<div class="card-actions info-link info-link-u">
+								<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal">
+									<i class="fas fa-info"></i></a>
 							</div>
 						</div>
 						<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
 							<div id="pChangeMain" class="card-body pt-0 pb-0 pr-1 pl-1" style="background: ghostwhite;">
-								<div class="col-lg-12 beautify-scroll pl-1 pr-0" style="height: 22rem;">
-									<table id="tLog" class=" table table-hover table-responsive-md table-sm mb-0"
-										style="font-size: smaller;">
+								<div class="col-lg-12 beautify-scroll pl-1 pr-0">
+									<table id="tLog" class=" table table-hover table-responsive-md table-sm mb-0">
 										<!-- <thead>
 											<tr>
 												<th colspan="3" style="text-align: center;">Update requests log
@@ -192,41 +190,38 @@
 										<tbody class="pr-0">
 											<tr id="rf2" style="display: none;"
 												onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-												<td style="text-align: center;width: 10%;">
-													<span class="badge badge-warning" style="font-size: small;"
-														data-toggle="tooltip" data-placement="bottom"
-														title="Update Request">UR</span>
+												<td class="text-center" style="width: 10%;">
+													<span class="badge badge-warning" data-toggle="tooltip"
+														data-placement="bottom" title="Update Request">UR</span>
 												</td>
 												<td style="width: 75%;">Net weight (EA)</td>
-												<td style="text-align: center;width: 15%;">
-													<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
-														data-toggle="tooltip" data-placement="bottom" title="New"></i>
+												<td class="text-center" style="width: 15%;">
+													<i class="fas fa-plus" data-toggle="tooltip" data-placement="bottom"
+														title="New"></i>
 												</td>
 											</tr>
 											<tr id="rf3" style="display: none;"
 												onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-												<td style="text-align: center;width: 10%;">
-													<span class="badge badge-warning" style="font-size: small;"
-														data-toggle="tooltip" data-placement="bottom"
-														title="Update Request">UR</span>
+												<td class="text-center" style="width: 10%;">
+													<span class="badge badge-warning" data-toggle="tooltip"
+														data-placement="bottom" title="Update Request">UR</span>
 												</td>
 												<td style="width: 75%;">Item set</td>
-												<td style="text-align: center;width: 15%;">
-													<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
-														data-toggle="tooltip" data-placement="bottom" title="New"></i>
+												<td class="text-center" style="width: 15%;">
+													<i class="fas fa-plus" data-toggle="tooltip" data-placement="bottom"
+														title="New"></i>
 												</td>
 											</tr>
 											<tr id="rf4" style="display: none;"
 												onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
-												<td style="text-align: center;width: 10%;">
-													<span class="badge badge-warning" style="font-size: small;"
-														data-toggle="tooltip" data-placement="bottom"
-														title="Update Request">UR</span>
+												<td class="text-center" style="width: 10%;">
+													<span class="badge badge-warning" data-toggle="tooltip"
+														data-placement="bottom" title="Update Request">UR</span>
 												</td>
 												<td style="width: 75%;">Dangerous symbos (GHS)</td>
-												<td style="text-align: center;width: 15%;">
-													<i class="fas fa-plus" style="color: darkgray;font-size: larger;"
-														data-toggle="tooltip" data-placement="bottom" title="New"></i>
+												<td class="text-center" style="width: 15%;">
+													<i class="fas fa-plus" data-toggle="tooltip" data-placement="bottom"
+														title="New"></i>
 												</td>
 											</tr>
 										</tbody>
@@ -235,11 +230,7 @@
 								<!-- Start - Footer and actions -->
 								<div class="card-footer p-1" style="background: ghostwhite;">
 									<div class="row  m-0">
-										<div class="col-lg-1 text-center mt-0">
-											<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal">
-												<i class="fas fa-info mt-2" style="font-size:larger;"></i></a>
-										</div>
-										<div class="col-lg-11 text-right pr-0">
+										<div class="col-lg-12 text-right pr-0">
 											<!-- <button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default"
 												style="border-color: darkred;"
 												onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button> -->
@@ -266,7 +257,8 @@
 											<ol class="tm-items tm-main">
 												<li class="time_if2 mb-1 mt-1" style="display: none;">
 													<div class="tm-box p-2">
-														<p class="text-muted mb-1"><span>Raised </span>by Amanda
+														<p class="text-muted mb-1"><span class="timeline-init">Change
+																requested </span> by Amanda
 															Green
 															(CE) on 03/07/2024 18:25</p>
 														<p>
@@ -276,7 +268,8 @@
 												</li>
 												<li class="time_if3 mb-1 mt-1" style="display: none;">
 													<div class="tm-box p-2">
-														<p class="text-muted mb-1"><span>Raised </span>by Amanda
+														<p class="text-muted mb-1"><span class="timeline-init">Change
+																requested </span> by Amanda
 															Green
 															(CE) on 03/07/2024 18:28</p>
 														<p>
@@ -286,7 +279,8 @@
 												</li>
 												<li class="time_if4 mb-1 mt-1" style="display: none;">
 													<div class="tm-box p-2">
-														<p class="text-muted mb-1"><span>Raised </span>by Amanda
+														<p class="text-muted mb-1"><span class="timeline-init">Change
+																requested </span> by Amanda
 															Green
 															(CE) on 03/07/2024 18:30</p>
 														<p>
@@ -303,9 +297,8 @@
 									<div class="col-lg-6">
 										<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
 									</div>
-									<div class="col-lg-6" style="text-align: right;">
-										<p class="mb-0" id="txtRequired"
-											style="color: darkred;display: none;font-size:small;">
+									<div class="col-lg-6 text-right">
+										<p class="mb-0" id="txtRequired">
 											Required</p>
 									</div>
 								</div>
@@ -401,61 +394,67 @@
 				<!-- end: intro week values  -->
 				<div class="tabs tabs-primary">
 					<ul class="nav nav-tabs nav-justified">
-						<li class="nav-item active" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item active overview" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Basic Data">
 							<a class="nav-link p-2" href="#overview" data-toggle="tab"><i
 									class="fas fa-info"></i><br>B.Data</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item pUoM" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Units of Measure">
 							<a class="nav-link p-2" href="#pUoM" data-toggle="tab"><i
 									class="fas fa-cube"></i><br>UoM</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item pPurchasing" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Purchasing">
 							<a class="nav-link p-2" href="#pPurchasing" data-toggle="tab"><i
 									class="fas fa-shopping-cart"></i><br>Purch.</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item pCodes" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Codes">
+							<a class="nav-link p-2" href="#pCodes" data-toggle="tab"><i
+									class="fas fa-laptop-code"></i><br>Codes</a>
+						</li>
+						<li class="nav-item pLogistics" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Logistics">
 							<a class="nav-link p-2" href="#pLogistics" data-toggle="tab"><i
 									class="fas fa-truck"></i><br>Log.</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Codes">
-							<a class="nav-link p-2" href="#pCodes" data-toggle="tab"><i
-									class="fas fa-laptop-code"></i><br>Codes</a>
-						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item pAssortment" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Assortments">
 							<a class="nav-link p-2" href="#pAssortment" data-toggle="tab"><i
 									class="fas fa-box"></i><br>Assort.</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Prices">
+						<li class="nav-item pPricesNew" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Prices">
 							<a class="nav-link p-2" href="#pPricesNew" data-toggle="tab"><i
 									class="fas fa-money-bill-alt"></i><br>Prices</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Taxes">
+						<li class="nav-item pTaxes" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Taxes">
 							<a class="nav-link p-2" href="#pTaxes" data-toggle="tab"><i
 									class="fas fa-file-invoice-dollar"></i><br>Taxes</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Links">
+						<li class="nav-item pLinks" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Links">
 							<a class="nav-link p-2" href="#pLinks" data-toggle="tab"><i
 									class="fas fa-link"></i><br>Links</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="B2C">
+						<li class="nav-item pB2C" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="B2C">
 							<a class="nav-link p-2" href="#pB2C" data-toggle="tab"><i
 									class="fas fa-briefcase"></i><br>B2C</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom" data-original-title="Store">
+						<li class="nav-item pStore" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Store">
 							<a class="nav-link p-2" href="#pStore" data-toggle="tab"><i
 									class="fas fa-store"></i><br>Store</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item pWine" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Wine Characteristics">
 							<a class="nav-link p-2" href="#pWine" data-toggle="tab"><i
 									class="fas fa-wine-glass"></i><br>Wine</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="bottom"
+						<li class="nav-item pFostPlus" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Fost Plus">
 							<a class="nav-link p-2" href="#pFostPlus" data-toggle="tab"><i
 									class="fas fa-cube"></i><br>F.Plus</a>

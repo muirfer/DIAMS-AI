@@ -67,6 +67,8 @@
                 $('#pChangeDet').hide('flip');
             });
 
+            $(".info-link-u").show();
+
             // $("#pChangeDet").hide();
             // $("#pChangeMain").show();						
         },
@@ -105,23 +107,27 @@
 
             if (this.typeManual === 0) {
                 //switch to manual with re-use (copy from existing product)
+                $("#typeStatement li").html("<h3 class='p-status'><i class='fas fa-copy c-link mr-2'></i>Manual<span class='ml-2'>Copy of product with ID 7985127</span></h3>");
                 $(".c-link").show();
-                $("#typeStatement li p").text("Copy of product with ID 7985127");
+                // $("#typeStatement li h3 span").text("Copy of product with ID 7985127");
                 this.typeManual = 1;
             } else if (this.typeManual === 1) {
                 //switch to GDSN task      
                 $("#typeStatement li").toggleClass("warning info");
+                $("#typeStatement li").html("<h3 class='p-status'><i class='fas fa-link i-link mr-2'></i>09/02/2026<span class='ml-2'>Last update of external data (GDSN)</span></h3>");
+
                 $(".i-link").show();
                 $(".c-link").hide();
-                $("#typeStatement li h3").text("09/02/2026");
-                $("#typeStatement li p").text("Last update of external data (GDSN)");
+                // $("#typeStatement li h3").text("09/02/2026");
+                // $("#typeStatement li span").text("Last update of external data (GDSN)");
                 this.typeManual = 2;
             } else {
                 $("#typeStatement li").toggleClass("warning info");
+                $("#typeStatement li").html("<h3 class='p-status'>Manual<span class='ml-2'>Task type</span></h3>");
                 $(".i-link").hide();
                 $(".c-link").hide();
-                $("#typeStatement li h3").text("Manual");
-                $("#typeStatement li p").text("Task type");
+                // $("#typeStatement li h3").text("Manual");
+                // $("#typeStatement li span").text("Task type");
                 this.typeManual = 0;
             }
 

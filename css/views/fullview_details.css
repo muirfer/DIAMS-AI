@@ -61,6 +61,19 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: 0.7rem !important;
 }
 
+.p-status span {
+    font-weight: 300;
+    font-size: smaller;
+}
+
+.diams-logs {
+    font-size: smaller;
+}
+
+.diams-logs .alert button {
+    font-size: small;
+}
+
 .nutri-score .btn {
     width: 50px;
     background-color: #ccc;
@@ -362,17 +375,84 @@ ul.simple-bullet-list li.darkcyan:before {
     width: 95%;
 }
 
+div#pChangeMain .beautify-scroll {
+    height: 20rem;
+}
+
+div#pBerMain .beautify-scroll {
+    height: 20rem;
+}
+
+.info-link a {
+    margin-top: -15px;
+}
+
+.info-link a i {
+    font-size: larger;
+}
+
+p#txtRequired {
+    color: darkred;
+    display: none;
+    font-size: small;
+}
+
+.acc-title {
+    font-size: small !important;
+}
+
 /* Responsive font sizes and element scaling for change requests and timeline */
 
 table#tLog {
     width: 100% !important;
     max-width: 100% !important;
+    font-size: smaller;
+}
+
+table#tLog tr td .badge {
+    font-size: small;
+}
+
+table#tLog tr td i {
+    font-size: larger;
+}
+
+table#tLog tr td i.fa-plus {
+    color: darkgray
+}
+
+table#tLog tr td i.fa-check {
+    color: darkgreen
+}
+
+table#tLog tr td i.fa-check-double {
+    color: darkblue
+}
+
+table#tLog tr td i.fa-ban {
+    color: darkred
 }
 
 #secTimeline .tm-box p,
 #secTimeline .tm-box span {
     font-size: x-small !important;
     line-height: normal;
+}
+
+.timeline-init {
+    color: darkorange
+}
+
+.timeline-updated {
+    color: darkgreen
+}
+
+.timeline-accepted {
+    color: darkblue
+}
+
+.timeline-rejected {
+    color: darkred
 }
 
 .texta-fixed {
@@ -557,7 +637,8 @@ html.fixed .inner-wrapper {
 /* Tab Panels Scrollable Area: allow scrolling comfortably past the end ("e incluso un poco más") */
 .main-panel .scrollable-content {
     padding-right: 15px !important;
-    padding-bottom: 120px !important; /* Generous bottom clearance */
+    padding-bottom: 120px !important;
+    /* Generous bottom clearance */
     overflow-y: auto !important;
     overflow-x: hidden !important;
     scrollbar-width: thin;

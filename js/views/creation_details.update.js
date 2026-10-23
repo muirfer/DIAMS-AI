@@ -22,7 +22,7 @@
         REJECT: "reject",
         REQUEST: "request"
     };
-    App.buttonTemplate = $('<button type="button" class="mb-1 mt-1 mr-1 btn btn-info btn-go">Go</button>');
+    App.buttonTemplate = $('<button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-info btn-go">Go</button>');
 
     // Module for handling common update logic in Full view details panel
     var CRUpdate = {
@@ -167,6 +167,7 @@
             $('#titleDet').text(App.fieldObject.label).append(App.spanElement);
             $("#cComment").val(App.fieldObject.comment);
             $("#actionBadge").show();
+            $(".info-link-u").hide();
 
             //switch panels
             App.CRSummaryLog.switchToChangeView();
@@ -247,10 +248,11 @@
             App.fieldObject = App.updateFields.find(item => item.id === (fieldId));
 
             //to tab and field    
+            $('.nav-tabs .active').removeClass('active');
             $('.tab-pane').removeClass('active');
             $('#' + App.fieldObject.tab).tab('show');
             $('#' + App.fieldObject.tab).addClass('active');
-
+            $('.' + App.fieldObject.tab).addClass('active');
 
             //to change view if not yet in there
             App.CRUpdate.showChangeDetailsForCurrentField();
@@ -528,19 +530,19 @@
 
             switch (action) {
                 case App.Actions.APPROVE:
-                    color = "darkgreen";
+                    color = "timeline-updated";
                     actionText = "Updated ";
                     break;
                 case App.Actions.ACCEPT:
-                    color = "darkblue";
+                    color = "timeline-accepted";
                     actionText = "Accepted ";
                     break;
                 case App.Actions.REJECT:
-                    color = "darkred";
+                    color = "timeline-rejected";
                     actionText = "Rejected ";
                     break;
                 case App.Actions.REQUEST:
-                    color = "darkorange";
+                    color = "timeline-init";
                     actionText = "Change requested ";
                     break;
                 default:
@@ -554,7 +556,8 @@
 
                     //update span with action
                     var spanElement = cObject.find('span:first')
-                    spanElement.css("color", color)
+                    spanElement.removeClass();
+                    spanElement.addClass(color)
                     spanElement.text(actionText)
 
                     cObject.show();
@@ -565,7 +568,7 @@
                 cObject = $('.' + App.fieldObject.timeline).first().clone();
                 cObject.find('p:first').text(App.commentText);
                 cObject.find('p:first span').remove()
-                cObject.find('p:first').prepend('<span style="color:' + color + ';font-size:larger">' + actionText + '</span>');
+                cObject.find('p:first').prepend('<span class="' + color + '">' + actionText + '</span>');
                 // Append the cloned `<ol>` to the last `<li>`
                 $('#secTimeline .tm-items').append(cObject);
             }

@@ -1,0 +1,478 @@
+<head>
+	<link rel="stylesheet" href="css/views/fullview_details.css" />
+</head>
+
+<body class="is-creation-view" data-spy="scroll" data-target="#myScrollspy" data-offset="20"
+	style="position: relative;">
+
+	<section class="creation-details-body">
+		<header class="page-header">
+			<div class="right-wrapper pull-left" id="nav-breadcrump">
+				<h2>
+					<a id="nav-breadcrump-link" href="#" class="po-header-back-title">
+						<i class="fa fa-chevron-left right-text"></i>&nbsp;<span id="nav-breadcrump-text">Back</span>
+					</a>
+				</h2>
+			</div>
+			<h2 id="view-bag-title">Edit product</h2>
+
+			<a class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#"><i class="fas fa-save" style="margin-top: -10px;" data-toggle="tooltip" data-placement="bottom"
+					title="Save draft"></i></a>
+			<a id="btnConfirm"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#modal_update_confirm"><i class="fas fa-check" style="margin-top: -10px;"></i></a>
+			<a id="btnHistory"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#modal_update_history"><i class="fa fa-history" style="margin-top: -10px;"></i></a>
+			<button
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
+				id="btn-collapse-view" rel="tooltip" data-original-title="" title="Collapse" style="display: none;"><i
+					class="fas fa-compress" style="margin-top: -8px;"></i></button>
+			<button
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
+				id="btn-expand-view" rel="tooltip" data-original-title="" title="Expand"><i class="fas fa-expand"
+					style="margin-top: -8px;"></i></button>
+		</header>
+		<div class="row p-0">
+			<div id="fullview-left-col" class="col-lg-3 pr-0" style="overflow:hidden">
+				<!-- start: Product description, filliere and category -->
+				<section class="card card-featured-top card-featured-primary mt-0">
+					<div class="card-body pl-0 pb-0 pt-0">
+						<div class="widget-summary widget-summary-sm">
+							<div class="widget-summary-col widget-summary-col-icon bg-primary pt-1"
+								style="vertical-align: middle;">
+								<div class="summary-icon ml-1 mr-1">
+									<i class="fa fa-solid fa-plus toggle-layout"></i>
+								</div>
+							</div>
+							<div class="widget-summary-col p-2 pb-2 text-center">
+								<div class="summary">
+									<h4 class="title">LEFF BLOND RET 0,33L 9+3 TRA</h4>
+									<div class="info">
+										<strong class="text-muted">E020 - Viande
+											fraiche emballee</strong>
+										<!-- Start - GTINs panel -->
+										<hr class="dotted dotted-xs">
+										<section class="mt-0">
+											<div class="p-1">
+												<div class="row mt-1">
+													<div class="col-md-6 text-center pr-1 header-top-value">
+														<div class="h7 font-weight-bold mb-0">
+															54106831504381
+														</div>
+														<p class="text-3 text-muted mb-0">GTIN CU</p>
+													</div>
+													<div class="col-md-6 text-center pl-1 header-top-value">
+														<div class="h7 font-weight-bold mb-0">
+															54106818870001
+														</div>
+														<p class="text-3 text-muted mb-0">
+															Input GTIN</p>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- <div class="summary-footer">
+									<a class="text-uppercase">(view all)</a>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end: Product description, filliere and category -->
+				<div class="accordion accordion-sm" id="accordion3">
+					<div class="card card-default">
+						<div class="card-header">
+							<h4 class="card-title m-0">
+								<a class="accordion-toggle acc-title" data-toggle="collapse" data-parent="#accordion3"
+									href="#accMainInfo">
+									More information
+								</a>
+							</h4>
+						</div>
+						<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+							<div class="card-body p-1">
+
+								<section class="card">
+									<div class="card-body pt-3 pb-0">
+										<ul class="simple-bullet-list mb-0">
+											<li class="red">
+												<span class="title bullet-sm">N1 - National</span>
+												<span class="description truncate bullet-sm">Brand type</span>
+											</li>
+											<li class="blue">
+												<span class="title bullet-sm">SOCIETE FERMIERE ROCHEFORT ARDENNES</span>
+												<span class="description truncate bullet-sm">Regular supplier</span>
+											</li>
+											<li class="green">
+												<span class="title bullet-sm">BE - Belgium</span>
+												<span class="description truncate bullet-sm">Country responsible for
+													product
+													creation</span>
+											</li>
+										</ul>
+										<hr class="dotted dotted-sm">
+										<ul class="simple-bullet-list mb-0">
+											<li class="darkcyan">
+												<span class="title bullet-sm">Resale</span>
+												<span class="description truncate bullet-sm">Sales type</span>
+											</li>
+											<li class="darkcyan">
+												<span class="title bullet-sm">Regular</span>
+												<span class="description truncate bullet-sm">Logistical type</span>
+											</li>
+											<li class="darkcyan">
+												<span class="title bullet-sm">In store production</span>
+												<span class="description truncate bullet-sm">Distribution type</span>
+											</li>
+											<li class="darkcyan">
+												<span class="title bullet-sm">Regular</span>
+												<span class="description truncate bullet-sm">Specifics</span>
+											</li>
+										</ul>
+									</div>
+								</section>
+								<!-- Start - Status panel -->
+								<div class="row pl-2 pr-2 mt-2">
+									<div class="col-md-12 text-center">
+										<ul id="typeStatement" class="simple-card-list mb-1">
+											<li class="info p-1 mt-1 mb-0 text-center" style="opacity: 0.6;">
+												<h3 class="p-status">Manual<span class="ml-2">Task type</span></h3>
+											</li>
+										</ul>
+									</div>
+									<div class="col-md-12 text-center">
+										<ul id="blockStatement" class="simple-card-list mb-1">
+											<li class="info p-1 mt-1 mb-0 text-center" style="opacity: 0.6;">
+												<h3 class="p-status">VI<span class="ml-2">Supplier input in DIAMS</span>
+												</h3>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- End - Status panel -->
+							</div>
+						</div>
+					</div>
+					<!-- End - Accordion Main info -->
+				</div>
+			</div>
+			<div id="fullview-right-col" class="col-lg-9 pl-0">
+				<!-- start: intro week values -->
+				<div class="row ml-0" style="background:floralwhite">
+					<div class="col-sm-12 p-3">
+						<form class="form-inline" style="float:right">
+							<label class="control-label control-label-sm mr-2" style="font-size: smaller;">Introduction
+								week</label>
+							<select id="iw" class="form-control text-center mr-4"
+								style="font-size: smaller;min-width:17em;">
+								<option class="optionToChange" value=""></option>
+								<option value="W48 - 24/11/2022" selected>W56/2024</option>
+								<option value="W48 - 24/11/2022">W57/2024</option>
+								<option value="W48 - 24/11/2022">W58/2024</option>
+								<option value="W48 - 24/11/2022">W59/2024</option>
+								<option value="W48 - 24/11/2022">W60/2024</option>
+								<option value="W48 - 24/11/2022">W61/2024</option>
+								<option value="W48 - 24/11/2022">W62/2024</option>
+								<option value="W48 - 24/11/2022">W63/2024</option>
+								<option value="W48 - 24/11/2022">W64/2024</option>
+							</select>
+							<label class="control-label control-label-sm mr-4"
+								style="font-size: smaller;">&nbsp;|&nbsp;</label>
+							<div class="form-check mr-4">
+								<label class="control-label control-label-sm" style="font-size: smaller;">
+									<input class="form-check-input" type="checkbox"> Linked to a promo week
+								</label>
+							</div>
+							<label class="control-label control-label-sm mr-4"
+								style="font-size: smaller;">&nbsp;|&nbsp;</label>
+							<label class="control-label control-label-sm mr-2" style="font-size: smaller;">Campaign
+								week</label>
+							<select id="cw" class="form-control text-center mr-4"
+								style="font-size: smaller;min-width:17em;">
+								<option class="optionToChange" value=""></option>
+								<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
+								<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
+								<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
+								<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
+								<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
+								<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
+								<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
+								<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
+							</select>
+						</form>
+					</div>
+				</div>
+				<!-- end: intro week values  -->
+				<div class="tabs tabs-primary">
+					<ul class="nav nav-tabs nav-justified">
+						<li class="nav-item active overview" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Basic Data">
+							<a class="nav-link p-2" href="#overview" data-toggle="tab"><i
+									class="fas fa-info"></i><br>B.Data</a>
+						</li>
+						<li class="nav-item pUoM" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Units of Measure">
+							<a class="nav-link p-2" href="#pUoM" data-toggle="tab"><i
+									class="fas fa-cube"></i><br>UoM</a>
+						</li>
+						<li class="nav-item pPurchasing" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Purchasing">
+							<a class="nav-link p-2" href="#pPurchasing" data-toggle="tab"><i
+									class="fas fa-shopping-cart"></i><br>Purch.</a>
+						</li>
+						<li class="nav-item pCodes" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Codes">
+							<a class="nav-link p-2" href="#pCodes" data-toggle="tab"><i
+									class="fas fa-laptop-code"></i><br>Codes</a>
+						</li>
+						<li class="nav-item pLogistics" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Logistics">
+							<a class="nav-link p-2" href="#pLogistics" data-toggle="tab"><i
+									class="fas fa-truck"></i><br>Log.</a>
+						</li>
+						<li class="nav-item pAssortment" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Assortments">
+							<a class="nav-link p-2" href="#pAssortment" data-toggle="tab"><i
+									class="fas fa-box"></i><br>Assort.</a>
+						</li>
+						<li class="nav-item pPricesNew" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Prices">
+							<a class="nav-link p-2" href="#pPricesNew" data-toggle="tab"><i
+									class="fas fa-money-bill-alt"></i><br>Prices</a>
+						</li>
+						<li class="nav-item pTaxes" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Taxes">
+							<a class="nav-link p-2" href="#pTaxes" data-toggle="tab"><i
+									class="fas fa-file-invoice-dollar"></i><br>Taxes</a>
+						</li>
+						<li class="nav-item pLinks" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Links">
+							<a class="nav-link p-2" href="#pLinks" data-toggle="tab"><i
+									class="fas fa-link"></i><br>Links</a>
+						</li>
+						<li class="nav-item pB2C" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="B2C">
+							<a class="nav-link p-2" href="#pB2C" data-toggle="tab"><i
+									class="fas fa-briefcase"></i><br>B2C</a>
+						</li>
+						<li class="nav-item pStore" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Store">
+							<a class="nav-link p-2" href="#pStore" data-toggle="tab"><i
+									class="fas fa-store"></i><br>Store</a>
+						</li>
+						<li class="nav-item pWine" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Wine Characteristics">
+							<a class="nav-link p-2" href="#pWine" data-toggle="tab"><i
+									class="fas fa-wine-glass"></i><br>Wine</a>
+						</li>
+						<li class="nav-item pFostPlus" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Fost Plus">
+							<a class="nav-link p-2" href="#pFostPlus" data-toggle="tab"><i
+									class="fas fa-cube"></i><br>F.Plus</a>
+						</li>
+					</ul>
+					<div class="tab-content pt-0">
+						<!-- Start - Breadcrumbs navigation -->
+						<div class="row">
+							<div class="col-lg-12 p-0 m-0" style="font-size: x-small;">
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb pt-0 pb-0">
+										<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink"
+												href="#">Basic
+												Data</a></li>
+										<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink"
+												href="#">Descriptions</a></li>
+										<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink"
+												href="#">Customer
+												decision tree (CDT)</a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n4"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n5"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n6"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n7"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n8"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n9"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n10"
+												class="scrollToSectionLink" href="#"></a></li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+						<!-- End - Breadcrumbs navigation -->
+						<!-- Start - Panel - Basic Data -->
+						<div id="overview"></div>
+						<div id="pUoM"></div>
+						<div id="pTaxes"></div>
+						<div id="pCodes"></div>
+						<div id="pStore"></div>
+						<div id="pB2C"></div>
+						<div id="pLogistics"></div>
+						<div id="pPurchasing"></div>
+						<div id="pLinks"></div>
+						<div id="pAssortment"></div>
+						<div id="pPricesNew"></div>
+						<div id="pWine"></div>
+						<div id="pFostPlus"></div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!-- end: form -->
+		<!-- Start Modal - Full view - confirm update -->
+		<div id="modal_update_confirm" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Confirm</h2>
+
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-question-circle"></i>
+						</div>
+						<div class="modal-text">
+							<h4>Submit to Delhaize</h4>
+							<p>You reviewed and updated the product information as part of the reactivation process.
+								Confirm to continue</p>
+							<div class="row">
+								<div class="col-lg-12">
+									<label class="col-form-label" for="formGroupExampleInput">Additional
+										information:</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<textarea id="fComment" name="message-text" data-plugin-maxlength maxlength="200"
+										rows="4" style="width: 100%;"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnConfirmNewCR" class="btn btn-success modal-dismiss"
+								onclick="App.CRUpdateStepSpecific.showBERStatusError()">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - confirm update -->
+		<!-- Start Modal - Full view - history -->
+		<div id="modal_update_history" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Product update history</h2>
+
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<p>Under construction</p>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnConfirmNewCR" class="btn btn-success modal-confirm">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - history -->
+		<!-- Start Modal - Full view - details -->
+		<div id="modal_update_details" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Information for corrections and reviews</h2>
+				</header>
+				<div class="card-body">
+					<!-- Start - Description -->
+					<div class="row">
+						<div class="col-lg-12">
+							<p style="margin-bottom: 0;">Review details and proceed to:
+							</p>
+							<ul>
+								<li>Raise update requests to suppliers</li>
+								<li>Accept or reject actions done by suppliers</li>
+								<li>React on udpate requests raised by Category Managers or Master Data
+									Specalists</li>
+								<!-- <li><a href="#" id="discardAll" style="color: darkred;font-size: larger;">Discard all</a>: to restore all original values.</li>																							 -->
+							</ul>
+						</div>
+					</div>
+					<!-- End - Description -->
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - details -->
+
+		<script src="js/views/view.common.js"></script>
+		<script src="js/views/fullview_details_panel_basic_data.js"></script>
+		<script src="js/views/fullview_details_panel_assortment.js"></script>
+		<script src="js/views/fullview_details_panel_b2c.js"></script>
+		<script src="js/views/fullview_details_panel_prices.js"></script>
+		<script src="js/views/fullview_details_panel_prices_new.js"></script>
+		<script src="js/views/fullview_details_panel_purchasing.js"></script>
+		<script src="js/views/fullview_details_panel_fostplus.js"></script>
+		<script src="js/views/creation_details.js"></script>
+		<script src="js/views/fullview_details_notifications.js"></script>
+		<script src="js/views/creation_details_summary_log.js"></script>
+		<script src="js/views/view.loader.js"></script>
+		<script src="js/views/creation_details.update_s1.js"></script>
+		<script src="js/views/creation_details.update.js"></script>
+		<script>
+			jQuery(document).ready(function ($) {
+				var views = [
+					{ selector: '#overview', url: 'views/pim_creation_details_overview.html' },
+					{ selector: '#pUoM', url: 'views/pim_creation_details_pUoM.html' },
+					{ selector: '#pPurchasing', url: 'views/pim_creation_details_pPurchasing.html' },
+					{ selector: '#pLogistics', url: 'views/pim_creation_details_pLogistics.html' },
+					{ selector: '#pCodes', url: 'views/pim_creation_details_pCodes.html' },
+					{ selector: '#pAssortment', url: 'views/pim_creation_details_pAssortment.html' },
+					{ selector: '#pPricesNew', url: 'views/pim_creation_details_pPricesNew.html' },
+					{ selector: '#pTaxes', url: 'views/pim_creation_details_pTaxes.html' },
+					{ selector: '#pLinks', url: 'views/pim_creation_details_pLinks.html' },
+					{ selector: '#pB2C', url: 'views/pim_creation_details_pB2C.html' },
+					{ selector: '#pStore', url: 'views/pim_creation_details_pStore.html' },
+					{ selector: '#pWine', url: 'views/pim_creation_details_pWine.html' },
+					{ selector: '#pFostPlus', url: 'views/pim_creation_details_pFostPlus.html' }
+				];
+
+				App.ViewLoader.loadViews(views, function () {
+					App.ViewCommon.initialize({
+						exclude: ['initWizard']
+					});
+
+					// App.FVAssortment, App.FVPricesNew, App.FVFostPlus are initialized in their respective views
+					// App.FVPrices.initialize(); // Kept if needed, otherwise rely on FVPricesNew
+
+					App.CRSummaryLog.initialize();
+					App.CRDetails.initialize();
+					App.CRUpdate.initialize();
+				});
+			});
+		</script>
+</body>
