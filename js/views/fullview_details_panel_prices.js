@@ -129,9 +129,144 @@
          */
         showSalesPriceHistory: function () {
             $(".h_details").show(500);
+        },
+        /**
+         * Show banner input element on table below
+         * Remove banner option from table
+         */
+        onBannerSelected: function (elemId) {
+            //show table input
+            $("#row" + elemId).show();
+            $("#row" + elemId).find("input").first().focus();
+
+            //hide element in selector
+            $("#" + elemId).hide();
+
+        },
+
+        /**
+         * Hide banner input element on table below
+         * Add banner option for selection
+         */
+        onBannerRemoved: function (elemId) {
+            //hide table input
+            $("#row" + elemId).hide();
+
+            //show element in selector
+            $("#" + elemId).show();
+
+            event.preventDefault();
+        },
+        /**
+         * Helper to retrieve the table row jQuery element from various possible arguments
+         * @param {HTMLElement|string|jQuery} elemId - The element or identifier
+         * @returns {jQuery|null}
+         */
+        _getTableRow: function (elemId) {
+            if (!elemId) return null;
+            if (typeof elemId === 'string') {
+                var $elem = $('#' + elemId);
+                if ($elem.length && $elem.is('tr')) {
+                    return $elem;
+                }
+                var $row = $('#row' + elemId);
+                if ($row.length) {
+                    return $row;
+                }
+                if ($elem.length) {
+                    return $elem.closest('tr');
+                }
+                return $(elemId).closest('tr');
+            }
+            return $(elemId).closest('tr');
+        },
+        /**
+         * Retrieves the base cost price for DS calculation
+         * @returns {number}
+         */
+        getCostPrice: function () {
+            var $costInput = $('#dsCostPrice');
+            if (!$costInput.length) {
+                $costInput = $('#section4 input[name="cost_pr"]');
+            }
+            if (!$costInput.length) {
+                $costInput = $('#section4 form input').eq(1);
+            }
+            if ($costInput.length) {
+                var raw = $costInput.val();
+                if (raw !== undefined && raw !== null && raw !== '') {
+                    var normalized = raw.toString().replace(/\s/g, '').replace(',', '.');
+                    var parsed = Number.parseFloat(normalized);
+                    if (!isNaN(parsed) && parsed > 0) {
+                        return parsed;
+                    }
+                }
+            }
+            return 100.0;
+        },
+        /**
+         * Handles change/input in Margin % field.
+         * Formats the input and calculates Final Price.
+         * Formula: FinalPrice = CostPrice * (1 + Margin / 100)
+         * @param {HTMLElement|string} elemId - The input element or row/banner ID
+         */
+        OnMarginInput: function (elemId) {
+            var self = this && this._getTableRow ? this : FVPrices;
+            var $row = self._getTableRow(elemId);
+            if (!$row || !$row.length) return;
+
+            var $marginInput = $row.find('.margin-input').length ? $row.find('.margin-input') : $row.find('td').eq(1).find('input');
+            var $finalPriceInput = $row.find('.final-price-input').length ? $row.find('.final-price-input') : $row.find('td').eq(2).find('input');
+
+            var rawMargin = ($marginInput.val() || '').toString().replace(',', '.');
+            var marginVal = Number.parseFloat(rawMargin);
+            if (isNaN(marginVal)) {
+                marginVal = 0;
+            }
+            $marginInput.val(Number.parseFloat(marginVal).toFixed(4));
+
+            var costPrice = self.getCostPrice();
+            var finalPriceVal = costPrice * (1 + marginVal / 100);
+            $finalPriceInput.val(Number.parseFloat(finalPriceVal).toFixed(4));
+        },
+        /**
+         * Handles change/input in Final price field.
+         * Formats the input and calculates Margin %.
+         * Formula: Margin % = ((FinalPrice - CostPrice) / CostPrice) * 100
+         * @param {HTMLElement|string} elemId - The input element or row/banner ID
+         */
+        OnFinalPriceInput: function (elemId) {
+            var self = this && this._getTableRow ? this : FVPrices;
+            var $row = self._getTableRow(elemId);
+            if (!$row || !$row.length) return;
+
+            var $marginInput = $row.find('.margin-input').length ? $row.find('.margin-input') : $row.find('td').eq(1).find('input');
+            var $finalPriceInput = $row.find('.final-price-input').length ? $row.find('.final-price-input') : $row.find('td').eq(2).find('input');
+
+            var rawFinalPrice = ($finalPriceInput.val() || '').toString().replace(',', '.');
+            var finalPriceVal = Number.parseFloat(rawFinalPrice);
+            if (isNaN(finalPriceVal)) {
+                finalPriceVal = 0;
+            }
+            $finalPriceInput.val(Number.parseFloat(finalPriceVal).toFixed(4));
+
+            var costPrice = self.getCostPrice();
+            var marginVal = 0;
+            if (costPrice > 0) {
+                marginVal = ((finalPriceVal - costPrice) / costPrice) * 100;
+            }
+            $marginInput.val(Number.parseFloat(marginVal).toFixed(4));
         }
     };
 
     App.FVPrices = FVPrices;
+
+    // Expose globally in case called directly as OnMarginInput / OnFinalPriceInput
+    window.OnMarginInput = function (elemId) {
+        FVPrices.OnMarginInput(elemId);
+    };
+    window.OnFinalPriceInput = function (elemId) {
+        FVPrices.OnFinalPriceInput(elemId);
+    };
 
 })(jQuery);

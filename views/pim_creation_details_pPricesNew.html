@@ -112,6 +112,85 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Payment terms:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value="" selected></option>
+                                    <option>0 - TBD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Item Strategy - Maxi Format:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option value="D2">Traffic</option>
+                                    <option value="D3" selected>Transaction</option>
+                                    <option value="D4">Builder</option>
+                                    <option value="D5">Image Builder</option>
+                                    <option value="D6">Profit Generator</option>
+                                    <option value="D7">Excitement Builder</option>
+                                    <option value="D8">Market Share Defense</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Multi-Tier Assortment Pricing -
+                                Maxi Format:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option value="D2">Entry Price</option>
+                                    <option value="D3">Mainstream</option>
+                                    <option value="D4" selected>Higher Price Level</option>
+                                    <option value="D5">Premium</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Price Strategy - Maxi Format:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option value="D2">CRITICAL</option>
+                                    <option value="D3">KVI</option>
+                                    <option value="D4" selected>FG</option>
+                                    <option value="D5">BG</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Price Strategy - Tempo Format:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value=""></option>
+                                    <option value="D2" selected>CRITICAL</option>
+                                    <option value="D3">KVI</option>
+                                    <option value="D4">FG</option>
+                                    <option value="D5">BG</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Rebate Group:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-control mb-3 cust-select">
+                                    <option value="" selected></option>
+                                    <option>0 - TBD</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -1274,6 +1353,353 @@
             </div>
         </div>
         <!-- End - Subpanel - Sales prices -->
+        <!-- Start - Subpanel - Sales prices for DS -->
+        <div id="section4" class="row" style="margin-top: 50px;">
+            <div class="col-lg-12">
+                <section class="card card-transparent mb-4">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                        </div>
+                        <h2 class="card-title">Sales prices for DS</h2>
+                        <p class="card-subtitle"><code>Important:</code> Prices are in
+                            <code>Euros (EUR)</code>
+                        </p>
+                    </header>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <!-- toolbar -->
+                                <div class="form-group row" style="padding:20px;background:mintcream;">
+                                    <div class="col-lg-9 text-right">
+                                        <form class="form-inline">
+                                            <label class="control-label control-label-sm mr-2">Purchase price</label>
+                                            <input type="text" name="purch_pr" class="form-control mr-4 text-right"
+                                                autocomplete="off" value="3251,2551">
+                                            <label class="control-label mr-4">&nbsp;|&nbsp;</label>
+                                            <label class="control-label mr-2">Cost price</label>
+                                            <input type="text" id="dsCostPrice" name="cost_pr"
+                                                class="form-control mr-4 text-right" autocomplete="off"
+                                                value="1562,2511">
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-3 text-right">
+                                        <div id="mBanners" class="input-group-append">
+                                            <button tabindex="-1" class="btn btn-link" type="button"><span
+                                                    class="fa fa-plus"></span>&nbsp;&nbsp;Add Banner
+                                            </button>
+                                            <button tabindex="-1" data-toggle="dropdown"
+                                                class="btn btn-link dropdown-toggle" type="button">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a id="bs1" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)">SA</a>
+                                                <a id="bs2" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)"
+                                                    style="display:none">SB</a>
+                                                <a id="bs3" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)">SC</a>
+                                                <a id="bs4" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)"
+                                                    style="display:none">SD</a>
+                                                <a id="bs5" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)"
+                                                    style="display:none">SE</a>
+                                                <a id="bs6" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)"
+                                                    style="display:none">SF</a>
+                                                <a id="bs7" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)"
+                                                    style="display:none">SG</a>
+                                                <a id="bs8" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)">SH</a>
+                                                <a id="bs9" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)">SI</a>
+                                                <a id="bs10" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)">SJ</a>
+                                                <a id="bs11" class="dropdown-item" href="#"
+                                                    onclick="App.FVPrices.onBannerSelected(this.id)">SZ</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-9 offset-lg-1">
+                                <table id="tableDSSalesPrices" class="table table-responsive-md table-hover mb-3">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="width: 20%;">Banner</th>
+                                            <th class="text-right" style="width: 35%;">Margin %</th>
+                                            <th class="text-right" style="width: 35%;">Final price</th>
+                                            <th class="text-center" style="width: 10%;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        <tr id="rowbs1" style="display:none">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SA</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs1')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs2">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SB</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs2')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs3" style="display: none;">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SC</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs3')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs4">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SD</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs4')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs5">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SE</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs5')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs6">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SF</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs6')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs7">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SG</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs7')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs8" style="display: none;">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SH</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs8')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs9" style="display: none;">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SI</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs9')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs10" style="display: none;">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SJ</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs10')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="rowbs11" style="display: none;">
+                                            <td id="cat" class="text-center"
+                                                style="width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+                                                <p style="margin-bottom: 0;">SZ</p>
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right margin-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+                                            </td>
+                                            <td class="text-right" style="vertical-align: middle;">
+                                                <input type="text" class="form-control text-right final-price-input"
+                                                    autocomplete="off" style="text-align: center;" value="0.0000"
+                                                    onClick="this.select();"
+                                                    onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+                                            </td>
+                                            <td style="text-align: center;" class="actions-hover actions-fade">
+                                                <a href="" class="delete-row"
+                                                    onclick="App.FVPrices.onBannerRemoved('bs11')"><i
+                                                        class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End - Subpanel - Sales prices for DS -->
     </div>
 </div>
 <div id="modal_pb00" class="zoom-anim-dialog modal-block modal-block-primary mfp-hide">

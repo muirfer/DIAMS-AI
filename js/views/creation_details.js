@@ -18,7 +18,7 @@
         { id: "#pPurchasing", sections: ["Purchasing data", "Product pricing information"] },
         { id: "#pLinks", sections: ["Links"] },
         { id: "#pAssortment", sections: ["Basic information", "SRP", "Belgium", "Luxembourg", "Planogram", "Non-Planogram"] },
-        { id: "#pPricesNew", sections: ["Information", "Price structure", "Sales prices"] },
+        { id: "#pPricesNew", sections: ["Information", "Price structure", "Sales prices", "Sales prices for DS"] },
         { id: "#pWine", sections: ["Information"] },
         { id: "#pFostPlus", sections: ["Information", "Number of consumer units", "Primary packaging"] }
     ];
