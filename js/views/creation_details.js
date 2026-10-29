@@ -311,6 +311,14 @@
             //show new uoms
             $(".old-uom").remove();
             $(".new-uom").show();
+
+            //show new dcs
+            $(".old-dc").remove();
+            $(".new-dc").show();
+
+            //show new ingredients
+            $(".old-ing").remove();
+            $(".new-ing").show();
         },
         /**
          * Scroll to section
