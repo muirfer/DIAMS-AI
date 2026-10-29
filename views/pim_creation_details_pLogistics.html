@@ -967,7 +967,7 @@
 								<section class="card card-featured mb-4">
 									<header class="card-header">
 										<div class="card-actions">
-											<span class="badge badge-success">BW04</span>
+											<span id="txtDCId" class="badge badge-success" onclick="">BW04</span>
 										</div>
 
 										<h2 class="card-title">ZELLIK GROCERY</h2>
@@ -990,7 +990,7 @@
 													</select>
 												</div>
 											</div>
-											<div class="col-lg-5 pl-1 p-0">
+											<div class="col-lg-5 pl-1 p-0 dc-ds">
 												<div class="form-group p-2 text-center">
 													<label class="m-0" style="font-size: smaller;">Replenishment
 														type</label>
@@ -1000,6 +1000,24 @@
 														<option>YV - VMI (Partial)</option>
 														<option>ZV - VMI (FULL)</option>
 													</select>
+												</div>
+											</div>
+											<div class="col-lg-2 offset-lg-1 pl-1 p-0 dc-dll" style="display: none;">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">Workbench</label>
+													<div class="checkbox-custom" style="margin-left: 45%;">
+														<input type="checkbox" checked id="checkboxExample2">
+														<label for="checkboxExample2"></label>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-2 pl-1 p-0 dc-dll" style="display: none;">
+												<div class="form-group p-2 text-center">
+													<label class="m-0" style="font-size: smaller;">VMI</label>
+													<div class="checkbox-custom" style="margin-left: 45%;">
+														<input type="checkbox" checked id="checkboxExample2">
+														<label for="checkboxExample2"></label>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -1376,3 +1394,4 @@
 		<!-- End - Subpanel - Replenishment For Suppliers-->
 	</div>
 </div>
+<script>App.FVLogistics.initialize();</script>
