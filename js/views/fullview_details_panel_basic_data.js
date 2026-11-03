@@ -33,7 +33,7 @@
                 paging: false,
                 searching: false,
                 info: false,
-                ordering: true,
+                ordering: false,
                 order: [],
                 autoWidth: false,
                 columnDefs: [

@@ -171,7 +171,7 @@ ul.simple-bullet-list li.darkcyan:before {
 }
 
 /* New Basic data descriptions table */
-.t-desc-type {
+.t-desc-lang {
     text-align: right;
     width: 1px;
     background-color: lightyellow;
@@ -179,23 +179,27 @@ ul.simple-bullet-list li.darkcyan:before {
     font-weight: bold;
 }
 
-.t-desc-type-short {
+.t-desc-lang-english {
     background-color: lightyellow;
 }
 
-.t-desc-type-shelf {
+.t-desc-lang-french {
     background-color: linen;
 }
 
-.t-desc-type-ticket {
+.t-desc-lang-dutch {
     background-color: aliceblue;
 }
 
-.t-desc-type-ecom {
+.t-desc-lang-german {
     background-color: ghostwhite;
 }
 
-.t-desc-lang {
+.t-desc-lang-bilingual {
+    background-color: honeydew;
+}
+
+.t-desc-type {
     width: 1px;
     vertical-align: middle;
     color: darkgreen;
