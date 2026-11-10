@@ -1,0 +1,233 @@
+<style>
+	/** (Re) activation form and inputs */
+	#fActivation {
+		float: right;
+	}
+
+	#fActivation label {
+		font-size: smaller;
+	}
+
+	#fActivation select {
+		font-size: smaller;
+		min-width: 17em;
+	}
+
+	/** Second level navigation - Breadcrumber panel */
+	.sln {
+		font-size: x-small;
+	}
+
+	/** Main content area where forms for each tab are loaded */
+	.main-panel .scrollable-content {
+		padding-right: 15px !important;
+		padding-bottom: 120px !important;
+		overflow-y: auto !important;
+		overflow-x: hidden !important;
+		scrollbar-width: thin;
+		scrollbar-color: #adb5bd #f1f1f1;
+	}
+</style>
+
+<div id="fullview-right-col" class="col-lg-9 pl-0">
+
+	<!-- start: (re) activation panel -->
+	<div class="row ml-0" style="background:floralwhite">
+		<div class="col-sm-12 p-3">
+			<form id="fActivation" class="form-inline">
+				<label class="control-label control-label-sm mr-2">Introduction
+					week</label>
+				<select id="iw" class="form-control form-control-sm text-center mr-4">
+					<option class="optionToChange" value=""></option>
+					<option value="W48 - 24/11/2022" selected>W56/2024</option>
+					<option value="W48 - 24/11/2022">W57/2024</option>
+					<option value="W48 - 24/11/2022">W58/2024</option>
+					<option value="W48 - 24/11/2022">W59/2024</option>
+					<option value="W48 - 24/11/2022">W60/2024</option>
+					<option value="W48 - 24/11/2022">W61/2024</option>
+					<option value="W48 - 24/11/2022">W62/2024</option>
+					<option value="W48 - 24/11/2022">W63/2024</option>
+					<option value="W48 - 24/11/2022">W64/2024</option>
+				</select>
+				<label class="control-label control-label-sm mr-4">&nbsp;|&nbsp;</label>
+				<div class="form-check mr-4">
+					<label class="control-label control-label-sm">
+						<input class="form-check-input" type="checkbox"> Linked to a promo week
+					</label>
+				</div>
+				<label class="control-label control-label-sm mr-4">&nbsp;|&nbsp;</label>
+				<label class="control-label control-label-sm mr-2">Campaign week</label>
+				<select id="cw" class="form-control form-control-sm text-center mr-4">
+					<option class="optionToChange" value=""></option>
+					<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
+					<option value="W48 - 24/11/2022" selected>W57 - 25/12/2024</option>
+					<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
+					<option value="W48 - 24/11/2022">W59 - 27/02/2025</option>
+					<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
+					<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
+					<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
+					<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
+				</select>
+			</form>
+		</div>
+	</div>
+	<!-- end: (re) activation panel  -->
+
+	<!-- start: First and second navigation levels -->
+	<div class="tabs tabs-primary">
+		<ul class="nav nav-tabs nav-justified">
+			<li class="nav-item active overview" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Basic Data">
+				<a class="nav-link p-2" href="#pBasicData" data-toggle="tab"><i class="fas fa-info"></i><br>B.Data</a>
+			</li>
+			<li class="nav-item pUoM" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Units of Measure">
+				<a class="nav-link p-2" href="#pUoM" data-toggle="tab"><i class="fas fa-cube"></i><br>UoM</a>
+			</li>
+			<li class="nav-item pPurchasing" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Purchasing">
+				<a class="nav-link p-2" href="#pPurchasing" data-toggle="tab"><i
+						class="fas fa-shopping-cart"></i><br>Purch.</a>
+			</li>
+			<li class="nav-item pCodes" data-toggle="tooltip" data-placement="bottom" data-original-title="Codes">
+				<a class="nav-link p-2" href="#pCodes" data-toggle="tab"><i class="fas fa-laptop-code"></i><br>Codes</a>
+			</li>
+			<li class="nav-item pLogistics" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Logistics">
+				<a class="nav-link p-2" href="#pLogistics" data-toggle="tab"><i class="fas fa-truck"></i><br>Log.</a>
+			</li>
+			<li class="nav-item pAssortment" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Assortments">
+				<a class="nav-link p-2" href="#pAssortment" data-toggle="tab"><i class="fas fa-box"></i><br>Assort.</a>
+			</li>
+			<li class="nav-item pPrices" data-toggle="tooltip" data-placement="bottom" data-original-title="Prices">
+				<a class="nav-link p-2" href="#pPrices" data-toggle="tab"><i
+						class="fas fa-money-bill-alt"></i><br>Prices</a>
+			</li>
+			<li class="nav-item pTaxes" data-toggle="tooltip" data-placement="bottom" data-original-title="Taxes">
+				<a class="nav-link p-2" href="#pTaxes" data-toggle="tab"><i
+						class="fas fa-file-invoice-dollar"></i><br>Taxes</a>
+			</li>
+			<li class="nav-item pLinks" data-toggle="tooltip" data-placement="bottom" data-original-title="Links">
+				<a class="nav-link p-2" href="#pLinks" data-toggle="tab"><i class="fas fa-link"></i><br>Links</a>
+			</li>
+			<li class="nav-item pB2C" data-toggle="tooltip" data-placement="bottom" data-original-title="B2C">
+				<a class="nav-link p-2" href="#pB2C" data-toggle="tab"><i class="fas fa-briefcase"></i><br>B2C</a>
+			</li>
+			<li class="nav-item pStore" data-toggle="tooltip" data-placement="bottom" data-original-title="Store">
+				<a class="nav-link p-2" href="#pStore" data-toggle="tab"><i class="fas fa-store"></i><br>Store</a>
+			</li>
+			<li class="nav-item pWine" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Wine Characteristics">
+				<a class="nav-link p-2" href="#pWine" data-toggle="tab"><i class="fas fa-wine-glass"></i><br>Wine</a>
+			</li>
+			<li class="nav-item pFostPlus" data-toggle="tooltip" data-placement="bottom"
+				data-original-title="Fost Plus">
+				<a class="nav-link p-2" href="#pFostPlus" data-toggle="tab"><i class="fas fa-cube"></i><br>F.Plus</a>
+			</li>
+		</ul>
+		<div class="tab-content pt-0">
+
+			<!-- End - Second navigation level (breadcrumber element) -->
+			<div class="row">
+				<div class="col-lg-12 p-0 m-0 sln">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb pt-0 pb-0">
+							<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink" href="#">Basic
+									Data</a></li>
+							<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink" href="#">Descriptions</a>
+							</li>
+							<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink" href="#">Customer
+									decision tree (CDT)</a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n4" class="scrollToSectionLink"
+									href="#"></a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n5" class="scrollToSectionLink"
+									href="#"></a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n6" class="scrollToSectionLink"
+									href="#"></a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n7" class="scrollToSectionLink"
+									href="#"></a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n8" class="scrollToSectionLink"
+									href="#"></a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n9" class="scrollToSectionLink"
+									href="#"></a></li>
+							<li class="breadcrumb-item" style="display: none;"><a id="n10" class="scrollToSectionLink"
+									href="#"></a></li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+			<!-- End - Second navigation level (breadcrumber element) -->
+
+			<!-- Start: Where main content loads (when tab navigation is triggered)  -->
+			<div id="pBasicData" class="tab-pane active scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 101_right_panel_basic_data.html  -->
+				</div>
+			</div>
+			<div id="pUoM" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 102_right_panel_uom.html  -->
+				</div>
+			</div>
+			<div id="pTaxes" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 103_right_panel_taxes.html  -->
+				</div>
+			</div>
+			<div id="pCodes" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 104_right_panel_codes.html  -->
+				</div>
+			</div>
+			<div id="pStore" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 105_right_panel_store.html  -->
+				</div>
+			</div>
+			<div id="pB2C" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 106_right_panel_b2c.html  -->
+				</div>
+			</div>
+			<div id="pLogistics" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 107_right_panel_logistics.html  -->
+				</div>
+			</div>
+			<div id="pPurchasing" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 108_right_panel_purchasing.html  -->
+				</div>
+			</div>
+			<div id="pLinks" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 109_right_panel_links.html  -->
+				</div>
+			</div>
+			<div id="pAssortment" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 110_right_panel_assortments.html  -->
+				</div>
+			</div>
+			<div id="pPrices" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 111_right_panel_prices.html  -->
+				</div>
+			</div>
+			<div id="pWine" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 112_right_panel_wine.html  -->
+				</div>
+			</div>
+			<div id="pFostPlus" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+				<div class="scrollable-content">
+					<!-- Insert content from 113_right_panel_fostPlus.html  -->
+				</div>
+			</div>
+			<!-- End: Where main content loads (when tab navigation is triggered)  -->
+		</div>
+	</div>
+	<!-- end: First and second navigation levels -->
+
+</div>

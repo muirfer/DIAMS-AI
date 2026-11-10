@@ -4,86 +4,72 @@
 		<div id="section1" class="row">
 			<div class="col-lg-12">
 				<section class="card card-transparent mb-4">
-					<header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-						</div>
-
+					<header class="card-header pb-0">
 						<h2 class="card-title">Basic data</h2>
 						<p class="card-subtitle"></p>
 					</header>
 					<div class="card-body">
-						<div class="form-group row"
-							style="background: mintcream;padding-top: 20px;padding-bottom: 20px;">
-							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
-								data-placement="left"
+						<div class="row pt-2 pb-0" style="background: mintcream;">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"
+								data-toggle="tooltip" data-placement="left"
 								title="Indicate the SAP id of a product as close as possible to the product being created.">Similar
 								item:
 							</label>
 							<div class="col-sm-5">
-								<input type="text" name="brand" class="form-control" autocomplete="off"
-									value="75889265">
+								<input type="text" name="brand" class="form-control form-control-sm" autocomplete="off"
+									autocorrect="off" spellcheck="false" value="75889265">
 							</div>
 						</div>
-						<!-- <div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Brand type:
-							</label>
-							<div class="col-sm-5">
-								<select id="bt" class="form-control mb-3 cust-select">
-									<option value=""></option>
-									<option value="N1" selected>N1 - National brand</option>
-									<option value="D1">D1 - Private brand</option>
-								</select>
-							</div>
-						</div> -->
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
-								data-placement="left"
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"
+								data-toggle="tooltip" data-placement="left"
 								title="The name of the brand under which the product is sold and promoted.">Brand:
 							</label>
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-prepend">
-										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
-												class="fas fa-link" data-toggle="tooltip" data-placement="left"
-												title="Source: GDSN"></i></button>
+										<!-- For testing purposes - GDSN / Manual copy from product id -->
+										<button class="btn btn-default pt-1 pb-1 i-link i-link-f" type="button"
+											tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+												data-placement="left" title="Source: GDSN"></i></button>
 									</span>
-									<input type="text" name="brand" class="form-control" autocomplete="off"
-										value="Delhaize">
+									<input type="text" name="brand" class="form-control form-control-sm"
+										autocomplete="off" autocorrect="off" spellcheck="false" value="Delhaize">
 								</div>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
-								data-placement="left"
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"
+								data-toggle="tooltip" data-placement="left"
 								title=" A sub brand applies if a brand contains a series of underlying brands which are marketed separately. (eg Bio for Delhaize brand)">Sub-Brand:
 							</label>
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-prepend">
-										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
-												class="fas fa-link" data-toggle="tooltip" data-placement="left"
-												title="Source: GDSN"></i></button>
+										<!-- For testing purposes - GDSN / Manual copy from product id -->
+										<button class="btn btn-default pt-1 pb-1 i-link i-link-f" type="button"
+											tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+												data-placement="left" title="Source: GDSN"></i></button>
 									</span>
-									<input type="text" name="sbrand" class="form-control" autocomplete="off"
-										value="Plant-Based">
+									<input type="text" name="sbrand" class="form-control form-control-sm"
+										autocomplete="off" autocorrect="off" spellcheck="false" value="Plant-Based">
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Product type:
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product type:
 							</label>
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-prepend">
-										<button class="btn btn-default c-link i-link-c" type="button" tabindex="-1"><i
-												class="fas fa-copy" data-toggle="tooltip" data-placement="left"
-												title="Copy from original product"></i></button>
+										<button class="btn btn-default pt-1 pb-1 c-link i-link-c" type="button"
+											tabindex="-1"><i class="fas fa-copy" data-toggle="tooltip"
+												data-placement="left" title="Copy from original product"></i></button>
 									</span>
-									<select class="form-control mb-3 cust-select">
+									<select class="form-control form-control-sm mb-0">
 										<option value=""></option>
 										<option value="ZIBG">ZIBG - Operating supplies</option>
 										<option value="ZDIF">ZDIF - Free Display</option>
@@ -103,43 +89,43 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
-								data-placement="left"
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"
+								data-toggle="tooltip" data-placement="left"
 								title="Code indicating if a product is considered as Fresh (F) or Dry (S). Automatically generated based on the Purchasing Group. Frozen products are considered as Dry">Product
 								nature:
 							</label>
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-prepend">
-										<button class="btn btn-default c-link i-link-c" type="button" tabindex="-1"><i
-												class="fas fa-copy" data-toggle="tooltip" data-placement="left"
-												title="Copy from original product"></i></button>
+										<button class="btn btn-default pt-1 pb-1 c-link i-link-c" type="button"
+											tabindex="-1"><i class="fas fa-copy" data-toggle="tooltip"
+												data-placement="left" title="Copy from original product"></i></button>
 									</span>
-									<input type="text" name="brand" class="form-control" autocomplete="off"
-										value="S - D&D/Frozen">
+									<input type="text" name="brand" class="form-control form-control-sm"
+										autocomplete="off" autocorrect="off" spellcheck="false" value="S - D&D/Frozen">
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Net
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Net
 								contents of Base UoM: </label>
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-prepend">
-										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
-												class="fas fa-link" data-toggle="tooltip" data-placement="left"
-												title="Source: GDSN"></i></button>
+										<button class="btn btn-default pt-1 pb-1 i-link i-link-f" type="button"
+											tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+												data-placement="left" title="Source: GDSN"></i></button>
 									</span>
-									<input type="text" name="ncobuom" class="form-control" autocomplete="off"
-										style="text-align: right;" value="1563,25">
+									<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
+										autocomplete="off" autocorrect="off" spellcheck="false" value="1563,25">
 								</div>
 							</div>
 							<div class="col-sm-3">
-								<select class="form-control mb-3 cust-select">
+								<select class="form-control form-control-sm mb-0">
 									<option value=""></option>
 									<option value="L">L - Liter</option>
 									<option value="CTL">CL - Centiliter</option>
@@ -150,21 +136,21 @@
 							</div>
 						</div>
 						<div class="row">
-							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip"
-								data-placement="left"
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"
+								data-toggle="tooltip" data-placement="left"
 								title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish.">Country
 								of origin of the product: </label>
 							<div class="col-sm-5">
 								<div class="input-group">
 									<span class="input-group-prepend">
-										<button class="btn btn-default c-link i-link-c" type="button" tabindex="-1"><i
-												class="fas fa-copy" data-toggle="tooltip" data-placement="left"
-												title="Copy from original product"></i></button>
+										<button class="btn btn-default pt-1 pb-1 c-link i-link-c" type="button"
+											tabindex="-1"><i class="fas fa-copy" data-toggle="tooltip"
+												data-placement="left" title="Copy from original product"></i></button>
 									</span>
-									<select id="f1" class="form-control mb-3 cust-select">
+									<select id="f1" class="form-control form-control-sm mb-0">
 										<option value="AF">AF - Afghanistan</option>
 										<option value="AL">AL - Albania</option>
 										<option value="AD">AD - Andorra</option>
@@ -194,11 +180,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Country
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Country
 								of import: </label>
 							<div class="col-sm-5">
-								<select class="form-control mb-3 cust-select">
+								<select class="form-control form-control-sm mb-0">
 									<option value="AF">AF - Afghanistan</option>
 									<option value="AL">AL - Albania</option>
 									<option value="AD">AD - Andorra</option>
@@ -227,30 +213,33 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">For sale:
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">For sale:
 							</label>
 							<div class="col-sm-5">
-								<div class="input-daterange input-group" data-plugin-datepicker
+								<div class="input-daterange input-group" data-plugin-datepicker=""
 									data-plugin-options='{ "format": "dd/mm/yyyy" }'>
 									<span class="input-group-prepend">
-										<span class="input-group-text">
+										<span class="input-group-text input-group-aux" tabindex="-1">
 											<i class="fas fa-calendar-alt"></i>
 										</span>
 									</span>
-									<input type="text" class="form-control dateInput" name="start" value="15/02/2024">
-									<span class="input-group-text border-left-0 border-right-0 rounded-0">
+									<input type="text" class="form-control form-control-sm" name="start"
+										value="15/02/2024">
+									<span
+										class="input-group-text input-group-aux border-left-0 border-right-0 rounded-0">
 										to
 									</span>
-									<input type="text" class="form-control dateInput" name="end" value="31/12/9999">
+									<input type="text" class="form-control form-control-sm" name="end"
+										value="31/12/9999">
 								</div>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Original
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Original
 								introduction week: </label>
 							<div class="col-sm-5">
-								<select class="form-control mb-3 cust-select">
+								<select class="form-control form-control-sm mb-0">
 									<option class="optionToChange" value=""></option>
 									<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
 									<option value="W48 - 24/11/2022">W57 - 25/12/2024</option>
@@ -265,60 +254,63 @@
 							</div>
 						</div>
 						<div class="row">
-							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Reporting indicator</label>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Reporting
+								indicator</label>
 							<div class="col-sm-5">
-								<select class="form-control mb-3 cust-select">
+								<select class="form-control form-control-sm mb-0">
 									<option class="optionToChange" value=""></option>
 									<option value="ig">Imported goods</option>
 									<option value="dg">Domestic goods</option>
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">CSE:
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">CSE:
 							</label>
 							<div class="col-sm-5">
-								<div class="checkbox-custom" style="margin-top: 8px;">
-									<input type="checkbox" checked="" id="checkboxExample2">
-									<label for="checkboxExample2"></label>
+								<div class="checkbox-custom">
+									<input type="checkbox" checked="">
+									<label></label>
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Delisted
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Delisted
 								product: </label>
 							<div class="col-sm-5">
-								<input type="text" name="dprod" class="form-control" autocomplete="off" value="7855431">
+								<input type="text" name="dprod" class="form-control form-control-sm" autocomplete="off"
+									autocorrect="off" spellcheck="false" value="7855431">
 								<div class="row">
 									<div class="col-lg-12">
-										<label style="color: green;" class="col-form-label"
-											for="formGroupExampleInput">Delisted product description</label>
+										<label class="col-form-label txt-large-desc pt-0">Delisted product
+											description</label>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-3">
-								<div class="checkbox-custom" style="margin-top: 8px;">
+								<div class="checkbox-custom">
 									<input type="checkbox" id="checkboxExample2" disabled>
 									<label for="checkboxExample2">Not needed</label>
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Item notes
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Item notes
 								/ Special instructions: </label>
 							<div class="col-sm-5">
-								<textarea class="form-control" rows="4" data-plugin-maxlength
-									maxlength="500">Some notes here about the product creation</textarea>
-								<p style="text-align: right;margin-bottom: 0px;">
+								<textarea class="form-control form-control-sm" rows="4" data-plugin-maxlength
+									maxlength="500" autocomplete="off" autocorrect="off"
+									spellcheck="false">Some notes here about the product creation</textarea>
+								<p class="text-right mb-0 c-indicator">
 									<code>Max:</code> 250
 								</p>
 							</div>
@@ -333,9 +325,7 @@
 		<div id="section2" class="row" style="margin-top: 50px;">
 			<div class="col-lg-12">
 				<section class="card card-transparent mb-4">
-					<header class="card-header">
-						<div class="card-actions">
-						</div>
+					<header class="card-header pb-0">
 						<h2 class="card-title">Descriptions</h2>
 						<p class="card-subtitle"><code>Important: </code>Most of the descriptions are requested per
 							sellable unit. Then it is recommended to first mark the sellable units in the Units of
@@ -375,7 +365,7 @@
 							</div>
 						</div>
 						<div class="row old-desc form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+							<label class="col-sm-2 control-label control-label-sm text-sm-right pt-1">Product
 								short description:
 							</label>
 							<div class="col-lg-2">
@@ -412,7 +402,7 @@
 							</div>
 						</div>
 						<div class="row old-desc form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+							<label class="col-sm-2 control-label control-label-sm text-sm-right pt-1">Product
 								shelf description:
 							</label>
 							<div class="col-lg-2">
@@ -608,7 +598,7 @@
 							</div>
 						</div>
 						<div class="row old-desc form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+							<label class="col-sm-2 control-label control-label-sm text-sm-right pt-1">Product
 								ticket description:
 							</label>
 							<div class="col-lg-2">
@@ -804,7 +794,7 @@
 							</div>
 						</div>
 						<div class="row old-desc form-group">
-							<label class="col-sm-2 control-label text-sm-right pt-2">E-commerce
+							<label class="col-sm-2 control-label control-label-sm text-sm-right pt-1">E-commerce
 								description:
 							</label>
 							<div class="col-lg-2">
@@ -1037,8 +1027,9 @@
 													</span>
 													<input type="text" name="pshdesc"
 														class="form-control ai-subscribable" autocomplete="off"
-														spellcheck="false" autocorrect="off" data-plugin-maxlength
-														maxlength="25" value="Rice Krispies Bag Pack 4x">
+														autocorrect="off" spellcheck="false" spellcheck="false"
+														autocorrect="off" data-plugin-maxlength maxlength="25"
+														value="Rice Krispies Bag Pack 4x">
 												</div>
 											</td>
 											<td class="ai-col text-center">
@@ -1053,9 +1044,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies Bag Pack 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies Bag Pack 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1069,9 +1060,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies Bag Pack 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies Bag Pack 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1085,9 +1076,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies Bag Pack 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies Bag Pack 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1101,8 +1092,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Bag">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1116,8 +1108,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Bag">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1131,8 +1124,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Bag">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1146,8 +1140,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Bag">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1161,8 +1156,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Bag">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1176,8 +1172,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Rice Krispies Bag">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Bag">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1191,9 +1188,9 @@
 											</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" name="pshdesc" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="25"
-													value="Paquet de sachets de Rice Krispies 4x">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="25" value="Paquet de sachets de Rice Krispies 4x">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1207,9 +1204,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies en sachet 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies en sachet 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1223,9 +1220,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies en sachet 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies en sachet 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1239,9 +1236,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies en sachet 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies en sachet 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1255,9 +1252,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1271,9 +1268,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1287,9 +1284,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1303,9 +1300,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1319,9 +1316,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1335,9 +1332,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1351,9 +1348,9 @@
 											</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" name="pshdesc" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="25"
-													value="Rijstkrispies Zakpakket 4x">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="25" value="Rijstkrispies Zakpakket 4x">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1367,9 +1364,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Zakje Rijstkrispies 4x400">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Zakje Rijstkrispies 4x400">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1383,9 +1380,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Zakje Rijstkrispies 4x400">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Zakje Rijstkrispies 4x400">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1399,9 +1396,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Zakje Rijstkrispies 4x400">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Zakje Rijstkrispies 4x400">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1415,8 +1412,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Zakje rijstkrispies">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1430,8 +1428,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Zakje rijstkrispies">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1445,8 +1444,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Zakje rijstkrispies">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1460,8 +1460,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Zakje rijstkrispies">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1475,8 +1476,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Zakje rijstkrispies">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1490,8 +1492,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18" value="Zakje rijstkrispies">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Zakje rijstkrispies">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1505,9 +1508,9 @@
 											</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" name="pshdesc" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="25"
-													value="Rice Krispies Beutelpackung 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="25" value="Rice Krispies Beutelpackung 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1521,9 +1524,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies Beutelp. 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies Beutelp. 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1537,9 +1540,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies Beutelp. 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies Beutelp. 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1553,9 +1556,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies Beutelp. 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies Beutelp. 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1569,9 +1572,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies Beutelpackung">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Beutelpackung">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1585,9 +1588,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies Beutelpackung">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Beutelpackung">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1601,9 +1604,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies Beutelpackung">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Beutelpackung">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1617,9 +1620,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies Beutelpackung">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Beutelpackung">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1633,9 +1636,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies Beutelpackung">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Beutelpackung">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1649,9 +1652,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies Beutelpackung">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies Beutelpackung">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1665,9 +1668,9 @@
 											</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" name="pshdesc" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="25"
-													value="Paquet de sachets de Rice Krispies 4x">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="25" value="Paquet de sachets de Rice Krispies 4x">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1681,9 +1684,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies en sachet 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies en sachet 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1697,9 +1700,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies en sachet 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies en sachet 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1713,9 +1716,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="30"
-													value="Rice Krispies en sachet 4x400g">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="30" value="Rice Krispies en sachet 4x400g">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1729,9 +1732,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1745,9 +1748,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1761,9 +1764,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1777,9 +1780,9 @@
 												EA</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1793,9 +1796,9 @@
 												IP</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1809,9 +1812,9 @@
 												CV</td>
 											<td class="input-ai-wrapper" style="vertical-align: middle;">
 												<input type="text" class="form-control ai-subscribable"
-													autocomplete="off" spellcheck="false" autocorrect="off"
-													data-plugin-maxlength maxlength="18"
-													value="Rice Krispies en sachet">
+													autocomplete="off" autocorrect="off" spellcheck="false"
+													spellcheck="false" autocorrect="off" data-plugin-maxlength
+													maxlength="18" value="Rice Krispies en sachet">
 											</td>
 											<td class="ai-col text-center">
 											</td>
@@ -1829,17 +1832,13 @@
 		<div id="section3" class="row" style="margin-top: 50px;">
 			<div class="col-lg-12">
 				<section class="card card-transparent mb-4">
-					<header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-						</div>
-
+					<header class="card-header pb-0">
 						<h2 class="card-title">Customer decision tree (CDT)</h2>
 						<p class="card-subtitle"></p>
 					</header>
 					<div class="card-body">
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Category:
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Category:
 							</label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -1847,8 +1846,8 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Subcategory:
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Subcategory:
 							</label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -1864,8 +1863,8 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Segment:
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Segment:
 							</label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -1874,8 +1873,8 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Sub
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sub
 								segment: </label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -1885,8 +1884,8 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Micro
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Micro
 								segment: </label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">
@@ -1898,8 +1897,8 @@
 						<div class="row">
 							<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-3 control-label text-sm-right pt-2">Merchandise
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Merchandise
 								category: </label>
 							<div class="col-sm-6">
 								<select class="form-control mb-3 cust-select">

@@ -1677,6 +1677,268 @@
 								</section>
 							</div>
 						</div>
+						<div class="row new-uom-2" style="display: none;">
+							<div class="col-lg-10 offset-lg-1">
+								<table class="table table-responsive-md table-hover table-sm mb-3">
+									<thead>
+										<tr>
+											<th style="text-align: center;width: 15%;">UoM</th>
+											<th style="text-align: center;width: 20%;">GTIN</th>
+											<th style="text-align: center;width: 20%;">Re-used GTIN</th>
+											<th style="text-align: center;width: 15%;">Nbr of lower levels</th>
+											<th style="text-align: center;width: 5%;">Sales</th>
+											<th style="text-align: center;width: 5%;">PO</th>
+											<th style="text-align: center;width: 5%;">Deliv.</th>
+											<th style="text-align: center;width: 5%;">SCF</th>
+											<th style="text-align: center;width: 5%;"></th>
+											<th style="text-align: center;width: 5%;"></th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+										<tr id="row1">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+												EA
+												<br><span class="badge badge-success" data-toggle="tooltip"
+													data-placement="bottom"
+													title="Flag indicating which Unit of Measure (UoM) is used as the base UoM that will be used as the stock keeping unit. It must always be the smallest UoM of that product. Is expressed in EA (Each) or KG (Kilogram).">Base
+													UoM</span>
+											</td>
+											<td>
+												<input type="text" name="class" class="form-control text-center"
+													autocomplete="off" value="1234567890231">
+												<div class="row">
+													<div class="checkbox-custom col-lg-5 offset-lg-1">
+														<input type="checkbox" checked id="chkCU">
+														<label for="chkCU">CU</label>
+													</div>
+													<div class="checkbox-custom col-lg-5 offset-lg-1">
+														<input type="checkbox" checked id="chkTU">
+														<label for="chkTU">TU</label>
+													</div>
+												</div>
+											</td>
+											<td>
+												<input type="text" name="class" class="form-control text-center"
+													autocomplete="off" value="1234567890231">
+											</td>
+											<td>
+												<input type="text" name="class" class="form-control text-center"
+													autocomplete="off" value="1232,000">
+											</td>
+											<td>
+												<div class="checkbox-custom" style="margin-left: 45%;">
+													<input type="checkbox" checked id="chkSales">
+													<label for="chkSales"></label>
+												</div>
+											</td>
+											<td>
+												<div class="checkbox-custom" style="margin-left: 45%;">
+													<input type="checkbox" checked id="chkPO">
+													<label for="chkPO"></label>
+												</div>
+											</td>
+											<td>
+												<div class="checkbox-custom" style="margin-left: 45%;">
+													<input type="checkbox" checked id="chkDeliv">
+													<label for="chkDeliv"></label>
+												</div>
+											</td>
+											<td>
+												<div class="checkbox-custom" style="margin-left: 45%;">
+													<input type="checkbox" checked id="chkSCF">
+													<label for="chkSCF"></label>
+												</div>
+											</td>
+											<td>
+												12345
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<a href="#" onclick="javascript:App.FVAssortment.showMoreJDA()"><i
+														id="expJdaIcon" class="fas fa-solid fa-chevron-down"
+														style="font-size: large;color: darkgreen;"></i></a>
+											</td>
+										</tr>
+										<tr id="row2" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+												C1</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L08</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													302_C1_L08_11M</div>
+												<div class="text-lines">
+													<p>Cateogory: A323</p>
+													<p>Subcategory: A323001</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10001264</td>
+											<td style="text-align: center;vertical-align: middle;">
+												130844</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row3" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+												C1</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L06</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													302_C1_L06_15M</div>
+												<div class="text-lines">
+													<p>Cateogory: A321</p>
+													<p>Subcategory: A321102</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10001264</td>
+											<td style="text-align: center;vertical-align: middle;">
+												130844</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row7" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+												C2</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L11</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													850_C2_L11_75M</div>
+												<div class="text-lines">
+													<p>Cateogory: A720</p>
+													<p>Subcategory: A720225</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10008599</td>
+											<td style="text-align: center;vertical-align: middle;">
+												131315</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row4" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: aliceblue;vertical-align: middle;font-weight: bold;">
+												C3</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L07</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													402_C3_L07_25M</div>
+												<div class="text-lines">
+													<p>Cateogory: A421</p>
+													<p>Subcategory: A421070</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10002250</td>
+											<td style="text-align: center;vertical-align: middle;">
+												131220</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row5" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: aliceblue;vertical-align: middle;font-weight: bold;">
+												C3</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L11</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													402_C3_L11_48M</div>
+												<div class="text-lines">
+													<p>Cateogory: A421</p>
+													<p>Subcategory: A421070</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10003445</td>
+											<td style="text-align: center;vertical-align: middle;">
+												131222</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row6" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: aliceblue;vertical-align: middle;font-weight: bold;">
+												C3</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L15</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													402_C1_L15_51M</div>
+												<div class="text-lines">
+													<p>Cateogory: A430</p>
+													<p>Subcategory: A430215</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10003899</td>
+											<td style="text-align: center;vertical-align: middle;">
+												131225</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row8" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: ghostwhite;vertical-align: middle;font-weight: bold;">
+												C4</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L20</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													520_C4_L20_54M</div>
+												<div class="text-lines">
+													<p>Cateogory: E020</p>
+													<p>Subcategory: E020010</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10001178</td>
+											<td style="text-align: center;vertical-align: middle;">
+												132000</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+										<tr id="row9" class="hCluster" style="display: none;">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: ghostwhite;vertical-align: middle;font-weight: bold;">
+												C4</td>
+											<td
+												style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;color: darkgreen;">
+												L30</td>
+											<td style="vertical-align: middle;">
+												<div id="mainTitle" class="title-line">
+													520_C4_L30_85M</div>
+												<div class="text-lines">
+													<p>Cateogory: E020</p>
+													<p>Subcategory: E020115</p>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												BE10001185</td>
+											<td style="text-align: center;vertical-align: middle;">
+												132152</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>

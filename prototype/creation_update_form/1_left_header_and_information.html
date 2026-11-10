@@ -1,0 +1,180 @@
+<style>
+	/** Top header - GTINs panel */
+	.action-widget {
+		vertical-align: middle;
+	}
+
+	/** Top header - GTINs panel */
+	.header-top-value div {
+		color: darkgreen;
+		font-size: smaller;
+	}
+
+	.header-top-value p {
+		line-height: normal;
+	}
+
+	/** Main information - accordion title */
+	.acc-title {
+		font-size: small !important;
+	}
+
+	/** Main information - bullets */
+	.bullet-sm {
+		font-size: x-small !important;
+	}
+
+	/** Status badges */
+	.p-status {
+		line-height: normal;
+		font-size: 0.7rem !important;
+	}
+
+	.p-status span {
+		font-weight: 300;
+		font-size: smaller;
+	}
+</style>
+
+<div id="fullview-left-col" class="col-lg-3 pr-0" style="overflow:hidden">
+
+	<!-- start: Product description, filliere, category and GTINs -->
+	<section class="card card-featured-top card-featured-primary mt-0">
+		<div class="card-body pl-0 pb-0 pt-0">
+			<div class="widget-summary widget-summary-sm">
+				<div class="widget-summary-col widget-summary-col-icon bg-primary pt-1 action-widget">
+					<div class="summary-icon ml-1 mr-1" data-toggle="tooltip" data-placement="right"
+						title="Product creation process">
+						<i class="fa fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<div class="widget-summary-col p-2 pb-2 text-center">
+					<div class="summary">
+						<h4 class="title">LEFF BLOND RET 0,33L 9+3 TRA</h4>
+						<div class="info">
+							<strong class="text-muted">E020 - Viande
+								fraiche emballee</strong>
+							<hr class="dotted mb-0 mt-1 ml-1">
+
+							<!-- Start - GTINs panel -->
+							<section class="mt-0">
+								<div class="p-1">
+									<div class="row mt-1">
+										<div class="col-md-6 text-center pr-1 header-top-value">
+											<div class="h7 font-weight-bold mb-0">
+												54106831504381
+											</div>
+											<p class="text-3 text-muted mb-0">GTIN CU</p>
+										</div>
+										<div class="col-md-6 text-center pl-1 header-top-value">
+											<div class="h7 font-weight-bold mb-0">
+												54106818870001
+											</div>
+											<p class="text-3 text-muted mb-0">
+												Input GTIN</p>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- End - GTINs panel -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end: Product description, filliere, category and GTINs -->
+
+	<!-- start: Accordion section for Main information, update requests activity, gdsn / ber information... -->
+	<div class="accordion accordion-sm" id="accordion3">
+
+		<!-- Start - Accordion Main info -->
+		<div class="card card-default">
+			<div class="card-header">
+				<h4 class="card-title m-0">
+					<a class="accordion-toggle acc-title" data-toggle="collapse" data-parent="#accordion3"
+						href="#accMainInfo">
+						More information
+					</a>
+				</h4>
+			</div>
+			<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+				<div class="card-body p-1">
+
+					<!-- Start - key values / task creation details -->
+					<section class="card">
+						<div class="card-body pt-3 pb-0">
+							<ul class="simple-bullet-list mb-0">
+								<li class="red">
+									<span class="title bullet-sm">N1 - National</span>
+									<span class="description truncate bullet-sm">Brand type</span>
+								</li>
+								<li class="blue">
+									<span class="title bullet-sm">SOCIETE FERMIERE ROCHEFORT ARDENNES</span>
+									<span class="description truncate bullet-sm">Regular supplier</span>
+								</li>
+								<li class="green">
+									<span class="title bullet-sm">BE - Belgium</span>
+									<span class="description truncate bullet-sm">Country responsible for
+										product
+										creation</span>
+								</li>
+							</ul>
+							<hr class="dotted mb-2 mt-2 ml-1">
+							<ul class="simple-bullet-list mb-0">
+								<li class="darkcyan">
+									<span class="title bullet-sm">Resale</span>
+									<span class="description truncate bullet-sm">Sales type</span>
+								</li>
+								<li class="darkcyan">
+									<span class="title bullet-sm">Regular</span>
+									<span class="description truncate bullet-sm">Logistical type</span>
+								</li>
+								<li class="darkcyan">
+									<span class="title bullet-sm">In store production</span>
+									<span class="description truncate bullet-sm">Distribution type</span>
+								</li>
+								<li class="darkcyan">
+									<span class="title bullet-sm">Regular</span>
+									<span class="description truncate bullet-sm">Specifics</span>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<!-- End - key values / task creation details -->
+
+					<!-- Start - Status panel -->
+					<div class="row pl-2 pr-2 mt-2">
+						<div class="col-md-12 text-center">
+							<ul class="simple-card-list mb-1">
+								<li class="info p-1 mt-1 mb-0 text-center" style="opacity: 0.6;">
+									<h3 class="p-status">09/02/2026<span class="ml-2">Last update of
+											external data (GDSN /
+											Bottlebooks)</span></h3>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-12 text-center">
+							<ul id="blockStatement" class="simple-card-list mb-1">
+								<li class="info p-1 mt-1 mb-0 text-center" style="opacity: 0.6;">
+									<h3 class="p-status">R<span class="ml-2">Category Expert Review</span>
+									</h3>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End - Status panel -->
+
+				</div>
+			</div>
+		</div>
+		<!-- End - Accordion Main info -->
+		<!-- Accordition items for the following to be added below:
+	 	 - Update requests activity (creation / full view), 
+		 - gdsn 
+		 - Ber (beru for full view)  -->
+	</div>
+	<!-- end: Accordion section for Main information, update requests activity, gdsn / ber information... -->
+
+</div>

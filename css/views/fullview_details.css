@@ -25,11 +25,6 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-bottom: 0 !important;
 }
 
-.dotted {
-    margin-bottom: 25px !important;
-    margin-top: 25px !important;
-    margin-left: 5% !important;
-}
 
 .dotted-sm {
     margin-bottom: 10px !important;
@@ -41,6 +36,43 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-bottom: 0px !important;
     margin-top: 5px !important;
     margin-left: 5% !important;
+}
+
+/** All form labels - reduce font size */
+.control-label-sm {
+    font-size: smaller;
+}
+
+/** Input group prepend/append icon and texts */
+.input-group-aux {
+    font-size: xx-small;
+}
+
+/** Character max length indicator for input text fields and areas */
+.c-indicator {
+    font-size: smaller;
+}
+
+/** for image display after it is uploaded */
+.image-uploaded {
+    width: inherit;
+    height: 25em;
+}
+
+/** for large texts related to descriptions for a field */
+.txt-large-desc {
+    color: green;
+    font-size: smaller;
+}
+
+/** for badges on top in the matrix layout */
+.sBadge {
+    font-size: larger;
+    width: 95%;
+}
+
+.sBadge-nm {
+    margin-bottom: 0px;
 }
 
 .bullet-sm {
@@ -366,18 +398,6 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: small !important;
 }
 
-/* Section badges */
-.sBadge {
-    font-size: large;
-    margin-bottom: 25px;
-    width: 95%;
-}
-
-.sBadge-nm {
-    font-size: large;
-    margin-bottom: 0px;
-    width: 95%;
-}
 
 div#pChangeMain .beautify-scroll {
     height: 20rem;
@@ -481,15 +501,19 @@ table#tLog tr td i.fa-ban {
 .i-link-f {
     display: none;
     color: darkorange;
-    font-size: smaller;
+    font-size: xx-small;
     opacity: 0.6;
 }
 
 .i-link-c {
     display: none;
     color: cadetblue;
-    font-size: smaller;
+    font-size: xx-small;
     opacity: 0.6;
+}
+
+.checkbox-custom label {
+    font-size: smaller;
 }
 
 /* Dynamic margins for checkbox-custom inside input-group with toggleable i-link */
@@ -636,6 +660,25 @@ html.fixed .inner-wrapper {
 
 .is-creation-view .tab-content {
     padding-bottom: 0 !important;
+}
+
+/** (Re) activation form and inputs */
+#fActivation {
+    float: right;
+}
+
+#fActivation label {
+    font-size: smaller;
+}
+
+#fActivation select {
+    font-size: smaller;
+    min-width: 17em;
+}
+
+/** Second level navigation - Breadcrumber panel */
+.sln {
+    font-size: x-small;
 }
 
 /* Tab Panels Scrollable Area: allow scrolling comfortably past the end ("e incluso un poco más") */

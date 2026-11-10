@@ -1,0 +1,85 @@
+<html class="fixed">
+
+<head>
+	<style>
+		html.fixed,
+		html.fixed body {
+			height: 100vh !important;
+			overflow-y: hidden !important;
+		}
+
+		html.fixed .inner-wrapper {
+			min-height: 100% !important;
+			height: 100vh !important;
+			box-sizing: border-box !important;
+			overflow: hidden !important;
+		}
+
+		#mainSection {
+			height: calc(100vh - 110px) !important;
+			min-height: auto !important;
+			overflow: hidden !important;
+			padding: 0 !important;
+			background: white;
+		}
+
+		#mainSection>.body,
+		#mainSection .body,
+		#mainSection .creation-details-body {
+			min-height: auto !important;
+			height: 100% !important;
+		}
+
+		#fullview-left-col {
+			max-height: calc(100vh - 120px);
+		}
+	</style>
+</head>
+
+<body>
+	<section class="body">
+
+		<!-- start: DIAMS top bar (profile, guides - not related to current screen) -->
+		<header class="page-header"></header>
+		<!-- end: DIAMS top bar (profile, guides - not related to current screen) -->
+
+		<!-- start: DIAMS content area (menu and apps) -->
+		<div class="inner-wrapper">
+
+			<!-- start: DIAMS menu options - not related to current screen -->
+			<aside id="sidebar-left" class="sidebar-left"></aside>
+			<!-- end: DIAMS menu options - not related to current screen -->
+
+			<!-- start: DIAMS apps content area -->
+			<section id="mainSection" role="main" class="content-body p-0">
+				<section class="creation-details-body">
+
+					<!-- start: Toolbar buttons (Back, Save, submit, full screen mode, etc) -->
+					<header class="page-header"></header>
+					<!-- end: Toolbar buttons (Back, Save, submit, full screen mode, etc) -->
+
+					<!-- start: Whole content area -->
+					<div class="row p-0">
+
+						<!-- start: Left panel (information, update request log and activity, ber / gdsn panels) -->
+						<div id="fullview-left-col" class="col-lg-3 pr-0" style="overflow:hidden"></div>
+						<!-- end: Left panel (information, update request log and activity, ber / gdsn panels) -->
+
+						<!-- start: Right panel (Intro week values, form) -->
+						<div id="fullview-right-col" class="col-lg-9 pl-0"></div>
+						<!-- start: Right panel (Intro week values, form) -->
+
+					</div>
+					<!-- end: Whole content area -->
+
+				</section>
+			</section>
+			<!-- end: DIAMS apps content area -->
+
+		</div>
+		<!-- end: DIAMS content area (menu and apps) -->
+
+	</section>
+</body>
+
+</html>

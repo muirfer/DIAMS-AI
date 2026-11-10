@@ -1,0 +1,343 @@
+<html class="fixed">
+
+<head>
+	<style>
+		/** All form labels - reduce font size */
+		.control-label-sm {
+			font-size: smaller;
+		}
+
+		/** Input group prepend/append icon and texts */
+		.input-group-aux {
+			font-size: xx-small;
+		}
+
+		/** Reduce font size for checkboxes with labels on the right */
+		.checkbox-custom label {
+			font-size: smaller;
+		}
+
+		/** Character max length indicator for input text fields and areas */
+		.c-indicator {
+			font-size: smaller;
+		}
+
+		/** for image display after it is uploaded */
+		.image-uploaded {
+			width: inherit;
+			height: 25em;
+		}
+
+		/** for large texts related to descriptions for a field */
+		.txt-large-desc {
+			color: green;
+			font-size: smaller;
+		}
+
+		/** for badges on top in the matrix layout */
+		.sBadge {
+			font-size: larger;
+			width: 95%;
+		}
+
+		/* Carousel Navigation Overrides */
+		.owl-carousel .owl-nav {
+			top: -2.1rem !important;
+			font-size: xxx-large !important;
+			color: brown;
+			width: 5rem;
+			right: 0;
+		}
+
+		/* Base transition to handle smooth scaling */
+		.owl-carousel .owl-nav button.owl-prev,
+		.owl-carousel .owl-nav button.owl-next {
+			transition: transform 0.15s ease-in-out !important;
+		}
+
+		/* Hover/Focus effect (enlarge arrow, prevent background color) ONLY for active buttons */
+		.owl-carousel .owl-nav button.owl-prev:not(.disabled):hover,
+		.owl-carousel .owl-nav button.owl-next:not(.disabled):hover,
+		.owl-carousel .owl-nav button.owl-prev:not(.disabled):focus,
+		.owl-carousel .owl-nav button.owl-next:not(.disabled):focus {
+			background: transparent !important;
+			color: brown !important;
+			transform: scale(1.5);
+			outline: none;
+		}
+
+		/* Ensure disabled buttons strictly maintain their appearance with zero interactive effects */
+		.owl-carousel .owl-nav button.owl-prev.disabled,
+		.owl-carousel .owl-nav button.owl-next.disabled {
+			background: transparent !important;
+			color: brown !important;
+			opacity: 0.5 !important;
+			transform: none !important;
+			pointer-events: none !important;
+			cursor: default !important;
+		}
+	</style>
+	<script>
+		// Add a 'focus' event listener to each input text and text are 
+		// toselect all text when focused 
+		$('input[type="text"],textarea').each(function () {
+			$(this).on('focus', function () {
+				this.select();
+			});
+		});
+	</script>
+</head>
+
+<!-- Template: panel sub-section -->
+<div id="section1" class="row">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header pb-0">
+				<h2 class="card-title">Sub-section title</h2>
+				<p class="card-subtitle">Sub-section subtitle (if applies)</p>
+			</header>
+			<div class="card-body">
+				<!-- Form content goes here  -->
+			</div>
+		</section>
+	</div>
+</div>
+
+
+<!-- Template: Logical group separator -->
+<div class="row">
+	<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+</div>
+
+
+<!-- Template: Label with mandatory indicator and tooltip (3-cols width by default) -->
+<label class="col-sm-3 control-label text-sm-right pt-1" data-toggle="tooltip" data-placement="left"
+	title="Field tooltip">
+	Field label:
+	<span class="required">*</span>
+</label>
+
+
+<!-- Template: standard field input label (3-cols) and field (5-cols)  -->
+<div class="row">
+	<!-- Label (as above template) goes here  -->
+	<div class="col-sm-5">
+		<!-- Input field (any of the below) goes here  -->
+	</div>
+</div>
+
+
+<!-- Template: simple input field  -->
+<input type="text" class="form-control form-control-sm" autocomplete="off" autocorrect="off" spellcheck="false">
+
+
+<!-- Template: simple input text field with characters count plugin and label indicator -->
+<input type="text" class="form-control form-control-sm" data-plugin-maxlength maxlength="25" autocomplete="off"
+	autocorrect="off" spellcheck="false" />
+<p class="text-right mb-0 c-indicator">
+	<code>Max:</code> 25
+</p>
+
+
+<!-- Template: simple dropdown field  -->
+<select class="form-control form-control-sm mb-0">
+	<option value="1">Option 1</option>
+	<option value="2">Option 2</option>
+</select>
+
+
+<!-- Template: simple checkbox field  -->
+<div class="checkbox-custom mt-1">
+	<input type="checkbox" checked="">
+	<label></label>
+</div>
+
+
+<!-- Template: simple Text area -->
+<textarea class="form-control form-control-sm" rows="4" autocomplete="off" autocorrect="off"
+	spellcheck="false">Value</textarea>
+
+
+<!-- Template: simple Text area with characters count plugin and label indicator -->
+<textarea class="form-control form-control-sm" rows="4" data-plugin-maxlength maxlength="500" autocomplete="off"
+	autocorrect="off" spellcheck="false">Value</textarea>
+<p class="text-right mb-0 c-indicator">
+	<code>Max:</code> 500
+</p>
+
+
+<!-- Template: Date  field  -->
+<div class="input-group">
+	<span class="input-group-prepend">
+		<span class="input-group-text">
+			<i class="fas fa-calendar-alt"></i>
+		</span>
+	</span>
+	<input type="text" data-plugin-datepicker data-plugin-options='{ "format": "dd/mm/yyyy" }'
+		class="form-control dateInput text-center" autocomplete="off" value="07/05/2024">
+</div>
+
+
+<!-- Template: Date range field  -->
+<div class="input-daterange input-group" data-plugin-datepicker="" data-plugin-options='{ "format": "dd/mm/yyyy" }'>
+	<span class="input-group-prepend">
+		<span class="input-group-text input-group-aux" tabindex="-1">
+			<i class="fas fa-calendar-alt"></i>
+		</span>
+	</span>
+	<input type="text" class="form-control form-control-sm" name="start" value="15/02/2024">
+	<span class="input-group-text input-group-aux border-left-0 border-right-0 rounded-0">
+		to
+	</span>
+	<input type="text" class="form-control form-control-sm" name="end" value="31/12/9999">
+</div>
+
+
+<!-- Template: Radio buttons input -->
+<div class="radio-custom radio-primary mt-1">
+	<input type="radio" id="radioOp1" name="radio1">
+	<label for="radioOp1">Option 1</label>
+</div>
+<div class="radio-custom radio-primary mt-1">
+	<input type="radio" id="radioOp2" name="radio1">
+	<label for="radioOp2">Option 2</label>
+</div>
+
+
+<!-- Template: field with large descriptions texts below -->
+<input type="text" class="form-control form-control-sm" data-plugin-maxlength maxlength="25" autocomplete="off"
+	autocorrect="off" spellcheck="false">
+<div class="row">
+	<div class="col-lg-12">
+		<label class="col-form-label txt-large-desc pt-0">This is a text of 255
+			characters that is the largest size that this text
+			can get from the backend. This is a text of 255
+			characters that is the largest size that this text
+			can get from the backend. This is a text of 255
+			characters that is the largest size</label>
+	</div>
+</div>
+
+
+<!-- Template: File upload and image display -->
+<div class="fileupload fileupload-new" data-provides="fileupload">
+	<div class="input-append">
+		<div class="uneditable-input">
+			<i class="fas fa-file fileupload-exists"></i>
+			<span class="fileupload-preview"></span>
+		</div>
+		<span class="btn btn-default btn-file">
+			<span class="fileupload-exists">Change</span>
+			<span class="fileupload-new">Select file</span>
+			<input type="file" onchange="uploadAndShowImage()" />
+		</span>
+		<a href="#" onclick="removeAndHideImage()" class="btn btn-default fileupload-exists"
+			data-dismiss="fileupload">Remove</a>
+	</div>
+</div>
+<img id="img" class="image-uploaded mt-3" src="img/some_image_here.png" /> <!-- Place to show image if uploaded -->
+
+
+<!-- Template: field with prepend element -->
+<div class="input-group">
+	<span class="input-group-prepend">
+		<!-- Note: This may be a button, dropdown, label, icon. Depends on each case -->
+		<button class="btn btn-default pt-0 pb-0" type="button" tabindex="-1">Btn</button>
+	</span>
+	<input type="text" class="form-control form-control-sm" autocomplete="off" autocorrect="off" spellcheck="false">
+</div>
+
+
+<!-- Template: field with apend element -->
+<div class="input-group">
+	<input type="text" class="form-control form-control-sm" autocomplete="off" autocorrect="off" spellcheck="false">
+	<span class="input-group-append">
+		<!-- Note: This may be a button, dropdown, label, icon. Depends on each case -->
+		<button class="btn btn-default pt-0 pb-0" type="button" tabindex="-1">Btn</button>
+	</span>
+</div>
+
+
+<!-- Template: Grouped fields aligned vertically with a single label and an identifier for each value   -->
+<section class="col-sm-12 form-group-vertical mb-3">
+	<div class="row">
+		<div class="input-group">
+			<span class="input-group-prepend">
+				<button class="btn btn-default" type="button" tabindex="-1">ID 1&nbsp;</button>
+			</span>
+			<input type="text" class="form-control form-control-sm" autocomplete="off" autocorrect="off"
+				spellcheck="false">
+		</div>
+		<div class="input-group">
+			<span class="input-group-prepend">
+				<button class="btn btn-default" type="button" tabindex="-1">ID 2&nbsp;</button>
+			</span>
+			<input type="text" class="form-control form-control-sm" autocomplete="off" autocorrect="off"
+				spellcheck="false">
+		</div>
+	</div>
+</section>
+
+
+<!-- Template: Matrix layout with badges identifying the columns   -->
+<div class="row">
+	<div class="col-lg-3 offset-lg-3 text-center">
+		<span class="badge badge-info sBadge mb-4">Badge 1</span>
+	</div>
+	<div class="col-lg-3 text-center" style="text-align: center;">
+		<span class="badge badge-info sBadge mb-4">Badge 2</span>
+	</div>
+	<div class="col-lg-3 text-center" style="text-align: center;">
+		<span class="badge badge-info sBadge mb-4">Badge 3</span>
+	</div>
+</div>
+<div class="row">
+	<label class="col-sm-3 control-label text-sm-right pt-1">Field 1 label: </label>
+	<div class="col-sm-3">
+		<!-- Input element goes here for field 1 and badge 1  -->
+	</div>
+	<div class="col-sm-3">
+		<!-- Input element goes here for field 1 and badge 2  -->
+	</div>
+	<div class="col-sm-3">
+		<!-- Input element goes here for field 1 and badge 1  -->
+	</div>
+</div>
+<div class="row">
+	<label class="col-sm-3 control-label text-sm-right pt-1">Field 2 label: </label>
+	<div class="col-sm-3">
+		<!-- Input element goes here for field 2 and badge 1  -->
+	</div>
+	<div class="col-sm-3">
+		<!-- Input element goes here for field 2 and badge 2  -->
+	</div>
+	<div class="col-sm-3">
+		<!-- Input element goes here for field 2 and badge 1  -->
+	</div>
+</div>
+
+
+<!-- Template: Carousel with badge identification for each item (style updates applied on standard content - see in styles section) -->
+<div class="owl-carousel owl-theme" data-plugin-carousel
+	data-plugin-options='{ "dots": false, "nav": true, "items": 3 }'>
+	<div class="item">
+		<div class="row">
+			<!-- Badge to identify carouel item -->
+			<div class="col-lg-12 text-center pt-2">
+				<span class="badge badge-success sBadge">ID 1</span>
+			</div>
+		</div>
+		<!-- item content -->
+	</div>
+	<div class="item">
+		<div class="row">
+			<!-- Badge to identify carouel item -->
+			<div class="col-lg-12 text-center pt-2">
+				<span class="badge badge-success sBadge">ID 2</span>
+			</div>
+		</div>
+		<!-- item content -->
+	</div>
+</div>
+
+</html>
