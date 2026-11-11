@@ -196,6 +196,14 @@ ul.simple-bullet-list li.darkcyan:before {
     background: lightgray;
 }
 
+.lbl-uom {
+    font-size: smaller !important;
+}
+
+.gtin-reuse {
+    color: darkred;
+}
+
 .desc-uom {
     font-size: smaller;
     background: snow;
@@ -209,6 +217,7 @@ ul.simple-bullet-list li.darkcyan:before {
     background-color: lightyellow;
     vertical-align: middle;
     font-weight: bold;
+    font-size: smaller;
 }
 
 .t-desc-lang-english {
@@ -333,7 +342,89 @@ ul.simple-bullet-list li.darkcyan:before {
 
 .input-ai-wrapper {
     position: relative;
+    vertical-align: middle;
 }
+
+
+/* Styles for support packaging */
+.sp_row td {
+    vertical-align: middle;
+}
+
+.t-suppack-type {
+    width: 1px;
+    font-weight: bold;
+}
+
+.t-suppack-type p {
+    font-size: x-small;
+    line-height: 15px;
+}
+
+.t-suppack-type-zmp1 {
+    background-color: lightyellow;
+}
+
+.t-suppack-type-zcr1 {
+    background-color: ghostwhite;
+}
+
+.t-suppack-type-zpt1 {
+    background-color: linen;
+}
+
+.t-details .h-top {
+    color: darkred;
+    font-style: italic;
+}
+
+.t-details .title {
+    font-weight: bold;
+}
+
+.t-details .subtitles p {
+    margin-left: 0;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    font-size: smaller;
+}
+
+.t-details .subtitles .ext-info {
+    color: darkgreen;
+}
+
+.t-tare-btn-uom {
+    font-size: smaller !important;
+    background: snow;
+}
+
+/* Styles for Empties */
+.empty-crate-gtin {
+    font-size: xx-small !important;
+    background: snow;
+}
+
+.full-empty-crate-info {
+    color: green;
+    font-size: smaller;
+}
+
+.empties-table tbody tr td {
+    vertical-align: middle;
+}
+
+.empties-uom {
+    width: 1px;
+    background-color: lightyellow;
+    font-weight: bold;
+}
+
+.empties-price {
+    font-size: smaller !important;
+    background: snow;
+    width: 80px;
+}
+
 
 .btn-expand-collapse {
     float: right;

@@ -1,0 +1,241 @@
+<style>
+	.sp_row td {
+		vertical-align: middle;
+	}
+
+	.t-suppack-type {
+		width: 1px;
+		font-weight: bold;
+	}
+
+	.t-suppack-type p {
+		font-size: x-small;
+		line-height: 15px;
+	}
+
+	.t-suppack-type-zmp1 {
+		background-color: lightyellow;
+	}
+
+	.t-suppack-type-zcr1 {
+		background-color: ghostwhite;
+	}
+
+	.t-suppack-type-zpt1 {
+		background-color: linen;
+	}
+
+	.t-details .h-top {
+		color: darkred;
+		font-style: italic;
+	}
+
+	.t-details .title {
+		font-weight: bold;
+	}
+
+	.t-details .subtitles p {
+		margin-left: 0;
+		margin-top: -5px;
+		margin-bottom: -5px;
+		font-size: smaller;
+	}
+
+	.t-details .subtitles .ext-info {
+		color: darkgreen;
+	}
+
+	.t-tare-btn-uom {
+		font-size: smaller !important;
+		background: snow;
+	}
+</style>
+
+<!-- Start - Subpanel - Support Packaging -->
+<div id="section2" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Support Packaging</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-11 offset-lg-1">
+						<table class="table table-responsive-md table-hover mb-3">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 10%;vertical-align: middle;">
+										Type</th>
+									<th style="width: 32%;vertical-align: middle;">
+										Details</th>
+									<th class="text-center" style="width: 23%;">
+										Tare
+										<br />
+										<code>in grams</code>
+									</th>
+									<th class="text-center" style="width: 15%;">
+										Number of crates
+										<br />
+										<code>for one order unit</code>
+									</th>
+									<th class="text-center" style="width: 7%;">
+										<a href="#modal_edit" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+												class="fas fa-pencil-alt"></i></a>
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								<tr class="sp_row">
+									<td class="t-suppack-type t-suppack-type-zmp1 text-center">
+										ZMP1
+										<p class="mb-0">
+											Minipallets / Display
+										</p>
+									</td>
+									<td class="t-details">
+										<div class="h-top">
+											7498875
+										</div>
+										<div class="title">GTIN
+											description for value above</div>
+										<div class="subtitles mt-1">
+											<p>312345678 - SOCIETE FERMIERE ROCHEFORT
+												ARDENNES</p>
+											<p class="ext-info">
+												PO UoM:<u>CV</u>
+											</p>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<div class="col-lg-11 offset-lg-1">
+												<div class="input-group input-group-sm">
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false"
+														value="90200,05">
+													<span class="input-group-append">
+														<button class="btn btn-sm btn-default t-tare-btn-uom"
+															type="button">EA</button>
+													</span>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="158"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false" placeholder="">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="#modal_edit" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+												class="fas fa-pencil-alt"></i></a>
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr class="sp_row">
+									<td class="t-suppack-type t-suppack-type-zcr1 text-center">
+										ZCR1
+										<p class="mb-0">
+											Crate
+										</p>
+									</td>
+									<td class="t-details">
+										<div class="h-top">
+											7654321
+										</div>
+										<div class="title">Some
+											other support packaging description</div>
+										<div class="subtitles mt-1">
+											<p>34567890 - UNILEVER BELGUIM</p>
+											<p class="ext-info">
+												PO UoM:<u>IP</u>
+											</p>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<div class="col-lg-11 offset-lg-1">
+												<div class="input-group input-group-sm">
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false"
+														value="54325,81">
+													<span class="input-group-append">
+														<button class="btn btn-sm btn-default t-tare-btn-uom"
+															type="button">IP</button>
+													</span>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="315"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false" placeholder="">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="#modal_edit" class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+												class="fas fa-pencil-alt"></i></a>
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr class="sp_row">
+									<td class="t-suppack-type t-suppack-type-zpt1 text-center">
+										ZPT1
+										<p class="mb-0">
+											Pallets
+										</p>
+									</td>
+									<td class="t-details">
+										<div class="h-top">
+											4567890
+										</div>
+										<div class="title">Another
+											SP description for GTIN</div>
+										<div class="subtitles mt-1">
+											<p>6789012 - Coca-Cola Company</p>
+											<p class="ext-info">
+												PO UoM:<u>EA</u>
+											</p>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<div class="col-lg-11 offset-lg-1">
+												<div class="input-group input-group-sm">
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false"
+														value="19850,18">
+													<span class="input-group-append">
+														<button class="btn btn-sm btn-default t-tare-btn-uom"
+															type="button">PL</button>
+													</span>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="91"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false" placeholder="">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Support Packaging -->

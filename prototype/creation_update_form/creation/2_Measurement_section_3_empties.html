@@ -1,0 +1,244 @@
+<style>
+	/* Styles for Empties */
+	.empty-crate-gtin {
+		font-size: xx-small !important;
+		background: snow;
+	}
+
+	.full-empty-crate-info {
+		color: green;
+		font-size: smaller;
+	}
+
+	.empties-table tbody tr td {
+		vertical-align: middle;
+	}
+
+	.empties-uom {
+		width: 1px;
+		background-color: lightyellow;
+		font-weight: bold;
+	}
+
+	.empties-price {
+		font-size: smaller !important;
+		background: snow;
+		width: 80px;
+	}
+</style>
+
+<!-- Start - Subpanel - Empties -->
+<div id="section3" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Consumer returnable empties</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row mt-1">
+					<div class="col-lg-3 offset-lg-2 text-center">
+						<span class="badge badge-info sBadge">Empty
+							bottle</span>
+					</div>
+					<div class="col-lg-3 text-center">
+						<span class="badge badge-info sBadge">Empty
+							crate</span>
+					</div>
+					<div class="col-lg-3 text-center">
+						<span class="badge badge-info sBadge">Full
+							empty crate</span>
+					</div>
+				</div>
+				<div class="row mt-3 mb-2">
+					<div class="col-sm-3 offset-lg-5">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default btn-sm empty-crate-gtin" type="button">GTIN</button>
+							</span>
+							<input type="text text-center" name="ec_gtin1" class="form-control form-control-sm"
+								autocomplete="off" value="109876543210">
+						</div>
+					</div>
+					<div class="col-lg-3 text-center">
+						<label class="col-form-label full-empty-crate-info p-0">
+							Number of full empty crate for CV: 1
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-2 control-label control-label-sm text-sm-right pt-1">Description:
+					</label>
+					<div class="col-sm-3">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option selected="">Bottle Beer 33C 0.10E</option>
+							<option>Bottle Beer 50C 0.10E</option>
+							<option>Bottle Beer 100C 0.10E</option>
+							<option>Bottle Beer 500C 0.10E</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="emcr1" class="form-control form-control-sm" autocomplete="off"
+							autocorrect="off" spellcheck="false" value="Bottle Beer 50C 0.10E">
+					</div>
+					<div class="col-sm-3">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>Bottle Beer 33C 0.10E</option>
+							<option>Bottle Beer 50C 0.10E</option>
+							<option>Bottle Beer 100C 0.10E</option>
+							<option selected>Bottle Beer 500C 0.10E</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-2 control-label control-label-sm text-sm-right pt-1">Value in €:
+					</label>
+					<div class="col-sm-3">
+						<input type="text" name="eb_val1" class="form-control form-control-sm text-center"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="1,20">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="ec_val2" class="form-control form-control-sm text-center"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="0,25">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="fec_val3" class="form-control form-control-sm text-center"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="12,50">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-2 control-label control-label-sm  text-sm-right pt-1">SAP ID:
+					</label>
+					<div class="col-sm-3">
+						<input type="text" name="eb_sap1" class="form-control form-control-sm text-center"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="12345678">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="ec_sap2" class="form-control form-control-sm text-center"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="98745631">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" name="fec_sap3" class="form-control form-control-sm text-center"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="54645625">
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4">
+				<div class="col-lg-9 offset-lg-2">
+					<table class="table table-responsive-md table-sm table-hover empties-table mb-3">
+						<thead>
+							<tr>
+								<th class="text-center" style="width: 10%;"></th>
+								<th class="text-center" style="width: 45%;">Number of
+									empty bottles</th>
+								<th class="text-center" style="width: 45%;">Number of
+									empty crates</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-center empties-uom">
+									EA
+								</td>
+								<td class="text-center">
+									<div class="col-lg-10 offset-lg-1 input-group input-group-sm">
+										<span class="input-group-prepend">
+											<button class="btn btn-default i-link i-link-f" type="button"
+												tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+													data-placement="left" title="Source: GDSN"></i></button>
+										</span>
+										<input type="text" class="form-control form-control-sm text-center"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="325">
+										<span class="input-group-append">
+											<button class="btn btn-default btn-sm empties-price text-right"
+												type="button">15,25 €
+											</button>
+										</span>
+									</div>
+								</td>
+								<td class="text-center">
+									<div class="col-lg-10 offset-lg-1 input-group">
+										<input type="text" class="form-control form-control-sm text-center"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="12">
+										<span class="input-group-append">
+											<button class="btn btn-default btn-sm empties-price text-right"
+												type="button">0,25 €
+											</button>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center empties-uom">
+									IP
+								</td>
+								<td class="text-center">
+									<div class="col-lg-10 offset-lg-1 input-group input-group-sm">
+										<span class="input-group-prepend">
+											<button class="btn btn-default i-link i-link-f" type="button"
+												tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+													data-placement="left" title="Source: GDSN"></i></button>
+										</span>
+										<input type="text" class="form-control form-control-sm text-center"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="120">
+										<span class="input-group-append">
+											<button class="btn btn-default btn-sm empties-price text-right"
+												type="button">7,92 €
+											</button>
+										</span>
+									</div>
+								</td>
+								<td class="text-center">
+									<div class="col-lg-10 offset-lg-1 input-group">
+										<input type="text" class="form-control form-control-sm text-center"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="2315">
+										<span class="input-group-append">
+											<button class="btn btn-default btn-sm empties-price text-right"
+												type="button">1120,10 €
+											</button>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="text-center empties-uom">
+									CV
+								</td>
+								<td class="text-center">
+									<div class="col-lg-10 offset-lg-1 input-group input-group-sm">
+										<span class="input-group-prepend">
+											<button class="btn btn-default i-link i-link-f" type="button"
+												tabindex="-1"><i class="fas fa-link" data-toggle="tooltip"
+													data-placement="left" title="Source: GDSN"></i></button>
+										</span>
+										<input type="text" class="form-control form-control-sm text-center"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="58">
+										<span class="input-group-append">
+											<button class="btn btn-default btn-sm empties-price text-right"
+												type="button">8,50 €
+											</button>
+										</span>
+									</div>
+								</td>
+								<td class="text-center">
+									<div class="col-lg-10 offset-lg-1 input-group">
+										<input type="text" class="form-control form-control-sm text-center"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="60">
+										<span class="input-group-append">
+											<button class="btn btn-default btn-sm empties-price text-right"
+												type="button">140,88 €
+											</button>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Empties -->
