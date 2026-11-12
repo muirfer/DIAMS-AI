@@ -4,68 +4,63 @@
 		<div id="section1" class="row">
 			<div class="col-lg-12">
 				<section class="card card-transparent mb-4">
-					<header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-						</div>
-
+					<header class="card-header pb-0">
 						<h2 class="card-title">Purchasing data</h2>
 						<p class="card-subtitle">Of regular supplier</p>
-						<!-- <p class="card-subtitle" style="color: darkgreen;">PO UoM: <u>CV</u></p> -->
 						<br>
 					</header>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="form-group row"
-									style="background: mintcream;padding-top: 20px;padding-bottom: 20px;">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Supplier:
-									</label>
+								<div class="row pt-2 pb-0" style="background: mintcream;">
+									<label
+										class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Supplier:</label>
 									<div class="col-sm-5">
-										<div class="input-group">
+										<div class="input-group input-group-sm">
 											<span class="input-group-prepend">
-												<button class="btn btn-default"
-													style="font-size: smaller;background: snow;"
+												<button class="btn btn-default btn-sm purch-supplier-id"
 													type="button">0010002878</button>
 											</span>
-											<input type="text" name="sup_gln" class="form-control" autocomplete="off"
+											<input type="text" name="sup_gln" class="form-control form-control-sm"
+												autocomplete="off" autocorrect="off" spellcheck="false"
 												value="UNILEVER BELGUIM">
 										</div>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Regular:
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Regular:
 									</label>
 									<div class="col-sm-5">
-										<div class="checkbox-custom" style="margin-top: 8px;">
+										<div class="checkbox-custom mt-1">
 											<input type="checkbox" checked="">
 											<label></label>
 										</div>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Supplier
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Supplier
 										subrange: </label>
 									<div class="col-sm-5">
-										<select class="form-control mb-3 cust-select">
+										<select class="form-control form-control-sm mb-0">
 											<option value="1000" selected>1000 - DUVEL MOORTGAT
 											</option>
 										</select>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Supplier
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Supplier
 										GLN: </label>
 									<div class="col-sm-5">
-										<input type="text" name="sup_gln" class="form-control" autocomplete="off"
+										<input type="text" name="sup_gln" class="form-control form-control-sm"
+											autocomplete="off" autocorrect="off" spellcheck="false"
 											value="5411681000008">
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Purchasing
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Purchasing
 										group: </label>
 									<div class="col-sm-5">
-										<select class="form-control mb-3 cust-select">
+										<select class="form-control form-control-sm mb-0">
 											<option value="B01">B01 - FROZEN FOOD</option>
 											<option value="B02">B02 - COFFEE-FLOUR&amp;DESRT
 											</option>
@@ -88,21 +83,23 @@
 										</select>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2"><i
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"><i
 											class="fas fa-link i-link i-link-f" data-toggle="tooltip"
 											data-placement="left" title="Source: GDSN"></i>Product
 										number used by supplier: </label>
 									<div class="col-sm-5">
-										<input id="f10" type="text" name="pp_ubv" class="form-control"
-											autocomplete="off" value="9876543210001263">
+										<input id="f10" type="text" name="pp_ubv" class="form-control form-control-sm"
+											autocomplete="off" autocorrect="off" spellcheck="false"
+											value="9876543210001263">
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Communication
+								<div class="row">
+									<label
+										class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Communication
 										unit: </label>
 									<div class="col-sm-5">
-										<select class="form-control mb-3 cust-select">
+										<select class="form-control form-control-sm mb-0">
 											<option value="EA">EA</option>
 											<option value="CS" selected>CV</option>
 											<option value="LY">LY</option>
@@ -110,32 +107,34 @@
 										</select>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Available
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Available
 										(deliverable): </label>
 									<div class="col-sm-5">
-										<div class="input-daterange input-group" data-plugin-datepicker
+										<div class="input-daterange input-group" data-plugin-datepicker=""
 											data-plugin-options='{ "format": "dd/mm/yyyy" }'>
 											<span class="input-group-prepend">
-												<span class="input-group-text">
+												<span class="input-group-text input-group-aux" tabindex="-1">
 													<i class="fas fa-calendar-alt"></i>
 												</span>
 											</span>
-											<input type="text" class="form-control dateInput" name="start"
-												value="15/02/2024" style="font-size: smaller;">
-											<span class="input-group-text border-left-0 border-right-0 rounded-0">
+											<input type="text" class="form-control form-control-sm" name="start"
+												value="15/02/2024">
+											<span
+												class="input-group-text input-group-aux border-left-0 border-right-0 rounded-0">
 												to
 											</span>
-											<input type="text" class="form-control dateInput" name="end"
-												value="07/05/2024" style="font-size: smaller;">
+											<input type="text" class="form-control form-control-sm" name="end"
+												value="07/05/2024">
 										</div>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Traceability
+								<div class="row">
+									<label
+										class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Traceability
 										method: </label>
 									<div class="col-sm-5">
-										<select class="form-control mb-3 cust-select">
+										<select class="form-control form-control-sm mb-0">
 											<option value=""></option>
 											<option value="001">001 - Lotcode</option>
 											<option value="002" selected>002 - BBD/UBD</option>
@@ -143,11 +142,11 @@
 										</select>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Incoterms:
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Incoterms:
 									</label>
 									<div class="col-sm-5">
-										<select class="form-control mb-3 cust-select">
+										<select class="form-control form-control-sm mb-0">
 											<option value="CFR">CFR - Costs and freight</option>
 											<option value="CIF">CIF - Costs, insurance &amp;
 												freight</option>
@@ -177,11 +176,11 @@
 										</select>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Condition
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Condition
 										group with supplier: </label>
 									<div class="col-sm-5">
-										<select class="form-control mb-3 cust-select">
+										<select class="form-control form-control-sm mb-0">
 											<option value="1001">1001 - DUVEL</option>
 											<option value="1002">1002 - MAREDSOUS</option>
 											<option value="1003">1003 - VEDETT</option>
@@ -194,29 +193,29 @@
 									</div>
 								</div>
 								<div class="row">
-									<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+									<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Multi
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Multi
 										supplier:
 									</label>
 									<div class="col-sm-5">
-										<div class="checkbox-custom" style="margin-top: 8px;">
+										<div class="checkbox-custom mt-1">
 											<input type="checkbox" checked="">
 											<label></label>
 										</div>
 									</div>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Multi
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Multi
 										supplier volume: </label>
 									<div class="col-sm-5">
-										<div class="input-group">
-											<input type="text" name="moq" class="form-control" autocomplete="off"
-												style="text-align: right;" value="32">
+										<div class="input-group input-group-sm">
+											<input type="text" name="moq"
+												class="form-control form-control-sm text-right" autocomplete="off"
+												autocorrect="off" spellcheck="false" value="32">
 											<span class="input-group-append">
-												<button class="btn btn-default"
-													style="font-size: smaller;background: snow;width: 75px;"
+												<button class="btn btn-default btn-sm purch-supplier-vol"
 													type="button">%</button>
 											</span>
 										</div>
@@ -234,45 +233,41 @@
 			<div class="col-lg-12">
 				<section class="card card-transparent mb-4">
 					<header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-						</div>
-
 						<h2 class="card-title">Product pricing information</h2>
-						<br>
 					</header>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<div class="form-group row" style="padding-top: 20px;">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Purchase
+								<div class="row pt-2">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Purchase
 										price</label>
 									<div class="col-sm-5">
-										<div class="input-group">
-											<input type="text" name="purch_pr" class="form-control" autocomplete="off"
-												style="text-align: right;" value="156312,25">
-											<span class="input-group-append" style="width: 75px;">
-												<select class="form-control mb-3 cust-select"
-													style="background-color: floralwhite;text-align: center;">
+										<div class="input-group input-group-sm">
+											<input type="text" name="purch_pr"
+												class="form-control form-control-sm text-right" autocomplete="off"
+												autocorrect="off" spellcheck="false" value="156312,25">
+											<span class="input-group-append purch-price-currency-uom">
+												<select class="form-control form-control-sm mb-0 text-center">
 													<option value="EUR" selected>EUR</option>
 													<option value="USD">USD</option>
 												</select>
 											</span>
 										</div>
 									</div>
-									<label class="col-sm-3 control-label pt-2" style="color: darkred;">per
+									<label
+										class="col-sm-3 control-label control-label-sm purch-price-unit pt-1 pl-0">per
 										1 EA</label>
 								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Base
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Base
 										price unit</label>
 									<div class="col-sm-5">
-										<div class="input-group">
-											<input type="text" name="base_pu" class="form-control" autocomplete="off"
-												style="text-align: right;" value="1">
-											<span class="input-group-append" style="width: 75px;">
-												<select class="form-control mb-3 cust-select"
-													style="background-color: floralwhite;text-align: center;">
+										<div class="input-group input-group-sm">
+											<input type="text" name="base_pu"
+												class="form-control form-control-sm text-right" autocomplete="off"
+												autocorrect="off" spellcheck="false" value="1">
+											<span class="input-group-append purch-price-currency-uom">
+												<select class="form-control form-control-sm mb-0 text-center">
 													<option value="KG" selected>KG</option>
 													<option value="EA">EA</option>
 												</select>
@@ -280,12 +275,11 @@
 										</div>
 									</div>
 								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-3 control-label text-sm-right pt-2">Valid
+								<div class="row">
+									<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Valid
 										until:</label>
 									<div class="col-sm-5">
-										<div class="input-group">
+										<div class="input-group input-group-sm">
 											<span class="input-group-prepend">
 												<span class="input-group-text">
 													<i class="fas fa-calendar-alt"></i>
@@ -293,8 +287,8 @@
 											</span>
 											<input type="text" data-plugin-datepicker
 												data-plugin-options='{ "format": "dd/mm/yyyy" }'
-												class="form-control dateInput" autocomplete="off" value="07/05/2024"
-												style="text-align: center;">
+												class="form-control form-control-sm dateInput" autocomplete="off"
+												autocorrect="off" spellcheck="false" value="07/05/2024">
 										</div>
 									</div>
 								</div>

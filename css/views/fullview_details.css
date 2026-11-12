@@ -425,6 +425,31 @@ ul.simple-bullet-list li.darkcyan:before {
     width: 80px;
 }
 
+/* Styles for Purchasing */
+.purch-supplier-id {
+    font-size: smaller !important;
+    background: snow;
+}
+
+.purch-supplier-vol {
+    font-size: smaller !important;
+    background: snow;
+    width: 75px;
+}
+
+.purch-price-currency-uom {
+    width: 75px;
+}
+
+.purch-price-currency-uom select {
+    background-color: floralwhite !important;
+}
+
+.purch-price-unit {
+    color: darkred;
+}
+
+
 
 .btn-expand-collapse {
     float: right;
