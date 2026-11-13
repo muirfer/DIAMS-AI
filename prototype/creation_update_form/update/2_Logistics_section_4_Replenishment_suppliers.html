@@ -1,0 +1,50 @@
+<style>
+	.btn-moq {
+		font-size: smaller !important;
+		background: snow;
+		width: 75px;
+	}
+</style>
+
+<!-- Start - Subpanel - Replenishment for suppliers -->
+<div id="section4" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Replenishment for suppliers</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Minimum
+						order quantity (in PO UoM): </label>
+					<div class="col-sm-5">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default btn-sm btn-moq" type="button">CV</button>
+							</span>
+							<input type="text" name="moq" class="form-control form-control-sm text-right"
+								autocomplete="off" autocorrect="off" spellcheck="false" value="170">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Reordering
+						multiple quantity: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>ZA2P - Argos 2 Pallets</option>
+							<option>ZACV - Argos CV</option>
+							<option selected="">ZAHP - Argos Half-pallet</option>
+							<option>ZAIP - Argos Innerpack</option>
+							<option>ZALY - Argos Layer</option>
+							<option>ZAPL - Argos Pallet</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Replenishment for suppliers-->

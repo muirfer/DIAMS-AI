@@ -449,6 +449,57 @@ ul.simple-bullet-list li.darkcyan:before {
     color: darkred;
 }
 
+/* Styles for Codes */
+.ds td {
+    font-size: smaller !important;
+}
+
+.ds-sel {
+    background: floralwhite;
+}
+
+.l-age-country {
+    width: 100px;
+    font-size: smaller !important;
+    background: snow;
+}
+
+.l-age-value {
+    background: floralwhite;
+}
+
+/* Styles for Logistics */
+.temperature {
+    font-size: smaller !important;
+    background: snow;
+    width: 75px;
+}
+
+.dc-toolbar {
+    background: mintcream;
+}
+
+.dc-main {
+    background: linen;
+}
+
+.dc-label {
+    font-size: smaller !important;
+}
+
+.dc-chk {
+    margin-left: 45%;
+}
+
+.btn-moq {
+    font-size: smaller !important;
+    background: snow;
+    width: 75px;
+}
+
+.ord-chk {
+    margin-left: 45%;
+}
 
 
 .btn-expand-collapse {

@@ -1,0 +1,164 @@
+<style>
+	/* Styles for Logistics */
+	.dc-toolbar {
+		background: mintcream;
+	}
+
+	.dc-main {
+		background: linen;
+	}
+
+	.dc-label {
+		font-size: smaller !important;
+	}
+</style>
+
+<!-- Start - Subpanel - Distribution center -->
+<div id="section2" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Distribution center</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row new-dc mt-3">
+					<div class="col-lg-10 offset-lg-1">
+						<section class="card card-featured mb-4">
+							<header class="card-header">
+								<div class="card-actions">
+									<span id="txtDCId" class="badge badge-success">BW04</span>
+								</div>
+								<h2 class="card-title">ZELLIK GROCERY</h2>
+							</header>
+							<div class="card-body pl-3 pr-3 pb-1 pt-0">
+								<!-- Start: Main values -->
+								<div class="row dc-main">
+									<div class="col-lg-7 pl-1 pb-1 p-0">
+										<div class="form-group p-2 text-center">
+											<label class="dc-label m-0">Distribution
+												profile</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option>ZN2 - Non Stock over 2 days</option>
+												<option selected="">ZNB - Non-stock over 2
+													days Bakery</option>
+												<option>ZNR - Non Stock with Rounding up
+												</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-5 pl-1 p-0 dc-ds">
+										<div class="form-group p-2 text-center">
+											<label class="dc-label m-0">Replenishment
+												type</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option selected>ND - No planning</option>
+												<option>YV - VMI (Partial)</option>
+												<option>ZV - VMI (FULL)</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- End: Main values -->
+								<div class="row">
+									<div class="col-lg-7 pl-1 p-0">
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Logistics handling
+												group</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option>B002 - HBC Witron - 5400110000115
+												</option>
+												<option>B003 - Ambient zone B4 -
+													5400110000344</option>
+												<option selected="">B004 - Ninove manual
+													zone - 5400110000313</option>
+											</select>
+										</div>
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Pick unit
+												placement</label>
+											<div class="input-group input-group-sm text-center">
+												<span class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="fas fa-info" data-toggle="popover"></i>
+													</span>
+												</span>
+												<select class="form-control form-control-sm col-lg-12 text-center">
+													<option selected>0 - No limitations</option>
+													<option>1 - Only width/height</option>
+													<option>2 - Only depth/height</option>
+													<option>3 - Only depth/width</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Stock
+												planner</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option selected="">ADD - Additive-Support
+												</option>
+												<option>BAS - Base Wine</option>
+												<option>BTL - Bottled Wine</option>
+												<option>CNS - Consum.-Packaging</option>
+												<option>PFT - Pre-Filtered Wine</option>
+											</select>
+										</div>
+
+									</div>
+									<div class="col-lg-5 pl-1 p-0">
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Multi store
+												order</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option>1</option>
+												<option>2</option>
+												<option selected="">3</option>
+											</select>
+										</div>
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Storage
+												class</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option selected="">01 - DPS</option>
+												<option>02 - MWH</option>
+												<option>03 - ATS</option>
+												<option>04 - Side</option>
+												<option>05 - Rear</option>
+											</select>
+										</div>
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Scannable</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option selected="">0 - N/A</option>
+												<option>1 - Scannable</option>
+												<option>2 - Not Scannable</option>
+											</select>
+										</div>
+										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
+											<label class="dc-label m-0">Delivery
+												unit</label>
+											<select class="form-control form-control-sm mb-0 text-center">
+												<option value=""></option>
+												<option selected="">EA</option>
+												<option>CV</option>
+												<option>IP</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Distribution center -->

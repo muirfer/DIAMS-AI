@@ -1,0 +1,308 @@
+<style>
+	/* Styles for Logistics */
+	.temperature {
+		font-size: smaller !important;
+		background: snow;
+		width: 75px;
+	}
+</style>
+
+<!-- Start - Subpanel - Logistics -->
+<div id="section1" class="row">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Logistics</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Item set:
+					</label>
+					<div class="col-sm-5">
+						<select id="f3" class="form-control form-control-sm mb-0">
+							<option value="" disabled></option>
+							<option value="001">001 - Zuivel</option>
+							<option value="002" selected>002 - Tabak zelfbediening en
+								Vensafe</option>
+							<option value="314">314 - 0201 - Perfumery & Drugstore
+								Ninove</option>
+							<option value="315">315 - 9541 - Other type of item set
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Temperatures:
+					</label>
+					<div class="col-sm-5">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default btn-sm temperature" type="button">Min</button>
+							</span>
+							<input type="text" name="tmin" class=" form-control form-control-sm text-right"
+								autocomplete="off" autocorrect="off" spellcheck="false" value="-15">
+						</div>
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default btn-sm temperature" type="button">Ideal</button>
+							</span>
+							<input type="text" name="tideal" class=" form-control form-control-sm text-right"
+								autocomplete="off" autocorrect="off" spellcheck="false" value="5">
+						</div>
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default btn-sm temperature" type="button">Max</button>
+							</span>
+							<input type="text" name="tmax" class=" form-control form-control-sm text-right"
+								autocomplete="off" autocorrect="off" spellcheck="false" value="25">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Total shelf
+						life: </label>
+					<div class="col-sm-5">
+						<input type="text" name="tmax" class=" form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="25">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Remaining Lifespan
+						in DC: </label>
+					<div class="col-sm-5">
+						<input type="text" name="rsl" class=" form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="118">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Lifespan in
+						store: </label>
+					<div class="col-sm-5">
+						<input type="text" name="lis" class=" form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="92">
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">No date:
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom ml-1">
+							<input type="checkbox" checked="" id="f11">
+							<label for="f11"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Presence of
+						BBD: </label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom ml-1">
+							<input type="checkbox" id="checkboxExample2">
+							<label for="checkboxExample2"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Presence of
+						packaging date: </label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom ml-1">
+							<input type="checkbox" id="checkboxExample2">
+							<label for="checkboxExample2"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Weight
+						code: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>0 - Fixed sales price</option>
+							<option>1 - Price per kilo (theor. weight)</option>
+							<option>2 - Price per kilo (exact weight)</option>
+							<option selected="">3 - Price per kilo (exact IN / theor.
+								OUT)</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Code
+						livraison: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>0 - Delivery from the warehouse</option>
+							<option>1 - DSD ordered by the store</option>
+							<option selected="">2 - DSD managed by the supplier</option>
+							<option>3 - Waters and beers - pieces</option>
+							<option>4 - DSD with automated billing</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Stacking
+						factor: </label>
+					<div class="col-sm-5">
+						<input type="text" name="stfct" class=" form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="61">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Expedition
+						GLN</label>
+					<div class="col-sm-5">
+						<input type="text" name="trp" class="form-control form-control-sm" autocomplete="off"
+							autocorrect="off" spellcheck="false" value="Text 14 chars.">
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Gratis quantity:
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" checked="">
+							<label></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Gift: </label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" id="checkboxExample2">
+							<label for="checkboxExample2"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Multipack:
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" id="checkboxExample2">
+							<label for="checkboxExample2"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Packaging size
+						type: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>Large</option>
+							<option selected>Small</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Packaging type:
+					</label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>BOTTLE</option>
+							<option>CAN</option>
+							<option selected="">CASE</option>
+							<option>JAR</option>
+							<option>KILO</option>
+							<option>METER</option>
+							<option>PACKET</option>
+							<option>PET</option>
+							<option>PIECES</option>
+							<option>KEG</option>
+							<option>TETRAPACK</option>
+							<option>BOTTLE NRGB</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Format: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>Maxi</option>
+							<option>Mega Maxi</option>
+							<option selected="">Tempo Express</option>
+							<option>Shop & Go</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Supply type:
+					</label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option>NON</option>
+							<option>AMB</option>
+							<option selected="">CENT</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sample box
+						delivery date:</label>
+					<div class="col-sm-5">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-calendar-alt"></i>
+								</span>
+							</span>
+							<input type="text" data-plugin-datepicker data-plugin-options='{ "format": "dd/mm/yyyy" }'
+								class="form-control form-control-sm dateInput" autocomplete="off" autocorrect="off"
+								spellcheck="false" value="07/05/2024">
+						</div>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sample box: <span
+							class="required">*</span></label>
+					<div class="col-sm-5">
+						<div class="fileupload fileupload-new" data-provides="fileupload">
+							<div class="input-append">
+								<div class="uneditable-input">
+									<i class="fas fa-file fileupload-exists"></i>
+									<span class="fileupload-preview"></span>
+								</div>
+								<span class="btn btn-default btn-file">
+									<span class="fileupload-exists">Change</span>
+									<span class="fileupload-new">Select file</span>
+									<input type="file" onchange="uploadAndShowImage()" />
+								</span>
+								<a href="#" onclick="removeAndHideImage()" class="btn btn-default fileupload-exists"
+									data-dismiss="fileupload">Remove</a>
+							</div>
+						</div>
+						<img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Logistics -->
