@@ -1,0 +1,885 @@
+<style>
+	/* Styles for Assortments */
+	.t-assortment tr td {
+		vertical-align: middle !important;
+	}
+
+	.t-ass-type {
+		width: 1px;
+		font-weight: bold;
+		font-size: smaller;
+	}
+
+	.t-ass-type-manual {
+		background-color: lightyellow;
+	}
+
+	.t-ass-type-local {
+		background-color: linen;
+	}
+
+	.t-ass-type-spcat {
+		background-color: aliceblue;
+	}
+
+	.t-ass-type-aff {
+		background-color: ghostwhite;
+	}
+
+	.t-ass-lm {
+		width: 1px;
+		color: darkgreen;
+		font-size: smaller;
+	}
+</style>
+
+<!-- Start - Subpanel - for Belgium-->
+<div id="section3" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Belgium</h2>
+				<p class="card-subtitle"></a>
+				</p>
+			</header>
+			<div class="card-body">
+				<!-- Assortments toolbar -->
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1">
+						<div class="row p-2" style="background:mintcream;">
+							<i class="col-sm-1 fas fa-copy c-link i-link-c" data-toggle="tooltip" data-placement="left"
+								title="Copy from original product" style="margin-top:10px;font-size: larger;"></i>
+							<label class="col-sm-1 control-label control-label-sm text-sm-right pt-1">Show</label>
+							<div class="col-sm-3 text-center">
+								<div class="btn-group d-flex" role="group">
+									<a class="btn btn-primary btn-xs w-100 active" role="button" id="btnAll">All</a>
+									<a class="btn btn-default btn-xs w-100" role="button" id="btnSelected">Selected</a>
+								</div>
+							</div>
+							<label class="col-sm-1 control-label control-label-sm text-sm-right pt-1">for:
+							</label>
+							<div class="col-sm-3">
+								<select id="belgiumAssortmentFilter"
+									class="form-control form-control-sm mb-0 assFilter">
+									<option value="all" selected>All</option>
+									<option value="sm-manual">SM manual</option>
+									<option value="sm-local">SM local</option>
+									<option value="sm-categories">SM specific categories</option>
+									<option value="sm-affiliates">Affiliates</option>
+								</select>
+							</div>
+							<div class="col-lg-3 text-right">
+								<button class="btn btn-link btn-sm" type="button">
+									<span class="fas fa-file-excel"></span> Download
+									to Excel
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Assortments table -->
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1">
+						<table class="table table-responsive-md table-sm mb-3 table-hover">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 25%;">Type</th>
+									<th class="text-center" style="width: 20%;">Layout module</th>
+									<th style="width: 45%;">Description</th>
+									<th class="text-center" style="width: 10%;"></th>
+								</tr>
+							</thead>
+							<tbody class="t-assortment" id="tableBodyBe">
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM Manual</td>
+									<td class="t-ass-lm text-center">
+										BAOT_00001</td>
+									<td>
+										BE Assort SM North</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM Manual</td>
+									<td class="t-ass-lm text-center">
+										BAOT_00002</td>
+									<td>
+										BE Assort SM South</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM Manual</td>
+									<td class="t-ass-lm text-center">
+										BAOT_00003</td>
+									<td>
+										BE Assort SM Belgium All</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_001</td>
+									<td>
+										BE Assort SM 4001 FLAGEY</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_002</td>
+									<td>
+										BE Assort SM 4002 LONGDOZ</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_003</td>
+									<td>
+										BE Assort SM 4003 CHAZAL</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_004</td>
+									<td>
+										BE Assort SM 4004 ST ANTOINE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_005</td>
+									<td>
+										BE Assort SM 4005 ST.PIETERS BRUG</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_006</td>
+									<td>
+										BE Assort SM 4006 FORT JACO</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_007</td>
+									<td>
+										BE Assort SM 4007 MARCINELLE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_008</td>
+									<td>
+										BE Assort SM 4008 ROODEBEEK</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_009</td>
+									<td>
+										BE Assort SM 4009 MUTSAARD</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_010</td>
+									<td>
+										BE Assort SM 4010 DEBROUX</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_011</td>
+									<td>
+										BE Assort SM 4011 HASSELT</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_012</td>
+									<td>
+										BE Assort SM 4012 PRINCE DE LIEGE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_013</td>
+									<td>
+										BE Assort SM 4013 SERAING</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_014</td>
+									<td>
+										BE Assort SM 4014 HEVERLEE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_015</td>
+									<td>
+										BE Assort SM 4015 MOZART</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_016</td>
+									<td>
+										BE Assort SM 4016 MARENGO</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_017</td>
+									<td>
+										BE Assort SM 4017 DEURNE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_018</td>
+									<td>
+										BE Assort SM 4018 FRUITHOF</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_019</td>
+									<td>
+										BE Assort SM 4019 LEON THEODOR</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_020</td>
+									<td>
+										BE Assort SM 4990 DUMMY SITE PLANO</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_021</td>
+									<td>
+										BE Assort SM 4021 VERHAEREN</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_022</td>
+									<td>
+										BE Assort SM 4022 REET</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_023</td>
+									<td>
+										BE Assort 4023 KORTRIJK NOORD</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_024</td>
+									<td>
+										BE Assort SM 4024 BOONDAEL</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_025</td>
+									<td>
+										BE Assort SM 4025 ST ROCHUS</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_026</td>
+									<td>
+										BE Assort SM 4026 AMAY</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_027</td>
+									<td>
+										BE Assort SM 4027 HORNU</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_028</td>
+									<td>
+										BE Assort SM 4028 GENT STER</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_029</td>
+									<td>
+										BE Assort SM 4029 JAMBES</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_030</td>
+									<td>
+										BE Assort SM 4030 WEZEMBEEK</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_031</td>
+									<td>
+										BE Assort SM 4031 CROIX DE GUERRE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_032</td>
+									<td>
+										BE Assort SM 4032 WATERLOO</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_033</td>
+									<td>
+										BE Assort SM 4033 CH QUINT</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_034</td>
+									<td>
+										BE Assort SM 4034 GENVAL</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-local">
+									<td class="t-ass-type t-ass-type-local text-center">
+										SM local</td>
+									<td class="t-ass-lm text-center">
+										BASA_035</td>
+									<td>
+										BE Assort SM 4035 IEPER</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ESSIE</td>
+									<td>
+										Essie assortment</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_EWINE</td>
+									<td>
+										BE Assortment Wine Online</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ISPAV</td>
+									<td>
+										BE Assortment ISP Lamb & Veal</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ISPB3</td>
+									<td>
+										BE Assortment Butchery 3.0</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ISPBS</td>
+									<td>
+										BE Assortment ISP Beef & Specialities</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ISPFI</td>
+									<td>
+										BE Assortment ISP Fish</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ISPHA</td>
+									<td>
+										BE Assortment ISP Minced</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ISPPO</td>
+									<td>
+										BE Assortment ISP Pork</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_LODP</td>
+									<td>
+										LODP</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_ESSIE</td>
+									<td>
+										BE Assortment MAP Lamb</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_MAPAV</td>
+									<td>
+										BE Assortment MAP Lamb & Veal</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-categories">
+									<td class="t-ass-type t-ass-type-spcat text-center">
+										SM specific categories</td>
+									<td class="t-ass-lm text-center">
+										BAOT_MAPBA</td>
+									<td>
+										BE Assortment MAP Base</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										BASA_222</td>
+									<td>
+										Essie assortment</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										BASA_223</td>
+									<td>
+										BE Assort Shop 223</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										BASA_224</td>
+									<td>
+										BE Assort Q8 224</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										BASA_227</td>
+									<td>
+										BE Assort Proxy 227</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										BASA_243</td>
+									<td>
+										BE Assort AD 243
+									</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row mt-4">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Planogram
+						tool cluster 1: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="CL01" selected>CL101 - Cluster 1 / Lineair 01
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Planogram
+						tool cluster 2: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="CL01" selected>CL201 - Cluster 2 / Lineair 01
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Planogram
+						tool cluster 3: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="CL03" selected>CL301 - Cluster 3 / Lineair 01
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Planogram
+						tool cluster 4: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="CL04" selected>CL401 - Cluster 4 / Lineair 01
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Belgium-->

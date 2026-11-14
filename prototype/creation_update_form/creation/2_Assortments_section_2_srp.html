@@ -1,0 +1,74 @@
+<style>
+
+</style>
+
+<!-- Start - Subpanel - SRP -->
+<div id="section2" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">SRP</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Code:
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" checked="" id="checkboxExample2">
+							<label for="checkboxExample2"></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Facing
+						width number:</label>
+					<div class="col-sm-5">
+						<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="25">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Facing
+						depth number:</label>
+					<div class="col-sm-5">
+						<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="25">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Facing
+						height number:</label>
+					<div class="col-sm-5">
+						<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="58">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">SRP picture: <span
+							class="required">*</span></label>
+					<div class="col-sm-5">
+						<div class="fileupload fileupload-new" data-provides="fileupload">
+							<div class="input-append">
+								<div class="uneditable-input">
+									<i class="fas fa-file fileupload-exists"></i>
+									<span class="fileupload-preview"></span>
+								</div>
+								<span class="btn btn-default btn-file">
+									<span class="fileupload-exists">Change</span>
+									<span class="fileupload-new">Select file</span>
+									<input type="file" onchange="uploadAndShowImage()" />
+								</span>
+								<a href="#" onclick="removeAndHideImage()" class="btn btn-default fileupload-exists"
+									data-dismiss="fileupload">Remove</a>
+							</div>
+						</div>
+						<img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - SRP -->

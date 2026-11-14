@@ -501,6 +501,106 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-left: 45%;
 }
 
+/* Styles for Assortments */
+.prepend-unit-btn {
+    font-size: smaller !important;
+    background: snow;
+    width: 40px;
+}
+
+.t-assortment tr td {
+    vertical-align: middle !important;
+}
+
+.t-ass-type {
+    width: 1px;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.t-ass-type-manual {
+    background-color: lightyellow;
+}
+
+.t-ass-type-local {
+    background-color: linen;
+}
+
+.t-ass-type-spcat {
+    background-color: aliceblue;
+}
+
+.t-ass-type-aff {
+    background-color: ghostwhite;
+}
+
+.t-ass-type-ecom {
+    background-color: lavender;
+}
+
+.t-ass-type-exp {
+    background-color: honeydew;
+}
+
+.t-ass-type-stm {
+    background-color: peachpuff;
+}
+
+.t-ass-type-c1 {
+    background-color: lightyellow;
+}
+
+.t-ass-type-c2 {
+    background-color: linen;
+}
+
+.t-ass-type-c3 {
+    background-color: aliceblue;
+}
+
+.t-ass-type-c4 {
+    background-color: ghostwhite;
+}
+
+.t-ass-lm {
+    width: 1px;
+    color: darkgreen;
+    font-size: smaller;
+}
+
+.t-jda-btn-exp-col {
+    font-size: large;
+    color: darkgreen;
+}
+
+.t-jda-title-line {
+    font-weight: bold;
+}
+
+.t-jda-sub-lines p {
+    margin-left: 0;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    font-size: smaller;
+}
+
+.t-planogram-banner {
+    width: 1px;
+    background-color: lightyellow;
+    vertical-align: middle !important;
+}
+
+.t-planogram-banner p {
+    font-weight: bold;
+    font-size: smaller !important;
+}
+
+.t-no-planogram-lm {
+    width: 1px;
+    vertical-align: middle !important;
+    font-weight: bold;
+    color: darkgreen;
+}
 
 .btn-expand-collapse {
     float: right;
@@ -508,11 +608,7 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-right: 15px !important;
 }
 
-.prepend-unit-btn {
-    font-size: smaller;
-    background: snow;
-    width: 40px;
-}
+
 
 .tab-index {
     width: 80px !important;

@@ -1,0 +1,207 @@
+<style>
+	/* Styles for Assortments - same as for BE section*/
+	.t-assortment tr td {
+		vertical-align: middle !important;
+	}
+
+	.t-ass-type {
+		width: 1px;
+		font-weight: bold;
+		font-size: smaller;
+	}
+
+	.t-ass-type-manual {
+		background-color: lightyellow;
+	}
+
+	.t-ass-type-local {
+		background-color: linen;
+	}
+
+	.t-ass-type-spcat {
+		background-color: aliceblue;
+	}
+
+	.t-ass-type-aff {
+		background-color: ghostwhite;
+	}
+
+	.t-ass-lm {
+		width: 1px;
+		color: darkgreen;
+		font-size: smaller;
+	}
+</style>
+
+<!-- Start - Subpanel - Luxembourg-->
+<div id="section4" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Luxembourg</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<!-- Assortments toolbar -->
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1">
+						<div class="row" style="padding:20px;background:mintcream;">
+							<label class="col-sm-1 control-label control-label-sm text-sm-right pt-1">Show:
+							</label>
+							<div class="col-sm-3 text-center">
+								<div class="btn-group d-flex" role="group">
+									<a class="btn btn-primary btn-xs w-100 active" role="button" id="btnAllLu">All</a>
+									<a class="btn btn-default btn-xs w-100" role="button"
+										id="btnSelectedLu">Selected</a>
+								</div>
+							</div>
+							<label class="col-sm-1 control-label control-label-sm text-sm-right pt-1">for:
+							</label>
+							<div class="col-sm-3">
+								<select id="luxembourgAssortmentFilter"
+									class="form-control form-control-sm mb-0 assFilter">
+									<option value="all" selected>All</option>
+									<option value="sm-manual">SM manual</option>
+									<option value="sm-affiliates">Affiliates</option>
+								</select>
+							</div>
+							<div class="col-lg-3 text-right">
+								<button class="btn btn-sm btn-link" type="button" onclick="addRow();">
+									<span class="fas fa-file-excel"></span> Download
+									to Excel
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Assortments table -->
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1">
+						<table class="table table-responsive-md table-sm mb-0 table-hover">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 25%;">Type</th>
+									<th class="text-center" style="width: 20%;">Layout module</th>
+									<th style="width: 45%;">Description</th>
+									<th class="text-center" style="width: 10%;"></th>
+								</tr>
+							</thead>
+							<tbody class="t-assortment" id="tableBodyLu">
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM manual</td>
+									<td class="t-ass-lm text-center">
+										LASA_201</td>
+									<td>
+										LU Assort SM Center 201</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM manual</td>
+									<td class="t-ass-lm text-center">
+										LASA_213</td>
+									<td>
+										LU Assort City 213</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM manual</td>
+									<td class="t-ass-lm text-center">
+										LASA_231</td>
+									<td>
+										LU Assort SM Border BE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM manual</td>
+									<td class="t-ass-lm text-center">
+										LASA_232</td>
+									<td>
+										LU Assort SM Border FR</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM manual</td>
+									<td class="t-ass-lm text-center">
+										LASA_233</td>
+									<td>
+										LU Assort SM Border Schmiede</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-manual">
+									<td class="t-ass-type t-ass-type-manual text-center">
+										SM manual</td>
+									<td class="t-ass-lm text-center">
+										LASA_234</td>
+									<td>
+										LU Assort SM Border GE</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										LASA_228</td>
+									<td>
+										LU Assort Proxy & Shop 228</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch
+												checked="checked" />
+										</div>
+									</td>
+								</tr>
+								<tr class="sm-affiliates">
+									<td class="t-ass-type t-ass-type-aff text-center">
+										Affiliates</td>
+									<td class="t-ass-lm text-center">
+										LASA_245</td>
+									<td>
+										LU Assort AD 245</td>
+									<td class="text-center">
+										<div class="switch switch-sm switch-success">
+											<input type="checkbox" name="switch" data-plugin-ios-switch />
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Luxembourg-->

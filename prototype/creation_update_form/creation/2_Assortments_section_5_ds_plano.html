@@ -1,0 +1,155 @@
+<style>
+	/* Styles for Assortments*/
+	.t-planogram-banner {
+		width: 1px;
+		background-color: lightyellow;
+		vertical-align: middle !important;
+	}
+
+	.t-planogram-banner p {
+		font-weight: bold;
+		font-size: smaller !important;
+	}
+</style>
+
+<!-- Start - Subpanel - Planogram JDA - DS -->
+<div id="section5" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Planogram</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<!-- toolbar -->
+						<div class="row p-2" style="background:mintcream;">
+							<div class="col-lg-9 ">
+								<div class="checkbox-custom checkbox-default mt-2">
+									<input type="checkbox" id="chkPlanogramNotReq"
+										onchange="App.FVAssortment.onDSPlanogramInfoNotRequested()">
+									<label for="checkboxExample1">Planogram information not required</label>
+								</div>
+							</div>
+							<div class="col-lg-3 text-right">
+								<div id="mBanners" class="input-group-append">
+									<button tabindex="-1" class="btn btn-xs btn-link" type="button"><span
+											class="fa fa-plus"></span>&nbsp;&nbsp;Add Banner
+									</button>
+									<button tabindex="-1" data-toggle="dropdown" class="btn btn-link dropdown-toggle"
+										type="button">
+										<span class="caret"></span>
+									</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a id="b1" class="dropdown-item" href="#"
+											onclick="App.FVAssortment.onBannerSelected(this.id)">Shop & Go</a>
+										<a id="b2" class="dropdown-item" href="#"
+											onclick="App.FVAssortment.onBannerSelected(this.id)">Maxi</a>
+										<a id="b3" class="dropdown-item" href="#"
+											onclick="App.FVAssortment.onBannerSelected(this.id)">Mega-Maxi</a>
+										<a id="b4" class="dropdown-item" href="#"
+											onclick="App.FVAssortment.onBannerSelected(this.id)">Profi</a>
+										<a id="b5" class="dropdown-item" href="#"
+											onclick="App.FVAssortment.onBannerSelected(this.id)">All</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<table id="tableDSPlanogram" class="table table-responsive-md table-hover mb-3">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 15%;">Banner</th>
+									<th class="text-center" style="width: 75%;">Information</th>
+									<th class="text-center" style="width: 10%;"></th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								<tr id="rowb1" style="display: none;">
+									<td class="t-planogram-banner text-center">
+										<p class="mb-0">Shop & Go</p>
+									</td>
+									<td class="text-center">
+										<textarea class="form-control form-control-sm" rows="6" data-plugin-maxlength
+											maxlength="500" autocomplete="off" spellcheck="false"
+											autocorrect="off"></textarea>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onBannerRemoved('b1')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowb2" style="display: none;">
+									<td class="t-planogram-banner text-center">
+										<p class="mb-0">Maxi</p>
+									</td>
+									<td class="text-center">
+										<textarea class="form-control form-control-sm" rows="6" data-plugin-maxlength
+											maxlength="500" autocomplete="off" spellcheck="false"
+											autocorrect="off"></textarea>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onBannerRemoved('b2')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowb3" style="display: none;">
+									<td class="t-planogram-banner text-center">
+										<p class="mb-0">Mega-Maxi</p>
+									</td>
+									<td class="text-center">
+										<textarea class="form-control form-control-sm" rows="6" data-plugin-maxlength
+											maxlength="500" autocomplete="off" spellcheck="false"
+											autocorrect="off"></textarea>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onBannerRemoved('b3')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowb4" style="display: none;">
+									<td class="t-planogram-banner text-center">
+										<p class="mb-0">Profi</p>
+									</td>
+									<td class="text-center">
+										<textarea class="form-control form-control-sm" rows="6" data-plugin-maxlength
+											maxlength="500" autocomplete="off" spellcheck="false"
+											autocorrect="off"></textarea>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onBannerRemoved('b4')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowb5" style="display: none;">
+									<td class="t-planogram-banner text-center">
+										<p class="mb-0">All</p>
+									</td>
+									<td class="text-center">
+										<textarea class="form-control form-control-sm" rows="6" data-plugin-maxlength
+											maxlength="500" autocomplete="off" spellcheck="false"
+											autocorrect="off"></textarea>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onBannerRemoved('b5')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Planogram JDA - DS -->

@@ -1,0 +1,270 @@
+<style>
+	/* Styles for Assortments */
+	.t-assortment tr td {
+		vertical-align: middle !important;
+	}
+
+	.t-ass-type {
+		width: 1px;
+		font-weight: bold;
+		font-size: smaller;
+	}
+
+	.t-ass-type-c1 {
+		background-color: lightyellow;
+	}
+
+	.t-ass-type-c2 {
+		background-color: linen;
+	}
+
+	.t-ass-type-c3 {
+		background-color: aliceblue;
+	}
+
+	.t-ass-type-c4 {
+		background-color: ghostwhite;
+	}
+
+	.t-ass-lm {
+		width: 1px;
+		color: darkgreen;
+		font-size: smaller;
+	}
+
+	.t-jda-btn-exp-col {
+		font-size: large;
+		color: darkgreen;
+	}
+
+	.t-jda-title-line {
+		font-weight: bold;
+	}
+
+	.t-jda-sub-lines p {
+		margin-top: -5px;
+		margin-bottom: -5px;
+		font-size: smaller;
+	}
+</style>
+
+<!-- Start - Subpanel - JDA driven -->
+<div id="section1" class="row">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+
+				<h2 class="card-title">JDA driven</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<table class="table table-responsive-md table-hover mb-3 mt-3">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 10%;">Cluster
+									</th>
+									<th class="text-center" style="width: 10%;">Linear
+									</th>
+									<th style="width: 30%;">Details</th>
+									<th class="text-center" style="width: 20%;">Layout
+										module</th>
+									<th class="text-center" style="width: 20%;">Planogram
+										key</th>
+									<th class="text-center" style="width: 7%;"></th>
+								</tr>
+							</thead>
+							<tbody class="t-assortment" id="tableBody">
+								<tr id="row1">
+									<td id="cat" class="t-ass-type t-ass-type-c1 text-center">
+										C1</td>
+									<td class="t-ass-lm text-center">
+										L06</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											302_C1_L06_6M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A323</p>
+											<p>Subcategory: A323001</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10001260</td>
+									<td class="text-center">
+										130835</td>
+									<td class="text-center">
+										<a href="#" onclick="javascript:App.FVAssortment.showMoreJDA()"><i
+												id="expJdaIcon"
+												class="fas fa-solid fa-chevron-down t-jda-btn-exp-col"></i></a>
+									</td>
+								</tr>
+								<tr id="row2" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c1 text-center">
+										C1</td>
+									<td class="t-ass-lm text-center">
+										L08</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											302_C1_L08_11M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A323</p>
+											<p>Subcategory: A323001</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10001264</td>
+									<td class="text-center">
+										130844</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row3" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c1 text-center">
+										C1</td>
+									<td class="t-ass-lm text-center">
+										L06</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											302_C1_L06_15M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A321</p>
+											<p>Subcategory: A321102</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10001264</td>
+									<td class="text-center">
+										130844</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row7" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c2 text-center">
+										C2</td>
+									<td class="t-ass-lm text-center">
+										L11</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											850_C2_L11_75M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A720</p>
+											<p>Subcategory: A720225</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10008599</td>
+									<td class="text-center">
+										131315</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row4" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c3 text-center">
+										C3</td>
+									<td class="t-ass-lm text-center">
+										L07</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											402_C3_L07_25M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A421</p>
+											<p>Subcategory: A421070</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10002250</td>
+									<td class="text-center">
+										131220</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row5" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c3 text-center">
+										C3</td>
+									<td class="t-ass-lm text-center">
+										L11</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											402_C3_L11_48M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A421</p>
+											<p>Subcategory: A421070</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10003445</td>
+									<td class="text-center">
+										131222</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row6" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c3 text-center">
+										C3</td>
+									<td class="t-ass-lm text-center">
+										L15</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											402_C1_L15_51M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: A430</p>
+											<p>Subcategory: A430215</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10003899</td>
+									<td class="text-center">
+										131225</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row8" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c4 text-center">
+										C4</td>
+									<td class="t-ass-lm text-center">
+										L20</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											520_C4_L20_54M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: E020</p>
+											<p>Subcategory: E020010</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10001178</td>
+									<td class="text-center">
+										132000</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+								<tr id="row9" class="hCluster" style="display: none;">
+									<td id="cat" class="t-ass-type t-ass-type-c4 text-center">
+										C4</td>
+									<td class="t-ass-lm text-center">
+										L30</td>
+									<td>
+										<div id="mainTitle" class="t-jda-title-line">
+											520_C4_L30_85M</div>
+										<div class="t-jda-sub-lines ml-0 ">
+											<p>Cateogory: E020</p>
+											<p>Subcategory: E020115</p>
+										</div>
+									</td>
+									<td class="text-center">
+										BE10001185</td>
+									<td class="text-center">
+										132152</td>
+									<td class="actions-hover actions-fade text-center">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - JDA driven -->

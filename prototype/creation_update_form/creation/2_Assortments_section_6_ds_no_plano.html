@@ -1,0 +1,147 @@
+<style>
+	/* Styles for Assortments*/
+	.t-no-planogram-lm {
+		width: 1px;
+		vertical-align: middle !important;
+		font-weight: bold;
+		color: darkgreen;
+	}
+</style>
+
+<!-- Start - Subpanel - No Planogram - DS -->
+<div id="section6" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Non-Planogram</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<!-- Assortments toolbar -->
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<div class="row p-3" style="background:mintcream;">
+							<label class="col-sm-2 control-label control-label-sm text-sm-right pt-2">Search:
+							</label>
+							<div class="col-sm-6">
+								<select id="layoutModulesSelector" data-plugin-selectTwo
+									class="form-control form-control-sm populate ctrl"
+									data-plugin-options='{ "minimumInputLength": 3}'
+									onchange="App.FVAssortment.addSelectedLM()">
+									<option value="" selected></option>
+									<option value="RS00000544">RS00000544 - TEMPO PRIRODNA KOZMETIKA 2</option>
+									<option value="RS00000531">RS00000531 - TEMPO LICE 4</option>
+									<option value="RS00000561">RS00000561 - TEMPO NP TEKSTIL 3</option>
+									<option value="RS00000587">RS00000587 - MAXI NP CIGARETE 1</option>
+									<option value="RS00000588">RS00000588 - MAXI NP CIGARETE 2</option>
+									<option value="RS00000589">RS00000589 - MAXI NP KANCELARIJSKI STAMPA I
+										KNJIGE 1</option>
+									<option value="RS00000590">RS00000590 - MAXI NP KANCELARIJSKI STAMPA I
+										KNJIGE 2</option>
+								</select>
+							</div>
+							<div class="col-sm-4 text-right">
+								<button class="btn btn-default" type="button"
+									onclick="App.FVAssortment.pasteLMFromExcel()"><i class="fas fa-paste"></i>&nbsp;Copy
+									/ Paste</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Assortments table -->
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<table class="table table-responsive-md table-hover">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 20%;">Layout module</th>
+									<th style="width: 70%;">Description</th>
+									<th class="text-center" style="width: 10%;"></th>
+								</tr>
+							</thead>
+							<tbody id="tableBodyDSNP">
+								<tr id="row_RS00000544" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000544</td>
+									<td>
+										TEMPO PRIRODNA KOZMETIKA 2</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000544')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="row_RS00000531" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000531</td>
+									<td>
+										TEMPO LICE 4</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000531')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="row_RS00000561" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000561</td>
+									<td>
+										TEMPO NP TEKSTIL 3</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000561')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="row_RS00000587" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000587</td>
+									<td>
+										MAXI NP CIGARETE 1</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000587')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="row_RS00000588" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000588</td>
+									<td>
+										MAXI NP CIGARETE 2</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000588')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="row_RS00000589" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000589</td>
+									<td>
+										MAXI NP KANCELARIJSKI STAMPA I KNJIGE 1</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000589')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="row_RS00000590" style="display: none;">
+									<td class="t-no-planogram-lm text-center">
+										RS00000590</td>
+									<td>
+										MAXI NP KANCELARIJSKI STAMPA I KNJIGE 2</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"
+											onclick="App.FVAssortment.onNPLayoutModuleRemoved('RS00000590')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<!-- End - Subpanel - No Planogram - DS -->
