@@ -1,0 +1,107 @@
+<style>
+	/** Styles for Prices */
+	.sales-price-badge {
+		color: darkgreen;
+	}
+
+	.sales-price-uom {
+		font-size: smaller !important;
+		background: snow;
+		width: 75px;
+	}
+
+	.sales-price-perc {
+		font-size: smaller !important;
+		background: snow;
+	}
+</style>
+
+<!-- Start - Subpanel - Sales prices -->
+<div id="section3" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Sales prices</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-3 offset-lg-3 text-center">
+						<span class="badge badge-info sBadge">ISP</span>
+					</div>
+					<div class="col-lg-3 text-center">
+						<span class="badge badge-info sBadge">RSP</span>
+					</div>
+				</div>
+				<div class="row mb-2">
+					<div class="col-lg-3 offset-lg-3 text-center">
+						<label class="col-form-label sales-price-badge" for="formGroupExampleInput">Introduction
+							Sales Price</label>
+					</div>
+					<div class="col-lg-3 text-center">
+						<label class="col-form-label sales-price-badge" for="formGroupExampleInput">Recommended
+							Sales Price</label>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"></label>
+					<div class="col-sm-3">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default sales-price-uom" type="button">EA</button>
+							</span>
+							<input type="text" class="form-control form-control-sm text-center" autocomplete="off"
+								autocorrect="off" spellcheck="false" value="0.00" onClick="this.select();"
+								onchange="this.value = Number.parseFloat(this.value).toFixed(4)">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<input id="rsp" type="text" class="form-control form-control-sm text-center" autocomplete="off"
+							autocorrect="off" spellcheck="false" value="0.00" onchange="App.FVPricesNew.updateMop()"
+							onClick="this.select();">
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1"></label>
+					<div class="col-sm-3">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default sales-price-uom" type="button">CV</button>
+							</span>
+							<input type="text" class="form-control form-control-sm text-center" autocomplete="off"
+								autocorrect="off" spellcheck="false" value="0.00" onClick="this.select();"
+								onchange="this.value = Number.parseFloat(this.value).toFixed(4)">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-2 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Margin on
+						product (MOP): </label>
+					<div class="col-sm-3">
+						<div class="input-group input-group-sm">
+							<input id="mop" type="text" class="form-control form-control-sm text-center"
+								autocomplete="off" autocomplete="off" autocorrect="off" spellcheck="false" value="0.00"
+								readonly>
+							<span class="input-group-append">
+								<button class="btn btn-default sales-price-perc" type="button">%</button>
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="input-group input-group-sm">
+							<input type="text" class="form-control form-control-sm text-center" autocomplete="off"
+								autocomplete="off" autocorrect="off" spellcheck="false" value="0.00" readonly>
+							<span class="input-group-append">
+								<button class="btn btn-default sales-price-perc" type="button">%</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Sales prices -->

@@ -1,0 +1,239 @@
+<style>
+	/* Styles for Links */
+	.links-thead th {
+		font-size: smaller !important;
+	}
+
+	.links_row td {
+		vertical-align: middle;
+	}
+
+	.t-links-type {
+		width: 1px;
+		font-weight: bold;
+		background-color: lightyellow;
+	}
+
+	.t-links-type p {
+		font-size: x-small;
+		line-height: 15px;
+	}
+
+
+	.t-links-details .h-top {
+		color: darkred;
+		font-style: italic;
+	}
+
+	.t-links-details .title {
+		font-weight: bold;
+	}
+</style>
+
+<!-- Start - Subpanel - Links -->
+<div id="section1" class="row">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Links</h2>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-11 offset-lg-1">
+						<!-- Links toolbar -->
+						<div class="form-group row p-2" style="background:mintcream;">
+							<div class="col-lg-1 text-center pt-1">
+							</div>
+							<div class="col-lg-5 ">
+								<div class="input-group-append">
+									<button tabindex="-1" class="btn btn-sm btn-link" type="button"><span
+											class="fa fa-plus mr-2"></span>Add
+										more</button>
+									<button tabindex="-1" data-toggle="dropdown" class="btn btn-link dropdown-toggle"
+										type="button">
+										<span class="caret"></span>
+									</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a class="dropdown-item" href="#">Display</a>
+										<a class="dropdown-item" href="#">Mini
+											pallet</a>
+										<a class="dropdown-item" href="#">Offer</a>
+										<a class="dropdown-item" href="#">Transition</a>
+										<a class="dropdown-item" href="#">Hierarchy</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 text-right">
+								<button class="btn btn-sm btn-link" type="button" onclick="addRow();">
+									<span class="fas fa-file-excel"></span> Download
+									to Excel
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-11 offset-lg-1">
+						<table class="table table-responsive-md table-hover mb-3">
+							<thead>
+								<tr class="links-thead">
+									<th class="text-center" style="width: 10%;">Type</th>
+									<th class="text-center" style="width: 22%;">Component GTIN</th>
+									<th style="width: 30%;">Component SAP ID & Description</th>
+									<th class="text-center" style="width: 13%;">Component UoM</th>
+									<th class="text-center" style="width: 17%;">Number of components</th>
+									<th class="text-center" style="width: 7%;"></th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								<tr class="links_row">
+									<td class="t-links-type text-center">
+										<p class="mb-0">Mini pallet</p>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="123456789012"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="t-links-details">
+										<div class="h-top">
+											12345678
+										</div>
+										<div class="title">Some 25c
+											links description</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="EA"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input id="f5" type="text" value="315"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr class="links_row">
+									<td class="t-links-type text-center">
+										<p class="mb-0">Offer</p>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="1234567885212"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="t-links-details">
+										<div class="h-top">
+											98765432
+										</div>
+										<div class="title">Other Off links description</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="CV"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input id="f5" type="text" value="210"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr class="links_row">
+									<td class="t-links-type text-center">
+										<p class="mb-0">Transition</p>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="123459925012"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="t-links-details">
+										<div class="h-top">
+											65432987
+										</div>
+										<div class="title">Transition links description</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="EA"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="915"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr class="links_row">
+									<td class="t-links-type text-center">
+										<p class="mb-0">Hierarchy</p>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="123456789012"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="t-links-details">
+										<div class="h-top">
+											43265987
+										</div>
+										<div class="title">Hierarchy
+											links description</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="CV"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="row">
+											<input type="text" value="128"
+												class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+												autocomplete="off" autocorrect="off" spellcheck="false">
+										</div>
+									</td>
+									<td class="text-center actions-hover actions-fade">
+										<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Links -->

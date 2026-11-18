@@ -106,57 +106,6 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: small;
 }
 
-.nutri-score .btn {
-    width: 50px;
-    background-color: #ccc;
-    color: #fff;
-    opacity: 0.2;
-}
-
-.nutri-score .btn.selected-score {
-    opacity: 1;
-    font-size: x-large;
-}
-
-.nutri-score .btn-score-a {
-    background-color: #4CAF50;
-}
-
-.nutri-score .btn-score-b {
-    background-color: #A3D900;
-}
-
-.nutri-score .btn-score-c {
-    background-color: #FFC800;
-}
-
-.nutri-score .btn-score-d {
-    background-color: #FF6F00;
-}
-
-.nutri-score .btn-score-e {
-    background-color: #FF3C3C;
-}
-
-.nutri-score .btn-score-na {
-    background-color: grey;
-}
-
-.nutri-table-input {
-    border: 1px solid #ced4da;
-    text-align: right;
-}
-
-.nutri-table-lbl {
-    vertical-align: middle !important;
-}
-
-.nutri-unit {
-    background-color: floralwhite;
-    text-align: center;
-    width: 75px;
-    min-height: 32px !important;
-}
 
 #datatable-pdate span {
     display: none;
@@ -347,6 +296,14 @@ ul.simple-bullet-list li.darkcyan:before {
 
 
 /* Styles for support packaging */
+.sp-thead th {
+    vertical-align: middle !important;
+}
+
+.sp-thead th code {
+    font-size: smaller !important;
+}
+
 .sp_row td {
     vertical-align: middle;
 }
@@ -606,6 +563,199 @@ ul.simple-bullet-list li.darkcyan:before {
     float: right;
     font-size: x-large !important;
     margin-right: 15px !important;
+}
+
+/* Styles for Prices */
+.price-str-header {
+    float: right;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.price-str-table tr td {
+    padding-top: 8px !important;
+    padding-bottom: 0px !important;
+    border: 0 !important;
+}
+
+.price-str-table-cell-1 {
+    vertical-align: middle !important;
+    font-size: xx-small;
+    text-align: right;
+    color: steelblue;
+    width: 15%;
+}
+
+.price-str-table-cell-2 {
+    vertical-align: middle !important;
+    text-align: left;
+    font-size: xx-small;
+    width: 20%;
+}
+
+.price-str-table-cell-3 {
+    vertical-align: middle !important;
+    text-align: left;
+    font-size: xx-small;
+    color: darkgrey;
+    width: 15%;
+}
+
+.price-str-table-cell-5 {
+    text-align: center;
+    width: 22%;
+}
+
+.price-str-table-cell-6 {
+    text-align: right;
+    width: 23%;
+}
+
+.price-str-table-cell-7 {
+    text-align: center;
+    vertical-align: middle;
+    width: 5%;
+}
+
+.linkAdd {
+    font-size: xx-small;
+    padding: 0%;
+}
+
+.sales-price-badge {
+    color: darkgreen;
+}
+
+.sales-price-uom {
+    font-size: smaller !important;
+    background: snow;
+    width: 75px;
+}
+
+.sales-price-perc {
+    font-size: smaller !important;
+    background: snow;
+}
+
+.sales-price-banner-sel {
+    margin-top: -10px;
+}
+
+.sales-price-info {
+    color: darkgreen;
+}
+
+#tableDSSalesPrices tbody tr td {
+    vertical-align: middle;
+}
+
+.sales-price-banner-uom {
+    width: 1px;
+    background-color: lightyellow;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+/* Styles for Links */
+.links-thead th {
+    font-size: smaller !important;
+}
+
+.links_row td {
+    vertical-align: middle;
+}
+
+.t-links-type {
+    width: 1px;
+    font-weight: bold;
+    background-color: lightyellow;
+}
+
+.t-links-type p {
+    font-size: x-small;
+    line-height: 15px;
+}
+
+
+.t-links-details .h-top {
+    color: darkred;
+    font-style: italic;
+}
+
+.t-links-details .title {
+    font-weight: bold;
+}
+
+/** Styles for B2C */
+.c-unit {
+    width: 75px;
+    background-color: floralwhite !important;
+}
+
+.chk-ipba {
+    margin-left: 45%;
+}
+
+.nutri-score .btn {
+    width: 50px;
+    background-color: #ccc;
+    color: #fff;
+    opacity: 0.2;
+}
+
+.nutri-score .btn.selected-score {
+    opacity: 1;
+    font-size: x-large;
+}
+
+.nutri-score .btn-score-a {
+    background-color: #4CAF50;
+}
+
+.nutri-score .btn-score-b {
+    background-color: #A3D900;
+}
+
+.nutri-score .btn-score-c {
+    background-color: #FFC800;
+}
+
+.nutri-score .btn-score-d {
+    background-color: #FF6F00;
+}
+
+.nutri-score .btn-score-e {
+    background-color: #FF3C3C;
+}
+
+.nutri-score .btn-score-na {
+    background-color: grey;
+}
+
+.nutri-table-input {
+    border: 1px solid #ced4da;
+    text-align: right;
+}
+
+.nutri-table tbody tr td {
+    vertical-align: middle !important;
+}
+
+.nutri-table-lbl {
+    font-size: x-small;
+}
+
+.nutri-unit {
+    background-color: floralwhite;
+    text-align: center;
+    width: 50px;
+    font-size: xx-small !important;
+}
+
+.perc-unit {
+    width: 75px;
+    background-color: snow !important;
+    font-size: smaller !important;
 }
 
 

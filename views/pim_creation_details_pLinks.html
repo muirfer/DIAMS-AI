@@ -5,25 +5,22 @@
 			<div class="col-lg-12">
 				<section class="card card-transparent mb-4">
 					<header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-						</div>
 						<h2 class="card-title">Links</h2>
 					</header>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-lg-11 offset-lg-1">
 								<!-- Links toolbar -->
-								<div class="form-group row" style="padding:20px;background:mintcream;">
-									<div class="col-lg-1 text-center" style="padding-top: 10px;">
+								<div class="form-group row p-2" style="background:mintcream;">
+									<div class="col-lg-1 text-center pt-1">
 										<i class="fas fa-link  i-link i-link-f" data-toggle="tooltip"
 											data-placement="left" title="Source: GDSN"
 											style="margin-top:10px;font-size: larger;"></i>
 									</div>
 									<div class="col-lg-5 ">
 										<div class="input-group-append">
-											<button tabindex="-1" class="btn btn-link" type="button"><span
-													class="fa fa-plus"></span>&nbsp;&nbsp;Add
+											<button tabindex="-1" class="btn btn-sm btn-link" type="button"><span
+													class="fa fa-plus mr-2"></span>Add
 												more</button>
 											<button tabindex="-1" data-toggle="dropdown"
 												class="btn btn-link dropdown-toggle" type="button">
@@ -38,13 +35,9 @@
 												<a class="dropdown-item" href="#">Hierarchy</a>
 											</div>
 										</div>
-										<!-- <button id="btnAdd" class="btn btn-link" type="button"
-																	onclick="addRow();">
-																	<span class="fa fa-plus fa-sm px-1"></span> Add more
-																</button> -->
 									</div>
 									<div class="col-lg-6 text-right">
-										<button class="btn btn-link" type="button" onclick="addRow();">
+										<button class="btn btn-sm btn-link" type="button" onclick="addRow();">
 											<span class="fas fa-file-excel"></span> Download
 											to Excel
 										</button>
@@ -56,55 +49,49 @@
 							<div class="col-lg-11 offset-lg-1">
 								<table class="table table-responsive-md table-hover mb-3">
 									<thead>
-										<tr>
-											<th style="text-align: center;width: 10%;">Type</th>
-											<th style="text-align: center;width: 17%;">Component
-												GTIN</th>
-											<th style="width: 32%;">Component SAP ID &
-												Description</th>
-											<th style="text-align: center;width: 17%;">Component
-												UoM</th>
-											<th style="text-align: center;width: 17%;">Number of
-												components</th>
-											<th style="text-align: center;width: 7%;"></th>
+										<tr class="links-thead">
+											<th class="text-center" style="width: 10%;">Type</th>
+											<th class="text-center" style="width: 22%;">Component GTIN</th>
+											<th style="width: 30%;">Component SAP ID & Description</th>
+											<th class="text-center" style="width: 13%;">Component UoM</th>
+											<th class="text-center" style="width: 17%;">Number of components</th>
+											<th class="text-center" style="width: 7%;"></th>
 										</tr>
 									</thead>
 									<tbody id="tableBody">
-										<tr id="row1">
-											<td id="cat"
-												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-												<p style="margin-bottom: 0;">Mini pallet</p>
+										<tr class="links_row">
+											<td class="t-links-type text-center">
+												<p class="mb-0">Mini pallet</p>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="123456789012" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input type="text" value="123456789012"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="vertical-align: middle;">
-												<div id="sapId" class="title-header">12345678
+											<td class="t-links-details">
+												<div class="h-top">
+													12345678
 												</div>
-												<div id="mainTitle" class="title-line">Some 25c
+												<div class="title">Some 25c
 													links description</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<div class="col-lg-8 offset-lg-2">
-														<input type="text" value="EA" style="text-align: center;"
-															class="form-control col-lg-8 offset-lg-2" placeholder="">
-													</div>
+													<input type="text" value="EA"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="315" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input id="f5" type="text" value="315"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;" class="actions-hover actions-fade">
-												<!-- <a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a> -->
+											<td class="text-center actions-hover actions-fade">
 												<button class="btn btn-default c-link i-link-c" type="button"
 													tabindex="-1"><i class="fas fa-copy" data-toggle="tooltip"
 														data-placement="left"
@@ -112,117 +99,109 @@
 												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
 											</td>
 										</tr>
-										<tr id="row2">
-											<td id="cat"
-												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-												<p style="margin-bottom: 0;">Offer</p>
+										<tr class="links_row">
+											<td class="t-links-type text-center">
+												<p class="mb-0">Offer</p>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="1234567885212" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input type="text" value="1234567885212"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="vertical-align: middle;">
-												<div id="sapId" class="title-header">98765432
+											<td class="t-links-details">
+												<div class="h-top">
+													98765432
 												</div>
-												<div id="mainTitle" class="title-line">Other Off
-													links description</div>
+												<div class="title">Other Off links description</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<div class="col-lg-8 offset-lg-2">
-														<input type="text" value="CV" style="text-align: center;"
-															class="form-control col-lg-8 offset-lg-2" placeholder="">
-													</div>
+													<input type="text" value="CV"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input id="f5" type="text" value="210" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input id="f5" type="text" value="210"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;" class="actions-hover actions-fade">
-												<!-- <a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a> -->
+											<td class="text-center actions-hover actions-fade">
 												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
 											</td>
 										</tr>
-										<tr id="row3">
-											<td id="cat"
-												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-												<p style="margin-bottom: 0;">Transition</p>
+										<tr class="links_row">
+											<td class="t-links-type text-center">
+												<p class="mb-0">Transition</p>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="123459925012" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input type="text" value="123459925012"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="vertical-align: middle;">
-												<div id="sapId" class="title-header">65432987
+											<td class="t-links-details">
+												<div class="h-top">
+													65432987
 												</div>
-												<div id="mainTitle" class="title-line">
-													Transition links description</div>
+												<div class="title">Transition links description</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<div class="col-lg-8 offset-lg-2">
-														<input type="text" value="EA" style="text-align: center;"
-															class="form-control col-lg-8 offset-lg-2" placeholder="">
-													</div>
+													<input type="text" value="EA"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="915" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input type="text" value="915"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;" class="actions-hover actions-fade">
-												<!-- <a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a> -->
+											<td class="text-center actions-hover actions-fade">
 												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
 											</td>
 										</tr>
-										<tr id="row4">
-											<td id="cat"
-												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-												<p style="margin-bottom: 0;">Hierarchy</p>
+										<tr class="links_row">
+											<td class="t-links-type text-center">
+												<p class="mb-0">Hierarchy</p>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="123456789012" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input type="text" value="123456789012"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="vertical-align: middle;">
-												<div id="sapId" class="title-header">43265987
+											<td class="t-links-details">
+												<div class="h-top">
+													43265987
 												</div>
-												<div id="mainTitle" class="title-line">Hierarchy
+												<div class="title">Hierarchy
 													links description</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<div class="col-lg-8 offset-lg-2">
-														<input type="text" value="CV" style="text-align: center;"
-															class="form-control col-lg-8 offset-lg-2" placeholder="">
-													</div>
+													<input type="text" value="CV"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;vertical-align: middle;">
+											<td class="text-center">
 												<div class="row">
-													<input type="text" value="128" style="text-align: center;"
-														class="form-control col-lg-8 offset-lg-2" placeholder="">
+													<input type="text" value="128"
+														class="form-control form-control-sm col-lg-8 offset-lg-2 text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false">
 												</div>
 											</td>
-											<td style="text-align: center;" class="actions-hover actions-fade">
-												<!-- <a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a> -->
+											<td class="text-center actions-hover actions-fade">
 												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
 											</td>
 										</tr>

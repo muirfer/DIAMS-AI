@@ -1,0 +1,353 @@
+<style>
+	/** Styles for Prices */
+
+	.sales-price-banner-sel {
+		margin-top: -10px;
+	}
+
+	.sales-price-info {
+		color: darkgreen;
+	}
+
+	#tableDSSalesPrices tbody tr td {
+		vertical-align: middle;
+	}
+
+	.sales-price-banner-uom {
+		width: 1px;
+		background-color: lightyellow;
+		font-weight: bold;
+	}
+</style>
+
+<!-- Start - Subpanel - Sales prices for DS -->
+<div id="section4" class="row mt-5">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<div class="card-actions">
+					<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+				</div>
+				<h2 class="card-title">Sales prices for DS</h2>
+				<p class="card-subtitle"><code>Important:</code> Prices are in
+					<code>Euros (EUR)</code>
+				</p>
+			</header>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<!-- toolbar -->
+						<div class="row p-2" style="background:mintcream;">
+							<div class="col-lg-8 text-right">
+								<form class="form-inline">
+									<label class="control-label control-label-sm">Purchase
+										price:
+										<span class="sales-price-info ml-2">3251,2551</span>
+									</label>
+									<label class="control-label ml-4 mr-4">|</label>
+									<label class="control-label control-label-sm mr-2">Cost price:
+										<span class="sales-price-info ml-2">1562,2511</span>
+									</label>
+								</form>
+							</div>
+							<div class="col-lg-4 text-right">
+								<div id="mBanners" class="input-group-append sales-price-banner-sel">
+									<button tabindex="-1" class="btn btn-link btn-xs" type="button"><span
+											class="fa fa-plus mr-2"></span>Add Banner
+									</button>
+									<button tabindex="-1" data-toggle="dropdown" class="btn btn-link dropdown-toggle"
+										type="button">
+										<span class="caret"></span>
+									</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a id="bs1" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)">SA</a>
+										<a id="bs2" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)" style="display:none">SB</a>
+										<a id="bs3" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)">SC</a>
+										<a id="bs4" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)" style="display:none">SD</a>
+										<a id="bs5" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)" style="display:none">SE</a>
+										<a id="bs6" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)" style="display:none">SF</a>
+										<a id="bs7" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)" style="display:none">SG</a>
+										<a id="bs8" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)">SH</a>
+										<a id="bs9" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)">SI</a>
+										<a id="bs10" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)">SJ</a>
+										<a id="bs11" class="dropdown-item" href="#"
+											onclick="App.FVPrices.onBannerSelected(this.id)">SZ</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-9 offset-lg-1">
+						<table id="tableDSSalesPrices" class="table table-responsive-md table-hover mb-3">
+							<thead>
+								<tr>
+									<th class="text-center" style="width: 20%;">Banner</th>
+									<th class="text-right" style="width: 35%;">Margin %</th>
+									<th class="text-right" style="width: 35%;">Final price</th>
+									<th class="text-center" style="width: 10%;"></th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+								<tr id="rowbs1" style="display:none">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SA</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs1')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs2">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SB</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs2')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs3" style="display: none;">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SC</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs3')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs4">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SD</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs4')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs5">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SE</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs5')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs6">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SF</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs6')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs7">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SG</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs7')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs8" style="display: none;">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SH</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs8')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs9" style="display: none;">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SI</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs9')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs10" style="display: none;">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SJ</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs10')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+								<tr id="rowbs11" style="display: none;">
+									<td id="cat" class="sales-price-banner-uom text-center">
+										<p class="mb-0">SZ</p>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control form-control-sm text-right margin-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnMarginInput(this);">
+									</td>
+									<td class="text-right">
+										<input type="text"
+											class="form-control form-control-sm text-right final-price-input"
+											autocomplete="off" autocorrect="off" spellcheck="false" value="0.0000"
+											onClick="this.select();"
+											onchange="this.value = Number.parseFloat(this.value).toFixed(4); App.FVPrices.OnFinalPriceInput(this);">
+									</td>
+									<td class="actions-hover actions-fade text-center">
+										<a href="" class="delete-row" onclick="App.FVPrices.onBannerRemoved('bs11')"><i
+												class="far fa-trash-alt"></i></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Sales prices for DS -->
