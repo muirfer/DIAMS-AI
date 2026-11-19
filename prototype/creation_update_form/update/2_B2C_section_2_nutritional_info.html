@@ -1,0 +1,2007 @@
+<style>
+	/** Styles for B2C */
+	.nutri-score .btn {
+		width: 50px;
+		background-color: #ccc;
+		color: #fff;
+		opacity: 0.2;
+	}
+
+	.nutri-score .btn.selected-score {
+		opacity: 1;
+		font-size: x-large;
+	}
+
+	.nutri-score .btn-score-a {
+		background-color: #4CAF50;
+	}
+
+	.nutri-score .btn-score-b {
+		background-color: #A3D900;
+	}
+
+	.nutri-score .btn-score-c {
+		background-color: #FFC800;
+	}
+
+	.nutri-score .btn-score-d {
+		background-color: #FF6F00;
+	}
+
+	.nutri-score .btn-score-e {
+		background-color: #FF3C3C;
+	}
+
+	.nutri-score .btn-score-na {
+		background-color: grey;
+	}
+
+	.nutri-table-input {
+		border: 1px solid #ced4da;
+		text-align: right;
+	}
+
+	.nutri-table tbody tr td {
+		vertical-align: middle !important;
+	}
+
+	.nutri-table-lbl {
+		font-size: x-small;
+	}
+
+	.nutri-unit {
+		background-color: floralwhite;
+		text-align: center;
+		width: 50px;
+		font-size: xx-small !important;
+	}
+
+	.perc-unit {
+		width: 75px;
+		background-color: snow !important;
+		font-size: smaller !important;
+	}
+
+	.nutrients-lang {
+		width: 75px;
+		background-color: snow !important;
+		font-size: smaller !important;
+	}
+</style>
+
+<!-- Start - Subpanel - Nutritional Information -->
+<div id="section2" class="row mt-5" style="margin-top: 50px;">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Nutritional Information</h2>
+				<p class="card-subtitle">Nutri-Score information not available</p>
+			</header>
+			<div class="card-body">
+				<div class="row mb-2">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1 mt-3">Nutri-score</label>
+					<div class="col-sm-6">
+						<div id="nutri-score-1" class="nutri-score btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-score-a selected-score active">
+								<input type="radio" name="nutri-1" value="A" onchange="changeNutriscore(1)"> A
+							</label>
+							<label class="btn btn-score-b">
+								<input type="radio" name="nutri-1" value="B" onchange="changeNutriscore(1)"> B
+							</label>
+							<label class="btn btn-score-c">
+								<input type="radio" name="nutri-1" value="C" onchange="changeNutriscore(1)"> C
+							</label>
+							<label class="btn btn-score-d">
+								<input type="radio" name="nutri-1" value="D" onchange="changeNutriscore(1)"> D
+							</label>
+							<label class="btn btn-score-e">
+								<input type="radio" name="nutri-1" value="E" onchange="changeNutriscore(1)"> E
+							</label>
+							<input type="radio" name="nutri-1" value="NA" class="ml-2"> Not applicable</input>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Points v.1:
+					</label>
+					<div class="col-sm-5">
+						<input type="text" name="tsl" class="form-control form-control-sm text-right" autocomplete="off"
+							autocorrect="off" spellcheck="false" value="-110" />
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row mb-2">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1 mt-3">Nutri-score
+						v.2:</label>
+					<div class="col-sm-6">
+						<div id="nutri-score-2" class="nutri-score btn-group-toggle" data-toggle="buttons">
+							<label class="btn btn-score-a">
+								<input type="radio" name="nutri-2" value="A" onchange="changeNutriscore(2)"> A
+							</label>
+							<label class="btn btn-score-b">
+								<input type="radio" name="nutri-2" value="B" onchange="changeNutriscore(2)"> B
+							</label>
+							<label class="btn btn-score-c selected-score active">
+								<input type="radio" name="nutri-2" value="C" onchange="changeNutriscore(2)"> C
+							</label>
+							<label class="btn btn-score-d">
+								<input type="radio" name="nutri-2" value="D" onchange="changeNutriscore(2)"> D
+							</label>
+							<label class="btn btn-score-e">
+								<input type="radio" name="nutri-2" value="E" onchange="changeNutriscore(2)"> E
+							</label>
+							<input type="radio" name="nutri-2" value="NA" class="ml-2"> Not applicable</input>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Points v.2:
+					</label>
+					<div class="col-sm-5">
+						<input type="text" name="tsl2" class="form-control form-control-sm text-right"
+							autocomplete="off" autocorrect="off" spellcheck="false" value="680" />
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Nutri-score
+						source: </label>
+					<div class="col-sm-6">
+						<textarea class="form-control form-control-sm" rows="2" data-plugin-maxlength maxlength="100"
+							autocomplete="off" autocorrect="off"
+							spellcheck="false">Text that can reach up to 100 characters. This is a text that can reach up to 100 characters.</textarea>
+						<p class="text-right mb-0 c-indicator">
+							<code>Max:</code> 100
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Regulated
+						product name: </label>
+					<div class="col-sm-6">
+						<textarea class="form-control form-control-sm" rows="9" data-plugin-maxlength
+							maxlength="500">Acme All-Purpose Cleaner Spray - Lemon Scented, 32 fl oz - Household Cleaning Product for Surfaces, Removes Dirt, Grease, and Grime - EPA Registered Disinfectant, Kills 99.9% of Germs, Bacteria, and Viruses - Safe for Use on Countertops, Floors, Tiles, and Appliances - Non-Toxic Formula, Biodegradable Ingredients - Complies with OSHA Standards, Made in the USA - Convenient Trigger Spray Bottle for Easy Application, Suitable for Residential and Commercial Use - Keep Out of Reach of Children.</textarea>
+						<p class="text-right mb-0 c-indicator">
+							<code>Max:</code> 500
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Consumer
+						storage instructions: </label>
+					<div class="col-sm-6">
+						<textarea class="form-control form-control-sm" rows="9" data-plugin-maxlength
+							maxlength="500">Store Acme All-Purpose Cleaner Spray in a cool, dry place away from direct sunlight and heat sources. Keep the bottle tightly closed when not in use to prevent evaporation and maintain product efficacy. Avoid storing near food items or in areas accessible to children and pets. Do not expose the product to extreme temperatures or freezing conditions, as this may alter its effectiveness. Always store upright to prevent leakage. Use within recommended shelf life for best results.</textarea>
+						<p class="text-right mb-0 c-indicator">
+							<code>Max:</code> 500
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sustainability
+						Fishing
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" checked="">
+							<label></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sustainability
+						Wood Fiber
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" checked="">
+							<label></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Nutritional Facts
+					</label>
+					<div class="col-sm-5">
+						<div class="checkbox-custom mt-1">
+							<input type="checkbox" checked="">
+							<label></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Percentage of Palm
+						Oil</label>
+					<div class="col-sm-5">
+						<div class="input-group input-group-sm">
+							<input type="text" name="moq" class="form-control form-control-sm" autocomplete="off"
+								autocorrect="off" spellcheck="false" style="text-align: right;" value="32.21">
+							<span class="input-group-append">
+								<button class="btn btn-default perc-unit" type="button">%</button>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Density: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="1001">Density</option>
+							<option value="1002" selected>Light</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sugar Level:
+					</label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="1001">With Sugar</option>
+							<option value="1002" selected>With Sugar Replacement</option>
+							<option value="1003">Without Sugar</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Milk fat: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="1001">less than 2.8%</option>
+							<option value="1002">equal to 2.8%</option>
+							<option value="1003" selected>more than 2.8%</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Fruit %: </label>
+					<div class="col-sm-5">
+						<select class="form-control form-control-sm mb-0">
+							<option value=""></option>
+							<option value="1001">Up to 25%</option>
+							<option value="1002">25%</option>
+							<option value="1003" selected>99%</option>
+							<option value="1004">100%</option>
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Nutrition:
+					</label>
+					<div class="col-sm-7">
+						<table class="table table-responsive-md table-sm mb-0 nutri-table">
+							<thead>
+								<tr>
+									<th style="width:3%"></th>
+									<th style="width:40%">Per</th>
+									<th style="width:26%"></th>
+									<th class="text-right" style="width:34%">For 100gr/100ml</th>
+								</tr>
+							</thead>
+							<tbody class="">
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Energie Kj</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="490">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="Kj" selected>Kj</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Energie KCal</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="117">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="KCal" selected>KCal</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Fibre (g)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq">Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt" selected>Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="1.4">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Fruit and Vegetables (%)
+									</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq">Equals</option>
+											<option value="lt" selected>Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="75.25">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="per" selected>%</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Sugar (g)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0.5">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Fat (g)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="6.5">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Saturated fatty acids
+										(g)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="112.25">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Saturated fatty acids
+										(%)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq">Equals</option>
+											<option value="lt" selected>Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="35">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="per" selected>%</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Salt (g)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0.03">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Sodium (mg)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq">Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt" selected>Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="4852.25">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="mg" selected>mg</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Protein (g)</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="1154.3">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Animal protein origin</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="54.6">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td class="nutri-table-lbl">Plant protein origin</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="61.9">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit">
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c1')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc1" style="opacity: 0.6;">Calcium</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c1" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c1"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c1"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c4')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc4" style="opacity: 0.6;">from which polyols
+									</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c4" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c4"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c4"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c5')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc5" style="opacity: 0.6;">from which starch</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c5" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c5"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c5"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c6')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc6" style="opacity: 0.6;">Chloride</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c6" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c6"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c6"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c7')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc7" style="opacity: 0.6;">Chromium</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c7" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c7"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c7"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c8')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc8" style="opacity: 0.6;">Copper</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c8" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c8"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c8"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c13')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc13" style="opacity: 0.6;">from which mono
+										un-saturated f</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c13" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c13"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c13"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c14')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc14" style="opacity: 0.6;">from which poly
+										un-saturated f</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c14" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c14"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c14"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c15')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc15" style="opacity: 0.6;">from which trans fats
+									</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c15" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c15"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c15"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg">mg</option>
+													<option value="g" selected>g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c16')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc16" style="opacity: 0.6;">Fluoride</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c16" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c16"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c16"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c17')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc17" style="opacity: 0.6;">Folic acid</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c17" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c17"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c17"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c18')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc18" style="opacity: 0.6;">Iodine</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c18" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c18"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c18"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c19')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc19" style="opacity: 0.6;">Iron</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c19" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c19"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c19"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c20')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc20" style="opacity: 0.6;">Magnesium</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c20" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c20"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c20"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c21')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc21" style="opacity: 0.6;">Manganese</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c21" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c21"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c21"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c22')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc22" style="opacity: 0.6;">Molybdenum</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c22" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c22"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c22"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c23')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc23" style="opacity: 0.6;">Niacin</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c23" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c23"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c23"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c24')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc24" style="opacity: 0.6;">Pantothenic acid</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c24" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c24"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c24"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c25')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc25" style="opacity: 0.6;">Phosphorus</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c25" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c25"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c25"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c26')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc26" style="opacity: 0.6;">Potassium</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c26" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c26"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c26"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c27')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc27" style="opacity: 0.6;">Riboflavin</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c27" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c27"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c27"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c29')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc29" style="opacity: 0.6;">Selenium</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c29" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c29"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c29"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c30')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc30" style="opacity: 0.6;">Sodium</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c30" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c30"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c30"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c31')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc31" style="opacity: 0.6;">Thiamin</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c31" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c31"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c31"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c32')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc32" style="opacity: 0.6;">Vitamin B12</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c32" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c32"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c32"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c33')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc33" style="opacity: 0.6;">Vitamin B6</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c33" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c33"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c33"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c34')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc34" style="opacity: 0.6;">Vitamin C</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c34" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c34"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c34"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c35')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc35" style="opacity: 0.6;">Vitamin E</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c35" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c35"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c35"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c36')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc36" style="opacity: 0.6;">Vitamin K</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c36" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c36"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c36"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c37')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc37" style="opacity: 0.6;">Zinc</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c37" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c37"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c37"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c38')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc38" style="opacity: 0.6;">Mineral salts</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c38" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c38"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c38"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c39')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc39" style="opacity: 0.6;">Vitamin B8 (Biotin)
+									</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c39" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c39"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c39"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c40')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc40" style="opacity: 0.6;">Vitamin A</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c40" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c40"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c40"
+													style="display: none;">
+													<option value="mkg">µg</option>
+													<option value="mg" selected>mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="checkbox-custom" style="margin-top: 5px;">
+											<input type="checkbox" onchange="showOrHideNutrientInput(this, 'c41')">
+											<label></label>
+										</div>
+									</td>
+									<td class="nutri-table-lbl lc41" style="opacity: 0.6;">Vitamin D</td>
+									<td class="text-right">
+										<select class="form-control form-control-sm c41" style="display: none;">
+											<option value="eq" selected>Equals</option>
+											<option value="lt">Less than</option>
+											<option value="gt">Greater than</option>
+										</select>
+									</td>
+									<td class="text-right">
+										<div class="input-group">
+											<input type="text" class="form-control form-control-sm text-right c41"
+												autocomplete="off" autocorrect="off" spellcheck="false" value="0"
+												style="display: none;">
+											<span class="input-group-append">
+												<select class="form-control form-control-sm nutri-unit c41"
+													style="display: none;">
+													<option value="mkg" selected>µg</option>
+													<option value="mg">mg</option>
+													<option value="g">g</option>
+												</select>
+											</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Allergen
+						information: </label>
+					<div class="col-sm-7">
+						<table class="table table-responsive-md table-sm mb-0">
+							<thead>
+								<tr>
+									<th style="width: 40%;"></th>
+									<th class="text-center" style="width: 20%;">Free from
+									</th>
+									<th class="text-center" style="width: 20%;">May
+										contain</th>
+									<th class="text-center" style="width: 20%;">Contains
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="nutri-table-lbl">Celery</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a1"
+												id="free" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a1"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a1"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Crustacean</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a2"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a2"
+												id="may" value="0" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a2"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Eggs</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a3"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a3"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a3"
+												id="con" checked>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Fish</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a4"
+												id="free" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a4"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a4"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Gluten</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a5"
+												id="free" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a5"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a5"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Lupin</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a6"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a6"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a6"
+												id="con" checked>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Milk</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a7"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a7"
+												id="may" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a7"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Mustard</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a8"
+												id="free" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a8"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a8"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Peanuts</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a9"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a9"
+												id="may" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a9"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Soy</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a10"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a10"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a10"
+												id="con" checked>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Sulphites</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a11"
+												id="free" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a11"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a11"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Tree nuts</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a12"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a12"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a12"
+												id="con" checked>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Sesame seeds</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a13"
+												id="free">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a13"
+												id="may" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a13"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="nutri-table-lbl">Molluscs</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a14"
+												id="free" checked>
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a14"
+												id="may" value="0">
+										</div>
+									</td>
+									<td class="text-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input radio-success" type="radio" name="a14"
+												id="con" value="0">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row new-ing mt-4">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Ingredients:
+					</label>
+					<div class="col-sm-8">
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default nutrients-lang" type="button">English</button>
+							</span>
+							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
+								maxlength="5000" autocomplete="off" autocorrect="off"
+								spellcheck="false">Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color. Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color. Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color. Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color. Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color. Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color. Enriched wheat flour, sugar, semi-sweet chocolate chips (sugar, chocolate liquor, cocoa butter, soy lecithin, natural flavor), vegetable oil (soybean and/or palm oil), brown sugar, high fructose corn syrup, leavening agents (baking soda, ammonium bicarbonate), salt, natural and artificial flavors, soy lecithin, caramel color.</textarea>
+						</div>
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default nutrients-lang" type="button">French</button>
+							</span>
+							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
+								maxlength="5000" autocomplete="off" autocorrect="off"
+								spellcheck="false">Farine de blÃ© enrichie, sucre, pÃ©pites de chocolat mi-sucrÃ© (sucre, pÃ¢te de cacao, beurre de cacao, lÃ©cithine de soja, arÃ´me naturel), huile vÃ©gÃ©tale (huile de soja et/ou huile de palme), sucre brun, sirop de maÃ¯s Ã  haute teneur en fructose, agents levants (bicarbonate de sodium, bicarbonate d'ammonium), sel, arÃ´mes naturels et artificiels, lÃ©cithine de soja, colorant caramel.Farine de blÃ© enrichie, sucre, pÃ©pites de chocolat mi-sucrÃ© (sucre, pÃ¢te de cacao, beurre de cacao, lÃ©cithine de soja, arÃ´me naturel), huile vÃ©gÃ©tale (huile de soja et/ou huile de palme), sucre brun, sirop de maÃ¯s Ã  haute teneur en fructose, agents levants (bicarbonate de sodium, bicarbonate d'ammonium), sel, arÃ´mes naturels et artificiels, lÃ©cithine de soja, colorant caramel.Farine de blÃ© enrichie, sucre, pÃ©pites de chocolat mi-sucrÃ© (sucre, pÃ¢te de cacao, beurre de cacao, lÃ©cithine de soja, arÃ´me naturel), huile vÃ©gÃ©tale (huile de soja et/ou huile de palme), sucre brun, sirop de maÃ¯s Ã  haute teneur en fructose, agents levants (bicarbonate de sodium, bicarbonate d'ammonium), sel, arÃ´mes naturels et artificiels, lÃ©cithine de soja, colorant caramel.Farine de blÃ© enrichie, sucre, pÃ©pites de chocolat mi-sucrÃ© (sucre, pÃ¢te de cacao, beurre de cacao, lÃ©cithine de soja, arÃ´me naturel), huile vÃ©gÃ©tale (huile de soja et/ou huile de palme), sucre brun, sirop de maÃ¯s Ã  haute teneur en fructose, agents levants (bicarbonate de sodium, bicarbonate d'ammonium), sel, arÃ´mes naturels et artificiels, lÃ©cithine de soja, colorant caramel.Farine de blÃ© enrichie, sucre, pÃ©pites de chocolat mi-sucrÃ© (sucre, pÃ¢te de cacao, beurre de cacao, lÃ©cithine de soja, arÃ´me naturel), huile vÃ©gÃ©tale (huile de soja et/ou huile de palme), sucre brun, sirop de maÃ¯s Ã  haute teneur en fructose, agents levants (bicarbonate de sodium, bicarbonate d'ammonium), sel, arÃ´mes naturels et artificiels, lÃ©cithine de soja, colorant caramel.Farine de blÃ© enrichie, sucre, pÃ©pites de chocolat mi-sucrÃ© (sucre, pÃ¢te de cacao, beurre de cacao, lÃ©cithine de soja, arÃ´me naturel), huile vÃ©gÃ©tale (huile de soja et/ou huile de palme), sucre brun, sirop de maÃ¯s Ã  haute teneur en fructose, agents levants (bicarbonate de sodium, bicarbonate d'ammonium), sel, arÃ´mes naturels et artificiels, lÃ©cithine de soja, colorant caramel.</textarea>
+						</div>
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default nutrients-lang" type="button">Dutch</button>
+							</span>
+							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
+								maxlength="5000" autocomplete="off" autocorrect="off"
+								spellcheck="false">Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/of palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/of palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/of palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/of palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/óf palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/of palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.Verrijkte tarwebloem, suiker, halfzoete chocoladestukjes (suiker, cacaomassa, cacaoboter, sojalecithine, natuurlijk aroma), plantaardige olie (soja- en/óf palmolie), bruine suiker, glucose-fructosestroop, rijsmiddelen (natriumbicarbonaat, ammoniumbicarbonaat), zout, natuurlijke en kunstmatige aroma's, sojalecithine, karamelkleurstof.</textarea>
+						</div>
+						<div class="input-group input-group-sm">
+							<span class="input-group-prepend">
+								<button class="btn btn-default nutrients-lang" type="button">German</button>
+							</span>
+							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
+								maxlength="5000" autocomplete="off" autocorrect="off"
+								spellcheck="false">Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.</textarea>
+						</div>
+						<p class="text-right mb-0 c-indicator">
+							<code>Max:</code> 5000
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Nutritional Information -->

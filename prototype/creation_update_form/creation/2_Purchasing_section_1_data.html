@@ -10,18 +10,6 @@
 		background: snow;
 		width: 75px;
 	}
-
-	.purch-price-currency-uom {
-		width: 75px;
-	}
-
-	.purch-price-currency-uom select {
-		background-color: floralwhite !important;
-	}
-
-	.purch-price-unit {
-		color: darkred;
-	}
 </style>
 
 <!-- Start - Subpanel - Purchasing data -->
@@ -244,73 +232,3 @@
 	</div>
 </div>
 <!-- End - Subpanel - Purchasing data -->
-<!-- Start - Subpanel - Product pricing information -->
-<div id="section2" class="row">
-	<div class="col-lg-12">
-		<section class="card card-transparent mb-4">
-			<header class="card-header">
-				<h2 class="card-title">Product pricing information</h2>
-			</header>
-			<div class="card-body">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="row pt-2">
-							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Purchase
-								price</label>
-							<div class="col-sm-5">
-								<div class="input-group input-group-sm">
-									<input type="text" name="purch_pr" class="form-control form-control-sm text-right"
-										autocomplete="off" autocorrect="off" spellcheck="false" value="156312,25">
-									<span class="input-group-append purch-price-currency-uom">
-										<select class="form-control form-control-sm mb-0 text-center">
-											<option value="EUR" selected>EUR</option>
-											<option value="USD">USD</option>
-										</select>
-									</span>
-								</div>
-							</div>
-							<label class="col-sm-3 control-label control-label-sm purch-price-unit pt-1 pl-0">per
-								1 EA</label>
-						</div>
-						<div class="row">
-							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Base
-								price unit</label>
-							<div class="col-sm-5">
-								<div class="input-group input-group-sm">
-									<input type="text" name="base_pu" class="form-control form-control-sm text-right"
-										autocomplete="off" autocorrect="off" spellcheck="false" value="1">
-									<span class="input-group-append purch-price-currency-uom">
-										<select class="form-control form-control-sm mb-0 text-center">
-											<option value="KG" selected>KG</option>
-											<option value="EA">EA</option>
-										</select>
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Valid
-								until:</label>
-							<div class="col-sm-5">
-								<div class="input-group input-group-sm">
-									<span class="input-group-prepend">
-										<span class="input-group-text">
-											<i class="fas fa-calendar-alt"></i>
-										</span>
-									</span>
-									<input type="text" data-plugin-datepicker
-										data-plugin-options='{ "format": "dd/mm/yyyy" }'
-										class="form-control form-control-sm dateInput" autocomplete="off"
-										autocorrect="off" spellcheck="false" value="07/05/2024">
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</section>
-	</div>
-</div>
-<!-- End - Subpanel - Product pricing information  -->

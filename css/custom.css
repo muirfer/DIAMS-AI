@@ -103,30 +103,6 @@ table.dataTable tbody td {
     color: orange !important;
 }
 
-.title-line {
-    font-weight: bold;
-    /* Add any other styles for the title */
-}
-
-.text-lines p {
-    margin-left: 0;
-    margin-top: -5px;
-    margin-bottom: -5px;
-    font-size: smaller;
-    /* Add any other styles for the text lines */
-}
-
-.text-lines p code {
-    font-size: 100% !important;
-}
-
-.title-header {
-    color: darkred;
-    /* Set the color to red (you can change it to your preferred color) */
-    font-style: italic;
-    /* Add any other styles for the header */
-}
-
 /* Custom Overlay Panel Styles */
 
 #customOverlayPanel {
@@ -487,11 +463,6 @@ rect:hover {
     border-top: none !important;
     /* Remove bottom margin */
 }
-
-/* Fost Plus */
-.fpcont {}
-
-.lblNoInfo {}
 
 /* Carousel Navigation Overrides */
 .owl-carousel .owl-nav {

@@ -1,0 +1,167 @@
+<style>
+	/** Styles for FP */
+	.lblNoInfo {
+		display: none;
+		font-size: smaller !important;
+	}
+</style>
+
+<!-- Start - Subpanel - Information -->
+<div id="section1" class="row">
+	<div class="col-lg-12">
+		<section class="card card-transparent mb-4">
+			<header class="card-header">
+				<h2 class="card-title">Information</h2>
+				<p class="card-subtitle"></p>
+			</header>
+			<div class="card-body">
+				<div class="row p-3 mb-3" style="background-color: floralwhite;">
+					<div class="col-lg-12">
+						<div class="checkbox-custom checkbox-default">
+							<input class="ctrl" type="checkbox" id="chk_nfp" onclick="App.FVFostPlus.hideAll()">
+							<label for="chk_nfp">Fost+ information not yet
+								available</label>
+						</div>
+						<label class="lblNoInfo mt-1"><code>Important: </code>You
+							will not be required to provide information about Fost+ now.
+							<br>
+							Nonetheless, a new task will be created so you can deliver
+							Fost+ content
+							as soon as you receive the needed information.</label>
+
+					</div>
+				</div>
+				<div class="fpcont">
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Item
+							family
+							code: <span class="required">*</span></label>
+						<div class="col-sm-5">
+							<select class="form-control form-control-sm mb-0">
+								<option selected></option>
+								<option>A. Food B. Drinks</option>
+								<option>B. Drinks in reusable packaging</option>
+								<option>C. Cleaning and Maintenance</option>
+								<option>G. DIY H. Clothing, footwear, textiles and
+									accessories
+								</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Detail:
+							<span class="required">*</span></label>
+						<div class="col-sm-5">
+							<select class="form-control form-control-sm mb-0">
+								<option selected></option>
+								<option>B.1 Beer</option>
+								<option>B.2 Fruit and vegetable juices</option>
+								<option>B.3 Milk</option>
+								<option>B.4 Fresh drinks and Syrups</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Detailed
+							description of the packaging: <span class="required">*</span></label>
+						<div class="col-sm-5">
+							<textarea class="form-control form-control-sm" rows="6" data-plugin-maxlength
+								maxlength="250" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Empties
+							code:
+							<span class="required">*</span></label>
+						<div class="col-sm-5">
+							<select class="form-control form-control-sm mb-0">
+								<option selected></option>
+								<option>0 - no returnable packaging</option>
+								<option>1 - returnable primary packaging</option>
+								<option>2 - returnable secondary packaging</option>
+								<option>3 - returnable tertiary packaging</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Content
+							of a
+							SKU (amount): <span class="required">*</span></label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control form-control-sm text-right" name="sku_amount"
+								value="0" autocomplete="off" autocorrect="off" spellcheck="false">
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Unit
+							contents:
+							<span class="required">*</span></label>
+						<div class="col-sm-5">
+							<select class="form-control form-control-sm mb-0">
+								<option></option>
+								<option>M - milliliters</option>
+								<option selected>G - grams</option>
+								<option>P - pieces</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Household
+							hazardous waste: <span class="required">*</span></label>
+						<div class="col-lg-2 mt-1">
+							<div class="radio-custom radio-primary">
+								<input type="radio" id="hhw_dang" name="hhw">
+								<label for="hhw_dang">Dangerous</label>
+							</div>
+						</div>
+						<div class="col-lg-3 mt-1">
+							<div class="radio-custom radio-primary">
+								<input type="radio" id="hhw_ndang" name="hhw">
+								<label for="hhw_ndang">Not dangerous</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Disturbing
+							packaging: <span class="required">*</span></label>
+						<div class="col-lg-1 mt-1">
+							<div class="radio-custom radio-primary">
+								<input type="radio" id="dp_yes" name="dp">
+								<label for="dp_yes">Yes</label>
+							</div>
+						</div>
+						<div class="col-lg-2 mt-1">
+							<div class="radio-custom radio-primary">
+								<input type="radio" id="dp_no" name="dp">
+								<label for="dp_no">No</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Packaging
+							picture: <span class="required">*</span></label>
+						<div class="col-sm-5">
+							<div class="fileupload fileupload-new" data-provides="fileupload">
+								<div class="input-append">
+									<div class="uneditable-input">
+										<i class="fas fa-file fileupload-exists"></i>
+										<span class="fileupload-preview"></span>
+									</div>
+									<span class="btn btn-default btn-file">
+										<span class="fileupload-exists">Change</span>
+										<span class="fileupload-new">Select file</span>
+										<input type="file" onchange="App.FVFostPlus.showImage(true)" />
+									</span>
+									<a href="#" onclick="App.FVFostPlus.showImage(false)"
+										class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+								</div>
+							</div>
+							<img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- End - Subpanel - Information -->

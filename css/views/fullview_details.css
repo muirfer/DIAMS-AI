@@ -758,6 +758,104 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: smaller !important;
 }
 
+.nutrients-lang {
+    width: 75px;
+    background-color: snow !important;
+    font-size: smaller !important;
+}
+
+/** Styles for Store */
+.lang-badge {
+    width: 75px;
+    background-color: snow !important;
+    font-size: smaller !important;
+}
+
+.sod td {
+    font-size: smaller !important;
+}
+
+.sod-sel {
+    background: floralwhite;
+}
+
+/** Styles for Wines */
+.perc-unit-w {
+    width: 75px;
+    background-color: snow !important;
+    font-size: smaller !important;
+}
+
+/** Styles for Fost Plus */
+.lblNoInfo {
+    display: none;
+    font-size: smaller !important;
+}
+
+.lblNotInformPP {
+    font-size: smaller !important;
+}
+
+#FPtableBody tr td {
+    vertical-align: middle;
+}
+
+.fp-table-type {
+    width: 1px;
+    font-weight: bold;
+}
+
+.fp-table-type p {
+    font-size: x-small !important;
+    line-height: 15px;
+}
+
+.fp-table-type-main {
+    background-color: floralwhite;
+}
+
+.fp-table-type-other {
+    background-color: ghostwhite;
+}
+
+.fp-table-type-multipack {
+    background-color: linen;
+}
+
+.fp-table-desc-title-header {
+    color: darkred;
+    font-style: italic;
+}
+
+.fp-table-desc-title-line {
+    font-weight: bold;
+}
+
+.fp-table-text-lines p {
+    margin-left: 0;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    font-size: smaller !important;
+}
+
+.fp-table-text-lines p code {
+    font-size: 100% !important;
+}
+
+.fp-table-detail-sec {
+    line-height: 15px;
+}
+
+.fp-table-qty {
+    color: darkgreen;
+    font-size: large !important;
+}
+
+
+
+
+
+
 
 
 .tab-index {
