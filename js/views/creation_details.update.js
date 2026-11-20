@@ -22,7 +22,7 @@
         REJECT: "reject",
         REQUEST: "request"
     };
-    App.buttonTemplate = $('<button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-info btn-go">Go</button>');
+    App.buttonTemplate = $('<button type="button" class="btn btn-xs btn-info btn-go">Go</button>');
 
     // Module for handling common update logic in Full view details panel
     var CRUpdate = {

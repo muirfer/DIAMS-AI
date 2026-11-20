@@ -1,0 +1,116 @@
+<style>
+    div#pChangeMain .beautify-scroll {
+        height: 20rem;
+    }
+
+    table#tLog {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: smaller;
+    }
+
+    table#tLog tr td .badge {
+        font-size: small;
+    }
+
+    table#tLog tr td i {
+        font-size: larger;
+    }
+
+    table#tLog tr td i.fa-plus {
+        color: darkgray
+    }
+
+    table#tLog tr td i.fa-check {
+        color: darkgreen
+    }
+
+    table#tLog tr td i.fa-check-double {
+        color: darkblue
+    }
+
+    table#tLog tr td i.fa-ban {
+        color: darkred
+    }
+</style>
+
+<div class="col-lg-12 beautify-scroll pl-1 pr-0">
+    <table id="tLog" class=" table table-hover table-responsive-md table-sm mb-0">
+        <tbody class="pr-0">
+            <tr id="rf2" onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+                <td class="text-center" style="width: 10%;">
+                    <span class="badge badge-warning" data-toggle="tooltip" data-placement="bottom"
+                        title="Update Request">UR</span>
+                </td>
+                <td style="width: 75%;">Net weight (EA)</td>
+                <td class="text-center" style="width: 15%;">
+                    <i class="fas fa-check" data-toggle="tooltip" data-placement="bottom" title="Updated"></i>
+                </td>
+            </tr>
+            <tr id="rf3" onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+                <td class="text-center" style="width: 10%;">
+                    <span class="badge badge-warning" data-toggle="tooltip" data-placement="bottom"
+                        title="Update Request">UR</span>
+                </td>
+                <td style="width: 75%;">Item set</td>
+                <td class="text-center" style="width: 15%;">
+                    <i class="fas fa-check" data-toggle="tooltip" data-placement="bottom" title="Updated"></i>
+                </td>
+            </tr>
+            <tr id="rf4" onclick="javascript:App.CRUpdate.focusOnChange(this.id)">
+                <td class="text-center" style="width: 10%;">
+                    <span class="badge badge-warning" data-toggle="tooltip" data-placement="bottom"
+                        title="Update Request">UR</span>
+                </td>
+                <td style="width: 75%;">Dangerous symbos (GHS)</td>
+                <td class="text-center" style="width: 15%;">
+                    <i class="fas fa-ban" data-toggle="tooltip" data-placement="bottom" title="Rejected"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Start - Footer and actions -->
+<div class="card-footer p-1" style="background: ghostwhite;">
+    <div class="row  m-0">
+        <div class="col-lg-12 text-right pr-0">
+            <!-- For approve all / reject all buttons -->
+        </div>
+    </div>
+</div>
+<!-- End - Footer and actions -->
+
+
+<!-- Start Modal - Full view - details -->
+<div id="modal_update_details" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+    <section class="card">
+        <header class="card-header">
+            <h2 class="card-title">Information for corrections and reviews</h2>
+        </header>
+        <div class="card-body">
+            <!-- Start - Description -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="mb-0">Review details and proceed to:
+                    </p>
+                    <ul>
+                        <li>Raise update requests to suppliers</li>
+                        <li>Accept or reject actions done by suppliers</li>
+                        <li>React on udpate requests raised by Category Managers or Master Data
+                            Specalists</li>
+                        <!-- Values above depend on role. See specs -->
+                    </ul>
+                </div>
+            </div>
+            <!-- End - Description -->
+        </div>
+        <footer class="card-footer">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button class="btn btn-default modal-dismiss">Close</button>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
+<!-- End Modal - Full view - details -->

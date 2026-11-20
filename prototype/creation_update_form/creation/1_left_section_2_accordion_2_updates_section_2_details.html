@@ -1,0 +1,144 @@
+<style>
+    div#pChangeDet .beautify-scroll {
+        height: 14rem;
+    }
+
+    #secTimeline .tm-box p,
+    #secTimeline .tm-box span {
+        font-size: x-small !important;
+        line-height: normal;
+    }
+
+    .timeline-init {
+        color: darkorange
+    }
+
+    .timeline-updated {
+        color: darkgreen
+    }
+
+    .timeline-accepted {
+        color: darkblue
+    }
+
+    .timeline-rejected {
+        color: darkred
+    }
+</style>
+
+<div id="secTimeline" class="beautify-scroll mb-2 pr-2">
+    <div class="timeline timeline-simple mt-2 mb-2">
+        <div class="tm-body p-0">
+            <ol class="tm-items tm-main">
+                <li class="time_if2 mb-1 mt-1" style="display: none;">
+                    <div class="tm-box p-2">
+                        <p class="text-muted mb-1"><span class="timeline-init">Change
+                                requested </span> by Amanda
+                            Green
+                            (CE) on 03/07/2024 18:25</p>
+                        <p>
+                            Updated based on new introduction week selected
+                        </p>
+                    </div>
+                </li>
+                <li class="time_if2 mb-1 mt-1" style="display: none;">
+                    <div class="tm-box p-2">
+                        <p class="text-muted mb-1"><span class="timeline-updated">Updated </span> by
+                            John
+                            Smith
+                            (Supplier) on 08/07/2024 13:50</p>
+                        <p>
+                        </p>
+                    </div>
+                </li>
+                <li class="time_if3 mb-1 mt-1" style="display: none;">
+                    <div class="tm-box p-2">
+                        <p class="text-muted mb-1"><span class="timeline-init">Change
+                                requested </span> by Amanda
+                            Green
+                            (CE) on 03/07/2024 18:28</p>
+                        <p>
+                            New item set due to change on product creation
+                            date.
+                        </p>
+                    </div>
+                </li>
+                <li class="time_if3 mb-1 mt-1" style="display: none;">
+                    <div class="tm-box p-2">
+                        <p class="text-muted mb-1"><span class="timeline-updated">Updated </span> by
+                            John
+                            Smith
+                            (Supplier) on 08/07/2024 13:50</p>
+                        <p>
+                        </p>
+                    </div>
+                </li>
+                <li class="time_if4 mb-1 mt-1" style="display: none;">
+                    <div class="tm-box p-2">
+                        <p class="text-muted mb-1"><span class="timeline-init">Change
+                                requested </span> by Amanda
+                            Green
+                            (CE) on 03/07/2024 18:30</p>
+                        <p>
+                            Missing some symbols
+                        </p>
+                    </div>
+                </li>
+                <li class="time_if4 mb-1 mt-1" style="display: none;">
+                    <div class="tm-box p-2">
+                        <p class="text-muted mb-1"><span class="timeline-rejected">Rejected </span>
+                            by John Smith
+                            (Supplier) on 08/07/2024 13:50</p>
+                        <p>
+                            All symbols are present. There is a confusion
+                            with the
+                            symbols. Please check on the user manual.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- Start - Comments -->
+<div class="row rComment">
+    <div class="col-lg-6">
+        <label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+    </div>
+    <div class="col-lg-6 text-right">
+        <p class="mb-0" id="txtRequired">
+            Required</p>
+    </div>
+</div>
+<div class="row rComment">
+    <div class="col-lg-12">
+        <section class="simple-compose-box mb-3">
+            <form method="get" action="/">
+                <textarea id="cComment" name="message-text" data-plugin-textarea-autosize
+                    placeholder="Additional information..." data-plugin-maxlength maxlength="100" rows="2"
+                    autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+            </form>
+        </section>
+    </div>
+</div>
+<!-- End - Comments -->
+<!-- Start - footer actions -->
+<div class="row" style="background: ghostwhite;">
+    <div class="col-lg-2 text-center">
+        <button id="btnBack" type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="right"
+            title="Back to change request summary"
+            onclick="javascript:App.CRSummaryLog.backToChangeRequestMainView()">Back</button>
+    </div>
+    <div class="col-lg-10 text-right">
+        <button id="btnUndo" type="button" class="btn btn-xs btn-default" style="border-color: darkred;"
+            onclick="javascript:App.CRUpdate.undoChangeEvaluation()">Undo</button>
+        <button id="btnReject" type="button" class="btn btn-xs btn-danger"
+            onclick="javascript:App.CRUpdate.rejectChange()">Reject</button>
+        <button id="btnApprove" type="button" class="btn btn-xs btn-success"
+            onclick="javascript:App.CRUpdate.approveChange(2)">Approve</button>
+        <!-- <button id="btnRequest" type="button" class="btn btn-xs btn-success"
+            onclick="javascript:App.CRUpdate.requestFieldUpdate()">Request
+            update</button> -->
+    </div>
+</div>
+<!-- End - footer actions -->

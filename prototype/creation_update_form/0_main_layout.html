@@ -15,6 +15,15 @@
 			overflow: hidden !important;
 		}
 
+		/** left panel accordion titles */
+		.acc-title {
+			font-size: small !important;
+		}
+
+		.info-link a i {
+			font-size: larger;
+		}
+
 		#mainSection {
 			height: calc(100vh - 110px) !important;
 			min-height: auto !important;
@@ -32,6 +41,12 @@
 
 		#fullview-left-col {
 			max-height: calc(100vh - 120px);
+			overflow: hidden !important;
+		}
+
+		/** Second level navigation - Breadcrumber panel */
+		.sln {
+			font-size: x-small;
 		}
 	</style>
 </head>
@@ -62,23 +77,212 @@
 					<div class="row p-0">
 
 						<!-- start: Left panel (information, update request log and activity, ber / gdsn panels) -->
-						<div id="fullview-left-col" class="col-lg-3 pr-0" style="overflow:hidden"></div>
+						<div id="fullview-left-col" class="col-lg-3 pr-0">
+							<!--
+									---------------------------------------------------------------------
+									--------------------------------------------------------------------- 
+									Insert content from 1_left_section_1_top_main_information.html
+									---------------------------------------------------------------------
+									---------------------------------------------------------------------
+								-->
+
+							<div class="accordion accordion-sm" id="accordion3">
+								<!-- Start - Accordion element for More information -->
+								<div class="card card-default">
+									<div class="card-header">
+										<h4 class="card-title m-0">
+											<a class="accordion-toggle acc-title" data-toggle="collapse"
+												data-parent="#accordion3" href="#accMainInfo">
+												More information
+											</a>
+										</h4>
+									</div>
+									<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+										<!--
+												---------------------------------------------------------------------
+												--------------------------------------------------------------------- 
+												Insert content from 1_left_section_2_accordion_1_more_information.html
+												---------------------------------------------------------------------
+												---------------------------------------------------------------------
+											-->
+									</div>
+								</div>
+								<!-- End - Accordion element for More information -->
+								<!-- Start - Accordion element for update requests and log  -->
+								<div id="pChange" class="card card-default">
+									<div class="card-header">
+										<h4 class="card-title m-0">
+											<a id="titleDet" class="accordion-toggle acc-title" data-toggle="collapse"
+												data-parent="#accordion3" href="#accChangeRequest">
+
+												<!-- Badge visible in both creation and update flow when panel with id pChangeDet (Detail screen) is visible
+													It identifies the current action for selected row (UR - Update request, U - Update)   -->
+												<span id="actionBadge" class="badge badge-info" data-toggle="tooltip"
+													data-placement="left" title="Update request"
+													style="float:right;">UR</span>
+
+												Update requests logs and history
+											</a>
+										</h4>
+										<div class="card-actions info-link">
+											<!-- Button visible in both creation and update flow when panel with id pChangeMain (Summary screen) is visible
+													It opens popup with information to the user and submit history log (only in the full view).
+													Implementation of each popup found in the relevant files and identified with modal_update_detail   -->
+											<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal">
+												<i class="fas fa-info"></i></a>
+										</div>
+									</div>
+									<!-- Start - Two panels for the update requests log, history and action. Only one is visible at a specific time.
+											Summary (pChangeMain)
+											Details (pChangeDet)
+										-->
+									<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
+										<div id="pChangeMain" class="card-body pt-0 pb-0 pr-1 pl-1"
+											style="background: ghostwhite;">
+											<!--
+													---------------------------------------------------------------------
+													--------------------------------------------------------------------- 
+													Insert content from 1_left_section_2_accordion_2_updates_section_1_summary.html
+													---------------------------------------------------------------------
+													---------------------------------------------------------------------
+												-->
+										</div>
+										<div id="pChangeDet" class="card-body pt-1"
+											style="display: none;background: ghostwhite;">
+											<!--
+													---------------------------------------------------------------------
+													--------------------------------------------------------------------- 
+													Insert content from 1_left_section_2_accordion_2_updates_section_2_details.html
+													---------------------------------------------------------------------
+													---------------------------------------------------------------------
+												-->
+										</div>
+									</div>
+									<!-- Start - Two panels for the update requests log, history and action. -->
+
+								</div>
+								<!-- End - Accordion element for update requests and log  -->
+								<!-- Start - Accordion element for GDSN errors (only creation flow) -->
+								<div class="card card-default">
+									<div class="card-header">
+										<h4 class="card-title m-0">
+											<a id="titleDet" class="accordion-toggle acc-title" data-toggle="collapse"
+												data-parent="#accordion3" href="#accChangeRequest"
+												style="color:darkred;">
+												GDSN errors
+											</a>
+										</h4>
+									</div>
+									<div class="collapse" data-parent="#accordion3">
+										<div class="card-body pt-0 pb-0 pr-1 pl-1" style="background: ghostwhite;">
+											<!--
+													---------------------------------------------------------------------
+													--------------------------------------------------------------------- 
+													Insert content from 1_left_section_2_accordion_3_gdsn.html (creation only)
+													---------------------------------------------------------------------
+													---------------------------------------------------------------------
+												-->
+										</div>
+									</div>
+								</div>
+								<!-- End - Accordion element for GDSN errors -->
+								<!-- Start - Accordion element for Business errors (status BER) -->
+								<div class="card card-default">
+									<div class="card-header">
+										<h4 class="card-title m-0">
+											<a id="titleDetBer" class="accordion-toggle acc-title"
+												data-toggle="collapse" data-parent="#accordion3" href="#accBer"
+												style="color:darkred;">
+												Business errors
+											</a>
+										</h4>
+										<div class="card-actions info-link">
+											<!-- Implementation of the popup found in the relevant files and identified with modal_update_details_ber   -->
+											<a href="#modal_update_details_ber" class="modal-with-zoom-anim ws-normal">
+												<i class="fas fa-info"></i></a>
+										</div>
+									</div>
+									<div id="accBer" class="collapse" data-parent="#accordion3">
+										<div id="pBerMain" class="card-body pt-0 pb-0 pr-1 pl-1"
+											style="background: ghostwhite;">
+											<!--
+												---------------------------------------------------------------------
+												--------------------------------------------------------------------- 
+												Insert content from 1_left_section_2_accordion_4_ber_status.html  (beru for update)
+												---------------------------------------------------------------------
+												---------------------------------------------------------------------
+											-->
+										</div>
+
+									</div>
+								</div>
+								<!-- End - Accordion element for Business errors (status BER) -->
+							</div>
+						</div>
 						<!-- end: Left panel (information, update request log and activity, ber / gdsn panels) -->
 
 						<!-- start: Right panel (Intro week values, form) -->
-						<div id="fullview-right-col" class="col-lg-9 pl-0"></div>
-						<!-- start: Right panel (Intro week values, form) -->
+						<div id="fullview-right-col" class="col-lg-9 pl-0">
+							<!--
+									---------------------------------------------------------------------
+									--------------------------------------------------------------------- 
+									Insert content from 1_right_section_1_reactivation_details.html  
+									---------------------------------------------------------------------
+									---------------------------------------------------------------------
+								-->
 
+							<!-- start: First and second navigation levels -->
+							<div class="tabs tabs-primary">
+								<ul class="nav nav-tabs nav-justified">
+									<!--
+											---------------------------------------------------------------------
+											--------------------------------------------------------------------- 
+											Insert content from 1_right_section_2_first_navigation_level.html  
+											---------------------------------------------------------------------
+											---------------------------------------------------------------------
+										-->
+								</ul>
+								<div class="tab-content pt-0">
+									<!-- End - Second navigation level (breadcrumber element) -->
+									<div class="row">
+										<div class="col-lg-12 p-0 m-0 sln">
+											<nav aria-label="breadcrumb">
+												<ol class="breadcrumb pt-0 pb-0">
+													<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink"
+															href="#">Basic
+															Data</a></li>
+													<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink"
+															href="#">Descriptions</a>
+													</li>
+													<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink"
+															href="#">Customer
+															decision tree (CDT)</a></li>
+													<!-- Above are examples for the Basic data panel, more li elements might be needed -->
+												</ol>
+											</nav>
+										</div>
+									</div>
+									<!-- End - Second navigation level (breadcrumber element) -->
+
+									<!--
+											---------------------------------------------------------------------
+											--------------------------------------------------------------------- 
+											Insert content from 1_right_section_3_panels.html  
+											---------------------------------------------------------------------
+											---------------------------------------------------------------------
+										-->
+								</div>
+							</div>
+							<!-- end: First and second navigation levels -->
+						</div>
+						<!-- start: Right panel (Intro week values, form) -->
 					</div>
 					<!-- end: Whole content area -->
-
 				</section>
 			</section>
 			<!-- end: DIAMS apps content area -->
-
 		</div>
 		<!-- end: DIAMS content area (menu and apps) -->
-
 	</section>
 </body>
 
