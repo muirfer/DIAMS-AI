@@ -1,5 +1,5 @@
 <style>
-	/** Styles for B2C */
+	/* Target: <label class="btn ..."> Nutri-Score letter toggle buttons inside #nutri-score-1 and #nutri-score-2 */
 	.nutri-score .btn {
 		width: 50px;
 		background-color: #ccc;
@@ -7,48 +7,59 @@
 		opacity: 0.2;
 	}
 
+	/* Target: currently active/selected <label class="btn ... selected-score"> Nutri-Score button */
 	.nutri-score .btn.selected-score {
 		opacity: 1;
 		font-size: x-large;
 	}
 
+	/* Target: <label class="btn btn-score-a"> Nutri-Score "A" button */
 	.nutri-score .btn-score-a {
 		background-color: #4CAF50;
 	}
 
+	/* Target: <label class="btn btn-score-b"> Nutri-Score "B" button */
 	.nutri-score .btn-score-b {
 		background-color: #A3D900;
 	}
 
+	/* Target: <label class="btn btn-score-c"> Nutri-Score "C" button */
 	.nutri-score .btn-score-c {
 		background-color: #FFC800;
 	}
 
+	/* Target: <label class="btn btn-score-d"> Nutri-Score "D" button */
 	.nutri-score .btn-score-d {
 		background-color: #FF6F00;
 	}
 
+	/* Target: <label class="btn btn-score-e"> Nutri-Score "E" button */
 	.nutri-score .btn-score-e {
 		background-color: #FF3C3C;
 	}
 
+	/* Target: <label class="btn btn-score-na"> Nutri-Score "N/A" button */
 	.nutri-score .btn-score-na {
 		background-color: grey;
 	}
 
+	/* Target: <input type="text" class="... nutri-table-input"> nutrient value inputs in .nutri-table */
 	.nutri-table-input {
 		border: 1px solid #ced4da;
 		text-align: right;
 	}
 
+	/* Target: all <td> cells inside <table class="... nutri-table"> */
 	.nutri-table tbody tr td {
 		vertical-align: middle !important;
 	}
 
+	/* Target: <td class="nutri-table-lbl ..."> nutrient name cells in .nutri-table and allergen name cells in Allergen table */
 	.nutri-table-lbl {
 		font-size: x-small;
 	}
 
+	/* Target: <select class="... nutri-unit"> appended unit dropdown ("Kj", "KCal", "g", "mg", "µg", "%") in .nutri-table */
 	.nutri-unit {
 		background-color: floralwhite;
 		text-align: center;
@@ -56,13 +67,15 @@
 		font-size: xx-small !important;
 	}
 
-	.perc-unit {
+	/* Target: <button class="... palm-oil-perc-btn">%</button> appended unit button in "Percentage of Palm Oil" input group */
+	.palm-oil-perc-btn {
 		width: 75px;
 		background-color: snow !important;
 		font-size: smaller !important;
 	}
 
-	.nutrients-lang {
+	/* Target: <button class="... b2c-lang-prepend-btn"> prepended language buttons ("English", "French", "Dutch", "German") in "Ingredients" textarea groups */
+	.b2c-lang-prepend-btn {
 		width: 75px;
 		background-color: snow !important;
 		font-size: smaller !important;
@@ -154,7 +167,7 @@
 						<textarea class="form-control form-control-sm" rows="2" data-plugin-maxlength maxlength="100"
 							autocomplete="off" autocorrect="off"
 							spellcheck="false">Text that can reach up to 100 characters. This is a text that can reach up to 100 characters.</textarea>
-						<p class="text-right mb-0 c-indicator">
+						<p class="text-right mb-0 char-limit-indicator">
 							<code>Max:</code> 100
 						</p>
 					</div>
@@ -166,7 +179,7 @@
 						<textarea class="form-control form-control-sm" rows="9" data-plugin-maxlength maxlength="500"
 							autocomplete="off" autocorrect="off"
 							spellcheck="false">Acme All-Purpose Cleaner Spray - Lemon Scented, 32 fl oz - Household Cleaning Product for Surfaces, Removes Dirt, Grease, and Grime - EPA Registered Disinfectant, Kills 99.9% of Germs, Bacteria, and Viruses - Safe for Use on Countertops, Floors, Tiles, and Appliances - Non-Toxic Formula, Biodegradable Ingredients - Complies with OSHA Standards, Made in the USA - Convenient Trigger Spray Bottle for Easy Application, Suitable for Residential and Commercial Use - Keep Out of Reach of Children.</textarea>
-						<p class="text-right mb-0 c-indicator">
+						<p class="text-right mb-0 char-limit-indicator">
 							<code>Max:</code> 500
 						</p>
 					</div>
@@ -178,7 +191,7 @@
 						<textarea class="form-control form-control-sm" rows="9" data-plugin-maxlength maxlength="500"
 							autocomplete="off" autocorrect="off"
 							spellcheck="false">Store Acme All-Purpose Cleaner Spray in a cool, dry place away from direct sunlight and heat sources. Keep the bottle tightly closed when not in use to prevent evaporation and maintain product efficacy. Avoid storing near food items or in areas accessible to children and pets. Do not expose the product to extreme temperatures or freezing conditions, as this may alter its effectiveness. Always store upright to prevent leakage. Use within recommended shelf life for best results.</textarea>
-						<p class="text-right mb-0 c-indicator">
+						<p class="text-right mb-0 char-limit-indicator">
 							<code>Max:</code> 500
 						</p>
 					</div>
@@ -229,7 +242,7 @@
 							<input type="text" name="moq" class="form-control form-control-sm" autocomplete="off"
 								autocorrect="off" spellcheck="false" style="text-align: right;" value="32.21">
 							<span class="input-group-append">
-								<button class="btn btn-default perc-unit" type="button">%</button>
+								<button class="btn btn-default palm-oil-perc-btn" type="button">%</button>
 							</span>
 						</div>
 					</div>
@@ -1967,7 +1980,7 @@
 					<div class="col-sm-8">
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default nutrients-lang" type="button">English</button>
+								<button class="btn btn-default b2c-lang-prepend-btn" type="button">English</button>
 							</span>
 							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
 								maxlength="5000" autocomplete="off" autocorrect="off"
@@ -1975,7 +1988,7 @@
 						</div>
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default nutrients-lang" type="button">French</button>
+								<button class="btn btn-default b2c-lang-prepend-btn" type="button">French</button>
 							</span>
 							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
 								maxlength="5000" autocomplete="off" autocorrect="off"
@@ -1983,7 +1996,7 @@
 						</div>
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default nutrients-lang" type="button">Dutch</button>
+								<button class="btn btn-default b2c-lang-prepend-btn" type="button">Dutch</button>
 							</span>
 							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
 								maxlength="5000" autocomplete="off" autocorrect="off"
@@ -1991,13 +2004,13 @@
 						</div>
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default nutrients-lang" type="button">German</button>
+								<button class="btn btn-default b2c-lang-prepend-btn" type="button">German</button>
 							</span>
 							<textarea class="form-control form-control-sm" rows="7" data-plugin-maxlength
 								maxlength="5000" autocomplete="off" autocorrect="off"
 								spellcheck="false">Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.Angereichertes Weizenmehl, Zucker, halbsÃ¼ÃŸe SchokoladenstÃ¼ckchen (Zucker, Kakaomasse, Kakaobutter, Sojalecithin, natÃ¼rliches Aroma), pflanzliches Ã–l (Soja- und/oder PalmÃ¶l), brauner Zucker, Maissirup mit hohem Fruchtzuckergehalt, Backtriebmittel (Natriumbicarbonat, Ammoniumbicarbonat), Salz, natÃ¼rliche und kÃ¼nstliche Aromen, Sojalecithin, Karamellfarbe.</textarea>
 						</div>
-						<p class="text-right mb-0 c-indicator">
+						<p class="text-right mb-0 char-limit-indicator">
 							<code>Max:</code> 5000
 						</p>
 					</div>

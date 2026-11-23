@@ -1,16 +1,17 @@
 <style>
-	/** Top header - GTINs panel */
-	.action-widget {
+	/* Target: <div class="widget-summary-col ... summary-icon-col"> left icon column in top summary widget */
+	.summary-icon-col {
 		vertical-align: middle;
 	}
 
-	/** Top header - GTINs panel */
-	.header-top-value div {
+	/* Target: <div class="h7 ..."> GTIN numeric value inside <div class="... gtin-summary-item"> */
+	.gtin-summary-item div {
 		color: darkgreen;
 		font-size: smaller;
 	}
 
-	.header-top-value p {
+	/* Target: <p class="text-3 ..."> GTIN label ("GTIN CU", "Input GTIN") inside <div class="... gtin-summary-item"> */
+	.gtin-summary-item p {
 		line-height: normal;
 	}
 </style>
@@ -19,7 +20,7 @@
 <section class="card card-featured-top card-featured-primary mt-0">
 	<div class="card-body pl-0 pb-0 pt-0">
 		<div class="widget-summary widget-summary-sm">
-			<div class="widget-summary-col widget-summary-col-icon bg-primary pt-1 action-widget">
+			<div class="widget-summary-col widget-summary-col-icon bg-primary pt-1 summary-icon-col">
 				<div class="summary-icon ml-1 mr-1" data-toggle="tooltip" data-placement="right"
 					title="Product creation process">
 					<i class="fa fa-solid fa-plus"></i>
@@ -37,13 +38,13 @@
 						<section class="mt-0">
 							<div class="p-1">
 								<div class="row mt-1">
-									<div class="col-md-6 text-center pr-1 header-top-value">
+									<div class="col-md-6 text-center pr-1 gtin-summary-item">
 										<div class="h7 font-weight-bold mb-0">
 											54106831504381
 										</div>
 										<p class="text-3 text-muted mb-0">GTIN CU</p>
 									</div>
-									<div class="col-md-6 text-center pl-1 header-top-value">
+									<div class="col-md-6 text-center pl-1 gtin-summary-item">
 										<div class="h7 font-weight-bold mb-0">
 											54106818870001
 										</div>

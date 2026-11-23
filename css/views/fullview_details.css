@@ -408,7 +408,7 @@ ul.simple-bullet-list li.darkcyan:before {
 
 /* Styles for Codes */
 .ds td {
-    font-size: smaller !important;
+    font-size: x-small !important;
 }
 
 .ds-sel {

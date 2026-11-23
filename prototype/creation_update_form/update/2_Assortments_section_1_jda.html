@@ -1,47 +1,56 @@
 <style>
-	/* Styles for Assortments */
-	.t-assortment tr td {
+	/* Target: all <td> cells inside <tbody class="assortment-table-body"> */
+	.assortment-table-body tr td {
 		vertical-align: middle !important;
 	}
 
-	.t-ass-type {
+	/* Target: Column 1 <td class="assortment-cluster-cell ..."> cluster code cell */
+	.assortment-cluster-cell {
 		width: 1px;
 		font-weight: bold;
 		font-size: smaller;
 	}
 
-	.t-ass-type-c1 {
+	/* Target: Column 1 <td class="... assortment-cluster-c1"> for Cluster C1 rows */
+	.assortment-cluster-c1 {
 		background-color: lightyellow;
 	}
 
-	.t-ass-type-c2 {
+	/* Target: Column 1 <td class="... assortment-cluster-c2"> for Cluster C2 rows */
+	.assortment-cluster-c2 {
 		background-color: linen;
 	}
 
-	.t-ass-type-c3 {
+	/* Target: Column 1 <td class="... assortment-cluster-c3"> for Cluster C3 rows */
+	.assortment-cluster-c3 {
 		background-color: aliceblue;
 	}
 
-	.t-ass-type-c4 {
+	/* Target: Column 1 <td class="... assortment-cluster-c4"> for Cluster C4 rows */
+	.assortment-cluster-c4 {
 		background-color: ghostwhite;
 	}
 
-	.t-ass-lm {
+	/* Target: Column 2 <td class="assortment-linear-cell ..."> linear code cell */
+	.assortment-linear-cell {
 		width: 1px;
 		color: darkgreen;
 		font-size: smaller;
 	}
 
-	.t-jda-btn-exp-col {
+	/* Target: Column 6 <i class="... jda-expand-icon"> chevron icon to expand/collapse additional JDA cluster rows */
+	.jda-expand-icon {
 		font-size: large;
 		color: darkgreen;
 	}
 
-	.t-jda-title-line {
+	/* Target: Column 3 <div class="jda-detail-title"> main JDA planogram title line */
+	.jda-detail-title {
 		font-weight: bold;
 	}
 
-	.t-jda-sub-lines p {
+	/* Target: Column 3 <p> category and subcategory lines inside <div class="jda-detail-subtitles"> */
+	.jda-detail-subtitles p {
 		margin-top: -5px;
 		margin-bottom: -5px;
 		font-size: smaller;
@@ -75,16 +84,16 @@
 									<th class="text-center" style="width: 7%;"></th>
 								</tr>
 							</thead>
-							<tbody class="t-assortment" id="tableBody">
+							<tbody class="assortment-table-body" id="tableBody">
 								<tr id="row1">
-									<td id="cat" class="t-ass-type t-ass-type-c1 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c1 text-center">
 										C1</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L06</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											302_C1_L06_6M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A323</p>
 											<p>Subcategory: A323001</p>
 										</div>
@@ -96,18 +105,18 @@
 									<td class="text-center">
 										<a href="#" onclick="javascript:App.FVAssortment.showMoreJDA()"><i
 												id="expJdaIcon"
-												class="fas fa-solid fa-chevron-down t-jda-btn-exp-col"></i></a>
+												class="fas fa-solid fa-chevron-down jda-expand-icon"></i></a>
 									</td>
 								</tr>
 								<tr id="row2" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c1 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c1 text-center">
 										C1</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L08</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											302_C1_L08_11M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A323</p>
 											<p>Subcategory: A323001</p>
 										</div>
@@ -120,14 +129,14 @@
 									</td>
 								</tr>
 								<tr id="row3" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c1 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c1 text-center">
 										C1</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L06</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											302_C1_L06_15M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A321</p>
 											<p>Subcategory: A321102</p>
 										</div>
@@ -140,14 +149,14 @@
 									</td>
 								</tr>
 								<tr id="row7" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c2 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c2 text-center">
 										C2</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L11</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											850_C2_L11_75M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A720</p>
 											<p>Subcategory: A720225</p>
 										</div>
@@ -160,14 +169,14 @@
 									</td>
 								</tr>
 								<tr id="row4" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c3 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c3 text-center">
 										C3</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L07</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											402_C3_L07_25M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A421</p>
 											<p>Subcategory: A421070</p>
 										</div>
@@ -180,14 +189,14 @@
 									</td>
 								</tr>
 								<tr id="row5" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c3 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c3 text-center">
 										C3</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L11</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											402_C3_L11_48M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A421</p>
 											<p>Subcategory: A421070</p>
 										</div>
@@ -200,14 +209,14 @@
 									</td>
 								</tr>
 								<tr id="row6" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c3 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c3 text-center">
 										C3</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L15</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											402_C1_L15_51M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: A430</p>
 											<p>Subcategory: A430215</p>
 										</div>
@@ -220,14 +229,14 @@
 									</td>
 								</tr>
 								<tr id="row8" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c4 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c4 text-center">
 										C4</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L20</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											520_C4_L20_54M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: E020</p>
 											<p>Subcategory: E020010</p>
 										</div>
@@ -240,14 +249,14 @@
 									</td>
 								</tr>
 								<tr id="row9" class="hCluster" style="display: none;">
-									<td id="cat" class="t-ass-type t-ass-type-c4 text-center">
+									<td id="cat" class="assortment-cluster-cell assortment-cluster-cell-c4 text-center">
 										C4</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-linear-cell text-center">
 										L30</td>
 									<td>
-										<div id="mainTitle" class="t-jda-title-line">
+										<div id="mainTitle" class="jda-detail-title">
 											520_C4_L30_85M</div>
-										<div class="t-jda-sub-lines ml-0 ">
+										<div class="jda-detail-subtitles ml-0 ">
 											<p>Cateogory: E020</p>
 											<p>Subcategory: E020115</p>
 										</div>

@@ -1,16 +1,18 @@
 <style>
-	/** Styles for Prices */
-	.sales-price-badge {
+	/* Target: <label class="col-form-label sales-price-col-subtitle"> subtitles ("Introduction Sales Price", "Recommended Sales Price") below ISP/RSP badges */
+	.sales-price-col-subtitle {
 		color: darkgreen;
 	}
 
-	.sales-price-uom {
+	/* Target: <button class="btn btn-default sales-price-uom-btn"> prepended UoM buttons ("EA", "CV") in ISP price input groups */
+	.sales-price-uom-btn {
 		font-size: smaller !important;
 		background: snow;
 		width: 75px;
 	}
 
-	.sales-price-perc {
+	/* Target: <button class="btn btn-default sales-price-perc-btn">%</button> appended unit buttons in "Margin on product (MOP)" input groups */
+	.sales-price-perc-btn {
 		font-size: smaller !important;
 		background: snow;
 	}
@@ -27,19 +29,19 @@
 			<div class="card-body">
 				<div class="row">
 					<div class="col-lg-3 offset-lg-3 text-center">
-						<span class="badge badge-info sBadge">ISP</span>
+						<span class="badge badge-info section-col-badge">ISP</span>
 					</div>
 					<div class="col-lg-3 text-center">
-						<span class="badge badge-info sBadge">RSP</span>
+						<span class="badge badge-info section-col-badge">RSP</span>
 					</div>
 				</div>
 				<div class="row mb-2">
 					<div class="col-lg-3 offset-lg-3 text-center">
-						<label class="col-form-label sales-price-badge" for="formGroupExampleInput">Introduction
+						<label class="col-form-label sales-price-col-subtitle" for="formGroupExampleInput">Introduction
 							Sales Price</label>
 					</div>
 					<div class="col-lg-3 text-center">
-						<label class="col-form-label sales-price-badge" for="formGroupExampleInput">Recommended
+						<label class="col-form-label sales-price-col-subtitle" for="formGroupExampleInput">Recommended
 							Sales Price</label>
 					</div>
 				</div>
@@ -48,7 +50,7 @@
 					<div class="col-sm-3">
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default sales-price-uom" type="button">EA</button>
+								<button class="btn btn-default sales-price-uom-btn" type="button">EA</button>
 							</span>
 							<input type="text" class="form-control form-control-sm text-center" autocomplete="off"
 								autocorrect="off" spellcheck="false" value="0.00" onClick="this.select();"
@@ -66,7 +68,7 @@
 					<div class="col-sm-3">
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default sales-price-uom" type="button">CV</button>
+								<button class="btn btn-default sales-price-uom-btn" type="button">CV</button>
 							</span>
 							<input type="text" class="form-control form-control-sm text-center" autocomplete="off"
 								autocorrect="off" spellcheck="false" value="0.00" onClick="this.select();"
@@ -86,7 +88,7 @@
 								autocomplete="off" autocomplete="off" autocorrect="off" spellcheck="false" value="0.00"
 								readonly>
 							<span class="input-group-append">
-								<button class="btn btn-default sales-price-perc" type="button">%</button>
+								<button class="btn btn-default sales-price-perc-btn" type="button">%</button>
 							</span>
 						</div>
 					</div>
@@ -95,7 +97,7 @@
 							<input type="text" class="form-control form-control-sm text-center" autocomplete="off"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="0.00" readonly>
 							<span class="input-group-append">
-								<button class="btn btn-default sales-price-perc" type="button">%</button>
+								<button class="btn btn-default sales-price-perc-btn" type="button">%</button>
 							</span>
 						</div>
 					</div>

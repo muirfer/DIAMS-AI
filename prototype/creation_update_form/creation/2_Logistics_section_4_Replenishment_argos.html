@@ -1,11 +1,13 @@
 <style>
-	.btn-moq {
+	/* Target: <button class="... moq-uom-prepend-btn"> prepended PO UoM button ("CV") in "Minimum order quantity" input group */
+	.moq-uom-prepend-btn {
 		font-size: smaller !important;
 		background: snow;
 		width: 75px;
 	}
 
-	.ord-chk {
+	/* Target: <div class="checkbox-custom mt-1 ordering-day-checkbox"> centered checkbox wrappers in the "Ordering days" column */
+	.ordering-day-checkbox {
 		margin-left: 45%;
 	}
 </style>
@@ -25,7 +27,7 @@
 					<div class="col-sm-5">
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default btn-sm btn-moq" type="button">CV</button>
+								<button class="btn btn-default btn-sm moq-uom-prepend-btn" type="button">CV</button>
 							</span>
 							<input type="text" name="moq" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="170">
@@ -73,12 +75,12 @@
 				</div>
 				<div class="row mt-3 mb-3">
 					<div class="col-lg-4 offset-lg-3 text-center">
-						<span class="badge badge-info sBadge">Delivery lead
+						<span class="badge badge-info section-col-badge">Delivery lead
 							time
 							pattern</span>
 					</div>
 					<div class="col-lg-2 text-center">
-						<span class="badge badge-info sBadge">Ordering
+						<span class="badge badge-info section-col-badge">Ordering
 							days</span>
 					</div>
 				</div>
@@ -90,7 +92,7 @@
 							autocorrect="off" spellcheck="false" value="15">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" checked id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
@@ -104,7 +106,7 @@
 							autocorrect="off" spellcheck="false" value="10">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
@@ -118,7 +120,7 @@
 							autocorrect="off" spellcheck="false" value="5">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" checked id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
@@ -132,7 +134,7 @@
 							autocorrect="off" spellcheck="false" value="0">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
@@ -146,7 +148,7 @@
 							autocorrect="off" spellcheck="false" value="10">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" checked id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
@@ -160,7 +162,7 @@
 							autocorrect="off" spellcheck="false" value="0">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
@@ -174,7 +176,7 @@
 							autocorrect="off" spellcheck="false" value="20">
 					</div>
 					<div class="col-sm-2 text-center">
-						<div class="checkbox-custom mt-1 ord-chk">
+						<div class="checkbox-custom mt-1 ordering-day-checkbox">
 							<input type="checkbox" checked id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>

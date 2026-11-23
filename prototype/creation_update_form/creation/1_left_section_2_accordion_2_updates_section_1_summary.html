@@ -1,37 +1,45 @@
 <style>
-    div#pChangeMain .beautify-scroll {
-        height: 20rem;
-    }
+	/* Target: <div class="col-lg-12 beautify-scroll ..."> scrollable wrapper inside #pChangeMain */
+	div#pChangeMain .beautify-scroll {
+		height: 20rem;
+	}
 
-    table#tLog {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: smaller;
-    }
+	/* Target: <table id="tLog"> update requests summary table */
+	table#tLog {
+		width: 100% !important;
+		max-width: 100% !important;
+		font-size: smaller;
+	}
 
-    table#tLog tr td .badge {
-        font-size: small;
-    }
+	/* Target: <span class="badge ..."> action type badge ("UR", "U") in column 1 of table#tLog */
+	table#tLog tr td .badge {
+		font-size: small;
+	}
 
-    table#tLog tr td i {
-        font-size: larger;
-    }
+	/* Target: <i> status icons in column 3 of table#tLog */
+	table#tLog tr td i {
+		font-size: larger;
+	}
 
-    table#tLog tr td i.fa-plus {
-        color: darkgray
-    }
+	/* Target: <i class="... fa-plus"> new/pending status icon in column 3 of table#tLog */
+	table#tLog tr td i.fa-plus {
+		color: darkgray;
+	}
 
-    table#tLog tr td i.fa-check {
-        color: darkgreen
-    }
+	/* Target: <i class="... fa-check"> updated/approved L1 status icon in column 3 of table#tLog */
+	table#tLog tr td i.fa-check {
+		color: darkgreen;
+	}
 
-    table#tLog tr td i.fa-check-double {
-        color: darkblue
-    }
+	/* Target: <i class="... fa-check-double"> approved L2 status icon in column 3 of table#tLog */
+	table#tLog tr td i.fa-check-double {
+		color: darkblue;
+	}
 
-    table#tLog tr td i.fa-ban {
-        color: darkred
-    }
+	/* Target: <i class="... fa-ban"> rejected status icon in column 3 of table#tLog */
+	table#tLog tr td i.fa-ban {
+		color: darkred;
+	}
 </style>
 
 <div class="col-lg-12 beautify-scroll pl-1 pr-0">

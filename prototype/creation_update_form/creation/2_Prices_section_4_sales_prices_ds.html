@@ -1,19 +1,21 @@
 <style>
-	/** Styles for Prices */
-
-	.sales-price-banner-sel {
+	/* Target: <div id="mBanners" class="... ds-price-banner-dropdown"> "Add Banner" dropdown container in the top toolbar */
+	.ds-price-banner-dropdown {
 		margin-top: -10px;
 	}
 
-	.sales-price-info {
+	/* Target: <span class="ds-price-summary-value ..."> numeric values for "Purchase price" and "Cost price" in the top toolbar */
+	.ds-price-summary-value {
 		color: darkgreen;
 	}
 
+	/* Target: all <td> cells inside <table id="tableDSSalesPrices"> */
 	#tableDSSalesPrices tbody tr td {
 		vertical-align: middle;
 	}
 
-	.sales-price-banner-uom {
+	/* Target: Column 1 <td class="ds-price-banner-cell ..."> banner code cell ("SA".."SZ") in #tableDSSalesPrices */
+	.ds-price-banner-cell {
 		width: 1px;
 		background-color: lightyellow;
 		font-weight: bold;
@@ -42,16 +44,16 @@
 								<form class="form-inline">
 									<label class="control-label control-label-sm">Purchase
 										price:
-										<span class="sales-price-info ml-2">3251,2551</span>
+										<span class="ds-price-summary-value ml-2">3251,2551</span>
 									</label>
 									<label class="control-label ml-4 mr-4">|</label>
 									<label class="control-label control-label-sm mr-2">Cost price:
-										<span class="sales-price-info ml-2">1562,2511</span>
+										<span class="ds-price-summary-value ml-2">1562,2511</span>
 									</label>
 								</form>
 							</div>
 							<div class="col-lg-4 text-right">
-								<div id="mBanners" class="input-group-append sales-price-banner-sel">
+								<div id="mBanners" class="input-group-append ds-price-banner-dropdown">
 									<button tabindex="-1" class="btn btn-link btn-xs" type="button"><span
 											class="fa fa-plus mr-2"></span>Add Banner
 									</button>
@@ -101,7 +103,7 @@
 							</thead>
 							<tbody id="tableBody">
 								<tr id="rowbs1" style="display:none">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SA</p>
 									</td>
 									<td class="text-right">
@@ -123,7 +125,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs2">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SB</p>
 									</td>
 									<td class="text-right">
@@ -145,7 +147,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs3" style="display: none;">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SC</p>
 									</td>
 									<td class="text-right">
@@ -167,7 +169,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs4">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SD</p>
 									</td>
 									<td class="text-right">
@@ -189,7 +191,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs5">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SE</p>
 									</td>
 									<td class="text-right">
@@ -211,7 +213,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs6">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SF</p>
 									</td>
 									<td class="text-right">
@@ -233,7 +235,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs7">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SG</p>
 									</td>
 									<td class="text-right">
@@ -255,7 +257,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs8" style="display: none;">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SH</p>
 									</td>
 									<td class="text-right">
@@ -277,7 +279,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs9" style="display: none;">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SI</p>
 									</td>
 									<td class="text-right">
@@ -299,7 +301,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs10" style="display: none;">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SJ</p>
 									</td>
 									<td class="text-right">
@@ -321,7 +323,7 @@
 									</td>
 								</tr>
 								<tr id="rowbs11" style="display: none;">
-									<td id="cat" class="sales-price-banner-uom text-center">
+									<td id="cat" class="ds-price-banner-cell text-center">
 										<p class="mb-0">SZ</p>
 									</td>
 									<td class="text-right">

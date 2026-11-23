@@ -1,6 +1,6 @@
 <style>
-	/* Styles for Logistics */
-	.temperature {
+	/* Target: <button class="... temp-range-prepend-btn"> prepended temperature range buttons ("Min", "Ideal", "Max") in "Temperatures" input groups */
+	.temp-range-prepend-btn {
 		font-size: smaller !important;
 		background: snow;
 		width: 75px;
@@ -41,21 +41,21 @@
 					<div class="col-sm-5">
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default btn-sm temperature" type="button">Min</button>
+								<button class="btn btn-default btn-sm temp-range-prepend-btn" type="button">Min</button>
 							</span>
 							<input type="text" name="tmin" class=" form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="-15">
 						</div>
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default btn-sm temperature" type="button">Ideal</button>
+								<button class="btn btn-default btn-sm temp-range-prepend-btn" type="button">Ideal</button>
 							</span>
 							<input type="text" name="tideal" class=" form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="5">
 						</div>
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default btn-sm temperature" type="button">Max</button>
+								<button class="btn btn-default btn-sm temp-range-prepend-btn" type="button">Max</button>
 							</span>
 							<input type="text" name="tmax" class=" form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="25">
@@ -290,7 +290,7 @@
 									data-dismiss="fileupload">Remove</a>
 							</div>
 						</div>
-						<img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+						<img id="img" class="uploaded-image-preview mt-3" src="img/packaging.webp" />
 					</div>
 				</div>
 			</div>

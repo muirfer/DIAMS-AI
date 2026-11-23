@@ -1,20 +1,23 @@
 <style>
-	/* Styles for Logistics */
-	.ds td {
+	/* Target: <td> cells inside <tr class="ghs-symbol-row"> in Dangerous symbols (GHS) table (#f4) */
+	.ghs-symbol-row td {
 		font-size: smaller !important;
 	}
 
-	.ds-sel {
+	/* Target: checked/selected <tr class="ghs-symbol-row ghs-symbol-row-selected"> rows in Dangerous symbols (GHS) table (#f4) */
+	.ghs-symbol-row-selected {
 		background: floralwhite;
 	}
 
-	.l-age-country {
+	/* Target: <button class="... legal-age-country-btn"> prepended country button ("Belgium", "Luxembourg") in "Legal age restriction" input groups */
+	.legal-age-country-btn {
 		width: 100px;
 		font-size: smaller !important;
 		background: snow;
 	}
 
-	.l-age-value {
+	/* Target: <button class="... legal-age-value-btn"> appended numeric age button in "Legal age restriction" input groups */
+	.legal-age-value-btn {
 		background: floralwhite;
 	}
 </style>
@@ -97,20 +100,20 @@
 				<div class="col-sm-5">
 					<div class="input-group mb-1">
 						<span class="input-group-prepend">
-							<button class="btn btn-default btn-sm l-age-country" type="button">Belgium</button>
+							<button class="btn btn-default btn-sm legal-age-country-btn" type="button">Belgium</button>
 						</span>
 						<input type="text" class="form-control form-control-sm" value="0+, no age restriction" />
 						<span class="input-group-append">
-							<button class="btn btn-default btn-sm l-age-value" type="button">0</button>
+							<button class="btn btn-default btn-sm legal-age-value-btn" type="button">0</button>
 						</span>
 					</div>
 					<div class="input-group">
 						<span class="input-group-prepend">
-							<button class="btn btn-default l-age-country" type="button">Luxembourg</button>
+							<button class="btn btn-default legal-age-country-btn" type="button">Luxembourg</button>
 						</span>
 						<input type="text" class="form-control form-control-sm" value="0+, no age restriction" />
 						<span class="input-group-append">
-							<button class="btn btn-default btn-sm l-age-value" type="button">0</button>
+							<button class="btn btn-default btn-sm legal-age-value-btn" type="button">0</button>
 						</span>
 					</div>
 				</div>
@@ -123,7 +126,7 @@
 					<div class="col-sm-7">
 						<table id="f4" class="table table-responsive-md table-sm table-hover mb-0">
 							<tbody>
-								<tr class="ds ds-sel">
+								<tr class="ghs-symbol-row ghs-symbol-row-selected">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" checked="" id="checkboxExample2">
@@ -135,7 +138,7 @@
 										EXPLODING_BOMB - Depicts explosives and some
 										self-reactives and/or organic peroxides</td>
 								</tr>
-								<tr class="ds">
+								<tr class="ghs-symbol-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" id="checkboxExample2" disabled>
@@ -146,7 +149,7 @@
 									<td data-title="Description" class="text-left">LAME
 										- Depicts flammable substances</td>
 								</tr>
-								<tr class="ds">
+								<tr class="ghs-symbol-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" id="checkboxExample2" disabled>
@@ -158,7 +161,7 @@
 										FLAME_OVER_CIRCLE - Depicts oxidizing gases,
 										liquids or solids</td>
 								</tr>
-								<tr class="ds ds-sel">
+								<tr class="ghs-symbol-row ghs-symbol-row-selected">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" checked="" id="checkboxExample2" disabled>
@@ -169,7 +172,7 @@
 									<td data-title="Description" class="text-left">
 										GAS_CYLINDER - Depicts gases under pressure</td>
 								</tr>
-								<tr class="ds">
+								<tr class="ghs-symbol-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" id="checkboxExample2" disabled>
@@ -181,7 +184,7 @@
 										CORROSION - Depicts corrosives to skin, eyes
 										and/or metals</td>
 								</tr>
-								<tr class="ds ds-sel">
+								<tr class="ghs-symbol-row ghs-symbol-row-selected">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" checked="" id="checkboxExample2" disabled>
@@ -193,7 +196,7 @@
 										SKULL_AND_CROSSBONES - Depicts acute toxicity
 									</td>
 								</tr>
-								<tr class="ds">
+								<tr class="ghs-symbol-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" id="checkboxExample2" disabled>
@@ -205,7 +208,7 @@
 										EXCLAMATION_MARK - Depicts other health hazards
 									</td>
 								</tr>
-								<tr class="ds">
+								<tr class="ghs-symbol-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" id="checkboxExample2" disabled>
@@ -217,7 +220,7 @@
 										HEALTH_HAZARD - Depicts severe health hazards
 									</td>
 								</tr>
-								<tr class="ds">
+								<tr class="ghs-symbol-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom" style="margin:0 !important">
 											<input type="checkbox" id="checkboxExample2" disabled>

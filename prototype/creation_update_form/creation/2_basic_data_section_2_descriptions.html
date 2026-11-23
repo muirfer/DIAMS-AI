@@ -1,6 +1,6 @@
 <style>
-	/* Column 1 - Languages */
-	.t-desc-lang {
+	/* Target: Column 1 <td class="desc-table-lang ..."> language cell in #datatable-desc */
+	.desc-table-lang {
 		text-align: right;
 		width: 1px;
 		background-color: lightyellow;
@@ -9,36 +9,41 @@
 		font-size: smaller;
 	}
 
-	.t-desc-lang-english {
+	/* Target: Column 1 <td class="... desc-table-lang-english"> for "English" rows */
+	.desc-table-lang-english {
 		background-color: lightyellow;
 	}
 
-	.t-desc-lang-french {
+	/* Target: Column 1 <td class="... desc-table-lang-french"> for "French" rows */
+	.desc-table-lang-french {
 		background-color: linen;
 	}
 
-	.t-desc-lang-dutch {
+	/* Target: Column 1 <td class="... desc-table-lang-dutch"> for "Dutch" rows */
+	.desc-table-lang-dutch {
 		background-color: aliceblue;
 	}
 
-	.t-desc-lang-german {
+	/* Target: Column 1 <td class="... desc-table-lang-german"> for "German" rows */
+	.desc-table-lang-german {
 		background-color: ghostwhite;
 	}
 
-	.t-desc-lang-bilingual {
+	/* Target: Column 1 <td class="... desc-table-lang-bilingual"> for "Z2 - Bilingual NL-FR" rows */
+	.desc-table-lang-bilingual {
 		background-color: honeydew;
 	}
 
-	/* Column 2 - Description type */
-	.t-desc-type {
+	/* Target: Column 2 <td class="desc-table-type"> description type cell ("Short", "Shelf", "Ticket", "E-commerce") in #datatable-desc */
+	.desc-table-type {
 		width: 1px;
 		vertical-align: middle;
 		color: darkgreen;
 		font-size: smaller;
 	}
 
-	/* Column 3 - Uom */
-	.t-desc-uom {
+	/* Target: Column 3 <td class="desc-table-uom"> unit of measure cell ("EA", "IP", "CV") in #datatable-desc */
+	.desc-table-uom {
 		text-align: center;
 		width: 1px;
 		vertical-align: middle;
@@ -46,13 +51,13 @@
 		color: darkgrey;
 	}
 
-	/** AI relevant */
+	/* Target: Column 4 <td class="input-ai-wrapper"> description input cell container in #datatable-desc */
 	.input-ai-wrapper {
 		position: relative;
 		vertical-align: middle;
 	}
 
-	/* AI Assistant Styles */
+	/* Target: <span class="ai-notification-badge">AI</span> badge dynamically injected into Column 5 (<td class="ai-col">) */
 	.ai-notification-badge {
 		right: 15px;
 		top: 50%;
@@ -70,19 +75,19 @@
 		animation: bounceIn 0.3s;
 	}
 
+	/* Target: <span class="ai-notification-badge"> on hover */
 	.ai-notification-badge:hover {
 		transform: translateY(-50%) scale(1.1);
 	}
 
+	/* Target: <div class="ai-popover"> floating AI suggestion popover inside Column 4 (.input-ai-wrapper) */
 	.ai-popover {
 		position: absolute;
 		top: 40px;
-		/* Below the input */
 		right: 10px;
 		width: 100%;
 		max-width: 400px;
 		background-color: #fff3cd;
-		/* Warning light bg */
 		border: 1px solid #ffeeba;
 		border-radius: 5px;
 		padding: 10px;
@@ -91,16 +96,19 @@
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 	}
 
+	/* Target: <div class="popover-content"> suggested text container inside .ai-popover */
 	.ai-popover .popover-content {
 		font-style: italic;
 		color: #856404;
 		margin-bottom: 10px;
 	}
 
+	/* Target: <div class="popover-actions"> button bar inside .ai-popover */
 	.ai-popover .popover-actions {
 		text-align: right;
 	}
 
+	/* Target: <button class="... btn-accept"> accept suggestion button inside .ai-popover */
 	.ai-popover .btn-accept {
 		color: #fff;
 		background-color: #28a745;
@@ -109,6 +117,7 @@
 		margin-left: 5px;
 	}
 
+	/* Target: <button class="... btn-reject"> reject suggestion button inside .ai-popover */
 	.ai-popover .btn-reject {
 		color: #fff;
 		background-color: #dc3545;
@@ -117,6 +126,7 @@
 		margin-left: 5px;
 	}
 
+	/* Target: entrance animation for .ai-notification-badge */
 	@keyframes bounceIn {
 		0% {
 			opacity: 0;
@@ -175,11 +185,11 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Short</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 									</td>
 									<td class="input-ai-wrapper">
 										<input type="text" name="pshdesc"
@@ -191,11 +201,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -206,11 +216,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -221,11 +231,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -236,11 +246,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -251,11 +261,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -266,11 +276,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -281,11 +291,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -296,11 +306,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -311,11 +321,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-english">
+									<td class="desc-table-lang desc-table-lang-english">
 										English</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -326,11 +336,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Short</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 									</td>
 									<td class="input-ai-wrapper">
 										<input type="text" name="pshdesc"
@@ -342,11 +352,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -357,11 +367,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -372,11 +382,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -387,11 +397,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -402,11 +412,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -417,11 +427,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -432,11 +442,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -447,11 +457,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -462,11 +472,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-french">
+									<td class="desc-table-lang desc-table-lang-french">
 										French</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -477,11 +487,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Short</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 									</td>
 									<td class="input-ai-wrapper">
 										<input type="text" name="pshdesc"
@@ -493,11 +503,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -508,11 +518,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -523,11 +533,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -538,11 +548,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -553,11 +563,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -568,11 +578,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -583,11 +593,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -598,11 +608,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -613,11 +623,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-dutch">
+									<td class="desc-table-lang desc-table-lang-dutch">
 										Dutch</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -628,11 +638,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Short</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 									</td>
 									<td class="input-ai-wrapper">
 										<input type="text" name="pshdesc"
@@ -644,11 +654,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -659,11 +669,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -674,11 +684,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -689,11 +699,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -704,11 +714,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -719,11 +729,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -734,11 +744,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -749,11 +759,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -764,11 +774,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-german">
+									<td class="desc-table-lang desc-table-lang-german">
 										German</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -779,11 +789,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Short</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 									</td>
 									<td class="input-ai-wrapper">
 										<input type="text" name="pshdesc"
@@ -795,11 +805,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -810,11 +820,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -825,11 +835,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Shelf</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -840,11 +850,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -855,11 +865,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -870,11 +880,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										Ticket</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -885,11 +895,11 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										EA</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -900,11 +910,11 @@
 									</td>
 								</tr>
 								<tr class="secIP">
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										IP</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"
@@ -915,11 +925,11 @@
 									</td>
 								</tr>
 								<tr class="secCV">
-									<td class="t-desc-lang t-desc-lang-bilingual">
+									<td class="desc-table-lang desc-table-lang-bilingual">
 										Z2 - Bilingual NL-FR</td>
-									<td class="t-desc-type">
+									<td class="desc-table-type">
 										E-commerce</td>
-									<td class="t-desc-uom">
+									<td class="desc-table-uom">
 										CV</td>
 									<td class="input-ai-wrapper">
 										<input type="text" class="form-control form-control-sm ai-subscribable"

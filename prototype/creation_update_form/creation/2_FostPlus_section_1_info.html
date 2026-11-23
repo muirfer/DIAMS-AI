@@ -1,6 +1,6 @@
 <style>
-	/** Styles for FP */
-	.lblNoInfo {
+	/* Target: <label class="fp-no-info-notice ..."> warning text displayed when #chk_nfp ("Fost+ information not yet available") is checked */
+	.fp-no-info-notice {
 		display: none;
 		font-size: smaller !important;
 	}
@@ -22,7 +22,7 @@
 							<label for="chk_nfp">Fost+ information not yet
 								available</label>
 						</div>
-						<label class="lblNoInfo mt-1"><code>Important: </code>You
+						<label class="fp-no-info-notice mt-1"><code>Important: </code>You
 							will not be required to provide information about Fost+ now.
 							<br>
 							Nonetheless, a new task will be created so you can deliver
@@ -156,7 +156,7 @@
 										class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
 								</div>
 							</div>
-							<img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+							<img id="img" class="uploaded-image-preview mt-3" src="img/packaging.webp" />
 						</div>
 					</div>
 				</div>

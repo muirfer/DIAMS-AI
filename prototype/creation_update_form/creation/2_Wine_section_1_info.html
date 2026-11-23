@@ -1,6 +1,6 @@
 <style>
-	/** Styles for Wine */
-	.perc-unit-w {
+	/* Target: <button class="btn btn-default wine-perc-append-btn">%</button> appended unit buttons in "Contract in bottles" and "Brokerage" input groups */
+	.wine-perc-append-btn {
 		width: 75px;
 		background-color: snow !important;
 		font-size: smaller !important;
@@ -103,7 +103,7 @@
 							<input type="text" name="moq" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="32">
 							<span class="input-group-append">
-								<button class="btn btn-default perc-unit-w" type="button">%</button>
+								<button class="btn btn-default wine-perc-append-btn" type="button">%</button>
 							</span>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 							<input type="text" name="moq" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="17">
 							<span class="input-group-append">
-								<button class="btn btn-default perc-unit-w" type="button">%</button>
+								<button class="btn btn-default wine-perc-append-btn" type="button">%</button>
 							</span>
 						</div>
 					</div>
@@ -207,7 +207,7 @@
 					<div class="col-sm-5">
 						<textarea class="form-control form-control-sm" rows="5" data-plugin-maxlength maxlength="250"
 							autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
-						<p class="text-right mb-0 c-indicator">
+						<p class="text-right mb-0 char-limit-indicator">
 							<code>Max:</code> 250
 						</p>
 					</div>

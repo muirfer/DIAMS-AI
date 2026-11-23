@@ -1,5 +1,18 @@
 <style>
+	/* Target: <span class="input-group-append purch-price-unit-addon"> appended currency wrapper in "Purchase price" input group */
+	.purch-price-unit-addon {
+		width: 75px;
+	}
 
+	/* Target: <select> currency ("EUR", "USD") dropdown inside .purch-price-unit-addon */
+	.purch-price-unit-addon select {
+		background-color: floralwhite !important;
+	}
+
+	/* Target: <label class="... purch-price-per-unit-label"> trailing "per 1 EA" label right of the "Purchase price" field */
+	.purch-price-per-unit-label {
+		color: darkred;
+	}
 </style>
 
 <!-- Start - Subpanel - information -->
@@ -33,7 +46,7 @@
 						<div class="input-group input-group-sm">
 							<input type="text" name="purch_pr" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="156312,25">
-							<span class="input-group-append purch-price-currency-uom">
+							<span class="input-group-append purch-price-per-unit-label-addon">
 								<select class="form-control form-control-sm mb-0 text-center">
 									<option value="EUR" selected>EUR</option>
 									<option value="USD">USD</option>
@@ -41,7 +54,7 @@
 							</span>
 						</div>
 					</div>
-					<label class="col-sm-3 control-label control-label-sm purch-price-unit pt-1 pl-0">per
+					<label class="col-sm-3 control-label control-label-sm purch-price-per-unit-label pt-1 pl-0">per
 						1 EA</label>
 				</div>
 				<div class="row">
@@ -61,12 +74,12 @@
 						<div class="input-daterange input-group" data-plugin-datepicker=""
 							data-plugin-options='{ "format": "dd/mm/yyyy" }'>
 							<span class="input-group-prepend">
-								<span class="input-group-text input-group-aux" tabindex="-1">
+								<span class="input-group-text input-group-addon-sm" tabindex="-1">
 									<i class="fas fa-calendar-alt"></i>
 								</span>
 							</span>
 							<input type="text" class="form-control form-control-sm" name="start" value="15/02/2024">
-							<span class="input-group-text input-group-aux border-left-0 border-right-0 rounded-0">
+							<span class="input-group-text input-group-addon-sm border-left-0 border-right-0 rounded-0">
 								to
 							</span>
 							<input type="text" class="form-control form-control-sm" name="end" value="31/12/2029">

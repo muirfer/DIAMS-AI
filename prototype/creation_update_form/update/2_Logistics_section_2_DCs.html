@@ -1,14 +1,16 @@
 <style>
-	/* Styles for Logistics */
-	.dc-toolbar {
+	/* Target: <div class="row p-2 dc-selection-toolbar"> top DC multiselect toolbar */
+	.dc-selection-toolbar {
 		background: mintcream;
 	}
 
-	.dc-main {
+	/* Target: <div class="row dc-main-params-row"> highlighted top row ("Distribution profile", "Replenishment type", "Workbench", "VMI") inside each DC card */
+	.dc-main-params-row {
 		background: linen;
 	}
 
-	.dc-label {
+	/* Target: <label class="dc-field-label m-0"> field labels inside each DC card */
+	.dc-field-label {
 		font-size: smaller !important;
 	}
 </style>
@@ -33,10 +35,10 @@
 							</header>
 							<div class="card-body pl-3 pr-3 pb-1 pt-0">
 								<!-- Start: Main values -->
-								<div class="row dc-main">
+								<div class="row dc-main-params-row">
 									<div class="col-lg-7 pl-1 pb-1 p-0">
 										<div class="form-group p-2 text-center">
-											<label class="dc-label m-0">Distribution
+											<label class="dc-field-label m-0">Distribution
 												profile</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
@@ -50,7 +52,7 @@
 									</div>
 									<div class="col-lg-5 pl-1 p-0 dc-ds">
 										<div class="form-group p-2 text-center">
-											<label class="dc-label m-0">Replenishment
+											<label class="dc-field-label m-0">Replenishment
 												type</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
@@ -65,7 +67,7 @@
 								<div class="row">
 									<div class="col-lg-7 pl-1 p-0">
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Logistics handling
+											<label class="dc-field-label m-0">Logistics handling
 												group</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
@@ -78,7 +80,7 @@
 											</select>
 										</div>
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Pick unit
+											<label class="dc-field-label m-0">Pick unit
 												placement</label>
 											<div class="input-group input-group-sm text-center">
 												<span class="input-group-prepend">
@@ -95,7 +97,7 @@
 											</div>
 										</div>
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Stock
+											<label class="dc-field-label m-0">Stock
 												planner</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
@@ -111,7 +113,7 @@
 									</div>
 									<div class="col-lg-5 pl-1 p-0">
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Multi store
+											<label class="dc-field-label m-0">Multi store
 												order</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
@@ -121,7 +123,7 @@
 											</select>
 										</div>
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Storage
+											<label class="dc-field-label m-0">Storage
 												class</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
@@ -133,7 +135,7 @@
 											</select>
 										</div>
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Scannable</label>
+											<label class="dc-field-label m-0">Scannable</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>
 												<option selected="">0 - N/A</option>
@@ -142,7 +144,7 @@
 											</select>
 										</div>
 										<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-											<label class="dc-label m-0">Delivery
+											<label class="dc-field-label m-0">Delivery
 												unit</label>
 											<select class="form-control form-control-sm mb-0 text-center">
 												<option value=""></option>

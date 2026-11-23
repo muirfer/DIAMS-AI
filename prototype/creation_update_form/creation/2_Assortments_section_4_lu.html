@@ -1,32 +1,38 @@
 <style>
-	/* Styles for Assortments - same as for BE section*/
-	.t-assortment tr td {
+	/* Target: all <td> cells inside <tbody class="assortment-table-body"> */
+	.assortment-table-body tr td {
 		vertical-align: middle !important;
 	}
 
-	.t-ass-type {
+	/* Target: Column 1 <td class="assortment-type-cell ..."> assortment type cell */
+	.assortment-type-cell {
 		width: 1px;
 		font-weight: bold;
 		font-size: smaller;
 	}
 
-	.t-ass-type-manual {
+	/* Target: Column 1 <td class="... assortment-type-manual"> for "SM Manual" rows */
+	.assortment-type-manual {
 		background-color: lightyellow;
 	}
 
-	.t-ass-type-local {
+	/* Target: Column 1 <td class="... assortment-type-local"> for "SM local" rows */
+	.assortment-type-local {
 		background-color: linen;
 	}
 
-	.t-ass-type-spcat {
+	/* Target: Column 1 <td class="... assortment-type-spcat"> for "SM specific categories" rows */
+	.assortment-type-spcat {
 		background-color: aliceblue;
 	}
 
-	.t-ass-type-aff {
+	/* Target: Column 1 <td class="... assortment-type-aff"> for "Affiliates" rows */
+	.assortment-type-aff {
 		background-color: ghostwhite;
 	}
 
-	.t-ass-lm {
+	/* Target: Column 2 <td class="assortment-lm-cell ..."> layout module code cell */
+	.assortment-lm-cell {
 		width: 1px;
 		color: darkgreen;
 		font-size: smaller;
@@ -88,11 +94,11 @@
 									<th class="text-center" style="width: 10%;"></th>
 								</tr>
 							</thead>
-							<tbody class="t-assortment" id="tableBodyLu">
+							<tbody class="assortment-table-body" id="tableBodyLu">
 								<tr class="sm-manual">
-									<td class="t-ass-type t-ass-type-manual text-center">
+									<td class="assortment-type-cell assortment-type-manual text-center">
 										SM manual</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_201</td>
 									<td>
 										LU Assort SM Center 201</td>
@@ -104,9 +110,9 @@
 									</td>
 								</tr>
 								<tr class="sm-manual">
-									<td class="t-ass-type t-ass-type-manual text-center">
+									<td class="assortment-type-cell assortment-type-manual text-center">
 										SM manual</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_213</td>
 									<td>
 										LU Assort City 213</td>
@@ -117,9 +123,9 @@
 									</td>
 								</tr>
 								<tr class="sm-manual">
-									<td class="t-ass-type t-ass-type-manual text-center">
+									<td class="assortment-type-cell assortment-type-manual text-center">
 										SM manual</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_231</td>
 									<td>
 										LU Assort SM Border BE</td>
@@ -131,9 +137,9 @@
 									</td>
 								</tr>
 								<tr class="sm-manual">
-									<td class="t-ass-type t-ass-type-manual text-center">
+									<td class="assortment-type-cell assortment-type-manual text-center">
 										SM manual</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_232</td>
 									<td>
 										LU Assort SM Border FR</td>
@@ -144,9 +150,9 @@
 									</td>
 								</tr>
 								<tr class="sm-manual">
-									<td class="t-ass-type t-ass-type-manual text-center">
+									<td class="assortment-type-cell assortment-type-manual text-center">
 										SM manual</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_233</td>
 									<td>
 										LU Assort SM Border Schmiede</td>
@@ -158,9 +164,9 @@
 									</td>
 								</tr>
 								<tr class="sm-manual">
-									<td class="t-ass-type t-ass-type-manual text-center">
+									<td class="assortment-type-cell assortment-type-manual text-center">
 										SM manual</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_234</td>
 									<td>
 										LU Assort SM Border GE</td>
@@ -172,9 +178,9 @@
 									</td>
 								</tr>
 								<tr class="sm-affiliates">
-									<td class="t-ass-type t-ass-type-aff text-center">
+									<td class="assortment-type-cell assortment-type-aff text-center">
 										Affiliates</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_228</td>
 									<td>
 										LU Assort Proxy & Shop 228</td>
@@ -186,9 +192,9 @@
 									</td>
 								</tr>
 								<tr class="sm-affiliates">
-									<td class="t-ass-type t-ass-type-aff text-center">
+									<td class="assortment-type-cell assortment-type-aff text-center">
 										Affiliates</td>
-									<td class="t-ass-lm text-center">
+									<td class="assortment-lm-cell text-center">
 										LASA_245</td>
 									<td>
 										LU Assort AD 245</td>

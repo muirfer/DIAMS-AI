@@ -2,45 +2,45 @@
 
 <head>
 	<style>
-		/** All form labels - reduce font size */
+		/* Target: <label class="... control-label-sm"> form field labels across all sections */
 		.control-label-sm {
 			font-size: smaller;
 		}
 
-		/** Input group prepend/append icon and texts */
-		.input-group-aux {
+		/* Target: <span class="input-group-text input-group-addon-sm"> prepend/append icons and text in input groups (e.g., date range calendar icon and "to" separator) */
+		.input-group-addon-sm {
 			font-size: xx-small;
 		}
 
-		/** Reduce font size for checkboxes with labels on the right */
+		/* Target: <label> elements inside <div class="checkbox-custom"> */
 		.checkbox-custom label {
 			font-size: smaller;
 		}
 
-		/** Character max length indicator for input text fields and areas */
-		.c-indicator {
+		/* Target: <p class="... char-limit-indicator"> maximum character counter text below <input> and <textarea> fields */
+		.char-limit-indicator {
 			font-size: smaller;
 		}
 
-		/** for image display after it is uploaded */
-		.image-uploaded {
+		/* Target: <img class="uploaded-image-preview"> image preview element displayed below file upload controls */
+		.uploaded-image-preview {
 			width: inherit;
 			height: 25em;
 		}
 
-		/** for large texts related to descriptions for a field */
-		.txt-large-desc {
+		/* Target: <label class="... field-helper-desc"> read-only long description text below an <input> or <select> field */
+		.field-helper-desc {
 			color: green;
 			font-size: smaller;
 		}
 
-		/** for badges on top in the matrix layout */
-		.sBadge {
+		/* Target: <span class="badge ... section-col-badge"> column header badges in matrix layouts and item header badges in carousels */
+		.section-col-badge {
 			font-size: larger;
 			width: 95%;
 		}
 
-		/* Carousel Navigation Overrides */
+		/* Target: <div class="owl-nav"> navigation arrow container in <div class="owl-carousel"> */
 		.owl-carousel .owl-nav {
 			top: -2.1rem !important;
 			font-size: xxx-large !important;
@@ -49,13 +49,13 @@
 			right: 0;
 		}
 
-		/* Base transition to handle smooth scaling */
+		/* Target: <button class="owl-prev"> and <button class="owl-next"> carousel navigation buttons (base transition) */
 		.owl-carousel .owl-nav button.owl-prev,
 		.owl-carousel .owl-nav button.owl-next {
 			transition: transform 0.15s ease-in-out !important;
 		}
 
-		/* Hover/Focus effect (enlarge arrow, prevent background color) ONLY for active buttons */
+		/* Target: active (non-disabled) <button class="owl-prev"> and <button class="owl-next"> on hover/focus */
 		.owl-carousel .owl-nav button.owl-prev:not(.disabled):hover,
 		.owl-carousel .owl-nav button.owl-next:not(.disabled):hover,
 		.owl-carousel .owl-nav button.owl-prev:not(.disabled):focus,
@@ -66,7 +66,7 @@
 			outline: none;
 		}
 
-		/* Ensure disabled buttons strictly maintain their appearance with zero interactive effects */
+		/* Target: disabled <button class="owl-prev disabled"> and <button class="owl-next disabled"> */
 		.owl-carousel .owl-nav button.owl-prev.disabled,
 		.owl-carousel .owl-nav button.owl-next.disabled {
 			background: transparent !important;
@@ -77,7 +77,7 @@
 			cursor: default !important;
 		}
 
-		/* Beautified Custom Scrollbar (Pure CSS - zero JS dependency) */
+		/* Target: <div class="... beautify-scroll"> scrollable containers in left accordion panels (logs, timeline, errors) */
 		.beautify-scroll {
 			overflow-y: auto !important;
 			overflow-x: hidden !important;
@@ -85,26 +85,30 @@
 			scrollbar-color: #adb5bd #f1f1f1;
 		}
 
+		/* Target: WebKit scrollbar dimensions for .beautify-scroll containers */
 		.beautify-scroll::-webkit-scrollbar {
 			width: 6px;
 			height: 6px;
 		}
 
+		/* Target: WebKit scrollbar track for .beautify-scroll containers */
 		.beautify-scroll::-webkit-scrollbar-track {
 			background: #f1f1f1;
 			border-radius: 4px;
 		}
 
+		/* Target: WebKit scrollbar thumb for .beautify-scroll containers */
 		.beautify-scroll::-webkit-scrollbar-thumb {
 			background-color: #adb5bd;
 			border-radius: 4px;
 		}
 
+		/* Target: WebKit scrollbar thumb on hover for .beautify-scroll containers */
 		.beautify-scroll::-webkit-scrollbar-thumb:hover {
 			background-color: #6c757d;
 		}
 
-		/* Go button for Correction / update requests features */
+		/* Target: <button class="... btn-go"> floating "Go" action button for update/correction requests */
 		.btn-go {
 			position: absolute;
 			opacity: 0.6;
@@ -112,7 +116,7 @@
 			z-index: 999999;
 		}
 
-		/* Go button for Correction / update requests features for standard fields and structure (i.e: dangerous symbols) */
+		/* Target: <button class="... btn-go go-std-field"> "Go" button positioned over standard inputs, selects, and tables */
 		.go-std-field {
 			top: -4px;
 			right: 0;
@@ -120,7 +124,7 @@
 			width: 30%;
 		}
 
-		/* Go button for Correction / update requests features for checkbox elements */
+		/* Target: <button class="... btn-go go-chk-field"> "Go" button positioned over <div class="checkbox-custom"> elements */
 		.go-chk-field {
 			top: -8px;
 			left: -8px;
@@ -128,19 +132,22 @@
 			width: inherit;
 		}
 
+		/* Target: form controls (<input>, <select>, <textarea>) marked as changed or with an active update request */
 		.changed {
 			border: 3px solid darkorange;
-			/* First update in full view, update requested in creation view */
 		}
 
+		/* Target: form controls (<input>, <select>, <textarea>) approved at Level 1 */
 		.approvedL1 {
 			border: 3px solid darkgreen;
 		}
 
+		/* Target: form controls (<input>, <select>, <textarea>) approved at Level 2 */
 		.approvedL2 {
 			border: 3px solid darkblue;
 		}
 
+		/* Target: form controls (<input>, <select>, <textarea>) with a rejected update request */
 		.rejected {
 			border: 3px solid darkred;
 		}
@@ -202,7 +209,7 @@
 <!-- Template: simple input text field with characters count plugin and label indicator -->
 <input type="text" class="form-control form-control-sm" data-plugin-maxlength maxlength="25" autocomplete="off"
 	autocorrect="off" spellcheck="false" />
-<p class="text-right mb-0 c-indicator">
+<p class="text-right mb-0 char-limit-indicator">
 	<code>Max:</code> 25
 </p>
 
@@ -229,7 +236,7 @@
 <!-- Template: simple Text area with characters count plugin and label indicator -->
 <textarea class="form-control form-control-sm" rows="4" data-plugin-maxlength maxlength="500" autocomplete="off"
 	autocorrect="off" spellcheck="false">Value</textarea>
-<p class="text-right mb-0 c-indicator">
+<p class="text-right mb-0 char-limit-indicator">
 	<code>Max:</code> 500
 </p>
 
@@ -249,12 +256,12 @@
 <!-- Template: Date range field  -->
 <div class="input-daterange input-group" data-plugin-datepicker="" data-plugin-options='{ "format": "dd/mm/yyyy" }'>
 	<span class="input-group-prepend">
-		<span class="input-group-text input-group-aux" tabindex="-1">
+		<span class="input-group-text input-group-addon-sm" tabindex="-1">
 			<i class="fas fa-calendar-alt"></i>
 		</span>
 	</span>
 	<input type="text" class="form-control form-control-sm" name="start" value="15/02/2024">
-	<span class="input-group-text input-group-aux border-left-0 border-right-0 rounded-0">
+	<span class="input-group-text input-group-addon-sm border-left-0 border-right-0 rounded-0">
 		to
 	</span>
 	<input type="text" class="form-control form-control-sm" name="end" value="31/12/9999">
@@ -277,7 +284,7 @@
 	autocorrect="off" spellcheck="false">
 <div class="row">
 	<div class="col-lg-12">
-		<label class="col-form-label txt-large-desc pt-0">This is a text of 255
+		<label class="col-form-label field-helper-desc pt-0">This is a text of 255
 			characters that is the largest size that this text
 			can get from the backend. This is a text of 255
 			characters that is the largest size that this text
@@ -303,7 +310,7 @@
 			data-dismiss="fileupload">Remove</a>
 	</div>
 </div>
-<img id="img" class="image-uploaded mt-3" src="img/some_image_here.png" /> <!-- Place to show image if uploaded -->
+<img id="img" class="uploaded-image-preview mt-3" src="img/some_image_here.png" /> <!-- Place to show image if uploaded -->
 
 
 <!-- Template: field with prepend element -->
@@ -350,13 +357,13 @@
 <!-- Template: Matrix layout with badges identifying the columns   -->
 <div class="row">
 	<div class="col-lg-3 offset-lg-3 text-center">
-		<span class="badge badge-info sBadge mb-4">Badge 1</span>
+		<span class="badge badge-info section-col-badge mb-4">Badge 1</span>
 	</div>
 	<div class="col-lg-3 text-center">
-		<span class="badge badge-info sBadge mb-4">Badge 2</span>
+		<span class="badge badge-info section-col-badge mb-4">Badge 2</span>
 	</div>
 	<div class="col-lg-3 text-center">
-		<span class="badge badge-info sBadge mb-4">Badge 3</span>
+		<span class="badge badge-info section-col-badge mb-4">Badge 3</span>
 	</div>
 </div>
 <div class="row">
@@ -392,7 +399,7 @@
 		<div class="row">
 			<!-- Badge to identify carouel item -->
 			<div class="col-lg-12 text-center pt-2">
-				<span class="badge badge-success sBadge">ID 1</span>
+				<span class="badge badge-success section-col-badge">ID 1</span>
 			</div>
 		</div>
 		<!-- item content -->
@@ -401,7 +408,7 @@
 		<div class="row">
 			<!-- Badge to identify carouel item -->
 			<div class="col-lg-12 text-center pt-2">
-				<span class="badge badge-success sBadge">ID 2</span>
+				<span class="badge badge-success section-col-badge">ID 2</span>
 			</div>
 		</div>
 		<!-- item content -->

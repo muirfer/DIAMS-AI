@@ -1,11 +1,12 @@
 <style>
-	/** Styles for B2C */
-	.c-unit {
+	/* Target: <select class="... b2c-content-unit-select"> appended unit dropdown ("L", "CL", "ML", "G", "KG") in "Net content per consumption unit" input groups */
+	.b2c-content-unit-select {
 		width: 75px;
 		background-color: floralwhite !important;
 	}
 
-	.chk-ipba {
+	/* Target: <div class="checkbox-custom b2c-ipba-checkbox ..."> centered checkbox wrappers in the "IPBA" matrix row */
+	.b2c-ipba-checkbox {
 		margin-left: 45%;
 	}
 </style>
@@ -36,13 +37,13 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-3 offset-lg-3 text-center">
-						<span class="badge badge-info sBadge mb-4">EA</span>
+						<span class="badge badge-info section-col-badge mb-4">EA</span>
 					</div>
 					<div class="col-lg-3 text-center">
-						<span class="badge badge-info sBadge mb-4">IP</span>
+						<span class="badge badge-info section-col-badge mb-4">IP</span>
 					</div>
 					<div class="col-lg-3 text-center">
-						<span class="badge badge-info sBadge mb-4">CV</span>
+						<span class="badge badge-info section-col-badge mb-4">CV</span>
 					</div>
 				</div>
 				<div class="row">
@@ -69,7 +70,7 @@
 							<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="1563,25">
 							<span class="input-group-append">
-								<select class="form-control form-control-sm mb-0 text-center c-unit">
+								<select class="form-control form-control-sm mb-0 text-center b2c-content-unit-select">
 									<option value=""></option>
 									<option value="L">L</option>
 									<option value="CTL">CL</option>
@@ -85,7 +86,7 @@
 							<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="285,50">
 							<span class="input-group-append">
-								<select class="form-control form-control-sm mb-0  text-center c-unit">
+								<select class="form-control form-control-sm mb-0  text-center b2c-content-unit-select">
 									<option value=""></option>
 									<option value="L" selected>L</option>
 									<option value="CTL">CL</option>
@@ -101,7 +102,7 @@
 							<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="487,32">
 							<span class="input-group-append">
-								<select class="form-control form-control-sm mb-0 text-center c-unit">
+								<select class="form-control form-control-sm mb-0 text-center b2c-content-unit-select">
 									<option value=""></option>
 									<option value="L">L</option>
 									<option value="CTL">CL</option>
@@ -145,19 +146,19 @@
 					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">IPBA:
 					</label>
 					<div class="col-sm-3 text-center">
-						<div class="checkbox-custom chk-ipba mt-1">
+						<div class="checkbox-custom b2c-ipba-checkbox mt-1">
 							<input type="checkbox" checked id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
 					</div>
 					<div class="col-sm-3 text-center">
-						<div class="checkbox-custom chk-ipba mt-1">
+						<div class="checkbox-custom b2c-ipba-checkbox mt-1">
 							<input type="checkbox" id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>
 					</div>
 					<div class="col-sm-3 text-center">
-						<div class="checkbox-custom chk-ipba mt-1">
+						<div class="checkbox-custom b2c-ipba-checkbox mt-1">
 							<input type="checkbox" checked id="checkboxExample2">
 							<label for="checkboxExample2"></label>
 						</div>

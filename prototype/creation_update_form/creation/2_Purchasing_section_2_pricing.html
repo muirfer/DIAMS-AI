@@ -1,14 +1,16 @@
 <style>
-	/* Styles for Purchasing */
-	.purch-price-currency-uom {
+	/* Target: <span class="input-group-append purch-price-per-unit-label-addon"> appended wrapper in "Purchase price" and "Base price unit" input groups */
+	.purch-price-per-unit-label-addon {
 		width: 75px;
 	}
 
-	.purch-price-currency-uom select {
+	/* Target: <select> currency ("EUR", "USD") and unit ("KG", "EA") dropdowns inside .purch-price-per-unit-label-addon */
+	.purch-price-per-unit-label-addon select {
 		background-color: floralwhite !important;
 	}
 
-	.purch-price-unit {
+	/* Target: <label class="... purch-price-per-unit-label"> trailing "per 1 EA" label right of the "Purchase price" field */
+	.purch-price-per-unit-label {
 		color: darkred;
 	}
 </style>
@@ -30,7 +32,7 @@
 								<div class="input-group input-group-sm">
 									<input type="text" name="purch_pr" class="form-control form-control-sm text-right"
 										autocomplete="off" autocorrect="off" spellcheck="false" value="156312,25">
-									<span class="input-group-append purch-price-currency-uom">
+									<span class="input-group-append purch-price-per-unit-label-addon">
 										<select class="form-control form-control-sm mb-0 text-center">
 											<option value="EUR" selected>EUR</option>
 											<option value="USD">USD</option>
@@ -38,7 +40,7 @@
 									</span>
 								</div>
 							</div>
-							<label class="col-sm-3 control-label control-label-sm purch-price-unit pt-1 pl-0">per
+							<label class="col-sm-3 control-label control-label-sm purch-price-per-unit-label pt-1 pl-0">per
 								1 EA</label>
 						</div>
 						<div class="row">
@@ -48,7 +50,7 @@
 								<div class="input-group input-group-sm">
 									<input type="text" name="base_pu" class="form-control form-control-sm text-right"
 										autocomplete="off" autocorrect="off" spellcheck="false" value="1">
-									<span class="input-group-append purch-price-currency-uom">
+									<span class="input-group-append purch-price-per-unit-label-addon">
 										<select class="form-control form-control-sm mb-0 text-center">
 											<option value="KG" selected>KG</option>
 											<option value="EA">EA</option>

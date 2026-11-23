@@ -1,16 +1,18 @@
 <style>
-	/** Styles for Store */
-	.lang-badge {
+	/* Target: <button class="btn btn-default store-lang-prepend-btn"> prepended language buttons ("French", "Dutch") in "Circular comments" input groups */
+	.store-lang-prepend-btn {
 		width: 75px;
 		background-color: snow !important;
 		font-size: smaller !important;
 	}
 
-	.sod td {
+	/* Target: <td> cells inside <tr class="orderable-day-row"> in "Store orderable days" table */
+	.orderable-day-row td {
 		font-size: smaller !important;
 	}
 
-	.sod-sel {
+	/* Target: checked/selected <tr class="orderable-day-row orderable-day-row-selected"> rows in "Store orderable days" table */
+	.orderable-day-row-selected {
 		background: floralwhite;
 	}
 </style>
@@ -41,7 +43,7 @@
 					<div class="col-sm-5">
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default lang-badge" type="button">French</button>
+								<button class="btn btn-default store-lang-prepend-btn" type="button">French</button>
 							</span>
 							<input type="text" class="form-control form-control-sm" data-plugin-maxlength maxlength="30"
 								autocomplete="off" autocorrect="off" spellcheck="false"
@@ -49,12 +51,12 @@
 						</div>
 						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
-								<button class="btn btn-default lang-badge" type="button">Dutch</button>
+								<button class="btn btn-default store-lang-prepend-btn" type="button">Dutch</button>
 							</span>
 							<input type="text" class="form-control form-control-sm" data-plugin-maxlength maxlength="30"
 								autocomplete="off" autocorrect="off" spellcheck="false" value="Regelmatige evaluatie" />
 						</div>
-						<p class="text-right mb-0 c-indicator">
+						<p class="text-right mb-0 char-limit-indicator">
 							<code>Max:</code> 30
 						</p>
 					</div>
@@ -68,7 +70,7 @@
 					<div class="col-sm-5">
 						<table class="table table-responsive-md table-sm table-hover mb-0">
 							<tbody>
-								<tr class="sod sod-sel">
+								<tr class="orderable-day-row orderable-day-row-selected">
 									<td data-title="" class="text-center" style="width: 5%;">
 										<div class="checkbox-custom">
 											<input type="checkbox" checked="" id="checkboxExample2">
@@ -78,7 +80,7 @@
 									<td data-title="Description" class="text-left">
 										Monday</td>
 								</tr>
-								<tr class="sod">
+								<tr class="orderable-day-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom">
 											<input type="checkbox" id="checkboxExample2">
@@ -88,7 +90,7 @@
 									<td data-title="Description" class="text-left">
 										Tuesday</td>
 								</tr>
-								<tr class="sod">
+								<tr class="orderable-day-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom">
 											<input type="checkbox" id="checkboxExample2">
@@ -98,7 +100,7 @@
 									<td data-title="Description" class="text-left">
 										Wednesday</td>
 								</tr>
-								<tr class="sod sod-sel">
+								<tr class="orderable-day-row orderable-day-row-selected">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom">
 											<input type="checkbox" checked="" id="checkboxExample2">
@@ -108,7 +110,7 @@
 									<td data-title="Description" class="text-left">
 										Thursday</td>
 								</tr>
-								<tr class="sod">
+								<tr class="orderable-day-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom">
 											<input type="checkbox" id="checkboxExample2">
@@ -118,7 +120,7 @@
 									<td data-title="Description" class="text-left">
 										Friday</td>
 								</tr>
-								<tr class="sod sod-sel">
+								<tr class="orderable-day-row orderable-day-row-selected">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom">
 											<input type="checkbox" checked="" id="checkboxExample2">
@@ -128,7 +130,7 @@
 									<td data-title="Description" class="text-left">
 										Saturday</td>
 								</tr>
-								<tr class="sod">
+								<tr class="orderable-day-row">
 									<td data-title="" class="text-center">
 										<div class="checkbox-custom">
 											<input type="checkbox" id="checkboxExample2">

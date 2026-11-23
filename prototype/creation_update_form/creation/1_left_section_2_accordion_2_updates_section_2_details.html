@@ -1,29 +1,35 @@
 <style>
-    div#pChangeDet .beautify-scroll {
-        height: 14rem;
-    }
+	/* Target: <div id="secTimeline" class="beautify-scroll ..."> scrollable timeline container inside #pChangeDet */
+	div#pChangeDet .beautify-scroll {
+		height: 14rem;
+	}
 
-    #secTimeline .tm-box p,
-    #secTimeline .tm-box span {
-        font-size: x-small !important;
-        line-height: normal;
-    }
+	/* Target: <p> and <span> text elements inside <div class="tm-box"> timeline entries */
+	#secTimeline .tm-box p,
+	#secTimeline .tm-box span {
+		font-size: x-small !important;
+		line-height: normal;
+	}
 
-    .timeline-init {
-        color: darkorange
-    }
+	/* Target: <span class="timeline-status-init"> "Change requested" status label in timeline entry header */
+	.timeline-status-init {
+		color: darkorange;
+	}
 
-    .timeline-updated {
-        color: darkgreen
-    }
+	/* Target: <span class="timeline-status-updated"> "Updated" status label in timeline entry header */
+	.timeline-status-updated {
+		color: darkgreen;
+	}
 
-    .timeline-accepted {
-        color: darkblue
-    }
+	/* Target: <span class="timeline-status-accepted"> "Accepted" status label in timeline entry header */
+	.timeline-status-accepted {
+		color: darkblue;
+	}
 
-    .timeline-rejected {
-        color: darkred
-    }
+	/* Target: <span class="timeline-status-rejected"> "Rejected" status label in timeline entry header */
+	.timeline-status-rejected {
+		color: darkred;
+	}
 </style>
 
 <div id="secTimeline" class="beautify-scroll mb-2 pr-2">
@@ -32,7 +38,7 @@
             <ol class="tm-items tm-main">
                 <li class="time_if2 mb-1 mt-1" style="display: none;">
                     <div class="tm-box p-2">
-                        <p class="text-muted mb-1"><span class="timeline-init">Change
+                        <p class="text-muted mb-1"><span class="timeline-status-init">Change
                                 requested </span> by Amanda
                             Green
                             (CE) on 03/07/2024 18:25</p>
@@ -43,7 +49,7 @@
                 </li>
                 <li class="time_if2 mb-1 mt-1" style="display: none;">
                     <div class="tm-box p-2">
-                        <p class="text-muted mb-1"><span class="timeline-updated">Updated </span> by
+                        <p class="text-muted mb-1"><span class="timeline-status-updated">Updated </span> by
                             John
                             Smith
                             (Supplier) on 08/07/2024 13:50</p>
@@ -53,7 +59,7 @@
                 </li>
                 <li class="time_if3 mb-1 mt-1" style="display: none;">
                     <div class="tm-box p-2">
-                        <p class="text-muted mb-1"><span class="timeline-init">Change
+                        <p class="text-muted mb-1"><span class="timeline-status-init">Change
                                 requested </span> by Amanda
                             Green
                             (CE) on 03/07/2024 18:28</p>
@@ -65,7 +71,7 @@
                 </li>
                 <li class="time_if3 mb-1 mt-1" style="display: none;">
                     <div class="tm-box p-2">
-                        <p class="text-muted mb-1"><span class="timeline-updated">Updated </span> by
+                        <p class="text-muted mb-1"><span class="timeline-status-updated">Updated </span> by
                             John
                             Smith
                             (Supplier) on 08/07/2024 13:50</p>
@@ -75,7 +81,7 @@
                 </li>
                 <li class="time_if4 mb-1 mt-1" style="display: none;">
                     <div class="tm-box p-2">
-                        <p class="text-muted mb-1"><span class="timeline-init">Change
+                        <p class="text-muted mb-1"><span class="timeline-status-init">Change
                                 requested </span> by Amanda
                             Green
                             (CE) on 03/07/2024 18:30</p>
@@ -86,7 +92,7 @@
                 </li>
                 <li class="time_if4 mb-1 mt-1" style="display: none;">
                     <div class="tm-box p-2">
-                        <p class="text-muted mb-1"><span class="timeline-rejected">Rejected </span>
+                        <p class="text-muted mb-1"><span class="timeline-status-rejected">Rejected </span>
                             by John Smith
                             (Supplier) on 08/07/2024 13:50</p>
                         <p>

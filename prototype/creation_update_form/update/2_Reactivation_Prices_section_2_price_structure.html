@@ -1,18 +1,20 @@
 <style>
-	/** Styles for Prices */
-	.price-str-header {
+	/* Target: <span class="price-str-header-total"> right-aligned total value inside each <section class="toggle"><label> header */
+	.price-str-header-total {
 		float: right;
 		font-size: larger;
 		font-weight: bold;
 	}
 
+	/* Target: all <td> cells inside <table class="... price-str-table"> */
 	.price-str-table tr td {
 		padding-top: 8px !important;
 		padding-bottom: 0px !important;
 		border: 0 !important;
 	}
 
-	.price-str-table-cell-1 {
+	/* Target: Column 2 <td class="price-str-col-category"> condition category cell ("Discounts", "Costs", "Taxes") */
+	.price-str-col-category {
 		vertical-align: middle !important;
 		font-size: xx-small;
 		text-align: right;
@@ -20,14 +22,16 @@
 		width: 15%;
 	}
 
-	.price-str-table-cell-2 {
+	/* Target: Column 3 <td class="price-str-col-code"> condition code and description cell (e.g., "ZD01 - General Discount") */
+	.price-str-col-code {
 		vertical-align: middle !important;
 		text-align: left;
 		font-size: xx-small;
 		width: 20%;
 	}
 
-	.price-str-table-cell-3 {
+	/* Target: Column 4 <td class="price-str-col-mode"> invoice application mode cell ("On invoice", "Off invoice") */
+	.price-str-col-mode {
 		vertical-align: middle !important;
 		text-align: left;
 		font-size: xx-small;
@@ -35,23 +39,27 @@
 		width: 15%;
 	}
 
-	.price-str-table-cell-5 {
+	/* Target: Column 5 <td class="price-str-col-percentage"> percentage input group cell */
+	.price-str-col-percentage {
 		text-align: center;
 		width: 22%;
 	}
 
-	.price-str-table-cell-6 {
+	/* Target: Column 6 <td class="price-str-col-amount"> calculated/fixed value input group cell */
+	.price-str-col-amount {
 		text-align: right;
 		width: 23%;
 	}
 
-	.price-str-table-cell-7 {
+	/* Target: Column 1 <td class="... price-str-col-action"> delete row action icon cell */
+	.price-str-col-action {
 		text-align: center;
 		vertical-align: middle;
 		width: 5%;
 	}
 
-	.linkAdd {
+	/* Target: <a class="... price-str-add-link"> "Add discounts / costs / taxes" modal trigger links below each toggle table */
+	.price-str-add-link {
 		font-size: xx-small;
 		padding: 0%;
 	}
@@ -73,21 +81,21 @@
 					<div class="col-lg-10 offset-lg-1">
 						<div class="toggle toggle-tertiary toggle-sm" data-plugin-toggle>
 							<section class="toggle">
-								<label>PB00 - Purchase price <span class="price-str-header">50,0000</span></label>
+								<label>PB00 - Purchase price <span class="price-str-header-total">50,0000</span></label>
 								<div class="toggle-content">
 									<table class="table table-responsive-md table-hover mb-0 price-str-table">
 										<tbody>
 											<tr id="pb00_dis_01" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_dis_01_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Discounts</td>
-												<td class="price-str-table-cell-2">ZD01 - General
+												<td class="price-str-col-category">Discounts</td>
+												<td class="price-str-col-code">ZD01 - General
 													Discount</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="pb00_dis_01_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -99,7 +107,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -112,19 +120,19 @@
 												</td>
 											</tr>
 											<tr id="pb00_dis_02" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_dis_02_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Discounts</td>
-												<td class="price-str-table-cell-2">ZD12 - Introduction
+												<td class="price-str-col-category">Discounts</td>
+												<td class="price-str-col-code">ZD12 - Introduction
 													&nbsp;&nbsp;<i class="fas fa-info-circle" style="color: darkcyan;"
 														data-toggle="tooltip"
 														title="You will be required to complete the validity period"></i>
 												</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="pb00_dis_02_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -136,7 +144,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -150,15 +158,15 @@
 
 											</tr>
 											<tr id="pb00_dis_03" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_dis_03_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Discounts</td>
-												<td class="price-str-table-cell-2">ZD15 - Synergy</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-category">Discounts</td>
+												<td class="price-str-col-code">ZD15 - Synergy</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="pb00_dis_03_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -170,7 +178,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -183,17 +191,17 @@
 												</td>
 											</tr>
 											<tr id="pb00_cos_01" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_cos_01_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">ZC18 - Transport
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">ZC18 - Transport
 												</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn" type="button"><i class="fas fa-plus"
@@ -208,17 +216,17 @@
 												</td>
 											</tr>
 											<tr id="pb00_cos_02" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_cos_02_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">ZC16 - Industrial
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">ZC16 - Industrial
 												</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -233,16 +241,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_cos_03" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_cos_03_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">ZC13 - Others</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">ZC13 - Others</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -257,17 +265,17 @@
 												</td>
 											</tr>
 											<tr id="pb00_cos_04" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_cos_04_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">Royalties (Fresh)
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">Royalties (Fresh)
 												</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -282,16 +290,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_cos_05" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_cos_05_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">Not applicable</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">Not applicable</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -306,16 +314,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_01" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_01_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT22 - Auvibel</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT22 - Auvibel</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -330,16 +338,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_02" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_02_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT24 - Bebat</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT24 - Bebat</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -354,16 +362,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_03" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_03_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">Copyright</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">Copyright</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -378,16 +386,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_04" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_04_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT20 - Ecotax</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT20 - Ecotax</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -402,16 +410,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_05" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_05_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT29 - Excise</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT29 - Excise</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -426,16 +434,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_06" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_06_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">Fairtrade</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">Fairtrade</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -450,16 +458,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_07" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_07_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT25 - Fost+</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT25 - Fost+</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -474,17 +482,17 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_08" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_08_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT30 - Compensation
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT30 - Compensation
 													tax value</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -499,16 +507,16 @@
 												</td>
 											</tr>
 											<tr id="pb00_tax_09" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="pb00_tax_09_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (vendor)</td>
-												<td class="price-str-table-cell-2">ZT23 - Recupel</td>
-												<td class="price-str-table-cell-3">On invoice</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Taxes (vendor)</td>
+												<td class="price-str-col-code">ZT23 - Recupel</td>
+												<td class="price-str-col-mode">On invoice</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -526,7 +534,7 @@
 												<td colspan="7" class="pt-1">
 													<div class="btn-group flex-wrap">
 														<a href="#modal_pb00"
-															class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+															class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal price-str-add-link"><i
 																class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
 															Discounts / Costs / Taxes
 															(Vendor)</a>
@@ -539,21 +547,21 @@
 							</section>
 							<section class="toggle">
 								<label>ZPAF - Purchase price on invoice <span id="subtotal_pb00"
-										class="price-str-header">50,0000</span></label>
+										class="price-str-header-total">50,0000</span></label>
 								<div class="toggle-content">
 									<table class="table table-responsive-md table-hover mb-0 price-str-table">
 										<tbody>
 											<tr id="zpaf_reb_01" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_reb_01_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Rebates</td>
-												<td class="price-str-table-cell-2">ZR41 - General
+												<td class="price-str-col-category">Rebates</td>
+												<td class="price-str-col-code">ZR41 - General
 													Rebate</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="zpaf_reb_01_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -565,7 +573,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -578,16 +586,16 @@
 												</td>
 											</tr>
 											<tr id="zpaf_reb_02" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_reb_02_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Rebates</td>
-												<td class="price-str-table-cell-2">ZR42 - Commercial
+												<td class="price-str-col-category">Rebates</td>
+												<td class="price-str-col-code">ZR42 - Commercial
 													Coop</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="zpaf_reb_02_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -599,7 +607,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -612,15 +620,15 @@
 												</td>
 											</tr>
 											<tr id="zpaf_reb_03" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_reb_03_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Rebates</td>
-												<td class="price-str-table-cell-2">ZR81 - Synergy</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-category">Rebates</td>
+												<td class="price-str-col-code">ZR81 - Synergy</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="zpaf_reb_03_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -632,7 +640,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -645,16 +653,16 @@
 												</td>
 											</tr>
 											<tr id="zpaf_reb_04" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_reb_04_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Rebates</td>
-												<td class="price-str-table-cell-2">ZR91 - Logistic
+												<td class="price-str-col-category">Rebates</td>
+												<td class="price-str-col-code">ZR91 - Logistic
 													Rebate</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5">
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage">
 													<div class="input-group input-group-sm">
 														<input id="zpaf_reb_04_perc" type="text"
 															class="form-control form-control-sm text-center" value="0"
@@ -666,7 +674,7 @@
 														</span>
 													</div>
 												</td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i
@@ -679,17 +687,17 @@
 												</td>
 											</tr>
 											<tr id="zpaf_cos_01" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_cos_01_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">ZC18 - Transport
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">ZC18 - Transport
 												</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -704,17 +712,17 @@
 												</td>
 											</tr>
 											<tr id="zpaf_cos_02" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_cos_02_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">ZC16 - Industrial
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">ZC16 - Industrial
 												</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -729,16 +737,16 @@
 												</td>
 											</tr>
 											<tr id="zpaf_cos_03" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_cos_03_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">ZC13 - Others</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">ZC13 - Others</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -753,17 +761,17 @@
 												</td>
 											</tr>
 											<tr id="zpaf_cos_04" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_cos_04_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">Royalties (Fresh)
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">Royalties (Fresh)
 												</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -778,16 +786,16 @@
 												</td>
 											</tr>
 											<tr id="zpaf_cos_05" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zpaf_cos_05_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Costs</td>
-												<td class="price-str-table-cell-2">Not applicable</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-category">Costs</td>
+												<td class="price-str-col-code">Not applicable</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -805,7 +813,7 @@
 												<td colspan="7" class="pt-1">
 													<div class="btn-group flex-wrap">
 														<a href="#modal_zpaf"
-															class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+															class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal price-str-add-link"><i
 																class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
 															Rebates / Costs</a>
 													</div>
@@ -817,22 +825,22 @@
 							</section>
 							<section class="toggle">
 								<label>ZDPI - Inventory price <span id="subtotal_zpaf"
-										class="price-str-header">50,0000</span></label>
+										class="price-str-header-total">50,0000</span></label>
 								<div class="toggle-content">
 									<table class="table table-responsive-md table-hover mb-0 price-str-table">
 										<tbody>
 											<tr id="zdpi_tax_01" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_01_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">ZT22 - Auvibel</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">ZT22 - Auvibel</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -847,17 +855,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_02" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_02_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">ZT24 - Bebat</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">ZT24 - Bebat</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -872,17 +880,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_03" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_03_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">Copyright</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">Copyright</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -897,17 +905,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_04" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_04_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">ZT20 - Ecotax</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">ZT20 - Ecotax</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -922,17 +930,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_05" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_05_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">ZT29 - Excise</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">ZT29 - Excise</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -947,17 +955,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_06" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_06_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">Fairtrade</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">Fairtrade</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -972,17 +980,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_07" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_07_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">ZT25 - Fost+</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">ZT25 - Fost+</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -997,17 +1005,17 @@
 												</td>
 											</tr>
 											<tr id="zdpi_tax_08" style="display: none;">
-												<td class="actions-hover actions-fade price-str-table-cell-7">
+												<td class="actions-hover actions-fade price-str-col-action">
 													<a id="zdpi_tax_08_rem"
 														onclick="javascript:App.FVPricesNew.remove(this)"
 														class="delete-row"><i class="far fa-trash-alt"></i></a>
 												</td>
-												<td class="price-str-table-cell-1">Taxes (Delhaize)
+												<td class="price-str-col-category">Taxes (Delhaize)
 												</td>
-												<td class="price-str-table-cell-2">ZT23 - Recupel</td>
-												<td class="price-str-table-cell-3">On cost price</td>
-												<td class="price-str-table-cell-5"></td>
-												<td class="price-str-table-cell-6">
+												<td class="price-str-col-code">ZT23 - Recupel</td>
+												<td class="price-str-col-mode">On cost price</td>
+												<td class="price-str-col-percentage"></td>
+												<td class="price-str-col-amount">
 													<div class="input-group input-group-sm">
 														<span class="input-group-prepend">
 															<button class="btn " type="button"><i class="fas fa-plus"
@@ -1025,7 +1033,7 @@
 												<td colspan="7" class="pt-1">
 													<div class="btn-group flex-wrap">
 														<a href="#modal_zdpi"
-															class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+															class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal price-str-add-link"><i
 																class="fas fa-plus-circle"></i>&nbsp;&nbsp;Add
 															Taxes (Delahize)</a>
 													</div>
@@ -1037,7 +1045,7 @@
 							</section>
 							<section class="toggle">
 								<label>ZDPR - Cost price <span id="subtotal_zdpr"
-										class="price-str-header">50,0000</span></label>
+										class="price-str-header-total">50,0000</span></label>
 								<div class="toggle-content">
 								</div>
 							</section>
