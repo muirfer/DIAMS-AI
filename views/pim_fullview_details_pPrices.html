@@ -1,0 +1,1502 @@
+						<!-- Start - Panel - Prices -->
+						<div id="pPrices" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+							<div class="scrollable-content">
+								<!-- Start - Subpanel - Search criteria -->
+								<div id="section1" class="row">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Search criteria</h2>
+												<p class="card-subtitle">Price structure and Sales prices below will
+													adapt to the filters on this panel</p>
+											</header>
+											<div class="card-body">
+												<div class="form-group row"
+													style="background: mintcream;padding: 20px;">
+													<label
+														class="col-lg-1 offset-lg-1 control-label text-lg-right pt-2">Date:
+													</label>
+													<div class="col-lg-3">
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<span class="input-group-text">
+																	<i class="fas fa-calendar-alt"></i>
+																</span>
+															</span>
+															<input type="text" style="text-align: center;"
+																data-plugin-datepicker
+																data-plugin-options='{ "startDate": "12/07/2024","format": "dd/mm/yyyy", "todayBtn": true, "todayHighlight": true, "weekStart":1,"orientation":"bottom"  }'
+																class="form-control" value="12/07/2024">
+															<span class="input-group-append">
+																<a href="#modal_pdate"
+																	class="btn-tertiary modal-with-zoom-anim ws-normal"
+																	style="width: 40px;text-align:center;opacity: 0.7;"><i
+																		class="fas fa-search"
+																		style="margin-top: 12px;"></i></a>
+															</span>
+														</div>
+													</div>
+													<label class="col-lg-2 control-label text-lg-right pt-2">Country:
+													</label>
+													<select class="col-lg-3 form-control mb-3 cust-select">
+														<option value="BE" selected>Belgium</option>
+														<option value="LU">Luxembourg</option>
+													</select>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Search criteria -->
+								<!-- Start - Subpanel - Price structure -->
+								<div id="section2" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Price structure</h2>
+												<p class="card-subtitle">For <code>Belgium</code> and on
+													<code>12/07/2024</code>. Amounts are in <code>Euros (EUR)</code> and
+													per <code>EA/Kg</code>
+												</p>
+											</header>
+											<div class="card-body">
+												<div class="row">
+													<div class="col-lg-11">
+														<div class="owl-carousel owl-theme" data-plugin-carousel
+															data-plugin-options='{ "dots": false, "nav": true, "items": 1 }'>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12" style="text-align: center;">
+																		<div class="row">
+																			<div class="col-lg-12"
+																				style="text-align: center;">
+																				<span
+																					class="badge badge-info sBadge-nm">0050013489
+																					- Coca-Cola Company</span>
+																			</div>
+																			<div class="col-lg-1 offset-lg-5"
+																				style="text-align: center;padding: 5px;">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-bottom: 0;margin-left: 40px;">
+																					<input type="checkbox" checked
+																						id="checkboxReg2">
+																					<label
+																						for="checkboxReg2">Regular</label>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-lg-10 offset-lg-1">
+																		<table
+																			class="table table-responsive-md table-hover mb-3"
+																			style="margin-top: 30px;">
+																			<thead>
+																				<tr>
+																					<th
+																						style="text-align: center;width: 10%;">
+																						Type</th>
+																					<th style="width: 25%;">Description
+																					</th>
+																					<th
+																						style="text-align: center;width: 20%;">
+																						Validity</th>
+																					<th
+																						style="text-align: right;width: 10%;">
+																						%</th>
+																					<th
+																						style="text-align: right;width: 15%;">
+																						Amount</th>
+																					<th
+																						style="text-align: center;width: 10%;">
+																					</th>
+																				</tr>
+																			</thead>
+																			<tbody id="tableBody">
+																				<tr style="background: lightyellow;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						PB00</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Gross price</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						15/02/2024 - 07/05/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						50,00
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																						<a href="#"
+																							onclick="javascript:App.FVPrices.showMoreForPriceConditionType(1)"><i
+																								id="expPsIcon1"
+																								class="fas fa-solid fa-chevron-down"
+																								style="font-size: large;color: darkgreen;"></i></a>
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZD01</td>
+																					<td style="vertical-align: middle;">
+																						General Discount</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						12/03/2024 - 18/07/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-12,25
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-6,13
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZD15</td>
+																					<td style="vertical-align: middle;">
+																						Synergy</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						12/03/2024 - 18/07/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-7,00
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-3,50
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZC18</td>
+																					<td style="vertical-align: middle;">
+																						Transport</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						21/07/2024 - 19/11/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						2,25
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZC16</td>
+																					<td style="vertical-align: middle;">
+																						Industrial</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						21/07/2024 - 19/11/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						5,85
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT24</td>
+																					<td style="vertical-align: middle;">
+																						Bebat</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						01/03/2024 - 20/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						4,25
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT25</td>
+																					<td style="vertical-align: middle;">
+																						Fairtrade</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						21/07/2024 - 19/11/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						7,23
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c1" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT30</td>
+																					<td style="vertical-align: middle;">
+																						Compensation tax value</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						08/05/2024 - 15/09/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-12,85
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr style="background: linen;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						ZPAF</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Purchase price on invoice</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						17/09/2024 - 07/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						47,10
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																						<a href="#"
+																							onclick="javascript:App.FVPrices.showMoreForPriceConditionType(2)"><i
+																								id="expPsIcon2"
+																								class="fas fa-solid fa-chevron-down"
+																								style="font-size: large;color: darkgreen;"></i></a>
+																					</td>
+																				</tr>
+																				<tr class="c2" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZR41</td>
+																					<td style="vertical-align: middle;">
+																						General Rebate</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						15/05/2024 - 21/09/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-13,55
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-6,78
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c2" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZR42</td>
+																					<td style="vertical-align: middle;">
+																						Commercial Coop</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						18/07/2024 - 30/09/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-4,20
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-2,10
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c2" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZC18</td>
+																					<td style="vertical-align: middle;">
+																						Transport</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						05/10/2024 - 01/03/2025
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						3,25
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr style="background: aliceblue;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						ZDPI</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Inventory price</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						05/06/2024 - 28/09/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						41,48
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																						<a href="#"
+																							onclick="javascript:App.FVPrices.showMoreForPriceConditionType(3)"><i
+																								id="expPsIcon3"
+																								class="fas fa-solid fa-chevron-down"
+																								style="font-size: large;color: darkgreen;"></i></a>
+																					</td>
+																				</tr>
+																				<tr class="c3" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZC18</td>
+																					<td style="vertical-align: middle;">
+																						Auvibel</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						09/01/2024 - 01/03/2025
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						5,58
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c3" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT24</td>
+																					<td style="vertical-align: middle;">
+																						Bebat</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						08/02/2024 - 14/08/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						6,35
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c3" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT20</td>
+																					<td style="vertical-align: middle;">
+																						Ecotax</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						17/09/2024 - 23/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						7,50
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr style="background: ghostwhite;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						ZDPR</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Cost price</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						18/04/2024 - 13/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						60,91
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+
+															</div>
+															<div class="item">
+																<div class="row">
+																	<div class="col-lg-12" style="text-align: center;">
+																		<div class="row">
+																			<div class="col-lg-12"
+																				style="text-align: center;">
+																				<span
+																					class="badge badge-info sBadge-nm">0010002878
+																					- UNILEVER BELGUIM</span>
+																			</div>
+																			<div class="col-lg-1 offset-lg-5"
+																				style="text-align: center;padding: 5px;">
+																				<div class="checkbox-custom checkbox-default"
+																					style="margin-bottom: 0;margin-left: 40px;">
+																					<input type="checkbox"
+																						id="checkboxReg2">
+																					<label
+																						for="checkboxReg2">Regular</label>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-lg-10 offset-lg-1">
+																		<table
+																			class="table table-responsive-md table-hover mb-3"
+																			style="margin-top: 30px;">
+																			<thead>
+																				<tr>
+																					<th
+																						style="text-align: center;width: 10%;">
+																						Type</th>
+																					<th style="width: 25%;">Description
+																					</th>
+																					<th
+																						style="text-align: center;width: 20%;">
+																						Validity</th>
+																					<th
+																						style="text-align: right;width: 10%;">
+																						%</th>
+																					<th
+																						style="text-align: right;width: 15%;">
+																						Amount</th>
+																					<th
+																						style="text-align: center;width: 10%;">
+																					</th>
+																				</tr>
+																			</thead>
+																			<tbody id="tableBody">
+																				<tr style="background: lightyellow;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						PB00</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Gross price</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						12/08/2024 - 15/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						50,00
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																						<a href="#"
+																							onclick="javascript:App.FVPrices.showMoreForPriceConditionType(11)"><i
+																								id="expPsIcon11"
+																								class="fas fa-solid fa-chevron-down"
+																								style="font-size: large;color: darkgreen;"></i></a>
+																					</td>
+																				</tr>
+																				<tr class="c11" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZD12</td>
+																					<td style="vertical-align: middle;">
+																						Introduction</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						12/03/2024 - 18/07/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-10,00
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-5,00
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c11" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZC13</td>
+																					<td style="vertical-align: middle;">
+																						Others</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						21/07/2024 - 19/11/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						2,55
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c11" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT29</td>
+																					<td style="vertical-align: middle;">
+																						Excise</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						21/07/2024 - 19/11/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						4,30
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c11" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT23</td>
+																					<td style="vertical-align: middle;">
+																						Recupel</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						01/03/2024 - 20/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						6,18
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr style="background: linen;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						ZPAF</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Purchase price on invoice</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						15/03/2024 - 18/07/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						58,03
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																						<a href="#"
+																							onclick="javascript:App.FVPrices.showMoreForPriceConditionType(22)"><i
+																								id="expPsIcon22"
+																								class="fas fa-solid fa-chevron-down"
+																								style="font-size: large;color: darkgreen;"></i></a>
+																					</td>
+																				</tr>
+																				<tr class="c22" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZR81</td>
+																					<td style="vertical-align: middle;">
+																						Syngergy</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						15/05/2024 - 21/09/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-1,50
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-0,75
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c22" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZR91</td>
+																					<td style="vertical-align: middle;">
+																						Logistical Rebate</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						18/07/2024 - 30/09/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;">
+																						-3,65
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkred;font-size: large;">
+																						-1,82
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr style="background: aliceblue;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						ZDPI</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Inventory price</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						18/09/2024 - 28/03/2025
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						55,45
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																						<a href="#"
+																							onclick="javascript:App.FVPrices.showMoreForPriceConditionType(33)"><i
+																								id="expPsIcon33"
+																								class="fas fa-solid fa-chevron-down"
+																								style="font-size: large;color: darkgreen;"></i></a>
+																					</td>
+																				</tr>
+																				<tr class="c33" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT25</td>
+																					<td style="vertical-align: middle;">
+																						Fost+</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						09/01/2024 - 01/03/2025
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						2,25
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr class="c33" style="display: none;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: 600;">
+																						ZT23</td>
+																					<td style="vertical-align: middle;">
+																						Recupel</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						08/02/2024 - 14/08/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;font-size: large;">
+																						1,10
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																				<tr style="background: ghostwhite;">
+																					<td id="cat"
+																						style="text-align: center; width: 1px;vertical-align: middle;font-weight: bold;">
+																						ZDPR</td>
+																					<td
+																						style="vertical-align: middle;font-size: larger;">
+																						Cost price</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;color: darkgray">
+																						05/08/2024 - 21/12/2024
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkgreen;">
+																					</td>
+																					<td
+																						style="text-align: right;vertical-align: middle;color: darkslategray;font-size: x-large;">
+																						58,80
+																					</td>
+																					<td
+																						style="text-align: center;vertical-align: middle;">
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Price structure -->
+								<!-- Start - Subpanel - Sales prices -->
+								<div id="section3" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Sales prices</h2>
+												<p class="card-subtitle">For <code>Belgium</code> and on
+													<code>12/07/2024</code>. Prices are in <code>Euros (EUR)</code>
+													(without VAT) and related to <code>EA</code>. Click to&nbsp;&nbsp;<a
+														href="#modal_phistory"
+														class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal">see
+														history</a>
+												</p>
+											</header>
+											<div class="card-body">
+												<div class="row" style="margin-bottom: 20px;">
+													<div class="col-lg-3 offset-lg-1">
+														<label class="col-form-label" for="formGroupExampleInput"
+															style="padding-top: 15px;">PR / Purchase price ZDPR:<span
+																style="color: darkgreen;font-size: larger;margin-left:15px">€
+																17,2585</span></label>
+													</div>
+													<div id="searchSalesDiv" class="col-lg-6 text-right">
+
+													</div>
+													<!-- <div class="col-lg-2 text-right">
+														<select class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeApp.FVAssortment.selectAllOption": true, "App.FVAssortment.selectAll": true }' id="visTarif" onchange="javascript:showTarif()">
+															<option value="03">03 - Supermarket</option>
+															<option value="04">04 - SM Schmiede</option>
+															<option value="05">05 - T05 Proxy Highly</option>
+															<option value="06">06 - Red Market</option>																
+														</select>
+													</div> -->
+												</div>
+												<div class="row">
+													<div class="col-lg-9 offset-lg-1">
+														<table class="table table-responsive-md table-hover mb-3"
+															id="datatable-psales">
+															<thead>
+																<tr>
+																	<th id="psales_t1"
+																		style="text-align: center;width: 12%!important;vertical-align: middle;">
+																		Tarif</th>
+																	<th id="psales_t2"
+																		style="width: 33%;vertical-align: middle;">Price
+																		list</th>
+																	<th id="psales_t3"
+																		style="text-align: center;vertical-align: middle;width: 11%;">
+																		Sales price <code>PV</code> </th>
+																	<th id="psales_t3_1"
+																		style="text-align: center;vertical-align: middle;width: 11%;">
+																		Wholesale price <code>PG</code></th>
+																	<th id="psales_t4"
+																		style="text-align: center;vertical-align: middle;width: 10%;">
+																		Markup <code>%</code></th>
+																	<th id="psales_t5"
+																		style="text-align: center;vertical-align: middle;width: 10%;">
+																		TAM <code>%</code></th>
+																	<th id="psales_t6"
+																		style="text-align: center;vertical-align: middle;width: 10%;">
+																		TMOP <code>%</code></th>
+																</tr>
+															</thead>
+															<tbody id="tableBody">
+																<tr id="rowt03">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		03
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			Supermarket</p>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">BS10-01-B1
+																			<span class="badge badge-warning">PV</span>
+																		</div>
+																		<div id="mainTitle">Belgium supermarket</div>
+																		<div id="sapId" class="title-header"
+																			style="margin-top: 15px;">BS90-01-B1 <span
+																				class="badge badge-success">PG</span>
+																		</div>
+																		<div id="mainTitle">Other description here</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		15,9521
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		12,2524
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		3,00
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkred;">
+																		-40,15
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		30,25
+																	</td>
+																</tr>
+																<tr id="rowt04">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		04
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			SM Schmiede</p>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">BS50-02-B5
+																			<span
+																				class="badge badge-warning">PV</span><span
+																				class="badge badge-success">PG</span>
+																		</div>
+																		<div id="mainTitle">Other price list type</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		12,8012
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		7,5554
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		15,20
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		6,85
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkred;">
+																		-2,25
+																	</td>
+																</tr>
+																<tr id="rowt05">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		05
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			T05 Proxy Highly</p>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">BS30-04-B8
+																			<span
+																				class="badge badge-warning">PV</span><span
+																				class="badge badge-success">PG</span>
+																		</div>
+																		<div id="mainTitle">Another one with longer
+																			description</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		105,2021
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		215,2598
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkred;">
+																		-5,95
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		18,35
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		10,72
+																	</td>
+																</tr>
+																<tr id="rowt06">
+																	<td id="cat"
+																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+																		06
+																		<p
+																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+																			Red Market</p>
+																	</td>
+																	<td style="vertical-align: middle;">
+																		<div id="sapId" class="title-header">BS15-09-B6
+																			<span class="badge badge-warning">PV</span>
+																		</div>
+																		<div id="mainTitle">Another Belgium market</div>
+																		<div id="sapId" class="title-header"
+																			style="margin-top: 15px;">BS18-11-B2 <span
+																				class="badge badge-success">PG</span>
+																		</div>
+																		<div id="mainTitle">Supermarket Belgium n23
+																		</div>
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		98,1598
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;color: grey;font-size: larger;">
+																		102,5576
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		10,20
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		15,25
+																	</td>
+																	<td
+																		style="text-align: center;vertical-align: middle;font-size:large;color: darkgreen;">
+																		28,32
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Sales prices -->
+								<!-- Start - Subpanel - Others -->
+								<div id="section4" class="row" style="margin-top: 50px;">
+									<div class="col-lg-12">
+										<section class="card card-transparent mb-4">
+											<header class="card-header">
+												<div class="card-actions">
+													<a href="#" class="card-action card-action-toggle"
+														data-card-toggle></a>
+												</div>
+
+												<h2 class="card-title">Others</h2>
+												<p class="card-subtitle"></p>
+											</header>
+											<div class="card-body">
+												<!-- <div class="vTable">													
+													<div class="row">
+														<div class="col-lg-2 offset-lg-3" style="text-align: center;">																			
+															<span class="badge badge-info sBadge">EA</span>
+														</div>
+														<div class="col-lg-2" style="text-align: center;">																			
+															<span class="badge badge-info sBadge">IP</span>
+														</div>
+														<div class="col-lg-2" style="text-align: center;">																			
+															<span class="badge badge-info sBadge">CV</span>
+														</div>														
+													</div>	
+													<div class="form-group row">
+														<label class="col-sm-3 control-label text-sm-right pt-2">Introduction sales price (ISP): </label>
+														<div class="col-sm-2">
+															<input type="text" name="cupa1" class="form-control" autocomplete="off" style="text-align: center;" value="13235,2210">
+														</div>
+														<div class="col-sm-2">
+															<input type="text" name="cupa2" class="form-control" autocomplete="off" style="text-align: center;" value="72532,2251">
+														</div>
+														<div class="col-sm-2">
+															<input type="text" name="cupa3" class="form-control" autocomplete="off" style="text-align: center;" value="75143,9101">
+														</div>
+													</div>																									
+												</div>	
+												<div class="row">
+													<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+												</div>	 -->
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Prepriced:
+													</label>
+													<div class="col-sm-5">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" checked="" id="checkboxExample2">
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Admin fee:
+													</label>
+													<div class="col-sm-5">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" id="checkboxExample2" checked>
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Petit lion:
+													</label>
+													<div class="col-sm-5">
+														<div class="checkbox-custom" style="margin-top: 8px;">
+															<input type="checkbox" id="checkboxExample2" checked>
+															<label for="checkboxExample2"></label>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<hr class="col-lg-8 dotted short"
+														style="margin-bottom: 25px;margin-left: 5%;">
+												</div>
+												<div class="form-group row">
+													<label class="col-sm-3 control-label text-sm-right pt-2">Price type:
+													</label>
+													<div class="col-sm-5">
+														<select class="form-control mb-3 cust-select">
+															<option value=""></option>
+															<option>0 - Critical</option>
+															<option>1 - KVI</option>
+															<option>2 - Background</option>
+															<option>3 - Foreground</option>
+															<option selected>4 - First place</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+								<!-- End - Subpanel - Others-->
+							</div>
+						</div>
+						<!-- End - Panel - Prices  -->
+		<!-- Modal pdate -->
+		<div id="modal_pdate" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Select date</h2>
+					<p class="card-subtitle">See changes expected on the purchase price.</p>
+				</header>
+				<div class="card-body ">
+					<div class="row ">
+						<div class="col-lg-6 offset-lg-1">
+							<div id="pDatePicker" data-plugin-datepicker data-plugin-skin="primary"
+								data-plugin-options='{ "startDate": "12/07/2024","format": "dd/mm/yyyy", "todayBtn": true, "weekStart":1  }'>
+							</div>
+						</div>
+						<div class="col-lg-4 offset-lg-1">
+							<table class="table table-responsive table-sm table-hover mb-0" id="datatable-pdate">
+								<thead>
+									<tr>
+										<th id="headerPrices"
+											style="text-align: center;font-weight: 600;background: aliceblue;">Purchase
+											price changes on</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-item-id="1"
+										onclick="javascript:App.FVPrices.setPriceDateSelected('1721260800000')">
+										<td style="text-align: center;"><span>20240718</span>18/07/2024</td>
+									</tr>
+									<tr data-item-id="1"
+										onclick="javascript:App.FVPrices.setPriceDateSelected('1721692800000')">
+										<td style="text-align: center;"><span>20240723</span>23/07/2024</td>
+									</tr>
+									<tr data-item-id="1"
+										onclick="javascript:App.FVPrices.setPriceDateSelected('1722124800000')">
+										<td style="text-align: center;"><span>20240728</span>28/07/2024</td>
+									</tr>
+									<tr data-item-id="1"
+										onclick="javascript:App.FVPrices.setPriceDateSelected('1722384000000')">
+										<td style="text-align: center;"><span>20240731</span>31/07/2024</td>
+									</tr>
+									<tr data-item-id="1"
+										onclick="javascript:App.FVPrices.setPriceDateSelected('1722729600000')">
+										<td style="text-align: center;"><span>20240804</span>04/08/2024</td>
+									</tr>
+									<tr data-item-id="1">
+										<td style="text-align: center;"><span>20240810</span>10/08/2024</td>
+									</tr>
+									<tr data-item-id="1">
+										<td style="text-align: center;"><span>20240815</span>15/08/2024</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss" onclick="onClosePriceDate()">Confirm</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal pdate -->
+		<!-- Modal price history -->
+		<div id="modal_phistory" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Sales price history</h2>
+					<p class="card-subtitle">Select tarif and date range to see the sales price history</p>
+					<button type="button" class="close modal-dismiss" data-dismiss="modal" aria-label="Close"
+						style="margin-top: -35px;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</header>
+				<div class="card-body ">
+					<div class="form-group row" style="background: mintcream;padding: 20px;">
+						<label class="col-lg-1 control-label text-lg-right pt-2">Tarif: </label>
+						<select class="col-lg-3 form-control mb-3 cust-select">
+							<option value="01" selected>01 - Official</option>
+							<option value="02">02 - SM Local</option>
+							<option value="03">03 - Supermarket</option>
+							<option value="04">04 - SM Schemiede</option>
+							<option value="05">05 - T05 Proxy Highly</option>
+							<option value="06">06 - Red Market</option>
+						</select>
+						<label class="col-lg-1 control-label text-lg-right pt-2">From: </label>
+						<div class="col-lg-6">
+							<div id="selSalesPriceHistoryRange" class="input-group">
+								<select class="form-control" id="ms_example9">
+									<option value="o1">Last 15 days</option>
+									<option value="o2" selected>Last month</option>
+									<option value="o3">Last 3 months</option>
+									<option value="o4">Last 6 months</option>
+									<!-- <option value="o5">Last year</option>																				 -->
+								</select>
+								<span class="input-group-append">
+									<a href="#" onclick="javascript:App.FVPrices.switchSalesPriceDateInput()"
+										class="btn-tertiary" style="width: 40px;text-align:center;opacity: 0.7;"><i
+											class="fas fa-calendar" style="margin-top: 12px;"></i></a>
+								</span>
+							</div>
+							<div id="selSalesPriceHistoryDates" class="input-daterange input-group"
+								style="display: none;" data-plugin-datepicker
+								data-plugin-options='{ "endDate": "14/08/2024","format": "dd/mm/yyyy", "todayBtn": true, "todayHighlight": true, "weekStart":1,"orientation":"bottom"  }'>
+								<span class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="fas fa-calendar-alt"></i>
+									</span>
+								</span>
+								<input type="text" class="form-control" name="start" value="" autocomplete="off">
+								<span class="input-group-text border-left-0 border-right-0 rounded-0">
+									to
+								</span>
+								<input type="text" class="form-control" name="end" value="" autocomplete="off">
+								<span class="input-group-append">
+									<a href="#" onclick="javascript:App.FVPrices.switchToSalesPriceRange()"
+										class="btn-tertiary" style="width: 40px;text-align:center;opacity: 0.7;"><i
+											class="fas fa-list" style="margin-top: 12px;"></i></a>
+								</span>
+							</div>
+						</div>
+						<button class="btn btn-default col-lg-1" onclick="showSalesPriceHistory()">Go</button>
+					</div>
+					<div class="row h_details" style="margin-top: 25px;display: none;">
+						<div class="col-lg-12">
+							<table class="table table-responsive-md table-sm mb-0 table-hover" id="datatable-psalesh">
+								<thead>
+									<tr>
+										<th style="vertical-align: middle;width: 20%;">Date</th>
+										<th style="text-align: center;vertical-align: middle;width: 13%;" rel="tooltip"
+											title="PR / Purchase price ZDPR">PR <br><code>ZDPR</code></th>
+										<th style="text-align: center;vertical-align: middle;width: 13%;" rel="tooltip"
+											title="PG / Wholesale price ZPR0">PG <br><code>ZPR0</code></th>
+										<th style="text-align: center;vertical-align: middle;width: 13%;" rel="tooltip"
+											title="PV VAT in / Sales price VKP0">PV <br><code>VKP0</code></th>
+										<th style="text-align: center;vertical-align: middle;width: 13%;">Markup
+											<br><code>%</code>
+										</th>
+										<th style="text-align: center;vertical-align: middle;width: 13%;">TAM
+											<br><code>%</code>
+										</th>
+										<th style="text-align: center;vertical-align: middle;width: 13%;">TMOP
+											<br><code>%</code>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>01/08/2024</td>
+										<td style="text-align: center;color:gray">1,0012</td>
+										<td style="text-align: center;color:gray">1,1032</td>
+										<td style="text-align: center;color:gray">1,4043</td>
+										<td style="text-align: center;color:darkgreen">9,09</td>
+										<td style="text-align: center;color:darkgreen">16,71</td>
+										<td style="text-align: center;color:darkgreen">24,29</td>
+									</tr>
+									<tr>
+										<td>02/08/2024</td>
+										<td style="text-align: center;color:gray">1,0012</td>
+										<td style="text-align: center;color:gray">1,1032</td>
+										<td style="text-align: center;color:gray">1,4043</td>
+										<td style="text-align: center;color:darkgreen">9,09</td>
+										<td style="text-align: center;color:darkgreen">16,71</td>
+										<td style="text-align: center;color:darkgreen">24,29</td>
+									</tr>
+									<tr>
+										<td>03/08/2024</td>
+										<td style="text-align: center;color:gray">1,0111</td>
+										<td style="text-align: center;color:gray">1,1123</td>
+										<td style="text-align: center;color:gray">1,4543</td>
+										<td style="text-align: center;color:darkgreen">9,25</td>
+										<td style="text-align: center;color:darkgreen">16,80</td>
+										<td style="text-align: center;color:darkgreen">24,50</td>
+									</tr>
+									<tr>
+										<td>04/08/2024</td>
+										<td style="text-align: center;color:gray">1,0154</td>
+										<td style="text-align: center;color:gray">1,1187</td>
+										<td style="text-align: center;color:gray">1,4556</td>
+										<td style="text-align: center;color:darkgreen">9,25</td>
+										<td style="text-align: center;color:darkgreen">16,80</td>
+										<td style="text-align: center;color:darkgreen">24,50</td>
+									</tr>
+									<tr>
+										<td>05/08/2024</td>
+										<td style="text-align: center;color:gray">1,0334</td>
+										<td style="text-align: center;color:gray">1,1454</td>
+										<td style="text-align: center;color:gray">1,5276</td>
+										<td style="text-align: center;color:darkgreen">9,31</td>
+										<td style="text-align: center;color:darkgreen">16,83</td>
+										<td style="text-align: center;color:darkgreen">24,15</td>
+									</tr>
+									<tr>
+										<td>06/08/2024</td>
+										<td style="text-align: center;color:gray">1,0332</td>
+										<td style="text-align: center;color:gray">1,1454</td>
+										<td style="text-align: center;color:gray">1,5265</td>
+										<td style="text-align: center;color:darkgreen">9,31</td>
+										<td style="text-align: center;color:darkgreen">16,83</td>
+										<td style="text-align: center;color:darkgreen">24,15</td>
+									</tr>
+									<tr>
+										<td>07/08/2024</td>
+										<td style="text-align: center;color:gray">1,0665</td>
+										<td style="text-align: center;color:gray">1,1845</td>
+										<td style="text-align: center;color:gray">1,5565</td>
+										<td style="text-align: center;color:darkred">-0,25</td>
+										<td style="text-align: center;color:darkgreen">16,33</td>
+										<td style="text-align: center;color:darkgreen">22,15</td>
+									</tr>
+									<tr>
+										<td>08/08/2024</td>
+										<td style="text-align: center;color:gray">1,0876</td>
+										<td style="text-align: center;color:gray">1,1556</td>
+										<td style="text-align: center;color:gray">1,5334</td>
+										<td style="text-align: center;color:darkgreen">0,28</td>
+										<td style="text-align: center;color:darkred">-3,25</td>
+										<td style="text-align: center;color:darkgreen">21,01</td>
+									</tr>
+									<tr>
+										<td>09/08/2024</td>
+										<td style="text-align: center;color:gray">1,1554</td>
+										<td style="text-align: center;color:gray">1,2565</td>
+										<td style="text-align: center;color:gray">1,8276</td>
+										<td style="text-align: center;color:darkgreen">5,29</td>
+										<td style="text-align: center;color:darkgreen">16,25</td>
+										<td style="text-align: center;color:darkgreen">22,05</td>
+									</tr>
+									<tr>
+										<td>10/08/2024</td>
+										<td style="text-align: center;color:gray">1,1587</td>
+										<td style="text-align: center;color:gray">1,2555</td>
+										<td style="text-align: center;color:gray">1,8243</td>
+										<td style="text-align: center;color:darkgreen">5,29</td>
+										<td style="text-align: center;color:darkgreen">16,25</td>
+										<td style="text-align: center;color:darkgreen">22,05</td>
+									</tr>
+									<tr>
+										<td>11/08/2024</td>
+										<td style="text-align: center;color:gray">1,1864</td>
+										<td style="text-align: center;color:gray">1,2984</td>
+										<td style="text-align: center;color:gray">1,9123</td>
+										<td style="text-align: center;color:darkgreen">10,31</td>
+										<td style="text-align: center;color:darkgreen">18,22</td>
+										<td style="text-align: center;color:darkgreen">23,09</td>
+									</tr>
+									<tr>
+										<td>12/08/2024</td>
+										<td style="text-align: center;color:gray">1,1887</td>
+										<td style="text-align: center;color:gray">1,2945</td>
+										<td style="text-align: center;color:gray">1,9174</td>
+										<td style="text-align: center;color:darkgreen">10,31</td>
+										<td style="text-align: center;color:darkgreen">18,22</td>
+										<td style="text-align: center;color:darkgreen">23,09</td>
+									</tr>
+									<tr>
+										<td>13/08/2024</td>
+										<td style="text-align: center;color:gray">1,1825</td>
+										<td style="text-align: center;color:gray">1,2978</td>
+										<td style="text-align: center;color:gray">1,9147</td>
+										<td style="text-align: center;color:darkgreen">10,31</td>
+										<td style="text-align: center;color:darkgreen">18,22</td>
+										<td style="text-align: center;color:darkgreen">23,09</td>
+									</tr>
+									<tr>
+										<td>14/08/2024</td>
+										<td style="text-align: center;color:gray">1,2234</td>
+										<td style="text-align: center;color:gray">1,5134</td>
+										<td style="text-align: center;color:gray">2,0176</td>
+										<td style="text-align: center;color:darkgreen">15,10</td>
+										<td style="text-align: center;color:darkgreen">22,01</td>
+										<td style="text-align: center;color:darkgreen">28,09</td>
+									</tr>
+									<tr>
+										<td>15/08/2024</td>
+										<td style="text-align: center;color:gray">1,2287</td>
+										<td style="text-align: center;color:gray">1,5123</td>
+										<td style="text-align: center;color:gray">2,0165</td>
+										<td style="text-align: center;color:darkgreen">15,10</td>
+										<td style="text-align: center;color:darkgreen">22,01</td>
+										<td style="text-align: center;color:darkgreen">28,09</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+				<footer class="card-footer h_details" style="display: none;">
+					<div class="row">
+						<!-- <div class="col-lg-3">	
+							<ul class="simple-bullet-list mb-3" style="margin-bottom: 0px !important;margin-top: 5px;">								
+								<li class="darkcyan">
+									<span class="title">05/06/2023 - 15/10/2024</span>
+									<span class="description truncate">Validity period</span>
+								</li>																							
+							</ul>
+						</div>									 -->
+						<div class="col-lg-3">
+							<div id="sapId" class="title-header">BS10-01-B1 <span class="badge badge-warning">PV</span>
+							</div>
+							<div id="mainTitle">Belgium supermarket</div>
+						</div>
+						<div class="col-lg-3">
+							<div id="sapId" class="title-header">BS90-01-B1 <span class="badge badge-success">PG</span>
+							</div>
+							<div id="mainTitle">Other description here</div>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal price history -->
+<script>App.FVPrices.initialize();</script>

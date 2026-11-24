@@ -1,0 +1,949 @@
+<head>
+	<link rel="stylesheet" href="css/views/fullview_details.css" />
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20" style="position: relative;">
+
+	<section class="body">
+		<header class="page-header">
+			<div class="right-wrapper pull-left" id="nav-breadcrump">
+				<h2>
+					<a id="nav-breadcrump-link" href="#" class="po-header-back-title">
+						<i class="fa fa-chevron-left right-text"></i>&nbsp;<span id="nav-breadcrump-text">Back</span>
+					</a>
+				</h2>
+			</div>
+			<h2 id="view-bag-title">Article full view</h2>
+
+			<a id="btnEditDiscardAll"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action"
+				href="#" onclick="javascript:App.FVUpdateStepSpecific.switchMode()"><i id="iconEditDiscardAll"
+					class="fas fa-edit" style="margin-top: -10px;"></i></a>
+			<a id="btnConfirm"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#modal_update_confirm" style="display: none;"><i class="fas fa-check"
+					style="margin-top: -10px;"></i></a>
+			<a id="btnHistory"
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
+				href="#modal_update_history"><i class="fa fa-history" style="margin-top: -10px;"></i></a>
+
+			<button
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
+				id="btn-collapse-view" rel="tooltip" data-original-title="" title="Collapse" style="display: none;"><i
+					class="fas fa-compress" style="margin-top: -8px;"></i></button>
+			<button
+				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
+				id="btn-expand-view" rel="tooltip" data-original-title="" title="Expand"><i class="fas fa-expand"
+					style="margin-top: -8px;"></i></button>
+		</header>
+		<!-- start: page -->
+
+		<div class="row">
+			<div id="fullview-left-col" class="col-lg-3 mb-4 mb-xl-0">
+				<!-- Start - Accordion Main info -->
+				<div class="accordion accordion-sm" id="accordion3">
+					<div class="card card-default">
+						<div class="card-header">
+							<h4 class="card-title m-0">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+									href="#accMainInfo">
+									Product information
+								</a>
+							</h4>
+						</div>
+						<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
+							<div class="card-body">
+								<section class="card">
+									<div class="card-body">
+										<div class="thumb-info mb-3">
+											<img src="img/img_lef.jpg" class="rounded img-fluid" alt="">
+											<!-- <img src="img/DIAMS.png" class="rounded img-fluid" alt=""> -->
+											<div class="thumb-info-title">
+												<span class="thumb-info-inner">LEFF BLOND RET 0,33L 9+3 TRA</span>
+												<span class="thumb-info-type">E020 - Viande fraiche emballee</span>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6" style="text-align: center;">
+												<div class="h4 font-weight-bold mb-0 mt-3">1234567</div>
+												<p class="text-3 text-muted mb-0">SAP ID</p>
+											</div>
+											<div class="col-md-6" style="text-align: center;">
+												<div class="h4 font-weight-bold mb-0 mt-3">9876543</div>
+												<p class="text-3 text-muted mb-0">Hope of Base UoM</p>
+											</div>
+										</div>
+
+										<hr class="dotted short" style="margin-bottom: 25px;">
+
+										<ul class="simple-bullet-list mb-3">
+											<li class="red">
+												<span class="title">N1 - National</span>
+												<span class="description truncate">Brand type</span>
+											</li>
+											<li class="green">
+												<span class="title">B88 - COOKING-HOME DECOR</span>
+												<span class="description truncate">Purchasing group</span>
+											</li>
+											<li class="blue">
+												<span class="title">SOCIETE FERMIERE ROCHEFORT ARDENNES</span>
+												<span class="description truncate">Supplier</span>
+											</li>
+											<li class="darkcyan toggleable">
+												<span class="title">5400113710783</span>
+												<span class="description truncate">Main GTIN CU of the base unit</span>
+											</li>
+											<li class="orange toggleable">
+												<span class="title">6390113710722</span>
+												<span class="description truncate">Main GTIN TU of the PO UoM</span>
+											</li>
+										</ul>
+										<div class="clearfix">
+											<a id="toggleButton" class="text-uppercase text-muted float-right"
+												href="#">See more</a>
+										</div>
+
+										<hr class="dotted short">
+
+										<ul class="simple-card-list mb-3" style="margin-top: 25px;">
+											<li class="success" style="text-align: center;opacity: 0.8;">
+												<h3>DLL full active-order lim</h3>
+												<p class="text-light">75</p>
+											</li>
+										</ul>
+
+										<ul id="blockStatement" class="simple-card-list mb-3"
+											style="margin-top: 25px;display: none;">
+											<li class="warning" style="text-align: center;opacity: 0.8;">
+												<h3>Blocked for edition</h3>
+												<p class="text-light">Update request on process </p>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+					<!-- End - Accordion Main info -->
+					<!-- Start - Accordion Change request -->
+					<div id="pChange" class="card card-default" style="display: none;">
+						<div class="card-header">
+							<h4 class="card-title m-0">
+								<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
+									data-parent="#accordion3" href="#accChangeRequest">
+									Product update request <span
+										style="color: darkred;font-size: larger;">&nbsp;&nbsp;(New)</span>
+								</a>
+							</h4>
+						</div>
+						<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
+							<div id="pChangeMain" class="card-body" style="display: none;background: ghostwhite;">
+								<!-- Start - Description -->
+								<div class="row">
+									<div class="col-lg-12">
+										<p style="margin-bottom: 0;">Update product values and enter comments if
+											required.</p>
+										<ul>
+											<li>Submit to initiate the change request</li>
+											<li><a href="#" id="discardAll" style="color: darkred;font-size: larger;"
+													onclick="javascript:App.FVUpdate.discardAll()">Discard all</a>: to
+												restore all original values.</li>
+										</ul>
+									</div>
+								</div>
+								<!-- End - Description -->
+								<!-- Start - Change log -->
+								<div class="scrollable" data-plugin-scrollable style="height: 400px;margin-top: 25px;">
+									<div class="scrollable-content">
+										<table id="tLog" class="table table-hover table-responsive-md table-sm mb-0">
+											<thead>
+												<tr>
+													<th colspan="3" style="text-align: center;">Change log</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr id="rf1" style="display: none;"
+													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-info" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Updated">U</span>
+													</td>
+													<td style="width: 75%;">Product creation date</td>
+													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-plus"
+															style="color: darkgray;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="New"></i>
+													</td>
+												</tr>
+												<tr id="rf2" style="display: none;"
+													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-info" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Updated">U</span>
+													</td>
+													<td style="width: 75%;">Net weight (EA)</td>
+													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-plus"
+															style="color: darkgray;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="New"></i>
+													</td>
+												</tr>
+												<tr id="rf3" style="display: none;"
+													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-info" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Updated">U</span>
+													</td>
+													<td style="width: 75%;">Item set</td>
+													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-plus"
+															style="color: darkgray;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="New"></i>
+													</td>
+												</tr>
+												<tr id="rf4" style="display: none;"
+													onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+													<td style="text-align: center;width: 10%;">
+														<span class="badge badge-info" style="font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="Updated">U</span>
+													</td>
+													<td style="width: 75%;">Dangerous symbos (GHS)</td>
+													<td style="text-align: right;width: 15%;">
+														<i class="fas fa-plus"
+															style="color: darkgray;font-size: larger;"
+															data-toggle="tooltip" data-placement="bottom"
+															title="New"></i>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- End - Change log -->
+								<!-- Start - CR Details and last comment - Not for initiator -->
+
+								<!-- End - CR Details and last comment -->
+							</div>
+							<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
+								<div class="row">
+									<div class="col-lg-2" style="text-align: left;">
+										<span class="badge badge-info" style="font-size: x-large;" data-toggle="tooltip"
+											data-placement="right" title="Updated">U</span>
+									</div>
+									<div class="col-lg-10">
+										<p style="text-align: right;">
+											<a href="#"
+												onclick="javascript:App.FVSummaryLog.backToChangeRequestMainView()"
+												class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
+													style="color: darkgray;font-size: x-large;margin-top: 12px;"
+													data-toggle="tooltip" data-placement="left"
+													title="Back to change request summary"></i></a>
+										</p>
+									</div>
+								</div>
+								<!-- Start - Old value -->
+								<div class="row">
+									<div class="col-lg-12">
+										<label class="col-form-label" for="formGroupExampleInput">Old value:</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div id="if1" class="input-group">
+											<span class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="fas fa-calendar-alt"></i>
+												</span>
+											</span>
+											<input readonly type="text" data-plugin-datepicker
+												data-plugin-options='{ "format": "dd/mm/yyyy" }' class="form-control"
+												autocomplete="off" value="30/12/2023" />
+										</div>
+										<input id="if2" readonly type="text" class="form-control form-control"
+											value="4321,855" style="text-align: right;">
+										<select id="if3" class="form-control mb-3" disabled>
+											<option value=""></option>
+											<option>001 - Zuivel</option>
+											<option>002 - Tabak zelfbediening en Vensafe</option>
+											<option selected>314 - 0201 - Perfumery & Drugstore Ninove</option>
+										</select>
+										<select id="if4" multiple data-plugin-selectTwo
+											class="form-control populate cust-select" disabled>
+											<option value="01" selected>01</option>
+											<option value="04" selected>04</option>
+											<option value="06" selected>06</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12" style="text-align: right;">
+										<a href="#" onclick="javascript:App.FVUpdate.discard()"
+											style="color: red;">Restore</a>
+									</div>
+								</div>
+								<!-- End - Old value -->
+								<hr class="dotted short">
+								<!-- Start - Comments -->
+								<div class="row">
+									<div class="col-lg-12">
+										<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<section class="simple-compose-box mb-3">
+											<form method="get" action="/">
+												<textarea id="cComment" name="message-text"
+													data-plugin-textarea-autosize
+													placeholder="Additional information..." data-plugin-maxlength
+													maxlength="100" rows="2"></textarea>
+											</form>
+										</section>
+									</div>
+								</div>
+								<!-- End - Comments -->
+								<!-- Start - Actions -->
+
+								<!-- End - Actions -->
+							</div>
+						</div>
+					</div>
+					<!-- End - Accordion Change request -->
+				</div>
+
+
+			</div>
+			<div id="fullview-right-col" class="col-lg-9">
+				<!-- Start - Breadcrumbs navigation -->
+				<div class="row">
+					<div class="col-lg-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink" href="#">Basic
+										Data</a></li>
+								<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink"
+										href="#">Descriptions</a></li>
+								<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink" href="#">Customer
+										decision tree (CDT)</a></li>
+								<li class="breadcrumb-item" style="display: none;"><a id="n4"
+										class="scrollToSectionLink" href="#"></a></li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!-- End - Breadcrumbs navigation -->
+				<div class="tabs tabs-vertical tabs-right tabs-tertiary">
+					<div class="tab-content">
+						<!-- Start - Panel - Basic Data -->
+						<div id="overview"></div>
+						<!-- End - Panel - Basic Data -->
+						<!-- Start - Panel - Units of Measure -->
+						<div id="pUoM"></div>
+						<!-- End - Panel - Units of Measure -->
+						<!-- Start - Panel - Taxes -->
+						<div id="pTaxes"></div>
+						<!-- End - Panel - Taxes  -->
+						<!-- Start - Panel - Codes -->
+						<div id="pCodes"></div>
+						<!-- End - Panel - Codes  -->
+						<!-- Start - Panel - Store -->
+						<div id="pStore"></div>
+						<!-- End - Panel - Store  -->
+						<!-- Start - Panel - B2C -->
+						<div id="pB2C"></div>
+						<!-- End - Panel - B2C  -->
+						<!-- Start - Panel - Logistics -->
+						<div id="pLogistics"></div>
+						<!-- End - Panel - Logistics  -->
+						<!-- Start - Panel - Purchasing -->
+						<div id="pPurchasing"></div>
+						<!-- End - Panel - Purchasing  -->
+						<!-- Start - Panel - Links -->
+						<div id="pLinks"></div>
+						<!-- End - Panel - Links -->
+						<!-- Start - Panel - Assortment -->
+						<div id="pAssortment"></div>
+						<!-- End - Panel - Assortment  -->
+						<!-- Start - Panel - Prices -->
+						<div id="pPrices"></div>
+						<!-- End - Panel - Prices  -->
+					</div>
+					<ul class="nav nav-tabs tab-index">
+						<li class="nav-item active" data-toggle="tooltip" data-placement="left"
+							data-original-title="Basic Data">
+							<a class="nav-link" href="#overview" data-toggle="tab"><i
+									class="fas fa-info"></i>&nbsp;B.Data</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+							data-original-title="Units of Measure">
+							<a class="nav-link" href="#pUoM" data-toggle="tab"><i class="fas fa-cube"></i>&nbsp;UoM</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+							data-original-title="Purchasing">
+							<a class="nav-link" href="#pPurchasing" data-toggle="tab"><i
+									class="fas fa-shopping-cart"></i>&nbsp;Purch.</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+							data-original-title="Logistics">
+							<a class="nav-link" href="#pLogistics" data-toggle="tab"><i
+									class="fas fa-truck"></i>&nbsp;Log.</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Codes">
+							<a class="nav-link" href="#pCodes" data-toggle="tab"><i
+									class="fas fa-laptop-code"></i>&nbsp;Codes</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+							data-original-title="Assortments">
+							<a class="nav-link" href="#pAssortment" data-toggle="tab"><i
+									class="fas fa-box"></i>&nbsp;Assort.</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Prices">
+							<a class="nav-link" href="#pPrices" data-toggle="tab"><i
+									class="fas fa-money-bill-alt"></i>&nbsp;Prices</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Taxes">
+							<a class="nav-link" href="#pTaxes" data-toggle="tab"><i
+									class="fas fa-file-invoice-dollar"></i>&nbsp;Taxes</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Links">
+							<a class="nav-link" href="#pLinks" data-toggle="tab"><i
+									class="fas fa-link"></i>&nbsp;Links</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="B2C">
+							<a class="nav-link" href="#pB2C" data-toggle="tab"><i
+									class="fas fa-briefcase"></i>&nbsp;B2C</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Store">
+							<a class="nav-link" href="#pStore" data-toggle="tab"><i
+									class="fas fa-store"></i>&nbsp;Store</a>
+						</li>
+						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+							data-original-title="Fost Plus">
+							<a class="nav-link" href="#pFostPlus" data-toggle="tab"><i
+									class="fas fa-cube"></i>&nbsp;F.Plus</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Start Modal - Full view - confirm update -->
+		<div id="modal_update_confirm" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Confirm</h2>
+				</header>
+				<div class="card-body">
+					<div class="modal-wrapper">
+						<div class="modal-icon">
+							<i class="fas fa-question-circle"></i>
+						</div>
+						<div class="modal-text">
+							<h4>Submit a new update request</h4>
+							<p>Your input will be evaluated and confirmed by Delhaize teams.<br>Delhaize teams may
+								include more updates and request others.</p>
+							<p><span style="font-size: larger;color: red;">Important: </span> note that the current
+								product will remain blocked for edition until the update request is processed (completed
+								or rejected)</p>
+							<div class="row">
+								<div class="col-lg-12">
+									<label class="col-form-label" for="formGroupExampleInput">Additional
+										information:</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<textarea id="fComment" name="message-text" data-plugin-maxlength maxlength="200"
+										rows="4" style="width: 100%;"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="btnConfirmNewCR" class="btn btn-success modal-confirm"
+								onclick="javascript:App.FVUpdate.submitUpdateRequest()">Confirm</button>
+							<button class="btn btn-default modal-dismiss">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - confirm update -->
+		<!-- Start Modal - Full view - history -->
+		<div id="modal_update_history" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide"
+			style="max-width: 1300px !important;">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Product update history</h2>
+					<p class="card-subtitle">Check update history for changes done through DIAMS. Updates applied
+						directly in SAP are not reflected here.<br>Click on field, request number or involved users to
+						automatically filter on each value.</p>
+					<button type="button" class="close modal-dismiss" data-dismiss="modal" aria-label="Close"
+						style="margin-top: -35px;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</header>
+				<div class="card-body">
+					<div class="row">
+						<div id="searchPurHistoryDiv" class="col-lg-4">
+						</div>
+						<div class="col-lg-4">
+							<div class="input-daterange input-group" data-plugin-datepicker
+								data-plugin-options='{ "endDate": "10/11/2024","format": "dd/mm/yyyy", "todayBtn": true, "todayHighlight": true, "weekStart":1,"orientation":"bottom"  }'>
+								<span class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="fas fa-calendar-alt"></i>
+									</span>
+								</span>
+								<input type="text" class="form-control hDate cFilter" name="start" value=""
+									autocomplete="off" onchange="javascript:App.FVDetails.onDateHistoryEntered()">
+								<span class="input-group-text border-left-0 border-right-0 rounded-0">
+									to
+								</span>
+								<input type="text" class="form-control hDate cFilter" name="end" value="10/11/2024"
+									autocomplete="off">
+								<span class="input-group-append">
+									<a href="#" onclick="javascript:App.FVDetails.resetDateHistoryFilter()"
+										class="btn-tertiary" style="width: 40px;text-align:center;opacity: 0.7;"><i
+											class="fas fa-undo" style="margin-top: 12px;"></i></a>
+								</span>
+							</div>
+						</div>
+						<div class="col-lg-4 text-right">
+							<button class="btn btn-link"><i class="fas fa-file-excel"></i>&nbsp;Export to Excel</button>
+						</div>
+
+					</div>
+					<div class="row" style="margin-top: 20px;">
+						<div class="col-lg-12">
+							<table class="table table-responsive-md table-sm mb-0 table-hover" id="datatable-purh">
+								<thead>
+									<tr>
+										<th id="purh_t1" style="vertical-align: middle;text-align: center;width:28%">
+											Field</th>
+										<th id="purh_t3" style="vertical-align: middle;text-align: center;width:10%">
+											Date/Time</th>
+										<th id="purh_t4" style="vertical-align: middle;text-align: center;width:5%">
+											Request number</th>
+										<th id="purh_t5" style="vertical-align: middle;text-align: center;width:5%">By
+										</th>
+										<th id="purh_t6" style="vertical-align: middle;text-align: center;width:7%">CE
+											Approver</th>
+										<th id="purh_t7" style="vertical-align: middle;text-align: center;width:7%">MD
+											Approver</th>
+										<th id="purh_t8" style="vertical-align: middle;text-align: right;width:19%">Old
+											value</th>
+										<th id="purh_t9" style="vertical-align: middle;text-align: right;width:19%">New
+											value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="offDate">
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Net contents of Base UoM</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1234</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom"
+											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Albert Mitslak">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">AMIT</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">16,71</td>
+										<td style="text-align: right;color:darkgreen">24,29</td>
+									</tr>
+									<tr class="offDate">
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Country of origin of the
+												product</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1234</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom"
+											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Albert Mitslak">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">AMIT</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">BE, DE, FR</td>
+										<td style="text-align: right;color:darkgreen">BE, FR</td>
+									</tr>
+									<tr class="offDate">
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">IP - Product shelf description
+												(English)</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1234</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom"
+											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Albert Mitslak">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">AMIT</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">Rice Krispies Bag Pack 4x400g</td>
+										<td style="text-align: right;color:darkgreen">Rice Krispies Bag Pack 3x500g</td>
+									</tr>
+									<tr class="offDate">
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Item set</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">25/10/2024 15:31</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1234</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom"
+											title="Sofia Pedersen (00500113489 - Coca Cola Company)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">SPED</a><br><code>SUP</code>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Albert Mitslak">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">AMIT</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">314 - 0201 - Perfumery & Drugstore
+											Ninove</td>
+										<td style="text-align: right;color:darkgreen">002 - Tabak zelfbediening en
+											Vensafe</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Product number used by supplier
+												(00050013489)</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1544</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="John Lucas (CE)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">9876543210001263</td>
+										<td style="text-align: right;color:darkgreen">123543292251244</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Net - Weight (EA)</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1544</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="John Lucas (CE)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">4321,855</td>
+										<td style="text-align: right;color:darkgreen">175,320</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Red market (own brand)</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1544</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="John Lucas (CE)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">Yes</td>
+										<td style="text-align: right;color:darkgreen">No</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Net contents of Base UoM</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">28/10/2024 09:42</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1544</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="John Lucas (CE)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">JLUC</a><br><code>CE</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a>
+										</td>
+										<td style="text-align: right;color:darkred">24,29</td>
+										<td style="text-align: right;color:darkgreen">38,01</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Implantation guidelines
+												(French)</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">03/11/2024 19:05</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1588</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom"
+											title="Julia Carlson (00630229175 - Unilever Belgium)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">JCAR</a><br><code>SUP</code>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Adam Zuid">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">AZUI</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Clara Rambito">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">CRAM</a>
+										</td>
+										<td style="text-align: right;color:darkred" data-toggle="tooltip"
+											data-placement="bottom"
+											title="Les directives d'implantation pour notre produit de vente au dÃƒÆ’Ã‚Â©tail suggÃƒÆ’Ã‚Â¨rent un positionnement prÃƒÆ’Ã‚Â¨s des zones ÃƒÆ’Ã‚Â  fort trafic, ÃƒÆ’Ã‚Â  hauteur des yeux et le regroupement des articles complÃƒÆ’Ã‚Â©mentaires. ÃƒÆ’Ã¢â‚¬Â°valuez rÃƒÆ’Ã‚Â©guliÃƒÆ’Ã‚Â¨rement le comportement des clients">
+											Les directives d'implantation pour notre produit de vente au dÃƒÆ’Ã‚Â©tail
+											suggÃƒÆ’Ã‚Â¨rent un positionnement prÃƒÆ’Ã‚Â¨s des zones ÃƒÆ’Ã‚Â  fort
+											trafic...</td>
+										<td style="text-align: right;color:darkgreen" data-toggle="tooltip"
+											data-placement="bottom"
+											title="New Les directives d'implantation pour notre produit de vente au dÃƒÆ’Ã‚Â©tail, ÃƒÆ’Ã‚Â  hauteur des yeux et le regroupement des articles complÃƒÆ’Ã‚Â©mentaires. ÃƒÆ’Ã¢â‚¬Â°valuez rÃƒÆ’Ã‚Â©guliÃƒÆ’Ã‚Â¨rement le comportement des clients">
+											New Les directives d'implantation pour notre produit de vente au
+											dÃƒÆ’Ã‚Â©tail, ÃƒÆ’Ã‚Â 
+											hauteur des yeux et le regroupement des articles...</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Store orderable days</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">03/11/2024 19:05</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1588</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Adam Zuid (CE)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">AZUI</a><br><code>CE</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Clara Rambito">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">CRAM</a>
+										</td>
+										<td style="text-align: right;color:darkred">Monday, Tuesday, Friday</td>
+										<td style="text-align: right;color:darkgreen">Monday, Friday, Sunday</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Product type</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">03/11/2024 19:05</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1588</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Clara Rambito (MDS)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">CRAM</a><br><code>MDS</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: right;color:darkred">ZHAW - Trading Goods Retail</td>
+										<td style="text-align: right;color:darkgreen">ZIBF - Free Operating supplies
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Product type</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">04/11/2024 14:34</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1601</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Matt Jefferson (Replenisher)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">MJEF</a><br><code>REP</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: right;color:darkred">ZIBF - Free Operating supplies</td>
+										<td style="text-align: right;color:darkgreen">ZHAF - Free Trading Goods Retail
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: inherit;">Product type</a>
+										</td>
+										<td style="text-align: center;color:darkcyan">08/11/2024 09:23</td>
+										<td style="text-align: center;color:gray">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">1605</a>
+										</td>
+										<td style="text-align: center;color:gray" data-toggle="tooltip"
+											data-placement="bottom" title="Brenda Bulmar (MDS)">
+											<a href="#" onclick="javascript:App.FVDetails.filterFor(this.text)"
+												class="btn-link" style="color: gray;">BBUL</a><br><code>MDS</code>
+										</td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: center;color:gray"></td>
+										<td style="text-align: right;color:darkred">ZHAF - Free Trading Goods Retail
+										</td>
+										<td style="text-align: right;color:darkgreen">ZVEF - Free Packaging MD</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</div>
+		<!-- End Modal - Full view - history -->
+		<!-- end: page -->
+	</section>
+
+	<script src="js/views/view.common.js"></script>
+	<script src="js/views/fullview_details_panel_assortment.js"></script>
+	<script src="js/views/fullview_details_panel_b2c.js"></script>
+	<script src="js/views/fullview_details_panel_prices.js"></script>
+	<script src="js/views/fullview_details_panel_purchasing.js"></script>
+	<script src="js/views/fullview_new_details.js"></script>
+	<script src="js/views/fullview_details_notifications.js"></script>
+	<script src="js/views/fullview_details_summary_log.js"></script>
+	<script src="js/views/view.loader.js"></script>
+	<script src="js/views/fullview_new.update_s1.js"></script>
+	<script src="js/views/fullview_new.update.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			var views = [
+				{ selector: '#overview', url: 'views/pim_fullview_details_overview.html' },
+				{ selector: '#pUoM', url: 'views/pim_fullview_details_pUoM.html' },
+				{ selector: '#pTaxes', url: 'views/pim_fullview_details_pTaxes.html' },
+				{ selector: '#pCodes', url: 'views/pim_fullview_details_pCodes.html' },
+				{ selector: '#pStore', url: 'views/pim_fullview_details_pStore.html' },
+				{ selector: '#pB2C', url: 'views/pim_fullview_details_pB2C.html' },
+				{ selector: '#pLogistics', url: 'views/pim_fullview_details_pLogistics.html' },
+				{ selector: '#pPurchasing', url: 'views/pim_fullview_details_pPurchasing.html' },
+				{ selector: '#pLinks', url: 'views/pim_fullview_details_pLinks.html' },
+				{ selector: '#pAssortment', url: 'views/pim_fullview_details_pAssortment.html' },
+				{ selector: '#pPrices', url: 'views/pim_fullview_details_pPrices.html' }
+			];
+
+			App.ViewLoader.loadViews(views, function () {
+				App.ViewCommon.initialize({
+					exclude: ['initWizard']
+				});
+
+				App.FVSummaryLog.initialize();
+				App.FVDetails.initialize();
+
+				//init update common functionality
+				App.FVUpdate.initialize();
+			});
+		});
+	</script>
+</body>
+
+</html>
