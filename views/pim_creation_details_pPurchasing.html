@@ -1,4 +1,4 @@
-﻿<div id="pPurchasing" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+<div id="pPurchasing" class="tab-pane scrollable main-panel" data-plugin-scrollable>
 	<div class="scrollable-content">
 		<!-- Start - Subpanel - Purchasing data -->
 		<div id="section1" class="row">
@@ -18,7 +18,7 @@
 									<div class="col-sm-5">
 										<div class="input-group input-group-sm">
 											<span class="input-group-prepend">
-												<button class="btn btn-default btn-sm purch-supplier-id"
+												<button class="btn btn-default btn-sm purch-supplier-id-btn"
 													type="button">0010002878</button>
 											</span>
 											<input type="text" name="sup_gln" class="form-control form-control-sm"
@@ -114,14 +114,14 @@
 										<div class="input-daterange input-group" data-plugin-datepicker=""
 											data-plugin-options='{ "format": "dd/mm/yyyy" }'>
 											<span class="input-group-prepend">
-												<span class="input-group-text input-group-aux" tabindex="-1">
+												<span class="input-group-text input-group-addon-sm" tabindex="-1">
 													<i class="fas fa-calendar-alt"></i>
 												</span>
 											</span>
 											<input type="text" class="form-control form-control-sm" name="start"
 												value="15/02/2024">
 											<span
-												class="input-group-text input-group-aux border-left-0 border-right-0 rounded-0">
+												class="input-group-text input-group-addon-sm border-left-0 border-right-0 rounded-0">
 												to
 											</span>
 											<input type="text" class="form-control form-control-sm" name="end"
@@ -215,7 +215,7 @@
 												class="form-control form-control-sm text-right" autocomplete="off"
 												autocorrect="off" spellcheck="false" value="32">
 											<span class="input-group-append">
-												<button class="btn btn-default btn-sm purch-supplier-vol"
+												<button class="btn btn-default btn-sm purch-supplier-vol-btn"
 													type="button">%</button>
 											</span>
 										</div>
@@ -246,7 +246,7 @@
 											<input type="text" name="purch_pr"
 												class="form-control form-control-sm text-right" autocomplete="off"
 												autocorrect="off" spellcheck="false" value="156312,25">
-											<span class="input-group-append purch-price-currency-uom">
+											<span class="input-group-append purch-price-per-unit-label-addon">
 												<select class="form-control form-control-sm mb-0 text-center">
 													<option value="EUR" selected>EUR</option>
 													<option value="USD">USD</option>
@@ -255,7 +255,7 @@
 										</div>
 									</div>
 									<label
-										class="col-sm-3 control-label control-label-sm purch-price-unit pt-1 pl-0">per
+										class="col-sm-3 control-label control-label-sm purch-price-per-unit-label pt-1 pl-0">per
 										1 EA</label>
 								</div>
 								<div class="row">
@@ -266,7 +266,7 @@
 											<input type="text" name="base_pu"
 												class="form-control form-control-sm text-right" autocomplete="off"
 												autocorrect="off" spellcheck="false" value="1">
-											<span class="input-group-append purch-price-currency-uom">
+											<span class="input-group-append purch-price-per-unit-label-addon">
 												<select class="form-control form-control-sm mb-0 text-center">
 													<option value="KG" selected>KG</option>
 													<option value="EA">EA</option>

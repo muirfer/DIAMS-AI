@@ -2,9 +2,10 @@
 	<link rel="stylesheet" href="css/views/fullview_details.css" />
 </head>
 
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="20" style="position: relative;">
+<body class="is-creation-view" data-spy="scroll" data-target="#myScrollspy" data-offset="20"
+	style="position: relative;">
 
-	<section class="body">
+	<section class="creation-details-body">
 		<header class="page-header">
 			<div class="right-wrapper pull-left" id="nav-breadcrump">
 				<h2>
@@ -14,7 +15,6 @@
 				</h2>
 			</div>
 			<h2 id="view-bag-title">Article full view</h2>
-
 			<a id="btnConfirm"
 				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
 				href="#modal_update_confirm" style="display: none;"><i class="fas fa-check"
@@ -22,7 +22,6 @@
 			<a id="btnHistory"
 				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action modal-basic"
 				href="#modal_update_history"><i class="fa fa-history" style="margin-top: -10px;"></i></a>
-
 			<button
 				class="sidebar-right-toggle btn btn-link sidebar-right-toggle-narrow ml-xl nav-resultset-action btn-expand-collapse"
 				id="btn-collapse-view" rel="tooltip" data-original-title="" title="Collapse" style="display: none;"><i
@@ -34,94 +33,112 @@
 		</header>
 		<!-- start: page -->
 
-		<div class="row">
-			<div id="fullview-left-col" class="col-lg-3 mb-4 mb-xl-0">
-				<!-- Start - Accordion Main info -->
+		<div class="row p-0">
+			<div id="fullview-left-col" class="col-lg-3 pr-0" style="overflow:hidden">
+				<!-- start: Product description, filliere and category -->
+				<section class="card card-featured-top card-featured-secondary mt-0">
+					<div class="card-body pl-0 pb-0 pt-0">
+						<div class="widget-summary widget-summary-sm">
+							<div class="widget-summary-col widget-summary-col-icon bg-secondary pt-1"
+								style="vertical-align: middle;">
+								<div class="summary-icon ml-1 mr-1">
+									<i class="fa fa-regular fa-pen toggle-layout"></i>
+								</div>
+							</div>
+							<div class="widget-summary-col p-2 pb-2 text-center">
+								<div class="summary">
+									<h4 class="title">LEFF BLOND RET 0,33L 9+3 TRA</h4>
+									<div class="info">
+										<strong class="text-muted">E020 - Viande
+											fraiche emballee</strong>
+										<!-- Start - SAP ID & Hope Base UoM panel -->
+										<hr class="dotted dotted-xs">
+										<section class="mt-0">
+											<div class="p-1">
+												<div class="row mt-1">
+													<div class="col-md-6 text-center pr-1 header-top-value">
+														<div class="h7 font-weight-bold mb-0">
+															1234567
+														</div>
+														<p class="text-3 text-muted mb-0">SAP ID</p>
+													</div>
+													<div class="col-md-6 text-center pl-1 header-top-value">
+														<div class="h7 font-weight-bold mb-0">
+															9876543
+														</div>
+														<p class="text-3 text-muted mb-0">
+															Hope of Base UoM</p>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end: Product description, filliere and category -->
 				<div class="accordion accordion-sm" id="accordion3">
 					<div class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
-								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3"
+								<a class="accordion-toggle acc-title" data-toggle="collapse" data-parent="#accordion3"
 									href="#accMainInfo">
-									Product information
+									More information
 								</a>
 							</h4>
 						</div>
 						<div id="accMainInfo" class="collapse show" data-parent="#accordion3">
-							<div class="card-body">
+							<div class="card-body p-1">
+
 								<section class="card">
-									<div class="card-body">
-										<div class="thumb-info mb-3">
-											<img src="img/img_lef.jpg" class="rounded img-fluid" alt="">
-											<!-- <img src="img/DIAMS.png" class="rounded img-fluid" alt=""> -->
-											<div class="thumb-info-title">
-												<span class="thumb-info-inner">LEFF BLOND RET 0,33L 9+3 TRA</span>
-												<span class="thumb-info-type">E020 - Viande fraiche emballee</span>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-6" style="text-align: center;">
-												<div class="h4 font-weight-bold mb-0 mt-3">1234567</div>
-												<p class="text-3 text-muted mb-0">SAP ID</p>
-											</div>
-											<div class="col-md-6" style="text-align: center;">
-												<div class="h4 font-weight-bold mb-0 mt-3">9876543</div>
-												<p class="text-3 text-muted mb-0">Hope of Base UoM</p>
-											</div>
-										</div>
-
-										<hr class="dotted short" style="margin-bottom: 25px;">
-
-										<ul class="simple-bullet-list mb-3">
+									<div class="card-body pt-3 pb-0">
+										<ul class="simple-bullet-list mb-0">
 											<li class="red">
-												<span class="title">N1 - National</span>
-												<span class="description truncate">Brand type</span>
+												<span class="title bullet-sm">N1 - National</span>
+												<span class="description truncate bullet-sm">Brand type</span>
 											</li>
 											<li class="green">
-												<span class="title">B88 - COOKING-HOME DECOR</span>
-												<span class="description truncate">Purchasing group</span>
+												<span class="title bullet-sm">B88 - COOKING-HOME DECOR</span>
+												<span class="description truncate bullet-sm">Purchasing group</span>
 											</li>
 											<li class="blue">
-												<span class="title">SOCIETE FERMIERE ROCHEFORT ARDENNES</span>
-												<span class="description truncate">Supplier</span>
-											</li>
-											<li class="darkcyan toggleable">
-												<span class="title">5400113710783</span>
-												<span class="description truncate">Main GTIN CU of the base unit</span>
-											</li>
-											<li class="orange toggleable">
-												<span class="title">6390113710722</span>
-												<span class="description truncate">Main GTIN TU of the PO UoM</span>
+												<span class="title bullet-sm">SOCIETE FERMIERE ROCHEFORT ARDENNES</span>
+												<span class="description truncate bullet-sm">Supplier</span>
 											</li>
 										</ul>
-										<div class="clearfix">
-											<a id="toggleButton" class="text-uppercase text-muted float-right"
-												href="#">See more</a>
-										</div>
-
-										<hr class="dotted short">
-
-										<ul class="simple-card-list mb-3" style="margin-top: 25px;">
-											<li class="success" style="text-align: center;opacity: 0.8;">
-												<h3>DLL full active-order lim</h3>
-												<p class="text-light">75</p>
+										<hr class="dotted dotted-sm">
+										<ul class="simple-bullet-list mb-0">
+											<li class="darkcyan">
+												<span class="title bullet-sm">5400113710783</span>
+												<span class="description truncate bullet-sm">Main GTIN CU of the base unit</span>
 											</li>
-										</ul>
-
-										<!-- <ul id="blockStatement" class="simple-card-list mb-3" style="margin-top: 25px;">
-											<li class="warning" style="text-align: center;opacity: 0.8;">
-												<h3>Review required</h3>
-												<p class="text-light">Update request under process</p>
-											</li>
-										</ul> -->
-										<ul id="berStatement" class="simple-card-list mb-3" style="margin-top: 25px;">
-											<li class="danger" style="text-align: center;opacity: 0.8;">
-												<h3>BERU</h3>
-												<p class="text-light">Business Error to Update</p>
+											<li class="orange">
+												<span class="title bullet-sm">6390113710722</span>
+												<span class="description truncate bullet-sm">Main GTIN TU of the PO UoM</span>
 											</li>
 										</ul>
 									</div>
 								</section>
+								<!-- Start - Status panel -->
+								<div class="row pl-2 pr-2 mt-2">
+									<div class="col-md-12 text-center">
+										<ul class="simple-card-list mb-1">
+											<li class="success p-1 mt-1 mb-0 text-center" style="opacity: 0.8;">
+												<h3 class="p-status">75<span class="ml-2">DLL full active-order lim</span></h3>
+											</li>
+										</ul>
+									</div>
+									<div class="col-md-12 text-center">
+										<ul id="berStatement" class="simple-card-list mb-1">
+											<li class="danger p-1 mt-1 mb-0 text-center" style="opacity: 0.8;">
+												<h3 class="p-status">BERU<span class="ml-2">Business Error to Update</span></h3>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- End - Status panel -->
 							</div>
 						</div>
 					</div>
@@ -130,46 +147,25 @@
 					<div id="pChange" class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
-								<a id="titleDet" class="accordion-toggle" data-toggle="collapse"
+								<a id="titleDet" class="accordion-toggle acc-title" data-toggle="collapse"
 									data-parent="#accordion3" href="#accChangeRequest">
-									Product update request <span
-										style="color: darkred;font-size: larger;">&nbsp;&nbsp;(13245)</span>
+									<span id="actionBadge" class="badge badge-info" data-toggle="tooltip"
+										data-placement="left" title="Updated"
+										style="float:right;display: none;">U</span>
+									Update requests logs and history
 								</a>
 							</h4>
-							<div class="card-actions">
-								<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
-									style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a>
+							<div class="card-actions info-link info-link-u">
+								<a href="#modal_update_details" class="modal-with-zoom-anim ws-normal">
+									<i class="fas fa-info"></i></a>
 							</div>
 						</div>
 						<div id="accChangeRequest" class="collapse" data-parent="#accordion3">
-							<div id="pChangeMain" class="card-body" style="background: ghostwhite;">
-								<!-- Start - Description -->
-								<div class="row">
-									<div class="col-lg-12">
-										<p style="margin-bottom: 0;">Review changes requested for current product.</p>
-										<ul>
-											<li>Approve or reject them (justification required)</li>
-											<li>Add additional changes on current request.</li>
-											<li>Ask the supplier to include more changes.</li>
-											<li><a href="#modal_update_reject_all"
-													class="modal-with-zoom-anim ws-normal"
-													style="color: darkred;font-size: larger;">Reject all</a>: cancel
-												entire change request</li>
-										</ul>
-									</div>
-								</div>
-								<!-- End - Description -->
-								<!-- Start - Change log -->
-								<div class="scrollable" data-plugin-scrollable style="height: 400px;margin-top: 25px;">
-									<div class="scrollable-content">
-										<table id="tLog" class="table table-hover table-responsive-md table-sm mb-0">
-											<thead>
-												<tr>
-													<th colspan="3" style="text-align: center;">Change log</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr id="rf1" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
+							<div id="pChangeMain" class="card-body pt-0 pb-0 pr-1 pl-1" style="background: ghostwhite;">
+								<div class="col-lg-12 beautify-scroll pl-1 pr-0">
+									<table id="tLog" class="table table-hover table-responsive-md table-sm mb-0">
+										<tbody class="pr-0">
+<tr id="rf1" onclick="javascript:App.FVUpdate.focusOnChange(this.id)">
 													<td style="text-align: center;width: 10%;">
 														<span class="badge badge-info" style="font-size: larger;"
 															data-toggle="tooltip" data-placement="bottom"
@@ -252,30 +248,23 @@
 															title="New"></i>
 													</td>
 												</tr> -->
-											</tbody>
-										</table>
+										</tbody>
+									</table>
+								</div>
+								<!-- Start - Footer and actions -->
+								<div class="card-footer p-1" style="background: ghostwhite;">
+									<div class="row m-0">
+										<div class="col-lg-12 text-right pr-0">
+											<a href="#modal_update_reject_all"
+												class="mb-1 mt-1 mr-1 btn btn-xs btn-danger modal-with-zoom-anim ws-normal">Reject all</a>
+											<button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-default"><i
+													class="fas fa-check-double mr-1"></i>Approve all updates</button>
+										</div>
 									</div>
 								</div>
-								<!-- End - Change log -->
+								<!-- End - Footer and actions -->
 							</div>
-							<div id="pChangeDet" class="card-body" style="display: none;background: ghostwhite;">
-								<div class="row">
-									<div class="col-lg-2" style="text-align: left;">
-										<span id="actionBadge" class="badge badge-info"
-											style="font-size: large;margin-top: 10px;" data-toggle="tooltip"
-											data-placement="right" title="Updated">Updated</span>
-									</div>
-									<div class="col-lg-10">
-										<p style="text-align: right;">
-											<a href="#"
-												onclick="javascript:App.FVSummaryLog.backToChangeRequestMainView()"
-												class="mb-1 mt-1 mr-1"><i class="fas fa-arrow-left"
-													style="color: darkgray;font-size: x-large;margin-top: 12px;"
-													data-toggle="tooltip" data-placement="left"
-													title="Back to change request summary"></i></a>
-										</p>
-									</div>
-								</div>
+							<div id="pChangeDet" class="card-body pt-1" style="display: none;background: ghostwhite;">
 								<!-- Start - Old value -->
 								<div class="row old">
 									<div class="col-lg-12">
@@ -315,19 +304,18 @@
 									</div>
 								</div>
 								<div class="row old">
-									<div class="col-lg-12" style="text-align: right;">
-										<a id="btnDiscard" href="#" onclick="javascript:discard()"
-											style="color: red;">Restore</a>
+									<div class="col-lg-12 text-right">
+<a id="btnDiscard" href="#" onclick="javascript:App.FVUpdate.discard()" style="color: red;">Restore</a>
 									</div>
 								</div>
 								<!-- End - Old value -->
 								<hr class="dotted short old">
-								<!-- Start - Comments -->
-								<div id="secTimeline">
-									<div class="timeline timeline-simple mt-3 mb-3">
+								<!-- Start - Timeline -->
+								<div id="secTimeline" class="beautify-scroll mb-2 pr-2" style="max-height: 14rem;">
+									<div class="timeline timeline-simple mt-2 mb-2">
 										<div class="tm-body" style="padding: 0;">
 											<ol class="tm-items tm-main">
-												<li class="time_if1">
+<li class="time_if1">
 													<div class="tm-box">
 														<p class="text-muted mb-0"><span>Changed </span>by John Smith
 															(Supplier) on 24/06/2024 15:35</p>
@@ -474,12 +462,14 @@
 										</div>
 									</div>
 								</div>
+								<!-- End - Timeline -->
+								<!-- Start - Comments -->
 								<div class="row rComment">
 									<div class="col-lg-6">
 										<label class="col-form-label" for="formGroupExampleInput">Comments:</label>
 									</div>
-									<div class="col-lg-6" style="text-align: right;">
-										<p id="txtRequired" style="color: darkred;display: none;margin-bottom: 0;">
+									<div class="col-lg-6 text-right">
+										<p class="mb-0" id="txtRequired" style="color: darkred;display: none;">
 											Required</p>
 									</div>
 								</div>
@@ -496,25 +486,28 @@
 									</div>
 								</div>
 								<!-- End - Comments -->
-								<!-- Start - Actions -->
-								<div class="row">
-									<div class="col-lg-12" style="text-align: right;">
-										<button id="btnUndo" type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-default"
+								<!-- Start - footer actions -->
+								<div class="row" style="background: ghostwhite;">
+									<div class="col-lg-2 text-center">
+										<button id="btnBack" type="button" class="btn btn-xs btn-default"
+											data-toggle="tooltip" data-placement="right"
+											title="Back to change request summary"
+											onclick="javascript:App.FVSummaryLog.backToChangeRequestMainView()">Back</button>
+									</div>
+									<div class="col-lg-10 text-right">
+										<button id="btnUndo" type="button" class="btn btn-xs btn-default"
 											style="border-color: darkred;"
 											onclick="javascript:App.FVUpdate.undoChangeEvaluation()">Undo</button>
-										<button id="btnReject" type="button"
-											class="mb-1 mt-1 mr-1 btn btn-sm btn-danger"
+										<button id="btnReject" type="button" class="btn btn-xs btn-danger"
 											onclick="javascript:App.FVUpdate.rejectChange()">Reject</button>
-										<button id="btnApprove" type="button"
-											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+										<button id="btnApprove" type="button" class="btn btn-xs btn-success"
 											onclick="javascript:App.FVUpdate.approveChange(2)">Approve</button>
-										<button id="btnRequest" type="button"
-											class="mb-1 mt-1 mr-1 btn btn-sm btn-success"
+										<button id="btnRequest" type="button" class="btn btn-xs btn-success"
 											onclick="javascript:App.FVUpdate.requestFieldUpdate()">Request
 											update</button>
 									</div>
 								</div>
-								<!-- End - Actions -->
+								<!-- End - footer actions -->
 							</div>
 						</div>
 					</div>
@@ -523,197 +516,181 @@
 					<div id="pBer" class="card card-default">
 						<div class="card-header">
 							<h4 class="card-title m-0">
-								<a id="titleDetBer" class="accordion-toggle" data-toggle="collapse"
+								<a id="titleDetBer" class="accordion-toggle acc-title" data-toggle="collapse"
 									data-parent="#accordion3" href="#accBer" style="color:darkred;">
 									Business errors
 								</a>
 							</h4>
-							<div class="card-actions">
-								<!-- <a href="#modal_update_details" class="modal-with-zoom-anim ws-normal"
-									style="margin-top: -15px;font-size: larger;"><i class="fas fa-info"></i></a> -->
+							<div class="card-actions info-link">
+								<a href="#modal_update_details_ber" class="modal-with-zoom-anim ws-normal">
+									<i class="fas fa-info"></i></a>
 							</div>
 						</div>
 						<div id="accBer" class="collapse" data-parent="#accordion3">
-							<div id="pBerMain" class="card-body" style="background: ghostwhite;">
-								<!-- Start - Description -->
-								<div class="row">
-									<div class="col-lg-12">
-										<p style="margin-bottom: 0;">Check the errors below and unblock the current
-											situation by executing one of the following actions:
-										</p>
-										<ul>
-											<li>Retry</li>
-											<li>Skip</li>
-											<li>Apply any other changes if required</li>
-										</ul>
+							<div id="pBerMain" class="card-body pt-0 pb-0 pr-1 pl-1" style="background: ghostwhite;">
+								<div class="col-lg-12 beautify-scroll pl-1 pr-0 diams-logs">
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Country of origin is not valid with the given combination
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Purchase price is not acceptable under these conditions
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										EA unit of measure is not valid for current display product
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Traceability method cannot be combined with product specifications
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Communication unit is not in the range expected
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Link with type Mini Pallet
+										doesn't have a correct unit
+										assign to it
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Reordering multiple quantity should be above 10
+									</div>
+									<div class="alert alert-danger p-2 m-2">
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">x</button>
+										Introduction discount validity period provided exceeds the accepted
+										range
 									</div>
 								</div>
-								<!-- End - Description -->
-								<!-- Start - Business errors -->
-								<div class="scrollable" data-plugin-scrollable style="height: 600px;">
-									<div class="scrollable-content" style="padding-right:0px">
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Country of origin is not valid with the given combination
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Purchase price is not acceptable under these conditions
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											EA unit of measure is not valid for current display product
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Traceability method cannot be combined with product specifications
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Communication unit is not in the range expected
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Link with type Mini Pallet
-											doesn't have a correct unit
-											assign to it
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Reordering multiple quantity should be above 10
-										</div>
-										<div class="alert alert-danger">
-											<button type="button" class="close" data-dismiss="alert"
-												aria-hidden="true">x</button>
-											Introduction discount validity period provided exceeds the accepted
-											range
-										</div>
-									</div>
-								</div>
-								<!-- End - Business errors -->
 							</div>
 						</div>
 					</div>
-					<!-- End - Accordion BER -->
+					<!-- End - Accordion BER request -->
 				</div>
 			</div>
-			<div id="fullview-right-col" class="col-lg-9">
-				<!-- Start - Breadcrumbs navigation -->
-				<div class="row">
-					<div class="col-lg-12">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink" href="#">Basic
-										Data</a></li>
-								<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink"
-										href="#">Descriptions</a></li>
-								<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink" href="#">Customer
-										decision tree (CDT)</a></li>
-								<li class="breadcrumb-item" style="display: none;"><a id="n4"
-										class="scrollToSectionLink" href="#"></a></li>
-							</ol>
-						</nav>
-					</div>
-				</div>
-				<!-- End - Breadcrumbs navigation -->
-				<div class="tabs tabs-vertical tabs-right tabs-tertiary">
-					<div class="tab-content">
-						<!-- Start - Panel - Basic Data -->
-						<div id="overview"></div>
-						<!-- End - Panel - Basic Data -->
-						<!-- Start - Panel - Units of Measure -->
-						<div id="pUoM"></div>
-						<!-- End - Panel - Units of Measure -->
-						<!-- Start - Panel - Taxes -->
-						<div id="pTaxes"></div>
-						<!-- End - Panel - Taxes  -->
-						<!-- Start - Panel - Codes -->
-						<div id="pCodes"></div>
-						<!-- End - Panel - Codes  -->
-						<!-- Start - Panel - Store -->
-						<div id="pStore"></div>
-						<!-- End - Panel - Store  -->
-						<!-- Start - Panel - B2C -->
-						<div id="pB2C"></div>
-						<!-- End - Panel - B2C  -->
-						<!-- Start - Panel - Logistics -->
-						<div id="pLogistics"></div>
-						<!-- End - Panel - Logistics  -->
-						<!-- Start - Panel - Purchasing -->
-						<div id="pPurchasing"></div>
-						<!-- End - Panel - Purchasing  -->
-						<!-- Start - Panel - Links -->
-						<div id="pLinks"></div>
-						<!-- End - Panel - Links -->
-						<!-- Start - Panel - Assortment -->
-						<div id="pAssortment"></div>
-						<!-- End - Panel - Assortment  -->
-						<!-- Start - Panel - Prices -->
-						<div id="pPrices"></div>
-						<!-- End - Panel - Prices  -->
-					</div>
-					<ul class="nav nav-tabs tab-index">
-						<li class="nav-item active" data-toggle="tooltip" data-placement="left"
+			<div id="fullview-right-col" class="col-lg-9 pl-0">
+
+				<div class="tabs tabs-primary">
+					<ul class="nav nav-tabs nav-justified">
+						<li class="nav-item active overview" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Basic Data">
-							<a class="nav-link" href="#overview" data-toggle="tab"><i
-									class="fas fa-info"></i>&nbsp;B.Data</a>
+							<a class="nav-link p-2" href="#overview" data-toggle="tab"><i
+									class="fas fa-info"></i><br>B.Data</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+						<li class="nav-item pUoM" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Units of Measure">
-							<a class="nav-link" href="#pUoM" data-toggle="tab"><i class="fas fa-cube"></i>&nbsp;UoM</a>
+							<a class="nav-link p-2" href="#pUoM" data-toggle="tab"><i
+									class="fas fa-cube"></i><br>UoM</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+						<li class="nav-item pPurchasing" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Purchasing">
-							<a class="nav-link" href="#pPurchasing" data-toggle="tab"><i
-									class="fas fa-shopping-cart"></i>&nbsp;Purch.</a>
+							<a class="nav-link p-2" href="#pPurchasing" data-toggle="tab"><i
+									class="fas fa-shopping-cart"></i><br>Purch.</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+						<li class="nav-item pLogistics" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Logistics">
-							<a class="nav-link" href="#pLogistics" data-toggle="tab"><i
-									class="fas fa-truck"></i>&nbsp;Log.</a>
+							<a class="nav-link p-2" href="#pLogistics" data-toggle="tab"><i
+									class="fas fa-truck"></i><br>Log.</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Codes">
-							<a class="nav-link" href="#pCodes" data-toggle="tab"><i
-									class="fas fa-laptop-code"></i>&nbsp;Codes</a>
+						<li class="nav-item pCodes" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Codes">
+							<a class="nav-link p-2" href="#pCodes" data-toggle="tab"><i
+									class="fas fa-laptop-code"></i><br>Codes</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+						<li class="nav-item pAssortment" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Assortments">
-							<a class="nav-link" href="#pAssortment" data-toggle="tab"><i
-									class="fas fa-box"></i>&nbsp;Assort.</a>
+							<a class="nav-link p-2" href="#pAssortment" data-toggle="tab"><i
+									class="fas fa-box"></i><br>Assort.</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Prices">
-							<a class="nav-link" href="#pPrices" data-toggle="tab"><i
-									class="fas fa-money-bill-alt"></i>&nbsp;Prices</a>
+						<li class="nav-item pPrices" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Prices">
+							<a class="nav-link p-2" href="#pPrices" data-toggle="tab"><i
+									class="fas fa-money-bill-alt"></i><br>Prices</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Taxes">
-							<a class="nav-link" href="#pTaxes" data-toggle="tab"><i
-									class="fas fa-file-invoice-dollar"></i>&nbsp;Taxes</a>
+						<li class="nav-item pTaxes" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Taxes">
+							<a class="nav-link p-2" href="#pTaxes" data-toggle="tab"><i
+									class="fas fa-file-invoice-dollar"></i><br>Taxes</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Links">
-							<a class="nav-link" href="#pLinks" data-toggle="tab"><i
-									class="fas fa-link"></i>&nbsp;Links</a>
+						<li class="nav-item pLinks" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Links">
+							<a class="nav-link p-2" href="#pLinks" data-toggle="tab"><i
+									class="fas fa-link"></i><br>Links</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="B2C">
-							<a class="nav-link" href="#pB2C" data-toggle="tab"><i
-									class="fas fa-briefcase"></i>&nbsp;B2C</a>
+						<li class="nav-item pB2C" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="B2C">
+							<a class="nav-link p-2" href="#pB2C" data-toggle="tab"><i
+									class="fas fa-briefcase"></i><br>B2C</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left" data-original-title="Store">
-							<a class="nav-link" href="#pStore" data-toggle="tab"><i
-									class="fas fa-store"></i>&nbsp;Store</a>
+						<li class="nav-item pStore" data-toggle="tooltip" data-placement="bottom"
+							data-original-title="Store">
+							<a class="nav-link p-2" href="#pStore" data-toggle="tab"><i
+									class="fas fa-store"></i><br>Store</a>
 						</li>
-						<li class="nav-item" data-toggle="tooltip" data-placement="left"
+						<li class="nav-item pFostPlus" data-toggle="tooltip" data-placement="bottom"
 							data-original-title="Fost Plus">
-							<a class="nav-link" href="#pFostPlus" data-toggle="tab"><i
-									class="fas fa-cube"></i>&nbsp;F.Plus</a>
+							<a class="nav-link p-2" href="#pFostPlus" data-toggle="tab"><i
+									class="fas fa-cube"></i><br>F.Plus</a>
 						</li>
 					</ul>
+					<div class="tab-content pt-0">
+						<!-- Start - Breadcrumbs navigation -->
+						<div class="row">
+							<div class="col-lg-12 p-0 m-0 sln">
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb pt-0 pb-0">
+										<li class="breadcrumb-item"><a id="n1" class="scrollToSectionLink"
+												href="#">Basic
+												Data</a></li>
+										<li class="breadcrumb-item"><a id="n2" class="scrollToSectionLink"
+												href="#">Descriptions</a></li>
+										<li class="breadcrumb-item"><a id="n3" class="scrollToSectionLink"
+												href="#">Customer
+												decision tree (CDT)</a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n4"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n5"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n6"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n7"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n8"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n9"
+												class="scrollToSectionLink" href="#"></a></li>
+										<li class="breadcrumb-item" style="display: none;"><a id="n10"
+												class="scrollToSectionLink" href="#"></a></li>
+									</ol>
+								</nav>
+							</div>
+						</div>
+						<!-- End - Breadcrumbs navigation -->
+						<!-- Start - Panels -->
+						<div id="overview"></div>
+						<div id="pUoM"></div>
+						<div id="pTaxes"></div>
+						<div id="pCodes"></div>
+						<div id="pStore"></div>
+						<div id="pB2C"></div>
+						<div id="pLogistics"></div>
+						<div id="pPurchasing"></div>
+						<div id="pLinks"></div>
+						<div id="pAssortment"></div>
+						<div id="pPrices"></div>
+						<!-- End - Panels -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -811,10 +788,27 @@
 		<div id="modal_update_details" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Product update history</h2>
+					<h2 class="card-title">Information for corrections and reviews</h2>
 				</header>
 				<div class="card-body">
-					<div>
+					<!-- Start - Description -->
+					<div class="row">
+						<div class="col-lg-12">
+							<p style="margin-bottom: 0;">Review changes requested for current product.</p>
+							<ul>
+								<li>Approve or reject them (justification required)</li>
+								<li>Add additional changes on current request.</li>
+								<li>Ask the supplier to include more changes.</li>
+								<li><a href="#modal_update_reject_all"
+										class="modal-with-zoom-anim ws-normal"
+										style="color: darkred;font-size: larger;">Reject all</a>: cancel
+									entire change request</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End - Description -->
+					<hr class="dotted short">
+<div>
 						<div class="timeline timeline-simple mt-3 mb-3">
 							<div class="tm-body" style="padding: 0;">
 								<ol class="tm-items">
@@ -862,6 +856,38 @@
 			</section>
 		</div>
 		<!-- End Modal - Full view - details -->
+		<!-- Start Modal - Full view - BER details -->
+		<div id="modal_update_details_ber" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+			<section class="card">
+				<header class="card-header">
+					<h2 class="card-title">Information for corrections and reviews</h2>
+				</header>
+				<div class="card-body">
+					<!-- Start - Description -->
+					<div class="row">
+						<div class="col-lg-12">
+							<p style="margin-bottom: 0;">Check the errors below and unblock the current situation by
+								executing one of the following actions:
+							</p>
+							<ul>
+								<li>Retry</li>
+								<li>Skip</li>
+								<li>Apply any other changes if required</li>
+							</ul>
+						</div>
+					</div>
+					<!-- End - Description -->
+				</div>
+				<footer class="card-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button class="btn btn-default modal-dismiss">Close</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		</div>
+		<!-- End Modal - Full view - BER details -->
 		<!-- Start Modal - Full view - history -->
 		<div id="modal_update_history" class="zoom-anim-dialog modal-block modal-block-success mfp-hide">
 			<section class="card">
@@ -894,7 +920,7 @@
 	<script src="js/views/fullview_details_panel_purchasing.js"></script>
 	<script src="js/views/fullview_new_details.js"></script>
 	<script src="js/views/fullview_details_notifications.js"></script>
-	<script src="js/views/fullview_details_summary_log.js"></script>
+	<script src="js/views/fullview_new_details_summary_log.js"></script>
 	<script src="js/views/view.loader.js"></script>
 	<script src="js/views/fullview_new.update_s6.js"></script>
 	<script src="js/views/fullview_new.update.js"></script>

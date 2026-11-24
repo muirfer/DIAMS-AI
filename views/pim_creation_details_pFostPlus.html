@@ -16,7 +16,7 @@
                                     <label for="chk_nfp">Fost+ information not yet
                                         available</label>
                                 </div>
-                                <label class="lblNoInfo mt-1"><code>Important: </code>You
+                                <label class="fp-no-info-notice lblNoInfo mt-1"><code>Important: </code>You
                                     will not be required to provide information about Fost+ now.
                                     <br>
                                     Nonetheless, a new task will be created so you can deliver
@@ -152,7 +152,7 @@
                                                 data-dismiss="fileupload">Remove</a>
                                         </div>
                                     </div>
-                                    <img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+                                    <img id="img" class="uploaded-image-preview mt-3" src="img/packaging.webp" />
                                 </div>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                                     <label for="chk_not_inform">Do not inform Primary
                                         packaging</label>
                                 </div>
-                                <label class="lblNotInformPP"><code>Important: </code>Decision
+                                <label class="fp-no-primary-pkg-notice"><code>Important: </code>Decision
                                     not to inform primary packaging will be reviews and approved
                                     by E2E
                                     team</label>
@@ -244,7 +244,7 @@
                                 </thead>
                                 <tbody id="FPtableBody">
                                     <tr id="row1">
-                                        <td class="fp-table-type fp-table-type-main text-center">
+                                        <td class="fp-pkg-type-cell fp-pkg-type-main text-center">
                                             Main
                                             <p>
                                                 Primary Packaging
@@ -252,12 +252,12 @@
                                         </td>
                                         <!-- <td style="text-align: center;vertical-align: middle;">10000001020</td> -->
                                         <td>
-                                            <div id="sapId" class="fp-table-desc-title-header">10000001020
+                                            <div id="sapId" class="fp-desc-sap-id">10000001020
                                             </div>
-                                            <div id="mainTitle" class="fp-table-desc-title-line">Glass - 1
+                                            <div id="mainTitle" class="fp-desc-main-title">Glass - 1
                                                 Primary
                                                 Main packaging</div>
-                                            <div class="fp-table-text-lines">
+                                            <div class="fp-detail-lines">
                                                 <p>Paper / Cardboard</p>
                                                 <p>95% Paper/Cardboard</p>
                                                 <p>Laminated on one side</p>
@@ -266,17 +266,17 @@
                                         </td>
                                         <td>
                                             <!-- <div class="title-line">4. Blister, Skin packaging</div> -->
-                                            <div class="fp-table-text-lines">
-                                                <p class="fp-table-detail-sec mt-1">
+                                            <div class="fp-detail-lines">
+                                                <p class="fp-detail-section-label mt-1">
                                                     <code>Packaging element code:</code>
                                                 </p>
                                                 <p id="pec">4. Blister, Skin packaging</p>
-                                                <p class="fp-table-detail-sec mt-1">
+                                                <p class="fp-detail-section-label mt-1">
                                                     <code>Tariff (per Kg):</code>
                                                 </p>
                                                 <p>2023: 0,0006234</p>
                                                 <p>2022: 0,0006234</p>
-                                                <p class="fp-table-detail-sec mt-1">
+                                                <p class="fp-detail-section-label mt-1">
                                                     <code>Reusable element with deposit scheme</code>
                                                 </p>
                                                 <p class="optP hidden" style="margin-top: 10px;">
@@ -292,17 +292,17 @@
                                                 <p class="optP hidden"><code>15%</code>
                                                     Bio-Based
                                                     material with origin outside of Europe</p>
-                                                <p class="fp-table-detail-sec mt-1 optP hidden">
+                                                <p class="fp-detail-section-label mt-1 optP hidden">
                                                     <code>Comments:</code>
                                                 </p>
-                                                <p class="fp-table-detail-sec mt-1 optP hidden">
+                                                <p class="fp-detail-section-label mt-1 optP hidden">
                                                     Comment entered by vendor that states that
                                                     this
                                                     element has an issue to be checked</p>
 
                                                 <p class="mt-2">
                                                     <a id="see-more-btn" href="#"
-                                                        class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd">see
+                                                        class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal price-str-add-link">see
                                                         more</a>
                                                 </p>
                                             </div>
@@ -334,7 +334,7 @@
                                             </div>
                                             <!-- end: Per package -->
                                         </td>
-                                        <td class="fp-table-qty text-center">
+                                        <td class="fp-sap-qty-cell text-center">
                                             325
                                         </td>
                                         <td class="text-center actions-hover actions-fade">
@@ -349,7 +349,7 @@
                             <div class="row">
                                 <div class="col-lg-12 text-right" style="text-align: right;">
                                     <a id="l_modal" href="#modal_add_pp"
-                                        class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal linkAdd"><i
+                                        class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal price-str-add-link"><i
                                             class="fas fa-plus-circle mr-2"></i>Add
                                         Primary
                                         Packaging</a>

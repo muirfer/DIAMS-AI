@@ -34,9 +34,24 @@
          * Sets up event handlers and initializes DataTables.
          */
         initialize: function () {
-            if ($(".tabs").length && $(".tabs").offset()) {
-                $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
-            }
+            //remove padding from main content to fit better the form and take more advantage of the screen width
+            $(".content-body").addClass("p-0");
+
+            //calculate scrollable content area to fit cleanly to viewport bottom
+            FVDetails.adjustMainPanelHeight();
+            setTimeout(function () {
+                FVDetails.adjustMainPanelHeight();
+            }, 150);
+
+            // Update height dynamically on window resize
+            $(window).off("resize.fvNewDetails").on("resize.fvNewDetails", function () {
+                FVDetails.adjustMainPanelHeight();
+            });
+
+            // Update height dynamically when switching tabs
+            $('a[data-toggle="tab"]').off("shown.bs.tab.fvNewDetails").on("shown.bs.tab.fvNewDetails", function () {
+                FVDetails.adjustMainPanelHeight();
+            });
 
             // Ensure assortment tables filter to selected items by default in new fullview screens
             $('.datatable-assort').each(function () {
@@ -59,7 +74,7 @@
                     var scrollPosition = $targetSection.position().top + $scrollable.scrollTop();
                     $scrollable.animate({
                         scrollTop: scrollPosition
-                    }, 1000);
+                    }, 600);
                 }
             });
 
@@ -85,7 +100,7 @@
                     });
 
                     // Hide remaining breadcrumb items
-                    for (let i = sections.length + 1; i <= 5; i++) {
+                    for (let i = sections.length + 1; i <= 10; i++) {
                         const breadcrumbItem = document.querySelector(`#n${i}`);
                         if (breadcrumbItem) {
                             breadcrumbItem.parentElement.style.display = "none";
@@ -97,6 +112,10 @@
                 if (App.FVSummaryLog && typeof App.FVSummaryLog.goBack === 'function') {
                     App.FVSummaryLog.goBack();
                 }
+
+                setTimeout(function () {
+                    FVDetails.adjustMainPanelHeight();
+                }, 50);
             });
 
             // Expand view
@@ -107,7 +126,7 @@
                 $("#btn-collapse-view").show();
 
                 // Clear any previous section.body styles from previous implementations
-                $("section.body").css({ "position": "", "top": "", "left": "", "width": "", "height": "", "z-index": "", "background-color": "", "padding": "", "overflow-y": "", "margin": "" });
+                $("section.body, section.creation-details-body").css({ "position": "", "top": "", "left": "", "width": "", "height": "", "z-index": "", "background-color": "", "padding": "", "overflow-y": "", "margin": "" });
 
                 // Toolbar positioning
                 $(".page-header").css({
@@ -197,7 +216,7 @@
 
                 // Recalculate dynamic height
                 setTimeout(function () {
-                    $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
+                    FVDetails.adjustMainPanelHeight();
                 }, 100);
             });
 
@@ -288,7 +307,8 @@
 
                 // Recalculate dynamic height
                 setTimeout(function () {
-                    $(".main-panel").css("height", "calc(95vh - " + $(".tabs").offset().top + "px)");
+                    FVDetails.adjustMainPanelHeight();
+                    $("html, body").scrollTop(0);
                 }, 100);
             });
 
@@ -321,6 +341,38 @@
          */
         getCurrentPanel: function () {
             return currentPanel;
+        },
+        /**
+         * Dynamically calculates and sets .main-panel height to guarantee
+         * it fits cleanly within the viewport with zero bottom clipping.
+         */
+        adjustMainPanelHeight: function () {
+            var $tabContent = $(".tab-content");
+            if (!$tabContent.length) return;
+
+            var $panel = $(".main-panel.active");
+            if (!$panel.length || !$panel.is(":visible")) {
+                $panel = $(".main-panel:visible");
+            }
+            if (!$panel.length) {
+                $panel = $(".main-panel").first();
+            }
+
+            var panelTop = 0;
+            if ($panel.length && $panel.offset() && $panel.offset().top > 50) {
+                panelTop = $panel.offset().top;
+            } else {
+                var tabContentTop = $tabContent.offset() && $tabContent.offset().top ? $tabContent.offset().top : 210;
+                var breadcrumbsH = $tabContent.find("> .row").first().outerHeight(true) || 30;
+                panelTop = tabContentTop + breadcrumbsH;
+            }
+
+            var availableHeight = $(window).height() - panelTop - 25;
+            if (availableHeight < 250) {
+                availableHeight = 250;
+            }
+
+            $(".main-panel").css("height", availableHeight + "px");
         },
         /**
          * Reset date history filter

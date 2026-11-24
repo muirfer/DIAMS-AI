@@ -7,6 +7,45 @@
 			font-size: smaller;
 		}
 
+		/* Target: Select2 single/multi-select selection box, selected choice tags, inline search input, and dropdown options to match .form-control-sm font size */
+		.select2-container--bootstrap .select2-selection,
+		.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,
+		.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,
+		.select2-container--bootstrap .select2-results__option {
+			font-size: x-small;
+		}
+
+		/* Target: Select2 single-select container height and padding to match compact .form-control-sm inputs (26px) */
+		.select2-container--bootstrap .select2-selection--single {
+			height: 26px;
+			line-height: 1.3;
+			padding: 4px 24px 4px 10px;
+		}
+
+		/* Target: Select2 multi-select container height to match compact .form-control-sm inputs (26px) */
+		.select2-container--bootstrap .select2-selection--multiple {
+			min-height: 26px;
+			height: auto;
+		}
+
+		/* Target: Select2 multi-select rendered list line-height reset */
+		.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered {
+			line-height: 1.3;
+		}
+
+		/* Target: Select2 multi-select selected choice tags vertical margins to center inside 26px container */
+		.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+			margin: 3px 0 2px 5px;
+		}
+
+		/* Target: Select2 multi-select inline search input height and width so it does not stretch or wrap the container */
+		.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
+			height: 22px;
+			line-height: 1.3;
+			padding: 0 6px;
+			min-width: 2em;
+		}
+
 		/* Target: <span class="input-group-text input-group-addon-sm"> prepend/append icons and text in input groups (e.g., date range calendar icon and "to" separator) */
 		.input-group-addon-sm {
 			font-size: xx-small;
@@ -221,6 +260,13 @@
 </select>
 
 
+<!-- Template: Multi-select dropdown field. Find CSS adaptations for select-2 plugin above. -->
+<select multiple data-plugin-selectTwo class="form-control form-control-sm mb-0 populate">
+	<option value="1">Option 1</option>
+	<option value="2">Option 2</option>
+</select>
+
+
 <!-- Template: simple checkbox field  -->
 <div class="checkbox-custom mt-1">
 	<input type="checkbox" checked="">
@@ -249,7 +295,7 @@
 		</span>
 	</span>
 	<input type="text" data-plugin-datepicker data-plugin-options='{ "format": "dd/mm/yyyy" }'
-		class="form-control dateInput text-center" autocomplete="off" value="07/05/2024">
+		class="form-control form-control-sm dateInput text-center" autocomplete="off" value="07/05/2024">
 </div>
 
 
@@ -310,7 +356,8 @@
 			data-dismiss="fileupload">Remove</a>
 	</div>
 </div>
-<img id="img" class="uploaded-image-preview mt-3" src="img/some_image_here.png" /> <!-- Place to show image if uploaded -->
+<img id="img" class="uploaded-image-preview mt-3" src="img/some_image_here.png" />
+<!-- Place to show image if uploaded -->
 
 
 <!-- Template: field with prepend element -->

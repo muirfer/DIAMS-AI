@@ -105,7 +105,7 @@
                 App.FVUpdateStepSpecific.showOrHideActionButtons();
 
                 //badges
-                $("#actionBadge").text("Update Request");
+                $("#actionBadge").text("UR");
                 $("#actionBadge").removeClass("badge-info");
                 $("#actionBadge").addClass("badge-warning");
                 $("#actionBadge").attr('data-original-title', "Update Request");
@@ -131,7 +131,7 @@
                 App.FVUpdateStepSpecific.showOrHideActionButtons();
 
                 //badge
-                $("#actionBadge").text("Updated");
+                $("#actionBadge").text("U");
                 $("#actionBadge").removeClass("badge-warning");
                 $("#actionBadge").addClass("badge-info");
                 $("#actionBadge").attr('data-original-title', "Updated");

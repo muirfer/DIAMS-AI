@@ -1,1110 +1,1015 @@
-						<!-- Start - Panel - Basic Data -->
-						<div id="overview" class="tab-pane active scrollable main-panel" data-plugin-scrollable>
-							<div class="scrollable-content">
-								<!-- Start - Subpanel - Basic Data -->
-								<div id="section1" class="row">
-									<div class="col-lg-12">
-										<section class="card card-transparent mb-4">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-toggle"
-														data-card-toggle></a>
-												</div>
-
-												<h2 class="card-title">Basic data</h2>
-												<p class="card-subtitle"></p>
-											</header>
-											<div class="card-body">
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Brand type:
-													</label>
-													<div class="col-sm-5">
-														<select id="bt" class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option value="N1" selected>N1 - National brand</option>
-															<option value="D1">D1 - Private brand</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2"
-														data-toggle="tooltip" data-placement="left"
-														title="The name of the brand under which the product is sold and promoted.">Brand:
-													</label>
-													<div class="col-sm-5">
-														<input type="text" name="brand" class="form-control"
-															autocomplete="off" value="Delhaize">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2"
-														data-toggle="tooltip" data-placement="left"
-														title=" A sub brand applies if a brand contains a series of underlying brands which are marketed separately. (eg Bio for Delhaize brand)">Sub-Brand:
-													</label>
-													<div class="col-sm-5">
-														<input type="text" name="sbrand" class="form-control"
-															autocomplete="off" value="Plant-Based">
-													</div>
-												</div>
-												<div class="row">
-													<hr class="col-lg-9 dotted short"
-														style="margin-bottom: 25px;margin-left: 5%;">
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
-														type: </label>
-													<div class="col-sm-5">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option value="ZIBG">ZIBG - Operating supplies</option>
-															<option value="ZDIF">ZDIF - Free Display</option>
-															<option value="ZFRI">ZFRI - Perishables Retail</option>
-															<option value="ZIEN" selected>ZIEN</option>
-															<option value="ZVEF">ZVEF - Free Packaging MD</option>
-															<option value="ZDIS">ZDIS - Display</option>
-															<option value="ZHAW">ZHAW - Trading Goods Retail</option>
-															<option value="ZVER">ZVER - Packaging MD</option>
-															<option value="ZLGU">ZLGU - Tied Empties</option>
-															<option value="ZIBF">ZIBF - Free Operating supplies</option>
-															<option value="ZLGO">ZLGO - Tied Empties GOLD</option>
-															<option value="ZVOL">ZVOL - Full products</option>
-															<option value="ZHAF">ZHAF - Free Trading Goods Retail
-															</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
-														nature: </label>
-													<div class="col-sm-5">
-														<input type="text" name="brand" class="form-control"
-															autocomplete="off" value="S - D&D/Frozen">
-													</div>
-												</div>
-												<div class="row">
-													<hr class="col-lg-9 dotted short"
-														style="margin-bottom: 25px;margin-left: 5%;">
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Net
-														contents of Base UoM: </label>
-													<div class="col-sm-5">
-														<input type="text" name="ncobuom" class="form-control"
-															autocomplete="off" style="text-align: right;"
-															value="1563,25">
-													</div>
-													<div class="col-sm-3">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option value="L">L - Liter</option>
-															<option value="CTL">CL - Centiliter</option>
-															<option value="ML" selected>ML - Milliliter</option>
-															<option value="G">G - Gram</option>
-															<option value="KG">KG - Kilogram</option>
-														</select>
-													</div>
-												</div>
-												<!-- <div class="row">
-													<hr class="col-lg-9 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip" data-placement="left" title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish.">Country of origin of the product: </label>
-													<div class="col-sm-5">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option value="BE">BE - Belgium</option>
-															<option value="LU" selected>LU - Luxembourg</option>
-															<option value="RO">RO - Romania</option>
-															<option value="RS">RS - Serbia</option>
-															<option value="GR">GR - Greece</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2" data-toggle="tooltip" data-placement="left" title="Country responsible for the product creation (BE/LU)">Country: </label>
-													<div class="col-sm-5">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option value="BE" selected>BE - Belgium</option>
-															<option value="LU">LU - Luxembourg</option>
-															<option value="RO">RO - Romania</option>
-															<option value="RS">RS - Serbia</option>
-															<option value="GR">GR - Greece</option>
-														</select>
-													</div>
-												</div>													 -->
-												<div class="row">
-													<hr class="col-lg-9 dotted short"
-														style="margin-bottom: 25px;margin-left: 5%;">
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2"
-														data-toggle="tooltip" data-placement="left"
-														title="Origin of the primary (main) ingredients of the product. A primary ingredient is one that constitutes more than 50% of the product or which is usually associated with the name of the product. Indicate here the fishing country for packed fish.">Country
-														of origin of the product: </label>
-													<div class="col-sm-5">
-														<select multiple data-plugin-selectTwo
-															class="form-control populate cust-select" disabled>
-															<option value="AF">AF - Afghanistan</option>
-															<option value="AL">AL - Albania</option>
-															<option value="AD">AD - Andorra</option>
-															<option value="AO">AO - Angola</option>
-															<option value="BE" selected>BE - Belgium</option>
-															<option value="BR">BR - Brazil</option>
-															<option value="BA">BA - Bahamas</option>
-															<option value="BD">BD - Bangladesh</option>
-															<option value="CA">CA - Canada</option>
-															<option value="CN">CN - China</option>
-															<option value="CO">CO - Colombia</option>
-															<option value="CU">CU - Cuba</option>
-															<option value="DE" selected>DE - Germany</option>
-															<option value="DK">DK - Denmark</option>
-															<option value="DO">DO - Dominican Republic</option>
-															<option value="DJ">DJ - Djibouti</option>
-															<option value="ES">ES - Spain</option>
-															<option value="EG">EG - Egypt</option>
-															<option value="EC">EC - Ecuador</option>
-															<option value="EE">EE - Estonia</option>
-															<option value="FR" selected>FR - France</option>
-															<option value="FI">FI - Finland</option>
-															<option value="FJ">FJ - Fiji</option>
-															<option value="FM">FM - Micronesia (Federated States of)
-															</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Product
-														creation date: </label>
-													<div class="col-sm-5">
-														<div class="input-group">
-															<span class="input-group-prepend">
-																<span class="input-group-text">
-																	<i class="fas fa-calendar-alt"></i>
-																</span>
-															</span>
-															<input id="f1" type="text" data-plugin-datepicker
-																data-plugin-options='{ "format": "dd/mm/yyyy" }'
-																class="form-control dateInput"
-																autocomplete="off" value="30/12/2023" />
-														</div>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">For sale:
-													</label>
-													<div class="col-sm-5">
-														<div class="input-daterange input-group" data-plugin-datepicker
-															data-plugin-options='{ "format": "dd/mm/yyyy" }'>
-															<span class="input-group-prepend">
-																<span class="input-group-text">
-																	<i class="fas fa-calendar-alt"></i>
-																</span>
-															</span>
-															<input id="forSaleStart" type="text" class="form-control dateInput" name="start" value="15/02/2024">
-															<span
-																class="input-group-text border-left-0 border-right-0 rounded-0">
-																to
-															</span>
-															<input id="forSaleEnd" type="text" class="form-control dateInput" name="end" value="07/05/2024">
-														</div>
-													</div>
-												</div>
-												<div class="row reactivation-only" style="display: none;">
-													<hr class="col-lg-9 dotted short"
-														style="margin-bottom: 25px;margin-left: 5%;">
-												</div>
-												<div class="form-group row reactivation-only" style="display: none;">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Original
-														introduction week: </label>
-													<div class="col-sm-5">
-														<select id="bt_orig_intro"
-															class="form-control mb-3 cust-select text-center">
-															<option class="optionToChange" value=""></option>
-															<option value="W48 - 24/11/2022">W56/2024</option>
-															<option value="W48 - 24/11/2022">W57/2024</option>
-															<option value="W48 - 24/11/2022">W58/2024</option>
-															<option value="W48 - 24/11/2022" selected>W59/2024</option>
-															<option value="W48 - 24/11/2022">W60/2024</option>
-															<option value="W48 - 24/11/2022">W61/2024</option>
-															<option value="W48 - 24/11/2022">W62/2024</option>
-															<option value="W48 - 24/11/2022">W63/2024</option>
-															<option value="W48 - 24/11/2022">W64/2024</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row reactivation-only" style="display: none;">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Delisted
-														product: </label>
-													<div class="col-sm-5">
-														<input type="text" name="dprod" class="form-control"
-															autocomplete="off" value="7855431">
-													</div>
-													<div class="col-sm-3">
-														<div class="checkbox-custom" style="margin-top: 8px;">
-															<input type="checkbox" id="checkboxExample2" disabled>
-															<label for="checkboxExample2">Not needed</label>
-														</div>
-													</div>
-												</div>
-												<!-- <div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Update external data: </label>
-													<div class="col-sm-5">
-														<div class="input-group">
-															<span class="input-group-prepend">
-																<span class="input-group-text">
-																	<i class="fas fa-calendar-alt"></i>
-																</span>
-															</span>
-															<input type="text" data-plugin-datepicker class="form-control" autocomplete="off" value="15/01/2024">
-														</div>
-													</div>
-												</div> -->
-
-											</div>
-										</section>
-									</div>
-								</div>
-								<!-- End - Subpanel - Basic Data -->
-								<!-- Start - Subpanel - Descriptions -->
-								<div id="section2" class="row" style="margin-top: 50px;">
-									<div class="col-lg-12">
-										<section class="card card-transparent mb-4">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-toggle"
-														data-card-toggle></a>
-												</div>
-
-												<h2 class="card-title">Descriptions</h2>
-												<p class="card-subtitle"></p>
-											</header>
-											<div class="card-body" style="margin-top: 25px;">
-												<div class="row">
-													<div class="col-lg-2 offset-lg-2 text-center">
-														<span class="badge badge-info sBadge">English</span>
-													</div>
-													<div class="col-lg-2 text-center">
-														<span class="badge badge-info sBadge">French</span>
-													</div>
-													<div class="col-lg-2 text-center">
-														<span class="badge badge-info sBadge">Dutch</span>
-													</div>
-													<div class="col-lg-2 text-center">
-														<span class="badge badge-info sBadge">German</span>
-													</div>
-													<div class="col-lg-2 text-center">
-														<span class="badge badge-info sBadge">Z2 -
-															Bilingual NL-FR</span>
-													</div>
-												</div>
-												<div class="row form-group">
-													<label class="col-sm-2 control-label text-sm-right pt-2">Product
-														short description:
-													</label>
-													<div class="col-lg-2">
-														<textarea name="pshdesc" class="form-control texta-fixed"
-															rows="2" data-plugin-maxlength maxlength="25"
-															spellcheck="false"
-															autocorrect="off">Rice Krispies Bag Pack 4x</textarea>
-													</div>
-													<div class="col-lg-2">
-														<textarea name="pshdesc" class="form-control texta-fixed"
-															rows="2" data-plugin-maxlength maxlength="25"
-															spellcheck="false"
-															autocorrect="off">Paquet de sachets de Rice Krispies 4x</textarea>
-													</div>
-													<div class="col-lg-2">
-														<textarea name="pshdesc" class="form-control texta-fixed"
-															rows="2" data-plugin-maxlength maxlength="25"
-															spellcheck="false"
-															autocorrect="off">Rijstkrispies Zakpakket 4x</textarea>
-													</div>
-													<div class="col-lg-2">
-														<textarea name="pshdesc" class="form-control texta-fixed"
-															rows="2" data-plugin-maxlength maxlength="25"
-															spellcheck="false"
-															autocorrect="off">Rice Krispies Beutelpackung 4x400g</textarea>
-													</div>
-													<div class="col-lg-2">
-														<textarea name="pshdesc" class="form-control texta-fixed"
-															rows="2" data-plugin-maxlength maxlength="25"
-															spellcheck="false"
-															autocorrect="off">Paquet de sachets de Rice Krispies 4x</textarea>
-													</div>
-												</div>
-												<div class="row form-group">
-													<label class="col-sm-2 control-label text-sm-right pt-2">Product
-														shelf description:
-													</label>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag Pack 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag Pack 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag Pack 4x400g</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Zakje Rijstkrispies 4x400</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Zakje Rijstkrispies 4x400</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Zakje Rijstkrispies 4x400</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelp. 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelp. 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelp. 4x400g</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="30"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-												</div>
-												<div class="row form-group">
-													<label class="col-sm-2 control-label text-sm-right pt-2">Product
-														ticket description:
-													</label>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Zakje rijstkrispies</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Zakje rijstkrispies</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Zakje rijstkrispies</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelpackung</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelpackung</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelpackung</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-												</div>
-												<div class="row form-group">
-													<label class="col-sm-2 control-label text-sm-right pt-2">E-commerce
-														description:
-													</label>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Bag</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Zakje rijstkrispies</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Zakje rijstkrispies</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Zakje rijstkrispies</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelpackung</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelpackung</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies Beutelpackung</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-													<div class="col-lg-2">
-														<section class="col-sm-12 form-group-vertical">
-															<div class="row">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button
-																			class="btn btn-default baseUoM prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">EA&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secIP">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">IP&nbsp;&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-															<div class="row secCV">
-																<div class="input-group">
-																	<span class="input-group-prepend">
-																		<button class="btn btn-default prepend-unit-btn"
-																			type="button"
-																			tabindex="-1">CV&nbsp;</button>
-																	</span>
-																	<textarea class="form-control texta-fixed" rows="2"
-																		data-plugin-maxlength maxlength="18"
-																		spellcheck="false"
-																		autocorrect="off">Rice Krispies en sachet</textarea>
-																</div>
-															</div>
-														</section>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-								</div>
-								<!-- End - Subpanel - Descriptions -->
-								<!-- Start - Subpanel - CDT -->
-								<div id="section3" class="row" style="margin-top: 50px;">
-									<div class="col-lg-12">
-										<section class="card card-transparent mb-4">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-toggle"
-														data-card-toggle></a>
-												</div>
-
-												<h2 class="card-title">Customer decision tree (CDT)</h2>
-												<p class="card-subtitle"></p>
-											</header>
-											<div class="card-body">
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Category:
-													</label>
-													<div class="col-sm-6">
-														<select class="form-control mb-3 cust-select">
-															<option selected="">E020 - Viande Fraiche emballee</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label
-														class="col-sm-3 control-label text-sm-right pt-2">Subcategory:
-													</label>
-													<div class="col-sm-6">
-														<select class="form-control mb-3 cust-select">
-															<option></option>
-															<option>E020010 - Preparations</option>
-															<option>E020020 - Organic</option>
-															<option>E020030 - Premium meat</option>
-															<option selected="">E020040 - Beef BBB</option>
-															<option>E020050 - Veal</option>
-															<option>E020060 - Porc MPT</option>
-															<option>E020070 - Lamb</option>
-															<option>E020080 - Horse</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Segment:
-													</label>
-													<div class="col-sm-6">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option selected="">E020040010 - Beef BBB</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Sub
-														segment: </label>
-													<div class="col-sm-6">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option selected="">E020040010010 - ISP</option>
-															<option>E020040010020 - MAP</option>
-														</select>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Micro
-														segment: </label>
-													<div class="col-sm-6">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option selected="">E020040010010000 - NULL</option>
-														</select>
-													</div>
-												</div>
-												<div class="row">
-													<hr class="col-lg-8 dotted short"
-														style="margin-bottom: 25px;margin-left: 5%;">
-												</div>
-												<div class="form-group row">
-													<label class="col-sm-3 control-label text-sm-right pt-2">Merchandise
-														category: </label>
-													<div class="col-sm-6">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option selected="">10021701B - Intall refrig units</option>
-															<option>10021701C - Coordination</option>
-														</select>
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-								</div>
-								<!-- End - Subpanel - CDT -->
+<!-- Start - Panel - Basic Data -->
+<div id="overview" class="tab-pane active scrollable main-panel" data-plugin-scrollable>
+	<div class="scrollable-content">
+		<!-- Start - Subpanel - Basic Data -->
+		<div id="section1" class="row">
+			<div class="col-lg-12">
+				<section class="card card-transparent mb-4">
+					<header class="card-header pb-0">
+						<h2 class="card-title">Basic data</h2>
+						<p class="card-subtitle"></p>
+					</header>
+					<div class="card-body">
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Brand:</label>
+							<div class="col-sm-5">
+								<input type="text" name="brand" class="form-control form-control-sm" autocomplete="off"
+									autocorrect="off" spellcheck="false">
 							</div>
 						</div>
-						<!-- End - Panel - Basic Data -->
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Sub-Brand:</label>
+							<div class="col-sm-5">
+								<input type="text" name="sbrand" class="form-control form-control-sm" autocomplete="off"
+									autocorrect="off" spellcheck="false" value="Plant-Based">
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product
+								type:</label>
+							<div class="col-sm-5">
+								<select class="form-control form-control-sm mb-0">
+									<option value=""></option>
+									<option value="ZIBG">ZIBG - Operating supplies</option>
+									<option value="ZDIF">ZDIF - Free Display</option>
+									<option value="ZFRI">ZFRI - Perishables Retail</option>
+									<option value="ZIEN" selected>ZIEN</option>
+									<option value="ZVEF">ZVEF - Free Packaging MD</option>
+									<option value="ZDIS">ZDIS - Display</option>
+									<option value="ZHAW">ZHAW - Trading Goods Retail</option>
+									<option value="ZVER">ZVER - Packaging MD</option>
+									<option value="ZLGU">ZLGU - Tied Empties</option>
+									<option value="ZIBF">ZIBF - Free Operating supplies</option>
+									<option value="ZLGO">ZLGO - Tied Empties GOLD</option>
+									<option value="ZVOL">ZVOL - Full products</option>
+									<option value="ZHAF">ZHAF - Free Trading Goods Retail
+									</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product
+								nature:</label>
+							<div class="col-sm-5">
+								<input type="text" name="brand" class="form-control form-control-sm" autocomplete="off"
+									autocorrect="off" spellcheck="false">
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Net
+								contents of Base UoM: </label>
+							<div class="col-sm-5">
+								<input type="text" name="ncobuom" class="form-control form-control-sm text-right"
+									autocomplete="off" autocorrect="off" spellcheck="false">
+							</div>
+							<div class="col-sm-3">
+								<select class="form-control form-control-sm mb-0">
+									<option value=""></option>
+									<option value="L">L - Liter</option>
+									<option value="CTL">CL - Centiliter</option>
+									<option value="ML" selected>ML - Milliliter</option>
+									<option value="G">G - Gram</option>
+									<option value="KG">KG - Kilogram</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Country
+								of origin of the product: </label>
+							<div class="col-sm-5">
+								<select multiple data-plugin-selectTwo
+									class="form-control form-control-sm mb-0 populate">
+									<option value="AF">AF - Afghanistan</option>
+									<option value="AL">AL - Albania</option>
+									<option value="AD">AD - Andorra</option>
+									<option value="AO">AO - Angola</option>
+									<option value="BE" selected>BE - Belgium</option>
+									<option value="BR">BR - Brazil</option>
+									<option value="BA">BA - Bahamas</option>
+									<option value="BD">BD - Bangladesh</option>
+									<option value="CA">CA - Canada</option>
+									<option value="CN">CN - China</option>
+									<option value="CO">CO - Colombia</option>
+									<option value="CU">CU - Cuba</option>
+									<option value="DE" selected>DE - Germany</option>
+									<option value="DK">DK - Denmark</option>
+									<option value="DO">DO - Dominican Republic</option>
+									<option value="DJ">DJ - Djibouti</option>
+									<option value="ES">ES - Spain</option>
+									<option value="EG">EG - Egypt</option>
+									<option value="EC">EC - Ecuador</option>
+									<option value="EE">EE - Estonia</option>
+									<option value="FR" selected>FR - France</option>
+									<option value="FI">FI - Finland</option>
+									<option value="FJ">FJ - Fiji</option>
+									<option value="FM">FM - Micronesia (Federated States of)
+									</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Country
+								of import: </label>
+							<div class="col-sm-5">
+								<select class="form-control form-control-sm mb-0">
+									<option value="AF">AF - Afghanistan</option>
+									<option value="AL">AL - Albania</option>
+									<option value="AD">AD - Andorra</option>
+									<option value="AO">AO - Angola</option>
+									<option value="BE">BE - Belgium</option>
+									<option value="BR">BR - Brazil</option>
+									<option value="BA">BA - Bahamas</option>
+									<option value="BD" selected>BD - Bangladesh</option>
+									<option value="CA">CA - Canada</option>
+									<option value="CN">CN - China</option>
+									<option value="CO">CO - Colombia</option>
+									<option value="CU">CU - Cuba</option>
+									<option value="DE">DE - Germany</option>
+									<option value="DK">DK - Denmark</option>
+									<option value="DO">DO - Dominican Republic</option>
+									<option value="DJ">DJ - Djibouti</option>
+									<option value="ES">ES - Spain</option>
+									<option value="EG">EG - Egypt</option>
+									<option value="EC">EC - Ecuador</option>
+									<option value="EE">EE - Estonia</option>
+									<option value="FR">FR - France</option>
+									<option value="FI">FI - Finland</option>
+									<option value="FJ">FJ - Fiji</option>
+									<option value="FM">FM - Micronesia (Federated States of)
+									</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product creation
+								date:
+							</label>
+							<div class="col-sm-5">
+								<div class="input-group input-group-sm">
+									<span class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="fas fa-calendar-alt"></i>
+										</span>
+									</span>
+									<input id="f1" type="text" data-plugin-datepicker
+										data-plugin-options='{ "format": "dd/mm/yyyy" }'
+										class="form-control form-control-sm dateInput" autocomplete="off"
+										value="07/05/2024">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">For sale:
+							</label>
+							<div class="col-sm-5">
+								<div class="input-daterange input-group" data-plugin-datepicker=""
+									data-plugin-options='{ "format": "dd/mm/yyyy" }'>
+									<span class="input-group-prepend">
+										<span class="input-group-text input-group-addon-sm" tabindex="-1">
+											<i class="fas fa-calendar-alt"></i>
+										</span>
+									</span>
+									<input type="text" class="form-control form-control-sm" name="start"
+										value="15/02/2024">
+									<span
+										class="input-group-text input-group-addon-sm border-left-0 border-right-0 rounded-0">
+										to
+									</span>
+									<input type="text" class="form-control form-control-sm" name="end"
+										value="31/12/9999">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Original
+								introduction week: </label>
+							<div class="col-sm-5">
+								<select class="form-control form-control-sm mb-0">
+									<option class="optionToChange" value=""></option>
+									<option value="W48 - 24/11/2022">W56 - 20/11/2024</option>
+									<option value="W48 - 24/11/2022">W57 - 25/12/2024</option>
+									<option value="W48 - 24/11/2022">W58 - 26/01/2025</option>
+									<option value="W48 - 24/11/2022" selected>W59 - 27/02/2025
+									</option>
+									<option value="W48 - 24/11/2022">W60 - 28/03/2025</option>
+									<option value="W48 - 24/11/2022">W61 - 26/04/2025</option>
+									<option value="W48 - 24/11/2022">W62 - 25/05/2025</option>
+									<option value="W48 - 24/11/2022">W63 - 23/06/2025</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Reporting
+								indicator</label>
+							<div class="col-sm-5">
+								<select class="form-control form-control-sm mb-0">
+									<option class="" value=""></option>
+									<option value="ig">Imported goods</option>
+									<option value="dg">Domestic goods</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">CSE:
+							</label>
+							<div class="col-sm-5">
+								<div class="checkbox-custom">
+									<input type="checkbox" checked="">
+									<label></label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Delisted
+								product: </label>
+							<div class="col-sm-5">
+								<input type="text" name="dprod" class="form-control form-control-sm" autocomplete="off"
+									autocorrect="off" spellcheck="false">
+								<div class="row">
+									<div class="col-lg-12">
+										<label class="col-form-label field-helper-desc pt-0">Delisted product
+											description</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="checkbox-custom">
+									<input type="checkbox" id="checkboxExample2" disabled>
+									<label for="checkboxExample2">Not needed</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+						</div>
+						<div class="row">
+							<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product status:
+							</label>
+							<div class="col-sm-5">
+								<select class="form-control form-control-sm mb-0">
+									<option value=""></option>
+									<option>0Y - DLL Technical block</option>
+									<option>0N - DLL Hope Id block</option>
+									<option>10 - DLL in creation</option>
+									<option>20 - DLL only sales</option>
+									<option selected>21 - DLL store ord. block</option>
+									<option>50 - DLL full block</option>
+									<option>70 - DLL full active</option>
+									<option>75 - DLL full active-order lim</option>
+									<option>80 - DLL missing today</option>
+									<option>90 - DLL temporary block</option>
+									<option>99 - DLL vendor ord. block</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- End - Subpanel - Basic Data -->
+		<!-- Start - Subpanel - Descriptions -->
+		<div id="section2" class="row" style="margin-top: 50px;">
+			<div class="col-lg-12">
+				<section class="card card-transparent mb-4">
+					<header class="card-header">
+						<div class="card-actions">
+							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+						</div>
+
+						<h2 class="card-title">Descriptions</h2>
+						<p class="card-subtitle"></p>
+					</header>
+					<div class="card-body" style="margin-top: 25px;">
+						<div class="row">
+							<div class="col-lg-2 offset-lg-2 text-center">
+								<span class="badge badge-info section-col-badge">English</span>
+							</div>
+							<div class="col-lg-2 text-center">
+								<span class="badge badge-info section-col-badge">French</span>
+							</div>
+							<div class="col-lg-2 text-center">
+								<span class="badge badge-info section-col-badge">Dutch</span>
+							</div>
+							<div class="col-lg-2 text-center">
+								<span class="badge badge-info section-col-badge">German</span>
+							</div>
+							<div class="col-lg-2 text-center">
+								<span class="badge badge-info section-col-badge">Z2 -
+									Bilingual NL-FR</span>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+								short description:
+							</label>
+							<div class="col-lg-2">
+								<textarea name="pshdesc" class="form-control texta-fixed" rows="2" data-plugin-maxlength
+									maxlength="25" spellcheck="false"
+									autocorrect="off">Rice Krispies Bag Pack 4x</textarea>
+							</div>
+							<div class="col-lg-2">
+								<textarea name="pshdesc" class="form-control texta-fixed" rows="2" data-plugin-maxlength
+									maxlength="25" spellcheck="false"
+									autocorrect="off">Paquet de sachets de Rice Krispies 4x</textarea>
+							</div>
+							<div class="col-lg-2">
+								<textarea name="pshdesc" class="form-control texta-fixed" rows="2" data-plugin-maxlength
+									maxlength="25" spellcheck="false"
+									autocorrect="off">Rijstkrispies Zakpakket 4x</textarea>
+							</div>
+							<div class="col-lg-2">
+								<textarea name="pshdesc" class="form-control texta-fixed" rows="2" data-plugin-maxlength
+									maxlength="25" spellcheck="false"
+									autocorrect="off">Rice Krispies Beutelpackung 4x400g</textarea>
+							</div>
+							<div class="col-lg-2">
+								<textarea name="pshdesc" class="form-control texta-fixed" rows="2" data-plugin-maxlength
+									maxlength="25" spellcheck="false"
+									autocorrect="off">Paquet de sachets de Rice Krispies 4x</textarea>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+								shelf description:
+							</label>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag Pack 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag Pack 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag Pack 4x400g</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Zakje Rijstkrispies 4x400</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Zakje Rijstkrispies 4x400</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Zakje Rijstkrispies 4x400</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelp. 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelp. 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelp. 4x400g</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="30" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet 4x400g</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-sm-2 control-label text-sm-right pt-2">Product
+								ticket description:
+							</label>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Zakje rijstkrispies</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Zakje rijstkrispies</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Zakje rijstkrispies</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelpackung</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelpackung</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelpackung</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row form-group">
+							<label class="col-sm-2 control-label text-sm-right pt-2">E-commerce
+								description:
+							</label>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Bag</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Zakje rijstkrispies</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Zakje rijstkrispies</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Zakje rijstkrispies</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelpackung</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelpackung</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies Beutelpackung</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div class="col-lg-2">
+								<section class="col-sm-12 form-group-vertical">
+									<div class="row">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default baseUoM uom-prepend-btn" type="button"
+													tabindex="-1">EA&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secIP">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">IP&nbsp;&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+									<div class="row secCV">
+										<div class="input-group">
+											<span class="input-group-prepend">
+												<button class="btn btn-default uom-prepend-btn" type="button"
+													tabindex="-1">CV&nbsp;</button>
+											</span>
+											<textarea class="form-control texta-fixed" rows="2" data-plugin-maxlength
+												maxlength="18" spellcheck="false"
+												autocorrect="off">Rice Krispies en sachet</textarea>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- End - Subpanel - Descriptions -->
+		<!-- Start - Subpanel - CDT -->
+		<div id="section3" class="row" style="margin-top: 50px;">
+			<div class="col-lg-12">
+				<section class="card card-transparent mb-4">
+					<header class="card-header">
+						<div class="card-actions">
+							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+						</div>
+
+						<h2 class="card-title">Customer decision tree (CDT)</h2>
+						<p class="card-subtitle"></p>
+					</header>
+					<div class="card-body">
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Category:
+							</label>
+							<div class="col-sm-6">
+								<select class="form-control mb-3 cust-select">
+									<option selected="">E020 - Viande Fraiche emballee</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Subcategory:
+							</label>
+							<div class="col-sm-6">
+								<select class="form-control mb-3 cust-select">
+									<option></option>
+									<option>E020010 - Preparations</option>
+									<option>E020020 - Organic</option>
+									<option>E020030 - Premium meat</option>
+									<option selected="">E020040 - Beef BBB</option>
+									<option>E020050 - Veal</option>
+									<option>E020060 - Porc MPT</option>
+									<option>E020070 - Lamb</option>
+									<option>E020080 - Horse</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Segment:
+							</label>
+							<div class="col-sm-6">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option selected="">E020040010 - Beef BBB</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Sub
+								segment: </label>
+							<div class="col-sm-6">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option selected="">E020040010010 - ISP</option>
+									<option>E020040010020 - MAP</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Micro
+								segment: </label>
+							<div class="col-sm-6">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option selected="">E020040010010000 - NULL</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<hr class="col-lg-8 dotted short" style="margin-bottom: 25px;margin-left: 5%;">
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-3 control-label text-sm-right pt-2">Merchandise
+								category: </label>
+							<div class="col-sm-6">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option selected="">10021701B - Intall refrig units</option>
+									<option>10021701C - Coordination</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- End - Subpanel - CDT -->
+	</div>
+</div>
+<!-- End - Panel - Basic Data -->

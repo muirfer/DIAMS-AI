@@ -1,166 +1,721 @@
-.toggleable {
-    display: none;
+/* ==========================================================================
+   1. GENERIC & LAYOUT STYLES (Common across all panels)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1.1 Viewport, Main Layout & Scrollbars
+   -------------------------------------------------------------------------- */
+
+/* Target: Fixed layout root containers <html class="fixed"> and <body> to lock height to viewport */
+html.fixed,
+html.fixed body {
+    height: 100vh !important;
+    overflow-y: hidden !important;
 }
 
-.nLink {
-    color: white;
+/* Target: Main page wrapper <div class="inner-wrapper"> inside fixed viewport layout */
+html.fixed .inner-wrapper {
+    min-height: 100% !important;
+    height: 100vh !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
 }
 
-.nLink:hover {
-    color: white;
+/* Target: Primary content container <section id="mainSection" class="content-body"> */
+#mainSection {
+    height: calc(100vh - 110px) !important;
+    min-height: auto !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    background: #fff;
 }
 
+/* Target: Inner body wrapper <div class="body creation-details-body"> inside #mainSection */
+#mainSection>.body,
+#mainSection .body,
+#mainSection .creation-details-body {
+    min-height: auto !important;
+    height: 100% !important;
+}
+
+/* Target: Left sidebar column <div id="fullview-left-col"> containing product summary and accordions */
+#fullview-left-col {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+/* Target: Main tabs container <div class="tabs"> inside .is-creation-view */
+.is-creation-view .tabs {
+    margin-bottom: 0 !important;
+}
+
+/* Target: Tab panes wrapper <div class="tab-content"> inside .is-creation-view */
+.is-creation-view .tab-content {
+    padding-bottom: 0 !important;
+}
+
+/* Target: Responsive font sizing for summary text elements inside #fullview-left-col */
+.is-creation-view #fullview-left-col .amount,
+.is-creation-view #fullview-left-col .summary-footer a,
+.is-creation-view #fullview-left-col .h4.font-weight-bold,
+.is-creation-view #fullview-left-col .text-3 {
+    font-size: small !important;
+}
+
+/* Target: Scrollable tab panel inner container <div class="scrollable-content"> inside .main-panel */
+.main-panel .scrollable-content {
+    padding-right: 15px !important;
+    padding-bottom: 120px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd #f1f1f1;
+}
+
+/* Target: Bottom spacer pseudo-element after content inside .main-panel .scrollable-content */
+.main-panel .scrollable-content::after {
+    content: "";
+    display: block;
+    height: 80px;
+    width: 100%;
+    clear: both;
+}
+
+/* Target: WebKit custom scrollbar dimensions and visibility for .main-panel .scrollable-content */
+.main-panel .scrollable-content::-webkit-scrollbar {
+    visibility: visible !important;
+    width: 6px;
+}
+
+/* Target: WebKit custom scrollbar track for .main-panel .scrollable-content */
+.main-panel .scrollable-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Target: WebKit custom scrollbar thumb for .main-panel .scrollable-content */
+.main-panel .scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+}
+
+/* Target: WebKit custom scrollbar thumb hover state for .main-panel .scrollable-content */
+.main-panel .scrollable-content::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+}
+
+/* Target: Generic custom scrollbar container <div class="beautify-scroll"> */
+.beautify-scroll {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd #f1f1f1;
+}
+
+/* Target: WebKit scrollbar dimensions for .beautify-scroll */
+.beautify-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Target: WebKit scrollbar track for .beautify-scroll */
+.beautify-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Target: WebKit scrollbar thumb for .beautify-scroll */
+.beautify-scroll::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+}
+
+/* Target: WebKit scrollbar thumb hover state for .beautify-scroll */
+.beautify-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+}
+
+/* Target: Background backdrop overlay <div id="sideOverlay"> for slide-out information panel */
+#sideOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1045;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s;
+}
+
+/* Target: Active state of backdrop overlay <div id="sideOverlay" class="open"> */
+#sideOverlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Target: Slide-out side information drawer <div class="side-panel"> */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    width: 600px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    z-index: 1050;
+    transition: right 0.4s ease-in-out;
+    border-left: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Target: Active open state of slide-out drawer <div class="side-panel open"> */
+.side-panel.open {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Target: Sticky header <div class="side-header"> inside slide-out side panel */
+.side-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Target: Title <h5> inside .side-header */
+.side-header h5 {
+    color: #333;
+}
+
+
+/* --------------------------------------------------------------------------
+   1.2 Left Column: Product Summary, Accordions, Update Logs & Error Logs
+   -------------------------------------------------------------------------- */
+
+/* Target: Icon column container <div class="widget-summary-col widget-summary-col-icon summary-icon-col"> in left summary header */
+.summary-icon-col {
+    vertical-align: middle;
+}
+
+/* Target: GTIN / SAP ID summary value container <div class="gtin-summary-item"> value text */
+.gtin-summary-item div,
+.header-top-value div {
+    color: darkgreen;
+    font-size: smaller;
+}
+
+/* Target: GTIN / SAP ID label <p> inside .gtin-summary-item */
+.gtin-summary-item p,
+.header-top-value p {
+    line-height: normal;
+}
+
+/* Target: Left column accordion section header title <a class="accordion-toggle accordion-header-title"> */
+.accordion-header-title,
+.acc-title {
+    font-size: small !important;
+}
+
+/* Target: Info modal trigger link <a> inside <span class="accordion-info-link"> in accordion header */
+.accordion-info-link a,
+.info-link a {
+    margin-top: -15px;
+}
+
+/* Target: Info icon <i class="fas fa-info-circle"> inside .accordion-info-link */
+.accordion-info-link a i,
+.accordion-accordion-info-link a i,
+.info-link a i {
+    font-size: larger;
+}
+
+/* Target: Dark-cyan bullet marker in <ul class="simple-bullet-list"> */
 ul.simple-bullet-list li.darkcyan:before {
     border-color: darkcyan;
 }
 
-.dTable tbody tr td {
-    border: none !important;
-    vertical-align: middle;
-    padding: 0.5rem;
+/* Target: Small subtitle <span class="text-muted bullet-item-sm"> inside left panel bullet list */
+.bullet-item-sm,
+.bullet-sm {
+    font-size: x-small !important;
 }
 
+/* Target: Status card heading <h3 class="status-card-title"> in left panel status list */
+.status-card-title,
+.p-status {
+    line-height: normal;
+    font-size: 0.7rem !important;
+}
+
+/* Target: Secondary description <span> inside <h3 class="status-card-title"> */
+.status-card-title span,
+.p-status span {
+    font-weight: 300;
+    font-size: smaller;
+}
+
+/* Target: Status card item <li class="status-card-item"> in left panel status list */
+.status-card-item {
+    opacity: 0.6;
+}
+
+/* Target: Scrollable container inside Update requests accordion <div id="pChangeMain"> */
+div#pChangeMain .beautify-scroll {
+    height: 20rem;
+}
+
+/* Target: Scrollable container inside Update requests details modal <div id="pChangeDet"> */
+div#pChangeDet .beautify-scroll {
+    height: 14rem;
+}
+
+/* Target: Scrollable container inside Business Error Report accordion <div id="pBerMain"> */
+div#pBerMain .beautify-scroll {
+    height: 20rem;
+}
+
+/* Target: Update requests log table <table id="tLog"> in left column accordion */
+table#tLog {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: smaller;
+}
+
+/* Target: Field badge <span class="badge"> inside <table id="tLog"> cells */
+table#tLog tr td .badge {
+    font-size: small;
+}
+
+/* Target: Status icon <i> inside <table id="tLog"> cells */
+table#tLog tr td i {
+    font-size: larger;
+}
+
+/* Target: Plus icon <i class="fa-plus"> inside <table id="tLog"> */
+table#tLog tr td i.fa-plus {
+    color: darkgray;
+}
+
+/* Target: Single check icon <i class="fa-check"> (Level 1 approval) inside <table id="tLog"> */
+table#tLog tr td i.fa-check {
+    color: darkgreen;
+}
+
+/* Target: Double check icon <i class="fa-check-double"> (Level 2 approval) inside <table id="tLog"> */
+table#tLog tr td i.fa-check-double {
+    color: darkblue;
+}
+
+/* Target: Ban icon <i class="fa-ban"> (Rejected) inside <table id="tLog"> */
+table#tLog tr td i.fa-ban {
+    color: darkred;
+}
+
+/* Target: Timeline item text <p> and <span> inside <div id="secTimeline"> modal */
+#secTimeline .tm-box p,
+#secTimeline .tm-box span {
+    font-size: x-small !important;
+    line-height: normal;
+}
+
+/* Target: Initial request status label <span class="timeline-status-init"> in timeline */
+.timeline-status-init,
+.timeline-init {
+    color: darkorange;
+}
+
+/* Target: Updated request status label <span class="timeline-status-updated"> in timeline */
+.timeline-status-updated,
+.timeline-updated {
+    color: darkgreen;
+}
+
+/* Target: Accepted request status label <span class="timeline-status-accepted"> in timeline */
+.timeline-status-accepted,
+.timeline-accepted {
+    color: darkblue;
+}
+
+/* Target: Rejected request status label <span class="timeline-status-rejected"> in timeline */
+.timeline-status-rejected,
+.timeline-rejected {
+    color: darkred;
+}
+
+/* Target: DIAMS error logs container <div class="error-log-list"> in left column accordion */
+.error-log-list,
+.diams-logs {
+    font-size: smaller;
+}
+
+/* Target: Action links/buttons inside alerts in <div class="error-log-list"> */
+.error-log-list .alert button,
+.diams-logs .alert button {
+    font-size: small;
+}
+
+/* Target: Required rejection comment warning <p id="txtRequired"> in update log popup */
+p#txtRequired {
+    color: darkred;
+    display: none;
+    font-size: small;
+}
+
+
+/* --------------------------------------------------------------------------
+   1.3 Right Column Header & Navigation (Activation Form, Breadcrumb, Tabs)
+   -------------------------------------------------------------------------- */
+
+/* Target: Top-right product activation form <form id="fActivation"> */
+#fActivation {
+    float: right;
+}
+
+/* Target: Field labels <label> inside <form id="fActivation"> */
+#fActivation label {
+    font-size: smaller;
+}
+
+/* Target: Dropdown <select> controls inside <form id="fActivation"> */
+#fActivation select {
+    font-size: smaller;
+    min-width: 17em;
+}
+
+/* Target: Second-level section breadcrumb navigation bar <nav class="second-level-nav"> */
+.second-level-nav,
+.sln {
+    font-size: x-small;
+}
+
+/* Target: Right-hand vertical tab navigation item <li class="nav-item tab-index"> */
+.tab-index {
+    width: 80px !important;
+    max-width: 80px;
+    text-align: center;
+}
+
+/* Target: Card section expand/collapse toggle link <a class="btn-expand-collapse"> */
+.btn-expand-collapse {
+    float: right;
+    font-size: x-large !important;
+    margin-right: 15px !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   1.4 Common Form Elements, Badges, Helpers & Carousel
+   -------------------------------------------------------------------------- */
+
+/* Target: Initially hidden toggleable elements <... class="toggleable"> */
+.toggleable {
+    display: none;
+}
+
+/* Target: White navigation link <a class="nLink"> and hover state */
+.nLink,
+.nLink:hover {
+    color: white;
+}
+
+/* Target: Standard Bootstrap <div class="form-group"> vertical margin reset */
 .form-group {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
+/* Target: Compact form field label <label class="... control-label-sm"> across all panels */
+.control-label-sm {
+    font-size: smaller;
+}
 
+/* Target: Select2 single/multi-select selection box, selected choice tags, inline search input, and dropdown options to match .form-control-sm font size */
+.select2-container--bootstrap .select2-selection,
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,
+.select2-container--bootstrap .select2-results__option {
+    font-size: x-small;
+}
+
+/* Target: Select2 single-select container height and padding to match compact .form-control-sm inputs (26px) */
+.select2-container--bootstrap .select2-selection--single {
+    height: 26px;
+    line-height: 1.3;
+    padding: 4px 24px 4px 10px;
+}
+
+/* Target: Select2 multi-select container height to match compact .form-control-sm inputs (26px) */
+.select2-container--bootstrap .select2-selection--multiple {
+    min-height: 26px;
+    height: auto;
+}
+
+/* Target: Select2 multi-select rendered list line-height reset */
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered {
+    line-height: 1.3;
+}
+
+/* Target: Select2 multi-select selected choice tags vertical margins to center inside 26px container */
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+    margin: 3px 0 2px 5px;
+}
+
+/* Target: Select2 multi-select inline search input height and width so it does not stretch or wrap the container */
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
+    height: 22px;
+    line-height: 1.3;
+    padding: 0 6px;
+    min-width: 2em;
+}
+
+/* Target: Small prepend/append addon <span class="input-group-text input-group-addon-sm"> */
+.input-group-addon-sm,
+.input-group-aux {
+    font-size: xx-small;
+}
+
+/* Target: Custom checkbox <label> inside <div class="checkbox-custom"> */
+.checkbox-custom label {
+    font-size: smaller;
+}
+
+/* Target: Max character length helper <span class="char-limit-indicator"> below inputs */
+.char-limit-indicator,
+.c-indicator {
+    font-size: smaller;
+}
+
+/* Target: Uploaded section image preview <img class="uploaded-image-preview"> */
+.uploaded-image-preview,
+.image-uploaded {
+    width: inherit;
+    height: 25em;
+}
+
+/* Target: Green descriptive helper text <p class="field-helper-desc"> or <label class="field-helper-desc"> */
+.field-helper-desc,
+.txt-large-desc {
+    color: green;
+    font-size: smaller;
+}
+
+/* Target: Column header badge <span class="badge ... section-col-badge"> in multi-column matrix layouts */
+.section-col-badge,
+.sBadge {
+    font-size: larger;
+    width: 95%;
+}
+
+/* Target: Column header badge modifier <span class="... sBadge-nm"> removing bottom margin */
+.sBadge-nm {
+    margin-bottom: 0px;
+}
+
+/* Target: Small dotted horizontal divider <hr class="dotted dotted-sm"> */
 .dotted-sm {
     margin-bottom: 10px !important;
     margin-top: 10px !important;
     margin-left: 5% !important;
 }
 
+/* Target: Extra-small dotted horizontal divider <hr class="dotted dotted-xs"> */
 .dotted-xs {
     margin-bottom: 0px !important;
     margin-top: 5px !important;
     margin-left: 5% !important;
 }
 
-/** All form labels - reduce font size */
-.control-label-sm {
-    font-size: smaller;
+/* Target: Borderless data table cells <table class="... dTable"> tbody tr td */
+.dTable tbody tr td {
+    border: none !important;
+    vertical-align: middle;
+    padding: 0.5rem;
 }
 
-/** Input group prepend/append icon and texts */
-.input-group-aux {
+/* Target: Non-resizable compact <textarea class="... texta-fixed"> */
+.texta-fixed {
+    resize: none;
+    font-size: smaller !important;
+}
+
+/* Target: Side drawer trigger link <a class="openCustomPanel"> attached to input groups */
+.openCustomPanel {
+    width: 1.5rem;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* Target: Icon <i> inside <a class="openCustomPanel"> */
+.openCustomPanel i {
+    margin-top: 12px;
+}
+
+/* Target: GDSN external link indicator icon <a class="... i-link-f"> */
+.i-link-f {
+    display: none;
+    color: darkorange;
     font-size: xx-small;
+    opacity: 0.6;
 }
 
-/** Character max length indicator for input text fields and areas */
-.c-indicator {
-    font-size: smaller;
+/* Target: Copied value indicator icon <a class="... i-link-c"> */
+.i-link-c {
+    display: none;
+    color: cadetblue;
+    font-size: xx-small;
+    opacity: 0.6;
 }
 
-/** for image display after it is uploaded */
-.image-uploaded {
-    width: inherit;
-    height: 25em;
+/* Target: Custom checkbox alignment inside .input-group when .i-link icon is hidden */
+.input-group:has(.i-link) .checkbox-custom {
+    margin-left: 0 !important;
+    margin-top: 8px !important;
 }
 
-/** for large texts related to descriptions for a field */
-.txt-large-desc {
-    color: green;
-    font-size: smaller;
+/* Target: Custom checkbox alignment inside .input-group when .i-link icon is visible */
+.input-group:has(.i-link[style*="display: inline-block"]) .checkbox-custom,
+.input-group:has(.i-link[style*="display: block"]) .checkbox-custom,
+.input-group:has(.i-link[style*="display: inline"]) .checkbox-custom {
+    margin-left: 8px !important;
+    margin-top: 0 !important;
 }
 
-/** for badges on top in the matrix layout */
-.sBadge {
-    font-size: larger;
-    width: 95%;
-}
-
-.sBadge-nm {
-    margin-bottom: 0px;
-}
-
-.bullet-sm {
-    font-size: x-small !important;
-}
-
-.header-top-value div {
-    color: darkgreen;
-    font-size: smaller;
-}
-
-.header-top-value p {
-    line-height: normal;
-}
-
-.p-status {
-    line-height: normal;
-    font-size: 0.7rem !important;
-}
-
-.p-status span {
-    font-weight: 300;
-    font-size: smaller;
-}
-
-.diams-logs {
-    font-size: smaller;
-}
-
-.diams-logs .alert button {
-    font-size: small;
-}
-
-
+/* Target: Hidden sort <span> inside #datatable-pdate */
 #datatable-pdate span {
     display: none;
 }
 
+/* Target: Highlighted date container <div class="hdate"> */
 .hdate {
     background: aliceblue;
     border-radius: 15px;
 }
 
-/* Full view - update - styles */
+/* Target: Unit of measure prepend button <button class="btn btn-default uom-prepend-btn"> (used in Basic Data & Assortments) */
+.uom-prepend-btn,
+.prepend-unit-btn {
+    font-size: smaller !important;
+    background: snow;
+    width: 40px;
+}
+
+/* Target: Owl Carousel navigation container <div class="owl-nav"> */
+.owl-carousel .owl-nav {
+    top: -2.1rem !important;
+    font-size: xxx-large !important;
+    color: brown;
+    width: 5rem;
+    right: 0;
+}
+
+/* Target: Smooth scale transition on Owl Carousel prev/next arrow buttons */
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    transition: transform 0.15s ease-in-out !important;
+}
+
+/* Target: Hover/focus state for active Owl Carousel prev/next arrow buttons */
+.owl-carousel .owl-nav button.owl-prev:not(.disabled):hover,
+.owl-carousel .owl-nav button.owl-next:not(.disabled):hover,
+.owl-carousel .owl-nav button.owl-prev:not(.disabled):focus,
+.owl-carousel .owl-nav button.owl-next:not(.disabled):focus {
+    background: transparent !important;
+    color: brown !important;
+    transform: scale(1.5);
+    outline: none;
+}
+
+/* Target: Disabled state for Owl Carousel prev/next arrow buttons */
+.owl-carousel .owl-nav button.owl-prev.disabled,
+.owl-carousel .owl-nav button.owl-next.disabled {
+    background: transparent !important;
+    color: brown !important;
+    opacity: 0.5 !important;
+    transform: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   1.5 Full View Update States & Quick-Action ("Go") Buttons
+   -------------------------------------------------------------------------- */
+
+/* Target: Form controls with pending update request <... class="... changed"> */
 .changed {
     border: 3px solid darkorange;
 }
 
+/* Target: Currently selected update request row in log table <tr class="changeSelected"> */
 .changeSelected {
     background-color: lightblue;
 }
 
+/* Target: Form controls approved at Level 1 <... class="... approvedL1"> */
 .approvedL1 {
     border: 3px solid darkgreen;
 }
 
+/* Target: Form controls approved at Level 2 <... class="... approvedL2"> */
 .approvedL2 {
     border: 3px solid darkblue;
 }
 
+/* Target: Form controls with rejected update request <... class="... rejected"> */
 .rejected {
     border: 3px solid darkred !important;
 }
 
+/* Target: Form controls with newly requested change <... class="... c_requested"> */
 .c_requested {
     border: 3px solid darkcyan;
 }
 
+/* Target: Read-only clickable form controls in update mode <... class="... clickable-disabled"> */
 .clickable-disabled {
     background: lightgray;
 }
 
-.lbl-uom {
-    font-size: smaller !important;
+/* Target: Quick-action <button class="btn ... btn-go"> attached to requestable fields */
+.btn-go {
+    display: none;
+    font-size: 0.5rem;
+    padding: 4px 5px;
+    margin-left: 5px;
 }
 
-.gtin-reuse {
-    color: darkred;
+/* Target: Standard field quick-action button <button class="... btn-go go-std-field"> */
+.go-std-field {
+    height: fit-content;
+    align-self: center;
 }
 
+/* Target: Checkbox field quick-action button <button class="... btn-go go-chk-field"> */
+.go-chk-field {
+    margin-top: -5px;
+}
+
+
+/* ==========================================================================
+   2. PANEL-SPECIFIC STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   2.1 Panel: Basic Data (#overview)
+   -------------------------------------------------------------------------- */
+
+/* Target: Legacy UoM button <button class="... desc-uom"> in descriptions section */
 .desc-uom {
     font-size: smaller;
     background: snow;
     width: 50px;
 }
 
-/* New Basic data descriptions table */
-.t-desc-lang {
+/* Target: Column 1 <td class="desc-table-lang ..."> language cell in #datatable-desc */
+.desc-table-lang {
     text-align: right;
     width: 1px;
     background-color: lightyellow;
@@ -169,34 +724,41 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: smaller;
 }
 
-.t-desc-lang-english {
+/* Target: Column 1 <td class="... desc-table-lang-english"> for "English" rows in #datatable-desc */
+.desc-table-lang-english {
     background-color: lightyellow;
 }
 
-.t-desc-lang-french {
+/* Target: Column 1 <td class="... desc-table-lang-french"> for "French" rows in #datatable-desc */
+.desc-table-lang-french {
     background-color: linen;
 }
 
-.t-desc-lang-dutch {
+/* Target: Column 1 <td class="... desc-table-lang-dutch"> for "Dutch" rows in #datatable-desc */
+.desc-table-lang-dutch {
     background-color: aliceblue;
 }
 
-.t-desc-lang-german {
+/* Target: Column 1 <td class="... desc-table-lang-german"> for "German" rows in #datatable-desc */
+.desc-table-lang-german {
     background-color: ghostwhite;
 }
 
-.t-desc-lang-bilingual {
+/* Target: Column 1 <td class="... desc-table-lang-bilingual"> for "Z2 - Bilingual NL-FR" rows in #datatable-desc */
+.desc-table-lang-bilingual {
     background-color: honeydew;
 }
 
-.t-desc-type {
+/* Target: Column 2 <td class="desc-table-type"> description type cell ("Short", "Shelf", "Ticket", "E-commerce") in #datatable-desc */
+.desc-table-type {
     width: 1px;
     vertical-align: middle;
     color: darkgreen;
     font-size: smaller;
 }
 
-.t-desc-uom {
+/* Target: Column 3 <td class="desc-table-uom"> unit of measure cell ("EA", "IP", "CV") in #datatable-desc */
+.desc-table-uom {
     text-align: center;
     width: 1px;
     vertical-align: middle;
@@ -204,7 +766,13 @@ ul.simple-bullet-list li.darkcyan:before {
     color: darkgrey;
 }
 
-/* AI Assistant Styles */
+/* Target: Column 4 <td class="input-ai-wrapper"> description input cell container in #datatable-desc */
+.input-ai-wrapper {
+    position: relative;
+    vertical-align: middle;
+}
+
+/* Target: AI translation suggestion notification badge <span class="ai-notification-badge"> inside .input-ai-wrapper */
 .ai-notification-badge {
     right: 15px;
     top: 50%;
@@ -222,19 +790,19 @@ ul.simple-bullet-list li.darkcyan:before {
     animation: bounceIn 0.3s;
 }
 
+/* Target: Hover state for <span class="ai-notification-badge"> */
 .ai-notification-badge:hover {
     transform: translateY(-50%) scale(1.1);
 }
 
+/* Target: Floating AI suggestion popover <div class="ai-popover"> below description input */
 .ai-popover {
     position: absolute;
     top: 40px;
-    /* Below the input */
     right: 10px;
     width: 100%;
     max-width: 400px;
     background-color: #fff3cd;
-    /* Warning light bg */
     border: 1px solid #ffeeba;
     border-radius: 5px;
     padding: 10px;
@@ -243,16 +811,19 @@ ul.simple-bullet-list li.darkcyan:before {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Target: Suggestion text container <div class="popover-content"> inside .ai-popover */
 .ai-popover .popover-content {
     font-style: italic;
     color: #856404;
     margin-bottom: 10px;
 }
 
+/* Target: Action buttons container <div class="popover-actions"> inside .ai-popover */
 .ai-popover .popover-actions {
     text-align: right;
 }
 
+/* Target: Accept button <button class="... btn-accept"> inside .ai-popover */
 .ai-popover .btn-accept {
     color: #fff;
     background-color: #28a745;
@@ -261,6 +832,7 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-left: 5px;
 }
 
+/* Target: Reject button <button class="... btn-reject"> inside .ai-popover */
 .ai-popover .btn-reject {
     color: #fff;
     background-color: #dc3545;
@@ -269,6 +841,7 @@ ul.simple-bullet-list li.darkcyan:before {
     margin-left: 5px;
 }
 
+/* Target: Bounce-in keyframe animation for .ai-notification-badge */
 @keyframes bounceIn {
     0% {
         opacity: 0;
@@ -289,296 +862,420 @@ ul.simple-bullet-list li.darkcyan:before {
     }
 }
 
-.input-ai-wrapper {
-    position: relative;
-    vertical-align: middle;
-}
 
+/* --------------------------------------------------------------------------
+   2.2 Panel: Units of Measure, Support Packaging & Empties (#pUoM)
+   -------------------------------------------------------------------------- */
 
-/* Styles for support packaging */
-.sp-thead th {
-    vertical-align: middle !important;
-}
-
-.sp-thead th code {
+/* Target: Field label <label class="... uom-field-label"> in Units of Measure matrix */
+.uom-field-label {
     font-size: smaller !important;
 }
 
-.sp_row td {
+/* Target: Reused GTIN warning label/checkbox <... class="... gtin-reuse-highlight"> */
+.gtin-reuse-highlight {
+    color: darkred;
+}
+
+/* Target: Table header cells <th> inside <thead class="suppack-table-thead"> in Support Packaging table */
+.suppack-table-thead th {
+    vertical-align: middle !important;
+}
+
+/* Target: Subtitle <code> tags inside <thead class="suppack-table-thead"> th */
+.suppack-table-thead th code {
+    font-size: smaller !important;
+}
+
+/* Target: Table data cells <td> inside <tr class="suppack-table-row"> in Support Packaging table */
+.suppack-table-row td {
     vertical-align: middle;
 }
 
-.t-suppack-type {
+/* Target: Column 1 <td class="suppack-type-cell ..."> packaging type cell in Support Packaging table */
+.suppack-type-cell {
     width: 1px;
     font-weight: bold;
 }
 
-.t-suppack-type p {
+/* Target: Type description <p> inside <td class="suppack-type-cell"> */
+.suppack-type-cell p {
     font-size: x-small;
     line-height: 15px;
 }
 
-.t-suppack-type-zmp1 {
+/* Target: Column 1 <td class="... suppack-type-zmp1"> for ZMP1 packaging rows */
+.suppack-type-zmp1 {
     background-color: lightyellow;
 }
 
-.t-suppack-type-zcr1 {
+/* Target: Column 1 <td class="... suppack-type-zcr1"> for ZCR1 crate rows */
+.suppack-type-zcr1 {
     background-color: ghostwhite;
 }
 
-.t-suppack-type-zpt1 {
+/* Target: Column 1 <td class="... suppack-type-zpt1"> for ZPT1 pallet rows */
+.suppack-type-zpt1 {
     background-color: linen;
 }
 
-.t-details .h-top {
+/* Target: GTIN header <div class="suppack-gtin"> inside <td class="suppack-details-cell"> */
+.suppack-details-cell .suppack-gtin {
     color: darkred;
     font-style: italic;
 }
 
-.t-details .title {
+/* Target: Main title <div class="suppack-desc-title"> inside <td class="suppack-details-cell"> */
+.suppack-details-cell .suppack-desc-title {
     font-weight: bold;
 }
 
-.t-details .subtitles p {
+/* Target: Subtitle paragraphs <p> inside <div class="suppack-subtitles"> in <td class="suppack-details-cell"> */
+.suppack-details-cell .suppack-subtitles p,
+.suppack-details-cell .suppack-suppack-subtitles p {
     margin-left: 0;
     margin-top: -5px;
     margin-bottom: -5px;
     font-size: smaller;
 }
 
-.t-details .subtitles .ext-info {
+/* Target: SAP ID line <p class="suppack-sap-id"> inside <div class="suppack-subtitles"> */
+.suppack-details-cell .suppack-subtitles .suppack-sap-id,
+.suppack-details-cell .suppack-suppack-subtitles .suppack-sap-id {
     color: darkgreen;
 }
 
-.t-tare-btn-uom {
+/* Target: Tare weight UoM button <button class="btn btn-default suppack-tare-uom-btn"> in Support Packaging table */
+.suppack-tare-uom-btn {
     font-size: smaller !important;
     background: snow;
 }
 
-/* Styles for Empties */
-.empty-crate-gtin {
+/* Target: Prepend GTIN badge button <button class="btn btn-default empties-gtin-prepend-btn"> in Empties section */
+.empties-gtin-prepend-btn {
     font-size: xx-small !important;
     background: snow;
 }
 
-.full-empty-crate-info {
+/* Target: Full/empty crate summary description <label class="... empties-crate-summary-label"> in Empties section */
+.empties-crate-summary-label {
     color: green;
     font-size: smaller;
 }
 
+/* Target: Table cells <td> inside <table class="... empties-table"> */
 .empties-table tbody tr td {
     vertical-align: middle;
 }
 
-.empties-uom {
+/* Target: Column 1 <td class="empties-uom-cell"> UoM cell in .empties-table */
+.empties-uom-cell {
     width: 1px;
     background-color: lightyellow;
     font-weight: bold;
 }
 
-.empties-price {
+/* Target: Calculated price prepend button <button class="btn btn-default empties-calculated-price-btn"> in .empties-table */
+.empties-calculated-price-btn {
     font-size: smaller !important;
     background: snow;
     width: 80px;
 }
 
-/* Styles for Purchasing */
-.purch-supplier-id {
+
+/* --------------------------------------------------------------------------
+   2.3 Panel: Purchasing (#pPurchasing)
+   -------------------------------------------------------------------------- */
+
+/* Target: Subtitle <p class="card-subtitle purch-po-uom-subtitle"> displaying PO UoM in Purchasing header */
+.purch-po-uom-subtitle {
+    color: darkgreen;
+}
+
+/* Target: Supplier ID badge button <button class="... purch-supplier-id-btn"> or prepend button */
+.purch-supplier-id-btn {
     font-size: smaller !important;
     background: snow;
 }
 
-.purch-supplier-vol {
-    font-size: smaller !important;
-    background: snow;
-    width: 75px;
+/* Target: Active supplier name label <label class="... purch-supplier-name-active"> */
+.purch-supplier-name-active {
+    color: darkgreen;
 }
 
-.purch-price-currency-uom {
-    width: 75px;
-}
-
-.purch-price-currency-uom select {
-    background-color: floralwhite !important;
-}
-
-.purch-price-unit {
+/* Target: Inactive supplier name label <label class="... purch-supplier-name-inactive"> */
+.purch-supplier-name-inactive {
     color: darkred;
 }
 
-/* Styles for Codes */
-.ds td {
+/* Target: Regular/Active supplier checkboxes bar <div class="... purch-supplier-flags-bar"> */
+.purch-supplier-flags-bar {
+    background: ghostwhite;
+}
+
+/* Target: Supplier volume unit button <button class="btn btn-default purch-supplier-vol-btn"> */
+.purch-supplier-vol-btn {
+    font-size: smaller !important;
+    background: snow;
+    width: 75px;
+}
+
+/* Target: Highlighted price fields group container <div class="... purch-price-highlight-box"> */
+.purch-price-highlight-box {
+    background: aliceblue;
+}
+
+/* Target: Currency / UoM append container <span class="input-group-append purch-price-per-unit-label-addon"> */
+.purch-price-per-unit-label-addon,
+.purch-price-unit-addon {
+    width: 75px;
+}
+
+/* Target: Dropdown <select> inside .purch-price-per-unit-label-addon */
+.purch-price-per-unit-label-addon select,
+.purch-price-unit-addon select {
+    background-color: floralwhite !important;
+}
+
+/* Target: Price unit indicator <span class="purch-price-per-unit-label"> inside field labels */
+.purch-price-per-unit-label {
+    color: darkred;
+}
+
+
+/* --------------------------------------------------------------------------
+   2.4 Panel: Codes (#pCodes)
+   -------------------------------------------------------------------------- */
+
+/* Target: Table cells <td> inside <tr class="ghs-symbol-row"> in GHS Symbols table */
+.ghs-symbol-row td {
     font-size: x-small !important;
 }
 
-.ds-sel {
+/* Target: Selected row <tr class="ghs-symbol-row ghs-symbol-row-selected"> in GHS Symbols table */
+.ghs-symbol-row-selected {
     background: floralwhite;
 }
 
-.l-age-country {
+/* Target: Country prepend button <button class="btn btn-default legal-age-country-btn"> in Legal Age section */
+.legal-age-country-btn {
     width: 100px;
     font-size: smaller !important;
     background: snow;
 }
 
-.l-age-value {
+/* Target: Age value append button <button class="btn btn-default legal-age-value-btn"> in Legal Age section */
+.legal-age-value-btn {
     background: floralwhite;
 }
 
-/* Styles for Logistics */
-.temperature {
+
+/* --------------------------------------------------------------------------
+   2.5 Panel: Logistics (#pLogistics)
+   -------------------------------------------------------------------------- */
+
+/* Target: Temperature range prepend button <button class="btn btn-default temp-range-prepend-btn"> */
+.temp-range-prepend-btn {
     font-size: smaller !important;
     background: snow;
     width: 75px;
 }
 
-.dc-toolbar {
+/* Target: DC selection toolbar <div class="... dc-selection-toolbar"> */
+.dc-selection-toolbar {
     background: mintcream;
 }
 
-.dc-main {
+/* Target: Highlighted main DC parameters row <div class="row ... dc-main-params-row"> */
+.dc-main-params-row {
     background: linen;
 }
 
-.dc-label {
+/* Target: Compact field label <label class="... dc-field-label"> in DC matrix */
+.dc-field-label {
     font-size: smaller !important;
 }
 
-.dc-chk {
+/* Target: Centered checkbox <div class="checkbox-custom ... dc-centered-checkbox"> in DC matrix */
+.dc-centered-checkbox {
     margin-left: 45%;
 }
 
-.btn-moq {
+/* Target: Store replenishment unit subtitle <p class="card-subtitle store-replenish-unit-subtitle"> */
+.store-replenish-unit-subtitle {
+    color: darkgreen;
+}
+
+/* Target: Minimum order quantity UoM button <button class="btn btn-default moq-uom-prepend-btn"> */
+.moq-uom-prepend-btn {
     font-size: smaller !important;
     background: snow;
     width: 75px;
 }
 
-.ord-chk {
+/* Target: Centered checkbox <div class="checkbox-custom ... ordering-day-checkbox"> in store replenishment table */
+.ordering-day-checkbox {
     margin-left: 45%;
 }
 
-/* Styles for Assortments */
-.prepend-unit-btn {
-    font-size: smaller !important;
-    background: snow;
-    width: 40px;
+
+/* --------------------------------------------------------------------------
+   2.6 Panel: Assortments (#pAssortment)
+   -------------------------------------------------------------------------- */
+
+/* Target: Assortment datatable wrapper <div class="datatable-assort-div"> */
+.datatable-assort-div {
+    padding-left: 40px;
 }
 
-.t-assortment tr td {
+/* Target: Table cells <td> inside <tbody class="assortment-table-body"> */
+.assortment-table-body tr td {
     vertical-align: middle !important;
 }
 
-.t-ass-type {
+/* Target: Column 1 <td class="assortment-type-cell ..."> assortment type cell */
+.assortment-type-cell {
     width: 1px;
     font-weight: bold;
     font-size: smaller;
 }
 
-.t-ass-type-manual {
+/* Target: Column 1 <td class="... assortment-type-manual"> for "Manual" assortment rows */
+.assortment-type-manual {
     background-color: lightyellow;
 }
 
-.t-ass-type-local {
+/* Target: Column 1 <td class="... assortment-type-local"> for "Local" assortment rows */
+.assortment-type-local {
     background-color: linen;
 }
 
-.t-ass-type-spcat {
+/* Target: Column 1 <td class="... assortment-type-spcat"> for "SM specific categories" rows */
+.assortment-type-spcat {
     background-color: aliceblue;
 }
 
-.t-ass-type-aff {
+/* Target: Column 1 <td class="... assortment-type-aff"> for "Affiliates" assortment rows */
+.assortment-type-aff {
     background-color: ghostwhite;
 }
 
-.t-ass-type-ecom {
+/* Target: Column 1 <td class="... assortment-type-ecom"> for "E-Commerce" assortment rows */
+.assortment-type-ecom {
     background-color: lavender;
 }
 
-.t-ass-type-exp {
+/* Target: Column 1 <td class="... assortment-type-exp"> for "Export" assortment rows */
+.assortment-type-exp {
     background-color: honeydew;
 }
 
-.t-ass-type-stm {
+/* Target: Column 1 <td class="... assortment-type-stm"> for "Tailor made" assortment rows */
+.assortment-type-stm {
     background-color: peachpuff;
 }
 
-.t-ass-type-c1 {
+/* Target: Cluster column cell <td class="assortment-cluster-cell ..."> in BE/LU assortment tables */
+.assortment-cluster-cell {
+    text-align: center;
+    width: 1px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+/* Target: Cluster C1 background <td class="... assortment-cluster-c1"> */
+.assortment-cluster-c1,
+.assortment-cluster-cell-c1 {
     background-color: lightyellow;
 }
 
-.t-ass-type-c2 {
+/* Target: Cluster C2 background <td class="... assortment-cluster-c2"> */
+.assortment-cluster-c2,
+.assortment-cluster-cell-c2 {
     background-color: linen;
 }
 
-.t-ass-type-c3 {
+/* Target: Cluster C3 background <td class="... assortment-cluster-c3"> */
+.assortment-cluster-c3,
+.assortment-cluster-cell-c3 {
     background-color: aliceblue;
 }
 
-.t-ass-type-c4 {
+/* Target: Cluster C4 background <td class="... assortment-cluster-c4"> */
+.assortment-cluster-c4,
+.assortment-cluster-cell-c4 {
     background-color: ghostwhite;
 }
 
-.t-ass-lm {
+/* Target: Linear meters column cell <td class="assortment-lm-cell"> in assortment tables */
+.assortment-lm-cell,
+.assortment-linear-cell {
     width: 1px;
     color: darkgreen;
     font-size: smaller;
 }
 
-.t-jda-btn-exp-col {
+/* Target: Expand/collapse icon <i class="... jda-expand-icon"> in JDA Planogram table */
+.jda-expand-icon {
     font-size: large;
     color: darkgreen;
 }
 
-.t-jda-title-line {
+/* Target: Main title <div class="jda-detail-title"> inside JDA Planogram details cell */
+.jda-detail-title {
     font-weight: bold;
 }
 
-.t-jda-sub-lines p {
+/* Target: Subtitle lines <p> inside <div class="jda-detail-subtitles"> in JDA Planogram details cell */
+.jda-detail-subtitles p {
     margin-left: 0;
     margin-top: -5px;
     margin-bottom: -5px;
     font-size: smaller;
 }
 
-.t-planogram-banner {
+/* Target: Banner column cell <td class="planogram-banner-cell"> in JDA Planogram table */
+.planogram-banner-cell {
     width: 1px;
     background-color: lightyellow;
     vertical-align: middle !important;
 }
 
-.t-planogram-banner p {
+/* Target: Banner title <p> inside <td class="planogram-banner-cell"> */
+.planogram-banner-cell p {
     font-weight: bold;
     font-size: smaller !important;
 }
 
-.t-no-planogram-lm {
+/* Target: Linear meters cell <td class="non-planogram-lm-cell"> in Non-Planogram table */
+.non-planogram-lm-cell {
     width: 1px;
     vertical-align: middle !important;
     font-weight: bold;
     color: darkgreen;
 }
 
-.btn-expand-collapse {
-    float: right;
-    font-size: x-large !important;
-    margin-right: 15px !important;
-}
 
-/* Styles for Prices */
-.price-str-header {
+/* --------------------------------------------------------------------------
+   2.7 Panel: Prices (#pPrices, #pPricesNew)
+   -------------------------------------------------------------------------- */
+
+/* Target: Total amount header <span class="price-str-header-total"> in Price Structure card */
+.price-str-header-total {
     float: right;
     font-size: larger;
     font-weight: bold;
 }
 
+/* Target: Table cells <td> inside <table class="... price-str-table"> */
 .price-str-table tr td {
     padding-top: 8px !important;
     padding-bottom: 0px !important;
     border: 0 !important;
 }
 
-.price-str-table-cell-1 {
+/* Target: Column 1 (Category) <td class="price-str-col-category"> in .price-str-table */
+.price-str-col-category {
     vertical-align: middle !important;
     font-size: xx-small;
     text-align: right;
@@ -586,14 +1283,16 @@ ul.simple-bullet-list li.darkcyan:before {
     width: 15%;
 }
 
-.price-str-table-cell-2 {
+/* Target: Column 2 (Condition code) <td class="price-str-col-code"> in .price-str-table */
+.price-str-col-code {
     vertical-align: middle !important;
     text-align: left;
     font-size: xx-small;
     width: 20%;
 }
 
-.price-str-table-cell-3 {
+/* Target: Column 3 (Calculation mode) <td class="price-str-col-mode"> in .price-str-table */
+.price-str-col-mode {
     vertical-align: middle !important;
     text-align: left;
     font-size: xx-small;
@@ -601,101 +1300,139 @@ ul.simple-bullet-list li.darkcyan:before {
     width: 15%;
 }
 
-.price-str-table-cell-5 {
+/* Target: Column 5 (Percentage input) <td class="price-str-col-percentage"> in .price-str-table */
+.price-str-col-percentage {
     text-align: center;
     width: 22%;
 }
 
-.price-str-table-cell-6 {
+/* Target: Column 6 (Amount input) <td class="price-str-col-amount"> in .price-str-table */
+.price-str-col-amount {
     text-align: right;
     width: 23%;
 }
 
-.price-str-table-cell-7 {
+/* Target: Column 7 (Row actions) <td class="... price-str-col-action"> in .price-str-table */
+.price-str-col-action {
     text-align: center;
     vertical-align: middle;
     width: 5%;
 }
 
-.linkAdd {
+/* Target: Add condition link <a class="... price-str-add-link"> in Price Structure & Fost Plus */
+.price-str-add-link {
     font-size: xx-small;
     padding: 0%;
 }
 
-.sales-price-badge {
+/* Target: Subtitle <label class="... sales-price-col-subtitle"> below banner badge in Sales Prices */
+.sales-price-col-subtitle {
     color: darkgreen;
 }
 
-.sales-price-uom {
+/* Target: Currency/UoM prepend button <button class="btn btn-default sales-price-uom-btn"> in Sales Prices */
+.sales-price-uom-btn {
     font-size: smaller !important;
     background: snow;
     width: 75px;
 }
 
-.sales-price-perc {
+/* Target: Percentage prepend/append button <button class="btn btn-default sales-price-perc-btn"> in Sales Prices */
+.sales-price-perc-btn {
     font-size: smaller !important;
     background: snow;
 }
 
-.sales-price-banner-sel {
+/* Target: Banner selector dropdown <select class="... ds-price-banner-dropdown"> in DS Sales Prices */
+.ds-price-banner-dropdown {
     margin-top: -10px;
 }
 
-.sales-price-info {
+/* Target: Highlighted calculated value <label class="... ds-price-summary-value"> in DS Sales Prices */
+.ds-price-summary-value {
     color: darkgreen;
 }
 
+/* Target: Table cells <td> inside <table id="tableDSSalesPrices"> */
 #tableDSSalesPrices tbody tr td {
     vertical-align: middle;
 }
 
-.sales-price-banner-uom {
+/* Target: Column 1 <td class="ds-price-banner-cell"> banner/UoM cell in #tableDSSalesPrices */
+.ds-price-banner-cell {
     width: 1px;
     background-color: lightyellow;
     vertical-align: middle;
     font-weight: bold;
 }
 
-/* Styles for Links */
-.links-thead th {
+
+/* --------------------------------------------------------------------------
+   2.8 Panel: Taxes (#pTaxes)
+   -------------------------------------------------------------------------- */
+
+/* Target: Producer ID prepend button <button class="btn btn-default ed-producer-id-btn"> in Environmental Duties */
+.ed-producer-id-btn {
+    font-size: smaller !important;
+    background: snow;
+}
+
+
+/* --------------------------------------------------------------------------
+   2.9 Panel: Links (#pLinks)
+   -------------------------------------------------------------------------- */
+
+/* Target: Table header cells <th> inside <thead class="links-table-thead"> in Links table */
+.links-table-thead th {
     font-size: smaller !important;
 }
 
-.links_row td {
+/* Target: Table cells <td> inside <tr class="links-table-row"> in Links table */
+.links-table-row td {
     vertical-align: middle;
 }
 
-.t-links-type {
+/* Target: Column 1 <td class="links-type-cell"> link type cell in Links table */
+.links-type-cell {
     width: 1px;
     font-weight: bold;
     background-color: lightyellow;
 }
 
-.t-links-type p {
+/* Target: Type description <p> inside <td class="links-type-cell"> */
+.links-type-cell p {
     font-size: x-small;
     line-height: 15px;
 }
 
-
-.t-links-details .h-top {
+/* Target: SAP ID header <div class="links-sap-id"> inside <td class="links-details-cell"> */
+.links-details-cell .links-sap-id {
     color: darkred;
     font-style: italic;
 }
 
-.t-links-details .title {
+/* Target: Link title <div class="links-desc-title"> inside <td class="links-details-cell"> */
+.links-details-cell .links-desc-title {
     font-weight: bold;
 }
 
-/** Styles for B2C */
-.c-unit {
+
+/* --------------------------------------------------------------------------
+   2.10 Panel: B2C (#pB2C)
+   -------------------------------------------------------------------------- */
+
+/* Target: Unit dropdown <select class="... b2c-content-unit-select"> in B2C general measurements */
+.b2c-content-unit-select {
     width: 75px;
     background-color: floralwhite !important;
 }
 
-.chk-ipba {
+/* Target: Centered checkbox <div class="checkbox-custom ... b2c-ipba-checkbox"> in B2C Packaging table */
+.b2c-ipba-checkbox {
     margin-left: 45%;
 }
 
+/* Target: Nutri-Score grade button <button class="btn ..."> inside <div class="... nutri-score"> */
 .nutri-score .btn {
     width: 50px;
     background-color: #ccc;
@@ -703,48 +1440,59 @@ ul.simple-bullet-list li.darkcyan:before {
     opacity: 0.2;
 }
 
+/* Target: Active selected Nutri-Score button <button class="btn ... selected-score"> */
 .nutri-score .btn.selected-score {
     opacity: 1;
     font-size: x-large;
 }
 
+/* Target: Nutri-Score Grade A button <button class="... btn-score-a"> */
 .nutri-score .btn-score-a {
     background-color: #4CAF50;
 }
 
+/* Target: Nutri-Score Grade B button <button class="... btn-score-b"> */
 .nutri-score .btn-score-b {
     background-color: #A3D900;
 }
 
+/* Target: Nutri-Score Grade C button <button class="... btn-score-c"> */
 .nutri-score .btn-score-c {
     background-color: #FFC800;
 }
 
+/* Target: Nutri-Score Grade D button <button class="... btn-score-d"> */
 .nutri-score .btn-score-d {
     background-color: #FF6F00;
 }
 
+/* Target: Nutri-Score Grade E button <button class="... btn-score-e"> */
 .nutri-score .btn-score-e {
     background-color: #FF3C3C;
 }
 
+/* Target: Nutri-Score N/A button <button class="... btn-score-na"> */
 .nutri-score .btn-score-na {
     background-color: grey;
 }
 
+/* Target: Table cells <td> inside <table class="... nutri-table"> */
+.nutri-table tbody tr td {
+    vertical-align: middle !important;
+}
+
+/* Target: Nutrient label cell <td class="nutri-table-lbl"> in .nutri-table */
+.nutri-table-lbl {
+    font-size: x-small;
+}
+
+/* Target: Nutrient quantity input <input class="... nutri-table-input"> in .nutri-table */
 .nutri-table-input {
     border: 1px solid #ced4da;
     text-align: right;
 }
 
-.nutri-table tbody tr td {
-    vertical-align: middle !important;
-}
-
-.nutri-table-lbl {
-    font-size: x-small;
-}
-
+/* Target: Nutrient unit label/dropdown <... class="... nutri-unit"> in .nutri-table */
 .nutri-unit {
     background-color: floralwhite;
     text-align: center;
@@ -752,482 +1500,135 @@ ul.simple-bullet-list li.darkcyan:before {
     font-size: xx-small !important;
 }
 
-.perc-unit {
+/* Target: Percentage append button <button class="btn btn-default palm-oil-perc-btn"> in B2C section */
+.palm-oil-perc-btn {
     width: 75px;
     background-color: snow !important;
     font-size: smaller !important;
 }
 
-.nutrients-lang {
+/* Target: Language prepend button <button class="btn btn-default b2c-lang-prepend-btn"> in Customer Info */
+.b2c-lang-prepend-btn {
     width: 75px;
     background-color: snow !important;
     font-size: smaller !important;
 }
 
-/** Styles for Store */
-.lang-badge {
+
+/* --------------------------------------------------------------------------
+   2.11 Panel: Store (#pStore)
+   -------------------------------------------------------------------------- */
+
+/* Target: Language prepend button <button class="btn btn-default store-lang-prepend-btn"> in Store section */
+.store-lang-prepend-btn {
     width: 75px;
     background-color: snow !important;
     font-size: smaller !important;
 }
 
-.sod td {
+/* Target: Table cells <td> inside <tr class="orderable-day-row"> in Store Orderable Days table */
+.orderable-day-row td {
     font-size: smaller !important;
 }
 
-.sod-sel {
+/* Target: Selected row <tr class="orderable-day-row orderable-day-row-selected"> in Store Orderable Days table */
+.orderable-day-row-selected {
     background: floralwhite;
 }
 
-/** Styles for Wines */
-.perc-unit-w {
+
+/* --------------------------------------------------------------------------
+   2.12 Panel: Wine (#pWine)
+   -------------------------------------------------------------------------- */
+
+/* Target: Percentage append button <button class="btn btn-default wine-perc-append-btn"> in Wine section */
+.wine-perc-append-btn {
     width: 75px;
     background-color: snow !important;
     font-size: smaller !important;
 }
 
-/** Styles for Fost Plus */
+
+/* --------------------------------------------------------------------------
+   2.13 Panel: Fost Plus (#pFostPlus)
+   -------------------------------------------------------------------------- */
+
+/* Target: Hidden warning notice <label class="... fp-no-info-notice lblNoInfo"> when Fost Plus info is not provided */
+.fp-no-info-notice,
 .lblNoInfo {
     display: none;
     font-size: smaller !important;
 }
 
-.lblNotInformPP {
+/* Target: Primary packaging notice <label class="... fp-no-primary-pkg-notice"> in Fost Plus header */
+.fp-no-primary-pkg-notice {
     font-size: smaller !important;
 }
 
+/* Target: Table cells <td> inside <tbody id="FPtableBody"> in Fost Plus packaging table */
 #FPtableBody tr td {
     vertical-align: middle;
 }
 
-.fp-table-type {
+/* Target: Column 1 <td class="fp-pkg-type-cell ..."> packaging type cell in #FPtableBody */
+.fp-pkg-type-cell {
     width: 1px;
     font-weight: bold;
 }
 
-.fp-table-type p {
+/* Target: Packaging type description <p> inside <td class="fp-pkg-type-cell"> */
+.fp-pkg-type-cell p {
     font-size: x-small !important;
     line-height: 15px;
 }
 
-.fp-table-type-main {
+/* Target: Column 1 <td class="... fp-pkg-type-main"> for Main packaging row */
+.fp-pkg-type-main,
+.fp-pkg-type-cell-main {
     background-color: floralwhite;
 }
 
-.fp-table-type-other {
+/* Target: Column 1 <td class="... fp-pkg-type-other"> for Other packaging row */
+.fp-pkg-type-other {
     background-color: ghostwhite;
 }
 
-.fp-table-type-multipack {
+/* Target: Column 1 <td class="... fp-pkg-type-multipack"> for Multipack packaging row */
+.fp-pkg-type-multipack {
     background-color: linen;
 }
 
-.fp-table-desc-title-header {
+/* Target: SAP ID header <div class="fp-desc-sap-id"> inside Fost Plus description column */
+.fp-desc-sap-id {
     color: darkred;
     font-style: italic;
 }
 
-.fp-table-desc-title-line {
+/* Target: Main title <div class="fp-desc-main-title"> inside Fost Plus description column */
+.fp-desc-main-title {
     font-weight: bold;
 }
 
-.fp-table-text-lines p {
+/* Target: Detail text lines <p> inside <div class="fp-detail-lines"> in Fost Plus table */
+.fp-detail-lines p {
     margin-left: 0;
     margin-top: -5px;
     margin-bottom: -5px;
     font-size: smaller !important;
 }
 
-.fp-table-text-lines p code {
+/* Target: Inline <code> tags inside <div class="fp-detail-lines"> p */
+.fp-detail-lines p code {
     font-size: 100% !important;
 }
 
-.fp-table-detail-sec {
+/* Target: Section label <div class="fp-detail-section-label"> inside Fost Plus details column */
+.fp-detail-section-label {
     line-height: 15px;
 }
 
-.fp-table-qty {
+/* Target: SAP quantity value <span class="fp-sap-qty-cell"> in Fost Plus table */
+.fp-sap-qty-cell {
     color: darkgreen;
     font-size: large !important;
-}
-
-
-
-
-
-
-
-
-.tab-index {
-    width: 80px !important;
-    max-width: 80px;
-    text-align: center;
-}
-
-/* Carousel Navigation Overrides */
-.owl-carousel .owl-nav {
-    top: -2.1rem !important;
-    font-size: xxx-large !important;
-    color: brown;
-    width: 5rem;
-    right: 0;
-}
-
-/* Base transition to handle smooth scaling */
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel .owl-nav button.owl-next {
-    transition: transform 0.15s ease-in-out !important;
-}
-
-/* Hover/Focus effect (enlarge arrow, prevent background color) ONLY for active buttons */
-.owl-carousel .owl-nav button.owl-prev:not(.disabled):hover,
-.owl-carousel .owl-nav button.owl-next:not(.disabled):hover,
-.owl-carousel .owl-nav button.owl-prev:not(.disabled):focus,
-.owl-carousel .owl-nav button.owl-next:not(.disabled):focus {
-    background: transparent !important;
-    color: brown !important;
-    transform: scale(1.5);
-    outline: none;
-}
-
-/* Ensure disabled buttons strictly maintain their appearance with zero interactive effects */
-.owl-carousel .owl-nav button.owl-prev.disabled,
-.owl-carousel .owl-nav button.owl-next.disabled {
-    background: transparent !important;
-    color: brown !important;
-    opacity: 0.5 !important;
-    transform: none !important;
-    pointer-events: none !important;
-    cursor: default !important;
-}
-
-/* Responsive font-sizing for Fullview Left Column */
-.is-creation-view #fullview-left-col .amount,
-.is-creation-view #fullview-left-col .summary-footer a,
-.is-creation-view #fullview-left-col .h4.font-weight-bold,
-.is-creation-view #fullview-left-col .text-3 {
-    font-size: small !important;
-}
-
-
-div#pChangeMain .beautify-scroll {
-    height: 20rem;
-}
-
-div#pBerMain .beautify-scroll {
-    height: 20rem;
-}
-
-.info-link a {
-    margin-top: -15px;
-}
-
-.info-link a i {
-    font-size: larger;
-}
-
-p#txtRequired {
-    color: darkred;
-    display: none;
-    font-size: small;
-}
-
-.acc-title {
-    font-size: small !important;
-}
-
-/* Responsive font sizes and element scaling for change requests and timeline */
-
-table#tLog {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: smaller;
-}
-
-table#tLog tr td .badge {
-    font-size: small;
-}
-
-table#tLog tr td i {
-    font-size: larger;
-}
-
-table#tLog tr td i.fa-plus {
-    color: darkgray
-}
-
-table#tLog tr td i.fa-check {
-    color: darkgreen
-}
-
-table#tLog tr td i.fa-check-double {
-    color: darkblue
-}
-
-table#tLog tr td i.fa-ban {
-    color: darkred
-}
-
-#secTimeline .tm-box p,
-#secTimeline .tm-box span {
-    font-size: x-small !important;
-    line-height: normal;
-}
-
-.timeline-init {
-    color: darkorange
-}
-
-.timeline-updated {
-    color: darkgreen
-}
-
-.timeline-accepted {
-    color: darkblue
-}
-
-.timeline-rejected {
-    color: darkred
-}
-
-.texta-fixed {
-    resize: none;
-    font-size: smaller !important;
-}
-
-.openCustomPanel {
-    width: 1.5rem;
-    text-align: center;
-    opacity: 0.7;
-}
-
-.openCustomPanel i {
-    margin-top: 12px;
-}
-
-.datatable-assort-div {
-    padding-left: 40px;
-}
-
-.i-link-f {
-    display: none;
-    color: darkorange;
-    font-size: xx-small;
-    opacity: 0.6;
-}
-
-.i-link-c {
-    display: none;
-    color: cadetblue;
-    font-size: xx-small;
-    opacity: 0.6;
-}
-
-.checkbox-custom label {
-    font-size: smaller;
-}
-
-/* Dynamic margins for checkbox-custom inside input-group with toggleable i-link */
-.input-group:has(.i-link) .checkbox-custom {
-    margin-left: 0 !important;
-    margin-top: 8px !important;
-}
-
-.input-group:has(.i-link[style*="display: inline-block"]) .checkbox-custom,
-.input-group:has(.i-link[style*="display: block"]) .checkbox-custom,
-.input-group:has(.i-link[style*="display: inline"]) .checkbox-custom {
-    margin-left: 8px !important;
-    margin-top: 0 !important;
-}
-
-/* Estilo para el overlay de fondo - Info */
-#sideOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1045;
-    /* Menos que el panel (1050) */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease-in-out, visibility 0.4s;
-}
-
-#sideOverlay.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Estilo para el panel lateral de información */
-.side-panel {
-    position: fixed;
-    top: 0;
-    right: -600px;
-    /* Inicia oculto */
-    width: 600px;
-    /* Ancho del panel */
-    height: 100vh;
-    /* Alto completo */
-    background-color: #f8f9fa;
-    z-index: 1050;
-    /* Por encima de todo */
-    transition: right 0.4s ease-in-out;
-    border-left: 1px solid #dee2e6;
-
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.side-panel.open {
-    right: 0;
-    /* Se muestra */
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Header del chat (fijo) */
-.side-header {
-    border-bottom: 1px solid #dee2e6;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.side-header h5 {
-    color: #333;
-}
-
-/* Beautified Custom Scrollbar (Pure CSS - zero JS dependency) */
-.beautify-scroll {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    scrollbar-width: thin;
-    scrollbar-color: #adb5bd #f1f1f1;
-}
-
-.beautify-scroll::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-.beautify-scroll::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.beautify-scroll::-webkit-scrollbar-thumb {
-    background-color: #adb5bd;
-    border-radius: 4px;
-}
-
-.beautify-scroll::-webkit-scrollbar-thumb:hover {
-    background-color: #6c757d;
-}
-
-/* ==================================================
-   Fit to Viewport: Remove Bottom White Void & Window Scrollbar
-   ================================================== */
-html.fixed,
-html.fixed body {
-    height: 100vh !important;
-    overflow-y: hidden !important;
-}
-
-html.fixed .inner-wrapper {
-    min-height: 100% !important;
-    height: 100vh !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-}
-
-#mainSection {
-    height: calc(100vh - 110px) !important;
-    min-height: auto !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    background: #fff;
-}
-
-#mainSection>.body,
-#mainSection .body,
-#mainSection .creation-details-body {
-    min-height: auto !important;
-    height: 100% !important;
-}
-
-#fullview-left-col {
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-}
-
-/* Tabs styling inside creation details view */
-.is-creation-view .tabs {
-    margin-bottom: 0 !important;
-}
-
-.is-creation-view .tab-content {
-    padding-bottom: 0 !important;
-}
-
-/** (Re) activation form and inputs */
-#fActivation {
-    float: right;
-}
-
-#fActivation label {
-    font-size: smaller;
-}
-
-#fActivation select {
-    font-size: smaller;
-    min-width: 17em;
-}
-
-/** Second level navigation - Breadcrumber panel */
-.sln {
-    font-size: x-small;
-}
-
-/* Tab Panels Scrollable Area: allow scrolling comfortably past the end ("e incluso un poco más") */
-.main-panel .scrollable-content {
-    padding-right: 15px !important;
-    padding-bottom: 120px !important;
-    /* Generous bottom clearance */
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    scrollbar-width: thin;
-    scrollbar-color: #adb5bd #f1f1f1;
-}
-
-/* Spacer after content inside tab panels to guarantee scrolling room across all layout engines */
-.main-panel .scrollable-content::after {
-    content: "";
-    display: block;
-    height: 80px;
-    width: 100%;
-    clear: both;
-}
-
-/* Beautified Custom Scrollbar for tab panels */
-.main-panel .scrollable-content::-webkit-scrollbar {
-    visibility: visible !important;
-    width: 6px;
-}
-
-.main-panel .scrollable-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.main-panel .scrollable-content::-webkit-scrollbar-thumb {
-    background-color: #adb5bd;
-    border-radius: 4px;
-}
-
-.main-panel .scrollable-content::-webkit-scrollbar-thumb:hover {
-    background-color: #6c757d;
 }

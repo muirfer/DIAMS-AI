@@ -36,7 +36,7 @@
                                     <div class="row">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm baseUoM prepend-unit-btn"
+                                                <button class="btn btn-default btn-sm baseUoM uom-prepend-btn"
                                                     type="button" tabindex="-1">EA&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -51,7 +51,7 @@
                                     <div class="row secIP">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm prepend-unit-btn" type="button"
+                                                <button class="btn btn-default btn-sm uom-prepend-btn" type="button"
                                                     tabindex="-1">IP&nbsp;&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -66,7 +66,7 @@
                                     <div class="row secCV">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm prepend-unit-btn" type="button"
+                                                <button class="btn btn-default btn-sm uom-prepend-btn" type="button"
                                                     tabindex="-1">CV&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -89,7 +89,7 @@
                                     <div class="row">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default baseUoM btn-sm prepend-unit-btn"
+                                                <button class="btn btn-default baseUoM btn-sm uom-prepend-btn"
                                                     type="button" tabindex="-1">EA&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -106,7 +106,7 @@
                                     <div class="row secIP">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm prepend-unit-btn" type="button"
+                                                <button class="btn btn-default btn-sm uom-prepend-btn" type="button"
                                                     tabindex="-1">IP&nbsp;&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -123,7 +123,7 @@
                                     <div class="row secCV">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm prepend-unit-btn" type="button"
+                                                <button class="btn btn-default btn-sm uom-prepend-btn" type="button"
                                                     tabindex="-1">CV&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -148,7 +148,7 @@
                                     <div class="row">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default baseUoM btn-sm prepend-unit-btn"
+                                                <button class="btn btn-default baseUoM btn-sm uom-prepend-btn"
                                                     type="button" tabindex="-1">EA&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -165,7 +165,7 @@
                                     <div class="row secIP">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm prepend-unit-btn" type="button"
+                                                <button class="btn btn-default btn-sm uom-prepend-btn" type="button"
                                                     tabindex="-1">IP&nbsp;&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -182,7 +182,7 @@
                                     <div class="row secCV">
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-prepend">
-                                                <button class="btn btn-default btn-sm prepend-unit-btn" type="button"
+                                                <button class="btn btn-default btn-sm uom-prepend-btn" type="button"
                                                     tabindex="-1">CV&nbsp;</button>
                                             </span>
                                             <select class="form-control form-control-sm mb-0">
@@ -248,7 +248,7 @@
                                 <textarea class="form-control form-control-sm" rows="5" data-plugin-maxlength
                                     maxlength="500" autocomplete="off" autocorrect="off"
                                     spellcheck="false">Text that can reach up to 500 characters.</textarea>
-                                <p class="text-right mb-0 c-indicator">
+                                <p class="text-right mb-0 char-limit-indicator">
                                     <code>Max:</code> 500
                                 </p>
                             </div>
@@ -357,7 +357,7 @@
                                             data-dismiss="fileupload">Remove</a>
                                     </div>
                                 </div>
-                                <img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+                                <img id="img" class="uploaded-image-preview mt-3" src="img/packaging.webp" />
                             </div>
                         </div>
                     </div>
@@ -425,11 +425,11 @@
                                             <th class="text-center" style="width: 10%;"></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="t-assortment" id="tableBodyBe">
+                                    <tbody class="assortment-table-body" id="tableBodyBe">
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM Manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_00001</td>
                                             <td>
                                                 BE Assort SM North</td>
@@ -441,9 +441,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM Manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_00002</td>
                                             <td>
                                                 BE Assort SM South</td>
@@ -454,9 +454,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM Manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_00003</td>
                                             <td>
                                                 BE Assort SM Belgium All</td>
@@ -468,9 +468,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_001</td>
                                             <td>
                                                 BE Assort SM 4001 FLAGEY</td>
@@ -481,9 +481,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_002</td>
                                             <td>
                                                 BE Assort SM 4002 LONGDOZ</td>
@@ -495,9 +495,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_003</td>
                                             <td>
                                                 BE Assort SM 4003 CHAZAL</td>
@@ -508,9 +508,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_004</td>
                                             <td>
                                                 BE Assort SM 4004 ST ANTOINE</td>
@@ -522,9 +522,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_005</td>
                                             <td>
                                                 BE Assort SM 4005 ST.PIETERS BRUG</td>
@@ -535,9 +535,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_006</td>
                                             <td>
                                                 BE Assort SM 4006 FORT JACO</td>
@@ -548,9 +548,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_007</td>
                                             <td>
                                                 BE Assort SM 4007 MARCINELLE</td>
@@ -562,9 +562,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_008</td>
                                             <td>
                                                 BE Assort SM 4008 ROODEBEEK</td>
@@ -575,9 +575,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_009</td>
                                             <td>
                                                 BE Assort SM 4009 MUTSAARD</td>
@@ -589,9 +589,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_010</td>
                                             <td>
                                                 BE Assort SM 4010 DEBROUX</td>
@@ -602,9 +602,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_011</td>
                                             <td>
                                                 BE Assort SM 4011 HASSELT</td>
@@ -616,9 +616,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_012</td>
                                             <td>
                                                 BE Assort SM 4012 PRINCE DE LIEGE</td>
@@ -629,9 +629,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_013</td>
                                             <td>
                                                 BE Assort SM 4013 SERAING</td>
@@ -643,9 +643,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_014</td>
                                             <td>
                                                 BE Assort SM 4014 HEVERLEE</td>
@@ -656,9 +656,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_015</td>
                                             <td>
                                                 BE Assort SM 4015 MOZART</td>
@@ -670,9 +670,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_016</td>
                                             <td>
                                                 BE Assort SM 4016 MARENGO</td>
@@ -684,9 +684,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_017</td>
                                             <td>
                                                 BE Assort SM 4017 DEURNE</td>
@@ -697,9 +697,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_018</td>
                                             <td>
                                                 BE Assort SM 4018 FRUITHOF</td>
@@ -710,9 +710,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_019</td>
                                             <td>
                                                 BE Assort SM 4019 LEON THEODOR</td>
@@ -723,9 +723,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_020</td>
                                             <td>
                                                 BE Assort SM 4990 DUMMY SITE PLANO</td>
@@ -736,9 +736,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_021</td>
                                             <td>
                                                 BE Assort SM 4021 VERHAEREN</td>
@@ -750,9 +750,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_022</td>
                                             <td>
                                                 BE Assort SM 4022 REET</td>
@@ -763,9 +763,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_023</td>
                                             <td>
                                                 BE Assort 4023 KORTRIJK NOORD</td>
@@ -776,9 +776,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_024</td>
                                             <td>
                                                 BE Assort SM 4024 BOONDAEL</td>
@@ -789,9 +789,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_025</td>
                                             <td>
                                                 BE Assort SM 4025 ST ROCHUS</td>
@@ -802,9 +802,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_026</td>
                                             <td>
                                                 BE Assort SM 4026 AMAY</td>
@@ -815,9 +815,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_027</td>
                                             <td>
                                                 BE Assort SM 4027 HORNU</td>
@@ -828,9 +828,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_028</td>
                                             <td>
                                                 BE Assort SM 4028 GENT STER</td>
@@ -841,9 +841,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_029</td>
                                             <td>
                                                 BE Assort SM 4029 JAMBES</td>
@@ -854,9 +854,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_030</td>
                                             <td>
                                                 BE Assort SM 4030 WEZEMBEEK</td>
@@ -867,9 +867,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_031</td>
                                             <td>
                                                 BE Assort SM 4031 CROIX DE GUERRE</td>
@@ -880,9 +880,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_032</td>
                                             <td>
                                                 BE Assort SM 4032 WATERLOO</td>
@@ -893,9 +893,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_033</td>
                                             <td>
                                                 BE Assort SM 4033 CH QUINT</td>
@@ -906,9 +906,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_034</td>
                                             <td>
                                                 BE Assort SM 4034 GENVAL</td>
@@ -919,9 +919,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-local">
-                                            <td class="t-ass-type t-ass-type-local text-center">
+                                            <td class="assortment-type-cell assortment-type-local text-center">
                                                 SM local</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_035</td>
                                             <td>
                                                 BE Assort SM 4035 IEPER</td>
@@ -932,9 +932,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ESSIE</td>
                                             <td>
                                                 Essie assortment</td>
@@ -946,9 +946,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_EWINE</td>
                                             <td>
                                                 BE Assortment Wine Online</td>
@@ -959,9 +959,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ISPAV</td>
                                             <td>
                                                 BE Assortment ISP Lamb & Veal</td>
@@ -973,9 +973,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ISPB3</td>
                                             <td>
                                                 BE Assortment Butchery 3.0</td>
@@ -987,9 +987,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ISPBS</td>
                                             <td>
                                                 BE Assortment ISP Beef & Specialities</td>
@@ -1001,9 +1001,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ISPFI</td>
                                             <td>
                                                 BE Assortment ISP Fish</td>
@@ -1014,9 +1014,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ISPHA</td>
                                             <td>
                                                 BE Assortment ISP Minced</td>
@@ -1027,9 +1027,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ISPPO</td>
                                             <td>
                                                 BE Assortment ISP Pork</td>
@@ -1041,9 +1041,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_LODP</td>
                                             <td>
                                                 LODP</td>
@@ -1054,9 +1054,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_ESSIE</td>
                                             <td>
                                                 BE Assortment MAP Lamb</td>
@@ -1068,9 +1068,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_MAPAV</td>
                                             <td>
                                                 BE Assortment MAP Lamb & Veal</td>
@@ -1081,9 +1081,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-categories">
-                                            <td class="t-ass-type t-ass-type-spcat text-center">
+                                            <td class="assortment-type-cell assortment-type-spcat text-center">
                                                 SM specific categories</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BAOT_MAPBA</td>
                                             <td>
                                                 BE Assortment MAP Base</td>
@@ -1095,9 +1095,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_222</td>
                                             <td>
                                                 Essie assortment</td>
@@ -1109,9 +1109,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_223</td>
                                             <td>
                                                 BE Assort Shop 223</td>
@@ -1122,9 +1122,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_224</td>
                                             <td>
                                                 BE Assort Q8 224</td>
@@ -1136,9 +1136,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_227</td>
                                             <td>
                                                 BE Assort Proxy 227</td>
@@ -1149,9 +1149,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 BASA_243</td>
                                             <td>
                                                 BE Assort AD 243
@@ -1276,11 +1276,11 @@
                                             <th class="text-center" style="width: 10%;"></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="t-assortment" id="tableBodyLu">
+                                    <tbody class="assortment-table-body" id="tableBodyLu">
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_201</td>
                                             <td>
                                                 LU Assort SM Center 201</td>
@@ -1292,9 +1292,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_213</td>
                                             <td>
                                                 LU Assort City 213</td>
@@ -1305,9 +1305,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_231</td>
                                             <td>
                                                 LU Assort SM Border BE</td>
@@ -1319,9 +1319,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_232</td>
                                             <td>
                                                 LU Assort SM Border FR</td>
@@ -1332,9 +1332,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_233</td>
                                             <td>
                                                 LU Assort SM Border Schmiede</td>
@@ -1346,9 +1346,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-manual">
-                                            <td class="t-ass-type t-ass-type-manual text-center">
+                                            <td class="assortment-type-cell assortment-type-manual text-center">
                                                 SM manual</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_234</td>
                                             <td>
                                                 LU Assort SM Border GE</td>
@@ -1360,9 +1360,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_228</td>
                                             <td>
                                                 LU Assort Proxy & Shop 228</td>
@@ -1374,9 +1374,9 @@
                                             </td>
                                         </tr>
                                         <tr class="sm-affiliates">
-                                            <td class="t-ass-type t-ass-type-aff text-center">
+                                            <td class="assortment-type-cell assortment-type-aff text-center">
                                                 Affiliates</td>
-                                            <td class="t-ass-lm text-center">
+                                            <td class="assortment-lm-cell text-center">
                                                 LASA_245</td>
                                             <td>
                                                 LU Assort AD 245</td>
@@ -1453,7 +1453,7 @@
                                     </thead>
                                     <tbody id="tableBody">
                                         <tr id="rowb1" style="display: none;">
-                                            <td class="t-planogram-banner text-center">
+                                            <td class="planogram-banner-cell text-center">
                                                 <p class="mb-0">Shop & Go</p>
                                             </td>
                                             <td class="text-center">
@@ -1468,7 +1468,7 @@
                                             </td>
                                         </tr>
                                         <tr id="rowb2" style="display: none;">
-                                            <td class="t-planogram-banner text-center">
+                                            <td class="planogram-banner-cell text-center">
                                                 <p class="mb-0">Maxi</p>
                                             </td>
                                             <td class="text-center">
@@ -1483,7 +1483,7 @@
                                             </td>
                                         </tr>
                                         <tr id="rowb3" style="display: none;">
-                                            <td class="t-planogram-banner text-center">
+                                            <td class="planogram-banner-cell text-center">
                                                 <p class="mb-0">Mega-Maxi</p>
                                             </td>
                                             <td class="text-center">
@@ -1498,7 +1498,7 @@
                                             </td>
                                         </tr>
                                         <tr id="rowb4" style="display: none;">
-                                            <td class="t-planogram-banner text-center">
+                                            <td class="planogram-banner-cell text-center">
                                                 <p class="mb-0">Profi</p>
                                             </td>
                                             <td class="text-center">
@@ -1513,7 +1513,7 @@
                                             </td>
                                         </tr>
                                         <tr id="rowb5" style="display: none;">
-                                            <td class="t-planogram-banner text-center">
+                                            <td class="planogram-banner-cell text-center">
                                                 <p class="mb-0">All</p>
                                             </td>
                                             <td class="text-center">
@@ -1589,7 +1589,7 @@
                                     </thead>
                                     <tbody id="tableBodyDSNP">
                                         <tr id="row_RS00000544" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000544</td>
                                             <td>
                                                 TEMPO PRIRODNA KOZMETIKA 2</td>
@@ -1600,7 +1600,7 @@
                                             </td>
                                         </tr>
                                         <tr id="row_RS00000531" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000531</td>
                                             <td>
                                                 TEMPO LICE 4</td>
@@ -1611,7 +1611,7 @@
                                             </td>
                                         </tr>
                                         <tr id="row_RS00000561" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000561</td>
                                             <td>
                                                 TEMPO NP TEKSTIL 3</td>
@@ -1622,7 +1622,7 @@
                                             </td>
                                         </tr>
                                         <tr id="row_RS00000587" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000587</td>
                                             <td>
                                                 MAXI NP CIGARETE 1</td>
@@ -1633,7 +1633,7 @@
                                             </td>
                                         </tr>
                                         <tr id="row_RS00000588" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000588</td>
                                             <td>
                                                 MAXI NP CIGARETE 2</td>
@@ -1644,7 +1644,7 @@
                                             </td>
                                         </tr>
                                         <tr id="row_RS00000589" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000589</td>
                                             <td>
                                                 MAXI NP KANCELARIJSKI STAMPA I KNJIGE 1</td>
@@ -1655,7 +1655,7 @@
                                             </td>
                                         </tr>
                                         <tr id="row_RS00000590" style="display: none;">
-                                            <td class="t-no-planogram-lm text-center">
+                                            <td class="non-planogram-lm-cell text-center">
                                                 RS00000590</td>
                                             <td>
                                                 MAXI NP KANCELARIJSKI STAMPA I KNJIGE 2</td>

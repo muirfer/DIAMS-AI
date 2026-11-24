@@ -178,29 +178,38 @@
                     App.FVSummaryLog.switchToChangeView();
                 });
             }
+
+            if ($('#berStatement')) {
+                $("#berStatement").click(function () {
+                    if (App.FVSummaryLog && typeof App.FVSummaryLog.switchToBERView === 'function') {
+                        App.FVSummaryLog.switchToBERView();
+                    }
+                });
+            }
         },
         /**
          * Show change details for current field being focused
          */
         showChangeDetailsForCurrentField: function () {
-            $('#titleDet').text(App.fieldObject.label);
+            $('#titleDet').text(App.fieldObject.label).prepend(App.spanElement);
             $("#cComment").val(App.fieldObject.comment);
-            $('#titleDet span').hide();
+            $("#actionBadge").show();
+            $(".info-link-u").hide();
 
             //show relevant input field
             $('[id^="if"]').hide();
 
             if (App.fieldObject.requestable) {
-                if (("#actionBadge")) {
-                    $("#actionBadge").text("Update Request");
+                if ($("#actionBadge").length) {
+                    $("#actionBadge").text("UR");
                     $("#actionBadge").removeClass("badge-info");
                     $("#actionBadge").addClass("badge-warning");
                     $("#actionBadge").attr('data-original-title', "Update Request");
                     $(".old").hide();
                 }
             } else {
-                if (("#actionBadge")) {
-                    $("#actionBadge").text("Updated");
+                if ($("#actionBadge").length) {
+                    $("#actionBadge").text("U");
                     $("#actionBadge").removeClass("badge-warning");
                     $("#actionBadge").addClass("badge-info");
                     $("#actionBadge").attr('data-original-title', "Updated");
@@ -303,10 +312,36 @@
             App.fieldObject = App.updateFields.find(item => item.id === (fieldId));
 
             //to tab and field    
+            $('.nav-tabs .active').removeClass('active');
             $('.tab-pane').removeClass('active');
             $('#' + App.fieldObject.tab).tab('show');
             $('#' + App.fieldObject.tab).addClass('active');
+            $('.' + App.fieldObject.tab).addClass('active');
 
+            //update breadcrumbs for the new tab
+            if (App.FVDetails && typeof App.FVDetails.getSectionsById === 'function') {
+                let sections = App.FVDetails.getSectionsById('#' + App.fieldObject.tab);
+                if (sections) {
+                    sections.forEach((section, index) => {
+                        const breadcrumbItem = document.querySelector(`#n${index + 1}`);
+                        if (breadcrumbItem) {
+                            breadcrumbItem.textContent = section;
+                            breadcrumbItem.parentElement.style.display = "list-item";
+                        }
+                    });
+                    for (let i = sections.length + 1; i <= 10; i++) {
+                        const breadcrumbItem = document.querySelector(`#n${i}`);
+                        if (breadcrumbItem) {
+                            breadcrumbItem.parentElement.style.display = "none";
+                        }
+                    }
+                }
+                if (typeof App.FVDetails.adjustMainPanelHeight === 'function') {
+                    setTimeout(function () {
+                        App.FVDetails.adjustMainPanelHeight();
+                    }, 50);
+                }
+            }
 
             //to change view if not yet in there
             App.FVUpdate.showChangeDetailsForCurrentField();

@@ -81,12 +81,12 @@
 					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Country
 						of origin of the product: </label>
 					<div class="col-sm-5">
-						<select class="form-control form-control-sm mb-0">
+						<select multiple data-plugin-selectTwo class="form-control form-control-sm mb-0 populate">
 							<option value="AF">AF - Afghanistan</option>
 							<option value="AL">AL - Albania</option>
 							<option value="AD">AD - Andorra</option>
 							<option value="AO">AO - Angola</option>
-							<option value="BE">BE - Belgium</option>
+							<option value="BE" selected>BE - Belgium</option>
 							<option value="BR">BR - Brazil</option>
 							<option value="BA">BA - Bahamas</option>
 							<option value="BD">BD - Bangladesh</option>
@@ -102,7 +102,7 @@
 							<option value="EG">EG - Egypt</option>
 							<option value="EC">EC - Ecuador</option>
 							<option value="EE">EE - Estonia</option>
-							<option value="FR">FR - France</option>
+							<option value="FR" selected>FR - France</option>
 							<option value="FI">FI - Finland</option>
 							<option value="FJ">FJ - Fiji</option>
 							<option value="FM">FM - Micronesia (Federated States of)
@@ -144,17 +144,22 @@
 					</div>
 				</div>
 				<div class="row">
-					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product creation date:
+					<hr class="col-lg-9 offset-lg-1 dotted mt-1 mb-2">
+				</div>
+				<div class="row">
+					<label class="col-sm-3 control-label control-label-sm text-sm-right pt-1">Product creation
+						date:
 					</label>
 					<div class="col-sm-5">
-						<div class="input-group">
+						<div class="input-group input-group-sm">
 							<span class="input-group-prepend">
 								<span class="input-group-text">
 									<i class="fas fa-calendar-alt"></i>
 								</span>
 							</span>
-							<input type="text" data-plugin-datepicker data-plugin-options='{ "format": "dd/mm/yyyy" }'
-								class="form-control dateInput text-center" autocomplete="off" value="07/05/2024">
+							<input id="f1" type="text" data-plugin-datepicker
+								data-plugin-options='{ "format": "dd/mm/yyyy" }'
+								class="form-control form-control-sm dateInput" autocomplete="off" value="07/05/2024">
 						</div>
 					</div>
 				</div>

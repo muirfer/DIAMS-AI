@@ -34,7 +34,7 @@
 							<div class="col-sm-5">
 								<div class="input-group input-group-sm">
 									<span class="input-group-prepend">
-										<button class="btn btn-default btn-sm temperature" type="button">Min</button>
+										<button class="btn btn-default btn-sm temp-range-prepend-btn" type="button">Min</button>
 										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
 												class="fas fa-link" data-toggle="tooltip" data-placement="left"
 												title="Source: GDSN"></i></button>
@@ -44,14 +44,14 @@
 								</div>
 								<div class="input-group input-group-sm">
 									<span class="input-group-prepend">
-										<button class="btn btn-default btn-sm temperature" type="button">Ideal</button>
+										<button class="btn btn-default btn-sm temp-range-prepend-btn" type="button">Ideal</button>
 									</span>
 									<input type="text" name="tideal" class=" form-control form-control-sm text-right"
 										autocomplete="off" autocorrect="off" spellcheck="false" value="5">
 								</div>
 								<div class="input-group input-group-sm">
 									<span class="input-group-prepend">
-										<button class="btn btn-default btn-sm temperature" type="button">Max</button>
+										<button class="btn btn-default btn-sm temp-range-prepend-btn" type="button">Max</button>
 										<button class="btn btn-default i-link i-link-f" type="button" tabindex="-1"><i
 												class="fas fa-link" data-toggle="tooltip" data-placement="left"
 												title="Source: GDSN"></i></button>
@@ -342,7 +342,7 @@
 											data-dismiss="fileupload">Remove</a>
 									</div>
 								</div>
-								<img id="img" class="image-uploaded mt-3" src="img/packaging.webp" />
+								<img id="img" class="uploaded-image-preview mt-3" src="img/packaging.webp" />
 
 							</div>
 						</div>
@@ -366,7 +366,7 @@
 						<div class="row">
 							<div class="col-lg-10 offset-lg-1">
 								<!-- Start - DC Selection toolbar -->
-								<div class="row p-2 dc-toolbar">
+								<div class="row p-2 dc-selection-toolbar">
 									<label class="col-lg-9 control-label pt-2"><i
 											class="fa fa-exclamation mr-2"></i>Purchasing group
 										and
@@ -962,10 +962,10 @@
 									</header>
 									<div class="card-body pl-3 pr-3 pb-1 pt-0">
 										<!-- Start: Main values -->
-										<div class="row dc-main">
+										<div class="row dc-main-params-row">
 											<div class="col-lg-7 pl-1 pb-1 p-0">
 												<div class="form-group p-2 text-center">
-													<label class="dc-label m-0">Distribution
+													<label class="dc-field-label m-0">Distribution
 														profile</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -979,7 +979,7 @@
 											</div>
 											<div class="col-lg-5 pl-1 p-0 dc-ds">
 												<div class="form-group p-2 text-center">
-													<label class="dc-label m-0">Replenishment
+													<label class="dc-field-label m-0">Replenishment
 														type</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -991,8 +991,8 @@
 											</div>
 											<div class="col-lg-2 offset-lg-1 pl-1 p-0 dc-dll" style="display: none;">
 												<div class="form-group p-2 text-center">
-													<label class="dc-label m-0">Workbench</label>
-													<div class="checkbox-custom dc-chk">
+													<label class="dc-field-label m-0">Workbench</label>
+													<div class="checkbox-custom dc-centered-checkbox">
 														<input type="checkbox" checked id="checkboxExample2">
 														<label for="checkboxExample2"></label>
 													</div>
@@ -1000,8 +1000,8 @@
 											</div>
 											<div class="col-lg-2 pl-1 p-0 dc-dll" style="display: none;">
 												<div class="form-group p-2 text-center">
-													<label class="dc-label m-0">VMI</label>
-													<div class="checkbox-custom dc-chk">
+													<label class="dc-field-label m-0">VMI</label>
+													<div class="checkbox-custom dc-centered-checkbox">
 														<input type="checkbox" checked id="checkboxExample2">
 														<label for="checkboxExample2"></label>
 													</div>
@@ -1012,7 +1012,7 @@
 										<div class="row">
 											<div class="col-lg-7 pl-1 p-0">
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Logistics handling
+													<label class="dc-field-label m-0">Logistics handling
 														group</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -1025,7 +1025,7 @@
 													</select>
 												</div>
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Pick unit
+													<label class="dc-field-label m-0">Pick unit
 														placement</label>
 													<div class="input-group input-group-sm text-center">
 														<span class="input-group-prepend">
@@ -1043,7 +1043,7 @@
 													</div>
 												</div>
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Stock
+													<label class="dc-field-label m-0">Stock
 														planner</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -1059,7 +1059,7 @@
 											</div>
 											<div class="col-lg-5 pl-1 p-0">
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Multi store
+													<label class="dc-field-label m-0">Multi store
 														order</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -1069,7 +1069,7 @@
 													</select>
 												</div>
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Storage
+													<label class="dc-field-label m-0">Storage
 														class</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -1081,7 +1081,7 @@
 													</select>
 												</div>
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Scannable</label>
+													<label class="dc-field-label m-0">Scannable</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
 														<option selected="">0 - N/A</option>
@@ -1090,7 +1090,7 @@
 													</select>
 												</div>
 												<div class="form-group pt-1 pb-1 pl-2 pr-2 text-center">
-													<label class="dc-label m-0">Delivery
+													<label class="dc-field-label m-0">Delivery
 														unit</label>
 													<select class="form-control form-control-sm mb-0 text-center">
 														<option value=""></option>
@@ -1146,7 +1146,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="1703258">
 								<div class="row">
 									<div class="col-lg-12">
-										<label class="col-form-label txt-large-desc pt-0">This is a text of 255
+										<label class="col-form-label field-helper-desc pt-0">This is a text of 255
 											characters that is the largest size that this text
 											can get from the backend. This is a text of 255
 											characters that is the largest size that this text
@@ -1171,7 +1171,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="1703258">
 								<div class="row">
 									<div class="col-lg-12">
-										<label class="col-form-label txt-large-desc pt-0">This is a text of 255
+										<label class="col-form-label field-helper-desc pt-0">This is a text of 255
 											characters that is the largest size that this text
 											can get from the backend. This is a text of 255
 											characters that is the largest size that this text
@@ -1201,7 +1201,7 @@
 							<div class="col-sm-5">
 								<div class="input-group input-group-sm">
 									<span class="input-group-prepend">
-										<button class="btn btn-default btn-sm btn-moq" type="button">CV</button>
+										<button class="btn btn-default btn-sm moq-uom-prepend-btn" type="button">CV</button>
 									</span>
 									<input type="text" name="moq" class="form-control form-control-sm text-right"
 										autocomplete="off" autocorrect="off" spellcheck="false" value="170">
@@ -1249,12 +1249,12 @@
 						</div>
 						<div class="row mt-3 mb-3">
 							<div class="col-lg-4 offset-lg-3 text-center">
-								<span class="badge badge-info sBadge">Delivery lead
+								<span class="badge badge-info section-col-badge">Delivery lead
 									time
 									pattern</span>
 							</div>
 							<div class="col-lg-2 text-center">
-								<span class="badge badge-info sBadge">Ordering
+								<span class="badge badge-info section-col-badge">Ordering
 									days</span>
 							</div>
 						</div>
@@ -1266,7 +1266,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="15">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" checked id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
@@ -1280,7 +1280,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="10">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
@@ -1294,7 +1294,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="5">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" checked id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
@@ -1308,7 +1308,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="0">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
@@ -1322,7 +1322,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="10">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" checked id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
@@ -1336,7 +1336,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="0">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
@@ -1350,7 +1350,7 @@
 									autocomplete="off" autocorrect="off" spellcheck="false" value="20">
 							</div>
 							<div class="col-sm-2 text-center">
-								<div class="checkbox-custom mt-1 ord-chk">
+								<div class="checkbox-custom mt-1 ordering-day-checkbox">
 									<input type="checkbox" checked id="checkboxExample2">
 									<label for="checkboxExample2"></label>
 								</div>
