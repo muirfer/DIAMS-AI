@@ -84,7 +84,7 @@
          */
         storeAllFieldsOriginalValues: function () {
             /** On load, store all fields original values for input and select values */
-            $('input:not(#pPricesNew *), select, textarea:not(#cComment,#fComment)').each(function () {
+            $('input:not(#pPricesNew *, #customOverlayPanel *, #modal_gtin *), select:not(#customOverlayPanel *, #modal_gtin *), textarea:not(#cComment,#fComment,#customOverlayPanel *, #modal_gtin *)').each(function () {
                 var input = $(this);
                 input.data('originalValue', input.val());
                 input.attr("readonly", "readonly");
@@ -92,7 +92,7 @@
             });
 
             /** On load, store all checkbox fields original values */
-            $('input[type="checkbox"]:not(#pPricesNew *)').each(function () {
+            $('input[type="checkbox"]:not(#pPricesNew *, #customOverlayPanel *, #modal_gtin *)').each(function () {
                 $(this).data('originalValue', $(this).is(':checked'));
                 $(this).attr("disabled", "disabled");
             });
@@ -101,7 +101,7 @@
          * On field focus, determine fieldObject to treat and focus on change details if applies
          */
         initializeAllFieldsFocusEvent: function () {
-            $('input:not(#pPricesNew *), select, textarea:not(#cComment,#fComment)').on('focus', function () {
+            $('input:not(#pPricesNew *, #customOverlayPanel *, #modal_gtin *), select:not(#customOverlayPanel *, #modal_gtin *), textarea:not(#cComment,#fComment,#customOverlayPanel *, #modal_gtin *)').on('focus', function () {
                 let fieldId = $(this).attr('id');
 
                 //get field object
@@ -119,12 +119,12 @@
         * Apply updates accordingly if the status changes for the field 
         */
         initializeAllFieldsChangeEvent: function () {
-            $('input[type="text"]:not(.dateInput,#pPricesNew *),input[type="date"]:not(#pPricesNew *),textarea:not(#cComment,#fComment)').on('input', function () { App.FVUpdateStepSpecific.doOnFieldValueUpdated($(this)); });
-            $('.dateInput:not(#pPricesNew *)').on('changeDate', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
-            $('select:not(#pPricesNew *)').on('change', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
+            $('input[type="text"]:not(.dateInput,#pPricesNew *,#customOverlayPanel *,#modal_gtin *),input[type="date"]:not(#pPricesNew *,#customOverlayPanel *,#modal_gtin *),textarea:not(#cComment,#fComment,#customOverlayPanel *,#modal_gtin *)').on('input', function () { App.FVUpdateStepSpecific.doOnFieldValueUpdated($(this)); });
+            $('.dateInput:not(#pPricesNew *,#customOverlayPanel *,#modal_gtin *)').on('changeDate', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
+            $('select:not(#pPricesNew *,#customOverlayPanel *,#modal_gtin *)').on('change', function () { App.FVUpdate.doOnFieldValueUpdated($(this)); });
 
             /** Same as above but for checkboxes - special case*/
-            $('input[type="checkbox"]:not(#pPricesNew *)').on('change', function () {
+            $('input[type="checkbox"]:not(#pPricesNew *,#customOverlayPanel *,#modal_gtin *)').on('change', function () {
                 let currentValue = $(this).is(':checked');
                 let fieldId = $(this).attr('id');
                 let isComplexStructure = $(this).is('input[type="checkbox"]') && $(this).closest('#f4').length > 0;
@@ -167,9 +167,11 @@
          * More common initializations
          */
         initializeCommonFeatures: function () {
-            if ($('#cComment')) {
-                $('#cComment').on('change', function () {
-                    App.fieldObject.comment = $(this).val();
+            if ($('#cComment').length) {
+                $('#cComment').on('input change', function () {
+                    if (App.fieldObject) {
+                        App.fieldObject.comment = $(this).val();
+                    }
                 });
             }
 
@@ -227,10 +229,15 @@
 
             //switch panels
             App.FVSummaryLog.switchToChangeView();
-            $('#pChangeDet').show('flip', function () {
-                // Hide the "pChangeDet" panel with a flip animation
-                $('#pChangeMain').hide('flip');
-            });
+            if ($('#pChangeMain').is(':visible')) {
+                $('#pChangeDet').show('flip', function () {
+                    // Hide the "pChangeMain" panel with a flip animation
+                    $('#pChangeMain').hide('flip');
+                });
+            } else {
+                $('#pChangeDet').show();
+                $('#pChangeMain').hide();
+            }
 
             //hide or show action buttons
             App.FVUpdateStepSpecific.showOrHideActionButtons();
@@ -261,8 +268,10 @@
         discard: function () {
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
 
-            //reset value
-            if ($(fieldId).is('input[type="checkbox"]')) {
+            // If discarding a supplier GTIN table update (rf11 / rf12), reset the GTIN table in #customOverlayPanel
+            if (App.fieldObject.carouselIndex !== undefined && App.FVUom && typeof App.FVUom.resetTableToInitialState === 'function') {
+                App.FVUom.resetTableToInitialState(App.fieldObject.carouselIndex);
+            } else if ($(fieldId).is('input[type="checkbox"]')) {
                 $(fieldId).prop('checked', $(this).data('originalValue'));
                 $(fieldId).parent().removeClass('checkbox-warning');
                 $(fieldId).parent().addClass('checkbox-default');
@@ -273,10 +282,12 @@
             //hide in table
             $("#" + App.fieldObject.id).hide();
             App.fieldObject.comment = "";
+            App.fieldObject.reviewDone = false;
 
-            //remove change highlight and move back
+            //remove change highlight and move back (keep overlay open if currently open)
             $(fieldId).removeClass(App.focusableClasses.join(" "));
-            App.FVSummaryLog.goBack();
+            var keepOverlayOpen = $('#customOverlayPanel').hasClass('open');
+            App.FVSummaryLog.goBack(keepOverlayOpen);
 
             //assess confirm button vis
             App.FVUpdate.showOrHideConfirmButton();
@@ -345,6 +356,22 @@
 
             //to change view if not yet in there
             App.FVUpdate.showChangeDetailsForCurrentField();
+
+            // If the change belongs to a supplier GTIN carousel slide inside #customOverlayPanel, open/position the overlay panel;
+            // otherwise, if #customOverlayPanel is open, close it when focusing on a field outside the overlay
+            if (App.fieldObject && App.fieldObject.carouselIndex !== undefined && App.FVUom) {
+                if ($('#customOverlayPanel').hasClass('open')) {
+                    App.FVUom.moveTo(App.fieldObject.carouselIndex, 300);
+                } else if (typeof App.FVUom.openOverlayPanel === 'function') {
+                    App.FVUom.openOverlayPanel(App.fieldObject.carouselIndex);
+                }
+            } else if ($('#customOverlayPanel').hasClass('open')) {
+                if (App.FVUom && typeof App.FVUom.closeOverlayPanel === 'function') {
+                    App.FVUom.closeOverlayPanel(true);
+                } else {
+                    $('#customOverlayPanel').removeClass('open');
+                }
+            }
         },
         /**
          * Discard all updates
@@ -364,6 +391,10 @@
             });
 
             $('[id^="rf"]').hide();
+            if (App.FVUom && typeof App.FVUom.resetTableToInitialState === 'function') {
+                App.FVUom.resetTableToInitialState(0);
+                App.FVUom.resetTableToInitialState(1);
+            }
             App.FVSummaryLog.switchToProductMainInfoView();
 
             //assess confirm button vis
@@ -454,18 +485,26 @@
          * Undo change evaluation
          */
         undoChangeEvaluation: function () {
-            if (App.fieldObject.requestable && App.discardWhenRequestableIsUndone) {
+            if (App.fieldObject.requestable && App.fieldObject.review && App.discardWhenRequestableIsUndone) {
                 App.FVUpdate.discard();
                 return;
             }
 
             App.fieldObject.reviewDone = false;
+            if (!App.fieldObject.review && App.fieldObject.requestable) {
+                App.fieldObject.comment = "";
+                $("#cComment").val("");
+            }
+            if (App.fieldObject.actionBtnId) {
+                $(App.fieldObject.actionBtnId).show();
+            }
             $("#cComment").removeClass("rejected");
             $("#txtRequired").hide();
             App.FVUpdateStepSpecific.showOrHideActionButtons();
 
             //remove last comment done
             $('.tm-items li.' + App.fieldObject.timeline + ':last').hide();
+            App.FVUpdate.showTimelineForCurrentField();
 
             //get field object
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
@@ -562,12 +601,21 @@
          * Request field update
          */
         requestFieldUpdate: function () {
-            //comment is mandatory on rejection
+            if (App.fieldObject && $('#cComment').length) {
+                App.fieldObject.comment = $('#cComment').val();
+            }
+
+            //comment is mandatory on rejection/request
             if (!App.FVUpdate.isValidRequiredComment()) {
                 return;
             }
 
             App.fieldObject.reviewDone = true;
+
+            // Hide corresponding "Request update" button in the overlay panel if applicable
+            if (App.fieldObject.actionBtnId) {
+                $(App.fieldObject.actionBtnId).hide();
+            }
 
             //show row on change log    
             $("#" + App.fieldObject.id).show();
@@ -576,7 +624,7 @@
             //show only relevant fields
             App.FVUpdateStepSpecific.showOrHideActionButtons();
 
-            //ADD orange color to field
+            //ADD orange/cyan border to field
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
             $(fieldId).addClass('c_requested');
 
@@ -656,8 +704,8 @@
          * Show timeline for current field
          */
         showTimelineForCurrentField: function () {
-            //show relevant timeline
-            if (App.FVUpdateStepSpecific.displayTimeline()) {
+            //show relevant timeline only when timeline items exist for the field
+            if (App.FVUpdateStepSpecific.displayTimeline() && App.fieldObject && App.fieldObject.timeline && $("." + App.fieldObject.timeline).length > 0) {
                 $("#secTimeline").show();
                 $('[class^="time_if"]').hide();
                 $("." + App.fieldObject.timeline).show();

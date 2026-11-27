@@ -40,10 +40,10 @@
 															class="form-control form-control-sm mb-0 text-center">
 															<option value="1234567890231" selected>1234567890231
 															</option>
-															<option value="1234567890231">1234567265623</option>
-															<option value="1234567890231">1234564515225</option>
-															<option value="1234567890231">1234561227859</option>
-															<option value="1234567890231">1234561965468</option>
+															<option value="1234567265623">1234567265623</option>
+															<option value="1234564515225">1234564515225</option>
+															<option value="1234561227859">1234561227859</option>
+															<option value="1234561965468">1234561965468</option>
 														</select>
 														<span class="input-group-append">
 															<a class="btn-tertiary openCustomPanel text-center"
@@ -922,7 +922,7 @@
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-lg-10 offset-lg-1">
+												<div id="f11" class="col-lg-10 offset-lg-1">
 													<table class="table table-hover table-sm mb-0" id="datatable-gtinu">
 														<thead style="background: snow;font-size: small;width: 100%;">
 															<tr>
@@ -1038,7 +1038,7 @@
 																</td>
 																<td class="actions-hover actions-fade tCell-7 text-center"
 																	style="width: 10%;">
-																	<a onclick="javascript:removeNew()"
+																	<a onclick="javascript:removeNew(this)"
 																		class="delete-row" data-original-title=""
 																		title="Remove new GTIN"><i
 																			class="far fa-trash-alt"></i></a>
@@ -1908,7 +1908,7 @@
 												</div>
 											</div>
 											<div class="row">
-												<div class="col-lg-10 offset-lg-1">
+												<div id="f12" class="col-lg-10 offset-lg-1">
 													<table class="table table-hover table-sm mb-0"
 														id="datatable-gtinu-2">
 														<thead style="background: snow;font-size: small;width: 100%;">
@@ -1937,7 +1937,100 @@
 															</tr>
 														</thead>
 														<tbody>
-															<tr class="gtinSelected">
+															<tr id="rowNewGtin2" style="display: none;">
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_2"
+																			id="6546776458654_2">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	6546776458654</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;" rel="tooltip"
+																			data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;">
+																	<div class="input-group form-group mb-3">
+																		<select
+																			class="form-control form-control-sm gtinInputValues">
+																			<option selected>Change of weight < 25% (no
+																					variable weight)</option>
+																			<option>Change of weight on variable weight
+																				product (no colisage change)</option>
+																			<option>Change dimensions or gross weight or
+																				crate type</option>
+																			<option>Packaging change (layout) with no
+																				impact on allergens, Nutriscore or
+																				dimensions</option>
+																			<option>Recipe change with no impact on
+																				allergens</option>
+																			<option>Brand changes within private brands
+																			</option>
+																		</select>
+																		<span class="input-group-append">
+																			<a class="modal-basic btn btn-default btn-xs"
+																				href="#modalInfoReason"
+																				style="background: lightgray;text-align: center;font-size: small;">
+																				<i class="fas fa-info"></i>
+																			</a>
+																		</span>
+																	</div>
+																	<div id="newMainGtinMode2"
+																		class="input-group form-group mb-3"
+																		style="display: none;">
+																		<span class="input-group-prepend">
+																			<a class="btn btn-default btn-xs"
+																				style="background: snow;text-align: center;font-size: small;">
+																				<i class="fas fa-calendar-alt"></i>
+																				Set as main on
+																			</a>
+																		</span>
+																		<input type="text" data-plugin-datepicker
+																			class="form-control form-control-sm gtinInputValues"
+																			autocomplete="off" value="30/12/2023">
+																		<span class="input-group-append">
+																			<a class="modal-basic btn btn-default btn-xs"
+																				href="#modalInfoNewMainGtin"
+																				style="background: lightgray;text-align: center;font-size: small;">
+																				<i class="fas fa-info"></i>
+																			</a>
+																		</span>
+																	</div>
+																</td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:removeNew(this)"
+																		class="delete-row" data-original-title=""
+																		title="Remove new GTIN"><i
+																			class="far fa-trash-alt"></i></a>
+																</td>
+															</tr>
+															<tr class="gtinSelected gtinDefault">
 																<td style="text-align: center;width: 5%;">
 																	<div class="form-check form-check-inline"
 																		style="margin-right: 0;">

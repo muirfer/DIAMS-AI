@@ -16,6 +16,8 @@
         { id: "rf5", iType: "if5", label: "Number of components (Offer)", tab: "pLinks", comment: "", timeline: "time_if5", review: true, reviewDone: false, requestable: true, initStatus: "c_requested", initValue: "210" },
         { id: "rf6", iType: "if6", label: "Implantation guidelines (French)", tab: "pStore", comment: "", timeline: "time_if6", review: true, reviewDone: false, requestable: true },
         { id: "rf10", iType: "if10", label: "Product number used by Supplier (0010002878)", tab: "pPurchasing", comment: "", timeline: "time_if10", review: false, reviewDone: false, requestable: false, initStatus: "changed", initValue: "9876543210001263" },
+        { id: "rf11", iType: "if11", label: "0050013489 - GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if11", review: false, reviewDone: false, requestable: false, carouselIndex: 0 },
+        { id: "rf12", iType: "if12", label: "0051185194 - GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if12", review: false, reviewDone: false, requestable: false, carouselIndex: 1 }
     ];
 
     // Module for handling Update logic in Full view details panel for S3
@@ -95,7 +97,8 @@
                     singleSupplierItem: true,
                     actionBtnMode: 'show',
                     enableRadios: true,
-                    showTrashOnHover: true
+                    showTrashOnHover: true,
+                    showNewMainGtinMode: false
                 });
             }
         },
@@ -188,6 +191,13 @@
                         $(".rComment").show();
                     }
                 }
+            } else if (App.fieldObject.id === 'rf11' || App.fieldObject.id === 'rf12') {
+                // New GTIN table update created by supplier in overlay panel
+                $("#btnDiscard").show();
+                $("#btnApprove").hide();
+                $("#btnReject").hide();
+                $("#btnUndo").hide();
+                $(".rComment").show();
             } else {
                 //done by CE - readonly or approved
                 $("#btnApprove").hide();

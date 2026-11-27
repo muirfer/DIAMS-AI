@@ -16,6 +16,9 @@
         { id: "rf5", iType: "if5", label: "Number of components (Offer)", tab: "pLinks", comment: "", timeline: "time_if5", review: false, reviewDone: false, requestable: true, initStatus: "requestable", initValue: "210" },
         { id: "rf6", iType: "if6", label: "Implantation guidelines (French)", tab: "pStore", comment: "", timeline: "time_if6", review: false, reviewDone: false, requestable: true },
         { id: "rf10", iType: "if10", label: "Product number used by Supplier (0010002878)", tab: "pPurchasing", comment: "", timeline: "time_if10", review: false, reviewDone: false, requestable: false, initValue: "9876543210001263" },
+        { id: "rf11", iType: "if11", label: "0050013489 - GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if11", review: false, reviewDone: false, requestable: false, carouselIndex: 0 },
+        { id: "rf12", iType: "if12", label: "0051185194 - GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if12", review: false, reviewDone: false, requestable: false, carouselIndex: 1 },
+        { id: "rf13", iType: "if13", label: "Main GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if13", review: false, reviewDone: false, requestable: false }
     ];
 
     // Module for handling Update logic in Full view details panel for S2
@@ -62,7 +65,8 @@
                     singleSupplierItem: false,
                     actionBtnMode: 'show',
                     enableRadios: true,
-                    showTrashOnHover: true
+                    showTrashOnHover: true,
+                    showNewMainGtinMode: true
                 });
             }
         },
