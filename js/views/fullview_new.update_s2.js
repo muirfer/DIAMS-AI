@@ -51,6 +51,20 @@
 
             //attach go buttons
             App.FVUpdate.attachGoButtons();
+
+            // Configure UoM GTIN overlay panel for scenario S2
+            if (App.FVUom && typeof App.FVUom.configureForScenario === 'function') {
+                App.FVUom.configureForScenario({
+                    openBtnIcon: 'fas fa-users',
+                    openBtnTooltip: 'Open GTIN details per supplier',
+                    title: 'GTINs per supplier',
+                    subtitle: 'Scroll through all suppliers using the navigation buttons or select a supplier with the button on the right.',
+                    singleSupplierItem: false,
+                    actionBtnMode: 'show',
+                    enableRadios: true,
+                    showTrashOnHover: true
+                });
+            }
         },
         /** 
          * Handle field value updates

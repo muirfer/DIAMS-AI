@@ -550,7 +550,7 @@ p#txtRequired {
 
 /* Target: Icon <i> inside <a class="openCustomPanel"> */
 .openCustomPanel i {
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 /* Target: GDSN external link indicator icon <a class="... i-link-f"> */
@@ -875,6 +875,29 @@ p#txtRequired {
 /* Target: Reused GTIN warning label/checkbox <... class="... gtin-reuse-highlight"> */
 .gtin-reuse-highlight {
     color: darkred;
+}
+
+/* Target: Slide-out overlay panel <div id="customOverlayPanel"> for GTIN details per supplier in UoM panel (hidden off-screen to the right by default) */
+#customOverlayPanel {
+    position: fixed !important;
+    right: auto !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+    z-index: 9999 !important;
+    transform: translateX(100%) !important;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease-out, visibility 0.3s ease-out !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Target: Open state of <div id="customOverlayPanel" class="open"> sliding in from right to left over #fullview-right-col */
+#customOverlayPanel.open {
+    transform: translateX(0) !important;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Target: Table header cells <th> inside <thead class="suppack-table-thead"> in Support Packaging table */

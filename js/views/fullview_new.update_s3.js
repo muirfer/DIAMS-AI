@@ -84,6 +84,20 @@
 
             //attach go buttons
             App.FVUpdate.attachGoButtons();
+
+            // Configure UoM GTIN overlay panel for scenario S3
+            if (App.FVUom && typeof App.FVUom.configureForScenario === 'function') {
+                App.FVUom.configureForScenario({
+                    openBtnIcon: 'fas fa-plus',
+                    openBtnTooltip: 'Open GTIN details ',
+                    title: 'GTINs',
+                    subtitle: 'Details of your own GTINs',
+                    singleSupplierItem: true,
+                    actionBtnMode: 'show',
+                    enableRadios: true,
+                    showTrashOnHover: true
+                });
+            }
         },
         /**
          * Return true if timeline should be displayed

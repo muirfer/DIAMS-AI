@@ -37,6 +37,11 @@
             //remove padding from main content to fit better the form and take more advantage of the screen width
             $(".content-body").addClass("p-0");
 
+            // Initialize UoM panel overlay bounds and events if module is loaded
+            if (App.FVUom && typeof App.FVUom.initialize === 'function') {
+                App.FVUom.initialize();
+            }
+
             //calculate scrollable content area to fit cleanly to viewport bottom
             FVDetails.adjustMainPanelHeight();
             setTimeout(function () {

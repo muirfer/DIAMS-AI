@@ -1,2005 +1,2340 @@
-						<!-- Start - Panel - Units of Measure -->
-						<div id="pUoM" class="tab-pane scrollable main-panel" data-plugin-scrollable>
-							<div class="scrollable-content">
-								<!-- Start - Subpanel - Measurement Data -->
-								<div id="section1" class="row">
-									<div class="col-lg-12">
-										<section class="card card-transparent mb-4">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-toggle"
-														data-card-toggle></a>
-												</div>
+<!-- Start - Panel - Units of Measure -->
+<div id="pUoM" class="tab-pane scrollable main-panel" data-plugin-scrollable>
+	<div class="scrollable-content">
+		<!-- Start - Subpanel - Measurement Data -->
+		<div id="section1" class="row">
+			<div class="col-lg-12">
+				<section class="card card-transparent mb-4">
+					<header class="card-header">
+						<div class="card-actions">
+							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+						</div>
 
-												<h2 class="card-title">Measurement Data</h2>
-												<p class="card-subtitle"></p>
-											</header>
-											<div class="card-body">
-												<div class="row">
-													<div class="col-lg-2">
-														<div class="form-group row"
-															style="margin-top: 125px !important;">
-															<label
-																class="col-sm-12 control-label text-sm-right pt-2">Main
-																GTIN: </label>
-														</div>
-														<div class="form-group row">
-															<label
-																class="col-sm-12 control-label text-sm-right pt-2">Nbr
-																lower level: </label>
-														</div>
-														<div class="form-group row">
-															<label
-																class="col-sm-12 control-label text-sm-right pt-2">Alt.
-																UoM: </label>
-														</div>
-														<div class="form-group row">
-															<label
-																class="col-sm-12 control-label text-sm-right pt-2">Hope:
-															</label>
-														</div>
-														<div class="form-group row">
-															<label
-																class="col-sm-12 control-label text-sm-right pt-2">Weight:
-															</label>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-12 control-label text-sm-right pt-2"
-																style="margin-top: 75px !important;">Dimension: </label>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-12 control-label text-sm-right pt-2"
-																style="margin-top: 115px !important;">Volume: </label>
-														</div>
-													</div>
-													<div class="col-lg-10">
-														<div id="carUoM" class="owl-carousel owl-theme"
-															data-plugin-carousel
-															data-plugin-options='{ "dots": false, "nav": true, "items": 3 }'>
-															<div class="item" style="background: ghostwhite;">
-																<div class="row">
-																	<div class="col-lg-12"
-																		style="text-align: center;padding-top: 10px;">
-																		<span
-																			class="badge badge-success section-col-badge">KG</span>
-																	</div>
-																</div>
-																<div class="row" style="margin-bottom: 15px;">
-																	<div class="col-lg-8 offset-lg-3">
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" checked
-																					id="chkSales1">
-																				<label for="chkSales1">Sales</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" id="chkPO1">
-																				<label for="chkPO1">PO</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" checked
-																					id="chkDel1">
-																				<label for="chkDel1">Deliv</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" id="chkSCF1">
-																				<label for="chkSCF1">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group form-group mb-3">
-																			<input type="text" name="mgtin"
-																				class="form-control" autocomplete="off"
-																				value="1234567890123"
-																				style="text-align: center;font-size: smaller;">
-																			<span class="input-group-append">
-																				<a href="#modal_gtin"
-																					class="btn-tertiary modal-with-zoom-anim ws-normal"
-																					style="width: 40px;text-align:center;opacity: 0.7;"><i
-																						class="fas fa-search"
-																						style="margin-top: 12px;"></i></a>
-																				<!-- <button class="btn btn-default" type="button">
-																					<i class="fas fa-search"></i>
-																				</button> -->
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="1,000" style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option>KG</option>
-																			<option selected>EA</option>
-																			<option>IP</option>
-																			<option>CS</option>
-																			<option>LY</option>
-																			<option>PL</option>
-																			<option>SRP</option>
-																			<option>L</option>
-																		</select>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="123456789"
-																			style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option selected>KG - Kilogram
-																					</option>
-																					<option>G - Gram</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Net</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="1234,678"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Gross</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="7654,321"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option selected>CM - Centimeter
-																					</option>
-																					<option>M - Meter</option>
-																					<option>DM - Decimeter</option>
-																					<option>MM - Milimeter</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Length</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="321,178"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Width</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="854,641"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Height</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="547,142"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row"
-																	style="padding-bottom: 10px;">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group">
-																			<input type="text" name="vol"
-																				class="form-control" autocomplete="off"
-																				style="text-align: right;font-size: smaller;"
-																				value="156312,251">
-																			<span class="input-group-append">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="background-color: floralwhite;text-align: center;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM
-																					</option>
-																				</select>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="item">
-																<div class="row">
-																	<div class="col-lg-12"
-																		style="text-align: center;padding-top: 10px;">
-																		<span class="badge badge-info section-col-badge">EA</span>
-																	</div>
-																</div>
-																<div class="row" style="margin-bottom: 15px;">
-																	<div class="col-lg-8 offset-lg-3">
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" checked
-																					id="chkSales2">
-																				<label for="chkSales2">Sales</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" checked
-																					id="chkPO2">
-																				<label for="chkPO2">PO</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" id="chkDeliv2">
-																				<label for="chkDeliv2">Deliv</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" checked
-																					id="chkSCF2">
-																				<label for="chkSCF2">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group form-group mb-3">
-																			<input type="text" name="mgtin"
-																				class="form-control" autocomplete="off"
-																				value="1234567890944"
-																				style="text-align: center;font-size: smaller;">
-																			<span class="input-group-append">
-																				<a href="#modal_gtin"
-																					class="btn-tertiary modal-with-zoom-anim ws-normal"
-																					style="width: 40px;text-align:center;opacity: 0.7;"><i
-																						class="fas fa-search"
-																						style="margin-top: 12px;"></i></a>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="5,500" style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option>KG</option>
-																			<option>EA</option>
-																			<option selected>IP</option>
-																			<option>CS</option>
-																			<option>LY</option>
-																			<option>PL</option>
-																			<option>SRP</option>
-																			<option>L</option>
-																		</select>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="123459876"
-																			style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option>KG - Kilogram</option>
-																					<option selected>G - Gram</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Net</button>
-																					</span>
-																					<input id="f2" type="text"
-																					class="form-control form-control"
-																					value="4321,855"
-																					style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Gross</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="7500,151"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option>CM - Centimeter</option>
-																					<option>M - Meter</option>
-																					<option selected>DM - Decimeter
-																					</option>
-																					<option>MM - Milimeter</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Length</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="185,320"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Width</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="54,255"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Height</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="925,300"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row"
-																	style="padding-bottom: 10px;">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group">
-																			<input type="text" name="vol"
-																				class="form-control" autocomplete="off"
-																				style="text-align: right;font-size: smaller;"
-																				value="854321,101">
-																			<span class="input-group-append">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="background-color: floralwhite;text-align: center;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM
-																					</option>
-																				</select>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="item">
-																<div class="row">
-																	<div class="col-lg-12"
-																		style="text-align: center;padding-top: 10px;">
-																		<span class="badge badge-info section-col-badge">IP</span>
-																	</div>
-																</div>
-																<div class="row" style="margin-bottom: 15px;">
-																	<div class="col-lg-8 offset-lg-3">
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" id="chkSales3">
-																				<label for="chkSales3">Sales</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" checked
-																					id="chkPO3">
-																				<label for="chkPO3">PO</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" checked
-																					id="chkDeliv3">
-																				<label for="chkDeliv3">Deliv</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" id="chkSCF3">
-																				<label for="chkSCF3">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group form-group mb-3">
-																			<input type="text" name="mgtin"
-																				class="form-control" autocomplete="off"
-																				value="9876567890123"
-																				style="text-align: center;font-size: smaller;">
-																			<span class="input-group-append">
-																				<a href="#modal_gtin"
-																					class="btn-tertiary modal-with-zoom-anim ws-normal"
-																					style="width: 40px;text-align:center;opacity: 0.7;"><i
-																						class="fas fa-search"
-																						style="margin-top: 12px;"></i></a>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="25,320" style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option>KG</option>
-																			<option>EA</option>
-																			<option>IP</option>
-																			<option selected>CS</option>
-																			<option>LY</option>
-																			<option>PL</option>
-																			<option>SRP</option>
-																			<option>L</option>
-																		</select>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="567856789"
-																			style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option selected>KG - Kilogram
-																					</option>
-																					<option>G - Gram</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Net</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="5678,345"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Gross</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="7890,100"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option>CM - Centimeter</option>
-																					<option>M - Meter</option>
-																					<option>DM - Decimeter</option>
-																					<option selected>MM - Milimeter
-																					</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Length</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="598,200"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Width</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="300,515"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Height</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="470,225"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row"
-																	style="padding-bottom: 10px;">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group">
-																			<input type="text" name="vol"
-																				class="form-control" autocomplete="off"
-																				style="text-align: right;font-size: smaller;"
-																				value="512744,985">
-																			<span class="input-group-append">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="background-color: floralwhite;text-align: center;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM
-																					</option>
-																				</select>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="item">
-																<div class="row">
-																	<div class="col-lg-12"
-																		style="text-align: center;padding-top: 10px;">
-																		<span class="badge badge-info section-col-badge">CV</span>
-																	</div>
-																</div>
-																<div class="row" style="margin-bottom: 15px;">
-																	<div class="col-lg-8 offset-lg-3">
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" id="chkSales4">
-																				<label for="chkSales4">Sales</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" checked
-																					id="chkPO4">
-																				<label for="chkPO4">PO</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" id="chkDeliv4">
-																				<label for="chkDeliv4">Deliv</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" id="chkSCF4">
-																				<label for="chkSCF4">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group form-group mb-3">
-																			<input type="text" name="mgtin"
-																				class="form-control" autocomplete="off"
-																				value="1234567890123"
-																				style="text-align: center;font-size: smaller;">
-																			<span class="input-group-append">
-																				<a href="#modal_gtin"
-																					class="btn-tertiary modal-with-zoom-anim ws-normal"
-																					style="width: 40px;text-align:center;opacity: 0.7;"><i
-																						class="fas fa-search"
-																						style="margin-top: 12px;"></i></a>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="150,325" style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option>KG</option>
-																			<option>EA</option>
-																			<option>IP</option>
-																			<option>CS</option>
-																			<option selected>LY</option>
-																			<option>PL</option>
-																			<option>SRP</option>
-																			<option>L</option>
-																		</select>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="128923789"
-																			style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option>KG - Kilogram</option>
-																					<option selected>G - Gram</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Net</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="6879,112"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Gross</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="9012,450"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option>CM - Centimeter</option>
-																					<option selected>M - Meter</option>
-																					<option>DM - Decimeter</option>
-																					<option>MM - Milimeter</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Length</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="14,225"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Width</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="158,965"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Height</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="321,101"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row"
-																	style="padding-bottom: 10px;">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group">
-																			<input type="text" name="vol"
-																				class="form-control" autocomplete="off"
-																				style="text-align: right;font-size: smaller;"
-																				value="556124,195">
-																			<span class="input-group-append">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="background-color: floralwhite;text-align: center;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM
-																					</option>
-																				</select>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="item">
-																<div class="row">
-																	<div class="col-lg-12"
-																		style="text-align: center;padding-top: 10px;">
-																		<span class="badge badge-info section-col-badge">PL</span>
-																	</div>
-																</div>
-																<div class="row" style="margin-bottom: 15px;">
-																	<div class="col-lg-8 offset-lg-3">
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" checked
-																					id="chkSales5">
-																				<label for="chkSales5">Sales</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" id="chkPO5">
-																				<label for="chkPO5">PO</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-sm-6 checkbox-custom checkbox-default"
-																				style="margin-bottom: 0;">
-																				<input type="checkbox" checked
-																					id="chkDeliv5">
-																				<label for="chkDeliv5">Deliv</label>
-																			</div>
-																			<div
-																				class="col-sm-6 checkbox-custom checkbox-default">
-																				<input type="checkbox" id="chkSCF5">
-																				<label for="chkSCF5">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group form-group mb-3">
-																			<input type="text" name="mgtin"
-																				class="form-control" autocomplete="off"
-																				value="1234567890123"
-																				style="text-align: center;font-size: smaller;">
-																			<span class="input-group-append">
-																				<a href="#modal_gtin"
-																					class="btn-tertiary modal-with-zoom-anim ws-normal"
-																					style="width: 40px;text-align:center;opacity: 0.7;"><i
-																						class="fas fa-search"
-																						style="margin-top: 12px;"></i></a>
-																				<!-- <button class="btn btn-default" type="button">
-																					<i class="fas fa-search"></i>
-																				</button> -->
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="1,000" style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<select class="form-control mb-3 cust-select"
-																			style="text-align: center;">
-																			<option></option>
-																			<option>KG</option>
-																			<option selected>EA</option>
-																			<option>IP</option>
-																			<option>CS</option>
-																			<option>LY</option>
-																			<option>PL</option>
-																			<option>SRP</option>
-																			<option>L</option>
-																		</select>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<input type="text" name="nll"
-																			class="form-control" autocomplete="off"
-																			value="123456789"
-																			style="text-align: center;">
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option selected>KG - Kilogram
-																					</option>
-																					<option>G - Gram</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Net</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="1234,678"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Gross</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="7654,321"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row">
-																	<div class="col-sm-10 offset-lg-1">
-																		<section class="col-sm-12 form-group-vertical">
-																			<div class="row">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="text-align: center;">
-																					<option></option>
-																					<option selected>CM - Centimeter
-																					</option>
-																					<option>M - Meter</option>
-																					<option>DM - Decimeter</option>
-																					<option>MM - Milimeter</option>
-																				</select>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Length</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="321,178"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Width</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="854,641"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																			<div class="row">
-																				<div class="input-group">
-																					<span class="input-group-prepend">
-																						<button
-																							class="btn btn-default baseUoM"
-																							style="font-size: smaller;background: snow;width: 55px;"
-																							type="button">Height</button>
-																					</span>
-																					<input type="text"
-																						class="form-control form-control"
-																						value="547,142"
-																						style="text-align: right;font-size: smaller;">
-																				</div>
-																			</div>
-																		</section>
-																	</div>
-																</div>
-																<div class="form-group row"
-																	style="padding-bottom: 10px;">
-																	<div class="col-sm-10 offset-lg-1">
-																		<div class="input-group">
-																			<input type="text" name="vol"
-																				class="form-control" autocomplete="off"
-																				style="text-align: right;font-size: smaller;"
-																				value="156312,251">
-																			<span class="input-group-append">
-																				<select
-																					class="form-control mb-3 cust-select"
-																					style="background-color: floralwhite;text-align: center;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM
-																					</option>
-																				</select>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<!-- <div class="row">
-													<div class="col-lg-11 offset-lg-1">
-														<section class="card card-featured card-featured-success mb-4">
-															<header class="card-header">
-																<div class="card-actions">
-																	<div class="row" style="margin-top: 10px;">
-																		<div class="col-lg-3">
-																			<div class="checkbox-custom checkbox-default">
-																				<input type="checkbox" checked="" id="checkboxExample1">
-																				<label for="checkboxExample1">Sales UoM</label>
-																			</div>
-																		</div>
-																		<div class="col-lg-3">
-																			<div class="checkbox-custom checkbox-default">
-																				<input type="checkbox" checked="" id="checkboxExample1">
-																				<label for="checkboxExample1">Deliv. UoM</label>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<div class="checkbox-custom checkbox-default">
-																				<input type="checkbox" checked="" id="checkboxExample1">
-																				<label for="checkboxExample1">PO UoM</label>
-																			</div>
-																		</div>
-																		<div class="col-lg-2 offset-lg-1">
-																			<div class="checkbox-custom checkbox-default" style="margin-top: 8px;">
-																				<input type="checkbox" checked="" id="checkboxExample1">
-																				<label for="checkboxExample1">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-							
-																<h2 class="card-title">KG</h2>
-																<p class="card-subtitle">Main GTIN: <code style="font-size: initial;">1234567890213</code>&nbsp;&nbsp;&nbsp;<a href="#modal_gtin" class="btn-default modal-with-zoom-anim ws-normal" style="width: 40px;text-align:center;"><i class="fas fa-search" style="margin-top: 0px;font-size: larger;"></i></a></p>
-															</header>
-															<div class="card-body">
-																<div class="row">
-																	<div class="col-lg-2" style="background: floralwhite;text-align: center;">																			
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Nbr lower level</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<input type="text" name="nll" class="form-control" autocomplete="off" value="1,000" style="text-align: center;">
-																			</div>																					
-																		</div>	
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Alt. UoM</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;">
-																					<option></option>
-																					<option>KG</option>
-																					<option selected>EA</option>
-																					<option>IP</option>
-																					<option>CS</option>
-																					<option>LY</option>
-																					<option>PL</option>
-																					<option>SRP</option>
-																					<option>L</option>
-																				</select>
-																			</div>																					
-																		</div>	
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Hope</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<input type="text" name="nll" class="form-control" autocomplete="off" value="123456789" style="text-align: center;margin-bottom: 10px;">																	
-																			</div>																					
-																		</div>																																								
-																	</div>
-																	<div class="col-lg-9 offset-lg-1">		
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Dimension:</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-10">
-																				<div class="input-daterange input-group">																						
-																					<span class="input-group-text border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Length
-																					</span>
-																					<input type="text" class="form-control form-control" value="321,178" style="text-align: center;">
-																					<span class="input-group-text border-left-0 border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Width
-																					</span>
-																					<input type="text" class="form-control form-control" value="854,641" style="text-align: center;">		
-																					<span class="input-group-text border-left-0 border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Height
-																					</span>
-																					<input type="text" class="form-control form-control" value="547,142" style="text-align: center;">																																									
-																				</div>
-																			</div>		
-																			<div class="col-lg-2">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;font-size: smaller;">
-																					<option></option>
-																					<option selected>CM</option>
-																					<option>M</option>																				
-																					<option>DM</option>																				
-																					<option>MM</option>																				
-																				</select>	
-																			</div>																																
-																		</div>	
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Weight:</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-10">
-																				<div class="input-daterange input-group">																							
-																					<span class="input-group-text border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Net
-																					</span>
-																					<input type="text" class="form-control form-control" value="1234,678" style="text-align: center;">
-																					<span class="input-group-text border-left-0 border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Gross
-																					</span>
-																					<input type="text" class="form-control form-control" value="7654,321" style="text-align: center;">
-																				</div>
-																			</div>	
-																			<div class="col-lg-2">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;font-size: smaller;">
-																					<option></option>
-																					<option selected>KG</option>
-																					<option>G</option>																				
-																				</select>
-																			</div>																							
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Volume:</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-10">
-																				<input type="text" name="vol" class="form-control" autocomplete="off" style="text-align: center;" value="156312,251">																	
-																			</div>	
-																			<div class="col-lg-2">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;font-size: smaller;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM</option>																																
-																				</select>	
-																			</div>																					
-																		</div>		
-																	</div>
-																</div>																																														
-															</div>
-														</section>
-														<section class="card card-featured  mb-4">
-															<header class="card-header">
-																<div class="card-actions">
-																	<div class="row" style="margin-top: 10px;">
-																		<div class="col-lg-3">
-																			<div class="checkbox-custom checkbox-default">
-																				<input type="checkbox" checked="" id="checkboxExample1a">
-																				<label for="checkboxExample1a">Sales UoM</label>
-																			</div>
-																		</div>
-																		<div class="col-lg-3">
-																			<div class="checkbox-custom checkbox-default">
-																				<input type="checkbox" id="checkboxExample1b">
-																				<label for="checkboxExample1b">Deliv. UoM</label>
-																			</div>
-																		</div>
-																		<div class="col-lg-2">
-																			<div class="checkbox-custom checkbox-default">
-																				<input type="checkbox" checked="" id="checkboxExample1c">
-																				<label for="checkboxExample1c">PO UoM</label>
-																			</div>
-																		</div>
-																		<div class="col-lg-2 offset-lg-1">
-																			<div class="checkbox-custom checkbox-default" style="margin-top: 8px;">
-																				<input type="checkbox" id="checkboxExample1d">
-																				<label for="checkboxExample1d">SCF</label>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-							
-																<h2 class="card-title">EA</h2>
-																<p class="card-subtitle">Main GTIN: <code style="font-size: initial;">1234567314225</code>&nbsp;&nbsp;&nbsp;<a href="#modal_gtin" class="btn-default modal-with-zoom-anim ws-normal" style="width: 40px;text-align:center;"><i class="fas fa-search" style="margin-top: 0px;font-size: larger;"></i></a></p>
-															</header>
-															<div class="card-body">
-																<div class="row">
-																	<div class="col-lg-2" style="background: floralwhite;text-align: center;">																			
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Nbr lower level</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<input type="text" name="nll" class="form-control" autocomplete="off" value="5,500" style="text-align: center;">
-																			</div>																					
-																		</div>	
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Alt. UoM</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;">
-																					<option></option>
-																					<option>KG</option>
-																					<option>EA</option>
-																					<option selected>IP</option>
-																					<option>CS</option>
-																					<option>LY</option>
-																					<option>PL</option>
-																					<option>SRP</option>
-																					<option>L</option>
-																				</select>
-																			</div>																					
-																		</div>	
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Hope</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<input type="text" name="nll" class="form-control" autocomplete="off" value="987654321" style="text-align: center;margin-bottom: 10px;">																	
-																			</div>																					
-																		</div>																																								
-																	</div>
-																	<div class="col-lg-9 offset-lg-1">		
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Dimension:</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-10">
-																				<div class="input-daterange input-group">																						
-																					<span class="input-group-text border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Length
-																					</span>
-																					<input type="text" class="form-control form-control" value="115,525" style="text-align: center;">
-																					<span class="input-group-text border-left-0 border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Width
-																					</span>
-																					<input type="text" class="form-control form-control" value="320,175" style="text-align: center;">		
-																					<span class="input-group-text border-left-0 border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Height
-																					</span>
-																					<input type="text" class="form-control form-control" value="28,352" style="text-align: center;">																																									
-																				</div>
-																			</div>		
-																			<div class="col-lg-2">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;font-size: smaller;">
-																					<option></option>
-																					<option>CM</option>
-																					<option>M</option>																				
-																					<option selected>DM</option>																				
-																					<option>MM</option>																				
-																				</select>	
-																			</div>																																
-																		</div>	
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Weight:</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-10">
-																				<div class="input-daterange input-group">																							
-																					<span class="input-group-text border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Net
-																					</span>
-																					<input type="text" class="form-control form-control" value="3421,100" style="text-align: center;">
-																					<span class="input-group-text border-left-0 border-right-0 rounded-0" style="font-size: x-small;width: 60px;text-align: center;">
-																						Gross
-																					</span>
-																					<input type="text" class="form-control form-control" value="9522,120" style="text-align: center;">
-																				</div>
-																			</div>	
-																			<div class="col-lg-2">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;font-size: smaller;">
-																					<option></option>
-																					<option>KG</option>
-																					<option selected>G</option>																				
-																				</select>
-																			</div>																							
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-12">
-																				<label class="col-form-label" for="formGroupExampleInput">Volume:</label>
-																			</div>
-																		</div>
-																		<div class="row">
-																			<div class="col-lg-10">
-																				<input type="text" name="vol" class="form-control" autocomplete="off" style="text-align: center;" value="925140,001">																	
-																			</div>	
-																			<div class="col-lg-2">
-																				<select class="form-control mb-3 cust-select" style="text-align: center;font-size: smaller;">
-																					<option value=""></option>
-																					<option value="CDM" selected>CDM</option>																																
-																				</select>	
-																			</div>																					
-																		</div>		
-																	</div>
-																</div>																																														
-															</div>
-														</section>
-													</div>
-												</div>																				 -->
-											</div>
-										</section>
-									</div>
-								</div>
-								<!-- End - Subpanel - Measurement Data -->
-								<!-- Start - Subpanel - Support Packaging -->
-								<div id="section2" class="row" style="margin-top: 50px;">
-									<div class="col-lg-12">
-										<section class="card card-transparent mb-4">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-toggle"
-														data-card-toggle></a>
-												</div>
+						<h2 class="card-title">Measurement Data</h2>
+						<p class="card-subtitle"></p>
+					</header>
+					<div class="card-body">
+						<div class="row new-uom">
+							<div class="col-lg-10 offset-lg-1">
+								<section class="card card-featured card-featured-success mb-4">
+									<header class="card-header">
+										<div class="card-actions">
+											<span class="badge badge-success" data-toggle="tooltip"
+												data-placement="bottom"
+												title="Flag indicating which Unit of Measure (UoM) is used as the base UoM that will be used as the stock keeping unit. It must always be the smallest UoM of that product. Is expressed in EA (Each) or KG (Kilogram).">Base
+												UoM</span>
+											<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a> -->
+										</div>
 
-												<h2 class="card-title">Support Packaging</h2>
-												<p class="card-subtitle"></p>
-											</header>
-											<div class="card-body">
-												<div class="row">
-													<div class="col-lg-11 offset-lg-1">
-														<table class="table table-responsive-md table-hover mb-3">
-															<thead>
-																<tr>
-																	<th
-																		style="text-align: center;width: 10%;vertical-align: middle;">
-																		Type</th>
-																	<th style="width: 32%;vertical-align: middle;">
-																		Details</th>
-																	<th style="text-align: center;width: 23%;">
-																		Tare<br /><code>in grams</code></th>
-																	<th style="text-align: center;width: 15%;">Number of
-																		crates <br /><code>for one order unit</code>
-																	</th>
-																	<th style="text-align: center;width: 7%;"></th>
-																</tr>
-															</thead>
-															<tbody id="tableBody">
-																<tr id="row1">
-																	<td id="cat"
-																		style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-																		ZMP1
-																		<p
-																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
-																			Minipallets / Display</p><br>
-																	</td>
-																	<td style="vertical-align: middle;">
-																		<div id="sapId" class="title-header">1234567
-																		</div>
-																		<div id="mainTitle" class="title-line">Some
-																			40ch. support packaging description</div>
-																		<div class="text-lines"
-																			style="margin-top: 5px;">
-																			<p>12345678 - SOCIETE FERMIERE ROCHEFORT
-																				ARDENNES</p>
-																			<p style="color: darkgreen;">PO UoM:
-																				<u>CV</u>
-																			</p><br>
-																		</div>
-																	</td>
-																	<td
-																		style="text-align: center;vertical-align: middle;">
-																		<div class="row">
-																			<div class="col-lg-11 offset-lg-1">
-																				<div class="input-group">
-																					<input type="text" name="vol"
-																						class="form-control"
-																						autocomplete="off"
-																						style="text-align: center;"
-																						value="90200,05">
-																					<span class="input-group-append">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
-																							type="button">EA</button>
-																					</span>
-																				</div>
-																			</div>
-																		</div>
-																	</td>
-																	<td
-																		style="text-align: center;vertical-align: middle;">
-																		<div class="row">
-																			<input type="text" value="158"
-																				style="text-align: center;"
-																				class="form-control col-lg-8 offset-lg-2"
-																				placeholder="">
-																		</div>
-																	</td>
-																	<td style="text-align: center;"
-																		class="actions-hover actions-fade">
-																		<a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a>
-																		<a href="" class="delete-row"><i
-																				class="far fa-trash-alt"></i></a>
-																	</td>
-																</tr>
-																<tr id="row2">
-																	<td id="cat"
-																		style="text-align: center; width: 1px;background-color: ghostwhite;vertical-align: middle;font-weight: bold;">
-																		ZCR1
-																		<p
-																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
-																			Crate</p><br>
-																	</td>
-																	<td style="vertical-align: middle;">
-																		<div id="sapId" class="title-header">7654321
-																		</div>
-																		<div id="mainTitle" class="title-line">Some
-																			other support packaging description</div>
-																		<div class="text-lines"
-																			style="margin-top: 5px;">
-																			<p>34567890 - UNILEVER BELGUIM</p>
-																			<p style="color: darkgreen;">PO UoM:
-																				<u>IP</u>
-																			</p><br>
-																		</div>
-																	</td>
-																	<td
-																		style="text-align: center;vertical-align: middle;">
-																		<div class="row">
-																			<div class="col-lg-11 offset-lg-1">
-																				<div class="input-group">
-																					<input type="text" name="vol"
-																						class="form-control"
-																						autocomplete="off"
-																						style="text-align: center;"
-																						value="54325,81">
-																					<span class="input-group-append">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
-																							type="button">IP</button>
-																					</span>
-																				</div>
-																			</div>
-																		</div>
-																	</td>
-																	<td
-																		style="text-align: center;vertical-align: middle;">
-																		<div class="row">
-																			<input type="text" value="315"
-																				style="text-align: center;"
-																				class="form-control col-lg-8 offset-lg-2"
-																				placeholder="">
-																		</div>
-																	</td>
-																	<td style="text-align: center;"
-																		class="actions-hover actions-fade">
-																		<a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a>
-																		<a href="" class="delete-row"><i
-																				class="far fa-trash-alt"></i></a>
-																	</td>
-																</tr>
-																<tr id="row2">
-																	<td id="cat"
-																		style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
-																		ZPT1
-																		<p
-																			style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
-																			Pallets</p><br>
-																	</td>
-																	<td style="vertical-align: middle;">
-																		<div id="sapId" class="title-header">4567890
-																		</div>
-																		<div id="mainTitle" class="title-line">Another
-																			SP description</div>
-																		<div class="text-lines"
-																			style="margin-top: 5px;">
-																			<p>6789012 - Coca-Cola Company</p>
-																			<p style="color: darkgreen;">PO UoM:
-																				<u>EA</u>
-																			</p><br>
-																		</div>
-																	</td>
-																	<td
-																		style="text-align: center;vertical-align: middle;">
-																		<div class="row">
-																			<div class="col-lg-11 offset-lg-1">
-																				<div class="input-group">
-																					<input type="text" name="vol"
-																						class="form-control"
-																						autocomplete="off"
-																						style="text-align: center;"
-																						value="19850,18">
-																					<span class="input-group-append">
-																						<button class="btn btn-default"
-																							style="font-size: smaller;background: snow;"
-																							type="button">PL</button>
-																					</span>
-																				</div>
-																			</div>
-																		</div>
-																	</td>
-																	<td
-																		style="text-align: center;vertical-align: middle;">
-																		<div class="row">
-																			<input type="text" value="91"
-																				style="text-align: center;"
-																				class="form-control col-lg-8 offset-lg-2"
-																				placeholder="">
-																		</div>
-																	</td>
-																	<td style="text-align: center;"
-																		class="actions-hover actions-fade">
-																		<a href="#modal_edit"
-																			class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
-																				class="fas fa-pencil-alt"></i></a>
-																		<a href="" class="delete-row"><i
-																				class="far fa-trash-alt"></i></a>
-																	</td>
-																</tr>
-															</tbody>
-														</table>
+										<h2 class="card-title">EA</h2>
+										<!-- <p class="card-subtitle">Base UoM</p> -->
+									</header>
+									<div class="card-body pl-3 pb-1 pt-0 pr-3">
+										<!-- Start: ID and GTIN values -->
+										<div class="row" style="background: linen;">
+											<div class="col-lg-3 pl-1 p-0 offset-lg-2">
+												<div class="form-group p-2 text-center">
+													<label class="m-0 uom-field-label">Main GTIN</label>
+													<div class="input-group">
+														<select id="f13"
+															class="form-control form-control-sm mb-0 text-center">
+															<option value="1234567890231" selected>1234567890231
+															</option>
+															<option value="1234567890231">1234567265623</option>
+															<option value="1234567890231">1234564515225</option>
+															<option value="1234567890231">1234561227859</option>
+															<option value="1234567890231">1234561965468</option>
+														</select>
+														<span class="input-group-append">
+															<a class="btn-tertiary openCustomPanel text-center"
+																data-original-title="" title="Open GTIN details"
+																href="#"
+																onclick="App.FVUom.openOverlayPanel(0); return false;"><i
+																	class="fas fa-users"></i></a>
+														</span>
 													</div>
 												</div>
 											</div>
-										</section>
-									</div>
-								</div>
-								<!-- End - Subpanel - Support Packaging -->
-								<!-- Start - Subpanel - Empties -->
-								<div id="section3" class="row" style="margin-top: 80px;">
-									<div class="col-lg-12">
-										<section class="card card-transparent mb-4">
-											<header class="card-header">
-												<div class="card-actions">
-													<a href="#" class="card-action card-action-toggle"
-														data-card-toggle></a>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0 uom-field-label">Nbr of lower
+														levels</label>
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false"
+														value="1232,000">
 												</div>
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0 uom-field-label">Hope code</label>
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" autocorrect="off" spellcheck="false"
+														value="1234854">
+												</div>
+											</div>
+										</div>
+										<!-- End: ID and GTIN values -->
+										<!-- Start: Flags -->
+										<div class="row">
+											<div class="col-lg-12 pl-1" style="background: ghostwhite;">
+												<div class="row pb-1 pt-2">
+													<div class="col-sm-2 offset-lg-3 checkbox-custom checkbox-default">
+														<input type="checkbox" checked id="chkSales">
+														<label for="chkSales">Sales</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkPO">
+														<label for="chkPO">PO</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkDeliv">
+														<label for="chkDeliv">Deliv</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkSCF">
+														<label for="chkSCF">SCF</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- End: Flags -->
+										<div class="row">
+											<!-- Start: Weight and volume -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-weight-hanging"></i>
+																	Weight</button>
+															</th>
+															<th style="width: 60%;">
+																<select
+																	class="form-control form-control-sm mb-0 text-center">
+																	<option></option>
+																	<option selected>KG - Kilogram
+																	</option>
+																	<option>G - Gram</option>
+																</select>
 
-												<h2 class="card-title">Consumer returnable empties</h2>
-												<p class="card-subtitle"></p>
-											</header>
-											<div class="card-body vTable">
-												<div class="row" style="margin-top: 25px;">
-													<div class="col-lg-3 offset-lg-2" style="text-align: center;">
-														<span class="badge badge-info section-col-badge">Empty
-															bottle</span>
-													</div>
-													<div class="col-lg-3" style="text-align: center;">
-														<span class="badge badge-info section-col-badge">Empty
-															crate</span>
-													</div>
-													<div class="col-lg-3" style="text-align: center;">
-														<span class="badge badge-info section-col-badge">Full
-															empty crate</span>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right uom-field-label">
+																Net
+															</td>
+															<td>
+																<input id="f2" type="text" name="wnet"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="2384,255">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right uom-field-label">
+																Gross
+															</td>
+															<td>
+																<input type="text" name="wgross"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="3258,965">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i class="fa fa-cube"></i>
+																	Volume</button>
+															</th>
+															<th style="width: 60%;">
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<select
+																			class="form-control form-control-sm mb-0"
+																			style="background-color: floralwhite;text-align: center;">
+																			<option value=""></option>
+																			<option value="CDM" selected>CDM
+																			</option>
+																		</select>
+																	</span>
+																	<input type="text" name="vol"
+																		class="form-control form-control-sm text-right"
+																		autocomplete="off" spellcheck="false"
+																		autocorrect="off" value="156312,251">
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Weight and volume -->
+											<!-- Start: Dimensions -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-ruler-combined"></i>
+																	Dimensions</button>
+															</th>
+															<th style="width: 60%;">
+																<select
+																	class="form-control form-control-sm mb-0 text-center">
+																	<option></option>
+																	<option>CM - Centimeter</option>
+																	<option>M - Meter</option>
+																	<option selected>DM - Decimeter
+																	</option>
+																	<option>MM - Milimeter</option>
+																</select>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right uom-field-label">
+																Length
+															</td>
+															<td>
+																<input type="text" name="dleng"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="128,965">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right uom-field-label">
+																Width
+															</td>
+															<td>
+																<input type="text" name="dwidt"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="150,115">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right uom-field-label">
+																Height
+															</td>
+															<td>
+																<input type="text" name="dheig"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="899,999">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Dimensions -->
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row new-uom">
+							<div class="col-lg-10 offset-lg-1">
+								<section class="card card-featured mb-4">
+									<header class="card-header">
+										<div class="card-actions">
+											<span class="badge badge-info" data-toggle="tooltip" data-placement="bottom"
+												title="Unit of measure that can be entered alternatively to the base unit of measure and represents the different levels of the product hierarchy (case, layer, pallet, ...)">Alt.
+												UoM: EA</span>
+											<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a> -->
+										</div>
+
+										<h2 class="card-title">CV</h2>
+										<!-- <p class="card-subtitle">Base UoM</p> -->
+									</header>
+									<div class="card-body pl-3 pb-1 pt-0 pr-3">
+										<!-- Start: ID and GTIN values -->
+										<div class="row" style="background: linen;">
+											<div class="col-lg-3 pl-1 p-0 offset-lg-2">
+												<div class="form-group p-2 text-center">
+													<label class="m-0 uom-field-label">Main GTIN</label>
+													<div class="input-group">
+														<select class="form-control form-control-sm mb-0 text-center">
+															<option value="1234567890231">1234567890231
+															</option>
+															<option value="1234567890231">1234567265623</option>
+															<option value="1234567890231">1234564515225</option>
+															<option value="1234567890231" selected>1234561227859
+															</option>
+															<option value="1234567890231">1234561965468</option>
+														</select>
+														<span class="input-group-append">
+															<a class="btn-tertiary openCustomPanel text-center"
+																data-original-title="" title="Open GTIN details"
+																href="#"
+																onclick="App.FVUom.openOverlayPanel(0); return false;"><i
+																	class="fas fa-users"></i></a>
+														</span>
 													</div>
 												</div>
-												<div class="form-group row">
-													<div class="col-sm-3 offset-lg-5">
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0 uom-field-label">Nbr of lower
+														levels</label>
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" spellcheck="false" autocorrect="off"
+														value="1232,000">
+												</div>
+											</div>
+											<div class="col-lg-3 pl-1 p-0">
+												<div class="form-group p-2 text-center">
+													<label class="m-0 uom-field-label">Hope code</label>
+													<input type="text" class="form-control form-control-sm text-center"
+														autocomplete="off" spellcheck="false" autocorrect="off"
+														value="1234854">
+												</div>
+											</div>
+										</div>
+										<!-- End: ID and GTIN values -->
+										<!-- Start: Flags -->
+										<div class="row">
+											<div class="col-lg-12 pl-1" style="background: ghostwhite;">
+												<div class="row pb-1 pt-2">
+													<div class="col-sm-2 offset-lg-3 checkbox-custom checkbox-default">
+														<input type="checkbox" checked id="chkSales">
+														<label for="chkSales">Sales</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkPO">
+														<label for="chkPO">PO</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkDeliv">
+														<label for="chkDeliv">Deliv</label>
+													</div>
+													<div class="col-sm-2 checkbox-custom checkbox-default">
+														<input type="checkbox" id="chkSCF">
+														<label for="chkSCF">SCF</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- End: Flags -->
+										<div class="row">
+											<!-- Start: Weight and volume -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-weight-hanging"></i>
+																	Weight</button>
+															</th>
+															<th style="width: 60%;">
+																<select
+																	class="form-control form-control-sm mb-0 text-center">
+																	<option></option>
+																	<option selected>KG - Kilogram
+																	</option>
+																	<option>G - Gram</option>
+																</select>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right uom-field-label">
+																Net
+															</td>
+															<td>
+																<input type="text" name="wnet"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="2384,255">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right uom-field-label">
+																Gross
+															</td>
+															<td>
+																<input type="text" name="wgross"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="3258,965">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i class="fa fa-cube"></i>
+																	Volume</button>
+															</th>
+															<th style="width: 60%;">
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<select
+																			class="form-control form-control-sm mb-0 text-center"
+																			style="background-color: floralwhite;">
+																			<option value=""></option>
+																			<option value="CDM" selected>CDM
+																			</option>
+																		</select>
+																	</span>
+																	<input type="text" name="vol"
+																		class="form-control form-control-sm text-right"
+																		autocomplete="off" spellcheck="false"
+																		autocorrect="off" value="156312,251">
+																</div>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Weight and volume -->
+											<!-- Start: Dimensions -->
+											<div class="col-lg-6 p-4">
+												<table class="table table-responsive-md table-sm mb-0">
+													<thead>
+														<tr>
+															<th style="width: 40%;">
+																<button type="button" class="btn btn-xs btn-transparent"
+																	style="width:100%"><i
+																		class="fa fa-ruler-combined"></i>
+																	Dimensions</button>
+															</th>
+															<th style="width: 60%;">
+																<select
+																	class="form-control form-control-sm mb-0 text-center">
+																	<option></option>
+																	<option>CM - Centimeter</option>
+																	<option>M - Meter</option>
+																	<option selected>DM - Decimeter
+																	</option>
+																	<option>MM - Milimeter</option>
+																</select>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-right uom-field-label">
+																Length
+															</td>
+															<td>
+																<input type="text" name="dleng"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="128,965">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right uom-field-label">
+																Width
+															</td>
+															<td>
+																<input type="text" name="dwidt"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="150,115">
+															</td>
+														</tr>
+														<tr>
+															<td class="text-right uom-field-label">
+																Height
+															</td>
+															<td>
+																<input type="text" name="dheig"
+																	class="form-control form-control-sm text-right"
+																	autocomplete="off" spellcheck="false"
+																	autocorrect="off" value="899,999">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<!-- End: Dimensions -->
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- End - Subpanel - Measurement Data -->
+		<!-- Start - Subpanel - Support Packaging -->
+		<div id="section2" class="row" style="margin-top: 50px;">
+			<div class="col-lg-12">
+				<section class="card card-transparent mb-4">
+					<header class="card-header">
+						<div class="card-actions">
+							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+						</div>
+
+						<h2 class="card-title">Support Packaging</h2>
+						<p class="card-subtitle"></p>
+					</header>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-lg-11 offset-lg-1">
+								<table class="table table-responsive-md table-hover mb-3">
+									<thead>
+										<tr>
+											<th style="text-align: center;width: 10%;vertical-align: middle;">
+												Type</th>
+											<th style="width: 32%;vertical-align: middle;">
+												Details</th>
+											<th style="text-align: center;width: 23%;">
+												Tare<br /><code>in grams</code></th>
+											<th style="text-align: center;width: 15%;">Number of
+												crates <br /><code>for one order unit</code>
+											</th>
+											<th style="text-align: center;width: 7%;"></th>
+										</tr>
+									</thead>
+									<tbody id="tableBody">
+										<tr id="row1">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+												ZMP1
+												<p style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+													Minipallets / Display</p><br>
+											</td>
+											<td style="vertical-align: middle;">
+												<div id="sapId" class="title-header">1234567
+												</div>
+												<div id="mainTitle" class="title-line">Some
+													40ch. support packaging description</div>
+												<div class="text-lines" style="margin-top: 5px;">
+													<p>12345678 - SOCIETE FERMIERE ROCHEFORT
+														ARDENNES</p>
+													<p style="color: darkgreen;">PO UoM:
+														<u>CV</u>
+													</p><br>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
 														<div class="input-group">
-															<span class="input-group-prepend">
+															<input type="text" name="vol" class="form-control"
+																autocomplete="off" style="text-align: center;"
+																value="90200,05">
+															<span class="input-group-append">
 																<button class="btn btn-default"
 																	style="font-size: smaller;background: snow;"
-																	type="button">GTIN</button>
+																	type="button">EA</button>
 															</span>
-															<input type="text" name="ec_gtin1" class="form-control"
-																autocomplete="off" style="text-align: center;"
-																value="109876543210">
 														</div>
 													</div>
-													<div class="col-lg-3" style="text-align: center;">
-														<label style="color: green;font-size: smaller;margin-top: 5px;"
-															class="col-form-label" for="formGroupExampleInput">Number of
-															full empty crate for CV: 1</label>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<div class="row">
+													<input type="text" value="158" style="text-align: center;"
+														class="form-control col-lg-8 offset-lg-2" placeholder="">
+												</div>
+											</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+												<a href="#modal_edit"
+													class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+														class="fas fa-pencil-alt"></i></a>
+												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+											</td>
+										</tr>
+										<tr id="row2">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: ghostwhite;vertical-align: middle;font-weight: bold;">
+												ZCR1
+												<p style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+													Crate</p><br>
+											</td>
+											<td style="vertical-align: middle;">
+												<div id="sapId" class="title-header">7654321
+												</div>
+												<div id="mainTitle" class="title-line">Some
+													other support packaging description</div>
+												<div class="text-lines" style="margin-top: 5px;">
+													<p>34567890 - UNILEVER BELGUIM</p>
+													<p style="color: darkgreen;">PO UoM:
+														<u>IP</u>
+													</p><br>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<div class="input-group">
+															<input type="text" name="vol" class="form-control"
+																autocomplete="off" style="text-align: center;"
+																value="54325,81">
+															<span class="input-group-append">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;"
+																	type="button">IP</button>
+															</span>
+														</div>
 													</div>
 												</div>
-												<div class="form-group row">
-													<label
-														class="col-sm-2 control-label text-sm-right pt-2">Description:
-													</label>
-													<div class="col-sm-3">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option selected="">Bottle Beer 33C 0.10E</option>
-															<option>Bottle Beer 50C 0.10E</option>
-															<option>Bottle Beer 100C 0.10E</option>
-															<option>Bottle Beer 500C 0.10E</option>
-														</select>
-													</div>
-													<div class="col-sm-3">
-														<input type="text" name="emcr1" class="form-control"
-															autocomplete="off" value="Bottle Beer 50C 0.10E">
-													</div>
-													<div class="col-sm-3">
-														<select class="form-control mb-3 cust-select">
-															<option value=""></option>
-															<option>Bottle Beer 33C 0.10E</option>
-															<option>Bottle Beer 50C 0.10E</option>
-															<option>Bottle Beer 100C 0.10E</option>
-															<option selected>Bottle Beer 500C 0.10E</option>
-														</select>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<div class="row">
+													<input type="text" value="315" style="text-align: center;"
+														class="form-control col-lg-8 offset-lg-2" placeholder="">
+												</div>
+											</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+												<a href="#modal_edit"
+													class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+														class="fas fa-pencil-alt"></i></a>
+												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+											</td>
+										</tr>
+										<tr id="row2">
+											<td id="cat"
+												style="text-align: center; width: 1px;background-color: linen;vertical-align: middle;font-weight: bold;">
+												ZPT1
+												<p style="font-size: x-small;line-height: 15px;margin-bottom: 0;">
+													Pallets</p><br>
+											</td>
+											<td style="vertical-align: middle;">
+												<div id="sapId" class="title-header">4567890
+												</div>
+												<div id="mainTitle" class="title-line">Another
+													SP description</div>
+												<div class="text-lines" style="margin-top: 5px;">
+													<p>6789012 - Coca-Cola Company</p>
+													<p style="color: darkgreen;">PO UoM:
+														<u>EA</u>
+													</p><br>
+												</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<div class="row">
+													<div class="col-lg-11 offset-lg-1">
+														<div class="input-group">
+															<input type="text" name="vol" class="form-control"
+																autocomplete="off" style="text-align: center;"
+																value="19850,18">
+															<span class="input-group-append">
+																<button class="btn btn-default"
+																	style="font-size: smaller;background: snow;"
+																	type="button">PL</button>
+															</span>
+														</div>
 													</div>
 												</div>
-												<div class="form-group row">
-													<label class="col-sm-2 control-label text-sm-right pt-2">Value in
-														€:
-													</label>
-													<div class="col-sm-3">
-														<input type="text" name="eb_val1" class="form-control"
-															autocomplete="off" style="text-align: center;" value="1,20">
-													</div>
-													<div class="col-sm-3">
-														<input type="text" name="ec_val2" class="form-control"
-															autocomplete="off" style="text-align: center;" value="0,25">
-													</div>
-													<div class="col-sm-3">
-														<input type="text" name="fec_val3" class="form-control"
-															autocomplete="off" style="text-align: center;"
-															value="12,50">
-													</div>
+											</td>
+											<td style="text-align: center;vertical-align: middle;">
+												<div class="row">
+													<input type="text" value="91" style="text-align: center;"
+														class="form-control col-lg-8 offset-lg-2" placeholder="">
 												</div>
-												<div class="form-group row">
-													<label class="col-sm-2 control-label text-sm-right pt-2">SAP ID:
-													</label>
-													<div class="col-sm-3">
-														<input type="text" name="eb_sap1" class="form-control"
-															autocomplete="off" style="text-align: center;"
-															value="12345678">
-													</div>
-													<div class="col-sm-3">
-														<input type="text" name="ec_sap2" class="form-control"
-															autocomplete="off" style="text-align: center;"
-															value="98745631">
-													</div>
-													<div class="col-sm-3">
-														<input type="text" name="fec_sap3" class="form-control"
-															autocomplete="off" style="text-align: center;"
-															value="54645625">
-													</div>
+											</td>
+											<td style="text-align: center;" class="actions-hover actions-fade">
+												<a href="#modal_edit"
+													class="mb-1 mt-1 mr-1 modal-with-zoom-anim ws-normal"><i
+														class="fas fa-pencil-alt"></i></a>
+												<a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- End - Subpanel - Support Packaging -->
+		<!-- Start - Subpanel - Empties -->
+		<div id="section3" class="row" style="margin-top: 80px;">
+			<div class="col-lg-12">
+				<section class="card card-transparent mb-4">
+					<header class="card-header">
+						<div class="card-actions">
+							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+						</div>
+
+						<h2 class="card-title">Consumer returnable empties</h2>
+						<p class="card-subtitle"></p>
+					</header>
+					<div class="card-body vTable">
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-lg-3 offset-lg-2" style="text-align: center;">
+								<span class="badge badge-info section-col-badge">Empty
+									bottle</span>
+							</div>
+							<div class="col-lg-3" style="text-align: center;">
+								<span class="badge badge-info section-col-badge">Empty
+									crate</span>
+							</div>
+							<div class="col-lg-3" style="text-align: center;">
+								<span class="badge badge-info section-col-badge">Full
+									empty crate</span>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-3 offset-lg-5">
+								<div class="input-group">
+									<span class="input-group-prepend">
+										<button class="btn btn-default" style="font-size: smaller;background: snow;"
+											type="button">GTIN</button>
+									</span>
+									<input type="text" name="ec_gtin1" class="form-control" autocomplete="off"
+										style="text-align: center;" value="109876543210">
+								</div>
+							</div>
+							<div class="col-lg-3" style="text-align: center;">
+								<label style="color: green;font-size: smaller;margin-top: 5px;" class="col-form-label"
+									for="formGroupExampleInput">Number of
+									full empty crate for CV: 1</label>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 control-label text-sm-right pt-2">Description:
+							</label>
+							<div class="col-sm-3">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option selected="">Bottle Beer 33C 0.10E</option>
+									<option>Bottle Beer 50C 0.10E</option>
+									<option>Bottle Beer 100C 0.10E</option>
+									<option>Bottle Beer 500C 0.10E</option>
+								</select>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" name="emcr1" class="form-control" autocomplete="off"
+									value="Bottle Beer 50C 0.10E">
+							</div>
+							<div class="col-sm-3">
+								<select class="form-control mb-3 cust-select">
+									<option value=""></option>
+									<option>Bottle Beer 33C 0.10E</option>
+									<option>Bottle Beer 50C 0.10E</option>
+									<option>Bottle Beer 100C 0.10E</option>
+									<option selected>Bottle Beer 500C 0.10E</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 control-label text-sm-right pt-2">Value in
+								€:
+							</label>
+							<div class="col-sm-3">
+								<input type="text" name="eb_val1" class="form-control" autocomplete="off"
+									style="text-align: center;" value="1,20">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" name="ec_val2" class="form-control" autocomplete="off"
+									style="text-align: center;" value="0,25">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" name="fec_val3" class="form-control" autocomplete="off"
+									style="text-align: center;" value="12,50">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 control-label text-sm-right pt-2">SAP ID:
+							</label>
+							<div class="col-sm-3">
+								<input type="text" name="eb_sap1" class="form-control" autocomplete="off"
+									style="text-align: center;" value="12345678">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" name="ec_sap2" class="form-control" autocomplete="off"
+									style="text-align: center;" value="98745631">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" name="fec_sap3" class="form-control" autocomplete="off"
+									style="text-align: center;" value="54645625">
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 80px;">
+						<div class="col-lg-9 offset-lg-2">
+							<table class="table table-responsive-md table-hover mb-3">
+								<thead>
+									<tr>
+										<th style="text-align: center;width: 10%;"></th>
+										<th style="text-align: center;width: 45%;">Number of
+											empty bottles</th>
+										<th style="text-align: center;width: 45%;">Number of
+											empty crates</th>
+									</tr>
+								</thead>
+								<tbody id="tableBody">
+									<tr>
+										<td id="cat"
+											style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+											EA</td>
+										<td style="text-align: center;vertical-align: middle;">
+											<div class="col-lg-8 offset-lg-2 input-group">
+												<input type="text" class="form-control" autocomplete="off"
+													style="text-align: center;" value="325">
+												<span class="input-group-append">
+													<button class="btn btn-default"
+														style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+														type="button">15,25
+														€</button>
+												</span>
+											</div>
+										</td>
+										<td style="text-align: center;vertical-align: middle;">
+											<div class="col-lg-8 offset-lg-2 input-group">
+												<input type="text" class="form-control" autocomplete="off"
+													style="text-align: center;" value="12">
+												<span class="input-group-append">
+													<button class="btn btn-default"
+														style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+														type="button">0,25
+														€</button>
+												</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td id="cat"
+											style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+											IP</td>
+										<td style="text-align: center;vertical-align: middle;">
+											<div class="col-lg-8 offset-lg-2 input-group">
+												<input type="text" class="form-control" autocomplete="off"
+													style="text-align: center;" value="120">
+												<span class="input-group-append">
+													<button class="btn btn-default"
+														style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+														type="button">7,92
+														€</button>
+												</span>
+											</div>
+										</td>
+										<td style="text-align: center;vertical-align: middle;">
+											<div class="col-lg-8 offset-lg-2 input-group">
+												<input type="text" class="form-control" autocomplete="off"
+													style="text-align: center;" value="2315">
+												<span class="input-group-append">
+													<button class="btn btn-default"
+														style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+														type="button">1120,10
+														€</button>
+												</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td id="cat"
+											style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
+											CV</td>
+										<td style="text-align: center;vertical-align: middle;">
+											<div class="col-lg-8 offset-lg-2 input-group">
+												<input type="text" class="form-control" autocomplete="off"
+													style="text-align: center;" value="58">
+												<span class="input-group-append">
+													<button class="btn btn-default"
+														style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+														type="button">8,50
+														€</button>
+												</span>
+											</div>
+										</td>
+										<td style="text-align: center;vertical-align: middle;">
+											<div class="col-lg-8 offset-lg-2 input-group">
+												<input type="text" class="form-control" autocomplete="off"
+													style="text-align: center;" value="60">
+												<span class="input-group-append">
+													<button class="btn btn-default"
+														style="font-size: smaller;background: snow;text-align: right;width: 80px;"
+														type="button">140,88
+														€</button>
+												</span>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- End - Subpanel - Empties -->
+	</div>
+</div>
+<!-- End - Panel - Units of Measure -->
+<!-- Start: overlay panel for GTIN details -->
+<div id="customOverlayPanel">
+	<div id="loadingIndicator" style="text-align: center; padding: 20px;">
+		<img src="./img/loading.gif" alt="Loading..." style="width: 640px; height: 480px;margin-top: 200px;">
+	</div>
+	<section class="card card-featured mb-4" id="panelContent" style="display: none;">
+		<header class="card-header">
+			<div class="card-actions">
+				<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a> -->
+				<a href="#" id="closeCustomPanel" class="card-action card-action-dismiss"
+					onclick="App.FVUom.closeOverlayPanel(); return false;"
+					style="margin-top: 10px;margin-right: 20px;"></a>
+			</div>
+
+			<h2 class="card-title" id="overlayPanelTitle">GTINs per supplier</h2>
+			<p class="card-subtitle" id="overlayPanelSubtitle">Scroll through all suppliers using the navigation buttons
+				or select a supplier with
+				the button on the right.</p>
+		</header>
+		<div class="card-body" style="background: bottom;padding-top: 0;">
+			<div class="row" style="margin-top: 50px;">
+				<div class="col-lg-11">
+					<section class="card mb-4">
+						<header class="card-header card-header-transparent text-center">
+							<h2 class="card-title" style="font-size: xx-large;">KG</h2>
+							<!-- <p class="card-subtitle">Scroll through all suppliers using the navigation buttons or select a supplier with the button on the right.</p> -->
+						</header>
+						<div class="card-body" style="background: bottom;padding-top: 0;">
+							<div class="row">
+								<div class="col-sm-12">
+									<div id="gtinCarousel" class="owl-carousel owl-theme" data-plugin-carousel
+										data-plugin-options='{ "dots": false, "nav": true, "items": 1 }'>
+										<div class="item">
+											<div class="row" style="margin-bottom: 20px;">
+												<div class="col-lg-10 offset-lg-1" style="text-align: center;">
+													<span class="badge badge-info"
+														style="font-size: large;width: 100%;margin-top: 12px;opacity:0.8;padding: 15px;">0050013489
+														- Coca-Cola Company</span>
 												</div>
 											</div>
-											<div class="row" style="margin-top: 80px;">
-												<div class="col-lg-9 offset-lg-2">
-													<table class="table table-responsive-md table-hover mb-3">
-														<thead>
+											<div class="row">
+												<div class="col-lg-10 offset-lg-1">
+													<table class="table table-hover table-sm mb-0" id="datatable-gtinu">
+														<thead style="background: snow;font-size: small;width: 100%;">
 															<tr>
-																<th style="text-align: center;width: 10%;"></th>
-																<th style="text-align: center;width: 45%;">Number of
-																	empty bottles</th>
-																<th style="text-align: center;width: 45%;">Number of
-																	empty crates</th>
+																<th class="text-center" rel="tooltip"
+																	data-original-title=""
+																	title="Main GTIN for Supplier"
+																	style="width: 5%, impor !important;">Main</th>
+																<th class="gtinValue"
+																	style="font-weight: 600;text-align: center;width: 15% !important;">
+																	GTIN</th>
+																<th class="gtinAction"
+																	style="font-weight: 600;width: 20%, impor !important;">
+																	Changes</th>
+																<th class="gtinReason"
+																	style="font-weight: 600;width: 50%, impor !important;">
+																	Reason / Conditions</th>
+																<th class="gtinAction text-center"
+																	style="font-weight: 600;width: 10%, !important;">
+																	<a id="btnActionGTIN" href="#modal_gtin"
+																		class="btn btn-default modal-with-zoom-anim ws-normal "><i
+																			class="fas fa-plus"
+																			style="margin-right: 15px;"></i>Add new
+																		GTIN</i></a>
+																</th>
 															</tr>
 														</thead>
-														<tbody id="tableBody">
-															<tr>
-																<td id="cat"
-																	style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-																	EA</td>
-																<td style="text-align: center;vertical-align: middle;">
-																	<div class="col-lg-8 offset-lg-2 input-group">
-																		<input type="text" class="form-control"
-																			autocomplete="off"
-																			style="text-align: center;" value="325">
+														<tbody>
+															<tr id="rowNewGtin" style="display: none;">
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="6546776458654">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	6546776458654</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;" rel="tooltip"
+																			data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;">
+																	<div class="input-group form-group mb-3">
+
+																		<select
+																			class="form-control form-control-sm gtinInputValues">
+																			<option selected>Change of weight < 25% (no
+																					variable weight)</option>
+																			<option>Change of weight on variable weight
+																				product (no colisage change)</option>
+																			<option>Change dimensions or gross weight or
+																				crate type</option>
+																			<option>Packaging change (layout) with no
+																				impact on allergens, Nutriscore or
+																				dimensions</option>
+																			<option>Recipe change with no impact on
+																				allergens</option>
+																			<option>Brand changes within private brands
+																			</option>
+																		</select>
 																		<span class="input-group-append">
-																			<button class="btn btn-default"
-																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
-																				type="button">15,25
-																				€</button>
+																			<a class="modal-basic btn btn-default btn-xs"
+																				href="#modalInfoReason"
+																				style="background: lightgray;text-align: center;font-size: small;">
+																				<i class="fas fa-info"></i>
+																			</a>
+																		</span>
+																	</div>
+																	<div id="newMainGtinMode"
+																		class="input-group form-group mb-3"
+																		style="display: none;">
+																		<span class="input-group-prepend">
+																			<a class="btn btn-default btn-xs"
+																				style="background: snow;text-align: center;font-size: small;">
+																				<i class="fas fa-calendar-alt"></i>
+																				Set as main on
+																			</a>
+																		</span>
+																		<input type="text" data-plugin-datepicker
+																			class="form-control form-control-sm gtinInputValues"
+																			autocomplete="off" value="30/12/2023">
+																		<span class="input-group-append">
+																			<a class="modal-basic btn btn-default btn-xs"
+																				href="#modalInfoNewMainGtin"
+																				style="background: lightgray;text-align: center;font-size: small;">
+																				<i class="fas fa-info"></i>
+																			</a>
 																		</span>
 																	</div>
 																</td>
-																<td style="text-align: center;vertical-align: middle;">
-																	<div class="col-lg-8 offset-lg-2 input-group">
-																		<input type="text" class="form-control"
-																			autocomplete="off"
-																			style="text-align: center;" value="12">
-																		<span class="input-group-append">
-																			<button class="btn btn-default"
-																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
-																				type="button">0,25
-																				€</button>
-																		</span>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:removeNew()"
+																		class="delete-row" data-original-title=""
+																		title="Remove new GTIN"><i
+																			class="far fa-trash-alt"></i></a>
+																</td>
+															</tr>
+															<tr class="gtinSelected gtinDefault">
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="1234567890123" checked>
 																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	1234567890123</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td id="cat"
-																	style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-																	IP</td>
-																<td style="text-align: center;vertical-align: middle;">
-																	<div class="col-lg-8 offset-lg-2 input-group">
-																		<input type="text" class="form-control"
-																			autocomplete="off"
-																			style="text-align: center;" value="120">
-																		<span class="input-group-append">
-																			<button class="btn btn-default"
-																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
-																				type="button">7,92
-																				€</button>
-																		</span>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="4321012398765" value="0">
 																	</div>
 																</td>
-																<td style="text-align: center;vertical-align: middle;">
-																	<div class="col-lg-8 offset-lg-2 input-group">
-																		<input type="text" class="form-control"
-																			autocomplete="off"
-																			style="text-align: center;" value="2315">
-																		<span class="input-group-append">
-																			<button class="btn btn-default"
-																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
-																				type="button">1120,10
-																				€</button>
-																		</span>
+																<td class="text-center" style="width: 15%;">
+																	4321012398765</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
 																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td id="cat"
-																	style="text-align: center; width: 1px;background-color: lightyellow;vertical-align: middle;font-weight: bold;">
-																	CV</td>
-																<td style="text-align: center;vertical-align: middle;">
-																	<div class="col-lg-8 offset-lg-2 input-group">
-																		<input type="text" class="form-control"
-																			autocomplete="off"
-																			style="text-align: center;" value="58">
-																		<span class="input-group-append">
-																			<button class="btn btn-default"
-																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
-																				type="button">8,50
-																				€</button>
-																		</span>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="4321876501239" value="0">
 																	</div>
 																</td>
-																<td style="text-align: center;vertical-align: middle;">
-																	<div class="col-lg-8 offset-lg-2 input-group">
-																		<input type="text" class="form-control"
-																			autocomplete="off"
-																			style="text-align: center;" value="60">
-																		<span class="input-group-append">
-																			<button class="btn btn-default"
-																				style="font-size: smaller;background: snow;text-align: right;width: 80px;"
-																				type="button">140,88
-																				€</button>
-																		</span>
+																<td class="text-center" style="width: 15%;">
+																	4321876501239</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
 																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="9876543210123" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	9876543210123</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="4567891230121" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4567891230121</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="3214569877894" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	3214569877894</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="1922526321543" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	1922526321543</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="4565749816522" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4565749816522</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="1199854514212" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	1199854514212</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="5956962654654" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	5956962654654</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="6654546554452" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	6654546554452</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="4657876984651" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4657876984651</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1" id="116265145448"
+																			value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">116265145448
+																</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="7986584655201" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	7986584655201</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1" id="789694655645"
+																			value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">789694655645
+																</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1" id="652650546545"
+																			value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">652650546545
+																</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_1"
+																			id="4478757847854" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4478757847854</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 														</tbody>
 													</table>
 												</div>
 											</div>
-										</section>
+										</div>
+										<div class="item">
+											<div class="row" style="margin-bottom: 20px;">
+												<div class="col-lg-10 offset-lg-1" style="text-align: center;">
+													<span class="badge badge-info"
+														style="font-size: large;width: 100%;margin-top: 12px;opacity:0.8;padding: 15px;">0051185194
+														- Unilever</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-10 offset-lg-1">
+													<table class="table table-hover table-sm mb-0"
+														id="datatable-gtinu-2">
+														<thead style="background: snow;font-size: small;width: 100%;">
+															<tr>
+																<th class="text-center" rel="tooltip"
+																	data-original-title=""
+																	title="Main GTIN for Supplier"
+																	style="width: 15%, impor !important;">Main</th>
+																<th class="gtinValue"
+																	style="font-weight: 600;text-align: center;width: 15%, !important;">
+																	GTIN</th>
+																<th class="gtinAction"
+																	style="font-weight: 600;width: 20%, impor !important;">
+																	Changes</th>
+																<th class="gtinReason"
+																	style="font-weight: 600;width: 50%, impor !important;">
+																	Reason</th>
+																<th class="gtinAction text-center"
+																	style="font-weight: 600;width: 10%, !important;">
+																	<a id="btnActionGTIN2" href="#modal_gtin"
+																		class="btn btn-default modal-with-zoom-anim ws-normal"><i
+																			class="fas fa-plus"
+																			style="margin-right: 15px;"></i>Add new
+																		GTIN</i></a>
+																</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr class="gtinSelected">
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_2"
+																			id="1234567890123" checked>
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	1234567890123</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_2"
+																			id="4321012398765" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4321012398765</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_2"
+																			id="4321876501239" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4321876501239</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_2"
+																			id="9876543210123" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	9876543210123</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+															<tr>
+																<td style="text-align: center;width: 5%;">
+																	<div class="form-check form-check-inline"
+																		style="margin-right: 0;">
+																		<input
+																			class="form-check-input radio-success gtinRadio"
+																			type="radio" name="main_2"
+																			id="4567891230121" value="0">
+																	</div>
+																</td>
+																<td class="text-center" style="width: 15%;">
+																	4567891230121</td>
+																<td style="width: 20%;">
+																	<div class="btn-group" role="group"
+																		aria-label="Table row actions">
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINNew"
+																			style="color:darkblue;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="New GTIN for supplier">New</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINMain"
+																			style="color:darkgreen;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as new main GTIN for supplier">New
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINSec"
+																			style="color:darkorange;display: none;"
+																			rel="tooltip" data-original-title=""
+																			title="Set as secondary GTIN. Former main GTIN">Old
+																			main</button>
+																		<button
+																			class="btn btn-xs btn-transparent btnGTINRemove"
+																			style="color:darkred;display: none;">Delete</button>
+																	</div>
+																</td>
+																<td class="tdExtra" style="width: 50%;"></td>
+																<td class="actions-hover actions-fade tCell-7 text-center"
+																	style="width: 10%;">
+																	<a onclick="javascript:markAsDeleted(this)"
+																		class="delete-row" data-original-title=""
+																		title="Mark for deletion"><i
+																			class="far fa-trash-alt"></i></a>
+																	<a onclick="javascript:undo(this)" class="undo-row"
+																		data-original-title="" title="Undo changes"
+																		style="display: none;"><i
+																			class="fa fa-undo"></i></a>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-								<!-- End - Subpanel - Empties -->
 							</div>
 						</div>
-						<!-- End - Panel - Units of Measure -->
-		<!-- Modal Gtins -->
-		<div id="modal_gtin" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
-			<section class="card">
-				<header class="card-header">
-					<h2 class="card-title">GTINs</h2>
-					<p class="card-subtitle">For EA</p>
-				</header>
-				<div class="card-body ">
-					<table class="table table-responsive table-hover mb-0" id="datatable-uom">
-						<thead>
-							<tr>
-								<th id="c1_gtin">GTIN</th>
-								<th id="c2_sup">Supplier</th>
-								<th id="c3_supgtin" style="text-align: center;">Main GTIN for supplier</th>
-								<th id="c4_perc" style="text-align: center;">Percentage</th>
-								<th style="text-align: center;display: none;">Actions</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr data-item-id="1">
-								<td style="font-weight: bold;">1234567890123&nbsp;&nbsp;<span
-										class="badge badge-success">Main GTIN</span></td>
-								<td>6789012 - Coca-Cola Company</td>
-								<td class="text-center">
-									<input id="lu_c3_chk_1" type="checkbox" checked disabled>
-								</td>
-								<td>
-									<div class="progress light m-2">
-										<div class="progress-bar progress-bar-primary" role="progressbar"
-											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-											style="width: 60%;">
-											60%
-										</div>
-									</div>
-								</td>
-								<td style="text-align: center;display: none;" class="actions">
-									<a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-									<a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-									<a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-									<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-								</td>
-							</tr>
-							<tr data-item-id="2">
-								<td style="font-weight: bold;">9876543210123</td>
-								<td>6789012 - Coca-Cola Company</td>
-								<td class="text-center">
-									<input id="lu_c3_chk_2" type="checkbox">
-								</td>
-								<td>
-									<div class="progress light m-2">
-										<div class="progress-bar progress-bar-primary" role="progressbar"
-											aria-valuenow="21" aria-valuemin="0" aria-valuemax="100"
-											style="width: 21%;">
-											21%
-										</div>
-									</div>
-								</td>
-								<td style="text-align: center;display: none;" class="actions">
-									<a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-									<a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-									<a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-									<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-								</td>
-							</tr>
-							<tr data-item-id="3">
-								<td style="font-weight: bold;">4321012398765</td>
-								<td>3210126 - UNILEVER BELGUIM</td>
-								<td class="text-center">
-									<input id="lu_c3_chk_3" type="checkbox" checked>
-								</td>
-								<td>
-									<div class="progress light m-2">
-										<div class="progress-bar progress-bar-primary" role="progressbar"
-											aria-valuenow="51" aria-valuemin="0" aria-valuemax="100"
-											style="width: 51%;">
-											51%
-										</div>
-									</div>
-								</td>
-								<td style="text-align: center;display: none;" class="actions">
-									<a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-									<a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-									<a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-									<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-								</td>
-							</tr>
-							<tr data-item-id="4">
-								<td style="font-weight: bold;">4321876501239</td>
-								<td>6985210 - SOCIETE FERMIERE ROCHEFORT ARDENNES</td>
-								<td class="text-center">
-									<input id="lu_c3_chk_3" type="checkbox" checked>
-								</td>
-								<td>
-									<div class="progress light m-2">
-										<div class="progress-bar progress-bar-primary" role="progressbar"
-											aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-											style="width: 75%;">
-											75%
-										</div>
-									</div>
-								</td>
-								<td style="text-align: center;display: none;" class="actions">
-									<a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-									<a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-									<a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-									<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					</section>
 				</div>
-				<footer class="card-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-default modal-dismiss" onclick="onClose('c3')">Close</button>
+				<div class="col-sm-1 text-center">
+					<div class="btn-group dropleft" style="margin-top: 12px;">
+						<button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle"
+							data-toggle="dropdown"><span class="caret"></span></button>
+						<div class="dropdown-menu" role="menu">
+							<a class="dropdown-item text-1" href="#"
+								onclick="App.FVUom.moveTo(0); return false;">0050013489 -
+								Coca-Cola Company</a>
+							<a class="dropdown-item text-1" href="#"
+								onclick="App.FVUom.moveTo(1); return false;">0051185194 -
+								Unilever</a>
 						</div>
 					</div>
-				</footer>
-			</section>
+				</div>
+			</div>
 		</div>
-		<!-- End Modal Gtins -->
+	</section>
+	<!-- Modal Gtins -->
+	<div id="modal_gtin" class="zoom-anim-dialog modal-block modal-block-lg mfp-hide">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Add new GTIN</h2>
+				<p class="card-subtitle">For KG and Coca-Cola company (0050013849)</p>
+
+				<div class="card-actions">
+					<a href="#" class="card-action card-action-dismiss modal-dismiss"></a>
+				</div>
+			</header>
+			<div class="card-body ">
+				<form id="form1" class="form-horizontal">
+					<div class="form-group row">
+						<label class="col-sm-4 control-label text-sm-right pt-2">New GTIN: </label>
+						<div class="col-sm-8">
+							<input id="newGtinInput" type="text" class="form-control gtinInputValues"
+								autocomplete="off">
+							<label id="gtinErrorMsge" class="error" style="display: none;">Invalid GTIN error
+								message</label>
+						</div>
+					</div>
+					<!-- <div class="form-group row">
+						<label class="col-sm-4 control-label text-sm-right pt-2">GTIN category: </label>
+						<div class="col-sm-8">
+							<select class="form-control gtinInputValues">										
+								<option selected>Z01</option>
+								<option>Z02</option>													
+								<option>Z03</option>													
+							</select>									
+						</div>
+					</div> -->
+					<div class="form-group row">
+						<label class="col-sm-4 control-label text-sm-right pt-2">Reason: </label>
+						<div class="col-sm-8">
+							<select class="form-control gtinInputValues">
+								<option selected>Change of weight < 25% (no variable weight)</option>
+								<option>Change of weight on variable weight product (no colisage change)</option>
+								<option>Change dimensions or gross weight or crate type</option>
+								<option>Packaging change (layout) with no impact on allergens, Nutriscore or dimensions
+								</option>
+								<option>Recipe change with no impact on allergens</option>
+								<option>Brand changes within private brands</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<footer class="card-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button class="btn btn-primary" onclick="javascript:addNewGtin()">Add GTIN</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+	<!-- End Modal Gtins -->
+	<!-- Modal Info Reason -->
+	<div id="modalInfoReason" class="modal-block modal-block-info mfp-hide">
+		<section class="card">
+			<header class="card-header">
+				<h2 class="card-title">Information</h2>
+			</header>
+			<div class="card-body">
+				<div class="modal-wrapper">
+					<div class="modal-icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+					<div class="modal-text">
+						<h4>Reason</h4>
+						<p>Specify the reason why you are providing a new GTIN for this Unit of Measure.</p>
+					</div>
+				</div>
+			</div>
+			<footer class="card-footer">
+				<div class="row">
+					<div class="col-md-12 text-right">
+						<button class="btn btn-info modal-dismiss">OK</button>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</div>
+</div>
+<!-- End: overlay panel for GTIN details -->
+<!-- Modal Info new Main GTIN -->
+<div id="modalInfoNewMainGtin" class="modal-block modal-block-info mfp-hide">
+	<section class="card">
+		<header class="card-header">
+			<h2 class="card-title">Information</h2>
+		</header>
+		<div class="card-body">
+			<div class="modal-wrapper">
+				<div class="modal-icon">
+					<i class="fas fa-info-circle"></i>
+				</div>
+				<div class="modal-text">
+					<h4>Set as new main GTIN strategy</h4>
+					<p>Select the date as from which the GTIN can be set as main for this product and unit of measure.
+						The selected date will be analyzed once the current update or reactivation process is finalized.
+					</p>
+					<p style="margin-top: 20px;margin-bottom: 0;"><u>Date in the past</u></p>
+					<p>It will become the main GTIN as soon as the updates are approved and confirmed by Delhaize teams
+					</p>
+					<p style="margin-top: 20px;margin-bottom: 0;"><u>Date is in the future</u></p>
+					<p>It will not become the main GTIN when the updates are approved and saved by Delhaize teams.
+						If this option is selected, the Replenishment team will be notified and one of it members will
+						decide when this GTIN will replace the old one as the new main GTIN.
+					</p>
+				</div>
+			</div>
+		</div>
+		<footer class="card-footer">
+			<div class="row">
+				<div class="col-md-12 text-right">
+					<button class="btn btn-info modal-dismiss">OK</button>
+				</div>
+			</div>
+		</footer>
+	</section>
+</div>
+<!-- End Modal Info new Main GTIN -->

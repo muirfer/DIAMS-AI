@@ -42,6 +42,20 @@
             $('input[type="search"]').prop("disabled", false);
             $(".cFilter").prop("readonly", false);
             $(".cFilter").prop("disabled", false);
+
+            // Configure UoM GTIN overlay panel for scenario S1
+            if (App.FVUom && typeof App.FVUom.configureForScenario === 'function') {
+                App.FVUom.configureForScenario({
+                    openBtnIcon: 'fas fa-plus',
+                    openBtnTooltip: 'Open GTIN details ',
+                    title: 'GTINs',
+                    subtitle: 'Details of your own GTINs',
+                    singleSupplierItem: true,
+                    actionBtnMode: 'hide',
+                    enableRadios: false,
+                    showTrashOnHover: false
+                });
+            }
         },
         /**
          * Switch between edit and view mode

@@ -16,6 +16,9 @@
         { id: "rf5", iType: "if5", label: "Number of components (Offer)", tab: "pLinks", comment: "", timeline: "time_if5", review: true, reviewDone: false, requestable: false, initStatus: "requestable", initValue: "500" },
         { id: "rf6", iType: "if6", label: "Implantation guidelines (French)", tab: "pStore", comment: "", timeline: "time_if6", review: true, reviewDone: false, requestable: true },
         { id: "rf10", iType: "if10", label: "Product number used by Supplier (0010002878)", tab: "pPurchasing", comment: "", timeline: "time_if10", review: false, reviewDone: false, requestable: false, initValue: "9876543210001263" },
+        { id: "rf11", iType: "if11", label: "0050013489 - GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if11", review: false, reviewDone: false, requestable: true },
+        { id: "rf12", iType: "if12", label: "0051185194 - GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if12", review: false, reviewDone: false, requestable: true },
+        { id: "rf13", iType: "if13", label: "Main GTIN (EA)", tab: "pUoM", comment: "", timeline: "time_if13", review: false, reviewDone: false, requestable: false }
     ];
 
     // Module for handling Update logic in Full view details panel for S4
@@ -51,6 +54,20 @@
 
             //attach go buttons
             App.FVUpdate.attachGoButtons();
+
+            // Configure UoM GTIN overlay panel for scenario S4
+            if (App.FVUom && typeof App.FVUom.configureForScenario === 'function') {
+                App.FVUom.configureForScenario({
+                    openBtnIcon: 'fas fa-users',
+                    openBtnTooltip: 'Open GTIN details per supplier',
+                    title: 'GTINs per supplier',
+                    subtitle: 'Scroll through all suppliers using the navigation buttons or select a supplier with the button on the right.',
+                    singleSupplierItem: false,
+                    actionBtnMode: 'requestUpdate',
+                    enableRadios: false,
+                    showTrashOnHover: false
+                });
+            }
         },
         /** 
          * Handle field value updates
