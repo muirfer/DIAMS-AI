@@ -608,7 +608,17 @@ window.initToggle = function () {
 // Tooltip
 window.initTooltip = function () {
 	if ($.isFunction($.fn['tooltip'])) {
-		$('[data-toggle=tooltip],[rel=tooltip]').tooltip({ container: 'body' });
+		$('[data-toggle=tooltip],[rel=tooltip]').tooltip({
+			container: 'body',
+			boundary: 'window',
+			trigger: 'hover'
+		});
+
+		$(document).off('click.hideTooltip', '[data-toggle=tooltip],[rel=tooltip]')
+			.on('click.hideTooltip', '[data-toggle=tooltip],[rel=tooltip]', function () {
+				$(this).tooltip('hide');
+				$('.tooltip').remove();
+			});
 	}
 };
 

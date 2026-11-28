@@ -21,7 +21,7 @@
         REJECT: "reject",
         REQUEST: "request"
     };
-    App.buttonTemplate = $('<button type="button" class="mb-1 mt-1 mr-1 btn btn-info btn-go">Go</button>');
+    App.buttonTemplate = $('<button type="button" class="btn btn-info btn-go">Go</button>');
 
     // Module for handling common update logic in Full view details panel
     var FVUpdate = {
@@ -440,29 +440,33 @@
          * Open navigation feature to field
          */
         openNavigationFeatureToField: function (input) {
-            var button = input.parent().find(".btn-go");
+            var fieldId = input.attr('id');
+            if (!fieldId || !App.updateFields || !App.updateFields.some(function (item) { return item.id === ("r" + fieldId); })) {
+                return;
+            }
 
-            //get field object
-            let btnConfigValues = App.btnGoConfig.find(item => item.id === (input.attr('id')));
+            var $parent = input.parent();
+            if ($parent.css('position') === 'static') {
+                $parent.css('position', 'relative');
+            }
+
+            var button = $parent.find(".btn-go");
 
             if (button.length === 0) {
                 button = App.buttonTemplate.clone().css({
                     position: 'absolute',
-                    top: (btnConfigValues) ? btnConfigValues.top : '-4px',
-                    right: (btnConfigValues) ? btnConfigValues.right : 0,
-                    left: (btnConfigValues) ? btnConfigValues.left : 'e',
-                    height: (btnConfigValues) ? btnConfigValues.height : '100%',
-                    width: (btnConfigValues) ? btnConfigValues.width : '30%',
-                    opacity: 0.6,
+                    margin: 0,
+                    padding: '0 4px',
                     display: 'none',
+                    opacity: 0.6,
                     'z-index': 999999
-                }).appendTo(input.parent());
+                }).appendTo($parent);
 
                 button.click(function () {
                     button.css("opacity", "0.6");
 
                     //get field object
-                    App.fieldObject = App.updateFields.find(item => item.id === ("r" + input.attr('id')));
+                    App.fieldObject = App.updateFields.find(item => item.id === ("r" + fieldId));
                     App.FVUpdate.showChangeDetailsForCurrentField();
                 });
 
@@ -479,7 +483,25 @@
                 );
             }
 
-            button.slideDown(200).show();
+            // Align button dynamically to match the target component's exact position and height
+            var inputRect = input[0].getBoundingClientRect();
+            var parentRect = $parent[0].getBoundingClientRect();
+            var isTable = input.hasClass('dTable') || input.is('table');
+            var ratio = isTable ? 0.15 : 0.3;
+            var btnWidth = Math.max(36, Math.round(inputRect.width * ratio));
+            var btnLeft = (inputRect.left - parentRect.left) + (inputRect.width - btnWidth);
+            var btnTop = inputRect.top - parentRect.top;
+
+            button.css({
+                top: btnTop + 'px',
+                left: btnLeft + 'px',
+                right: 'auto',
+                height: inputRect.height + 'px',
+                width: btnWidth + 'px',
+                lineHeight: inputRect.height + 'px'
+            });
+
+            button.stop(true, true).slideDown(200).show();
         },
         /**
          * Undo change evaluation

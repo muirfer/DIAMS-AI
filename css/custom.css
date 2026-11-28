@@ -220,6 +220,11 @@ table.dataTable tbody td {
     background: aliceblue;
 }
 
+/* Prevent tooltips from intercepting mouse hover events and flickering */
+.tooltip {
+    pointer-events: none !important;
+}
+
 #ChartistCSSAnimation .ct-series.ct-series-a .ct-line {
     fill: none;
     stroke-width: 4px;

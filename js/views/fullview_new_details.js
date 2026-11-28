@@ -84,6 +84,10 @@
             });
 
             $(".nav-link").click(function (e) {
+                // Hide any open tooltip immediately on tab click
+                $(this).closest('[data-toggle="tooltip"],[rel="tooltip"]').tooltip('hide');
+                $('.tooltip').remove();
+
                 //remove active class from all
                 $(".nav-link").parent().removeClass("active");
 

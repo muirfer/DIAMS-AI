@@ -682,9 +682,10 @@ p#txtRequired {
 /* Target: Quick-action <button class="btn ... btn-go"> attached to requestable fields */
 .btn-go {
     display: none;
-    font-size: 0.5rem;
-    padding: 4px 5px;
-    margin-left: 5px;
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    padding: 0 6px;
+    margin-left: 0;
 }
 
 /* Target: Standard field quick-action button <button class="... btn-go go-std-field"> */
@@ -875,6 +876,11 @@ p#txtRequired {
 /* Target: Reused GTIN warning label/checkbox <... class="... gtin-reuse-highlight"> */
 .gtin-reuse-highlight {
     color: darkred;
+}
+
+/* Target: Bootstrap tooltip elements <div class="tooltip"> to prevent mouse hover interception and flickering */
+.tooltip {
+    pointer-events: none !important;
 }
 
 /* Target: Slide-out overlay panel <div id="customOverlayPanel"> for GTIN details per supplier in UoM panel (hidden off-screen to the right by default) */
