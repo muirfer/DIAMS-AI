@@ -174,48 +174,6 @@ table.dataTable tbody td {
     transition: opacity 0.3s ease-out !important;
 }
 
-#datatable-gtinu tbody {
-    max-height: 400px;
-    overflow-y: auto;
-    /* Adds vertical scroll if content exceeds max-height */
-    display: block;
-    /* Important for max-height and overflow to work correctly with table rows */
-}
-
-#datatable-gtinu thead,
-#datatable-gtinu tbody tr {
-    display: table;
-    /* Ensures header and rows align correctly with tbody display: block */
-    width: 100%;
-    /*table-layout: fixed; /* Optional: Helps with column width consistency */
-}
-
-#datatable-gtinu_wrapper .dataTables_scrollHeadInner table {
-    width: 1032px !important;
-}
-
-#datatable-gtinu-2 tbody {
-    max-height: 400px;
-    overflow-y: auto;
-    /* Adds vertical scroll if content exceeds max-height */
-    display: block;
-    /* Important for max-height and overflow to work correctly with table rows */
-}
-
-#datatable-gtinu-2 thead,
-#datatable-gtinu-2 tbody tr {
-    display: table;
-    /* Ensures header and rows align correctly with tbody display: block */
-    width: 100%;
-    /*table-layout: fixed; /* Optional: Helps with column width consistency */
-}
-
-#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table {
-    width: 1032px !important;
-}
-
-
-
 .gtinSelected {
     background: aliceblue;
 }

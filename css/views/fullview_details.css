@@ -906,6 +906,240 @@ p#txtRequired {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Target: Progress bar wrapper <div class="... gtin-overlay-progress-wrapper"> inside #loadingIndicator in #customOverlayPanel */
+.gtin-overlay-progress-wrapper {
+    margin-top: 220px;
+}
+
+/* Target: Animated progress bar <div class="progress-bar ... gtin-overlay-progress-bar"> inside #loadingIndicator in #customOverlayPanel */
+.gtin-overlay-progress-bar {
+    width: 0%;
+    animation: gtinOverlayProgressFill 1.2s ease-in-out forwards;
+}
+
+/* Target: Keyframe animation filling .gtin-overlay-progress-bar from 0% to 100% while #loadingIndicator is visible */
+@keyframes gtinOverlayProgressFill {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* Target: DataTables wrapper and scroll tables for #datatable-gtinu and #datatable-gtinu-2 to enforce full width and fixed column alignment */
+#datatable-gtinu,
+#datatable-gtinu-2,
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner,
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner,
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table,
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table,
+#datatable-gtinu_wrapper .dataTables_scrollBody table,
+#datatable-gtinu-2_wrapper .dataTables_scrollBody table {
+    width: 100% !important;
+    table-layout: fixed !important;
+}
+
+/* Target: Table header group <thead> and body group <tbody> inside #datatable-gtinu and #datatable-gtinu-2 to use standard table layout (prevents double scrollbar) */
+#datatable-gtinu thead,
+#datatable-gtinu-2 thead,
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead,
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead {
+    display: table-header-group !important;
+    width: 100% !important;
+}
+
+#datatable-gtinu tbody,
+#datatable-gtinu-2 tbody {
+    display: table-row-group !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+}
+
+/* Target: Table rows <tr> inside #datatable-gtinu and #datatable-gtinu-2 to use standard table layout */
+#datatable-gtinu thead tr,
+#datatable-gtinu-2 thead tr,
+#datatable-gtinu tbody tr,
+#datatable-gtinu-2 tbody tr,
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead tr,
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead tr {
+    display: table-row;
+    width: 100% !important;
+}
+
+/* Target: Initially hidden new GTIN rows <tr id="rowNewGtin"> and <tr id="rowNewGtin2"> */
+#datatable-gtinu tbody tr#rowNewGtin,
+#datatable-gtinu-2 tbody tr#rowNewGtin2 {
+    display: none;
+}
+
+/* Target: Overlay panel main content section <section id="panelContent"> (hidden until progress bar finishes) */
+#panelContent {
+    display: none;
+}
+
+/* Target: Dismiss action button <a id="closeCustomPanel"> inside #customOverlayPanel header */
+#closeCustomPanel {
+    font-size: x-large;
+}
+
+/* Target: Unit of Measure heading <h2 class="card-title gtin-overlay-uom-title"> ("KG") inside #customOverlayPanel */
+.gtin-overlay-uom-title {
+    font-size: xx-large;
+}
+
+/* Target: Supplier header badge <span class="badge badge-info ... gtin-supplier-badge"> above GTIN tables in #gtinCarousel */
+.gtin-supplier-badge {
+    font-size: large;
+    width: 100%;
+    opacity: 0.8;
+}
+
+/* Target: Table header <thead class="gtin-table-thead"> inside #datatable-gtinu and #datatable-gtinu-2 */
+.gtin-table-thead,
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead,
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead {
+    background: snow;
+    font-size: x-small;
+}
+
+/* Target: "New" status button <button class="... btnGTINNew"> in #datatable-gtinu and #datatable-gtinu-2 */
+.btnGTINNew {
+    color: darkblue;
+}
+
+/* Target: Existing row "New" status button <button class="... btnGTINNew gtin-btn-hidden"> hidden by default */
+.gtin-btn-hidden {
+    display: none;
+}
+
+/* Target: "New main" status button <button class="... btnGTINMain"> in #datatable-gtinu and #datatable-gtinu-2 */
+.btnGTINMain {
+    color: darkgreen;
+    display: none;
+}
+
+/* Target: "Old main" status button <button class="... btnGTINSec"> in #datatable-gtinu and #datatable-gtinu-2 */
+.btnGTINSec {
+    color: darkorange;
+    display: none;
+}
+
+/* Target: "Delete" status button <button class="... btnGTINRemove"> in #datatable-gtinu and #datatable-gtinu-2 */
+.btnGTINRemove {
+    color: darkred;
+    display: none;
+}
+
+/* Target: Info modal trigger button <a class="... gtin-info-modal-btn"> inside .tdExtra */
+.gtin-info-modal-btn {
+    background: lightgray;
+    text-align: center;
+    font-size: small;
+}
+
+/* Target: Prepend calendar label button <a class="... gtin-main-date-label-btn"> ("Set as main on") inside #newMainGtinMode */
+.gtin-main-date-label-btn {
+    background: snow;
+    text-align: center;
+    font-size: small;
+}
+
+/* Target: New main GTIN datepicker input group <div id="newMainGtinMode"> and <div id="newMainGtinMode2"> (hidden by default) */
+#newMainGtinMode,
+#newMainGtinMode2 {
+    display: none;
+}
+
+/* Target: Undo deletion link <a class="undo-row"> inside #datatable-gtinu and #datatable-gtinu-2 (hidden by default) */
+#datatable-gtinu .undo-row,
+#datatable-gtinu-2 .undo-row {
+    display: none;
+}
+
+/* Target: Invalid GTIN error message label <label id="gtinErrorMsge"> inside #modal_gtin (hidden by default) */
+#gtinErrorMsge {
+    display: none;
+}
+
+/* Target: DataTables scrollBody container for #datatable-gtinu and #datatable-gtinu-2 to apply single beautify-scroll scrollbar */
+#datatable-gtinu_wrapper .dataTables_scrollBody,
+#datatable-gtinu-2_wrapper .dataTables_scrollBody {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd #f1f1f1;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollBody::-webkit-scrollbar,
+#datatable-gtinu-2_wrapper .dataTables_scrollBody::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollBody::-webkit-scrollbar-track,
+#datatable-gtinu-2_wrapper .dataTables_scrollBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb,
+#datatable-gtinu-2_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb:hover,
+#datatable-gtinu-2_wrapper .dataTables_scrollBody::-webkit-scrollbar-thumb:hover {
+    background-color: #6c757d;
+}
+
+/* Target: Column width enforcement (5%, 15%, 20%, 55%, 5%) across both scrollHead and scrollBody of #datatable-gtinu and #datatable-gtinu-2 */
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead th:nth-child(1),
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead th:nth-child(1),
+#datatable-gtinu tbody td:nth-child(1),
+#datatable-gtinu-2 tbody td:nth-child(1) {
+    width: 5% !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead th:nth-child(2),
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead th:nth-child(2),
+#datatable-gtinu tbody td:nth-child(2),
+#datatable-gtinu-2 tbody td:nth-child(2) {
+    width: 15% !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead th:nth-child(3),
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead th:nth-child(3),
+#datatable-gtinu tbody td:nth-child(3),
+#datatable-gtinu-2 tbody td:nth-child(3) {
+    width: 20% !important;
+    vertical-align: middle;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead th:nth-child(4),
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead th:nth-child(4),
+#datatable-gtinu tbody td:nth-child(4),
+#datatable-gtinu-2 tbody td:nth-child(4) {
+    width: 55% !important;
+    vertical-align: middle;
+}
+
+#datatable-gtinu_wrapper .dataTables_scrollHeadInner table thead th:nth-child(5),
+#datatable-gtinu-2_wrapper .dataTables_scrollHeadInner table thead th:nth-child(5),
+#datatable-gtinu tbody td:nth-child(5),
+#datatable-gtinu-2 tbody td:nth-child(5) {
+    width: 5% !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
 /* Target: Table header cells <th> inside <thead class="suppack-table-thead"> in Support Packaging table */
 .suppack-table-thead th {
     vertical-align: middle !important;

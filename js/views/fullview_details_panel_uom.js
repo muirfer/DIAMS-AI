@@ -282,7 +282,7 @@
                 if ($modeDiv.length) {
                     $modeDiv.appendTo($newRow.find('.tdExtra'));
                     if (this.showNewMainGtinMode) {
-                        $modeDiv.show();
+                        $modeDiv.css('display', 'flex');
                     } else {
                         $modeDiv.hide();
                     }
@@ -432,11 +432,11 @@
 
             $allRows.each(function () {
                 var $tr = $(this);
-                if (this.style.display === 'none') {
+                if ($tr.css('display') === 'none') {
                     return;
                 }
                 $tr.find('.btnGTINNew, .btnGTINMain, .btnGTINSec, .btnGTINRemove').each(function () {
-                    if (this.style.display !== 'none') {
+                    if ($(this).css('display') !== 'none') {
                         hasUpdate = true;
                         return false;
                     }
@@ -475,13 +475,11 @@
             var isActive = this.hasActiveTableUpdate($table);
 
             if (isActive) {
-                $container.addClass('changed');
                 $('#' + fieldObj.id).show();
                 App.fieldObject = fieldObj;
                 App.FVUpdate.showChangeDetailsForCurrentField();
                 App.FVUpdate.showOrHideConfirmButton();
             } else {
-                $container.removeClass('changed');
                 $('#' + fieldObj.id).hide();
                 fieldObj.comment = "";
                 fieldObj.reviewDone = false;
@@ -731,18 +729,20 @@
                     "paging": false,
                     "info": false,
                     "lengthChange": false,
-                    "scrollY": "400px",
+                    "scrollY": "300px",
                     "scrollCollapse": true,
                     "autoWidth": false,
                     "columnDefs": [
                         { "width": "5%", "targets": 0, "className": "text-center", "orderable": false },
-                        { "width": "15%", "targets": 1, "className": "gtinValue" },
+                        { "width": "15%", "targets": 1, "className": "gtinValue text-center" },
                         { "width": "20%", "targets": 2, "className": "gtinAction", "orderable": false },
-                        { "width": "50%", "targets": 3, "className": "gtinReason", "orderable": false },
-                        { "width": "10%", "targets": 4, "className": "gtinAction text-center", "orderable": false }
+                        { "width": "55%", "targets": 3, "className": "gtinReason", "orderable": false },
+                        { "width": "5%", "targets": 4, "className": "gtinAction text-center", "orderable": false }
                     ]
                 });
             });
+
+            $('#datatable-gtinu_wrapper .dataTables_scrollBody, #datatable-gtinu-2_wrapper .dataTables_scrollBody').addClass('beautify-scroll');
         },
 
         adaptGTINActionButton: function (wrapperId, buttonId) {

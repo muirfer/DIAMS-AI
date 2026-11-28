@@ -531,15 +531,17 @@
             //get field object
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
 
-            //update field border color
-            if ($(fieldId).is('input[type="checkbox"]')) {
-                $(fieldId).parent().removeClass();
-                $(fieldId).parent().addClass('checkbox-custom checkbox-warning');
-            } else {
-                $(fieldId).removeClass('approvedL1 rejected c_requested');
+            //update field border color (except for tables inside #customOverlayPanel)
+            if (App.fieldObject.carouselIndex === undefined) {
+                if ($(fieldId).is('input[type="checkbox"]')) {
+                    $(fieldId).parent().removeClass();
+                    $(fieldId).parent().addClass('checkbox-custom checkbox-warning');
+                } else {
+                    $(fieldId).removeClass('approvedL1 rejected c_requested');
 
-                if (App.fieldObject.review) {
-                    $(fieldId).addClass('changed');
+                    if (App.fieldObject.review) {
+                        $(fieldId).addClass('changed');
+                    }
                 }
             }
 
@@ -575,13 +577,15 @@
             //get field object
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
 
-            //update field border color
-            if ($(fieldId).is('input[type="checkbox"]')) {
-                $(fieldId).parent().removeClass();
-                $(fieldId).parent().addClass('checkbox-custom checkbox-danger');
-            } else {
-                $(fieldId).removeClass('changed approvedL1');
-                $(fieldId).addClass('rejected');
+            //update field border color (except for tables inside #customOverlayPanel)
+            if (App.fieldObject.carouselIndex === undefined) {
+                if ($(fieldId).is('input[type="checkbox"]')) {
+                    $(fieldId).parent().removeClass();
+                    $(fieldId).parent().addClass('checkbox-custom checkbox-danger');
+                } else {
+                    $(fieldId).removeClass('changed approvedL1');
+                    $(fieldId).addClass('rejected');
+                }
             }
 
             //update in table
@@ -603,13 +607,15 @@
             let level = App.approvalLevels.find(item => item.id === appLevel);
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
 
-            //update field border color
-            if ($(fieldId).is('input[type="checkbox"]')) {
-                $(fieldId).parent().removeClass();
-                $(fieldId).parent().addClass('checkbox-custom checkbox-' + level.checkStyle);
-            } else {
-                $(fieldId).removeClass('changed approvedL1');
-                $(fieldId).addClass(level.inputStyle);
+            //update field border color (except for tables inside #customOverlayPanel)
+            if (App.fieldObject.carouselIndex === undefined) {
+                if ($(fieldId).is('input[type="checkbox"]')) {
+                    $(fieldId).parent().removeClass();
+                    $(fieldId).parent().addClass('checkbox-custom checkbox-' + level.checkStyle);
+                } else {
+                    $(fieldId).removeClass('changed approvedL1');
+                    $(fieldId).addClass(level.inputStyle);
+                }
             }
 
             //update in table
@@ -646,9 +652,11 @@
             //show only relevant fields
             App.FVUpdateStepSpecific.showOrHideActionButtons();
 
-            //ADD orange/cyan border to field
+            //ADD orange/cyan border to field (except for tables inside #customOverlayPanel)
             let fieldId = "#" + App.fieldObject.id.replace("r", "");
-            $(fieldId).addClass('c_requested');
+            if (App.fieldObject.carouselIndex === undefined) {
+                $(fieldId).addClass('c_requested');
+            }
 
             //show relevant timeline
             App.FVUpdate.showTimelineForCurrentField();

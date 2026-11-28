@@ -883,113 +883,117 @@
 <!-- End - Panel - Units of Measure -->
 <!-- Start: overlay panel for GTIN details -->
 <div id="customOverlayPanel">
-	<div id="loadingIndicator" style="text-align: center; padding: 20px;">
-		<img src="./img/loading.gif" alt="Loading..." style="width: 640px; height: 480px;margin-top: 200px;">
+	<div id="loadingIndicator" class="text-center p-4">
+		<div class="col-lg-6 offset-lg-3 gtin-overlay-progress-wrapper">
+			<div class="progress progress-md light m-2">
+				<div class="progress-bar progress-bar-primary progress-bar-striped progress-bar-animated gtin-overlay-progress-bar"
+					role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+		</div>
 	</div>
-	<section class="card card-featured mb-4" id="panelContent" style="display: none;">
+	<section class="card card-featured mb-4" id="panelContent">
 		<header class="card-header">
 			<div class="card-actions">
 				<!-- <a href="#" class="card-action card-action-toggle" data-card-toggle></a> -->
-				<a href="#" id="closeCustomPanel" class="card-action card-action-dismiss"
-					onclick="App.FVUom.closeOverlayPanel(); return false;"
-					style="margin-top: 10px;margin-right: 20px;"></a>
+				<a href="#" id="closeCustomPanel" class="card-action card-action-dismiss mt-3 mr-3"
+					onclick="App.FVUom.closeOverlayPanel(); return false;"></a>
 			</div>
-
 			<h2 class="card-title" id="overlayPanelTitle">GTINs per supplier</h2>
-			<p class="card-subtitle" id="overlayPanelSubtitle">Scroll through all suppliers using the navigation buttons
+			<p class="card-subtitle d-inline-block mb-0" id="overlayPanelSubtitle">Scroll through all suppliers using
+				the navigation buttons
 				or select a supplier with
 				the button on the right.</p>
+			<div class="btn-group dropleft ml-2 align-middle">
+				<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"><span
+						class="caret"></span></button>
+				<div class="dropdown-menu" role="menu">
+					<a class="dropdown-item text-1" href="#" onclick="App.FVUom.moveTo(0); return false;">0050013489
+						-
+						Coca-Cola Company</a>
+					<a class="dropdown-item text-1" href="#" onclick="App.FVUom.moveTo(1); return false;">0051185194
+						-
+						Unilever</a>
+				</div>
+			</div>
 		</header>
-		<div class="card-body pt-0" style="background: bottom;">
+		<div class="card-body pt-0">
 			<div class="row mt-3">
-				<div class="col-lg-11">
+				<div class="col-lg-12">
 					<section class="card mb-4">
 						<header class="card-header card-header-transparent text-center">
-							<h2 class="card-title" style="font-size: xx-large;">KG</h2>
+							<h2 class="card-title gtin-overlay-uom-title">KG</h2>
 							<!-- <p class="card-subtitle">Scroll through all suppliers using the navigation buttons or select a supplier with the button on the right.</p> -->
 						</header>
-						<div class="card-body pt-0" style="background: bottom;">
+						<div class="card-body pt-0">
 							<div class="row">
 								<div class="col-sm-12">
 									<div id="gtinCarousel" class="owl-carousel owl-theme" data-plugin-carousel
 										data-plugin-options='{ "dots": false, "nav": true, "items": 1 }'>
 										<div class="item">
-											<div class="row" style="margin-bottom: 20px;">
-												<div class="col-lg-12" style="text-align: center;">
-													<span class="badge badge-info p-1"
-														style="font-size: large;width: 100%;margin-top: 12px;opacity:0.8;">0050013489
+											<div class="row mb-2">
+												<div class="col-lg-12 text-center">
+													<span class="badge badge-info p-1 mt-1 gtin-supplier-badge">0050013489
 														- Coca-Cola Company</span>
 												</div>
 											</div>
 											<div class="row">
 												<div id="f11" class="col-lg-12">
 													<table class="table table-hover table-sm mb-0" id="datatable-gtinu">
-														<thead style="background: snow;font-size: small;width: 100%;">
+														<thead class="gtin-table-thead">
 															<tr>
-																<th class="text-center" rel="tooltip"
+																<th class="text-center p-1" rel="tooltip"
 																	data-original-title=""
-																	title="Main GTIN for Supplier"
-																	style="width: 5% !important;">Main</th>
-																<th class="gtinValue"
-																	style="font-weight: 600;text-align: center;width: 15% !important;">
+																	title="Main GTIN for Supplier">Main</th>
+																<th class="gtinValue p-1 text-center">
 																	GTIN</th>
-																<th class="gtinAction"
-																	style="font-weight: 600;width: 20% !important;">
+																<th class="gtinAction p-1">
 																	Changes</th>
-																<th class="gtinReason"
-																	style="font-weight: 600;width: 50% !important;">
+																<th class="gtinReason p-1">
 																	Reason / Conditions</th>
-																<th class="gtinAction text-center"
-																	style="font-weight: 600;width: 10% !important;">
+																<th class="gtinAction text-center p-1">
+																	<!-- Moves to table toolbar zone (before the local filter) upon table initialization process -->
 																	<a id="btnActionGTIN" href="#modal_gtin"
-																		class="btn btn-default modal-with-zoom-anim ws-normal "><i
-																			class="fas fa-plus"
-																			style="margin-right: 15px;"></i>Add new
-																		GTIN</i></a>
+																		class="btn btn-default modal-with-zoom-anim ws-normal"><i
+																			class="fas fa-plus mr-3"></i>Add new
+																		GTIN</a>
 																</th>
 															</tr>
 														</thead>
 														<tbody>
-															<tr id="rowNewGtin" style="display: none;">
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+															<tr id="rowNewGtin">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="6546776458654">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	6546776458654</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;" rel="tooltip"
-																			data-original-title=""
+																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;">
+																<td class="tdExtra">
 																	<div class="input-group form-group mb-3">
-
 																		<select
 																			class="form-control form-control-sm gtinInputValues">
 																			<option selected>Change of weight < 25% (no
@@ -1007,19 +1011,16 @@
 																			</option>
 																		</select>
 																		<span class="input-group-append">
-																			<a class="modal-basic btn btn-default btn-xs"
-																				href="#modalInfoReason"
-																				style="background: lightgray;text-align: center;font-size: small;">
+																			<a class="modal-basic btn btn-default btn-xs gtin-info-modal-btn"
+																				href="#modalInfoReason">
 																				<i class="fas fa-info"></i>
 																			</a>
 																		</span>
 																	</div>
 																	<div id="newMainGtinMode"
-																		class="input-group form-group mb-3"
-																		style="display: none;">
+																		class="input-group form-group mb-3">
 																		<span class="input-group-prepend">
-																			<a class="btn btn-default btn-xs"
-																				style="background: snow;text-align: center;font-size: small;">
+																			<a class="btn btn-default btn-xs gtin-main-date-label-btn">
 																				<i class="fas fa-calendar-alt"></i>
 																				Set as main on
 																			</a>
@@ -1028,16 +1029,15 @@
 																			class="form-control form-control-sm gtinInputValues"
 																			autocomplete="off" value="30/12/2023">
 																		<span class="input-group-append">
-																			<a class="modal-basic btn btn-default btn-xs"
-																				href="#modalInfoNewMainGtin"
-																				style="background: lightgray;text-align: center;font-size: small;">
+																			<a class="modal-basic btn btn-default btn-xs gtin-info-modal-btn"
+																				href="#modalInfoNewMainGtin">
 																				<i class="fas fa-info"></i>
 																			</a>
 																		</span>
 																	</div>
 																</td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:removeNew(this)"
 																		class="delete-row" data-original-title=""
 																		title="Remove new GTIN"><i
@@ -1045,852 +1045,750 @@
 																</td>
 															</tr>
 															<tr class="gtinSelected gtinDefault">
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="1234567890123" checked>
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	1234567890123</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="4321012398765" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4321012398765</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="4321876501239" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4321876501239</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="9876543210123" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	9876543210123</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="4567891230121" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4567891230121</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="3214569877894" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	3214569877894</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="1922526321543" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	1922526321543</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="4565749816522" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4565749816522</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="1199854514212" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	1199854514212</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="5956962654654" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	5956962654654</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="6654546554452" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	6654546554452</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="4657876984651" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4657876984651</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1" id="116265145448"
 																			value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">116265145448
+																<td class="text-center">116265145448
 																</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="7986584655201" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	7986584655201</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1" id="789694655645"
 																			value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">789694655645
+																<td class="text-center">789694655645
 																</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1" id="652650546545"
 																			value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">652650546545
+																<td class="text-center">652650546545
 																</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_1"
 																			id="4478757847854" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4478757847854</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
@@ -1900,10 +1798,9 @@
 											</div>
 										</div>
 										<div class="item">
-											<div class="row" style="margin-bottom: 20px;">
-												<div class="col-lg-12" style="text-align: center;">
-													<span class="badge badge-info p-1"
-														style="font-size: large;width: 100%;margin-top: 12px;opacity:0.8;">0051185194
+											<div class="row mb-2">
+												<div class="col-lg-12 text-center">
+													<span class="badge badge-info p-1 mt-1 gtin-supplier-badge">0051185194
 														- Unilever</span>
 												</div>
 											</div>
@@ -1911,70 +1808,60 @@
 												<div id="f12" class="col-lg-12">
 													<table class="table table-hover table-sm mb-0"
 														id="datatable-gtinu-2">
-														<thead style="background: snow;font-size: small;width: 100%;">
+														<thead class="gtin-table-thead">
 															<tr>
-																<th class="text-center" rel="tooltip"
+																<th class="text-center p-1" rel="tooltip"
 																	data-original-title=""
-																	title="Main GTIN for Supplier"
-																	style="width: 15% !important;">Main</th>
-																<th class="gtinValue"
-																	style="font-weight: 600;text-align: center;width: 15% !important;">
+																	title="Main GTIN for Supplier">Main</th>
+																<th class="gtinValue p-1 text-center">
 																	GTIN</th>
-																<th class="gtinAction"
-																	style="font-weight: 600;width: 20% !important;">
+																<th class="gtinAction p-1">
 																	Changes</th>
-																<th class="gtinReason"
-																	style="font-weight: 600;width: 50% !important;">
+																<th class="gtinReason p-1">
 																	Reason</th>
-																<th class="gtinAction text-center"
-																	style="font-weight: 600;width: 10% !important;">
+																<th class="gtinAction text-center p-1">
+																	<!-- Moves to table toolbar zone (before the local filter) upon table initialization process -->
 																	<a id="btnActionGTIN2" href="#modal_gtin"
 																		class="btn btn-default modal-with-zoom-anim ws-normal"><i
-																			class="fas fa-plus"
-																			style="margin-right: 15px;"></i>Add new
-																		GTIN</i></a>
+																			class="fas fa-plus mr-3"></i>Add new
+																		GTIN</a>
 																</th>
 															</tr>
 														</thead>
 														<tbody>
-															<tr id="rowNewGtin2" style="display: none;">
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+															<tr id="rowNewGtin2">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_2"
 																			id="6546776458654_2">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	6546776458654</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;" rel="tooltip"
-																			data-original-title=""
+																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;">
+																<td class="tdExtra">
 																	<div class="input-group form-group mb-3">
 																		<select
 																			class="form-control form-control-sm gtinInputValues">
@@ -1993,19 +1880,16 @@
 																			</option>
 																		</select>
 																		<span class="input-group-append">
-																			<a class="modal-basic btn btn-default btn-xs"
-																				href="#modalInfoReason"
-																				style="background: lightgray;text-align: center;font-size: small;">
+																			<a class="modal-basic btn btn-default btn-xs gtin-info-modal-btn"
+																				href="#modalInfoReason">
 																				<i class="fas fa-info"></i>
 																			</a>
 																		</span>
 																	</div>
 																	<div id="newMainGtinMode2"
-																		class="input-group form-group mb-3"
-																		style="display: none;">
+																		class="input-group form-group mb-3">
 																		<span class="input-group-prepend">
-																			<a class="btn btn-default btn-xs"
-																				style="background: snow;text-align: center;font-size: small;">
+																			<a class="btn btn-default btn-xs gtin-main-date-label-btn">
 																				<i class="fas fa-calendar-alt"></i>
 																				Set as main on
 																			</a>
@@ -2014,16 +1898,15 @@
 																			class="form-control form-control-sm gtinInputValues"
 																			autocomplete="off" value="30/12/2023">
 																		<span class="input-group-append">
-																			<a class="modal-basic btn btn-default btn-xs"
-																				href="#modalInfoNewMainGtin"
-																				style="background: lightgray;text-align: center;font-size: small;">
+																			<a class="modal-basic btn btn-default btn-xs gtin-info-modal-btn"
+																				href="#modalInfoNewMainGtin">
 																				<i class="fas fa-info"></i>
 																			</a>
 																		</span>
 																	</div>
 																</td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:removeNew(this)"
 																		class="delete-row" data-original-title=""
 																		title="Remove new GTIN"><i
@@ -2031,252 +1914,222 @@
 																</td>
 															</tr>
 															<tr class="gtinSelected gtinDefault">
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_2"
 																			id="1234567890123" checked>
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	1234567890123</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_2"
 																			id="4321012398765" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4321012398765</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_2"
 																			id="4321876501239" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4321876501239</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_2"
 																			id="9876543210123" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	9876543210123</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
 															<tr>
-																<td style="text-align: center;width: 5%;">
-																	<div class="form-check form-check-inline"
-																		style="margin-right: 0;">
+																<td class="text-center">
+																	<div class="form-check form-check-inline">
 																		<input
 																			class="form-check-input radio-success gtinRadio"
 																			type="radio" name="main_2"
 																			id="4567891230121" value="0">
 																	</div>
 																</td>
-																<td class="text-center" style="width: 15%;">
+																<td class="text-center">
 																	4567891230121</td>
-																<td style="width: 20%;">
+																<td>
 																	<div class="btn-group" role="group"
 																		aria-label="Table row actions">
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINNew"
-																			style="color:darkblue;display: none;"
+																			class="btn btn-xs btn-transparent btnGTINNew gtin-btn-hidden"
 																			rel="tooltip" data-original-title=""
 																			title="New GTIN for supplier">New</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINMain"
-																			style="color:darkgreen;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as new main GTIN for supplier">New
 																			main</button>
 																		<button
 																			class="btn btn-xs btn-transparent btnGTINSec"
-																			style="color:darkorange;display: none;"
 																			rel="tooltip" data-original-title=""
 																			title="Set as secondary GTIN. Former main GTIN">Old
 																			main</button>
 																		<button
-																			class="btn btn-xs btn-transparent btnGTINRemove"
-																			style="color:darkred;display: none;">Delete</button>
+																			class="btn btn-xs btn-transparent btnGTINRemove">Delete</button>
 																	</div>
 																</td>
-																<td class="tdExtra" style="width: 50%;"></td>
-																<td class="actions-hover actions-fade tCell-7 text-center"
-																	style="width: 10%;">
+																<td class="tdExtra"></td>
+																<td
+																	class="actions-hover actions-fade tCell-7 text-center">
 																	<a onclick="javascript:markAsDeleted(this)"
 																		class="delete-row" data-original-title=""
 																		title="Mark for deletion"><i
 																			class="far fa-trash-alt"></i></a>
 																	<a onclick="javascript:undo(this)" class="undo-row"
-																		data-original-title="" title="Undo changes"
-																		style="display: none;"><i
+																		data-original-title="" title="Undo changes"><i
 																			class="fa fa-undo"></i></a>
 																</td>
 															</tr>
@@ -2290,20 +2143,6 @@
 							</div>
 						</div>
 					</section>
-				</div>
-				<div class="col-sm-1 text-center">
-					<div class="btn-group dropleft" style="margin-top: 12px;">
-						<button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle"
-							data-toggle="dropdown"><span class="caret"></span></button>
-						<div class="dropdown-menu" role="menu">
-							<a class="dropdown-item text-1" href="#"
-								onclick="App.FVUom.moveTo(0); return false;">0050013489 -
-								Coca-Cola Company</a>
-							<a class="dropdown-item text-1" href="#"
-								onclick="App.FVUom.moveTo(1); return false;">0051185194 -
-								Unilever</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -2326,7 +2165,7 @@
 						<div class="col-sm-8">
 							<input id="newGtinInput" type="text" class="form-control gtinInputValues"
 								autocomplete="off">
-							<label id="gtinErrorMsge" class="error" style="display: none;">Invalid GTIN error
+							<label id="gtinErrorMsge" class="error">Invalid GTIN error
 								message</label>
 						</div>
 					</div>
@@ -2410,10 +2249,10 @@
 					<p>Select the date as from which the GTIN can be set as main for this product and unit of measure.
 						The selected date will be analyzed once the current update or reactivation process is finalized.
 					</p>
-					<p style="margin-top: 20px;margin-bottom: 0;"><u>Date in the past</u></p>
+					<p class="mt-3 mb-0"><u>Date in the past</u></p>
 					<p>It will become the main GTIN as soon as the updates are approved and confirmed by Delhaize teams
 					</p>
-					<p style="margin-top: 20px;margin-bottom: 0;"><u>Date is in the future</u></p>
+					<p class="mt-3 mb-0"><u>Date is in the future</u></p>
 					<p>It will not become the main GTIN when the updates are approved and saved by Delhaize teams.
 						If this option is selected, the Replenishment team will be notified and one of it members will
 						decide when this GTIN will replace the old one as the new main GTIN.
